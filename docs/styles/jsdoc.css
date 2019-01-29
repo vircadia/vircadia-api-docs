@@ -1,27 +1,11 @@
-@font-face {
-    font-family: 'Open Sans';
-    font-weight: normal;
-    font-style: normal;
-    src: url('../fonts/OpenSans-Regular-webfont.eot');
-    src:
-        local('Open Sans'),
-        local('OpenSans'),
-        url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
-        url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+@font-face{
+	font-family: 'Cairo';
+	src: url('../fonts/Cairo-Bold.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Open Sans Light';
-    font-weight: normal;
-    font-style: normal;
-    src: url('../fonts/OpenSans-Light-webfont.eot');
-    src:
-        local('Open Sans Light'),
-        local('OpenSans Light'),
-        url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
-        url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+@font-face{
+	font-family: 'Proxima Nova';
+	src: url('../fonts/proximanova-regular.otf') format('opentype');
 }
 
 * {
@@ -32,78 +16,57 @@ html
 {
     overflow: auto;
     background-color: #fff;
-    font-size: 14px;
 }
 
 body
 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 1rem;
     line-height: 1.5;
-    color: #4d4e53;
-    background-color: white;
+    letter-spacing: 0.5px;
+    margin: 1.5rem;
 }
 
-img {
-  max-width: 100%;
-}
-
-a,
-a:active {
-  color: #606;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-article a {
-  border-bottom: 1px solid #ddd;
-}
-
-article a:hover, article a:active {
-  border-bottom-color: #222;
-}
-
-p, ul, ol, blockquote {
-  margin-bottom: 1em;
+section
+{
+    display: block;
+    background-color: #fff;
+    padding: 12px 24px;
+    margin-right: 30px;
 }
 
 /*******************************************************************
 **************************** Heading styles ***********************
 ********************************************************************/
 h1, h2, h3, h4 {
-    font-weight: 200;
-    margin: 0;
+	font-family: "Proxima Nova", Helvetica, sans-serif;
 }
 
 h1
 {
-    font-weight: 400;
-    font-size: 3.25rem;
-    color: #00b4ef;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
     border-bottom: solid 1px #ddd;
     margin: 12px 24px 20px;
 }
 
 h2
 {
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: -1px;
+    font-size: 2.55rem;
     margin-bottom: 12px;
 }
 
 h3
 {
-    font-size: 24px;
-    letter-spacing: -0.5px;
+    font-size: 1.5rem;
 }
 
 h3.navHeading
 {
-    font-size: 14px;
-    font-weight: bold;
+    line-height: 2rem; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     border-bottom: solid 1px #ddd;
 }
 
@@ -143,76 +106,121 @@ h6
     font-style: italic;
 }
 
-tt, code, kbd, samp {
-    font-family: Consolas, Monaco, 'Andale Mono', monospace;
-}
+/*******************************************************************
+***************************** Table styles **************************
+********************************************************************/
 
-.class-description {
-  font-size: 130%;
-  line-height: 140%;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-.class-description:empty {
-  margin: 0
-}
-
-#main {
-    margin-left: 305px;
-}
-
-header {
-  display: block;
-  padding: 0px 4px;
-}
-
-section
+table
 {
-    display: block;
-    background-color: #fff;
-    padding: 12px 24px;
-    margin-right: 30px;
+    table-layout: fixed;
+    width: 105%;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border-spacing: 0;
+    border: 0;
+    border-collapse: collapse;
 }
 
-.apiLinks 
+td table
 {
-    display: inline-block;
+    width: 100%;
+    margin-left: 0;
+}
+
+td thead
+{
+    display: none;
+}
+
+td td
+{
+    border: none;
+}
+
+th 
+{ 
+    border-right: 1px solid #aaa; 
+    font-weight: normal;
+    background-color: #ddd;
+}
+
+tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
+
+td, th
+{
     font-size: 90%;
-    text-align: right;
-    float: right;
-    margin-right: 30px;    
+    border: 1px solid #ddd;
+    margin: 0px;
+    text-align: left;
+    word-wrap: break-word;
+    vertical-align: top;
+    padding: 4px 6px;
+    display: table-cell;
 }
 
-.variation {
-  display: none
+tr > th:first-child, td:first-child
+{
+    width: 370px;
 }
 
-.signature-attributes {
-  font-size: 60%;
-  color: #808080;
-  font-style: italic;
-  font-weight: lighter;
+th.type
+{
+    width: 270px;
 }
+
+td:nth-child(4) {
+    width: 45%;
+}
+
+/*******************************************************************
+****************************** Link styles *************************
+********************************************************************/
+
+a,
+a:active {
+  color: #606;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a, a:visited, a:active {
+    color: #0095dd;
+    text-decoration: none;
+}
+
+article a {
+  border-bottom: 1px solid #ddd;
+}
+
+article a:hover, article a:active {
+  border-bottom-color: #222;
+}
+
 /*******************************************************************
 ********************** Navigation sidebar styles *******************
 ********************************************************************/
-nav
-{
+nav {
     position: fixed;
-    top: 150px;
+    top: 165px;
     bottom: 0;
     left: 0;
     right: 0;
     width: 305px;
     border-right: 1px solid #ccc;
     overflow-y: scroll;
-    padding-left: 35px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     box-sizing: border-box;
 }
 
-nav #nav-search{
+nav #nav-search {
     width: 210px;
     height: 30px;
     padding: 5px 10px;
@@ -223,12 +231,11 @@ nav #nav-search{
     margin-top: 20px;
 }
 
-.nav-header
-{
+.nav-header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 150px;
+    height: 165px;
     width: 305px;
     background-color: #00B4EF;
     vertical-align: middle;
@@ -236,19 +243,22 @@ nav #nav-search{
     margin-top: 0px;    
 }
 
+.nav-header p {
+    padding-top: 15px;
+}
 nav h3 {
     margin-top: 12px;
 }
 
 nav ul {
-    font-size: 13px;
+    font-size: 0.9rem;
     padding-left: 0;
     margin: 0;
     list-style: none;
 }
 
 nav ul ul {
-    padding-left: 10px;
+    padding-left: 15px;
     margin: 0;
     list-style: none;
 }
@@ -262,14 +272,14 @@ nav li
 {
     margin-top: 3px;
 }
-
-nav ul li:first-child
-{
-    padding-top: 10px;
-}
-
+ 
 nav ul a, nav ul a:visited, nav ul a:active {
     color: hsl(207, 1%, 60%);
+}
+
+nav a:hover {
+    font-weight: bold;
+    text-decoration: none;
 }
 
 nav ul ul a {
@@ -291,38 +301,152 @@ nav > h2 > a {
    color: #606 !important;
 }
 
+/* open */
+.nav-trigger:checked + label:not(.steps) .navicon:before,
+.nav-trigger:checked + label:not(.steps) .navicon:after {
+  top: 0 !important;
+}
+
+.nav-trigger:checked + label .navicon:before,
+.nav-trigger:checked + label .navicon:after {
+  transition: 0.5s;
+}
+
+/* Minus */
+.nav-trigger:checked + label {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+/* × and + */
+.nav-trigger:checked + label.plus .navicon,
+.nav-trigger:checked + label.x .navicon {
+  background: transparent;
+}
+
+.nav-trigger:checked + label.plus .navicon:before,
+.nav-trigger:checked + label.x .navicon:before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background: #FFF;
+}
+
+.nav-trigger:checked + label.plus .navicon:after,
+.nav-trigger:checked + label.x .navicon:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: #FFF;
+}
+
+.nav-trigger:checked + label.plus {
+  -webkit-transform: scale(0.75) rotate(45deg);
+          transform: scale(0.75) rotate(45deg);
+}
+
+.nav-trigger:checked ~ nav {
+  left: 0 !important;
+}
+
+.nav-trigger:checked ~ .overlay {
+  display: block;
+}
+
+.nav-trigger {
+  position: fixed;
+  top: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
 /********************************************************************
 ***************************** Search styles **************************
 *********************************************************************/
 
 .search-input
 {
-    border-color: #6ddbff;
-    border-radius: 4px;    
-    color: #000000;
-    width: 80%;
-    font-size:  .8rem;
-    padding: .5rem;
-    font-weight: 600;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size:  0.9rem;    
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+    border-radius: 0.1875rem;    
+    color: #3A3F3E;
+    width: 75%;
+    padding: 0.425rem;
+}
+
+/********************************************************************
+***************************** Code styles ***************************
+*********************************************************************/
+
+tt, code, kbd, samp {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.name, .signature {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 0.8rem;
 }
 
 
-footer {
-  color: hsl(0, 0%, 28%);
-  margin-left: 250px;
+
+
+
+
+
+
+img {
+  max-width: 100%;
+}
+
+p, ul, ol, blockquote {
+  margin-bottom: 1em;
+}
+
+
+
+.class-description {
+  font-size: 130%;
+  line-height: 140%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.class-description:empty {
+  margin: 0
+}
+
+#main {
+    margin-left: 305px;
+}
+
+header {
   display: block;
-  padding: 15px;
+  padding: 0px 4px;
+}
+
+
+.apiLinks 
+{
+    display: inline-block;
+    font-size: 90%;
+    text-align: right;
+    float: right;
+    margin-right: 30px;   
+}
+
+.variation {
+  display: none
+}
+
+.signature-attributes {
+  font-size: 60%;
+  color: #808080;
   font-style: italic;
-  font-size: 90%;
+  font-weight: lighter;
 }
 
-a, a:visited, a:active {
-    color: #0095dd;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+.container-overview {
+    margin-top: 25px;
 }
 
 .ancestors {
@@ -335,8 +459,7 @@ a:hover {
 
 .availableIn 
 {
-    padding-top: 0;
-    font-size: 90%;
+    font-size: 0.8rem;
 }
 
 .clear {
@@ -366,9 +489,6 @@ a:hover {
     font-size: 16px;
 }
 
-.name, .signature {
-  font-family: Consolas, Monaco, 'Andale Mono', monospace
-}
 
 .details {
   margin-top: 6px;
@@ -428,7 +548,7 @@ a:hover {
 
 .prettyprint code
 {
-    font-size: 100%;
+    font-size: 0.65rem;
     line-height: 18px;
     display: block;
     padding: 4px 12px;
@@ -475,80 +595,6 @@ a:hover {
   user-select: text;
 }
 
-
-/*******************************************************************
-***************************** Table styles **************************
-********************************************************************/
-
-table
-{
-    table-layout: fixed;
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    border-spacing: 0;
-    border: 0;
-    border-collapse: collapse;
-}
-
-td table
-{
-    width: 100%;
-    margin-left: 0;
-}
-
-td thead
-{
-    display: none;
-}
-
-td td
-{
-    border: none;
-}
-
-thead tr
-{
-    background-color: #ddd;
-    font-weight: bold;
-}
-
-th 
-{ 
-    border-right: 1px solid #aaa; 
-}
-
-tr:nth-child(even)
-{
-    background-color: #f2f2f2;
-}
-
-td, th
-{
-    font-size: 90%;
-    border: 1px solid #ddd;
-    margin: 0px;
-    text-align: left;
-    word-wrap: break-word;
-    vertical-align: top;
-    padding: 4px 6px;
-    display: table-cell;
-}
-
-tr > th:first-child, td:first-child
-{
-    width: 25%;
-}
-
-th.type
-{
-    width: 20%;
-}
-
-td:nth-child(4) {
-    width: 45%;
-}
 
 .params code {
   white-space: pre;
@@ -644,61 +690,6 @@ span.param-type, .params td .param-type, .param-type dd {
   top: -.625rem;
 }
 
-/* open */
-.nav-trigger:checked + label:not(.steps) .navicon:before,
-.nav-trigger:checked + label:not(.steps) .navicon:after {
-  top: 0 !important;
-}
-
-.nav-trigger:checked + label .navicon:before,
-.nav-trigger:checked + label .navicon:after {
-  transition: 0.5s;
-}
-
-/* Minus */
-.nav-trigger:checked + label {
-  -webkit-transform: scale(0.75);
-          transform: scale(0.75);
-}
-
-/* × and + */
-.nav-trigger:checked + label.plus .navicon,
-.nav-trigger:checked + label.x .navicon {
-  background: transparent;
-}
-
-.nav-trigger:checked + label.plus .navicon:before,
-.nav-trigger:checked + label.x .navicon:before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  background: #FFF;
-}
-
-.nav-trigger:checked + label.plus .navicon:after,
-.nav-trigger:checked + label.x .navicon:after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  background: #FFF;
-}
-
-.nav-trigger:checked + label.plus {
-  -webkit-transform: scale(0.75) rotate(45deg);
-          transform: scale(0.75) rotate(45deg);
-}
-
-.nav-trigger:checked ~ nav {
-  left: 0 !important;
-}
-
-.nav-trigger:checked ~ .overlay {
-  display: block;
-}
-
-.nav-trigger {
-  position: fixed;
-  top: 0;
-  clip: rect(0, 0, 0, 0);
-}
 
 .overlay {
   display: none;
@@ -712,6 +703,10 @@ span.param-type, .params td .param-type, .param-type dd {
   background: hsla(0, 0%, 0%, 0.5);
   z-index: 1;
 }
+
+/********************************************************************
+**************************** Mobile styles **************************
+*********************************************************************/
 
 @media only screen and (min-width: 320px) and (max-width: 680px) {
   body {
@@ -743,10 +738,6 @@ span.param-type, .params td .param-type, .param-type dd {
   #main {
     width: 100%;
     min-width: 360px;
-  }
-
-  #main h1.page-title {
-    margin: 1em 0;
   }
 
   #main section {
