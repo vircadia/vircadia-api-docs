@@ -1,4 +1,4 @@
-https://ingerjm0.github.io/hifi-api-docs/
+https://highfidelity.github.io/hifi-api-docs/
 
 ## Welcome to GitHub Pages
 
