@@ -25,6 +25,7 @@ body
     line-height: 1.5;
     letter-spacing: 0.5px;
     margin: 1.5rem;
+    color: #404040;
 }
 
 section
@@ -39,15 +40,15 @@ section
 **************************** Heading styles ***********************
 ********************************************************************/
 h1, h2, h3, h4 {
-	font-family: "Proxima Nova", Helvetica, sans-serif;
+	font-family: "Cairo", Helvetica, sans-serif;
 }
 
 h1
 {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
+    text-align: center;
     letter-spacing: 1.5px;
-    border-bottom: solid 1px #ddd;
-    margin: 12px 24px 20px;
+    margin: 50px 25px 25px;
 }
 
 h2
@@ -63,11 +64,11 @@ h3
 
 h3.navHeading
 {
+    font-family: "Proxima Nova", sans-serif;
     line-height: 2rem; 
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: solid 1px #ddd;
 }
 
 .paramHeading, .typeDef h3.propsHeading, h3.subHeading
@@ -112,16 +113,38 @@ h6
 
 table
 {
-    table-layout: fixed;
-    width: 105%;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    border-spacing: 0;
-    border: 0;
+    width: 100%;
+    background-color: #fff;
     border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    text-align: left;
+    overflow: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
 }
 
+table > thead {
+    background-color: #ddd;
+    border-bottom: 1px solid #ccc;
+    font-weight: 400;
+}
+
+table th, table td {
+    padding: 0.5rem;
+    border-left: 1px solid #ccc;
+}
+
+table tr {
+    border-bottom: 1px solid #ccc;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/*
 td table
 {
     width: 100%;
@@ -175,6 +198,8 @@ th.type
 td:nth-child(4) {
     width: 45%;
 }
+
+*/
 
 /*******************************************************************
 ****************************** Link styles *************************
@@ -416,7 +441,8 @@ p, ul, ol, blockquote {
 }
 
 #main {
-    margin-left: 305px;
+    margin-left: 350px;
+    margin-right: 50px;
 }
 
 header {
@@ -427,11 +453,9 @@ header {
 
 .apiLinks 
 {
-    display: inline-block;
+    display: block;
+    text-align: center;
     font-size: 90%;
-    text-align: right;
-    float: right;
-    margin-right: 30px;   
 }
 
 .variation {
