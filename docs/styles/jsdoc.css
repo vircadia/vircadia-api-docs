@@ -1,3 +1,8 @@
+
+/*******************************************************************
+****************************** Font styles *************************
+********************************************************************/
+
 @font-face{
 	font-family: 'Cairo';
 	src: url('../fonts/Cairo-Bold.ttf') format('truetype');
@@ -7,6 +12,10 @@
 	font-family: 'Proxima Nova';
 	src: url('../fonts/proximanova-regular.otf') format('opentype');
 }
+
+/*******************************************************************
+**************************** General styles ************************
+********************************************************************/
 
 * {
   box-sizing: border-box
@@ -25,7 +34,7 @@ body
     line-height: 1.5;
     letter-spacing: 0.5px;
     margin: 1.5rem;
-    color: #404040;
+    color: #555;
 }
 
 section
@@ -37,8 +46,9 @@ section
 }
 
 /*******************************************************************
-**************************** Heading styles ***********************
+**************************** Heading styles ************************
 ********************************************************************/
+
 h1, h2, h3, h4 {
 	font-family: "Cairo", Helvetica, sans-serif;
 }
@@ -62,28 +72,28 @@ h3
     font-size: 1.5rem;
 }
 
-h3.navHeading
-{
-    font-family: "Proxima Nova", sans-serif;
-    line-height: 2rem; 
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.paramHeading, .typeDef h3.propsHeading, h3.subHeading
-{
-    font-size: 13px;
-    font-weight: bold;
-    border-bottom: solid 1px #ddd;
-}
-
 h4
 {
     font-size: 18px;
     letter-spacing: -0.33px;
     margin-bottom: 12px;
     color: #4d4e53;
+}
+
+h6
+{
+    font-size: 100%;
+    letter-spacing: -0.01em;
+    margin: 6px 0 3px 0;
+    font-style: italic;
+}
+
+.paramHeading, .typeDef h3.propsHeading, h3.subHeading
+{
+    font-size: .9rem;
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    border-bottom: solid 1px #ddd;
 }
 
 h4.name
@@ -99,16 +109,8 @@ h5, .container-overview .subsection-title
     margin-bottom: 5px;
 }
 
-h6
-{
-    font-size: 100%;
-    letter-spacing: -0.01em;
-    margin: 6px 0 3px 0;
-    font-style: italic;
-}
-
 /*******************************************************************
-***************************** Table styles **************************
+**************************** Table styles **************************
 ********************************************************************/
 
 table
@@ -144,93 +146,38 @@ table tr:nth-child(even) {
     background-color: #f8f8f8;
 }
 
-/*
-td table
-{
-    width: 100%;
-    margin-left: 0;
-}
-
-td thead
-{
-    display: none;
-}
-
-td td
-{
-    border: none;
-}
-
-th 
-{ 
-    border-right: 1px solid #aaa; 
-    font-weight: normal;
-    background-color: #ddd;
-}
-
-tr:nth-child(even)
-{
-    background-color: #f2f2f2;
-}
-
-td, th
-{
-    font-size: 90%;
-    border: 1px solid #ddd;
-    margin: 0px;
-    text-align: left;
-    word-wrap: break-word;
-    vertical-align: top;
-    padding: 4px 6px;
-    display: table-cell;
-}
-
-tr > th:first-child, td:first-child
-{
-    width: 370px;
-}
-
-th.type
-{
-    width: 270px;
-}
-
-td:nth-child(4) {
-    width: 45%;
-}
-
-*/
-
 /*******************************************************************
 ****************************** Link styles *************************
 ********************************************************************/
 
-a,
-a:active {
-  color: #606;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 a, a:visited, a:active {
-    color: #0095dd;
-    text-decoration: none;
+  color: #1694CA;
+  text-decoration: none;
 }
 
-article a {
-  border-bottom: 1px solid #ddd;
+article a:hover {
+  color: #0e6185;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-article a:hover, article a:active {
-  border-bottom-color: #222;
+
+/*******************************************************************
+***************************** List styles **************************
+********************************************************************/
+
+article ul {
+    margin-bottom: 1.7em;
+}
+
+article li {
+    padding-bottom: 5px;
 }
 
 /*******************************************************************
 ********************** Navigation sidebar styles *******************
 ********************************************************************/
+
 nav {
     position: fixed;
     top: 165px;
@@ -271,15 +218,23 @@ nav #nav-search {
 .nav-header p {
     padding-top: 15px;
 }
+
 nav h3 {
-    margin-top: 12px;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 nav ul {
     font-size: 0.9rem;
-    padding-left: 0;
+    padding-left: 15px;
     margin: 0;
     list-style: none;
+}
+
+nav ul a, nav ul a:visited, nav ul a:active {
+    color: #a1a1a1;
 }
 
 nav ul ul {
@@ -298,22 +253,12 @@ nav li
     margin-top: 3px;
 }
  
-nav ul a, nav ul a:visited, nav ul a:active {
-    color: hsl(207, 1%, 60%);
-}
 
 nav a:hover {
     font-weight: bold;
     text-decoration: none;
 }
 
-nav ul ul a {
-  font-size: 100%;
-}
-
-nav ul ul a:active {
-  padding-left: 5px;
-}
 
 nav h2 {
    margin: 0;
@@ -456,6 +401,7 @@ header {
     display: block;
     text-align: center;
     font-size: 90%;
+    margin-top: -20px;
 }
 
 .variation {
@@ -512,7 +458,6 @@ header {
     font-family: Consolas, Monaco, 'Andale Mono', monospace;
     font-size: 16px;
 }
-
 
 .details {
   margin-top: 6px;
