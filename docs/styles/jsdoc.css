@@ -4,8 +4,8 @@
 ********************************************************************/
 
 @font-face{
-	font-family: 'Cairo';
-	src: url('../fonts/Cairo-Bold.ttf') format('truetype');
+	font-family: 'Graphik';
+	src: url('../fonts/Graphik-SemiBold.otf') format('opentype');
 }
 
 @font-face{
@@ -50,14 +50,13 @@ section
 ********************************************************************/
 
 h1, h2, h3, h4 {
-	font-family: "Cairo", Helvetica, sans-serif;
+	font-family: "Graphik", Helvetica, sans-serif;
 }
 
 h1
 {
     font-size: 3.25rem;
     text-align: center;
-    letter-spacing: 1.5px;
     margin: 50px 25px 25px;
 }
 
@@ -180,11 +179,12 @@ article li {
 
 nav {
     position: fixed;
-    top: 165px;
+    top: 225px;
     bottom: 0;
     left: 0;
     right: 0;
     width: 305px;
+    background-color: #D8E1D9;
     border-right: 1px solid #ccc;
     overflow-y: scroll;
     padding-left: 20px;
@@ -207,16 +207,21 @@ nav #nav-search {
     position: fixed;
     top: 0;
     left: 0;
-    height: 165px;
+    height: 225px;
     width: 305px;
-    background-color: #00B4EF;
+    background-color: #009EE0;
     vertical-align: middle;
     text-align: center;
     margin-top: 0px;    
 }
 
 .nav-header p {
-    padding-top: 15px;
+    padding-top: 15px;    
+}
+
+.nav-header a {
+    color: #FFFFFF;
+    font-size: .9rem;
 }
 
 nav h3 {
@@ -234,7 +239,11 @@ nav ul {
 }
 
 nav ul a, nav ul a:visited, nav ul a:active {
-    color: #a1a1a1;
+    color: #555;
+}
+
+nav ul a:hover {
+    font-weight: bold;
 }
 
 nav ul ul {
@@ -580,13 +589,8 @@ header {
    padding-top: 0;
 }
 
-.params td.description > p:last-child, .props td.description > p:last-child {
-   margin-bottom: 0;
-   padding-bottom: 0;
-}
-
 span.param-type, .params td .param-type, .param-type dd {
-   color: #606;
+  color: #606;
   font-family: Consolas, Monaco, 'Andale Mono', monospace
 }
 
