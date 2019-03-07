@@ -812,18 +812,12 @@
         "scope": "static"
     },
     {
-        "description": "The <code>HifiAbout</code> API provides information about the version of Interface that is currently running. It also \rprovides the ability to open a Web page in an Interface browser window.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The <code>HifiAbout</code> API provides information about the version of Interface that is currently running. It also\rhas the functionality to open a web page in an Interface browser window.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "HifiAbout",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -854,13 +848,13 @@
             }
         ],
         "examples": [
-            "<caption>Report build information for the version of Interface currently running.</caption>\rprint(\"HiFi build date: \" + HifiAbout.buildDate);  // 11 Feb 2019\rprint(\"HiFi version: \" + HifiAbout.buildVersion);  // 0.78.0\rprint(\"Qt version: \" + HifiAbout.qtVersion);  // 5.10.1"
+            "<caption>Report build information for the version of Interface currently running.</caption>\rprint(\"HiFi build date: \" + HifiAbout.buildDate);  // Returns the build date of the version of Interface currently running on your machine.\rprint(\"HiFi version: \" + HifiAbout.buildVersion);  // Returns the build version of Interface currently running on your machine.\rprint(\"Qt version: \" + HifiAbout.qtVersion);  // Returns the Qt version details of the version of Interface currently running on your machine."
         ],
         "longname": "HifiAbout",
         "scope": "global"
     },
     {
-        "description": "Display a Web page in an Interface browser window.",
+        "description": "Display a web page in an Interface browser window.",
         "kind": "function",
         "name": "openUrl",
         "params": [
@@ -870,7 +864,7 @@
                         "string"
                     ]
                 },
-                "description": "The URL of the Web page to display.",
+                "description": "The URL of the web page you want to view in Interface.",
                 "name": "url"
             }
         ],
@@ -892,18 +886,12 @@
         "scope": "static"
     },
     {
-        "description": "This API helps manage adding and deleting avatar bookmarks.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "This API helps manage adding and deleting avatar bookmarks.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "AvatarBookmarks",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "AvatarBookmarks",
         "scope": "global"
     },
@@ -1055,16 +1043,10 @@
         "name": "LocationBookmarks",
         "hifiClientEntity": true,
         "hifiInterface": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "LocationBookmarks",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -1091,18 +1073,12 @@
         "scope": "static"
     },
     {
-        "description": "The LOD class manages your Level of Detail functions within Interface.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The LOD class manages your Level of Detail functions within Interface.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "LODManager",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -1414,16 +1390,10 @@
         "name": "SpeechRecognizer",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "SpeechRecognizer",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -1529,18 +1499,12 @@
         "scope": "static"
     },
     {
-        "description": "The AudioScope API helps control the Audio Scope features in Interface<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The AudioScope API helps control the Audio Scope features in Interface<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "AudioScope",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -2150,18 +2114,12 @@
         "scope": "static"
     },
     {
-        "description": "The AvatarManager API has properties and methods which manage Avatars within the same domain.\r\r<p><strong>Note:</strong> This API is also provided to Interface and client entity scripts as the synonym, \r<code>AvatarList</code>. For assignment client scripts, see the separate {@link AvatarList} API.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The AvatarManager API has properties and methods which manage Avatars within the same domain.\r\r<p><strong>Note:</strong> This API is also provided to Interface and client entity scripts as the synonym, \r<code>AvatarList</code>. For assignment client scripts, see the separate {@link AvatarList} API.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "AvatarManager",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "AvatarManager",
         "scope": "global"
     },
@@ -2545,18 +2503,12 @@
         "scope": "static"
     },
     {
-        "description": "Your avatar is your in-world representation of you. The <code>MyAvatar</code> API is used to manipulate the avatar.\rFor example, you can customize the avatar's appearance, run custom avatar animations,\rchange the avatar's position within the domain, or manage the avatar's collisions with other objects.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "Your avatar is your in-world representation of you. The <code>MyAvatar</code> API is used to manipulate the avatar.\rFor example, you can customize the avatar's appearance, run custom avatar animations,\rchange the avatar's position within the domain, or manage the avatar's collisions with other objects.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "MyAvatar",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -5875,7 +5827,7 @@
         "scope": "static"
     },
     {
-        "description": "<p>A <code>WalletStatus</code> may have one of the following values:</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Meaning</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>Not logged in</td><td>The user isn't logged in.</td></tr>\r    <tr><td><code>1</code></td><td>Not set up</td><td>The user's wallet isn't set up.</td></tr>\r    <tr><td><code>2</code></td><td>Pre-existing</td><td>There is a wallet present on the server but not one \r      locally.</td></tr>\r    <tr><td><code>3</code></td><td>Conflicting</td><td>There is a wallet present on the server plus one present locally, \r      and they don't match.</td></tr>\r    <tr><td><code>4</code></td><td>Not authenticated</td><td>There is a wallet present locally but the user hasn't \r      logged into it.</td></tr>\r    <tr><td><code>5</code></td><td>Ready</td><td>The wallet is ready for use.</td></tr>\r  </tbody>\r</table>\r<p>Wallets used to be stored locally but now they're stored on the server, unless the computer once had a wallet stored\rlocally in which case the wallet may be present in both places.</p>",
+        "description": "<p>A <code>WalletStatus</code> may have one of the following values:</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Meaning</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>Not logged in</td><td>The user is not logged in.</td></tr>\r    <tr><td><code>1</code></td><td>Not set up</td><td>The user's wallet has not been set up.</td></tr>\r    <tr><td><code>2</code></td><td>Pre-existing</td><td>There is a wallet present on the server but not one \r      locally.</td></tr>\r    <tr><td><code>3</code></td><td>Conflicting</td><td>There is a wallet present on the server plus one present locally, \r      and they don't match.</td></tr>\r    <tr><td><code>4</code></td><td>Not authenticated</td><td>There is a wallet present locally but the user hasn't \r      logged into it.</td></tr>\r    <tr><td><code>5</code></td><td>Ready</td><td>The wallet is ready for use.</td></tr>\r  </tbody>\r</table>\r<p>Wallets used to be stored locally but now they're only stored on the server. A wallet is present in both places if      \ryour computer previously stored its information locally.</p>",
         "kind": "typedef",
         "name": "WalletStatus",
         "type": {
@@ -5888,18 +5840,12 @@
         "scope": "static"
     },
     {
-        "description": "The FaceTracker API helps manage facial tracking hardware.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The FaceTracker API helps manage facial tracking hardware.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "FaceTracker",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "FaceTracker",
         "scope": "global"
     },
@@ -5928,18 +5874,12 @@
         "scope": "static"
     },
     {
-        "description": "Synonym for {@link Pointers} as used for laser pointers.  Deprecated.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "Synonym for {@link Pointers} as used for laser pointers.  Deprecated.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "LaserPointers",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "LaserPointers",
         "scope": "global"
     },
@@ -6835,18 +6775,12 @@
         "scope": "static"
     },
     {
-        "description": "The Picks API lets you create and manage objects for repeatedly calculating intersections in different ways.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Picks API lets you create and manage objects for repeatedly calculating intersections in different ways.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Picks",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -8686,18 +8620,12 @@
         "scope": "static"
     },
     {
-        "description": "The Pointers API lets you create and manage objects for repeatedly calculating intersections in different ways, as well as the visual representation of those objects.\r Pointers can also be configured to automatically generate {@link PointerEvent}s on {@link Entities}.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Pointers API lets you create and manage objects for repeatedly calculating intersections in different ways, as well as the visual representation of those objects.\r Pointers can also be configured to automatically generate {@link PointerEvent}s on {@link Entities}.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Pointers",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Pointers",
         "scope": "global"
     },
@@ -9209,18 +9137,12 @@
         "scope": "static"
     },
     {
-        "description": "Synonym for {@link Picks} as used for ray picks.  Deprecated.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "Synonym for {@link Picks} as used for ray picks.  Deprecated.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "RayPick",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -9830,7 +9752,7 @@
                         "Array.<number>"
                     ]
                 },
-                "description": "The percentage complete for each asset currently being downloaded.",
+                "description": "The download percentage remaining of each asset currently downloading.",
                 "name": "downloading"
             },
             {
@@ -9839,7 +9761,7 @@
                         "number"
                     ]
                 },
-                "description": "The number of assets waiting to be download.",
+                "description": "The number of assets pending download.",
                 "name": "pending"
             }
         ],
@@ -9848,16 +9770,10 @@
         "scope": "static"
     },
     {
-        "description": "The <code>AccountServices</code> API provides functions related to user connectivity, visibility, and asset download \rprogress.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The <code>AccountServices</code> API provides functions that give information on user connectivity, visibility, and \rasset download progress.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "kind": "namespace",
         "name": "AccountServices",
         "properties": [
@@ -9867,7 +9783,7 @@
                         "string"
                     ]
                 },
-                "description": "The user name if the user is logged in, otherwise <code>\"Unknown user\"</code>.\r    <em>Read-only.</em>",
+                "description": "The user name of the user logged in. If there is no user logged in, it is\r    <code>\"Unknown user\"</code>. <em>Read-only.</em>",
                 "name": "username"
             },
             {
@@ -9885,7 +9801,7 @@
                         "string"
                     ]
                 },
-                "description": "The user's visibility to other people:<br />\r    <code>\"none\"</code> - user appears offline.<br />\r    <code>\"friends\"</code> - user is visible only to friends.<br />\r    <code>\"connections\"</code> - user is visible to friends and connections.<br />\r    <code>\"all\"</code> - user is visible to everyone.",
+                "description": "The user's visibility to other users:<br />\r    <code>\"none\"</code> - user appears offline.<br />\r    <code>\"friends\"</code> - user is visible only to friends.<br />\r    <code>\"connections\"</code> - user is visible to friends and connections.<br />\r    <code>\"all\"</code> - user is visible to everyone.",
                 "name": "findableBy"
             },
             {
@@ -9902,7 +9818,7 @@
         "scope": "global"
     },
     {
-        "description": "Get information on the progress of downloading assets in the domain.",
+        "description": "Gets information on the download progress of assets in the domain.",
         "kind": "function",
         "name": "getDownloadInfo",
         "returns": [
@@ -9912,7 +9828,7 @@
                         "AccountServices.DownloadInfoResult"
                     ]
                 },
-                "description": "Information on the progress of assets download."
+                "description": "Information on the download progress of assets."
             }
         ],
         "memberof": "AccountServices",
@@ -9920,7 +9836,7 @@
         "scope": "static"
     },
     {
-        "description": "Cause a {@link AccountServices.downloadInfoChanged|downloadInfoChanged} signal to be triggered with information on the \rcurrent progress of the download of assets in the domain.",
+        "description": "Triggers a {@link AccountServices.downloadInfoChanged|downloadInfoChanged} signal with information on the current\rdownload progress of the assets in the domain.",
         "kind": "function",
         "name": "updateDownloadInfo",
         "memberof": "AccountServices",
@@ -9928,7 +9844,7 @@
         "scope": "static"
     },
     {
-        "description": "Check whether the user is logged in.",
+        "description": "Checks whether the user is logged in.",
         "kind": "function",
         "name": "isLoggedIn",
         "returns": [
@@ -9938,7 +9854,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the user is logged in, <code>false</code> otherwise."
+                "description": "<code>true</code> if the user is logged in, <code>false</code> if not."
             }
         ],
         "examples": [
@@ -9949,7 +9865,7 @@
         "scope": "static"
     },
     {
-        "description": "Prompts the user to log in (the login dialog is displayed) if they're not already logged in.",
+        "description": "The function returns the login status of the user and prompts the user to log in (with a login dialog) if they're not already logged in.",
         "kind": "function",
         "name": "checkAndSignalForAccessToken",
         "returns": [
@@ -9959,7 +9875,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the user is already logged in, <code>false</code> otherwise."
+                "description": "<code>true</code> if the user is logged in, <code>false</code> if not."
             }
         ],
         "memberof": "AccountServices",
@@ -9976,7 +9892,7 @@
     },
     {
         "description": "Not currently used.",
-        "kind": "function",
+        "kind": "signal",
         "name": "connected",
         "returns": [
             {
@@ -9993,7 +9909,7 @@
     },
     {
         "description": "Triggered when the user logs out.",
-        "kind": "function",
+        "kind": "signal",
         "name": "disconnected",
         "params": [
             {
@@ -10020,8 +9936,8 @@
         "scope": "static"
     },
     {
-        "description": "Triggered when the username logged in with changes, i.e., when the user logs in or out.",
-        "kind": "function",
+        "description": "The user name of the user logged in. If there is no user logged in, it is <code>\"\"</code>.",
+        "kind": "signal",
         "name": "myUsernameChanged",
         "params": [
             {
@@ -10051,8 +9967,8 @@
         "scope": "static"
     },
     {
-        "description": "Triggered when the progress of the download of assets for the domain changes.",
-        "kind": "function",
+        "description": "Triggered when the download progress of the assets in the domain changes.",
+        "kind": "signal",
         "name": "downloadInfoChanged",
         "params": [
             {
@@ -10061,7 +9977,7 @@
                         "AccountServices.DownloadInfoResult"
                     ]
                 },
-                "description": "Information on the progress of assets download.",
+                "description": "Information on the download progress of assets.",
                 "name": "downloadInfo"
             }
         ],
@@ -10080,7 +9996,7 @@
     },
     {
         "description": "Triggered when the user's visibility to others changes.",
-        "kind": "function",
+        "kind": "signal",
         "name": "findableByChanged",
         "params": [
             {
@@ -10111,7 +10027,7 @@
     },
     {
         "description": "Triggered when the login status of the user changes.",
-        "kind": "function",
+        "kind": "signal",
         "name": "loggedInChanged",
         "params": [
             {
@@ -10120,7 +10036,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the user is logged in, otherwise <code>false</code>.",
+                "description": "<code>true</code> if the user is logged in, <code>false</code> if not.",
                 "name": "loggedIn"
             }
         ],
@@ -10141,18 +10057,12 @@
         "scope": "static"
     },
     {
-        "description": "The <code>Audio</code> API provides facilities to interact with audio inputs and outputs and to play sounds.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "The <code>Audio</code> API provides facilities to interact with audio inputs and outputs and to play sounds.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Audio",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -10598,18 +10508,12 @@
         "scope": "static"
     },
     {
-        "description": "The Clipboard API enables you to export and import entities to and from JSON files.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Clipboard API enables you to export and import entities to and from JSON files.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Clipboard",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Clipboard",
         "scope": "global"
     },
@@ -10829,18 +10733,12 @@
         "scope": "static"
     },
     {
-        "description": "The Controller API provides facilities to interact with computer and controller hardware.\r\r<h5>Functions</h5>\r\r<p>Properties</p>\r<ul>\r  <li>{@link Controller.getActions|getActions}</li>\r  <li>{@link Controller.getHardware|getHardware}</li>\r  <li>{@link Controller.getStandard|getStandard}</li>\r</ul>\r\r<p>Mappings</p>\r<ul>\r  <li>{@link Controller.disableMapping|disableMapping}</li>\r  <li>{@link Controller.enableMapping|enableMapping}</li>\r  <li>{@link Controller.loadMapping|loadMapping}</li>\r  <li>{@link Controller.newMapping|newMapping}</li>\r  <li>{@link Controller.parseMapping|parseMapping}</li>\r</ul>\r\r<p>Input, Hardware, and Action Reflection</p>\r<ul>\r  <li>{@link Controller.findAction|findAction}</li>\r  <li>{@link Controller.findDevice|findDevice}</li>\r  <li>{@link Controller.getActionNames|getActionNames}</li>\r  <li>{@link Controller.getAllActions|getAllActions}</li>\r  <li>{@link Controller.getAvailableInputs|getAvailableInputs}</li>\r  <li>{@link Controller.getDeviceName|getDeviceName}</li>\r  <li>{@link Controller.getDeviceNames|getDeviceNames}</li>\r</ul>\r\r<p>Input, Hardware, and Action Events</p>\r<ul>\r  <li>{@link Controller.actionEvent|actionEvent}</li>\r  <li>{@link Controller.hardwareChanged|hardwareChanged}</li>\r  <li>{@link Controller.inputEvent|inputEvent}</li>\r</ul>\r\r<p>Mouse, Keyboard, and Touch Events</p>\r<ul>\r  <li>{@link Controller.keyPressEvent|keyPressEvent}</li>\r  <li>{@link Controller.keyReleaseEvent|keyReleaseEvent}</li>\r  <li>{@link Controller.mouseDoublePressEvent|mouseDoublePressEvent}</li>\r  <li>{@link Controller.mouseMoveEvent|mouseMoveEvent}</li>\r  <li>{@link Controller.mousePressEvent|mousePressEvent}</li>\r  <li>{@link Controller.mouseReleaseEvent|mouseReleaseEvent}</li>\r  <li>{@link Controller.touchBeginEvent|touchBeginEvent}</li>\r  <li>{@link Controller.touchEndEvent|touchEndEvent}</li>\r  <li>{@link Controller.touchUpdateEvent|touchUpdateEvent}</li>\r  <li>{@link Controller.wheelEvent|wheelEvent}</li>\r</ul>\r\r<p>Control Capturing</p>\r<ul>\r  <li>{@link Controller.captureMouseEvents|captureMouseEvents}</li>\r  <li>{@link Controller.captureTouchEvents|captureTouchEvents}</li>\r  <li>{@link Controller.captureWheelEvents|captureWheelEvents}</li>\r  <li>{@link Controller.releaseMouseEvents|releaseMouseEvents}</li>\r  <li>{@link Controller.releaseTouchEvents|releaseTouchEvents}</li>\r  <li>{@link Controller.releaseWheelEvents|releaseWheelEvents}</li>\r</ul>\r\r<p>Action Capturing</p>\r<ul>\r  <li>{@link Controller.captureActionEvents|captureActionEvents}</li>\r  <li>{@link Controller.captureEntityClickEvents|captureEntityClickEvents}</li>\r  <li>{@link Controller.captureJoystick|captureJoystick}</li>\r  <li>{@link Controller.captureKeyEvents|captureKeyEvents}</li>\r  <li>{@link Controller.releaseActionEvents|releaseActionEvents}</li>\r  <li>{@link Controller.releaseEntityClickEvents|releaseEntityClickEvents}</li>\r  <li>{@link Controller.releaseJoystick|releaseJoystick}</li>\r  <li>{@link Controller.releaseKeyEvents|releaseKeyEvents}</li>\r</ul>\r\r<p>Controller and Action Values</p>\r<ul>\r  <li>{@link Controller.getValue|getValue}</li>\r  <li>{@link Controller.getAxisValue|getAxisValue}</li>\r  <li>{@link Controller.getPoseValue|getPoseValue}</li>\r  <li>{@link Controller.getActionValue|getActionValue}</li>\r</ul>\r\r<p>Haptics</p>\r<ul>\r  <li>{@link Controller.triggerHapticPulse|triggerHapticPulse}</li>\r  <li>{@link Controller.triggerHapticPulseOnDevice|triggerHapticPulseOnDevice}</li>\r  <li>{@link Controller.triggerShortHapticPulse|triggerShortHapticPulse}</li>\r  <li>{@link Controller.triggerShortHapticPulseOnDevice|triggerShortHapticPulseOnDevice}</li>\r</ul>\r\r<p>Display Information</p>\r<ul>\r  <li>{@link Controller.getViewportDimensions|getViewportDimensions}</li>\r  <li>{@link Controller.getRecommendedHUDRect|getRecommendedHUDRect}</li>\r</ul>\r\r<p>Virtual Game Pad</p>\r<ul>\r  <li>{@link Controller.setVPadEnabled|setVPadEnabled}</li>\r  <li>{@link Controller.setVPadHidden|setVPadHidden}</li>\r  <li>{@link Controller.setVPadExtraBottomMargin|setVPadExtraBottomMargin}</li>\r</ul>\r\r<p>Input Recordings</p>\r<ul>\r  <li>{@link Controller.startInputRecording|startInputRecording}</li>\r  <li>{@link Controller.stopInputRecording|stopInputRecording}</li>\r  <li>{@link Controller.saveInputRecording|saveInputRecording}</li>\r  <li>{@link Controller.getInputRecorderSaveDirectory|getInputRecorderSaveDirectory}</li>\r  <li>{@link Controller.loadInputRecording|loadInputRecording}</li>\r  <li>{@link Controller.startInputPlayback|startInputPlayback}</li>\r  <li>{@link Controller.stopInputPlayback|stopInputPlayback}</li>\r</ul>\r\r<h5>Entity Methods:</h5>\r\r<p>The default scripts implement hand controller actions that use {@link Entities.callEntityMethod} to call entity script \rmethods, if present in the entity being interacted with.</p>\r\r<table>\r  <thead>\r    <tr><th>Method Name</th><th>Description</th><th>Example</th></tr>\r  </thead>\r  <tbody>\r    <tr>\r      <td><code>startFarTrigger</code><br /><code>continueFarTrigger</code><br /><code>stopFarTrigger</code></td>\r      <td>These methods are called when a user is more than 0.3m away from the entity, the entity is triggerable, and the \r        user starts, continues, or stops squeezing the trigger.</td>\r      </td>\r      <td>A light switch that can be toggled on and off from a distance.</td>\r    </tr>\r    <tr>\r      <td><code>startNearTrigger</code><br /><code>continueNearTrigger</code><br /><code>stopNearTrigger</code></td>\r      <td>These methods are called when a user is less than 0.3m away from the entity, the entity is triggerable, and the \r        user starts, continues, or stops squeezing the trigger.</td>\r      <td>A doorbell that can be rung when a user is near.</td>\r    </tr>\r    <tr>\r      <td><code>startDistanceGrab</code><br /><code>continueDistanceGrab</code><br /></td>\r      <td>These methods are called when a user is more than 0.3m away from the entity, the entity is either cloneable, or\r        grabbable and not locked, and the user starts or continues to squeeze the trigger.</td>\r      <td>A comet that emits icy particle trails when a user is dragging it through the sky.</td>\r    </tr>\r    <tr>\r      <td><code>startNearGrab</code><br /><code>continueNearGrab</code><br /></td>\r      <td>These methods are called when a user is less than 0.3m away from the entity, the entity is either cloneable, or \r        grabbable and not locked, and the user starts or continues to squeeze the trigger.</td>\r      <td>A ball that glows when it's being held close.</td>\r    </tr>\r    <tr>\r      <td><code>releaseGrab</code></td>\r      <td>This method is called when a user releases the trigger when having been either distance or near grabbing an \r        entity.</td>\r      <td>Turn off the ball glow or comet trail with the user finishes grabbing it.</td>\r    </tr>\r    <tr>\r      <td><code>startEquip</code><br /><code>continueEquip</code><br /><code>releaseEquip</code></td>\r      <td>These methods are called when a user starts, continues, or stops equipping an entity.</td>\r      <td>A glass that stays in the user's hand after the trigger is clicked.</td>\r    </tr>\r  </tbody>\r</table>\r<p>All the entity methods are called with the following two arguments:</p>\r<ul>\r  <li>The entity ID.</li>\r  <li>A string, <code>\"hand,userID\"</code> &mdash; where \"hand\" is <code>\"left\"</code> or <code>\"right\"</code>, and \"userID\"\r    is the user's {@link MyAvatar|MyAvatar.sessionUUID}.</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Controller API provides facilities to interact with computer and controller hardware.\r\r<h5>Functions</h5>\r\r<p>Properties</p>\r<ul>\r  <li>{@link Controller.getActions|getActions}</li>\r  <li>{@link Controller.getHardware|getHardware}</li>\r  <li>{@link Controller.getStandard|getStandard}</li>\r</ul>\r\r<p>Mappings</p>\r<ul>\r  <li>{@link Controller.disableMapping|disableMapping}</li>\r  <li>{@link Controller.enableMapping|enableMapping}</li>\r  <li>{@link Controller.loadMapping|loadMapping}</li>\r  <li>{@link Controller.newMapping|newMapping}</li>\r  <li>{@link Controller.parseMapping|parseMapping}</li>\r</ul>\r\r<p>Input, Hardware, and Action Reflection</p>\r<ul>\r  <li>{@link Controller.findAction|findAction}</li>\r  <li>{@link Controller.findDevice|findDevice}</li>\r  <li>{@link Controller.getActionNames|getActionNames}</li>\r  <li>{@link Controller.getAllActions|getAllActions}</li>\r  <li>{@link Controller.getAvailableInputs|getAvailableInputs}</li>\r  <li>{@link Controller.getDeviceName|getDeviceName}</li>\r  <li>{@link Controller.getDeviceNames|getDeviceNames}</li>\r</ul>\r\r<p>Input, Hardware, and Action Events</p>\r<ul>\r  <li>{@link Controller.actionEvent|actionEvent}</li>\r  <li>{@link Controller.hardwareChanged|hardwareChanged}</li>\r  <li>{@link Controller.inputEvent|inputEvent}</li>\r</ul>\r\r<p>Mouse, Keyboard, and Touch Events</p>\r<ul>\r  <li>{@link Controller.keyPressEvent|keyPressEvent}</li>\r  <li>{@link Controller.keyReleaseEvent|keyReleaseEvent}</li>\r  <li>{@link Controller.mouseDoublePressEvent|mouseDoublePressEvent}</li>\r  <li>{@link Controller.mouseMoveEvent|mouseMoveEvent}</li>\r  <li>{@link Controller.mousePressEvent|mousePressEvent}</li>\r  <li>{@link Controller.mouseReleaseEvent|mouseReleaseEvent}</li>\r  <li>{@link Controller.touchBeginEvent|touchBeginEvent}</li>\r  <li>{@link Controller.touchEndEvent|touchEndEvent}</li>\r  <li>{@link Controller.touchUpdateEvent|touchUpdateEvent}</li>\r  <li>{@link Controller.wheelEvent|wheelEvent}</li>\r</ul>\r\r<p>Control Capturing</p>\r<ul>\r  <li>{@link Controller.captureMouseEvents|captureMouseEvents}</li>\r  <li>{@link Controller.captureTouchEvents|captureTouchEvents}</li>\r  <li>{@link Controller.captureWheelEvents|captureWheelEvents}</li>\r  <li>{@link Controller.releaseMouseEvents|releaseMouseEvents}</li>\r  <li>{@link Controller.releaseTouchEvents|releaseTouchEvents}</li>\r  <li>{@link Controller.releaseWheelEvents|releaseWheelEvents}</li>\r</ul>\r\r<p>Action Capturing</p>\r<ul>\r  <li>{@link Controller.captureActionEvents|captureActionEvents}</li>\r  <li>{@link Controller.captureEntityClickEvents|captureEntityClickEvents}</li>\r  <li>{@link Controller.captureJoystick|captureJoystick}</li>\r  <li>{@link Controller.captureKeyEvents|captureKeyEvents}</li>\r  <li>{@link Controller.releaseActionEvents|releaseActionEvents}</li>\r  <li>{@link Controller.releaseEntityClickEvents|releaseEntityClickEvents}</li>\r  <li>{@link Controller.releaseJoystick|releaseJoystick}</li>\r  <li>{@link Controller.releaseKeyEvents|releaseKeyEvents}</li>\r</ul>\r\r<p>Controller and Action Values</p>\r<ul>\r  <li>{@link Controller.getValue|getValue}</li>\r  <li>{@link Controller.getAxisValue|getAxisValue}</li>\r  <li>{@link Controller.getPoseValue|getPoseValue}</li>\r  <li>{@link Controller.getActionValue|getActionValue}</li>\r</ul>\r\r<p>Haptics</p>\r<ul>\r  <li>{@link Controller.triggerHapticPulse|triggerHapticPulse}</li>\r  <li>{@link Controller.triggerHapticPulseOnDevice|triggerHapticPulseOnDevice}</li>\r  <li>{@link Controller.triggerShortHapticPulse|triggerShortHapticPulse}</li>\r  <li>{@link Controller.triggerShortHapticPulseOnDevice|triggerShortHapticPulseOnDevice}</li>\r</ul>\r\r<p>Display Information</p>\r<ul>\r  <li>{@link Controller.getViewportDimensions|getViewportDimensions}</li>\r  <li>{@link Controller.getRecommendedHUDRect|getRecommendedHUDRect}</li>\r</ul>\r\r<p>Virtual Game Pad</p>\r<ul>\r  <li>{@link Controller.setVPadEnabled|setVPadEnabled}</li>\r  <li>{@link Controller.setVPadHidden|setVPadHidden}</li>\r  <li>{@link Controller.setVPadExtraBottomMargin|setVPadExtraBottomMargin}</li>\r</ul>\r\r<p>Input Recordings</p>\r<ul>\r  <li>{@link Controller.startInputRecording|startInputRecording}</li>\r  <li>{@link Controller.stopInputRecording|stopInputRecording}</li>\r  <li>{@link Controller.saveInputRecording|saveInputRecording}</li>\r  <li>{@link Controller.getInputRecorderSaveDirectory|getInputRecorderSaveDirectory}</li>\r  <li>{@link Controller.loadInputRecording|loadInputRecording}</li>\r  <li>{@link Controller.startInputPlayback|startInputPlayback}</li>\r  <li>{@link Controller.stopInputPlayback|stopInputPlayback}</li>\r</ul>\r\r<h5>Entity Methods:</h5>\r\r<p>The default scripts implement hand controller actions that use {@link Entities.callEntityMethod} to call entity script \rmethods, if present in the entity being interacted with.</p>\r\r<table>\r  <thead>\r    <tr><th>Method Name</th><th>Description</th><th>Example</th></tr>\r  </thead>\r  <tbody>\r    <tr>\r      <td><code>startFarTrigger</code><br /><code>continueFarTrigger</code><br /><code>stopFarTrigger</code></td>\r      <td>These methods are called when a user is more than 0.3m away from the entity, the entity is triggerable, and the \r        user starts, continues, or stops squeezing the trigger.</td>\r      </td>\r      <td>A light switch that can be toggled on and off from a distance.</td>\r    </tr>\r    <tr>\r      <td><code>startNearTrigger</code><br /><code>continueNearTrigger</code><br /><code>stopNearTrigger</code></td>\r      <td>These methods are called when a user is less than 0.3m away from the entity, the entity is triggerable, and the \r        user starts, continues, or stops squeezing the trigger.</td>\r      <td>A doorbell that can be rung when a user is near.</td>\r    </tr>\r    <tr>\r      <td><code>startDistanceGrab</code><br /><code>continueDistanceGrab</code><br /></td>\r      <td>These methods are called when a user is more than 0.3m away from the entity, the entity is either cloneable, or\r        grabbable and not locked, and the user starts or continues to squeeze the trigger.</td>\r      <td>A comet that emits icy particle trails when a user is dragging it through the sky.</td>\r    </tr>\r    <tr>\r      <td><code>startNearGrab</code><br /><code>continueNearGrab</code><br /></td>\r      <td>These methods are called when a user is less than 0.3m away from the entity, the entity is either cloneable, or \r        grabbable and not locked, and the user starts or continues to squeeze the trigger.</td>\r      <td>A ball that glows when it's being held close.</td>\r    </tr>\r    <tr>\r      <td><code>releaseGrab</code></td>\r      <td>This method is called when a user releases the trigger when having been either distance or near grabbing an \r        entity.</td>\r      <td>Turn off the ball glow or comet trail with the user finishes grabbing it.</td>\r    </tr>\r    <tr>\r      <td><code>startEquip</code><br /><code>continueEquip</code><br /><code>releaseEquip</code></td>\r      <td>These methods are called when a user starts, continues, or stops equipping an entity.</td>\r      <td>A glass that stays in the user's hand after the trigger is clicked.</td>\r    </tr>\r  </tbody>\r</table>\r<p>All the entity methods are called with the following two arguments:</p>\r<ul>\r  <li>The entity ID.</li>\r  <li>A string, <code>\"hand,userID\"</code> &mdash; where \"hand\" is <code>\"left\"</code> or <code>\"right\"</code>, and \"userID\"\r    is the user's {@link MyAvatar|MyAvatar.sessionUUID}.</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Controller",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -11363,13 +11261,7 @@
         "name": "Desktop",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -11408,21 +11300,15 @@
         ],
         "longname": "Desktop",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
-        "description": "The GooglePoly API allows you to interact with Google Poly models direct from inside High Fidelity.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The GooglePoly API allows you to interact with Google Poly models direct from inside High Fidelity.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "GooglePoly",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "GooglePoly",
         "scope": "global"
     },
@@ -11716,18 +11602,12 @@
         "scope": "static"
     },
     {
-        "description": "The HMD API provides access to the HMD used in VR display mode.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The HMD API provides access to the HMD used in VR display mode.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "HMD",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -12458,18 +12338,12 @@
         "scope": "static"
     },
     {
-        "description": "The Keyboard API provides facilities to use 3D Physical keyboard.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Keyboard API provides facilities to use 3D Physical keyboard.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Keyboard",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -12494,18 +12368,12 @@
         "scope": "global"
     },
     {
-        "description": "The Menu API provides access to the menu that is displayed at the top of the window\ron a user's desktop and in the tablet when the \"MENU\" button is pressed.\r\r<p />\r\r<h3>Groupings</h3>\r\rA \"grouping\" provides a way to group a set of menus or menu items together so \rthat they can all be set visible or invisible as a group. \rThere are two available groups: <code>\"Advanced\"</code> and <code>\"Developer\"</code>.\rThese groupings can be toggled in the \"Settings\" menu.\rIf a menu item doesn't belong to a group it is always displayed.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Menu API provides access to the menu that is displayed at the top of the window\ron a user's desktop and in the tablet when the \"MENU\" button is pressed.\r\r<p />\r\r<h3>Groupings</h3>\r\rA \"grouping\" provides a way to group a set of menus or menu items together so \rthat they can all be set visible or invisible as a group. \rThere are two available groups: <code>\"Advanced\"</code> and <code>\"Developer\"</code>.\rThese groupings can be toggled in the \"Settings\" menu.\rIf a menu item doesn't belong to a group it is always displayed.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Menu",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Menu",
         "scope": "global"
     },
@@ -13209,18 +13077,12 @@
         "scope": "static"
     },
     {
-        "description": "The <code>Selection</code> API provides a means of grouping together avatars and entities in named lists.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The <code>Selection</code> API provides a means of grouping together avatars and entities in named lists.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Selection",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "examples": [
             "<caption>Outline an entity when it is grabbed by a controller.</caption>\r// Create a box and copy the following text into the entity's \"Script URL\" field.\r(function () {\r    print(\"Starting highlight script...............\");\r    var _this = this;\r    var prevID = 0;\r    var listName = \"contextOverlayHighlightList\";\r    var listType = \"entity\";\r\r    _this.startNearGrab = function(entityID){\r        if (prevID !== entityID) {\r            Selection.addToSelectedItemsList(listName, listType, entityID);\r            prevID = entityID;\r        }\r    };\r\r    _this.releaseGrab = function(entityID){\r        if (prevID !== 0) {\r            Selection.removeFromSelectedItemsList(\"contextOverlayHighlightList\", listType, prevID);\r            prevID = 0;\r        }\r    };\r\r    var cleanup = function(){\r        Entities.findEntities(MyAvatar.position, 1000).forEach(function(entity) {\r            try {\r                Selection.removeListFromMap(listName);\r            } catch (e) {\r                print(\"Error cleaning up.\");\r            }\r        });\r    };\r\r    Script.scriptEnding.connect(cleanup);\r});"
         ],
@@ -13646,18 +13508,12 @@
         "scope": "static"
     },
     {
-        "description": "The Settings API provides a facility to store and retrieve values that persist between Interface runs.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Settings API provides a facility to store and retrieve values that persist between Interface runs.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Settings",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Settings",
         "scope": "global"
     },
@@ -14083,18 +13939,12 @@
         "scope": "static"
     },
     {
-        "description": "The <code>WalletScriptingInterface</code> API provides functions related to the user's wallet and verification of certified \ravatar entities.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The <code>WalletScriptingInterface</code> API provides functions related to the user's wallet and verification of certified \ravatar entities.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "WalletScriptingInterface",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -14111,7 +13961,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if Interface is running in limited commerce mode. In limited commerce \r    mode, certain Interface functionality is disabled, e.g., users can't buy non-free items from the Marketplace. The Oculus \r    Store version of Interface runs in limited commerce mode. <em>Read-only.</em>",
+                "description": "<code>true</code> if Interface is running in limited commerce mode. In limited commerce \r    mode, certain Interface functionalities are disabled, e.g., users can't buy items that are not free from the Marketplace. \r    The Oculus Store version of Interface runs in limited commerce mode. <em>Read-only.</em>",
                 "name": "limitedCommerce"
             }
         ],
@@ -14119,7 +13969,7 @@
         "scope": "global"
     },
     {
-        "description": "Check and update the user's wallet status.",
+        "description": "Checks and updates the user's wallet status.",
         "kind": "function",
         "name": "refreshWalletStatus",
         "memberof": "WalletScriptingInterface",
@@ -14127,7 +13977,7 @@
         "scope": "static"
     },
     {
-        "description": "Get the current status of the user's wallet.",
+        "description": "Gets the current status of the user's wallet.",
         "kind": "function",
         "name": "getWalletStatus",
         "returns": [
@@ -14140,14 +13990,14 @@
             }
         ],
         "examples": [
-            "<caption>Two ways to report your wallet status.</caption>\rprint(\"Wallet status: \" + WalletScriptingInterface.walletStatus);  // Same value as next line.\rprint(\"Wallet status: \" + WalletScriptingInterface.getWalletStatus());"
+            "<caption>Use two methods to report your wallet's status.</caption>\rprint(\"Wallet status: \" + WalletScriptingInterface.walletStatus);  // Same value as next line.\rprint(\"Wallet status: \" + WalletScriptingInterface.getWalletStatus());"
         ],
         "memberof": "WalletScriptingInterface",
         "longname": "WalletScriptingInterface.getWalletStatus",
         "scope": "static"
     },
     {
-        "description": "Check that a certified avatar entity is owned by the avatar whose entity it is. The result of the check is provided via \rthe {@link WalletScriptingInterface.ownershipVerificationSuccess|ownershipVerificationSuccess} and \r{@link WalletScriptingInterface.ownershipVerificationFailed|ownershipVerificationFailed} signals.<br />\r<strong>Warning:</strong> Neither of these signals fire if the entity is not an avatar entity or it's not a certified \rentity.",
+        "description": "Check that a certified avatar entity is owned by the avatar whose entity it is. The result of the check is provided via \rthe {@link WalletScriptingInterface.ownershipVerificationSuccess|ownershipVerificationSuccess} and \r{@link WalletScriptingInterface.ownershipVerificationFailed|ownershipVerificationFailed} signals.<br />\r<strong>Warning:</strong> Neither of these signals are triggered if the entity is not an avatar entity or is not \rcertified.",
         "kind": "function",
         "name": "proveAvatarEntityOwnershipVerification",
         "params": [
@@ -14157,20 +14007,20 @@
                         "Uuid"
                     ]
                 },
-                "description": "The ID of the avatar entity to check.",
+                "description": "The avatar entity's ID.",
                 "name": "entityID"
             }
         ],
         "examples": [
-            "<caption>Check ownership of all nearby certified avatar entities.</caption>\r// Set up response handling.\rfunction ownershipSuccess(entityID) {\r    print(\"Ownership test succeeded for: \" + entityID);\r}\rfunction ownershipFailed(entityID) {\r    print(\"Ownership test failed for: \" + entityID);\r}\rWalletScriptingInterface.ownershipVerificationSuccess.connect(ownershipSuccess);\rWalletScriptingInterface.ownershipVerificationFailed.connect(ownershipFailed);\r\r// Check ownership of all nearby certified avatar entities.\rvar entityIDs = Entities.findEntities(MyAvatar.position, 10);\rvar i, length;\rfor (i = 0, length = entityIDs.length; i < length; i++) {\r    var properties = Entities.getEntityProperties(entityIDs[i], [\"entityHostType\", \"certificateID\"]);\r    if (properties.entityHostType === \"avatar\" && properties.certificateID !== \"\") {\r        print(\"Prove ownership of: \" + entityIDs[i]);\r        WalletScriptingInterface.proveAvatarEntityOwnershipVerification(entityIDs[i]);\r    }\r}\r\r// Tidy up.\rScript.scriptEnding.connect(function () {\r    WalletScriptingInterface.ownershipVerificationFailed.disconnect(ownershipFailed);\r    WalletScriptingInterface.ownershipVerificationSuccess.disconnect(ownershipSuccess);\r});"
+            "<caption>Check the ownership of all nearby certified avatar entities.</caption>\r// Set up response handling.\rfunction ownershipSuccess(entityID) {\r    print(\"Ownership test succeeded for: \" + entityID);\r}\rfunction ownershipFailed(entityID) {\r    print(\"Ownership test failed for: \" + entityID);\r}\rWalletScriptingInterface.ownershipVerificationSuccess.connect(ownershipSuccess);\rWalletScriptingInterface.ownershipVerificationFailed.connect(ownershipFailed);\r\r// Check ownership of all nearby certified avatar entities.\rvar entityIDs = Entities.findEntities(MyAvatar.position, 10);\rvar i, length;\rfor (i = 0, length = entityIDs.length; i < length; i++) {\r    var properties = Entities.getEntityProperties(entityIDs[i], [\"entityHostType\", \"certificateID\"]);\r    if (properties.entityHostType === \"avatar\" && properties.certificateID !== \"\") {\r        print(\"Prove ownership of: \" + entityIDs[i]);\r        WalletScriptingInterface.proveAvatarEntityOwnershipVerification(entityIDs[i]);\r    }\r}\r\r// Tidy up.\rScript.scriptEnding.connect(function () {\r    WalletScriptingInterface.ownershipVerificationFailed.disconnect(ownershipFailed);\r    WalletScriptingInterface.ownershipVerificationSuccess.disconnect(ownershipSuccess);\r});"
         ],
         "memberof": "WalletScriptingInterface",
         "longname": "WalletScriptingInterface.proveAvatarEntityOwnershipVerification",
         "scope": "static"
     },
     {
-        "description": "Triggered when the status of the user's wallet changes.",
-        "kind": "function",
+        "description": "Triggered when the user's wallet status changes.",
+        "kind": "signal",
         "name": "walletStatusChanged",
         "returns": [
             {
@@ -14190,7 +14040,7 @@
     },
     {
         "description": "Triggered when the user's limited commerce status changes.",
-        "kind": "function",
+        "kind": "signal",
         "name": "limitedCommerceChanged",
         "returns": [
             {
@@ -14206,8 +14056,8 @@
         "scope": "static"
     },
     {
-        "description": "Triggered when the user rezzes a certified entity but the user's wallet is not ready and so the certified location of the \rentity cannot be updated in the metaverse.",
-        "kind": "function",
+        "description": "Triggered when the user rezzes a certified entity but the user's wallet is not ready. So the certified location of the\rentity cannot be updated in the metaverse.",
+        "kind": "signal",
         "name": "walletNotSetup",
         "returns": [
             {
@@ -14224,7 +14074,7 @@
     },
     {
         "description": "Triggered when a certified avatar entity's ownership check requested via \r{@link WalletScriptingInterface.proveAvatarEntityOwnershipVerification|proveAvatarEntityOwnershipVerification} succeeds.",
-        "kind": "function",
+        "kind": "signal",
         "name": "ownershipVerificationSuccess",
         "params": [
             {
@@ -14252,7 +14102,7 @@
     },
     {
         "description": "Triggered when a certified avatar entity's ownership check requested via\r{@link WalletScriptingInterface.proveAvatarEntityOwnershipVerification|proveAvatarEntityOwnershipVerification} fails.",
-        "kind": "function",
+        "kind": "signal",
         "name": "ownershipVerificationFailed",
         "params": [
             {
@@ -14292,18 +14142,12 @@
         "scope": "static"
     },
     {
-        "description": "The Window API provides various facilities not covered elsewhere: window dimensions, window focus, normal or entity camera\rview, clipboard, announcements, user connections, common dialog boxes, snapshots, file import, domain changes, domain \rphysics.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Window API provides various facilities not covered elsewhere: window dimensions, window focus, normal or entity camera\rview, clipboard, announcements, user connections, common dialog boxes, snapshots, file import, domain changes, domain \rphysics.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Window",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -16147,18 +15991,12 @@
         "scope": "static"
     },
     {
-        "description": "API to help manage your Avatar's input<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "API to help manage your Avatar's input<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "AvatarInputs",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -16335,16 +16173,10 @@
         "name": "Snapshot",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Snapshot",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -16410,13 +16242,7 @@
         "name": "Stats",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -17572,7 +17398,7 @@
         ],
         "longname": "Stats",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "description": "Triggered when the value of the <code>longsubmits</code> property changes.",
@@ -23602,18 +23428,12 @@
         "scope": "static"
     },
     {
-        "description": "(Note: 3D Overlays are deprecated.  Use local entities instead.)  The Overlays API provides facilities to create and interact with overlays. Overlays are 2D and 3D objects visible only to\ryourself and that aren't persisted to the domain. They are used for UI.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "(Note: 3D Overlays are deprecated.  Use local entities instead.)  The Overlays API provides facilities to create and interact with overlays. Overlays are 2D and 3D objects visible only to\ryourself and that aren't persisted to the domain. They are used for UI.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Overlays",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -24809,13 +24629,7 @@
         "name": "AnimationObject",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -24838,7 +24652,7 @@
         ],
         "longname": "AnimationObject",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "kind": "function",
@@ -24873,18 +24687,12 @@
         "scope": "static"
     },
     {
-        "description": "API to manage animation cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "API to manage animation cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "AnimationCache",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiAssignmentClient": true,
         "properties": [
             {
@@ -24961,13 +24769,7 @@
         "name": "AudioStreamStats",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -25117,7 +24919,7 @@
         "memberof": "AudioStats",
         "longname": "AudioStats.AudioStreamStats",
         "scope": "static",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -25536,18 +25338,12 @@
         "scope": "static"
     },
     {
-        "description": "Audio stats from the client.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "Audio stats from the client.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "AudioStats",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -26125,7 +25921,7 @@
         "scope": "static"
     },
     {
-        "description": "Audio effect options used by the {@link Audio} API.\r\r<p>Create using <code>new AudioEffectOptions(reverbOptions)</code>.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "Audio effect options used by the {@link Audio} API.\r\r<p>Create using <code>new AudioEffectOptions(reverbOptions)</code>.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "class",
         "name": "AudioEffectOptions",
         "params": [
@@ -26143,13 +25939,7 @@
         ],
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -26463,18 +26253,12 @@
         "scope": "static"
     },
     {
-        "description": "An audio resource, created by {@link SoundCache.getSound}, to be played back using {@link Audio.playSound}.\r<p>Supported formats:</p>\r<ul>\r  <li>WAV: 16-bit uncompressed WAV at any sample rate, with 1 (mono), 2(stereo), or 4 (ambisonic) channels.</li>\r  <li>MP3: Mono or stereo, at any sample rate.</li>\r  <li>RAW: 48khz 16-bit mono or stereo. Filename must include <code>\".stereo\"</code> to be interpreted as stereo.</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "An audio resource, created by {@link SoundCache.getSound}, to be played back using {@link Audio.playSound}.\r<p>Supported formats:</p>\r<ul>\r  <li>WAV: 16-bit uncompressed WAV at any sample rate, with 1 (mono), 2(stereo), or 4 (ambisonic) channels.</li>\r  <li>MP3: Mono or stereo, at any sample rate.</li>\r  <li>RAW: 48khz 16-bit mono or stereo. Filename must include <code>\".stereo\"</code> to be interpreted as stereo.</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "class",
         "name": "SoundObject",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -26518,18 +26302,12 @@
         "scope": "static"
     },
     {
-        "description": "API to manage sound cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "API to manage sound cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "SoundCache",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -30219,18 +29997,12 @@
         "scope": "static"
     },
     {
-        "description": "<p>A {@link Controller} mapping object that can contain a set of routes that map:</p>\r<ul>\r    <li>{@link Controller.Standard} outputs to {@link Controller.Actions} actions or script functions.</li>\r    <li>{@link Controller.Hardware} outputs to {@link Controller.Standard} outputs, {@link Controller.Actions} actions, or \r    script functions.</li>\r</ul>\r\r<p>Create by one of the following methods:</p>\r<ul>\r    <li>Use {@link Controller.newMapping} to create the mapping object, add routes using {@link MappingObject#from|from} or\r    {@link MappingObject#makeAxis|makeAxis}, and map the routes to actions or functions using {@link RouteObject} \r    methods.</li>\r    <li>Use {@link Controller.parseMapping} or {@link Controller.loadMapping} to load a {@link Controller.MappingJSON}.</li>\r</ul>\r\r<p>Enable the mapping using {@link MappingObject#enable|enable} or {@link Controller.enableMapping} for it to take \reffect.</p>\r\r<p>Mappings and their routes are applied according to the following rules:</p>\r<ul>\r    <li>One read per output: after a controller output has been read, it can't be read again. Exception: You can use \r    {@link RouteObject#peek} to read a value without marking that output as having been read.</li>\r    <li>Existing mapping routes take precedence over new mapping routes: within a mapping, if a route is added for a control \r    output that already has a route the new route is ignored.</li>\r    <li>New mappings override previous mappings: each output is processed using the route in the most recently enabled \r    mapping that contains that output.</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "<p>A {@link Controller} mapping object that can contain a set of routes that map:</p>\r<ul>\r    <li>{@link Controller.Standard} outputs to {@link Controller.Actions} actions or script functions.</li>\r    <li>{@link Controller.Hardware} outputs to {@link Controller.Standard} outputs, {@link Controller.Actions} actions, or \r    script functions.</li>\r</ul>\r\r<p>Create by one of the following methods:</p>\r<ul>\r    <li>Use {@link Controller.newMapping} to create the mapping object, add routes using {@link MappingObject#from|from} or\r    {@link MappingObject#makeAxis|makeAxis}, and map the routes to actions or functions using {@link RouteObject} \r    methods.</li>\r    <li>Use {@link Controller.parseMapping} or {@link Controller.loadMapping} to load a {@link Controller.MappingJSON}.</li>\r</ul>\r\r<p>Enable the mapping using {@link MappingObject#enable|enable} or {@link Controller.enableMapping} for it to take \reffect.</p>\r\r<p>Mappings and their routes are applied according to the following rules:</p>\r<ul>\r    <li>One read per output: after a controller output has been read, it can't be read again. Exception: You can use \r    {@link RouteObject#peek} to read a value without marking that output as having been read.</li>\r    <li>Existing mapping routes take precedence over new mapping routes: within a mapping, if a route is added for a control \r    output that already has a route the new route is ignored.</li>\r    <li>New mappings override previous mappings: each output is processed using the route in the most recently enabled \r    mapping that contains that output.</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "class",
         "name": "MappingObject",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "MappingObject",
         "scope": "global"
     },
@@ -30614,18 +30386,12 @@
         "scope": "instance"
     },
     {
-        "description": "<p>A route in a {@link MappingObject} used by the {@link Controller} API.</p>\r\r<p>Create a route using {@link MappingObject} methods and apply this object's methods to process it, terminating with \r{@link RouteObject#to} to apply it to a <code>Standard</code> control, action, or script function. Note: Loops are not \rpermitted.</p>\r\r<p>Some methods apply to routes with number data, some apply routes with {@link Pose} data, and some apply to both route \rtypes.<p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "<p>A route in a {@link MappingObject} used by the {@link Controller} API.</p>\r\r<p>Create a route using {@link MappingObject} methods and apply this object's methods to process it, terminating with \r{@link RouteObject#to} to apply it to a <code>Standard</code> control, action, or script function. Note: Loops are not \rpermitted.</p>\r\r<p>Some methods apply to routes with number data, some apply routes with {@link Pose} data, and some apply to both route \rtypes.<p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "class",
         "name": "RouteObject",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "RouteObject",
         "scope": "global"
     },
@@ -31330,13 +31096,7 @@
         "name": "Reticle",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -31405,7 +31165,7 @@
         ],
         "longname": "Reticle",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -34576,18 +34336,12 @@
         "scope": "static"
     },
     {
-        "description": "The Entities API provides facilities to create and interact with entities. Entities are 2D and 3D objects that are visible\rto everyone and typically are persisted to the domain. For Interface scripts, the entities available are those that \rInterface has displayed and so knows about.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "The Entities API provides facilities to create and interact with entities. Entities are 2D and 3D objects that are visible\rto everyone and typically are persisted to the domain. For Interface scripts, the entities available are those that \rInterface has displayed and so knows about.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Entities",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -40437,18 +40191,12 @@
         "scope": "static"
     },
     {
-        "description": "The experimental Graphics API <em>(experimental)</em> lets you query and manage certain graphics-related structures (like underlying meshes and textures) from scripting.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The experimental Graphics API <em>(experimental)</em> lets you query and manage certain graphics-related structures (like underlying meshes and textures) from scripting.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Graphics",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Graphics",
         "scope": "global"
     },
@@ -40956,16 +40704,10 @@
         "name": "Midi",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Midi",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "description": "Send Raw MIDI packet to a particular device.",
@@ -41355,18 +41097,12 @@
         "scope": "static"
     },
     {
-        "description": "API to manage model cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "API to manage model cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "ModelCache",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -41409,18 +41145,12 @@
         "scope": "global"
     },
     {
-        "description": "The location API provides facilities related to your current location in the metaverse.\r\r<h5>Getter/Setter</h5>\r<p>You can get and set your current metaverse address by directly reading a string value from and writing a string value to \rthe <code>location</code> object. This is an alternative to using the <code>location.href</code> property or this object's\rfunctions.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "The location API provides facilities related to your current location in the metaverse.\r\r<h5>Getter/Setter</h5>\r<p>You can get and set your current metaverse address by directly reading a string value from and writing a string value to \rthe <code>location</code> object. This is an alternative to using the <code>location.href</code> property or this object's\rfunctions.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "location",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiAssignmentClient": true,
         "properties": [
             {
@@ -42218,18 +41948,12 @@
         "scope": "static"
     },
     {
-        "description": "<p>The Messages API enables text and data to be sent between scripts over named \"channels\". A channel can have an arbitrary \rname to help separate messaging between different sets of scripts.</p>\r\r<p><strong>Note:</strong> If you want to call a function in another script, you should use one of the following rather than \rsending a message:</p>\r<ul>\r  <li>{@link Entities.callEntityClientMethod}</li>\r  <li>{@link Entities.callEntityMethod}</li>\r  <li>{@link Entities.callEntityServerMethod}</li>\r  <li>{@link Script.callEntityScriptMethod}</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "<p>The Messages API enables text and data to be sent between scripts over named \"channels\". A channel can have an arbitrary \rname to help separate messaging between different sets of scripts.</p>\r\r<p><strong>Note:</strong> If you want to call a function in another script, you should use one of the following rather than \rsending a message:</p>\r<ul>\r  <li>{@link Entities.callEntityClientMethod}</li>\r  <li>{@link Entities.callEntityMethod}</li>\r  <li>{@link Entities.callEntityServerMethod}</li>\r  <li>{@link Script.callEntityScriptMethod}</li>\r</ul><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Messages",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "longname": "Messages",
@@ -42500,13 +42224,7 @@
         "name": "ResourceObject",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -42531,7 +42249,7 @@
         ],
         "longname": "ResourceObject",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "kind": "typedef",
@@ -42748,18 +42466,12 @@
         "name": "Resources",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "longname": "Resources",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "kind": "function",
@@ -43700,13 +43412,7 @@
         "name": "Steam",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -43720,7 +43426,7 @@
         ],
         "longname": "Steam",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -43746,19 +43452,13 @@
         "scope": "static"
     },
     {
-        "description": "Enum for different types of Picks and Pointers.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "Enum for different types of Picks and Pointers.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "PickType",
         "variation": "0",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -43826,18 +43526,12 @@
         "scope": "static"
     },
     {
-        "description": "The Assets API allows you to communicate with the Asset Browser.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "The Assets API allows you to communicate with the Asset Browser.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Assets",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "longname": "Assets",
@@ -45036,18 +44730,12 @@
         "name": "File",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "longname": "File",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "kind": "function",
@@ -45292,18 +44980,12 @@
         "name": "Mat4",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "longname": "Mat4",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "kind": "function",
@@ -46086,19 +45768,13 @@
         "scope": "global"
     },
     {
-        "description": "The Quat API provides facilities for generating and manipulating quaternions.\rQuaternions should be used in preference to Euler angles wherever possible because quaternions don't suffer from the problem\rof gimbal lock.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "The Quat API provides facilities for generating and manipulating quaternions.\rQuaternions should be used in preference to Euler angles wherever possible because quaternions don't suffer from the problem\rof gimbal lock.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Quat",
         "variation": "0",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -47162,17 +46838,11 @@
         "name": "Recording",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiAssignmentClient": true,
         "longname": "Recording",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "kind": "function",
@@ -47778,13 +47448,7 @@
         "name": "Stage",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -47830,7 +47494,7 @@
         "memberof": "Scene",
         "longname": "Scene.Stage",
         "scope": "static",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -47887,13 +47551,7 @@
         "name": "Scene",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -47922,7 +47580,7 @@
         ],
         "longname": "Scene",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -47977,18 +47635,12 @@
         "scope": "static"
     },
     {
-        "description": "Plays &mdash; \"injects\" &mdash; the content of an audio file. Used in the {@link Audio} API.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "Plays &mdash; \"injects\" &mdash; the content of an audio file. Used in the {@link Audio} API.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "class",
         "name": "AudioInjector",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -48151,13 +47803,7 @@
         "name": "Resource",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -48172,7 +47818,7 @@
         ],
         "longname": "Resource",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "description": "Triggered when the script starts for a user.\r<p>Note: Can only be connected to via <code>this.preload = function (...) { ... }</code> in the entity script.</p>\r<table><tr><th>Available in:</th><td>Client Entity Scripts</td><td>Server Entity Scripts</td></tr></table>",
@@ -48227,13 +47873,7 @@
         "name": "Script",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -48248,7 +47888,7 @@
         ],
         "longname": "Script",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "description": "Stop the current script.",
@@ -49892,13 +49532,7 @@
         "name": "ScriptDiscoveryService",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -49935,7 +49569,7 @@
         ],
         "longname": "ScriptDiscoveryService",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -50536,18 +50170,12 @@
         "scope": "static"
     },
     {
-        "description": "<p>Provided as a property of {@link ScriptDiscoveryService}.</p>\r<p>Has properties and functions below in addition to those of <a href=\"http://doc.qt.io/qt-5/qabstractitemmodel.html\">\rhttp://doc.qt.io/qt-5/qabstractitemmodel.html</a>.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "<p>Provided as a property of {@link ScriptDiscoveryService}.</p>\r<p>Has properties and functions below in addition to those of <a href=\"http://doc.qt.io/qt-5/qabstractitemmodel.html\">\rhttp://doc.qt.io/qt-5/qabstractitemmodel.html</a>.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "class",
         "name": "ScriptsModel",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "ScriptsModel",
         "scope": "global"
     },
@@ -50756,34 +50384,22 @@
         "scope": "static"
     },
     {
-        "description": "<p>Provided as a property of {@link ScriptDiscoveryService}.</p>\r<p>Has properties and functions per <a href=\"http://doc.qt.io/qt-5/qsortfilterproxymodel.html\">\rhttp://doc.qt.io/qt-5/qsortfilterproxymodel.html</a>.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "<p>Provided as a property of {@link ScriptDiscoveryService}.</p>\r<p>Has properties and functions per <a href=\"http://doc.qt.io/qt-5/qsortfilterproxymodel.html\">\rhttp://doc.qt.io/qt-5/qsortfilterproxymodel.html</a>.</p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "class",
         "name": "ScriptsModelFilter",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "ScriptsModelFilter",
         "scope": "global"
     },
     {
-        "description": "A UUID (Universally Unique IDentifier) is used to uniquely identify entities, avatars, and the like. It is\rrepresented in JavaScript as a string in the format, <code>{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}</code>, where the \"n\"s are\rhexadecimal digits.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "A UUID (Universally Unique IDentifier) is used to uniquely identify entities, avatars, and the like. It is\rrepresented in JavaScript as a string in the format, <code>{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}</code>, where the \"n\"s are\rhexadecimal digits.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Uuid",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -51188,13 +50804,7 @@
         "name": "Users",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiAssignmentClient": true,
         "properties": [
             {
@@ -51218,7 +50828,7 @@
         ],
         "longname": "Users",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Assignment Client Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>"
     },
     {
         "description": "Personally ignore another user, making them disappear for you and you disappear for them.",
@@ -51655,19 +51265,13 @@
         "scope": "static"
     },
     {
-        "description": "The Vec3 API facilities for generating and manipulating 3-dimensional vectors. High Fidelity uses a right-handed \rCartesian coordinate system where the y-axis is the \"up\" and the negative z-axis is the \"front\" direction.\r<img alt=\"High Fidelity coordinate system\" src=\"https://docs.highfidelity.com/images/opengl-coord-system.jpg\" /><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "The Vec3 API facilities for generating and manipulating 3-dimensional vectors. High Fidelity uses a right-handed \rCartesian coordinate system where the y-axis is the \"up\" and the negative z-axis is the \"front\" direction.\r<img alt=\"High Fidelity coordinate system\" src=\"https://docs.highfidelity.com/images/opengl-coord-system.jpg\" /><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "Vec3",
         "variation": "0",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "properties": [
@@ -52814,18 +52418,12 @@
         "scope": "global"
     },
     {
-        "description": "Helper functions to render ephemeral debug markers and lines.\rDebugDraw markers and lines are only visible locally, they are not visible by other users.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "Helper functions to render ephemeral debug markers and lines.\rDebugDraw markers and lines are only visible locally, they are not visible by other users.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "namespace",
         "name": "DebugDraw",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "longname": "DebugDraw",
@@ -53048,18 +52646,12 @@
         "scope": "global"
     },
     {
-        "description": "The Paths API provides absolute paths to the scripts and resources directories.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Paths API provides absolute paths to the scripts and resources directories.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Paths",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "deprecated": "The Paths API is deprecated. Use {@link Script.resolvePath} and {@link Script.resourcesPath} instead.",
         "readonly": true,
         "properties": [
@@ -54060,18 +53652,12 @@
         "scope": "global"
     },
     {
-        "description": "A handle for a mesh in an entity, such as returned by {@link Entities.getMeshes}.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
+        "description": "A handle for a mesh in an entity, such as returned by {@link Entities.getMeshes}.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>",
         "kind": "class",
         "name": "MeshProxy",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "hifiServerEntity": true,
         "hifiAssignmentClient": true,
         "deprecated": "Use the {@link Graphics} API instead.",
@@ -54245,18 +53831,12 @@
         "scope": "global"
     },
     {
-        "description": "The Camera API provides access to the \"camera\" that defines your view in desktop and HMD display modes.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>",
+        "description": "The Camera API provides access to the \"camera\" that defines your view in desktop and HMD display modes.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>",
         "kind": "namespace",
         "name": "Camera",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -54716,13 +54296,7 @@
         "name": "Render",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -54744,7 +54318,7 @@
         ],
         "longname": "Render",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -54823,13 +54397,7 @@
         "name": "InteractiveWindow",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -54874,7 +54442,7 @@
         ],
         "longname": "InteractiveWindow",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -55153,13 +54721,7 @@
         "name": "OffscreenFlags",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -55180,7 +54742,7 @@
         ],
         "longname": "OffscreenFlags",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -55259,13 +54821,7 @@
         ],
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -55303,7 +54859,7 @@
         ],
         "longname": "OverlayWebWindow",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -55442,13 +54998,7 @@
         ],
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -55477,7 +55027,7 @@
         ],
         "longname": "OverlayWindow",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -56017,33 +55567,21 @@
         "name": "Tablet",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Tablet",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "namespace",
         "name": "tabletInterface",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "deprecated": "This API is deprecated and will be removed. Use {@link Tablet} instead.",
         "longname": "tabletInterface",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "description": "<table>\r  <thead>\r    <tr><th>Value</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>Button click.</td></tr>\r    <tr><td><code>1</code></td><td>Button hover.</td></tr>\r    <tr><td><code>2</code></td><td>Tablet open.</td></tr>\r    <tr><td><code>3</code></td><td>Tablet hands in.</td></tr>\r    <tr><td><code>4</code></td><td>Tablet hands out.</td></tr>\r    <tr><td><code>5</code></td><td>Last.</td></tr>\r  </tbody>\r</table>",
@@ -56204,13 +55742,7 @@
         "name": "TabletProxy",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -56259,7 +55791,7 @@
         ],
         "longname": "TabletProxy",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -56757,13 +56289,7 @@
         "name": "TabletButtonProxy",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "properties": [
             {
                 "type": {
@@ -56785,7 +56311,7 @@
         ],
         "longname": "TabletButtonProxy",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "description": "Returns the current value of this button's properties.",
@@ -56965,16 +56491,10 @@
         "name": "ToolbarButtonProxy",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "ToolbarButtonProxy",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -57108,16 +56628,10 @@
         "name": "ToolbarProxy",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "ToolbarProxy",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
@@ -57261,16 +56775,10 @@
         "name": "Toolbars",
         "hifiInterface": true,
         "hifiClientEntity": true,
-        "tags": [
-            {
-                "originalTitle": "hifi-avatar",
-                "title": "hifi-avatar",
-                "text": ""
-            }
-        ],
+        "hifiAvatar": true,
         "longname": "Toolbars",
         "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts</p>"
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
     },
     {
         "kind": "function",
