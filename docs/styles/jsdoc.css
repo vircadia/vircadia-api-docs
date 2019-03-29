@@ -41,7 +41,6 @@ body
 }
 
 #main p {
-    font-size: 0.95rem;
     line-height: 24px;
     margin-bottom: 24px;
 }
@@ -174,6 +173,7 @@ article ul {
 }
 
 article li {
+    font-size: .95rem;
     padding-bottom: 5px;
 }
 
@@ -390,13 +390,10 @@ tt, code, kbd, samp {
 
 
 
-
-
-
-
-
 img {
+  display: block;
   max-width: 100%;
+  margin: auto;
 }
 
 p, ul, ol, blockquote {
