@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>OffscreenFlags</title>
+    <title>AnimationFrameObject</title>
     
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 </nav>
 
 <div id="main">
-    <h1 class="page-title">OffscreenFlags</h1>
+    <h1 class="page-title">AnimationFrameObject</h1>
 
     
 
@@ -40,13 +40,13 @@
             <a href="#props">Properties</a> • 
         
         
-        
-            <a href="#signal">Signals</a> • 
-        
+            <a href="#method">Methods</a> • 
         
         
         
-            <a href="#signalDetails">Signal Details</a> •  
+        
+            <a href="#methodDetails">Method Details</a> • 
+        
         
     </div>
 
@@ -55,12 +55,21 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                
-                    <p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p></p>
-                
-            
-
-                
+                <p>Joint rotations in one frame of an animation.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="memberHeading">Constructor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>new AnimationFrameObject<span class="signature">(  )</span><span class="type-returns"></span></code><p />
+                            
+                        </tr>
+                    </tbody>
+                </table>
+                 
 
 
 
@@ -90,13 +99,13 @@
 
         <tr>
             
-                <td><span class="signature">navigationFocused</span></td>
+                <td><span class="signature">rotations</span></td>
             
 
             <td  class="type">
             
                 
-boolean
+Array.&lt;<a href="global.html#Quat">Quat</a>>
 
 
             
@@ -105,31 +114,7 @@ boolean
             
 
             <td class="description last">
-                
-                
-                
-            </td>
-        </tr>
-    
-
-        <tr>
-            
-                <td><span class="signature">navigationFocusDisabled</span></td>
-            
-
-            <td  class="type">
-            
-                
-boolean
-
-
-            
-            </td>
-
-            
-
-            <td class="description last">
-                
+                Joint rotations. <em>Read-only.</em>
                 
                 
             </td>
@@ -174,7 +159,6 @@ boolean
     
 
 
-                
             
         </div>
 
@@ -192,13 +176,12 @@ boolean
         
 
         
-
-        
-            <h3 id="signal">Signals</h3>
+            <h3 id="method">Methods</h3>
             <table>
             <thead>
                 <tr>
                     <th class="first">Name</th>
+                    <th class="type">Return Value</th>
                     <th class="last">Summary</th>
                 </tr>
             </thead>
@@ -210,88 +193,28 @@ boolean
 
     
              <tr>
-                <td><a href="#.navigationFocusDisabledChanged">
-                    <code>navigationFocusDisabledChanged</code></a>
+                <td><a href="#.getRotations">
+                    <code>getRotations</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+Array.&lt;<a href="global.html#Quat">Quat</a>>
+
+
+
+
+                                
+                    
                 </td>
                 <td>
                 
-                    
-
-
-
-
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+                Gets the joint rotations in the animation frame.
                 
-                </td>
-            </tr>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
--->
-            
-                
-
-    
-
-    
-             <tr>
-                <td><a href="#.navigationFocusedChanged">
-                    <code>navigationFocusedChanged</code></a>
-                </td>
-                <td>
-                
-                    
 
 
 
@@ -359,15 +282,14 @@ boolean
             </tbody>
         </table>
         
+
+        
         
         
 
         
-
-        
-           <div class="methodDetails">
-           <h3 id="signalDetails">Signal Details</h3>
-
+            <div class="methodDetails">
+            <h3 id="methodDetails">Method Details</h3>
             
                 
 
@@ -375,17 +297,12 @@ boolean
         <thead>
             <tr>
                 <th>
-                    <span id=".navigationFocusDisabledChanged" class="member">navigationFocusDisabledChanged(
-                        
-                    )</span>
+                    <span id=".getRotations" class="member"><span class="type-signature">(static) </span>getRotations<span class="signature">(  )</span><span class="type-returns"> &rarr; {Array.&lt;<a href="global.html#Quat">Quat</a>>}</span></span>
                     <br />
                         Returns: <span style="font-weight: normal;">
                         
                             
-    
-Signal
-
-
+    The joint rotations in the animation frame.
 
 
                         </span>           
@@ -396,7 +313,47 @@ Signal
             <tr>
                 <td>
                     
-                        <p style="color:red;">&nbsp;</p>
+                        <p>
+                            Gets the joint rotations in the animation frame.
+                            
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                        </p>
                                         
 
                     
@@ -430,67 +387,8 @@ Signal
 
 
             
-                
+        
 
-    <table>
-        <thead>
-            <tr>
-                <th>
-                    <span id=".navigationFocusedChanged" class="member">navigationFocusedChanged(
-                        
-                    )</span>
-                    <br />
-                        Returns: <span style="font-weight: normal;">
-                        
-                            
-    
-Signal
-
-
-
-
-                        </span>           
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    
-                        <p style="color:red;">&nbsp;</p>
-                                        
-
-                    
-
-                    
-
-                    
-                    
-                  
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
         
         
 
