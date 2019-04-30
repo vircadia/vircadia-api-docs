@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>OffscreenFlags</title>
+    <title>TextureCache</title>
     
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 </nav>
 
 <div id="main">
-    <h1 class="page-title">OffscreenFlags</h1>
+    <h1 class="page-title">TextureCache</h1>
 
     
 
@@ -40,10 +40,16 @@
             <a href="#props">Properties</a> • 
         
         
+            <a href="#method">Methods</a> • 
+        
         
             <a href="#signal">Signals</a> • 
         
         
+            <a href="#typeDef">Type Definitions</a> • 
+        
+        
+            <a href="#methodDetails">Method Details</a> • 
         
         
             <a href="#signalDetails">Signal Details</a> •  
@@ -56,7 +62,7 @@
             
                 <h3>Description</h3>
                 
-                    <p><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p></p>
+                    <p>The <code>TextureCache</code> API manages texture cache resources.<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p></p>
                 
             
 
@@ -90,13 +96,13 @@
 
         <tr>
             
-                <td><span class="signature">navigationFocused</span></td>
+                <td><span class="signature">numTotal</span></td>
             
 
             <td  class="type">
             
                 
-boolean
+number
 
 
             
@@ -105,7 +111,7 @@ boolean
             
 
             <td class="description last">
-                
+                Total number of total resources. <em>Read-only.</em>
                 
                 
             </td>
@@ -114,13 +120,13 @@ boolean
 
         <tr>
             
-                <td><span class="signature">navigationFocusDisabled</span></td>
+                <td><span class="signature">numCached</span></td>
             
 
             <td  class="type">
             
                 
-boolean
+number
 
 
             
@@ -129,7 +135,55 @@ boolean
             
 
             <td class="description last">
+                Total number of cached resource. <em>Read-only.</em>
                 
+                
+            </td>
+        </tr>
+    
+
+        <tr>
+            
+                <td><span class="signature">sizeTotal</span></td>
+            
+
+            <td  class="type">
+            
+                
+number
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+                Size in bytes of all resources. <em>Read-only.</em>
+                
+                
+            </td>
+        </tr>
+    
+
+        <tr>
+            
+                <td><span class="signature">sizeCached</span></td>
+            
+
+            <td  class="type">
+            
+                
+number
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+                Size in bytes of all cached resources. <em>Read-only.</em>
                 
                 
             </td>
@@ -192,13 +246,12 @@ boolean
         
 
         
-
-        
-            <h3 id="signal">Signals</h3>
+            <h3 id="method">Methods</h3>
             <table>
             <thead>
                 <tr>
                     <th class="first">Name</th>
+                    <th class="type">Return Value</th>
                     <th class="last">Summary</th>
                 </tr>
             </thead>
@@ -210,12 +263,251 @@ boolean
 
     
              <tr>
-                <td><a href="#.navigationFocusDisabledChanged">
-                    <code>navigationFocusDisabledChanged</code></a>
+                <td><a href="#.getResourceList">
+                    <code>getResourceList</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+Array.&lt;string>
+
+
+
+
+                                
+                    
                 </td>
                 <td>
                 
+                Gets the URLs of all resources in the cache.
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Report cached resources.</p>
+    
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
+
+var cachedResources = AnimationCache.getResourceList();
+print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
+
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.prefetch">
+                    <code>prefetch</code></a>
+                </td>
+                <td>
                     
+                            
+                                    
+
+
+    
+<a href="ResourceObject.html">ResourceObject</a>
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                Prefetches a resource.
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Prefetch a resource and wait until it has loaded.</p>
+    
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
+// TextureCache has its own version of this function.
+
+var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";
+var resourceObject = AnimationCache.prefetch(resourceURL);
+
+function checkIfResourceLoaded(state) {
+    if (state === Resource.State.FINISHED) {
+        print("Resource loaded and ready.");
+    } else if (state === Resource.State.FAILED) {
+        print("Resource not loaded.");
+    }
+}
+
+// Resource may have already been loaded.
+print("Resource state: " + resourceObject.state);
+checkIfResourceLoaded(resourceObject.state);
+
+// Resource may still be loading.
+resourceObject.stateChanged.connect(function (state) {
+    print("Resource state changed to: " + state);
+    checkIfResourceLoaded(state);
+});</code></pre>
+
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.prefetch0">
+                    <code>prefetch</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+<a href="ResourceObject.html">ResourceObject</a>
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                Prefetches a texture resource of specific type.
+                
 
 
 
@@ -286,13 +578,190 @@ boolean
 
     
              <tr>
-                <td><a href="#.navigationFocusedChanged">
-                    <code>navigationFocusedChanged</code></a>
+                <td><a href="#.updateTotalSize">
+                    <code>updateTotalSize</code></a>
+                </td>
+                <td>
+                    
+                    None
+                    
                 </td>
                 <td>
                 
                     
 
+
+    <p class="important">Deprecated: This function is deprecated and will be removed.</p>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+            </tbody>
+        </table>
+        
+
+        
+            <h3 id="signal">Signals</h3>
+            <table>
+            <thead>
+                <tr>
+                    <th class="first">Name</th>
+                    <th class="last">Summary</th>
+                </tr>
+            </thead>
+            <tbody>       
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.dirty">
+                    <code>dirty</code></a>
+                </td>
+                <td>
+                
+                Triggered when the cache content has changed.
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.spectatorCameraFramebufferReset">
+                    <code>spectatorCameraFramebufferReset</code></a>
+                </td>
+                <td>
+                
+                    
+
+
+    <p class="important">Deprecated: This signal is deprecated and will be removed.</p>
 
 
 
@@ -361,7 +830,762 @@ boolean
         
         
         
+        <div class="typeDef">
+            <h3 id="typeDef">Type Definitions</h3>
 
+            
+                    
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                <span id=".TextureType" class="member">TextureType</span><br />
+                Type: 
+number
+
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                
+                    <p><p>Describes the type of texture.</p>
+<p>See also: <a href="global.html#Material">Material</a> and 
+<a href="https://docs.highfidelity.com/create/3d-models/pbr-materials-guide.html">PBR Materials Guide</a>.</p>
+<table>
+  <thead>
+    <tr><th>Value</th><th>Name</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>0</code></td><td>Default</td><td>Basic color.</td></tr>
+    <tr><td><code>1</code></td><td>Strict</td><td>Basic color. Quality never downgraded.</td></tr>
+    <tr><td><code>2</code></td><td>Albedo</td><td>Color for PBR.</td></tr>
+    <tr><td><code>3</code></td><td>Normal</td><td>Normal map.</td></tr>
+    <tr><td><code>4</code></td><td>Bump</td><td>Bump map.</td></tr>
+    <tr><td><code>5</code></td><td>Specular or metallic</td><td>Metallic or not.</td></tr>
+    <tr><td><code>6</code></td><td>Roughness</td><td>Rough or matte.</td></tr>
+    <tr><td><code>7</code></td><td>Gloss</td><td>Gloss or shine.</td></tr>
+    <tr><td><code>8</code></td><td>Emissive</td><td>The amount of light reflected.</td></tr>
+    <tr><td><code>9</code></td><td>Cube</td><td>Cubic image for sky boxes.</td></tr>
+    <tr><td><code>10</code></td><td>Occlusion or scattering</td><td>How objects or human skin interact with light.</td></tr>
+    <tr><td><code>11</code></td><td>Lightmap</td><td>Light map.</td></tr>
+    <tr><td><code>12</code></td><td>Unused</td><td>Texture is not currently used.</td></tr>
+  </tbody>
+</table></p>
+                                    
+
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+                
+            </div>
+        
+
+        
+            <div class="methodDetails">
+            <h3 id="methodDetails">Method Details</h3>
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".getResourceList" class="member"><span class="type-signature">(static) </span>getResourceList<span class="signature">(  )</span><span class="type-returns"> &rarr; {Array.&lt;string>}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    The URLs of all resources in the cache.
+
+
+                        </span>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        <p>
+                            Gets the URLs of all resources in the cache.
+                            
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                        </p>
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                        <h5>Example</h5>
+                        
+        <p class="code-caption">Report cached resources.</p>
+    
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
+
+var cachedResources = AnimationCache.getResourceList();
+print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
+
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".prefetch" class="member"><span class="type-signature">(static) </span>prefetch<span class="signature">( url )</span><span class="type-returns"> &rarr; {<a href="ResourceObject.html">ResourceObject</a>}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    A resource object.
+
+
+                        </span>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        <p>
+                            Prefetches a resource.
+                            
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                        </p>
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+string
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The URL of the resource to prefetch.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                        <h5>Example</h5>
+                        
+        <p class="code-caption">Prefetch a resource and wait until it has loaded.</p>
+    
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
+// TextureCache has its own version of this function.
+
+var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";
+var resourceObject = AnimationCache.prefetch(resourceURL);
+
+function checkIfResourceLoaded(state) {
+    if (state === Resource.State.FINISHED) {
+        print("Resource loaded and ready.");
+    } else if (state === Resource.State.FAILED) {
+        print("Resource not loaded.");
+    }
+}
+
+// Resource may have already been loaded.
+print("Resource state: " + resourceObject.state);
+checkIfResourceLoaded(resourceObject.state);
+
+// Resource may still be loading.
+resourceObject.stateChanged.connect(function (state) {
+    print("Resource state changed to: " + state);
+    checkIfResourceLoaded(state);
+});</code></pre>
+
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".prefetch0" class="member"><span class="type-signature">(static) </span>prefetch<span class="signature">( url, type, maxNumPixels<span class="signature-attributes">opt</span> )</span><span class="type-returns"> &rarr; {<a href="ResourceObject.html">ResourceObject</a>}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    A resource object.
+
+
+                        </span>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        <p>
+                            Prefetches a texture resource of specific type.
+                            
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                        </p>
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default Value</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+string
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The URL of the texture to prefetch.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<a href="TextureCache.html#.TextureType">TextureCache.TextureType</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The type of the texture.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxNumPixels</code></td>
+            
+
+            <td class="type">
+            
+                
+number
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    67108864
+                
+                </td>
+            
+
+            <td class="description last">The maximum number of pixels to use for the image. If the texture has more 
+    than this number it is downscaled.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".updateTotalSize" class="member"><span class="type-signature">(static) </span>updateTotalSize<span class="signature">( deltaSize )</span><span class="type-returns"></span></span>
+                    </span>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        <p>
+                            
+                            
+
+
+    <p class="important">Deprecated: This function is deprecated and will be removed.</p>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                        </p>
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>deltaSize</code></td>
+            
+
+            <td class="type">
+            
+                
+number
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Delta size.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
         
 
         
@@ -375,7 +1599,7 @@ boolean
         <thead>
             <tr>
                 <th>
-                    <span id=".navigationFocusDisabledChanged" class="member">navigationFocusDisabledChanged(
+                    <span id=".dirty" class="member">dirty(
                         
                     )</span>
                     <br />
@@ -396,7 +1620,47 @@ Signal
             <tr>
                 <td>
                     
-                        <p style="color:red;">&nbsp;</p>
+                        <p>
+                            Triggered when the cache content has changed.
+                            
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                        </p>
                                         
 
                     
@@ -436,7 +1700,7 @@ Signal
         <thead>
             <tr>
                 <th>
-                    <span id=".navigationFocusedChanged" class="member">navigationFocusedChanged(
+                    <span id=".spectatorCameraFramebufferReset" class="member">spectatorCameraFramebufferReset(
                         
                     )</span>
                     <br />
