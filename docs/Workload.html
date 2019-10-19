@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>OffscreenFlags</title>
+    <title>Workload</title>
     
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 </nav>
 
 <div id="main">
-    <h1 class="page-title">OffscreenFlags</h1>
+    <h1 class="page-title">Workload</h1>
 
     
 
@@ -40,10 +40,14 @@
             <a href="#props">Properties</a> • 
         
         
+            <a href="#method">Methods</a> • 
+        
         
             <a href="#signal">Signals</a> • 
         
         
+        
+            <a href="#methodDetails">Method Details</a> • 
         
         
             <a href="#signalDetails">Signal Details</a> •  
@@ -93,7 +97,38 @@
 
         <tr>
             
-                <td><span class="signature">navigationFocused</span></td>
+                <td><span class="signature">cpuRunTime</span></td>
+            
+
+            <td  class="type">
+            
+                
+number
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">
+                
+                    
+
+
+    <p><em>Read-only.</em></p>
+
+
+                
+                
+                
+            </td>
+        </tr>
+    
+
+        <tr>
+            
+                <td><span class="signature">enabled</span></td>
             
 
             <td  class="type">
@@ -117,13 +152,13 @@ boolean
 
         <tr>
             
-                <td><span class="signature">navigationFocusDisabled</span></td>
+                <td><span class="signature">branch</span></td>
             
 
             <td  class="type">
             
                 
-boolean
+number
 
 
             
@@ -193,6 +228,890 @@ boolean
         
 
         
+            <h3 id="method">Methods</h3>
+            <table>
+            <thead>
+                <tr>
+                    <th class="first">Name</th>
+                    <th class="type">Return Value</th>
+                    <th class="last">Summary</th>
+                </tr>
+            </thead>
+            <tbody>       
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.getConfig">
+                    <code>getConfig</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+object
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.getNumSubs">
+                    <code>getNumSubs</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+number
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.getSubConfig">
+                    <code>getSubConfig</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+object
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.getSubConfigs">
+                    <code>getSubConfigs</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+Array.&lt;object>
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.isSwitch">
+                    <code>isSwitch</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+boolean
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.isTask">
+                    <code>isTask</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+boolean
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.load">
+                    <code>load</code></a>
+                </td>
+                <td>
+                    
+                    None
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.load">
+                    <code>load</code></a>
+                </td>
+                <td>
+                    
+                    None
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.refresh">
+                    <code>refresh</code></a>
+                </td>
+                <td>
+                    
+                    None
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.toJSON">
+                    <code>toJSON</code></a>
+                </td>
+                <td>
+                    
+                            
+                                    
+
+
+    
+string
+
+
+
+
+                                
+                    
+                </td>
+                <td>
+                
+                
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+            </tbody>
+        </table>
+        
 
         
             <h3 id="signal">Signals</h3>
@@ -211,8 +1130,8 @@ boolean
 
     
              <tr>
-                <td><a href="#.navigationFocusDisabledChanged">
-                    <code>navigationFocusDisabledChanged</code></a>
+                <td><a href="#.dirtyEnabled">
+                    <code>dirtyEnabled</code></a>
                 </td>
                 <td>
                     
@@ -286,8 +1205,83 @@ boolean
 
     
              <tr>
-                <td><a href="#.navigationFocusedChanged">
-                    <code>navigationFocusedChanged</code></a>
+                <td><a href="#.loaded">
+                    <code>loaded</code></a>
+                </td>
+                <td>
+                    
+                    
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                </td>
+            </tr>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+-->
+            
+                
+
+    
+
+    
+             <tr>
+                <td><a href="#.newStats">
+                    <code>newStats</code></a>
                 </td>
                 <td>
                     
@@ -362,6 +1356,1179 @@ boolean
         
 
         
+            <div class="methodDetails">
+            <h3 id="methodDetails">Method Details</h3>
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".getConfig" class="member"><span class="type-signature">(static) </span>getConfig<span class="signature">( name )</span><span class="type-returns"> &rarr; {object}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+object
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+string
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".getNumSubs" class="member"><span class="type-signature">(static) </span>getNumSubs<span class="signature">(  )</span><span class="type-returns"> &rarr; {number}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+number
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".getSubConfig" class="member"><span class="type-signature">(static) </span>getSubConfig<span class="signature">( index )</span><span class="type-returns"> &rarr; {object}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+object
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+number
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".getSubConfigs" class="member"><span class="type-signature">(static) </span>getSubConfigs<span class="signature">(  )</span><span class="type-returns"> &rarr; {Array.&lt;object>}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+Array.&lt;object>
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".isSwitch" class="member"><span class="type-signature">(static) </span>isSwitch<span class="signature">(  )</span><span class="type-returns"> &rarr; {boolean}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+boolean
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".isTask" class="member"><span class="type-signature">(static) </span>isTask<span class="signature">(  )</span><span class="type-returns"> &rarr; {boolean}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+boolean
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".load" class="member"><span class="type-signature">(static) </span>load<span class="signature">( map )</span><span class="type-returns"></span></span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>map</code></td>
+            
+
+            <td class="type">
+            
+                
+object
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".load" class="member"><span class="type-signature">(static) </span>load<span class="signature">( json )</span><span class="type-returns"></span></span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                        <h3 class="subHeading">Parameters</h3>
+                        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+object
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".refresh" class="member"><span class="type-signature">(static) </span>refresh<span class="signature">(  )</span><span class="type-returns"></span></span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".toJSON" class="member"><span class="type-signature">(static) </span>toJSON<span class="signature">(  )</span><span class="type-returns"> &rarr; {string}</span></span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+string
+
+
+
+
+                        
+                        </span>
+                    
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            </div>
+        
 
         
            <div class="methodDetails">
@@ -374,7 +2541,7 @@ boolean
         <thead>
             <tr>
                 <th>
-                    <span id=".navigationFocusDisabledChanged" class="member">navigationFocusDisabledChanged(
+                    <span id=".dirtyEnabled" class="member">dirtyEnabled(
                         
                     )</span>
                     <br />
@@ -473,7 +2640,106 @@ Signal
         <thead>
             <tr>
                 <th>
-                    <span id=".navigationFocusedChanged" class="member">navigationFocusedChanged(
+                    <span id=".loaded" class="member">loaded(
+                        
+                    )</span>
+                    <br />
+                        Returns: <span style="font-weight: normal;">
+                        
+                            
+    
+Signal
+
+
+
+
+                        </span>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                        
+                        
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+                                        
+
+                    
+
+                    
+
+                    
+                    
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <span id=".newStats" class="member">newStats(
                         
                     )</span>
                     <br />
