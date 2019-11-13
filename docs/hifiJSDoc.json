@@ -1438,6 +1438,19 @@
         "scope": "static"
     },
     {
+        "description": "<p>The world detail quality rendered.</p>\n<table>\n  <thead>\n    <tr><th>Value</th><th>Description</th></tr>\n  </thead>\n  <tbody>\n    <tr><td><code>0</code></td><td>Low world detail quality.</td></tr>\n    <tr><td><code>1</code></td><td>Medium world detail quality.</td></tr>\n    <tr><td><code>2</code></td><td>High world detail quality.</td></tr>\n  </tbody>\n</table>",
+        "kind": "typedef",
+        "name": "WorldDetailQuality",
+        "type": {
+            "names": [
+                "number"
+            ]
+        },
+        "memberof": "LODManager",
+        "longname": "LODManager.WorldDetailQuality",
+        "scope": "static"
+    },
+    {
         "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The LOD class manages your Level of Detail functions within Interface.",
         "kind": "namespace",
         "name": "LODManager",
@@ -1836,461 +1849,6 @@
         ],
         "memberof": "SpeechRecognizer",
         "longname": "SpeechRecognizer.enabledUpdated",
-        "scope": "static"
-    },
-    {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The AudioScope API helps control the Audio Scope features in Interface",
-        "kind": "namespace",
-        "name": "AudioScope",
-        "hifiInterface": true,
-        "hifiClientEntity": true,
-        "hifiAvatar": true,
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "<em>Read-only.</em>",
-                "name": "scopeInput"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "<em>Read-only.</em>",
-                "name": "scopeOutputLeft"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "<em>Read-only.</em>",
-                "name": "scopeOutputRight"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "<em>Read-only.</em>",
-                "name": "triggerInput"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "<em>Read-only.</em>",
-                "name": "triggerOutputLeft"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "<em>Read-only.</em>",
-                "name": "triggerOutputRight"
-            }
-        ],
-        "longname": "AudioScope",
-        "scope": "global"
-    },
-    {
-        "kind": "function",
-        "name": "toggle",
-        "memberof": "AudioScope",
-        "longname": "AudioScope.toggle",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setVisible",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "name": "visible"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setVisible",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getVisible",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getVisible",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "togglePause",
-        "memberof": "AudioScope",
-        "longname": "AudioScope.togglePause",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setPause",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "name": "paused"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setPause",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getPause",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getPause",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "toggleTrigger",
-        "memberof": "AudioScope",
-        "longname": "AudioScope.toggleTrigger",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getAutoTrigger",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getAutoTrigger",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setAutoTrigger",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "name": "autoTrigger"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setAutoTrigger",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setTriggerValues",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "name": "x"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "name": "y"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setTriggerValues",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setTriggered",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "name": "triggered"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setTriggered",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getTriggered",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getTriggered",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getFramesPerSecond",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getFramesPerSecond",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getFramesPerScope",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getFramesPerScope",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "selectAudioScopeFiveFrames",
-        "memberof": "AudioScope",
-        "longname": "AudioScope.selectAudioScopeFiveFrames",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "selectAudioScopeTwentyFrames",
-        "memberof": "AudioScope",
-        "longname": "AudioScope.selectAudioScopeTwentyFrames",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "selectAudioScopeFiftyFrames",
-        "memberof": "AudioScope",
-        "longname": "AudioScope.selectAudioScopeFiftyFrames",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getScopeInput",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<number>"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getScopeInput",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getScopeOutputLeft",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<number>"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getScopeOutputLeft",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getScopeOutputRight",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<number>"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getScopeOutputRight",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getTriggerInput",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<number>"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getTriggerInput",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getTriggerOutputLeft",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<number>"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getTriggerOutputLeft",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getTriggerOutputRight",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<number>"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.getTriggerOutputRight",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setLocalEcho",
-        "tags": [
-            {
-                "originalTitle": "parm",
-                "title": "parm",
-                "text": "{boolean} localEcho",
-                "value": "{boolean} localEcho"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setLocalEcho",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "setServerEcho",
-        "tags": [
-            {
-                "originalTitle": "parm",
-                "title": "parm",
-                "text": "{boolean} serverEcho",
-                "value": "{boolean} serverEcho"
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.setServerEcho",
-        "scope": "static"
-    },
-    {
-        "kind": "signal",
-        "name": "pauseChanged",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.pauseChanged",
-        "scope": "static"
-    },
-    {
-        "kind": "signal",
-        "name": "triggered",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "AudioScope",
-        "longname": "AudioScope.triggered",
         "scope": "static"
     },
     {
@@ -3937,46 +3495,6 @@
             {
                 "type": {
                     "names": [
-                        "boolean"
-                    ]
-                },
-                "defaultvalue": false,
-                "description": "<code>true</code> to transmit blendshapes over the network.\n    <p><strong>Note:</strong> Currently doesn't work. Use {@link MyAvatar.setForceFaceTrackerConnected} instead.</p>",
-                "name": "hasScriptedBlendshapes"
-            },
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "defaultvalue": true,
-                "description": "<code>true</code> if procedural blinking is turned on.",
-                "name": "hasProceduralBlinkFaceMovement"
-            },
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "defaultvalue": true,
-                "description": "<code>true</code> if procedural eye movement is turned on.",
-                "name": "hasProceduralEyeFaceMovement"
-            },
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "defaultvalue": true,
-                "description": "<code>true</code> to move the mouth blendshapes with voice audio \n    when <code>MyAvatar.hasScriptedBlendshapes</code> is enabled.",
-                "name": "hasAudioEnabledFaceMovement"
-            },
-            {
-                "type": {
-                    "names": [
                         "number"
                     ]
                 },
@@ -4303,7 +3821,7 @@
                         "number"
                     ]
                 },
-                "description": "<code>true</code> if the user wearing the HMD is determined to be sitting\n    (avatar leaning is disabled, recenntering is enabled), <code>false</code> if the user wearing the HMD is\n    determined to be standing (avatar leaning is enabled, and avatar recenters if it leans too far).\n    If <code>userRecenterModel == 2</code> (i.e., auto) the property value automatically updates as the user sits\n    or stands, unless <code>isSitStandStateLocked == true</code>. Setting the property value overrides the current\n    siting / standing state, which is updated when the user next sits or stands unless\n    <code>isSitStandStateLocked == true</code>.",
+                "description": "<code>true</code> if the user wearing the HMD is determined to be sitting\n    (avatar leaning is disabled, recentering is enabled), <code>false</code> if the user wearing the HMD is\n    determined to be standing (avatar leaning is enabled, and avatar recenters if it leans too far).\n    If <code>userRecenterModel == 2</code> (i.e., auto) the property value automatically updates as the user sits\n    or stands, unless <code>isSitStandStateLocked == true</code>. Setting the property value overrides the current\n    siting / standing state, which is updated when the user next sits or stands unless\n    <code>isSitStandStateLocked == true</code>.",
                 "name": "isInSittingState"
             },
             {
@@ -6420,7 +5938,7 @@
         "scope": "static"
     },
     {
-        "description": "Turn the avatar's head until it faces the target point within the 90/-90 degree range.\nOnce this method is called, API calls will have full control of the head for a limited time.\nIf this method is not called for two seconds, the engine will regain control of the head.",
+        "description": "Turns the avatar's head until it faces the target point within a 90/-90 degree range.\nOnce this method is called, API calls will have full control of the head for a limited time.\nIf this method is not called for two seconds, the engine will regain control of the head.",
         "kind": "function",
         "name": "setHeadLookAt",
         "params": [
@@ -6439,7 +5957,7 @@
         "scope": "static"
     },
     {
-        "description": "Returns the current head look at target point in world coordinates.",
+        "description": "Returns the current target point of the head's look direction in world coordinates.",
         "kind": "function",
         "name": "getHeadLookAt",
         "returns": [
@@ -6449,7 +5967,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "Default position between your avatar's eyes in world coordinates."
+                "description": "The head's \"look at\" target in world coordinates."
             }
         ],
         "memberof": "MyAvatar",
@@ -6457,7 +5975,60 @@
         "scope": "static"
     },
     {
-        "description": "Aims the pointing directional blending towards the provided target point.\nThe \"point\" reaction should be triggered before using this method. \n<code>MyAvatar.beginReaction(\"point\")</code>\nReturns <code>true</code> if the target point lays in front of the avatar.",
+        "description": "Returns control of the avatar's head to the engine, and releases control from API calls.",
+        "kind": "function",
+        "name": "releaseHeadLookAtControl",
+        "memberof": "MyAvatar",
+        "longname": "MyAvatar.releaseHeadLookAtControl",
+        "scope": "static"
+    },
+    {
+        "description": "Forces the avatar's eyes to look at a specified location. Once this method is called, API calls \nwill have full control of the eyes for a limited time. If this method is not called for two seconds, \nthe engine will regain control of the eyes.",
+        "kind": "function",
+        "name": "setEyesLookAt",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Vec3"
+                    ]
+                },
+                "description": "The target point in world coordinates.",
+                "name": "lookAtTarget"
+            }
+        ],
+        "memberof": "MyAvatar",
+        "longname": "MyAvatar.setEyesLookAt",
+        "scope": "static"
+    },
+    {
+        "description": "Returns the current target point of the eyes look direction in world coordinates.",
+        "kind": "function",
+        "name": "getEyesLookAt",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Vec3"
+                    ]
+                },
+                "description": "The eyes' \"look at\" target in world coordinates."
+            }
+        ],
+        "memberof": "MyAvatar",
+        "longname": "MyAvatar.getEyesLookAt",
+        "scope": "static"
+    },
+    {
+        "description": "Returns control of the avatar's eyes to the engine, and releases control from API calls.",
+        "kind": "function",
+        "name": "releaseEyesLookAtControl",
+        "memberof": "MyAvatar",
+        "longname": "MyAvatar.releaseEyesLookAtControl",
+        "scope": "static"
+    },
+    {
+        "description": "Aims the pointing directional blending towards the provided target point. The \"point\" reaction should be triggered \nbefore using this method with the code <code>MyAvatar.beginReaction(\"point\")</code>.",
         "kind": "function",
         "name": "setPointAt",
         "params": [
@@ -6469,6 +6040,16 @@
                 },
                 "description": "The target point in world coordinates.",
                 "name": "pointAtTarget"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if the target point lays in front of the avatar; <code>false</code> otherwise."
             }
         ],
         "memberof": "MyAvatar",
@@ -6677,7 +6258,7 @@
         "scope": "static"
     },
     {
-        "description": "Starts a sitting action for the avatar",
+        "description": "Starts a sitting action for the avatar.",
         "kind": "function",
         "name": "beginSit",
         "params": [
@@ -6705,7 +6286,7 @@
         "scope": "static"
     },
     {
-        "description": "Ends a sitting action for the avatar",
+        "description": "Ends a sitting action for the avatar.",
         "kind": "function",
         "name": "endSit",
         "params": [
@@ -7902,6 +7483,23 @@
         "scope": "static"
     },
     {
+        "description": "Triggered when the avatar's model has failed to load.",
+        "kind": "signal",
+        "name": "onLoadFailed",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Signal"
+                    ]
+                }
+            }
+        ],
+        "memberof": "MyAvatar",
+        "longname": "MyAvatar.onLoadFailed",
+        "scope": "static"
+    },
+    {
         "description": "Triggered when your avatar changes from being active to being away.",
         "kind": "signal",
         "name": "wentAway",
@@ -8153,40 +7751,6 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The FaceTracker API helps manage facial tracking hardware.",
-        "kind": "namespace",
-        "name": "FaceTracker",
-        "hifiInterface": true,
-        "hifiClientEntity": true,
-        "hifiAvatar": true,
-        "longname": "FaceTracker",
-        "scope": "global"
-    },
-    {
-        "kind": "function",
-        "name": "setEnabled",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "name": "enabled"
-            }
-        ],
-        "memberof": "FaceTracker",
-        "longname": "FaceTracker.setEnabled",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "calibrate",
-        "memberof": "FaceTracker",
-        "longname": "FaceTracker.calibrate",
-        "scope": "static"
-    },
-    {
         "description": "An intersection result for a collision pick.",
         "kind": "typedef",
         "name": "CollisionPickResult",
@@ -8310,9 +7874,10 @@
         "scope": "global"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>LaserPointers</code> API is a subset of the {@link Pointers} API. It lets you create, manage, and visually \nrepresent objects for repeatedly calculating ray intersections with avatars, entities, and overlays. Ray pointers can also \nbe configured to generate events on entities and overlays intersected.\n\n<p class=\"important\">Deprecated: This API is deprecated. Use {@link Pointers} instead.",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>LaserPointers</code> API is a subset of the {@link Pointers} API. It lets you create, manage, and visually \nrepresent objects for repeatedly calculating ray intersections with avatars, entities, and overlays. Ray pointers can also \nbe configured to generate events on entities and overlays intersected.",
         "kind": "namespace",
         "name": "LaserPointers",
+        "deprecated": "This API is deprecated and will be removed. Use {@link Pointers} instead.",
         "hifiInterface": true,
         "hifiClientEntity": true,
         "hifiAvatar": true,
@@ -8886,7 +8451,7 @@
                         "PickType"
                     ]
                 },
-                "description": "The type of pick when getting these properties from {@link Picks.getPickProperties} or {@link Picks.getPickScriptParameters}. A ray pick's type is {@link PickType.Ray}.",
+                "description": "The type of pick when getting these properties from {@link Picks.getPickProperties} or \n    {@link Picks.getPickScriptParameters}. A ray pick's type is {@link PickType.Ray}.",
                 "name": "pickType"
             },
             {
@@ -8895,7 +8460,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "Returned from {@link Picks.getPickProperties} when the pick has a parent with varying scale (usually an avatar or an entity).\n    Its value is the original scale of the parent at the moment the pick was created, and is used to scale the pointer which owns this pick, if any.",
+                "description": "Returned from {@link Picks.getPickProperties} when the pick has a parent with varying scale \n    (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and \n    is used to scale the pointer which owns this pick, if any.",
                 "name": "baseScale"
             }
         ],
@@ -8974,7 +8539,7 @@
                         "PickType"
                     ]
                 },
-                "description": "The type of pick when getting these properties from {@link Picks.getPickProperties} or {@link Picks.getPickScriptParameters}. A stylus pick's type is {@link PickType.Stylus}.",
+                "description": "The type of pick when getting these properties from {@link Picks.getPickProperties} or \n    {@link Picks.getPickScriptParameters}. A stylus pick's type is {@link PickType.Stylus}.",
                 "name": "pickType"
             }
         ],
@@ -9179,7 +8744,7 @@
                         "PickType"
                     ]
                 },
-                "description": "The type of pick when getting these properties from {@link Picks.getPickProperties} or {@link Picks.getPickScriptParameters}. A parabola pick's type is {@link PickType.Parabola}.",
+                "description": "The type of pick when getting these properties from {@link Picks.getPickProperties} or \n    {@link Picks.getPickScriptParameters}. A parabola pick's type is {@link PickType.Parabola}.",
                 "name": "pickType"
             },
             {
@@ -9188,7 +8753,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "Returned from {@link Picks.getPickProperties} when the pick has a parent with varying scale (usually an avatar or an entity).\n    Its value is the original scale of the parent at the moment the pick was created, and is used to rescale the pick, and/or the pointer which owns this pick, if any.",
+                "description": "Returned from {@link Picks.getPickProperties} when the pick has a parent with varying scale \n    (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and \n    is used to rescale the pick, and/or the pointer which owns this pick, if any.",
                 "name": "baseScale"
             }
         ],
@@ -9712,7 +9277,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the parameters that were passed in to {@link Picks.createPick} to create the pick,\nif the pick was created through a script.\nNote that these properties do not reflect the current state of the pick.\nSee {@link Picks.getPickProperties}.",
+        "description": "Gets the parameters that were passed in to {@link Picks.createPick} to create the pick, if the pick was created through \na script. Note that these properties do not reflect the current state of the pick.\nSee {@link Picks.getPickProperties}.",
         "kind": "function",
         "name": "getPickScriptParameters",
         "params": [
@@ -10344,7 +9909,7 @@
                         "PickType"
                     ]
                 },
-                "description": "The type of pointer when getting these properties from {@link Pointers.getPointerProperties} or {@link Pointers.getPointerScriptParameters}. A stylus pointer's type is {@link PickType.Stylus}.",
+                "description": "The type of the stylus pointer returned from {@link Pointers.getPointerProperties} \n    or {@link Pointers.getPointerScriptParameters}. A stylus pointer's type is {@link PickType.Stylus}.",
                 "name": "pointerType"
             },
             {
@@ -10354,7 +9919,7 @@
                     ]
                 },
                 "optional": true,
-                "description": "Returned from {@link Pointers.getPointerProperties}. The ID of the pick created alongside this pointer.",
+                "description": "The ID of the pick created alongside this pointer, returned from \n    {@link Pointers.getPointerProperties}.",
                 "name": "pickID"
             }
         ],
@@ -10652,7 +10217,7 @@
                         "PickType"
                     ]
                 },
-                "description": "The type of pointer when getting these properties from {@link Pointers.getPointerProperties} or {@link Pointers.getPointerScriptParameters}. A laser pointer's type is {@link PickType.Ray}.",
+                "description": "The type of pointer returned from {@link Pointers.getPointerProperties} or \n    {@link Pointers.getPointerScriptParameters}. A laser pointer's type is {@link PickType.Ray}.",
                 "name": "pointerType"
             },
             {
@@ -10662,7 +10227,7 @@
                     ]
                 },
                 "optional": true,
-                "description": "Returned from {@link Pointers.getPointerProperties}. The ID of the pick created alongside this pointer.",
+                "description": "The ID of the pick created alongside this pointer, returned from \n    {@link Pointers.getPointerProperties}.",
                 "name": "pickID"
             }
         ],
@@ -10975,7 +10540,7 @@
                         "PickType"
                     ]
                 },
-                "description": "The type of pointer when getting these properties from {@link Pointers.getPointerProperties} or {@link Pointers.getPointerScriptParameters}. A parabola pointer's type is {@link PickType.Parabola}.",
+                "description": "The type of pointer returned from {@link Pointers.getPointerProperties} or \n    {@link Pointers.getPointerScriptParameters}. A parabola pointer's type is {@link PickType.Parabola}.",
                 "name": "pointerType"
             },
             {
@@ -10985,7 +10550,7 @@
                     ]
                 },
                 "optional": true,
-                "description": "Returned from {@link Pointers.getPointerProperties}. The ID of the pick created alongside this pointer.",
+                "description": "The ID of the pick created alongside this pointer, returned from \n    {@link Pointers.getPointerProperties}.",
                 "name": "pickID"
             }
         ],
@@ -11171,7 +10736,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the parameters that were passed in to {@link Pointers.createPointer} to create the pointer,\nif the pointer was created through a script.\nNote that these properties do not reflect the current state of the pointer.\nSee {@link Pointers.getPointerProperties}.",
+        "description": "Gets the parameters that were passed in to {@link Pointers.createPointer} to create the pointer when the pointer was \ncreated through a script. \n<p><strong>Note:</strong> These properties do not reflect the current state of the pointer. To get the current state \nof the pointer, see {@link Pointers.getPointerProperties}.",
         "kind": "function",
         "name": "getPointerScriptParameters",
         "params": [
@@ -14713,6 +14278,66 @@
         "scope": "static"
     },
     {
+        "description": "The possible \"relative position anchors\" of an <code>InteractiveWindow</code>. Used when defining the `relativePosition` property of an `InteractiveWindow`.",
+        "kind": "typedef",
+        "name": "RelativePositionAnchors",
+        "type": {
+            "names": [
+                "object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "InteractiveWindow.RelativePositionAnchor"
+                    ]
+                },
+                "description": "Specifies that the position of the `InteractiveWindow` will not be relative to any part of the Interface window.",
+                "name": "NO_ANCHOR"
+            },
+            {
+                "type": {
+                    "names": [
+                        "InteractiveWindow.RelativePositionAnchor"
+                    ]
+                },
+                "description": "Specifies that the `relativePosition` of the `InteractiveWindow` will be offset from the top left of the Interface window.",
+                "name": "TOP_LEFT"
+            },
+            {
+                "type": {
+                    "names": [
+                        "InteractiveWindow.RelativePositionAnchor"
+                    ]
+                },
+                "description": "Specifies that the `relativePosition` of the `InteractiveWindow` will be offset from the top right of the Interface window.",
+                "name": "TOP_RIGHT"
+            },
+            {
+                "type": {
+                    "names": [
+                        "InteractiveWindow.RelativePositionAnchor"
+                    ]
+                },
+                "description": "Specifies that the `relativePosition` of the `InteractiveWindow` will be offset from the bottom right of the Interface window.",
+                "name": "BOTTOM_RIGHT"
+            },
+            {
+                "type": {
+                    "names": [
+                        "InteractiveWindow.RelativePositionAnchor"
+                    ]
+                },
+                "description": "Specifies that the `relativePosition` of the `InteractiveWindow` will be offset from the bottom left of the Interface window.",
+                "name": "BOTTOM_LEFT"
+            }
+        ],
+        "memberof": "InteractiveWindow",
+        "longname": "InteractiveWindow.RelativePositionAnchors",
+        "scope": "static"
+    },
+    {
         "description": "The possible display modes for an <code>InteractiveWindow</code>.",
         "kind": "typedef",
         "name": "PresentationModes",
@@ -14819,6 +14444,15 @@
                 },
                 "description": "The possible docking locations of an {@link InteractiveWindow}: top, \n    bottom, left, or right of the Interface window. \n    <em>Read-only.</em>",
                 "name": "DockArea"
+            },
+            {
+                "type": {
+                    "names": [
+                        "InteractiveWindow.RelativePositionAnchors"
+                    ]
+                },
+                "description": "The possible \"relative position anchors\" for an {@link InteractiveWindow}: top left, \n    top right, bottom right, or bottom left of the Interface window. \n    <em>Read-only.</em>",
+                "name": "RelativePositionAnchor"
             }
         ],
         "longname": "Desktop",
@@ -16116,7 +15750,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The Keyboard API provides facilities to use 3D Physical keyboard.",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Keyboard</code> API provides facilities to use an in-world, virtual keyboard. When enabled, this keyboard is \ndisplayed instead of the 2D keyboard that raises at the bottom of the tablet or Web entities when a text input field has \nfocus and you're in HMD mode.",
         "kind": "namespace",
         "name": "Keyboard",
         "hifiInterface": true,
@@ -16126,24 +15760,160 @@
             {
                 "type": {
                     "names": [
-                        "bool"
+                        "boolean"
                     ]
                 },
-                "description": "<code>true</code> If the keyboard is visible <code>false</code> otherwise",
+                "description": "<code>true</code> if the virtual keyboard is visible, <code>false</code> if it isn't.",
                 "name": "raised"
             },
             {
                 "type": {
                     "names": [
-                        "bool"
+                        "boolean"
                     ]
                 },
-                "description": "<code>true</code> Will show * instead of characters in the text display <code>false</code> otherwise",
+                "description": "<code>true</code> if <code>\"*\"</code>s are displayed on the virtual keyboard's display \n    instead of the characters typed, <code>false</code> if the actual characters are displayed.",
                 "name": "password"
+            },
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if user settings have \"Use Virtual Keyboard\" enabled, \n    <code>false</code> if it's disabled. <em>Read-only.</em>",
+                "name": "use3DKeyboard"
+            },
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if user settings for the virtual keyboard have \"Mallets\" \n    selected, <code>false</code> if \"Lasers\" is selected. <em>Read-only.</em>",
+                "name": "preferMalletsOverLasers"
             }
         ],
         "longname": "Keyboard",
         "scope": "global"
+    },
+    {
+        "description": "Loads a JSON file that defines the virtual keyboard's layout. The default JSON file used is \n{@link https://github.com/highfidelity/hifi/blob/master/interface/resources/config/keyboard.json|https://github.com/highfidelity/hifi/.../keyboard.json}.",
+        "kind": "function",
+        "name": "loadKeyboardFile",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The keyboard JSON file.",
+                "name": "path"
+            }
+        ],
+        "memberof": "Keyboard",
+        "longname": "Keyboard.loadKeyboardFile",
+        "scope": "static"
+    },
+    {
+        "description": "Enables the left mallet so that it is displayed when in HMD mode.",
+        "kind": "function",
+        "name": "enableLeftMallet",
+        "memberof": "Keyboard",
+        "longname": "Keyboard.enableLeftMallet",
+        "scope": "static"
+    },
+    {
+        "description": "Enables the right mallet so that it is displayed when in HMD mode.",
+        "kind": "function",
+        "name": "enableRightMallet",
+        "memberof": "Keyboard",
+        "longname": "Keyboard.enableRightMallet",
+        "scope": "static"
+    },
+    {
+        "description": "Disables the left mallet so that it is not displayed when in HMD mode.",
+        "kind": "function",
+        "name": "disableLeftMallet",
+        "memberof": "Keyboard",
+        "longname": "Keyboard.disableLeftMallet",
+        "scope": "static"
+    },
+    {
+        "description": "Disables the right mallet so that it is not displayed when in HMD mode.",
+        "kind": "function",
+        "name": "disableRightMallet",
+        "memberof": "Keyboard",
+        "longname": "Keyboard.disableRightMallet",
+        "scope": "static"
+    },
+    {
+        "description": "Configures the virtual keyboard to recognize a ray pointer as the left hand's laser.",
+        "kind": "function",
+        "name": "setLeftHandLaser",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The ID of a ray pointer created by {@link Pointers.createPointer}.",
+                "name": "leftHandLaser"
+            }
+        ],
+        "memberof": "Keyboard",
+        "longname": "Keyboard.setLeftHandLaser",
+        "scope": "static"
+    },
+    {
+        "description": "Configures the virtual keyboard to recognize a ray pointer as the right hand's laser.",
+        "kind": "function",
+        "name": "setRightHandLaser",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The ID of a ray pointer created by {@link Pointers.createPointer}.",
+                "name": "rightHandLaser"
+            }
+        ],
+        "memberof": "Keyboard",
+        "longname": "Keyboard.setRightHandLaser",
+        "scope": "static"
+    },
+    {
+        "description": "Checks whether an entity is part of the virtual keyboard.",
+        "kind": "function",
+        "name": "containsID",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Uuid"
+                    ]
+                },
+                "description": "The entity ID.",
+                "name": "entityID"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if the entity is part of the virtual keyboard, <code>false</code> if it isn't."
+            }
+        ],
+        "memberof": "Keyboard",
+        "longname": "Keyboard.containsID",
+        "scope": "static"
     },
     {
         "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Menu</code> API provides access to the menu that is displayed at the top of the window on a user's desktop and in \nthe tablet when the \"MENU\" button is pressed.\n\n<h3>Groupings</h3>\n\n<p>A \"grouping\" provides a way to group a set of menus or menu items together so that they can all be set visible or invisible \nas a group.</p>\n<p>There is currently only one available group: <code>\"Developer\"</code>. This grouping can be toggled in the \n\"Settings\" menu.</p>\n<p>If a menu item doesn't belong to a group, it is always displayed.</p>",
@@ -20732,7 +20502,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if webcam face tracking is enabled, <code>false</code> if it is \n    disabled.\n    <em>Read-only.</em>\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if webcam face tracking is enabled, <code>false</code> if it is \n    disabled.\n    <em>Read-only.</em>\n    <p class=\"important\">Deprecated: This property is deprecated and has been removed.</p>",
                 "name": "cameraEnabled"
             },
             {
@@ -20741,7 +20511,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if webcam face tracking is muted (temporarily disabled), \n    <code>false</code> it if isn't.\n    <em>Read-only.</em>\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if webcam face tracking is muted (temporarily disabled), \n    <code>false</code> it if isn't.\n    <em>Read-only.</em>\n    <p class=\"important\">Deprecated: This property is deprecated and has been removed.</p>",
                 "name": "cameraMuted"
             },
             {
@@ -20853,7 +20623,7 @@
     },
     {
         "description": "Triggered when webcam face tracking is enabled or disabled.",
-        "deprecated": "This signal is deprecated and will be removed.",
+        "deprecated": "This signal is deprecated and has been removed.",
         "kind": "signal",
         "name": "cameraEnabledChanged",
         "returns": [
@@ -20871,7 +20641,7 @@
     },
     {
         "description": "Triggered when webcam face tracking is muted (temporarily disabled) or unmuted.",
-        "deprecated": "This signal is deprecated and will be removed.",
+        "deprecated": "This signal is deprecated and has been removed.",
         "kind": "signal",
         "name": "cameraMutedChanged",
         "returns": [
@@ -21074,7 +20844,7 @@
         "scope": "static"
     },
     {
-        "description": "Toggles the muting (temporary disablement) of webcam face tracking on/off.\n<p class=\"important\">Deprecated: This function is deprecated and will be removed.</p>",
+        "description": "Toggles the muting (temporary disablement) of webcam face tracking on/off.\n<p class=\"important\">Deprecated: This function is deprecated and has been removed.</p>",
         "kind": "function",
         "name": "toggleCameraMute",
         "memberof": "AvatarInputs",
@@ -32683,7 +32453,7 @@
         "scope": "static"
     },
     {
-        "description": "Sets the value of a blendshape to animate your avatar's face. To enable other users to see the resulting animation of \nyour avatar's face, use {@link Avatar.setForceFaceTrackerConnected} or {@link MyAvatar.setForceFaceTrackerConnected}.",
+        "description": "Sets the value of a blendshape to animate your avatar's face. In order for other users to see the resulting animations \non your avatar's face, set {@link Avatar.hasScriptedBlendshapes} to true. When you are done using this API, set \n{@link Avatar.hasScriptedBlendshapes} back to false when the animation is complete.",
         "kind": "function",
         "name": "setBlendshape",
         "params": [
@@ -32707,7 +32477,7 @@
             }
         ],
         "examples": [
-            "<caption>Open your avatar's mouth wide.</caption>\nMyAvatar.setForceFaceTrackerConnected(true);\nMyAvatar.setBlendshape(\"JawOpen\", 1.0);\n\n// Note: If using from the Avatar API, replace \"MyAvatar\" with \"Avatar\"."
+            "<caption>Open your avatar's mouth wide.</caption>\nMyAvatar.hasScriptedBlendshapes = true;\nMyAvatar.setBlendshape(\"JawOpen\", 1.0);\n\n// Note: If using from the Avatar API, replace \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "Avatar",
         "longname": "Avatar.setBlendshape",
@@ -32811,7 +32581,7 @@
         "scope": "static"
     },
     {
-        "description": "Enables blendshapes set using {@link Avatar.setBlendshape} or {@link MyAvatar.setBlendshape} to be transmitted to other \nusers so that they can see the animation of your avatar's face.",
+        "description": "<p class=\"important\">Deprecated: This method is deprecated and will be removed.</p>\nUse Avatar.hasScriptedBlendshapes property instead.\nEnables blendshapes set using {@link Avatar.setBlendshape} or {@link MyAvatar.setBlendshape} to be transmitted to other \nusers so that they can see the animation of your avatar's face.",
         "kind": "function",
         "name": "setForceFaceTrackerConnected",
         "params": [
@@ -33536,10 +33306,11 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Assignment Client Scripts</p>The <code>AvatarList</code> API provides information about avatars within the current domain.\n\n<p><strong>Warning:</strong> An API named \"<code>AvatarList</code>\" is also provided for Interface, client entity, and avatar \nscripts, however, it is a synonym for the {@link AvatarManager} API.</p>",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>AvatarList</code> API provides information about avatars within the current domain.\n\n<p><strong>Warning:</strong> An API named \"<code>AvatarList</code>\" is also provided for Interface, client entity, and avatar \nscripts, however, it is a synonym for the {@link AvatarManager} API.</p>",
         "kind": "namespace",
         "name": "AvatarList",
         "hifiAssignmentClient": true,
+        "hifiServerEntity": true,
         "longname": "AvatarList",
         "scope": "global"
     },
@@ -46821,6 +46592,14 @@
                     ]
                 },
                 "name": "defaultFallthrough"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "name": "procedural"
             }
         ],
         "tags": [
@@ -47477,386 +47256,6 @@
         "memberof": "Controller",
         "longname": "Controller.Hardware-Keyboard",
         "scope": "static"
-    },
-    {
-        "description": "<p>An RGB or SRGB color value.</p>\n<table>\n  <thead>\n    <tr><th>Index</th><th>Type</th><th>Attributes</th><th>Default</th><th>Value</th></tr>\n  </thead>\n  <tbody>\n    <tr><td><code>0</code></td><td>number</td><td></td><td></td>\n      <td>Red component value. Number in the range <code>0.0</code> &ndash; <code>1.0</code>.</td></tr>\n    <tr><td><code>1</code></td><td>number</td><td></td><td></td>\n      <td>Green component value. Number in the range <code>0.0</code> &ndash; <code>1.0</code>.</td></tr>\n    <tr><td><code>2</code></td><td>number</td><td></td><td></td>\n      <td>Blue component value. Number in the range <code>0.0</code> &ndash; <code>1.0</code>.</td></tr>\n    <tr><td><code>3</code></td><td>boolean</td><td>&lt;optional&gt;</td><td>false</td>\n      <td>If <code>true</code> then the color is an SRGB color.</td></tr>\n  </tbody>\n</table>",
-        "kind": "typedef",
-        "name": "RGBS",
-        "type": {
-            "names": [
-                "array"
-            ]
-        },
-        "longname": "RGBS",
-        "scope": "global"
-    },
-    {
-        "description": "A material or set of materials used by a {@link Entities.EntityType|Material entity}.",
-        "kind": "typedef",
-        "name": "MaterialResource",
-        "type": {
-            "names": [
-                "object"
-            ]
-        },
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "defaultvalue": 1,
-                "description": "The version of the material. <em>Currently not used.</em>",
-                "name": "materialVersion"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Entities.Material",
-                        "Array.<Entities.Material>"
-                    ]
-                },
-                "description": "The details of the material or materials.",
-                "name": "materials"
-            }
-        ],
-        "memberof": "Entities",
-        "longname": "Entities.MaterialResource",
-        "scope": "static"
-    },
-    {
-        "description": "A material used in a {@link Entities.MaterialResource|MaterialResource}.",
-        "kind": "typedef",
-        "name": "Material",
-        "type": {
-            "names": [
-                "object"
-            ]
-        },
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "defaultvalue": "\"hifi_pbr\"",
-                "description": "Different material models support different properties and rendering modes.\n    Supported models are: <code>\"hifi_pbr\"</code>.",
-                "name": "model"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "defaultvalue": "\"\"",
-                "description": "A name for the material. Supported by all material models.",
-                "name": "name"
-            },
-            {
-                "type": {
-                    "names": [
-                        "ColorFloat",
-                        "RGBS",
-                        "string"
-                    ]
-                },
-                "description": "The emissive color, i.e., the color that the material emits. A \n    {@link ColorFloat} value is treated as sRGB and must have component values in the range <code>0.0</code> &ndash; \n    <code>1.0</code>. A {@link RGBS} value can be either RGB or sRGB. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "emissive"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number",
-                        "string"
-                    ]
-                },
-                "defaultvalue": "1.0",
-                "description": "The opacity, range <code>0.0</code> &ndash; <code>1.0</code>. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "opacity"
-            },
-            {
-                "type": {
-                    "names": [
-                        "boolean",
-                        "string"
-                    ]
-                },
-                "defaultvalue": false,
-                "description": "<code>true</code> if the material is unaffected by lighting, <code>false</code> if \n    it is lit by the key light and local lights.\n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "unlit"
-            },
-            {
-                "type": {
-                    "names": [
-                        "ColorFloat",
-                        "RGBS",
-                        "string"
-                    ]
-                },
-                "description": "The albedo color. A {@link ColorFloat} value is treated as sRGB and must have \n    component values in the range <code>0.0</code> &ndash; <code>1.0</code>. A {@link RGBS} value can be either RGB or sRGB. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "albedo"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number",
-                        "string"
-                    ]
-                },
-                "description": "The roughness, range <code>0.0</code> &ndash; <code>1.0</code>. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "roughness"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number",
-                        "string"
-                    ]
-                },
-                "description": "The metallicness, range <code>0.0</code> &ndash; <code>1.0</code>. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "metallic"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number",
-                        "string"
-                    ]
-                },
-                "description": "The scattering, range <code>0.0</code> &ndash; <code>1.0</code>. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "scattering"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the emissive texture image. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "emissiveMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the albedo texture image. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "albedoMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the opacity texture image. Set the value the same as the <code>albedoMap</code> \n    value for transparency. \n    <code>\"hifi_pbr\"</code> model only.",
-                "name": "opacityMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number",
-                        "string"
-                    ]
-                },
-                "description": "The mode defining the interpretation of the opacity map. Values can be:\n    <code>\"OPACITY_MAP_OPAQUE\"</code> for ignoring the opacity map information.\n    <code>\"OPACITY_MAP_MASK\"</code> for using the opacity map as a mask, where only the texel greater than opacityCutoff are visible and rendered opaque.\n    <code>\"OPACITY_MAP_BLEND\"</code> for using the opacity map for alpha blending the material surface with the background.\n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "opacityMapMode"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number",
-                        "string"
-                    ]
-                },
-                "description": "The opacity cutoff threshold used to determine the opaque texels of the Opacity map\n    when opacityMapMode is \"OPACITY_MAP_MASK\", range <code>0.0</code> &ndash; <code>1.0</code>.\n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "opacityCutoff"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the roughness texture image. You can use this or <code>glossMap</code>, but not \n    both. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "roughnessMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the gloss texture image. You can use this or <code>roughnessMap</code>, but not \n    both. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "glossMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the metallic texture image. You can use this or <code>specularMap</code>, but \n    not both. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "metallicMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the specular texture image. You can use this or <code>metallicMap</code>, but \n    not both. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "specularMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the normal texture image. You can use this or <code>bumpMap</code>, but not both. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "normalMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the bump texture image. You can use this or <code>normalMap</code>, but not both. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "bumpMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the occlusion texture image. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "occlusionMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the scattering texture image. Only used if <code>normalMap</code> or \n    <code>bumpMap</code> is specified. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "scatteringMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the light map texture image. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "lightMap"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Mat4",
-                        "string"
-                    ]
-                },
-                "description": "The transform to use for all of the maps apart from <code>occlusionMap</code> \n    and <code>lightMap</code>. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "texCoordTransform0"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Mat4",
-                        "string"
-                    ]
-                },
-                "description": "The transform to use for <code>occlusionMap</code> and <code>lightMap</code>. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only.",
-                "name": "texCoordTransform1"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "Parameters for controlling how lightMap is used. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only. \n    <p><em>Currently not used.</em></p>",
-                "name": "lightmapParams"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "Parameters for controlling the material projection and repetition. \n    Set to <code>\"fallthrough\"</code> to fall through to the material below. <code>\"hifi_pbr\"</code> model only. \n    <p><em>Currently not used.</em></p>",
-                "name": "materialParams"
-            },
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "defaultvalue": false,
-                "description": "<code>true</code> if all properties fall through to the material below \n    unless they are set, <code>false</code> if properties respect their individual fall-through settings. \n    <code>\"hifi_pbr\"</code> model only.",
-                "name": "defaultFallthrough"
-            }
-        ],
-        "memberof": "Entities",
-        "longname": "Entities.Material",
-        "scope": "static"
-    },
-    {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>TextureCache</code> API manages texture cache resources.",
-        "kind": "namespace",
-        "name": "TextureCache",
-        "hifiInterface": true,
-        "hifiClientEntity": true,
-        "hifiAvatar": true,
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Total number of total resources. <em>Read-only.</em>",
-                "name": "numTotal"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Total number of cached resource. <em>Read-only.</em>",
-                "name": "numCached"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Size in bytes of all resources. <em>Read-only.</em>",
-                "name": "sizeTotal"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Size in bytes of all cached resources. <em>Read-only.</em>",
-                "name": "sizeCached"
-            }
-        ],
-        "longname": "TextureCache",
-        "scope": "global"
     },
     {
         "description": "<p>The views that may be visible on the PC display.</p>\n<table>\n  <thead>\n    <tr>\n      <th>Value</th>\n      <th>View Displayed</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>\"\"</code></td>\n      <td>Normal view.</td>\n    </tr>\n    <tr>\n      <td><code>\"resource://hmdPreviewFrame\"</code></td>\n      <td>HMD preview.</td>\n    </tr>\n    <tr>\n      <td><code>\"resource://spectatorCameraFrame\"</code></td>\n      <td>Entity camera view.</td>\n    </tr>\n  </tbody>\n</table>",
@@ -52979,7 +52378,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Assets</code> API provides facilities for interacting with the domain's asset server and the client cache. \n<p>Assets are stored in the asset server in files with SHA256 names. These files are mapped to user-friendly URLs of the \nformat: <code>atp:/path/filename</code>. The assets may optionally be baked, in which case a request for the original \nunbaked version of the asset is automatically redirected to the baked version. The asset data may optionally be stored as \ncompressed.</p>\n<p>The client cache can be access directly, using <code>\"atp:\"</code> or <code>\"cache:\"</code> URLs. Interface, avatar, and \nassignment client scripts can write to the cache. All script types can read from the cache.</p>",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Assets</code> API provides facilities for interacting with the domain's asset server and the client cache. \n<p>Assets are stored in the asset server in files with SHA256 names. These files are mapped to user-friendly URLs of the \nformat: <code>atp:/path/filename</code>. The assets may optionally be baked, in which case a request for the original \nunbaked version of the asset is automatically redirected to the baked version. The asset data may optionally be stored as \ncompressed.</p>\n<p>The client cache can be accessed directly, using <code>\"atp:\"</code> or <code>\"cache:\"</code> URLs. Interface, avatar, \nand assignment client scripts can write to the cache. All script types can read from the cache.</p>",
         "kind": "namespace",
         "name": "Assets",
         "hifiInterface": true,
@@ -56836,6 +56235,7 @@
         "scope": "static"
     },
     {
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>The <code>Recording</code> API makes and plays back recordings of voice and avatar movements. Playback may be done on a \nuser's avatar or an assignment client agent (see the {@link Agent} API).",
         "kind": "namespace",
         "name": "Recording",
         "hifiInterface": true,
@@ -56843,38 +56243,10 @@
         "hifiAvatar": true,
         "hifiAssignmentClient": true,
         "longname": "Recording",
-        "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>"
+        "scope": "global"
     },
     {
-        "kind": "function",
-        "name": "loadRecording",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "name": "url"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Recording~loadRecordingCallback"
-                    ]
-                },
-                "optional": true,
-                "defaultvalue": null,
-                "name": "callback"
-            }
-        ],
-        "memberof": "Recording",
-        "longname": "Recording.loadRecording",
-        "scope": "static"
-    },
-    {
-        "description": "Called when {@link Recording.loadRecording} is complete.",
+        "description": "Called when a {@link Recording.loadRecording} call is complete.",
         "kind": "typedef",
         "name": "loadRecordingCallback",
         "type": {
@@ -56889,6 +56261,7 @@
                         "boolean"
                     ]
                 },
+                "description": "<code>true</code> if the recording has successfully been loaded, <code>false</code> if it \n    hasn't.",
                 "name": "success"
             },
             {
@@ -56897,6 +56270,7 @@
                         "string"
                     ]
                 },
+                "description": "The URL of the recording that was requested to be loaded.",
                 "name": "url"
             }
         ],
@@ -56905,6 +56279,40 @@
         "scope": "inner"
     },
     {
+        "description": "Loads a recording so that it is ready for playing.",
+        "kind": "function",
+        "name": "loadRecording",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The ATP, HTTP, or file system URL of the recording to load.",
+                "name": "url"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Recording~loadRecordingCallback"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": null,
+                "description": "The function to call upon completion.",
+                "name": "callback"
+            }
+        ],
+        "examples": [
+            "<caption>Load and play back a recording from the asset server.</caption>\nvar assetPath = Window.browseAssets();\nprint(\"Asset path: \" + assetPath);\n\nif (assetPath.slice(-4) === \".hfr\") {\n    Recording.loadRecording(\"atp:\" + assetPath, function (success, url) {\n        if (!success) {\n            print(\"Error loading recording.\");\n            return;\n        }\n        Recording.startPlaying();\n    });\n}"
+        ],
+        "memberof": "Recording",
+        "longname": "Recording.loadRecording",
+        "scope": "static"
+    },
+    {
+        "description": "Starts playing the recording currently loaded or paused.",
         "kind": "function",
         "name": "startPlaying",
         "memberof": "Recording",
@@ -56912,6 +56320,7 @@
         "scope": "static"
     },
     {
+        "description": "Pauses playback of the recording currently playing. Use {@link Recording.startPlaying|startPlaying} to resume playback \nor {@link Recording.stopPlaying|stopPlaying} to stop playback.",
         "kind": "function",
         "name": "pausePlayer",
         "memberof": "Recording",
@@ -56919,6 +56328,7 @@
         "scope": "static"
     },
     {
+        "description": "Stops playing the recording currently playing or paused.",
         "kind": "function",
         "name": "stopPlaying",
         "memberof": "Recording",
@@ -56926,6 +56336,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets whether a recording is currently playing.",
         "kind": "function",
         "name": "isPlaying",
         "returns": [
@@ -56934,7 +56345,8 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "<code>true</code> if a recording is being played, <code>false</code> if one isn't."
             }
         ],
         "memberof": "Recording",
@@ -56942,6 +56354,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets whether recording playback is currently paused.",
         "kind": "function",
         "name": "isPaused",
         "returns": [
@@ -56950,7 +56363,8 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "<code>true</code> if recording playback is currently paused, <code>false</code> if it isn't."
             }
         ],
         "memberof": "Recording",
@@ -56958,6 +56372,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets the current playback time in the loaded recording, in seconds.",
         "kind": "function",
         "name": "playerElapsed",
         "returns": [
@@ -56966,7 +56381,8 @@
                     "names": [
                         "number"
                     ]
-                }
+                },
+                "description": "The current playback time in the loaded recording, in seconds."
             }
         ],
         "memberof": "Recording",
@@ -56974,6 +56390,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets the length of the loaded recording, in seconds.",
         "kind": "function",
         "name": "playerLength",
         "returns": [
@@ -56982,7 +56399,8 @@
                     "names": [
                         "number"
                     ]
-                }
+                },
+                "description": "The length of the recording currently loaded, in seconds"
             }
         ],
         "memberof": "Recording",
@@ -57009,6 +56427,7 @@
         "scope": "static"
     },
     {
+        "description": "<p class=\"important\">Not implemented: This method is not implemented yet.</p>",
         "kind": "function",
         "name": "setPlayerAudioOffset",
         "params": [
@@ -57018,6 +56437,7 @@
                         "number"
                     ]
                 },
+                "description": "Audio offset.",
                 "name": "audioOffset"
             }
         ],
@@ -57026,6 +56446,7 @@
         "scope": "static"
     },
     {
+        "description": "Sets the current playback time in the loaded recording.",
         "kind": "function",
         "name": "setPlayerTime",
         "params": [
@@ -57035,6 +56456,7 @@
                         "number"
                     ]
                 },
+                "description": "The current playback time, in seconds.",
                 "name": "time"
             }
         ],
@@ -57043,6 +56465,7 @@
         "scope": "static"
     },
     {
+        "description": "Sets whether playback should repeat in a loop.",
         "kind": "function",
         "name": "setPlayerLoop",
         "params": [
@@ -57052,6 +56475,7 @@
                         "boolean"
                     ]
                 },
+                "description": "<code>true</code> if playback should repeat, <code>false</code> if it shouldn't.",
                 "name": "loop"
             }
         ],
@@ -57060,6 +56484,7 @@
         "scope": "static"
     },
     {
+        "description": "Sets whether recording playback will use the display name that the recording was made with.",
         "kind": "function",
         "name": "setPlayerUseDisplayName",
         "params": [
@@ -57069,6 +56494,7 @@
                         "boolean"
                     ]
                 },
+                "description": "<code>true</code> to have recording playback use the display name that the recording \n    was made with, <code>false</code> to have recording playback keep the current display name.",
                 "name": "useDisplayName"
             }
         ],
@@ -57077,6 +56503,7 @@
         "scope": "static"
     },
     {
+        "description": "<p><em>Not used.</em></p>",
         "kind": "function",
         "name": "setPlayerUseAttachments",
         "params": [
@@ -57086,14 +56513,17 @@
                         "boolean"
                     ]
                 },
+                "description": "Use attachments.",
                 "name": "useAttachments"
             }
         ],
+        "deprecated": "This method is deprecated and will be removed.",
         "memberof": "Recording",
         "longname": "Recording.setPlayerUseAttachments",
         "scope": "static"
     },
     {
+        "description": "<p><em>Not used.</em></p>",
         "kind": "function",
         "name": "setPlayerUseHeadModel",
         "params": [
@@ -57103,17 +56533,17 @@
                         "boolean"
                     ]
                 },
+                "description": "Use head model.",
                 "name": "useHeadModel"
             }
         ],
-        "todo": [
-            "<strong>Note:</strong> This function currently has no effect."
-        ],
+        "deprecated": "This method is deprecated and will be removed.",
         "memberof": "Recording",
         "longname": "Recording.setPlayerUseHeadModel",
         "scope": "static"
     },
     {
+        "description": "Sets whether recording playback will use the avatar model that the recording was made with.",
         "kind": "function",
         "name": "setPlayerUseSkeletonModel",
         "params": [
@@ -57123,17 +56553,16 @@
                         "boolean"
                     ]
                 },
+                "description": "<code>true</code> to have recording playback use the avatar model that the recording \n    was made with, <code>false</code> to have playback use the current avatar model.",
                 "name": "useSkeletonModel"
             }
-        ],
-        "todo": [
-            "<strong>Note:</strong> This function currently doesn't work."
         ],
         "memberof": "Recording",
         "longname": "Recording.setPlayerUseSkeletonModel",
         "scope": "static"
     },
     {
+        "description": "Sets whether recordings are played at the current avatar location or the recorded location.",
         "kind": "function",
         "name": "setPlayFromCurrentLocation",
         "params": [
@@ -57143,6 +56572,7 @@
                         "boolean"
                     ]
                 },
+                "description": "<code>true</code> to play recordings at the current avatar location, \n    <code>false</code> to play recordings at the recorded location.",
                 "name": "playFromCurrentLocation"
             }
         ],
@@ -57151,6 +56581,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets whether recording playback will use the display name that the recording was made with.",
         "kind": "function",
         "name": "getPlayerUseDisplayName",
         "returns": [
@@ -57159,7 +56590,8 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "<code>true</code> if recording playback will use the display name that the recording was made with, \n    <code>false</code> if playback will keep the current display name."
             }
         ],
         "memberof": "Recording",
@@ -57167,6 +56599,7 @@
         "scope": "static"
     },
     {
+        "description": "<p><em>Not used.</em></p>",
         "kind": "function",
         "name": "getPlayerUseAttachments",
         "returns": [
@@ -57175,14 +56608,17 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "Use attachments."
             }
         ],
+        "deprecated": "This method is deprecated and will be removed.",
         "memberof": "Recording",
         "longname": "Recording.getPlayerUseAttachments",
         "scope": "static"
     },
     {
+        "description": "<p><em>Not used.</em></p>",
         "kind": "function",
         "name": "getPlayerUseHeadModel",
         "returns": [
@@ -57191,14 +56627,17 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "Use head model."
             }
         ],
+        "deprecated": "This method is deprecated and will be removed.",
         "memberof": "Recording",
         "longname": "Recording.getPlayerUseHeadModel",
         "scope": "static"
     },
     {
+        "description": "Gets whether recording playback will use the avatar model that the recording was made with.",
         "kind": "function",
         "name": "getPlayerUseSkeletonModel",
         "returns": [
@@ -57207,7 +56646,8 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "<code>true</code> if recording playback will use the avatar model that the recording was made with, \n    <code>false</code> if playback will use the current avatar model."
             }
         ],
         "memberof": "Recording",
@@ -57215,6 +56655,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets whether recordings are played at the current avatar location or the recorded location.",
         "kind": "function",
         "name": "getPlayFromCurrentLocation",
         "returns": [
@@ -57223,7 +56664,8 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "<code>true</code> if recordings are played at the current avatar location, <code>false</code> if \n    played at the recorded location."
             }
         ],
         "memberof": "Recording",
@@ -57231,6 +56673,7 @@
         "scope": "static"
     },
     {
+        "description": "Starts making a recording.",
         "kind": "function",
         "name": "startRecording",
         "memberof": "Recording",
@@ -57238,6 +56681,7 @@
         "scope": "static"
     },
     {
+        "description": "Stops making a recording. The recording may be saved using {@link Recording.saveRecording|saveRecording} or \n{@link Recording.saveRecordingToAsset|saveRecordingToAsset}, or immediately played back with \n{@link Recording.loadLastRecording|loadLastRecording}.",
         "kind": "function",
         "name": "stopRecording",
         "memberof": "Recording",
@@ -57245,6 +56689,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets whether a recording is currently being made.",
         "kind": "function",
         "name": "isRecording",
         "returns": [
@@ -57253,7 +56698,8 @@
                     "names": [
                         "boolean"
                     ]
-                }
+                },
+                "description": "<code>true</code> if a recording is currently being made, <code>false</code> if one isn't."
             }
         ],
         "memberof": "Recording",
@@ -57261,6 +56707,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets the duration of the recording currently being made or recently made, in seconds.",
         "kind": "function",
         "name": "recorderElapsed",
         "returns": [
@@ -57269,7 +56716,8 @@
                     "names": [
                         "number"
                     ]
-                }
+                },
+                "description": "The duration of the recording currently being made or recently made, in seconds."
             }
         ],
         "memberof": "Recording",
@@ -57277,6 +56725,7 @@
         "scope": "static"
     },
     {
+        "description": "Gets the default directory that recordings are saved in.",
         "kind": "function",
         "name": "getDefaultRecordingSaveDirectory",
         "returns": [
@@ -57285,14 +56734,19 @@
                     "names": [
                         "string"
                     ]
-                }
+                },
+                "description": "The default recording save directory."
             }
+        ],
+        "examples": [
+            "<caption>Report the default save directory.</caption>\nprint(\"Default save directory: \" + Recording.getDefaultRecordingSaveDirectory());"
         ],
         "memberof": "Recording",
         "longname": "Recording.getDefaultRecordingSaveDirectory",
         "scope": "static"
     },
     {
+        "description": "Saves the most recently made recording to a file.",
         "kind": "function",
         "name": "saveRecording",
         "params": [
@@ -57302,274 +56756,82 @@
                         "string"
                     ]
                 },
+                "description": "The path and name of the file to save the recording to.",
                 "name": "filename"
             }
+        ],
+        "examples": [
+            "<caption>Save a 5 second recording to a file.</caption>\nRecording.startRecording();\n\nScript.setTimeout(function () {\n    Recording.stopRecording();\n    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ\n    filename = filename.slice(0, -5).replace(/:/g, \"\").replace(\"T\", \"-\") \n        + \".hfr\";  // yyyymmmdd-hhmmss.hfr\n    filename = Recording.getDefaultRecordingSaveDirectory() + filename;\n    Recording.saveRecording(filename);\n    print(\"Saved recording: \" + filename);\n}, 5000);"
         ],
         "memberof": "Recording",
         "longname": "Recording.saveRecording",
         "scope": "static"
     },
     {
-        "kind": "function",
-        "name": "saveRecordingToAsset",
+        "description": "Called when a {@link Recording.saveRecordingToAsset} call is complete.",
+        "kind": "typedef",
+        "name": "saveRecordingToAssetCallback",
+        "type": {
+            "names": [
+                "function"
+            ]
+        },
         "params": [
-            {
-                "type": {
-                    "names": [
-                        "function"
-                    ]
-                },
-                "name": "getClipAtpUrl"
-            }
-        ],
-        "memberof": "Recording",
-        "longname": "Recording.saveRecordingToAsset",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "loadLastRecording",
-        "memberof": "Recording",
-        "longname": "Recording.loadLastRecording",
-        "scope": "static"
-    },
-    {
-        "description": "Stage location.",
-        "kind": "typedef",
-        "name": "Location",
-        "type": {
-            "names": [
-                "object"
-            ]
-        },
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Longitude.",
-                "name": "longitude"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Latitude.",
-                "name": "latitude"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Altitude.",
-                "name": "altitude"
-            }
-        ],
-        "memberof": "Stage",
-        "longname": "Stage.Location",
-        "scope": "static"
-    },
-    {
-        "description": "Stage time.",
-        "kind": "typedef",
-        "name": "Time",
-        "type": {
-            "names": [
-                "object"
-            ]
-        },
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Hour.",
-                "name": "hour"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Day.",
-                "name": "day"
-            }
-        ],
-        "memberof": "Stage",
-        "longname": "Stage.Time",
-        "scope": "static"
-    },
-    {
-        "description": "Stage key light.",
-        "kind": "typedef",
-        "name": "KeyLight",
-        "type": {
-            "names": [
-                "object"
-            ]
-        },
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "Vec3"
-                    ]
-                },
-                "description": "Color.",
-                "name": "color"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Intensity.",
-                "name": "intensity"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Ambient intensity.",
-                "name": "ambientIntensity"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Vec3"
-                    ]
-                },
-                "description": "Direction.",
-                "name": "direction"
-            }
-        ],
-        "memberof": "Stage",
-        "longname": "Stage.KeyLight",
-        "scope": "static"
-    },
-    {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Stage</code> class is no longer used.\n\n<p>Provided as a property in the {@link Scene} API.</p>\n\n<p class=\"important\">Deprecated: This class is deprecated and will be removed.</p>",
-        "kind": "class",
-        "name": "Stage",
-        "hifiInterface": true,
-        "hifiClientEntity": true,
-        "hifiAvatar": true,
-        "properties": [
             {
                 "type": {
                     "names": [
                         "string"
                     ]
                 },
-                "description": "Background mode.\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
-                "name": "backgroundMode"
-            },
+                "description": "The URL of the recording stored in the asset server if successful, <code>\"\"</code> if \n    unsuccessful. The URL has <code>atp:</code> as the scheme and the SHA256 hash as the filename (with no extension).",
+                "name": "url"
+            }
+        ],
+        "memberof": "Recording",
+        "longname": "Recording~saveRecordingToAssetCallback",
+        "scope": "inner"
+    },
+    {
+        "description": "Saves the most recently made recording to the domain's asset server.",
+        "kind": "function",
+        "name": "saveRecordingToAsset",
+        "params": [
             {
                 "type": {
                     "names": [
-                        "Stage.KeyLight"
+                        "Recording~saveRecordingToAssetCallback"
                     ]
                 },
-                "description": "Key light.\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
-                "name": "keyLight"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Stage.Location"
-                    ]
-                },
-                "description": "Location.\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
-                "name": "location"
-            },
+                "description": "The function to call upon completion.",
+                "name": "callback"
+            }
+        ],
+        "returns": [
             {
                 "type": {
                     "names": [
                         "boolean"
                     ]
                 },
-                "description": "Sun model.\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
-                "name": "sunModel"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Stage.Time"
-                    ]
-                },
-                "description": "Time.\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
-                "name": "time"
+                "description": "<code>true</code> if the recording is successfully being saved, <code>false</code> if not."
             }
         ],
-        "longname": "Stage",
-        "scope": "global"
-    },
-    {
-        "kind": "function",
-        "name": "setOrientation",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "Quat"
-                    ]
-                },
-                "description": "Orientation.",
-                "name": "orientation"
-            }
+        "examples": [
+            "<caption>Save a 5 second recording to the asset server.</caption>\nfunction onSavedRecordingToAsset(url) {\n    if (url === \"\") {\n        print(\"Couldn't save recording.\");\n        return;\n    }\n\n    print(\"Saved recording: \" + url);  // atp:SHA256\n\n    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ\n    filename = filename.slice(0, -5).replace(/:/g, \"\").replace(\"T\", \"-\")\n        + \".hfr\";  // yyyymmmdd-hhmmss.hfr\n    var hash = url.slice(4);  // Remove leading \"atp:\" from url.\n    mappingPath = \"/recordings/\" + filename;\n    Assets.setMapping(mappingPath, hash, function (error) {\n        if (error) {\n            print(\"Mapping error: \" + error);\n        }\n    });\n    print(\"Mapped recording: \" + mappingPath);  // /recordings/filename\n}\n\nRecording.startRecording();\n\nScript.setTimeout(function () {\n    Recording.stopRecording();\n    var success = Recording.saveRecordingToAsset(onSavedRecordingToAsset);\n    if (!success) {\n        print(\"Couldn't save recording.\");\n    }\n}, 5000);"
         ],
-        "deprecated": "This method is deprecated and will be removed.",
-        "memberof": "Stage",
-        "longname": "Stage.setOrientation",
+        "memberof": "Recording",
+        "longname": "Recording.saveRecordingToAsset",
         "scope": "static"
     },
     {
+        "description": "Loads the most recently made recording and plays it back on your avatar.",
         "kind": "function",
-        "name": "setLocation",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Longitude.",
-                "name": "longitude"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Latitude.",
-                "name": "latitude"
-            },
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Altitude.",
-                "name": "altitude"
-            }
+        "name": "loadLastRecording",
+        "examples": [
+            "<caption>Make a 5 second recording and immediately play it back on your avatar.</caption>\nRecording.startRecording();\n\nScript.setTimeout(function () {\n    Recording.stopRecording();\n    Recording.loadLastRecording();\n}, 5000);\n     "
         ],
-        "deprecated": "This method is deprecated and will be removed.",
-        "memberof": "Stage",
-        "longname": "Stage.setLocation",
+        "memberof": "Recording",
+        "longname": "Recording.loadLastRecording",
         "scope": "static"
     },
     {
@@ -57597,15 +56859,6 @@
                 },
                 "description": "<code>true</code> if entities (domain, avatar, and local) are rendered, \n    <code>false</code> if they aren't.",
                 "name": "shouldRenderEntities"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Stage"
-                    ]
-                },
-                "description": "Stage. <em>Read-only.</em>\n    <p class=\"important\">Deprecated: This property is deprecated and will be removed. Use {@link Entities| Zone entities} \n    for lighting instead.</p>",
-                "name": "stage"
             }
         ],
         "longname": "Scene",
@@ -64730,7 +63983,7 @@
         "scope": "global"
     },
     {
-        "description": "<p>Camera modes affect the position of the camera and the controls for camera movement. The camera can be in one of the\nfollowing modes:</p>\n<table>\n  <thead>\n    <tr>\n      <th>Mode</th>\n      <th>String</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><strong>First&nbsp;Person</strong></td>\n      <td><code>\"first&nbsp;person\"</code></td>\n      <td>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with your\n      avatar.</td>\n    </tr>\n    <tr>\n      <td><strong>Third&nbsp;Person</strong></td>\n      <td><code>\"third&nbsp;person\"</code></td>\n      <td>The camera is positioned such that you have a view from just behind your avatar. The camera moves and rotates with\n      your avatar.</td>\n    </tr>\n    <tr>\n      <td><strong>Look&nbsp;At</strong></td>\n      <td><code>\"look&nbsp;at\"</code></td>\n      <td>The camera is positioned behind your avatar. The camera moves and rotates independently from your avatar.\n      The avatar's head always faces the camera look at point.</td>\n    </tr>\n    <tr>\n      <td><strong>Selfie</strong></td>\n      <td><code>\"selfie\"</code></td>\n      <td>The camera is positioned in front of your avatar. The camera moves and rotates independently from your avatar.\n      Your avatar's head is always facing the camera.</td>\n    </tr>\n    <tr>\n      <td><strong>Mirror</strong></td>\n      <td><code>\"mirror\"</code></td>\n      <td>The camera is positioned such that you are looking directly at your avatar. The camera moves and rotates with your \n      avatar.</td>\n    </tr>\n    <tr>\n      <td><strong>Independent</strong></td>\n      <td><code>\"independent\"</code></td>\n      <td>The camera's position and orientation don't change with your avatar movement. Instead, they can be set via \n      scripting.</td>\n    </tr>\n    <tr>\n      <td><strong>Entity</strong></td>\n      <td><code>\"entity\"</code></td>\n      <td>The camera's position and orientation are set to be the same as a specified entity's, and move with the entity as\n      it moves.\n    </tr>\n  </tbody>\n</table>",
+        "description": "<p>Camera modes affect the position of the camera and the controls for camera movement. The camera can be in one of the\nfollowing modes:</p>\n<table>\n  <thead>\n    <tr>\n      <th>Mode</th>\n      <th>String</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><strong>First&nbsp;Person</strong></td>\n      <td><code>\"first&nbsp;person\"</code></td>\n      <td><p>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with\n      your avatar.</p>\n      <p><em>Legacy first person camera mode.</em></p></td>\n    </tr>\n    <tr>\n      <td><strong>First&nbsp;Person&nbsp;Look&nbsp;At</strong></td>\n      <td><code>\"first&nbsp;person&nbsp;look&nbsp;at\"</code></td>\n      <td><p>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with \n      your avatar's head.</p>\n      <p><em>Default first person camera mode.</em></p></td>\n    </tr>\n    <tr>\n      <td><strong>Third&nbsp;Person</strong></td>\n      <td><code>\"third&nbsp;person\"</code></td>\n      <td><p>The camera is positioned such that you have a view from just behind your avatar. The camera moves and rotates \n      with your avatar.</p>  \n      <p><em>Legacy third person camera camera mode.</em></p> \n      <pre class=\"prettyprint\"><code>Camera.mode = \"third person\";</code></pre></td>\n    </tr>\n    <tr>\n      <td><strong>Look&nbsp;At</strong></td>\n      <td><code>\"look&nbsp;at\"</code></td>\n      <td><p>The camera is positioned behind your avatar. The camera moves and rotates independently from your avatar. The\n      avatar's head always faces the camera look at point.</p>\n      <p><em>Default third person camera mode.</em></td>\n    </tr>\n    <tr>\n      <td><strong>Selfie</strong></td>\n      <td><code>\"selfie\"</code></td>\n      <td><p>The camera is positioned in front of your avatar. The camera moves and rotates independently from your avatar.\n      Your avatar's head is always facing the camera.</p>\n      <p><em>Default \"look at myself\" camera mode.</em></p></td>\n    </tr>\n    <tr>\n      <td><strong>Mirror</strong></td>\n      <td><code>\"mirror\"</code></td>\n      <td><p>The camera is positioned such that you are looking directly at your avatar. The camera is fixed and does not \n      move with your avatar.</p> \n      <p><em>Legacy \"look at myself\" behavior.</em></p>\n      <pre class=\"prettyprint\"><code>Camera.mode = \"mirror\";</code></pre></td>\n    </tr>\n    <tr>\n      <td><strong>Independent</strong></td>\n      <td><code>\"independent\"</code></td>\n      <td>The camera's position and orientation don't change with your avatar movement. Instead, they can be set via \n      scripting.</td>\n    </tr>\n    <tr>\n      <td><strong>Entity</strong></td>\n      <td><code>\"entity\"</code></td>\n      <td>The camera's position and orientation are set to be the same as a specified entity's, and move with the entity as\n      it moves.\n    </tr>\n  </tbody>\n</table>",
         "kind": "typedef",
         "name": "Mode",
         "type": {
@@ -65298,45 +64551,6 @@
         ],
         "memberof": "Workload",
         "longname": "Workload.dirtyEnabled",
-        "scope": "static"
-    },
-    {
-        "kind": "signal",
-        "name": "muteToggled",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "FaceTracker",
-        "longname": "FaceTracker.muteToggled",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "toggleMute",
-        "memberof": "FaceTracker",
-        "longname": "FaceTracker.toggleMute",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "getMuted",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                }
-            }
-        ],
-        "memberof": "FaceTracker",
-        "longname": "FaceTracker.getMuted",
         "scope": "static"
     },
     {
@@ -66423,7 +65637,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Tablet</code> API provides the facilities to work with the system or other tablet. In toolbar mode (Developer &gt; \nUI &gt; Tablet Becomes Toolbar), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed \nin a dialog.",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Tablet</code> API provides the facilities to work with the system or other tablet. In toolbar mode (see Developer \n&gt; UI options), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed in a dialog.\n\n<p>See also the {@link Toolbars} API for working with toolbars.</p>",
         "kind": "namespace",
         "name": "Tablet",
         "hifiInterface": true,
@@ -66457,7 +65671,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets an instance of a tablet. A new tablet is created if one with the specified ID doesn't already exist.",
+        "description": "Gets an instance of a tablet. A new tablet is created if one with the specified name doesn't already exist.",
         "kind": "function",
         "name": "getTablet",
         "params": [
@@ -66541,7 +65755,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An instance of a tablet. In toolbar mode (Developer &gt; \nUI &gt; Tablet Becomes Toolbar), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed \nin a dialog.\n\n<p>Create a new tablet or retrieve an existing tablet using {@link Tablet.getTablet}.</p>",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An instance of a tablet. In toolbar mode (see Developer &gt; UI options), the tablet's menu buttons are displayed in a \ntoolbar and other tablet content is displayed in a dialog.\n\n<p>Retrieve an existing tablet or create a new tablet using {@link Tablet.getTablet}.</p>",
         "kind": "class",
         "name": "TabletProxy",
         "hifiInterface": true,
@@ -67325,153 +66539,18 @@
         "scope": "instance"
     },
     {
-        "kind": "class",
-        "name": "ToolbarButtonProxy",
-        "hifiInterface": true,
-        "hifiClientEntity": true,
-        "hifiAvatar": true,
-        "longname": "ToolbarButtonProxy",
-        "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
-    },
-    {
-        "kind": "function",
-        "name": "editProperties",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "object"
-                    ]
-                },
-                "name": "properties"
-            }
-        ],
-        "memberof": "ToolbarButtonProxy",
-        "longname": "ToolbarButtonProxy#editProperties",
-        "scope": "instance"
-    },
-    {
-        "kind": "function",
-        "name": "writeProperty",
-        "tags": [
-            {
-                "originalTitle": "parm",
-                "title": "parm",
-                "text": "{string} propertyName",
-                "value": "{string} propertyName"
-            }
-        ],
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "object"
-                    ]
-                },
-                "name": "propertyValue"
-            }
-        ],
-        "memberof": "ToolbarButtonProxy",
-        "longname": "ToolbarButtonProxy#writeProperty",
-        "scope": "instance"
-    },
-    {
-        "kind": "function",
-        "name": "writeProperties",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "object"
-                    ]
-                },
-                "name": "properties"
-            }
-        ],
-        "memberof": "ToolbarButtonProxy",
-        "longname": "ToolbarButtonProxy#writeProperties",
-        "scope": "instance"
-    },
-    {
-        "kind": "function",
-        "name": "readProperty",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "name": "propertyName"
-            }
-        ],
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "object"
-                    ]
-                }
-            }
-        ],
-        "memberof": "ToolbarButtonProxy",
-        "longname": "ToolbarButtonProxy#readProperty",
-        "scope": "instance"
-    },
-    {
-        "kind": "function",
-        "name": "readProperties",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<string>"
-                    ]
-                },
-                "name": "propertyList"
-            }
-        ],
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "object"
-                    ]
-                }
-            }
-        ],
-        "memberof": "ToolbarButtonProxy",
-        "longname": "ToolbarButtonProxy#readProperties",
-        "scope": "instance"
-    },
-    {
-        "kind": "signal",
-        "name": "clicked",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "ToolbarButtonProxy",
-        "longname": "ToolbarButtonProxy#clicked",
-        "scope": "instance"
-    },
-    {
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An instance of a toolbar.\n\n<p>Retrieve an existing toolbar or create a new toolbar using {@link Toolbars.getToolbar}.</p>",
         "kind": "class",
         "name": "ToolbarProxy",
+        "hideconstructor": true,
         "hifiInterface": true,
         "hifiClientEntity": true,
         "hifiAvatar": true,
         "longname": "ToolbarProxy",
-        "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
+        "scope": "global"
     },
     {
+        "description": "<em>Currently doesn't work.</em>",
         "kind": "function",
         "name": "addButton",
         "params": [
@@ -67481,6 +66560,7 @@
                         "object"
                     ]
                 },
+                "description": "Button properties",
                 "name": "properties"
             }
         ],
@@ -67488,16 +66568,19 @@
             {
                 "type": {
                     "names": [
-                        "ToolbarButtonProxy"
+                        "object"
                     ]
-                }
+                },
+                "description": "The button added."
             }
         ],
+        "deprecated": "This method is deprecated and will be removed.",
         "memberof": "ToolbarProxy",
         "longname": "ToolbarProxy#addButton",
         "scope": "instance"
     },
     {
+        "description": "<em>Currently doesn't work.</em>",
         "kind": "function",
         "name": "removeButton",
         "params": [
@@ -67507,22 +66590,25 @@
                         "string"
                     ]
                 },
+                "description": "Button name.",
                 "name": "name"
             }
         ],
+        "deprecated": "This method is deprecated and will be removed.",
         "memberof": "ToolbarProxy",
         "longname": "ToolbarProxy#removeButton",
         "scope": "instance"
     },
     {
+        "description": "Sets the value of a toolbar property. A property is added to the toolbar if the named property doesn't already \nexist.",
         "kind": "function",
         "name": "writeProperty",
         "tags": [
             {
                 "originalTitle": "parm",
                 "title": "parm",
-                "text": "{string} propertyName",
-                "value": "{string} propertyName"
+                "text": "{string} propertyName - The name of the property. Toolbar properties are those in the QML implementation of the\n    toolbar.",
+                "value": "{string} propertyName - The name of the property. Toolbar properties are those in the QML implementation of the\n    toolbar."
             }
         ],
         "params": [
@@ -67532,6 +66618,7 @@
                         "object"
                     ]
                 },
+                "description": "The value of the property.",
                 "name": "propertyValue"
             }
         ],
@@ -67540,6 +66627,7 @@
         "scope": "instance"
     },
     {
+        "description": "Sets the values of toolbar properties. A property is added to the toolbar if a named property doesn't already\nexist.",
         "kind": "function",
         "name": "writeProperties",
         "params": [
@@ -67549,6 +66637,7 @@
                         "object"
                     ]
                 },
+                "description": "The names and values of the properties to set. Toolbar properties are those in the QML \n    implementation of the toolbar.",
                 "name": "properties"
             }
         ],
@@ -67557,6 +66646,7 @@
         "scope": "instance"
     },
     {
+        "description": "Gets the value of a toolbar property.",
         "kind": "function",
         "name": "readProperty",
         "params": [
@@ -67566,6 +66656,7 @@
                         "string"
                     ]
                 },
+                "description": "The property name. Toolbar properties are those in the QML implementation of the toolbar.",
                 "name": "propertyName"
             }
         ],
@@ -67575,7 +66666,8 @@
                     "names": [
                         "object"
                     ]
-                }
+                },
+                "description": "The value of the property if the property name is valid, otherwise <code>undefined</code>."
             }
         ],
         "memberof": "ToolbarProxy",
@@ -67583,6 +66675,7 @@
         "scope": "instance"
     },
     {
+        "description": "Gets the values of toolbar properties.",
         "kind": "function",
         "name": "readProperties",
         "params": [
@@ -67592,6 +66685,7 @@
                         "Array.<string>"
                     ]
                 },
+                "description": "The names of the properties to get the values of. Toolbar properties are those in the \n    QML implementation of the toolbar.",
                 "name": "propertyList"
             }
         ],
@@ -67601,7 +66695,8 @@
                     "names": [
                         "object"
                     ]
-                }
+                },
+                "description": "The names and values of the specified properties. If the toolbar doesn't have a particular property \n    then the result doesn't include that property."
             }
         ],
         "memberof": "ToolbarProxy",
@@ -67609,16 +66704,17 @@
         "scope": "instance"
     },
     {
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Toolbars</code> API provides facilities to work with the system or other toolbar.\n\n<p>See also the {@link Tablet} API for use of the system tablet and toolbar in desktop and HMD modes.</p>",
         "kind": "namespace",
         "name": "Toolbars",
         "hifiInterface": true,
         "hifiClientEntity": true,
         "hifiAvatar": true,
         "longname": "Toolbars",
-        "scope": "global",
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>"
+        "scope": "global"
     },
     {
+        "description": "Gets an instance of a toolbar. A new toolbar is created if one with the specified name doesn't already exist.",
         "kind": "function",
         "name": "getToolbar",
         "params": [
@@ -67628,7 +66724,8 @@
                         "string"
                     ]
                 },
-                "name": "toolbarID"
+                "description": "A unique name that identifies the toolbar.",
+                "name": "name"
             }
         ],
         "returns": [
@@ -67637,11 +66734,52 @@
                     "names": [
                         "ToolbarProxy"
                     ]
-                }
+                },
+                "description": "The toolbar instance."
             }
         ],
         "memberof": "Toolbars",
         "longname": "Toolbars.getToolbar",
+        "scope": "static"
+    },
+    {
+        "description": "Triggered when the visibility of a toolbar changes.",
+        "kind": "signal",
+        "name": "toolbarVisibleChanged",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if the toolbar is visible, <code>false</code> if it is hidden.",
+                "name": "isVisible"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The name of the toolbar.",
+                "name": "toolbarName"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Signal"
+                    ]
+                }
+            }
+        ],
+        "examples": [
+            "<caption>Briefly hide the system toolbar.</caption>\nToolbars.toolbarVisibleChanged.connect(function(visible, name) {\n    print(\"Toolbar \" + name + \" visible changed to \" + visible);\n});\n\nvar toolbar = Toolbars.getToolbar(\"com.highfidelity.interface.toolbar.system\");\nif (toolbar) {\n    toolbar.writeProperty(\"visible\", false);\n    Script.setTimeout(function () {\n        toolbar.writeProperty(\"visible\", true);\n    }, 2000);\n}\n     "
+        ],
+        "memberof": "Toolbars",
+        "longname": "Toolbars.toolbarVisibleChanged",
         "scope": "static"
     },
     {
@@ -67674,7 +66812,7 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "C:\\Users\\jenna\\Downloads\\hifi-0.85.0-rc\\tools\\jsdoc\\root.js"
+            "C:\\Users\\jenna\\Downloads\\hifi-0.86.0-rc\\tools\\jsdoc\\root.js"
         ]
     },
     {
@@ -68676,7 +67814,7 @@
         "scope": "static"
     },
     {
-        "description": "Sets the value of a blendshape to animate your avatar's face. To enable other users to see the resulting animation of \nyour avatar's face, use {@link Avatar.setForceFaceTrackerConnected} or {@link MyAvatar.setForceFaceTrackerConnected}.",
+        "description": "Sets the value of a blendshape to animate your avatar's face. In order for other users to see the resulting animations \non your avatar's face, set {@link Avatar.hasScriptedBlendshapes} to true. When you are done using this API, set \n{@link Avatar.hasScriptedBlendshapes} back to false when the animation is complete.",
         "kind": "function",
         "name": "setBlendshape",
         "params": [
@@ -68700,7 +67838,7 @@
             }
         ],
         "examples": [
-            "<caption>Open your avatar's mouth wide.</caption>\nMyAvatar.setForceFaceTrackerConnected(true);\nMyAvatar.setBlendshape(\"JawOpen\", 1.0);\n\n// Note: If using from the Avatar API, replace \"MyAvatar\" with \"Avatar\"."
+            "<caption>Open your avatar's mouth wide.</caption>\nMyAvatar.hasScriptedBlendshapes = true;\nMyAvatar.setBlendshape(\"JawOpen\", 1.0);\n\n// Note: If using from the Avatar API, replace \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.setBlendshape",
@@ -68801,25 +67939,6 @@
         "deprecated": "This function is deprecated and will be removed.",
         "memberof": "MyAvatar",
         "longname": "MyAvatar.clearAvatarEntity",
-        "scope": "static"
-    },
-    {
-        "description": "Enables blendshapes set using {@link Avatar.setBlendshape} or {@link MyAvatar.setBlendshape} to be transmitted to other \nusers so that they can see the animation of your avatar's face.",
-        "kind": "function",
-        "name": "setForceFaceTrackerConnected",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "boolean"
-                    ]
-                },
-                "description": "<code>true</code> to enable blendshape changes to be transmitted to other users, \n    <code>false</code> to disable.",
-                "name": "connected"
-            }
-        ],
-        "memberof": "MyAvatar",
-        "longname": "MyAvatar.setForceFaceTrackerConnected",
         "scope": "static"
     },
     {
@@ -69763,95 +68882,6 @@
         "examples": [
             "<caption>Report cached resources.</caption>\n// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.\n\nvar cachedResources = AnimationCache.getResourceList();\nprint(\"Cached resources: \" + JSON.stringify(cachedResources));"
         ],
-        "memberof": "TextureCache",
-        "longname": "TextureCache.getResourceList",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "updateTotalSize",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "number"
-                    ]
-                },
-                "description": "Delta size.",
-                "name": "deltaSize"
-            }
-        ],
-        "deprecated": "This function is deprecated and will be removed.",
-        "memberof": "TextureCache",
-        "longname": "TextureCache.updateTotalSize",
-        "scope": "static"
-    },
-    {
-        "description": "Prefetches a resource.",
-        "kind": "function",
-        "name": "prefetch",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the resource to prefetch.",
-                "name": "url"
-            }
-        ],
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "ResourceObject"
-                    ]
-                },
-                "description": "A resource object."
-            }
-        ],
-        "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\n// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.\n// TextureCache has its own version of this function.\n\nvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\nvar resourceObject = AnimationCache.prefetch(resourceURL);\n\nfunction checkIfResourceLoaded(state) {\n    if (state === Resource.State.FINISHED) {\n        print(\"Resource loaded and ready.\");\n    } else if (state === Resource.State.FAILED) {\n        print(\"Resource not loaded.\");\n    }\n}\n\n// Resource may have already been loaded.\nprint(\"Resource state: \" + resourceObject.state);\ncheckIfResourceLoaded(resourceObject.state);\n\n// Resource may still be loading.\nresourceObject.stateChanged.connect(function (state) {\n    print(\"Resource state changed to: \" + state);\n    checkIfResourceLoaded(state);\n});"
-        ],
-        "memberof": "TextureCache",
-        "longname": "TextureCache.prefetch",
-        "scope": "static"
-    },
-    {
-        "description": "Triggered when the cache content has changed.",
-        "kind": "signal",
-        "name": "dirty",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "TextureCache",
-        "longname": "TextureCache.dirty",
-        "scope": "static"
-    },
-    {
-        "description": "Gets the URLs of all resources in the cache.",
-        "kind": "function",
-        "name": "getResourceList",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Array.<string>"
-                    ]
-                },
-                "description": "The URLs of all resources in the cache."
-            }
-        ],
-        "examples": [
-            "<caption>Report cached resources.</caption>\n// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.\n\nvar cachedResources = AnimationCache.getResourceList();\nprint(\"Cached resources: \" + JSON.stringify(cachedResources));"
-        ],
         "memberof": "ModelCache",
         "longname": "ModelCache.getResourceList",
         "scope": "static"
@@ -70458,7 +69488,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets an instance of a tablet. A new tablet is created if one with the specified ID doesn't already exist.",
+        "description": "Gets an instance of a tablet. A new tablet is created if one with the specified name doesn't already exist.",
         "kind": "function",
         "name": "getTablet",
         "params": [
