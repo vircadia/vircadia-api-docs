@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -385,10 +386,7 @@ Array.&lt;string>
     
         <p class="code-caption">Report cached resources.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-
-var cachedResources = AnimationCache.getResourceList();
-print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.var cachedResources = AnimationCache.getResourceList();print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
 
 
 -->
@@ -492,29 +490,7 @@ print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
     
         <p class="code-caption">Prefetch a resource and wait until it has loaded.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-// TextureCache has its own version of this function.
-
-var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";
-var resourceObject = AnimationCache.prefetch(resourceURL);
-
-function checkIfResourceLoaded(state) {
-    if (state === Resource.State.FINISHED) {
-        print("Resource loaded and ready.");
-    } else if (state === Resource.State.FAILED) {
-        print("Resource not loaded.");
-    }
-}
-
-// Resource may have already been loaded.
-print("Resource state: " + resourceObject.state);
-checkIfResourceLoaded(resourceObject.state);
-
-// Resource may still be loading.
-resourceObject.stateChanged.connect(function (state) {
-    print("Resource state changed to: " + state);
-    checkIfResourceLoaded(state);
-});</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.// TextureCache has its own version of this function.var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";var resourceObject = AnimationCache.prefetch(resourceURL);function checkIfResourceLoaded(state) {    if (state === Resource.State.FINISHED) {        print("Resource loaded and ready.");    } else if (state === Resource.State.FAILED) {        print("Resource not loaded.");    }}// Resource may have already been loaded.print("Resource state: " + resourceObject.state);checkIfResourceLoaded(resourceObject.state);// Resource may still be loading.resourceObject.stateChanged.connect(function (state) {    print("Resource state changed to: " + state);    checkIfResourceLoaded(state);});</code></pre>
 
 
 -->
@@ -902,29 +878,7 @@ number
                     
 
 
-    <p>Describes the type of texture.</p>
-<p>See also: Material and 
-<a href="https://docs.highfidelity.com/create/3d-models/pbr-materials-guide.html">PBR Materials Guide</a>.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>Default</td><td>Basic color.</td></tr>
-    <tr><td><code>1</code></td><td>Strict</td><td>Basic color. Quality never downgraded.</td></tr>
-    <tr><td><code>2</code></td><td>Albedo</td><td>Color for PBR.</td></tr>
-    <tr><td><code>3</code></td><td>Normal</td><td>Normal map.</td></tr>
-    <tr><td><code>4</code></td><td>Bump</td><td>Bump map.</td></tr>
-    <tr><td><code>5</code></td><td>Specular or metallic</td><td>Metallic or not.</td></tr>
-    <tr><td><code>6</code></td><td>Roughness</td><td>Rough or matte.</td></tr>
-    <tr><td><code>7</code></td><td>Gloss</td><td>Gloss or shine.</td></tr>
-    <tr><td><code>8</code></td><td>Emissive</td><td>The amount of light reflected.</td></tr>
-    <tr><td><code>9</code></td><td>Cube</td><td>Cubic image for sky boxes.</td></tr>
-    <tr><td><code>10</code></td><td>Occlusion or scattering</td><td>How objects or human skin interact with light.</td></tr>
-    <tr><td><code>11</code></td><td>Lightmap</td><td>Light map.</td></tr>
-    <tr><td><code>12</code></td><td>Unused</td><td>Texture is not currently used.</td></tr>
-  </tbody>
-</table>
+    <p>Describes the type of texture.</p><p>See also: Material and <a href="https://docs.highfidelity.com/create/3d-models/pbr-materials-guide.html">PBR Materials Guide</a>.</p><table>  <thead>    <tr><th>Value</th><th>Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>0</code></td><td>Default</td><td>Basic color.</td></tr>    <tr><td><code>1</code></td><td>Strict</td><td>Basic color. Quality never downgraded.</td></tr>    <tr><td><code>2</code></td><td>Albedo</td><td>Color for PBR.</td></tr>    <tr><td><code>3</code></td><td>Normal</td><td>Normal map.</td></tr>    <tr><td><code>4</code></td><td>Bump</td><td>Bump map.</td></tr>    <tr><td><code>5</code></td><td>Specular or metallic</td><td>Metallic or not.</td></tr>    <tr><td><code>6</code></td><td>Roughness</td><td>Rough or matte.</td></tr>    <tr><td><code>7</code></td><td>Gloss</td><td>Gloss or shine.</td></tr>    <tr><td><code>8</code></td><td>Emissive</td><td>The amount of light reflected.</td></tr>    <tr><td><code>9</code></td><td>Cube</td><td>Cubic image for sky boxes.</td></tr>    <tr><td><code>10</code></td><td>Occlusion or scattering</td><td>How objects or human skin interact with light.</td></tr>    <tr><td><code>11</code></td><td>Lightmap</td><td>Light map.</td></tr>    <tr><td><code>12</code></td><td>Unused</td><td>Texture is not currently used.</td></tr>  </tbody></table>
 
 
                                     
@@ -1068,10 +1022,7 @@ number
                         
         <p class="code-caption">Report cached resources.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-
-var cachedResources = AnimationCache.getResourceList();
-print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.var cachedResources = AnimationCache.getResourceList();print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
 
                     
                   
@@ -1240,29 +1191,7 @@ string
                         
         <p class="code-caption">Prefetch a resource and wait until it has loaded.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-// TextureCache has its own version of this function.
-
-var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";
-var resourceObject = AnimationCache.prefetch(resourceURL);
-
-function checkIfResourceLoaded(state) {
-    if (state === Resource.State.FINISHED) {
-        print("Resource loaded and ready.");
-    } else if (state === Resource.State.FAILED) {
-        print("Resource not loaded.");
-    }
-}
-
-// Resource may have already been loaded.
-print("Resource state: " + resourceObject.state);
-checkIfResourceLoaded(resourceObject.state);
-
-// Resource may still be loading.
-resourceObject.stateChanged.connect(function (state) {
-    print("Resource state changed to: " + state);
-    checkIfResourceLoaded(state);
-});</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.// TextureCache has its own version of this function.var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";var resourceObject = AnimationCache.prefetch(resourceURL);function checkIfResourceLoaded(state) {    if (state === Resource.State.FINISHED) {        print("Resource loaded and ready.");    } else if (state === Resource.State.FAILED) {        print("Resource not loaded.");    }}// Resource may have already been loaded.print("Resource state: " + resourceObject.state);checkIfResourceLoaded(resourceObject.state);// Resource may still be loading.resourceObject.stateChanged.connect(function (state) {    print("Resource state changed to: " + state);    checkIfResourceLoaded(state);});</code></pre>
 
                     
                   
@@ -1524,8 +1453,7 @@ number
                     
 
 
-    <p>The maximum number of pixels to use for the image. If the texture has more 
-    than this number it is downscaled.</p>
+    <p>The maximum number of pixels to use for the image. If the texture has more     than this number it is downscaled.</p>
 
 
                 

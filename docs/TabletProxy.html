@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -62,10 +63,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An instance of a tablet. In toolbar mode (see Developer &gt; UI options), the tablet's menu buttons are displayed in a 
-toolbar and other tablet content is displayed in a dialog.
-
-<p>Retrieve an existing tablet or create a new tablet using <a href="Tablet.html#.getTablet">Tablet.getTablet</a>.</p></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An instance of a tablet. In toolbar mode (see Developer &gt; UI options), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed in a dialog.<p>Retrieve an existing tablet or create a new tablet using <a href="Tablet.html#.getTablet">Tablet.getTablet</a>.</p></div>
                 
 
 
@@ -177,9 +175,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the tablet is displayed in landscape mode, <code>false</code> if it is 
-    displayed in portrait mode.
-    </p>
+    <p><code>true</code> if the tablet is displayed in landscape mode, <code>false</code> if it is     displayed in portrait mode.    </p>
     <p>Note: This property isn't used in toolbar mode.</p>
 
 
@@ -211,8 +207,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the tablet is currently displayed, <code>false</code> if it isn't.
-    </p>
+    <p><code>true</code> if the tablet is currently displayed, <code>false</code> if it isn't.    </p>
     <p>Note: This property isn't used in toolbar mode.</p>
 
 
@@ -244,8 +239,7 @@ boolean
                     
 
 
-    <p>Information on the buttons in the tablet main menu (or toolbar in 
-    toolbar mode) for use in QML. <em>Read-only.</em></p>
+    <p>Information on the buttons in the tablet main menu (or toolbar in     toolbar mode) for use in QML. <em>Read-only.</em></p>
 
 
                 
@@ -435,16 +429,7 @@ boolean
     
         <p class="code-caption">Add a menu button.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-button.clicked.connect(function () {
-    print("TEST button clicked");
-});
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });button.clicked.connect(function () {    print("TEST button clicked");});Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
 
 -->
@@ -468,8 +453,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Closes any open modal, non-modal, or message dialog, opened by <a href="Window.html#.prompt">Window.prompt</a>, <a href="Window.html#.promptAsync">Window.promptAsync</a>, 
-<a href="Window.html#.openMessageBox">Window.openMessageBox</a>, or similar.</p>
+    <p>Closes any open modal, non-modal, or message dialog, opened by <a href="Window.html#.prompt">Window.prompt</a>, <a href="Window.html#.promptAsync">Window.promptAsync</a>, <a href="Window.html#.openMessageBox">Window.openMessageBox</a>, or similar.</p>
 
 
                 
@@ -638,12 +622,8 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Sends a message to the current web page. To receive the message, the web page's script must connect to the
-<code>EventBridge</code> that is automatically provided to the script:
-</p>
-    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {
-    ...
-});</code></pre>
+    <p>Sends a message to the current web page. To receive the message, the web page's script must connect to the<code>EventBridge</code> that is automatically provided to the script:</p>
+    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {    ...});</code></pre>
 
 
                 
@@ -822,8 +802,7 @@ boolean
                     
 
 
-    <p>Gets whether the tablet is displayed in landscape or portrait mode.
-</p>
+    <p>Gets whether the tablet is displayed in landscape or portrait mode.</p>
     <p>Note: The setting isn't used in toolbar mode.</p>
 
 
@@ -1092,9 +1071,7 @@ boolean
                     
 
 
-    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of the
-current app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tablet
-mode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
+    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of thecurrent app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tabletmode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
 
 
                 
@@ -1539,9 +1516,7 @@ boolean
                     
 
 
-    <p>Opens a QML app or dialog in addition to any current app. In tablet mode, the app or dialog is displayed over the top of 
-the current app; in toolbar mode, the app or dialog is opened in a new window. If in tablet mode, the app can be closed 
-using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
+    <p>Opens a QML app or dialog in addition to any current app. In tablet mode, the app or dialog is displayed over the top of the current app; in toolbar mode, the app or dialog is opened in a new window. If in tablet mode, the app can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
 
 
                 
@@ -1879,9 +1854,7 @@ using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviou
                     
 
 
-    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of the
-current app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tablet 
-mode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
+    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of thecurrent app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tablet mode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
 
 
                 
@@ -2147,9 +2120,7 @@ boolean
                     
 
 
-    <p>Closes a QML dialog that was displayed using pushOntoStack with a dialog implementing a QML 
-<code>StackView</code>; otherwise, no action is taken.
-</p>
+    <p>Closes a QML dialog that was displayed using pushOntoStack with a dialog implementing a QML <code>StackView</code>; otherwise, no action is taken.</p>
     <p>If using a QML <code>StackView</code>, its <code>popSource()</code> function is called.</p>
 
 
@@ -2247,13 +2218,8 @@ boolean
                     
 
 
-    <p>Displays a QML dialog over the top of the current dialog, without closing the current dialog. Use 
-<a href="TabletProxy.html#popFromStack">popFromStack</a> to close the dialog.
-</p>
-    <p>If the current dialog or its ancestors contain a QML <code>StackView</code> with <code>objectName: "stack"</code> and 
-function <code>pushSource(path)</code>, that function is called; otherwise, 
-<a href="TabletProxy.html#loadQMLSource">loadQMLSource</a> is called. The Create app provides an example of using a QML 
-<code>StackView</code>.</p>
+    <p>Displays a QML dialog over the top of the current dialog, without closing the current dialog. Use <a href="TabletProxy.html#popFromStack">popFromStack</a> to close the dialog.</p>
+    <p>If the current dialog or its ancestors contain a QML <code>StackView</code> with <code>objectName: "stack"</code> and function <code>pushSource(path)</code>, that function is called; otherwise, <a href="TabletProxy.html#loadQMLSource">loadQMLSource</a> is called. The Create app provides an example of using a QML <code>StackView</code>.</p>
 
 
                 
@@ -2427,8 +2393,7 @@ function <code>pushSource(path)</code>, that function is called; otherwise,
                     
 
 
-    <p>Closes the current app and returns to the previous app, if in tablet mode and the current app was loaded using 
-<a href="TabletProxy.html#loadQMLOnTop">loadQMLOnTop</a> or <a href="TabletProxy.html#loadWebScreenOnTop">loadWebScreenOnTop</a>.</p>
+    <p>Closes the current app and returns to the previous app, if in tablet mode and the current app was loaded using <a href="TabletProxy.html#loadQMLOnTop">loadQMLOnTop</a> or <a href="TabletProxy.html#loadWebScreenOnTop">loadWebScreenOnTop</a>.</p>
 
 
                 
@@ -2597,11 +2562,8 @@ function <code>pushSource(path)</code>, that function is called; otherwise,
                     
 
 
-    <p>Sends a message to the current QML page. To receive the message, the QML page must implement a function:
-</p>
-    <pre class="prettyprint"><code>function fromScript(message) {
-  ...
-}</code></pre>
+    <p>Sends a message to the current QML page. To receive the message, the QML page must implement a function:</p>
+    <pre class="prettyprint"><code>function fromScript(message) {  ...}</code></pre>
 
 
                 
@@ -2688,8 +2650,7 @@ function <code>pushSource(path)</code>, that function is called; otherwise,
                     
 
 
-    <p>Sets whether the tablet is displayed in landscape or portrait mode.
-</p>
+    <p>Sets whether the tablet is displayed in landscape or portrait mode.</p>
     <p>Note: The setting isn't used in toolbar mode.</p>
 
 
@@ -2787,8 +2748,7 @@ function <code>pushSource(path)</code>, that function is called; otherwise,
                         
 
 
-    <p>Triggered when a message from the current QML page displayed on the tablet is received. The QML page can send a message 
-(string or object) by calling: </p>
+    <p>Triggered when a message from the current QML page displayed on the tablet is received. The QML page can send a message (string or object) by calling: </p>
     <pre class="prettyprint"><code>sendToScript(message);</code></pre>
 
 
@@ -2953,8 +2913,7 @@ function <code>pushSource(path)</code>, that function is called; otherwise,
                         
 
 
-    <p>Triggered when the tablet is opened or closed.
-</p>
+    <p>Triggered when the tablet is opened or closed.</p>
     <p>Note: Doesn't apply in toolbar mode.</p>
 
 
@@ -3107,11 +3066,7 @@ function <code>pushSource(path)</code>, that function is called; otherwise,
     
         <p class="code-caption">Report when the system tablet's toolbar mode changes.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-tablet.toolbarModeChanged.connect(function () {
-    print("Tablet toolbar mode changed to: " + tablet.toolbarMode);
-});
-// Use Developer > UI > Tablet Becomes Toolbar to change the toolbar mode.</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");tablet.toolbarModeChanged.connect(function () {    print("Tablet toolbar mode changed to: " + tablet.toolbarMode);});// Use Developer > UI > Tablet Becomes Toolbar to change the toolbar mode.</code></pre>
 
 
 -->
@@ -3130,9 +3085,7 @@ tablet.toolbarModeChanged.connect(function () {
                         
 
 
-    <p>Triggered when a message from the current HTML web page displayed on the tablet is received. The HTML web page can send 
-a message by calling:
-</p>
+    <p>Triggered when a message from the current HTML web page displayed on the tablet is received. The HTML web page can send a message by calling:</p>
     <pre class="prettyprint"><code>EventBridge.emitWebEvent(message);</code></pre>
 
 
@@ -3231,8 +3184,7 @@ object
                     
 
 
-    <p>Information on the buttons in the tablet main menu (toolbar in toolbar mode) for use in QML. Has properties and functions 
-per <a href="http://doc.qt.io/qt-5/qabstractlistmodel.html">http://doc.qt.io/qt-5/qabstractlistmodel.html</a>.</p>
+    <p>Information on the buttons in the tablet main menu (toolbar in toolbar mode) for use in QML. Has properties and functions per <a href="http://doc.qt.io/qt-5/qabstractlistmodel.html">http://doc.qt.io/qt-5/qabstractlistmodel.html</a>.</p>
 
 
                                     
@@ -3434,16 +3386,7 @@ per <a href="http://doc.qt.io/qt-5/qabstractlistmodel.html">http://doc.qt.io/qt-
                         
         <p class="code-caption">Add a menu button.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-button.clicked.connect(function () {
-    print("TEST button clicked");
-});
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });button.clicked.connect(function () {    print("TEST button clicked");});Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
                     
                   
@@ -3491,8 +3434,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Closes any open modal, non-modal, or message dialog, opened by <a href="Window.html#.prompt">Window.prompt</a>, <a href="Window.html#.promptAsync">Window.promptAsync</a>, 
-<a href="Window.html#.openMessageBox">Window.openMessageBox</a>, or similar.</p>
+    <p>Closes any open modal, non-modal, or message dialog, opened by <a href="Window.html#.prompt">Window.prompt</a>, <a href="Window.html#.promptAsync">Window.promptAsync</a>, <a href="Window.html#.openMessageBox">Window.openMessageBox</a>, or similar.</p>
 
 
                         
@@ -3677,12 +3619,8 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Sends a message to the current web page. To receive the message, the web page's script must connect to the
-<code>EventBridge</code> that is automatically provided to the script:
-</p>
-    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {
-    ...
-});</code></pre>
+    <p>Sends a message to the current web page. To receive the message, the web page's script must connect to the<code>EventBridge</code> that is automatically provided to the script:</p>
+    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {    ...});</code></pre>
 
 
                         
@@ -3980,8 +3918,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the tablet is displayed in landscape mode, <code>false</code> if it is displayed 
-    in portrait mode.
+    <code>true</code> if the tablet is displayed in landscape mode, <code>false</code> if it is displayed     in portrait mode.
 
 
                         
@@ -3999,8 +3936,7 @@ string
                             
 
 
-    <p>Gets whether the tablet is displayed in landscape or portrait mode.
-</p>
+    <p>Gets whether the tablet is displayed in landscape or portrait mode.</p>
     <p>Note: The setting isn't used in toolbar mode.</p>
 
 
@@ -4371,9 +4307,7 @@ string
                             
 
 
-    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of the
-current app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tablet
-mode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
+    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of thecurrent app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tabletmode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
 
 
                         
@@ -4582,9 +4516,7 @@ boolean
                     
 
 
-    <p>If <code>true</code>, the web page or app is displayed in a frame with "back" 
-and "close" buttons.
-</p>
+    <p>If <code>true</code>, the web page or app is displayed in a frame with "back" and "close" buttons.</p>
     <p class="important">Deprecated: This parameter is deprecated and will be removed.</p>
 
 
@@ -5147,9 +5079,7 @@ string
                             
 
 
-    <p>Opens a QML app or dialog in addition to any current app. In tablet mode, the app or dialog is displayed over the top of 
-the current app; in toolbar mode, the app or dialog is opened in a new window. If in tablet mode, the app can be closed 
-using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
+    <p>Opens a QML app or dialog in addition to any current app. In tablet mode, the app or dialog is displayed over the top of the current app; in toolbar mode, the app or dialog is opened in a new window. If in tablet mode, the app can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
 
 
                         
@@ -5552,8 +5482,7 @@ boolean
                     
 
 
-    <p><code>true</code> to make the dialog resizable in toolbar mode, <code>false</code> 
-    to have it not resizable.</p>
+    <p><code>true</code> to make the dialog resizable in toolbar mode, <code>false</code>     to have it not resizable.</p>
 
 
                 
@@ -5701,9 +5630,7 @@ boolean
                             
 
 
-    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of the
-current app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tablet 
-mode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
+    <p>Opens a web app or page in addition to any current app. In tablet mode, the app or page is displayed over the top of thecurrent app; in toolbar mode, the app is opened in a new window that replaces any current window open. If in tablet mode, the app or page can be closed using <a href="TabletProxy.html#returnToPreviousApp">TabletProxy#returnToPreviousApp</a>.</p>
 
 
                         
@@ -6115,9 +6042,7 @@ string
                             
 
 
-    <p>Closes a QML dialog that was displayed using pushOntoStack with a dialog implementing a QML 
-<code>StackView</code>; otherwise, no action is taken.
-</p>
+    <p>Closes a QML dialog that was displayed using pushOntoStack with a dialog implementing a QML <code>StackView</code>; otherwise, no action is taken.</p>
     <p>If using a QML <code>StackView</code>, its <code>popSource()</code> function is called.</p>
 
 
@@ -6222,13 +6147,8 @@ string
                             
 
 
-    <p>Displays a QML dialog over the top of the current dialog, without closing the current dialog. Use 
-<a href="TabletProxy.html#popFromStack">popFromStack</a> to close the dialog.
-</p>
-    <p>If the current dialog or its ancestors contain a QML <code>StackView</code> with <code>objectName: "stack"</code> and 
-function <code>pushSource(path)</code>, that function is called; otherwise, 
-<a href="TabletProxy.html#loadQMLSource">loadQMLSource</a> is called. The Create app provides an example of using a QML 
-<code>StackView</code>.</p>
+    <p>Displays a QML dialog over the top of the current dialog, without closing the current dialog. Use <a href="TabletProxy.html#popFromStack">popFromStack</a> to close the dialog.</p>
+    <p>If the current dialog or its ancestors contain a QML <code>StackView</code> with <code>objectName: "stack"</code> and function <code>pushSource(path)</code>, that function is called; otherwise, <a href="TabletProxy.html#loadQMLSource">loadQMLSource</a> is called. The Create app provides an example of using a QML <code>StackView</code>.</p>
 
 
                         
@@ -6534,8 +6454,7 @@ string
                             
 
 
-    <p>Closes the current app and returns to the previous app, if in tablet mode and the current app was loaded using 
-<a href="TabletProxy.html#loadQMLOnTop">loadQMLOnTop</a> or <a href="TabletProxy.html#loadWebScreenOnTop">loadWebScreenOnTop</a>.</p>
+    <p>Closes the current app and returns to the previous app, if in tablet mode and the current app was loaded using <a href="TabletProxy.html#loadQMLOnTop">loadQMLOnTop</a> or <a href="TabletProxy.html#loadWebScreenOnTop">loadWebScreenOnTop</a>.</p>
 
 
                         
@@ -6720,11 +6639,8 @@ string
                             
 
 
-    <p>Sends a message to the current QML page. To receive the message, the QML page must implement a function:
-</p>
-    <pre class="prettyprint"><code>function fromScript(message) {
-  ...
-}</code></pre>
+    <p>Sends a message to the current QML page. To receive the message, the QML page must implement a function:</p>
+    <pre class="prettyprint"><code>function fromScript(message) {  ...}</code></pre>
 
 
                         
@@ -6880,8 +6796,7 @@ object
                             
 
 
-    <p>Sets whether the tablet is displayed in landscape or portrait mode.
-</p>
+    <p>Sets whether the tablet is displayed in landscape or portrait mode.</p>
     <p>Note: The setting isn't used in toolbar mode.</p>
 
 
@@ -6977,8 +6892,7 @@ boolean
                     
 
 
-    <p><code>true</code> to display the tablet in landscape mode, <code>false</code> to display it 
-    in portrait mode.</p>
+    <p><code>true</code> to display the tablet in landscape mode, <code>false</code> to display it     in portrait mode.</p>
 
 
                 
@@ -7064,8 +6978,7 @@ Signal
                             
 
 
-    <p>Triggered when a message from the current QML page displayed on the tablet is received. The QML page can send a message 
-(string or object) by calling: </p>
+    <p>Triggered when a message from the current QML page displayed on the tablet is received. The QML page can send a message (string or object) by calling: </p>
     <pre class="prettyprint"><code>sendToScript(message);</code></pre>
 
 
@@ -7342,8 +7255,7 @@ string
                     
 
 
-    <p>The type of the new screen or change: <code>"Home"</code>, <code>"Menu"</code>, 
-    <code>"QML"</code>, <code>"Web"</code>, <code>"Closed"</code>, or <code>"Unknown"</code>.</p>
+    <p>The type of the new screen or change: <code>"Home"</code>, <code>"Menu"</code>,     <code>"QML"</code>, <code>"Web"</code>, <code>"Closed"</code>, or <code>"Unknown"</code>.</p>
 
 
                 
@@ -7445,8 +7357,7 @@ Signal
                             
 
 
-    <p>Triggered when the tablet is opened or closed.
-</p>
+    <p>Triggered when the tablet is opened or closed.</p>
     <p>Note: Doesn't apply in toolbar mode.</p>
 
 
@@ -7607,11 +7518,7 @@ Signal
                         
         <p class="code-caption">Report when the system tablet's toolbar mode changes.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-tablet.toolbarModeChanged.connect(function () {
-    print("Tablet toolbar mode changed to: " + tablet.toolbarMode);
-});
-// Use Developer > UI > Tablet Becomes Toolbar to change the toolbar mode.</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");tablet.toolbarModeChanged.connect(function () {    print("Tablet toolbar mode changed to: " + tablet.toolbarMode);});// Use Developer > UI > Tablet Becomes Toolbar to change the toolbar mode.</code></pre>
 
                     
                   
@@ -7679,9 +7586,7 @@ Signal
                             
 
 
-    <p>Triggered when a message from the current HTML web page displayed on the tablet is received. The HTML web page can send 
-a message by calling:
-</p>
+    <p>Triggered when a message from the current HTML web page displayed on the tablet is received. The HTML web page can send a message by calling:</p>
     <pre class="prettyprint"><code>EventBridge.emitWebEvent(message);</code></pre>
 
 

@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -116,8 +117,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the domain server allows the client to kick (ban) avatars, otherwise 
-    <code>false</code>. <em>Read-only.</em></p>
+    <p><code>true</code> if the domain server allows the client to kick (ban) avatars, otherwise     <code>false</code>. <em>Read-only.</em></p>
 
 
                 
@@ -148,8 +148,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the client requests extra data from the mixers (such as 
-    positional data of an avatar they've ignored). <em>Read-only.</em></p>
+    <p><code>true</code> if the client requests extra data from the mixers (such as     positional data of an avatar they've ignored). <em>Read-only.</em></p>
 
 
                 
@@ -972,17 +971,7 @@ boolean
     
         <p class="code-caption">Ignore a nearby avatar for a few seconds.</p>
     
-    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);
-if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
-    print("Ignore: " + avatars[1]);
-    Users.ignore(avatars[1], true);
-    Script.setTimeout(function () {
-        print("Un-ignore: " + avatars[1]);
-        Users.ignore(avatars[1], false);
-    }, 5000);
-} else {
-    print("No avatars");
-}</code></pre>
+    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.    print("Ignore: " + avatars[1]);    Users.ignore(avatars[1], true);    Script.setTimeout(function () {        print("Un-ignore: " + avatars[1]);        Users.ignore(avatars[1], false);    }, 5000);} else {    print("No avatars");}</code></pre>
 
 
 -->
@@ -1006,9 +995,7 @@ if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
                     
 
 
-    <p>Kicks and bans a user. This removes them from the server and prevents them from returning. The ban is by user name if 
-available, or machine fingerprint otherwise.
-</p>
+    <p>Kicks and bans a user. This removes them from the server and prevents them from returning. The ban is by user name if available, or machine fingerprint otherwise.</p>
     <p>This function only works if you're an administrator of the domain you're in.</p>
 
 
@@ -1096,8 +1083,7 @@ available, or machine fingerprint otherwise.
                     
 
 
-    <p>Mutes a user's microphone for everyone. The mute is not permanent: the user can unmute themselves. 
-</p>
+    <p>Mutes a user's microphone for everyone. The mute is not permanent: the user can unmute themselves. </p>
     <p>This function only works if you're an administrator of the domain you're in.</p>
 
 
@@ -1272,9 +1258,7 @@ available, or machine fingerprint otherwise.
                     
 
 
-    <p>Requests the user name and machine fingerprint associated with the given UUID. The user name is returned via a 
-<a href="Users.html#.usernameFromIDReply">usernameFromIDReply</a> signal.
-</p>
+    <p>Requests the user name and machine fingerprint associated with the given UUID. The user name is returned via a <a href="Users.html#.usernameFromIDReply">usernameFromIDReply</a> signal.</p>
     <p>This function only works if you're an administrator of the domain you're in.</p>
 
 
@@ -1345,22 +1329,7 @@ available, or machine fingerprint otherwise.
     
         <p class="code-caption">Report the user name and fingerprint of a nearby user.</p>
     
-    <pre class="prettyprint"><code>function onUsernameFromIDReply(sessionID, userName, machineFingerprint, isAdmin) {
-    print("Session:     " + sessionID);
-    print("User name:   " + userName);
-    print("Fingerprint: " + machineFingerprint);
-    print("Is admin:    " + isAdmin);
-}
-
-Users.usernameFromIDReply.connect(onUsernameFromIDReply);
-
-var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);
-if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
-    print("Request data for: " + avatars[1]);
-    Users.requestUsernameFromID(avatars[1]);
-} else {
-    print("No avatars");
-}</code></pre>
+    <pre class="prettyprint"><code>function onUsernameFromIDReply(sessionID, userName, machineFingerprint, isAdmin) {    print("Session:     " + sessionID);    print("User name:   " + userName);    print("Fingerprint: " + machineFingerprint);    print("Is admin:    " + isAdmin);}Users.usernameFromIDReply.connect(onUsernameFromIDReply);var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.    print("Request data for: " + avatars[1]);    Users.requestUsernameFromID(avatars[1]);} else {    print("No avatars");}</code></pre>
 
 
 -->
@@ -1896,8 +1865,7 @@ if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
                         
 
 
-    <p>Triggered in response to a <a href="Users.html#.requestUsernameFromID">requestUsernameFromID</a> call. Provides the user name and 
-machine fingerprint associated with a UUID.</p>
+    <p>Triggered in response to a <a href="Users.html#.requestUsernameFromID">requestUsernameFromID</a> call. Provides the user name and machine fingerprint associated with a UUID.</p>
 
 
                     
@@ -2338,8 +2306,7 @@ machine fingerprint associated with a UUID.</p>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the domain server allows the client to kick and ban users, otherwise 
-    <code>false</code>.
+    <code>true</code> if the domain server allows the client to kick and ban users, otherwise     <code>false</code>.
 
 
                         
@@ -3057,17 +3024,7 @@ boolean
                         
         <p class="code-caption">Ignore a nearby avatar for a few seconds.</p>
     
-    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);
-if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
-    print("Ignore: " + avatars[1]);
-    Users.ignore(avatars[1], true);
-    Script.setTimeout(function () {
-        print("Un-ignore: " + avatars[1]);
-        Users.ignore(avatars[1], false);
-    }, 5000);
-} else {
-    print("No avatars");
-}</code></pre>
+    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.    print("Ignore: " + avatars[1]);    Users.ignore(avatars[1], true);    Script.setTimeout(function () {        print("Un-ignore: " + avatars[1]);        Users.ignore(avatars[1], false);    }, 5000);} else {    print("No avatars");}</code></pre>
 
                     
                   
@@ -3115,9 +3072,7 @@ if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
                             
 
 
-    <p>Kicks and bans a user. This removes them from the server and prevents them from returning. The ban is by user name if 
-available, or machine fingerprint otherwise.
-</p>
+    <p>Kicks and bans a user. This removes them from the server and prevents them from returning. The ban is by user name if available, or machine fingerprint otherwise.</p>
     <p>This function only works if you're an administrator of the domain you're in.</p>
 
 
@@ -3271,8 +3226,7 @@ available, or machine fingerprint otherwise.
                             
 
 
-    <p>Mutes a user's microphone for everyone. The mute is not permanent: the user can unmute themselves. 
-</p>
+    <p>Mutes a user's microphone for everyone. The mute is not permanent: the user can unmute themselves. </p>
     <p>This function only works if you're an administrator of the domain you're in.</p>
 
 
@@ -3644,9 +3598,7 @@ boolean
                             
 
 
-    <p>Requests the user name and machine fingerprint associated with the given UUID. The user name is returned via a 
-<a href="Users.html#.usernameFromIDReply">usernameFromIDReply</a> signal.
-</p>
+    <p>Requests the user name and machine fingerprint associated with the given UUID. The user name is returned via a <a href="Users.html#.usernameFromIDReply">usernameFromIDReply</a> signal.</p>
     <p>This function only works if you're an administrator of the domain you're in.</p>
 
 
@@ -3759,22 +3711,7 @@ boolean
                         
         <p class="code-caption">Report the user name and fingerprint of a nearby user.</p>
     
-    <pre class="prettyprint"><code>function onUsernameFromIDReply(sessionID, userName, machineFingerprint, isAdmin) {
-    print("Session:     " + sessionID);
-    print("User name:   " + userName);
-    print("Fingerprint: " + machineFingerprint);
-    print("Is admin:    " + isAdmin);
-}
-
-Users.usernameFromIDReply.connect(onUsernameFromIDReply);
-
-var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);
-if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.
-    print("Request data for: " + avatars[1]);
-    Users.requestUsernameFromID(avatars[1]);
-} else {
-    print("No avatars");
-}</code></pre>
+    <pre class="prettyprint"><code>function onUsernameFromIDReply(sessionID, userName, machineFingerprint, isAdmin) {    print("Session:     " + sessionID);    print("User name:   " + userName);    print("Fingerprint: " + machineFingerprint);    print("Is admin:    " + isAdmin);}Users.usernameFromIDReply.connect(onUsernameFromIDReply);var avatars = AvatarList.getAvatarsInRange(MyAvatar.position, 1000);if (avatars.length > 1) {  // Skip own avatar which is provided in position 0.    print("Request data for: " + avatars[1]);    Users.requestUsernameFromID(avatars[1]);} else {    print("No avatars");}</code></pre>
 
                     
                   
@@ -4771,8 +4708,7 @@ Signal
                             
 
 
-    <p>Triggered in response to a <a href="Users.html#.requestUsernameFromID">requestUsernameFromID</a> call. Provides the user name and 
-machine fingerprint associated with a UUID.</p>
+    <p>Triggered in response to a <a href="Users.html#.requestUsernameFromID">requestUsernameFromID</a> call. Provides the user name and machine fingerprint associated with a UUID.</p>
 
 
                         
@@ -4900,8 +4836,7 @@ string
                     
 
 
-    <p>The user name of the client, if the requesting client is an administrator in the domain or 
-    the <code>sessionID</code> is that of the client, otherwise <code>""</code>.</p>
+    <p>The user name of the client, if the requesting client is an administrator in the domain or     the <code>sessionID</code> is that of the client, otherwise <code>""</code>.</p>
 
 
                 
@@ -4934,8 +4869,7 @@ string
                     
 
 
-    <p>The machine fingerprint of the client, if the requesting client is an administrator 
-    in the domain or the <code>sessionID</code> is that of the client, otherwise <a href="global.html#Uuid">Uuid.NULL</a>.</p>
+    <p>The machine fingerprint of the client, if the requesting client is an administrator     in the domain or the <code>sessionID</code> is that of the client, otherwise <a href="global.html#Uuid">Uuid.NULL</a>.</p>
 
 
                 

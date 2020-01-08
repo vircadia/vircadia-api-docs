@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -57,8 +58,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Reticle</code> API provides access to the mouse cursor. The cursor may be an arrow or a reticle circle, depending 
-on Interface settings. The mouse cursor is visible in HMD mode if controllers aren't being used.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Reticle</code> API provides access to the mouse cursor. The cursor may be an arrow or a reticle circle, depending on Interface settings. The mouse cursor is visible in HMD mode if controllers aren't being used.</div>
                 
 
                 
@@ -113,8 +113,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the mouse cursor will be captured when in HMD mode and the 
-    Interface window content (excluding menus) has focus, <code>false</code> if the mouse cursor will not be captured.</p>
+    <p><code>true</code> if the mouse cursor will be captured when in HMD mode and the     Interface window content (excluding menus) has focus, <code>false</code> if the mouse cursor will not be captured.</p>
 
 
                 
@@ -182,9 +181,7 @@ number
                     
 
 
-    <p>The maximum reticle coordinates on the display device in desktop mode or the HUD surface 
-    in HMD mode. (The minimum reticle coordinates on the desktop display device or HUD surface are <code>0</code>, 
-    <code>0</code>.) <em>Read-only.</em></p>
+    <p>The maximum reticle coordinates on the display device in desktop mode or the HUD surface     in HMD mode. (The minimum reticle coordinates on the desktop display device or HUD surface are <code>0</code>,     <code>0</code>.) <em>Read-only.</em></p>
 
 
                 
@@ -217,10 +214,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the mouse cursor is captured, displaying only in Interface and 
-    not on the rest of the desktop. The mouse cursor may be captured when in HMD mode and the Interface window content 
-    (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> is <code>true</code>). 
-    <em>Read-only.</em></p>
+    <p><code>true</code> if the mouse cursor is captured, displaying only in Interface and     not on the rest of the desktop. The mouse cursor may be captured when in HMD mode and the Interface window content     (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> is <code>true</code>).     <em>Read-only.</em></p>
 
 
                 
@@ -253,8 +247,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the mouse cursor is pointing at UI in the Interface 
-    window in desktop mode or on the HUD surface in HMD mode, <code>false</code> if it isn't. <em>Read-only.</em></p>
+    <p><code>true</code> if the mouse cursor is pointing at UI in the Interface     window in desktop mode or on the HUD surface in HMD mode, <code>false</code> if it isn't. <em>Read-only.</em></p>
 
 
                 
@@ -287,9 +280,7 @@ boolean
                     
 
 
-    <p>The position of the cursor. This is the position relative to the Interface window in desktop 
-    mode, and the HUD surface in HMD mode.
-    </p>
+    <p>The position of the cursor. This is the position relative to the Interface window in desktop     mode, and the HUD surface in HMD mode.    </p>
     <p><strong>Note:</strong> The position values may be negative.</p>
 
 
@@ -323,8 +314,7 @@ number
                     
 
 
-    <p>The scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. 
-    (Does not affect the size of the arrow in desktop mode.)</p>
+    <p>The scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode.     (Does not affect the size of the arrow in desktop mode.)</p>
 
 
                 
@@ -359,9 +349,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the reticle circle is visible in desktop mode, and the arrow or 
-    reticle circle are visible in HMD mode; <code>false</code> otherwise. (Does not affect the visibility of the mouse 
-    pointer in desktop mode.)</p>
+    <p><code>true</code> if the reticle circle is visible in desktop mode, and the arrow or     reticle circle are visible in HMD mode; <code>false</code> otherwise. (Does not affect the visibility of the mouse     pointer in desktop mode.)</p>
 
 
                 
@@ -469,8 +457,7 @@ boolean
                     
 
 
-    <p>Gets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items) 
-has focus. When captured, the mouse cursor displays only in Interface, not on the rest of the desktop.</p>
+    <p>Gets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items) has focus. When captured, the mouse cursor displays only in Interface, not on the rest of the desktop.</p>
 
 
                 
@@ -664,8 +651,7 @@ number
                     
 
 
-    <p>Gets the maximum reticle coordinates on the display device in desktop mode or the HUD surface in HMD mode. (The minimum 
-reticle coordinates on the desktop display device or HUD surface are <code>0</code>, <code>0</code>.)</p>
+    <p>Gets the maximum reticle coordinates on the display device in desktop mode or the HUD surface in HMD mode. (The minimum reticle coordinates on the desktop display device or HUD surface are <code>0</code>, <code>0</code>.)</p>
 
 
                 
@@ -762,9 +748,7 @@ reticle coordinates on the desktop display device or HUD surface are <code>0</co
                     
 
 
-    <p>Gets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD 
-surface in HMD mode.
-</p>
+    <p>Gets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode.</p>
     <p><strong>Note:</strong> The position values may be negative.</p>
 
 
@@ -862,8 +846,7 @@ number
                     
 
 
-    <p>Gets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the 
-size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
+    <p>Gets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
 
 
                 
@@ -1057,9 +1040,7 @@ boolean
                     
 
 
-    <p>Checks whether the mouse cursor is captured, displaying only in Interface and not on the rest of the desktop. The mouse 
-cursor is captured when in HMD mode and the Interface window content (excluding menu items) has focus, if capturing is 
-enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p>
+    <p>Checks whether the mouse cursor is captured, displaying only in Interface and not on the rest of the desktop. The mouse cursor is captured when in HMD mode and the Interface window content (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p>
 
 
                 
@@ -1156,8 +1137,7 @@ boolean
                     
 
 
-    <p>Gets whether the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD 
-mode.</p>
+    <p>Gets whether the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD mode.</p>
 
 
                 
@@ -1244,8 +1224,7 @@ mode.</p>
                     
 
 
-    <p>Sets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items)
-has focus. When captured, the mouse cursor displays only in Interface, not on the rest of desktop.</p>
+    <p>Sets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items)has focus. When captured, the mouse cursor displays only in Interface, not on the rest of desktop.</p>
 
 
                 
@@ -1419,9 +1398,7 @@ has focus. When captured, the mouse cursor displays only in Interface, not on th
                     
 
 
-    <p>Sets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD 
-surface in HMD mode.
-</p>
+    <p>Sets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode.</p>
     <p><strong>Note:</strong> The position values may be negative.</p>
 
 
@@ -1509,8 +1486,7 @@ surface in HMD mode.
                     
 
 
-    <p>Sets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the
-size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
+    <p>Sets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect thesize of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
 
 
                 
@@ -1688,8 +1664,7 @@ size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the mouse cursor will be captured when in HMD mode and the Interface window 
-    content has focus, <code>false</code> if the mouse cursor will not be captured.
+    <code>true</code> if the mouse cursor will be captured when in HMD mode and the Interface window     content has focus, <code>false</code> if the mouse cursor will not be captured.
 
 
                         
@@ -1707,8 +1682,7 @@ size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
                             
 
 
-    <p>Gets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items) 
-has focus. When captured, the mouse cursor displays only in Interface, not on the rest of the desktop.</p>
+    <p>Gets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items) has focus. When captured, the mouse cursor displays only in Interface, not on the rest of the desktop.</p>
 
 
                         
@@ -1916,8 +1890,7 @@ has focus. When captured, the mouse cursor displays only in Interface, not on th
                             
 
 
-    <p>Gets the maximum reticle coordinates on the display device in desktop mode or the HUD surface in HMD mode. (The minimum 
-reticle coordinates on the desktop display device or HUD surface are <code>0</code>, <code>0</code>.)</p>
+    <p>Gets the maximum reticle coordinates on the display device in desktop mode or the HUD surface in HMD mode. (The minimum reticle coordinates on the desktop display device or HUD surface are <code>0</code>, <code>0</code>.)</p>
 
 
                         
@@ -2021,9 +1994,7 @@ reticle coordinates on the desktop display device or HUD surface are <code>0</co
                             
 
 
-    <p>Gets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD 
-surface in HMD mode.
-</p>
+    <p>Gets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode.</p>
     <p><strong>Note:</strong> The position values may be negative.</p>
 
 
@@ -2128,8 +2099,7 @@ surface in HMD mode.
                             
 
 
-    <p>Gets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the 
-size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
+    <p>Gets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
 
 
                         
@@ -2215,9 +2185,7 @@ size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the reticle circle is visible in desktop mode, and the arrow or 
-    reticle circle are visible in HMD mode; <code>false</code> otherwise. (The mouse pointer is always visible in 
-    desktop mode.)
+    <code>true</code> if the reticle circle is visible in desktop mode, and the arrow or     reticle circle are visible in HMD mode; <code>false</code> otherwise. (The mouse pointer is always visible in     desktop mode.)
 
 
                         
@@ -2321,8 +2289,7 @@ size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the mouse cursor is captured, displaying only in Interface and not on the 
-    desktop.
+    <code>true</code> if the mouse cursor is captured, displaying only in Interface and not on the     desktop.
 
 
                         
@@ -2340,9 +2307,7 @@ size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
                             
 
 
-    <p>Checks whether the mouse cursor is captured, displaying only in Interface and not on the rest of the desktop. The mouse 
-cursor is captured when in HMD mode and the Interface window content (excluding menu items) has focus, if capturing is 
-enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p>
+    <p>Checks whether the mouse cursor is captured, displaying only in Interface and not on the rest of the desktop. The mouse cursor is captured when in HMD mode and the Interface window content (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p>
 
 
                         
@@ -2428,8 +2393,7 @@ enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the mouse cursor is pointing at UI in the Interface window in desktop mode or on 
-    the HUD surface in HMD mode, <code>false</code> if it isn't.
+    <code>true</code> if the mouse cursor is pointing at UI in the Interface window in desktop mode or on     the HUD surface in HMD mode, <code>false</code> if it isn't.
 
 
                         
@@ -2447,8 +2411,7 @@ enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p
                             
 
 
-    <p>Gets whether the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD 
-mode.</p>
+    <p>Gets whether the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD mode.</p>
 
 
                         
@@ -2543,8 +2506,7 @@ mode.</p>
                             
 
 
-    <p>Sets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items)
-has focus. When captured, the mouse cursor displays only in Interface, not on the rest of desktop.</p>
+    <p>Sets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items)has focus. When captured, the mouse cursor displays only in Interface, not on the rest of desktop.</p>
 
 
                         
@@ -2639,8 +2601,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the mouse cursor will be captured when in HMD mode and the 
-    Interface window content has focus, <code>false</code> if the mouse cursor will not be captured.</p>
+    <p><code>true</code> if the mouse cursor will be captured when in HMD mode and the     Interface window content has focus, <code>false</code> if the mouse cursor will not be captured.</p>
 
 
                 
@@ -2851,9 +2812,7 @@ number
                             
 
 
-    <p>Sets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD 
-surface in HMD mode.
-</p>
+    <p>Sets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode.</p>
     <p><strong>Note:</strong> The position values may be negative.</p>
 
 
@@ -3007,8 +2966,7 @@ surface in HMD mode.
                             
 
 
-    <p>Sets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the
-size of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
+    <p>Sets the scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect thesize of the arrow in desktop mode.) The default scale is <code>1.0</code>.</p>
 
 
                         
@@ -3256,9 +3214,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the reticle circle is visible in desktop mode, and the arrow or reticle 
-    circle are visible in HMD mode; <code>false</code> otherwise. (Does not affect the visibility of the mouse pointer 
-    in desktop mode.)</p>
+    <p><code>true</code> if the reticle circle is visible in desktop mode, and the arrow or reticle     circle are visible in HMD mode; <code>false</code> otherwise. (Does not affect the visibility of the mouse pointer     in desktop mode.)</p>
 
 
                 

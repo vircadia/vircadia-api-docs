@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -230,8 +231,7 @@ string
     
         <p class="code-caption">Extract a filename from a URL.</p>
     
-    <pre class="prettyprint"><code>var url = "http://domain.tld/path/page.html?filename=file.ext";
-print("File name: " + File.convertUrlToPath(url));  // file.ext</code></pre>
+    <pre class="prettyprint"><code>var url = "http://domain.tld/path/page.html?filename=file.ext";print("File name: " + File.convertUrlToPath(url));  // file.ext</code></pre>
 
 
 -->
@@ -429,21 +429,7 @@ string
     
         <p class="code-caption">Select and unzip a file.</p>
     
-    <pre class="prettyprint"><code>File.unzipResult.connect(function (zipFile, unzipFiles, autoAdd, isZip, isBlocks) {
-    print("File.unzipResult()");
-    print("- zipFile: " + zipFile);
-    print("- unzipFiles(" + unzipFiles.length + "): " + unzipFiles);
-    print("- autoAdd: " + autoAdd);
-    print("- isZip: " + isZip);
-    print("- isBlocks: " + isBlocks);
-});
-
-var zipFile = Window.browse("Select a Zip File", "", "*.zip");
-if (zipFile) {
-    File.runUnzip(zipFile, "", false, true, false);
-} else {
-    print("Zip file not selected.");
-}</code></pre>
+    <pre class="prettyprint"><code>File.unzipResult.connect(function (zipFile, unzipFiles, autoAdd, isZip, isBlocks) {    print("File.unzipResult()");    print("- zipFile: " + zipFile);    print("- unzipFiles(" + unzipFiles.length + "): " + unzipFiles);    print("- autoAdd: " + autoAdd);    print("- isZip: " + isZip);    print("- isBlocks: " + isBlocks);});var zipFile = Window.browse("Select a Zip File", "", "*.zip");if (zipFile) {    File.runUnzip(zipFile, "", false, true, false);} else {    print("Zip file not selected.");}</code></pre>
 
 
 -->
@@ -696,8 +682,7 @@ string
                         
         <p class="code-caption">Extract a filename from a URL.</p>
     
-    <pre class="prettyprint"><code>var url = "http://domain.tld/path/page.html?filename=file.ext";
-print("File name: " + File.convertUrlToPath(url));  // file.ext</code></pre>
+    <pre class="prettyprint"><code>var url = "http://domain.tld/path/page.html?filename=file.ext";print("File name: " + File.convertUrlToPath(url));  // file.ext</code></pre>
 
                     
                   
@@ -951,9 +936,7 @@ string
                     
 
 
-    <p>The path of the zip file in the local file system. May have a leading <code>"file:///"</code>. 
-    Need not have a <code>".zip"</code> extension if it is in a temporary directory (as created by 
-    <a href="File.html#.getTempDir">getTempDir</a>).</p>
+    <p>The path of the zip file in the local file system. May have a leading <code>"file:///"</code>.     Need not have a <code>".zip"</code> extension if it is in a temporary directory (as created by     <a href="File.html#.getTempDir">getTempDir</a>).</p>
 
 
                 
@@ -1019,8 +1002,7 @@ boolean
                     
 
 
-    <p><em>Not used by user scripts.</em> The value is simply passed through to the 
-    <a href="File.html#.unzipResult">unzipResult</a> signal.</p>
+    <p><em>Not used by user scripts.</em> The value is simply passed through to the     <a href="File.html#.unzipResult">unzipResult</a> signal.</p>
 
 
                 
@@ -1053,8 +1035,7 @@ boolean
                     
 
 
-    <p>Set to <code>true</code> if <code>path</code> has a <code>".zip"</code> extension, 
-    <code>false</code> if it doesn't (but should still be treated as a zip file).</p>
+    <p>Set to <code>true</code> if <code>path</code> has a <code>".zip"</code> extension,     <code>false</code> if it doesn't (but should still be treated as a zip file).</p>
 
 
                 
@@ -1087,8 +1068,7 @@ boolean
                     
 
 
-    <p><em>Not used by user scripts.</em> The value is simply passed through to the 
-    <a href="File.html#.unzipResult">unzipResult</a> signal.</p>
+    <p><em>Not used by user scripts.</em> The value is simply passed through to the     <a href="File.html#.unzipResult">unzipResult</a> signal.</p>
 
 
                 
@@ -1105,21 +1085,7 @@ boolean
                         
         <p class="code-caption">Select and unzip a file.</p>
     
-    <pre class="prettyprint"><code>File.unzipResult.connect(function (zipFile, unzipFiles, autoAdd, isZip, isBlocks) {
-    print("File.unzipResult()");
-    print("- zipFile: " + zipFile);
-    print("- unzipFiles(" + unzipFiles.length + "): " + unzipFiles);
-    print("- autoAdd: " + autoAdd);
-    print("- isZip: " + isZip);
-    print("- isBlocks: " + isBlocks);
-});
-
-var zipFile = Window.browse("Select a Zip File", "", "*.zip");
-if (zipFile) {
-    File.runUnzip(zipFile, "", false, true, false);
-} else {
-    print("Zip file not selected.");
-}</code></pre>
+    <pre class="prettyprint"><code>File.unzipResult.connect(function (zipFile, unzipFiles, autoAdd, isZip, isBlocks) {    print("File.unzipResult()");    print("- zipFile: " + zipFile);    print("- unzipFiles(" + unzipFiles.length + "): " + unzipFiles);    print("- autoAdd: " + autoAdd);    print("- isZip: " + isZip);    print("- isBlocks: " + isBlocks);});var zipFile = Window.browse("Select a Zip File", "", "*.zip");if (zipFile) {    File.runUnzip(zipFile, "", false, true, false);} else {    print("Zip file not selected.");}</code></pre>
 
                     
                   
@@ -1343,8 +1309,7 @@ Array.&lt;string>
                     
 
 
-    <p>The paths of the unzipped files in a newly created temporary directory. Includes entries 
-    for any subdirectories created. An empty array if the <code>zipFile</code> could not be unzipped.</p>
+    <p>The paths of the unzipped files in a newly created temporary directory. Includes entries     for any subdirectories created. An empty array if the <code>zipFile</code> could not be unzipped.</p>
 
 
                 
@@ -1410,8 +1375,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="File.html#.runUnzip">runUnzip</a> was called with <code>isZip == true</code>,  
-    unless there is no FBX or OBJ file in the unzipped file(s) in which case the value is <code>false</code>.</p>
+    <p><code>true</code> if <a href="File.html#.runUnzip">runUnzip</a> was called with <code>isZip == true</code>,      unless there is no FBX or OBJ file in the unzipped file(s) in which case the value is <code>false</code>.</p>
 
 
                 

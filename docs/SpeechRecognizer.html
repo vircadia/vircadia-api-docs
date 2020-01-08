@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -59,9 +60,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>SpeechRecognizer</code> API provides facilities to recognize voice commands.
-<p>Speech recognition is enabled or disabled via the Developer &gt; Scripting &gt; Enable Speech Control API menu item or 
-the <a href="SpeechRecognizer.html#.setEnabled">SpeechRecognizer.setEnabled</a> method.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>SpeechRecognizer</code> API provides facilities to recognize voice commands.<p>Speech recognition is enabled or disabled via the Developer &gt; Scripting &gt; Enable Speech Control API menu item or the <a href="SpeechRecognizer.html#.setEnabled">SpeechRecognizer.setEnabled</a> method.</p></div>
                 
 
                 
@@ -493,46 +492,7 @@ the <a href="SpeechRecognizer.html#.setEnabled">SpeechRecognizer.setEnabled</a> 
     
         <p class="code-caption">Turn your avatar upon voice command.</p>
     
-    <pre class="prettyprint"><code>var TURN_LEFT = "turn left";
-var TURN_RIGHT = "turn right";
-var TURN_RATE = 0.5;
-var TURN_DURATION = 1000; // ms
-var turnRate = 0;
-
-function getTurnRate() {
-    return turnRate;
-}
-
-var MAPPING_NAME = "com.highfidelity.controllers.example.speechRecognizer";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(getTurnRate).to(Controller.Actions.Yaw);
-Controller.enableMapping(MAPPING_NAME);
-
-function onCommandRecognized(command) {
-    print("Speech command: " + command);
-    switch (command) {
-        case TURN_LEFT:
-            turnRate = -TURN_RATE;
-            break;
-        case TURN_RIGHT:
-            turnRate = TURN_RATE;
-            break;
-    }
-    Script.setTimeout(function () {
-        turnRate = 0;
-    }, TURN_DURATION);
-}
-
-SpeechRecognizer.addCommand(TURN_LEFT);
-SpeechRecognizer.addCommand(TURN_RIGHT);
-SpeechRecognizer.commandRecognized.connect(onCommandRecognized);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-    SpeechRecognizer.removeCommand(TURN_LEFT);
-    SpeechRecognizer.removeCommand(TURN_RIGHT);
-});</code></pre>
+    <pre class="prettyprint"><code>var TURN_LEFT = "turn left";var TURN_RIGHT = "turn right";var TURN_RATE = 0.5;var TURN_DURATION = 1000; // msvar turnRate = 0;function getTurnRate() {    return turnRate;}var MAPPING_NAME = "com.highfidelity.controllers.example.speechRecognizer";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(getTurnRate).to(Controller.Actions.Yaw);Controller.enableMapping(MAPPING_NAME);function onCommandRecognized(command) {    print("Speech command: " + command);    switch (command) {        case TURN_LEFT:            turnRate = -TURN_RATE;            break;        case TURN_RIGHT:            turnRate = TURN_RATE;            break;    }    Script.setTimeout(function () {        turnRate = 0;    }, TURN_DURATION);}SpeechRecognizer.addCommand(TURN_LEFT);SpeechRecognizer.addCommand(TURN_RIGHT);SpeechRecognizer.commandRecognized.connect(onCommandRecognized);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);    SpeechRecognizer.removeCommand(TURN_LEFT);    SpeechRecognizer.removeCommand(TURN_RIGHT);});</code></pre>
 
 
 -->
@@ -621,9 +581,7 @@ Script.scriptEnding.connect(function () {
     
         <p class="code-caption">Report when speech recognition is enabled or disabled.</p>
     
-    <pre class="prettyprint"><code>SpeechRecognizer.enabledUpdated.connect(function (enabled) {
-    print("Speech recognition: " + (enabled ? "enabled" : "disabled"));
-});
+    <pre class="prettyprint"><code>SpeechRecognizer.enabledUpdated.connect(function (enabled) {    print("Speech recognition: " + (enabled ? "enabled" : "disabled"));});
      </code></pre>
 
 
@@ -1258,46 +1216,7 @@ string
                         
         <p class="code-caption">Turn your avatar upon voice command.</p>
     
-    <pre class="prettyprint"><code>var TURN_LEFT = "turn left";
-var TURN_RIGHT = "turn right";
-var TURN_RATE = 0.5;
-var TURN_DURATION = 1000; // ms
-var turnRate = 0;
-
-function getTurnRate() {
-    return turnRate;
-}
-
-var MAPPING_NAME = "com.highfidelity.controllers.example.speechRecognizer";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(getTurnRate).to(Controller.Actions.Yaw);
-Controller.enableMapping(MAPPING_NAME);
-
-function onCommandRecognized(command) {
-    print("Speech command: " + command);
-    switch (command) {
-        case TURN_LEFT:
-            turnRate = -TURN_RATE;
-            break;
-        case TURN_RIGHT:
-            turnRate = TURN_RATE;
-            break;
-    }
-    Script.setTimeout(function () {
-        turnRate = 0;
-    }, TURN_DURATION);
-}
-
-SpeechRecognizer.addCommand(TURN_LEFT);
-SpeechRecognizer.addCommand(TURN_RIGHT);
-SpeechRecognizer.commandRecognized.connect(onCommandRecognized);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-    SpeechRecognizer.removeCommand(TURN_LEFT);
-    SpeechRecognizer.removeCommand(TURN_RIGHT);
-});</code></pre>
+    <pre class="prettyprint"><code>var TURN_LEFT = "turn left";var TURN_RIGHT = "turn right";var TURN_RATE = 0.5;var TURN_DURATION = 1000; // msvar turnRate = 0;function getTurnRate() {    return turnRate;}var MAPPING_NAME = "com.highfidelity.controllers.example.speechRecognizer";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(getTurnRate).to(Controller.Actions.Yaw);Controller.enableMapping(MAPPING_NAME);function onCommandRecognized(command) {    print("Speech command: " + command);    switch (command) {        case TURN_LEFT:            turnRate = -TURN_RATE;            break;        case TURN_RIGHT:            turnRate = TURN_RATE;            break;    }    Script.setTimeout(function () {        turnRate = 0;    }, TURN_DURATION);}SpeechRecognizer.addCommand(TURN_LEFT);SpeechRecognizer.addCommand(TURN_RIGHT);SpeechRecognizer.commandRecognized.connect(onCommandRecognized);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);    SpeechRecognizer.removeCommand(TURN_LEFT);    SpeechRecognizer.removeCommand(TURN_RIGHT);});</code></pre>
 
                     
                   
@@ -1477,9 +1396,7 @@ boolean
                         
         <p class="code-caption">Report when speech recognition is enabled or disabled.</p>
     
-    <pre class="prettyprint"><code>SpeechRecognizer.enabledUpdated.connect(function (enabled) {
-    print("Speech recognition: " + (enabled ? "enabled" : "disabled"));
-});
+    <pre class="prettyprint"><code>SpeechRecognizer.enabledUpdated.connect(function (enabled) {    print("Speech recognition: " + (enabled ? "enabled" : "disabled"));});
      </code></pre>
 
                     

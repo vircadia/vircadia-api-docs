@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -325,12 +326,7 @@ string
     
         <p class="code-caption">Report details of the computer's CPUs.</p>
     
-    <pre class="prettyprint"><code>var numCPUs = PlatformInfo.getNumCPUs();
-print("Number of CPUs: " + numCPUs);
-for (var i = 0; i &lt; numCPUs; i++) {
-    var cpuDescription = PlatformInfo.getCPU(i);
-    print("CPU " + i + ": " + cpuDescription);
-}</code></pre>
+    <pre class="prettyprint"><code>var numCPUs = PlatformInfo.getNumCPUs();print("Number of CPUs: " + numCPUs);for (var i = 0; i &lt; numCPUs; i++) {    var cpuDescription = PlatformInfo.getCPU(i);    print("CPU " + i + ": " + cpuDescription);}</code></pre>
 
 
 -->
@@ -371,8 +367,7 @@ string
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).model</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).model</code> instead.</p>
 
 
 
@@ -534,12 +529,7 @@ string
     
         <p class="code-caption">Report details of the systems's displays.</p>
     
-    <pre class="prettyprint"><code>var numDisplays = PlatformInfo.getNumDisplays();
-print("Number of displays: " + numDisplays);
-for (var i = 0; i &lt; numDisplays; i++) {
-    var displayDescription = PlatformInfo.getDisplay(i);
-    print("Display " + i + ": " + displayDescription);
-}</code></pre>
+    <pre class="prettyprint"><code>var numDisplays = PlatformInfo.getNumDisplays();print("Number of displays: " + numDisplays);for (var i = 0; i &lt; numDisplays; i++) {    var displayDescription = PlatformInfo.getDisplay(i);    print("Display " + i + ": " + displayDescription);}</code></pre>
 
 
 -->
@@ -643,12 +633,7 @@ string
     
         <p class="code-caption">Report details of the computer's GPUs.</p>
     
-    <pre class="prettyprint"><code>var numGPUs = PlatformInfo.getNumGPUs();
-print("Number of GPUs: " + numGPUs);
-for (var i = 0; i &lt; numGPUs; i++) {
-    var gpuDescription = PlatformInfo.getGPU(i);
-    print("GPU " + i + ": " + gpuDescription);
-}</code></pre>
+    <pre class="prettyprint"><code>var numGPUs = PlatformInfo.getNumGPUs();print("Number of GPUs: " + numGPUs);for (var i = 0; i &lt; numGPUs; i++) {    var gpuDescription = PlatformInfo.getGPU(i);    print("GPU " + i + ": " + gpuDescription);}</code></pre>
 
 
 -->
@@ -689,10 +674,7 @@ string
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getGPU">PlatformInfo.getGPU(</a> 
-    <a href="PlatformInfo.html#.getMasterGPU">PlatformInfo.getMasterGPU() )</a>).model</code> 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getGPU">PlatformInfo.getGPU(</a>     <a href="PlatformInfo.html#.getMasterGPU">PlatformInfo.getMasterGPU() )</a>).model</code>     instead.</p>
 
 
 
@@ -1559,8 +1541,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).numCores</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).numCores</code> instead.</p>
 
 
 
@@ -1659,8 +1640,7 @@ string
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getComputer">PlatformInfo.getComputer()</a>).OS</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getComputer">PlatformInfo.getComputer()</a>).OS</code> instead.</p>
 
 
 
@@ -2016,9 +1996,7 @@ Array.&lt;string>
     
         <p class="code-caption">Report the platform tier of the computer.</p>
     
-    <pre class="prettyprint"><code>var platformTier = PlatformInfo.getTierProfiled();
-var platformTierName = PlatformInfo.getPlatformTierNames()[platformTier];
-print("Platform tier: " + platformTier + ", " + platformTierName);</code></pre>
+    <pre class="prettyprint"><code>var platformTier = PlatformInfo.getTierProfiled();var platformTierName = PlatformInfo.getPlatformTierNames()[platformTier];print("Platform tier: " + platformTier + ", " + platformTierName);</code></pre>
 
 
 -->
@@ -2059,8 +2037,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getMemory">PlatformInfo.getMemory()</a>).memTotal</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getMemory">PlatformInfo.getMemory()</a>).memTotal</code> instead.</p>
 
 
 
@@ -2897,18 +2874,7 @@ string
                     
 
 
-    <p>The computer operating system.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"WINDOWS"</code></td><td>Windows.</td></tr>
-    <tr><td><code>"MACOS"</code></td><td>Mac OS.</td></tr>
-    <tr><td><code>"LINUX"</code></td><td>Linux.</td></tr>
-    <tr><td><code>"ANDROID"</code></td><td>Android.</td></tr>
-  </tbody>
-</table>
+    <p>The computer operating system.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"WINDOWS"</code></td><td>Windows.</td></tr>    <tr><td><code>"MACOS"</code></td><td>Mac OS.</td></tr>    <tr><td><code>"LINUX"</code></td><td>Linux.</td></tr>    <tr><td><code>"ANDROID"</code></td><td>Android.</td></tr>  </tbody></table>
 
 
                                     
@@ -3130,8 +3096,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the CPU is the "master" or primary CPU, <code>false</code> or 
-    <code>undefined</code> if it isn't.</p>
+    <p><code>true</code> if the CPU is the "master" or primary CPU, <code>false</code> or     <code>undefined</code> if it isn't.</p>
 
 
                 
@@ -3698,8 +3663,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the GPU is the "master" or primary display, <code>false</code> or
-    <code>undefined</code> if it isn't.</p>
+    <p><code>true</code> if the GPU is the "master" or primary display, <code>false</code> or    <code>undefined</code> if it isn't.</p>
 
 
                 
@@ -3956,8 +3920,7 @@ Array.&lt;number>
                     
 
 
-    <p>The index numbers of the displays currently being driven by the GPU. An empty array if 
-    the GPU is currently not driving any displays.</p>
+    <p>The index numbers of the displays currently being driven by the GPU. An empty array if     the GPU is currently not driving any displays.</p>
 
 
                 
@@ -3988,8 +3951,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the GPU is the "master" or primary GPU, <code>false</code> or
-    <code>undefined</code> if it isn't.</p>
+    <p><code>true</code> if the GPU is the "master" or primary GPU, <code>false</code> or    <code>undefined</code> if it isn't.</p>
 
 
                 
@@ -5057,18 +5019,7 @@ number
                     
 
 
-    <p>The platform tier of a computer is an indication of its rendering capability.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>UNKNOWN</td><td>Unknown rendering capability.</td></tr>
-    <tr><td><code>1</code></td><td>LOW</td><td>Low-end PC, capable of rendering low-quality graphics.</td></tr>
-    <tr><td><code>2</code></td><td>MID</td><td>Business-class PC, capable of rendering medium-quality graphics.</td></tr>
-    <tr><td><code>3</code></td><td>HIGH</td><td>High-end PC, capable of rendering high-quality graphics.</td></tr>
-  </tbody>
-</table>
+    <p>The platform tier of a computer is an indication of its rendering capability.</p><table>  <thead>    <tr><th>Value</th><th>Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>0</code></td><td>UNKNOWN</td><td>Unknown rendering capability.</td></tr>    <tr><td><code>1</code></td><td>LOW</td><td>Low-end PC, capable of rendering low-quality graphics.</td></tr>    <tr><td><code>2</code></td><td>MID</td><td>Business-class PC, capable of rendering medium-quality graphics.</td></tr>    <tr><td><code>3</code></td><td>HIGH</td><td>High-end PC, capable of rendering high-quality graphics.</td></tr>  </tbody></table>
 
 
                                     
@@ -6076,12 +6027,7 @@ number
                         
         <p class="code-caption">Report details of the computer's CPUs.</p>
     
-    <pre class="prettyprint"><code>var numCPUs = PlatformInfo.getNumCPUs();
-print("Number of CPUs: " + numCPUs);
-for (var i = 0; i &lt; numCPUs; i++) {
-    var cpuDescription = PlatformInfo.getCPU(i);
-    print("CPU " + i + ": " + cpuDescription);
-}</code></pre>
+    <pre class="prettyprint"><code>var numCPUs = PlatformInfo.getNumCPUs();print("Number of CPUs: " + numCPUs);for (var i = 0; i &lt; numCPUs; i++) {    var cpuDescription = PlatformInfo.getCPU(i);    print("CPU " + i + ": " + cpuDescription);}</code></pre>
 
                     
                   
@@ -6145,8 +6091,7 @@ for (var i = 0; i &lt; numCPUs; i++) {
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).model</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).model</code> instead.</p>
 
 
 
@@ -6357,12 +6302,7 @@ number
                         
         <p class="code-caption">Report details of the systems's displays.</p>
     
-    <pre class="prettyprint"><code>var numDisplays = PlatformInfo.getNumDisplays();
-print("Number of displays: " + numDisplays);
-for (var i = 0; i &lt; numDisplays; i++) {
-    var displayDescription = PlatformInfo.getDisplay(i);
-    print("Display " + i + ": " + displayDescription);
-}</code></pre>
+    <pre class="prettyprint"><code>var numDisplays = PlatformInfo.getNumDisplays();print("Number of displays: " + numDisplays);for (var i = 0; i &lt; numDisplays; i++) {    var displayDescription = PlatformInfo.getDisplay(i);    print("Display " + i + ": " + displayDescription);}</code></pre>
 
                     
                   
@@ -6531,12 +6471,7 @@ number
                         
         <p class="code-caption">Report details of the computer's GPUs.</p>
     
-    <pre class="prettyprint"><code>var numGPUs = PlatformInfo.getNumGPUs();
-print("Number of GPUs: " + numGPUs);
-for (var i = 0; i &lt; numGPUs; i++) {
-    var gpuDescription = PlatformInfo.getGPU(i);
-    print("GPU " + i + ": " + gpuDescription);
-}</code></pre>
+    <pre class="prettyprint"><code>var numGPUs = PlatformInfo.getNumGPUs();print("Number of GPUs: " + numGPUs);for (var i = 0; i &lt; numGPUs; i++) {    var gpuDescription = PlatformInfo.getGPU(i);    print("GPU " + i + ": " + gpuDescription);}</code></pre>
 
                     
                   
@@ -6600,10 +6535,7 @@ for (var i = 0; i &lt; numGPUs; i++) {
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getGPU">PlatformInfo.getGPU(</a> 
-    <a href="PlatformInfo.html#.getMasterGPU">PlatformInfo.getMasterGPU() )</a>).model</code> 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getGPU">PlatformInfo.getGPU(</a>     <a href="PlatformInfo.html#.getMasterGPU">PlatformInfo.getMasterGPU() )</a>).model</code>     instead.</p>
 
 
 
@@ -7534,8 +7466,7 @@ for (var i = 0; i &lt; numGPUs; i++) {
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).numCores</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getCPU">PlatformInfo.getCPU(0)</a>).numCores</code> instead.</p>
 
 
 
@@ -7641,8 +7572,7 @@ for (var i = 0; i &lt; numGPUs; i++) {
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getComputer">PlatformInfo.getComputer()</a>).OS</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getComputer">PlatformInfo.getComputer()</a>).OS</code> instead.</p>
 
 
 
@@ -8003,9 +7933,7 @@ for (var i = 0; i &lt; numGPUs; i++) {
                         
         <p class="code-caption">Report the platform tier of the computer.</p>
     
-    <pre class="prettyprint"><code>var platformTier = PlatformInfo.getTierProfiled();
-var platformTierName = PlatformInfo.getPlatformTierNames()[platformTier];
-print("Platform tier: " + platformTier + ", " + platformTierName);</code></pre>
+    <pre class="prettyprint"><code>var platformTier = PlatformInfo.getTierProfiled();var platformTierName = PlatformInfo.getPlatformTierNames()[platformTier];print("Platform tier: " + platformTier + ", " + platformTierName);</code></pre>
 
                     
                   
@@ -8069,8 +7997,7 @@ print("Platform tier: " + platformTier + ", " + platformTierName);</code></pre>
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed.
-    Use <code>JSON.parse(<a href="PlatformInfo.html#.getMemory">PlatformInfo.getMemory()</a>).memTotal</code> instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed.    Use <code>JSON.parse(<a href="PlatformInfo.html#.getMemory">PlatformInfo.getMemory()</a>).memTotal</code> instead.</p>
 
 
 
@@ -8151,8 +8078,7 @@ print("Platform tier: " + platformTier + ", " + platformTierName);</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the current display supports HTML on 3D surfaces, <code>false</code> if it 
-    doesn't.
+    <code>true</code> if the current display supports HTML on 3D surfaces, <code>false</code> if it     doesn't.
 
 
                         

@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -62,11 +63,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An <code>InteractiveWindow</code> can display either inside Interface or in its own window separate from the Interface 
-window. The window content is defined by a QML file, which can optionally include a <code>WebView</code> control that embeds 
-an HTML web page. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Interface install.)
-
-<p>Create using <a href="Desktop.html#.createWindow">Desktop.createWindow</a>.</p></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>An <code>InteractiveWindow</code> can display either inside Interface or in its own window separate from the Interface window. The window content is defined by a QML file, which can optionally include a <code>WebView</code> control that embeds an HTML web page. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Interface install.)<p>Create using <a href="Desktop.html#.createWindow">Desktop.createWindow</a>.</p></div>
                 
 
 
@@ -240,9 +237,7 @@ boolean
                     
 
 
-    <p>The presentation mode of the window: 
-    <code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Interface, <code>.NATIVE</code> to display it
-    as its own separate window.</p>
+    <p>The presentation mode of the window:     <code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Interface, <code>.NATIVE</code> to display it    as its own separate window.</p>
 
 
                 
@@ -439,12 +434,8 @@ boolean
                     
 
 
-    <p>Sends a message to an embedded HTML web page. To receive the message, the HTML page's script must connect to the 
-<code>EventBridge</code> that is automatically provided to the script:
-</p>
-    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {
-    ...
-});</code></pre>
+    <p>Sends a message to an embedded HTML web page. To receive the message, the HTML page's script must connect to the <code>EventBridge</code> that is automatically provided to the script:</p>
+    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {    ...});</code></pre>
 
 
                 
@@ -700,11 +691,8 @@ boolean
                     
 
 
-    <p>Sends a message to the QML page. To receive the message, the QML page must implement a function:
-</p>
-    <pre class="prettyprint"><code>function fromScript(message) {
-  ...
-}</code></pre>
+    <p>Sends a message to the QML page. To receive the message, the QML page must implement a function:</p>
+    <pre class="prettyprint"><code>function fromScript(message) {  ...}</code></pre>
 
 
                 
@@ -774,43 +762,9 @@ boolean
     
         <p class="code-caption">Send and receive messages with a QML window.</p>
     
-    <pre class="prettyprint"><code>// JavaScript file.
+    <pre class="prettyprint"><code>// JavaScript file.var qmlWindow = Desktop.createWindow(Script.resolvePath("QMLWindow.qml"), {    title: "QML Window",    size: { x: 400, y: 300 }});qmlWindow.fromQml.connect(function (message) {    print("Message received: " + message);});Script.setTimeout(function () {    qmlWindow.sendToQml("Hello world!");}, 2000);Script.scriptEnding.connect(function () {    qmlWindow.close();});</code></pre>
 
-var qmlWindow = Desktop.createWindow(Script.resolvePath("QMLWindow.qml"), {
-    title: "QML Window",
-    size: { x: 400, y: 300 }
-});
-
-qmlWindow.fromQml.connect(function (message) {
-    print("Message received: " + message);
-});
-
-Script.setTimeout(function () {
-    qmlWindow.sendToQml("Hello world!");
-}, 2000);
-
-Script.scriptEnding.connect(function () {
-    qmlWindow.close();
-});</code></pre>
-
-    <pre class="prettyprint"><code>// QML file, "QMLWindow.qml".
-
-import QtQuick 2.5
-import QtQuick.Controls 1.4
-
-Rectangle {
-
-    function fromScript(message) {
-        text.text = message;
-        sendToScript("Hello back!");
-    }
-
-    Label {
-        id: text
-        anchors.centerIn: parent
-        text: "..."
-    }
-}</code></pre>
+    <pre class="prettyprint"><code>// QML file, "QMLWindow.qml".import QtQuick 2.5import QtQuick.Controls 1.4Rectangle {    function fromScript(message) {        text.text = message;        sendToScript("Hello back!");    }    Label {        id: text        anchors.centerIn: parent        text: "..."    }}</code></pre>
 
 
 -->
@@ -1013,8 +967,7 @@ Rectangle {
                         
 
 
-    <p>Triggered when a message from the QML page is received. The QML page can send a message (string or object) by calling:
-</p>
+    <p>Triggered when a message from the QML page is received. The QML page can send a message (string or object) by calling:</p>
     <pre class="prettyprint"><code>sendToScript(message);</code></pre>
 
 
@@ -1661,8 +1614,7 @@ Rectangle {
                         
 
 
-    <p>Triggered when a message from an embedded HTML web page is received. The HTML web page can send a message by calling:
-</p>
+    <p>Triggered when a message from an embedded HTML web page is received. The HTML web page can send a message by calling:</p>
     <pre class="prettyprint"><code>EventBridge.emitWebEvent(message);</code></pre>
 
 
@@ -1761,18 +1713,7 @@ number
                     
 
 
-    <p>A docking location of an <code>InteractiveWindow</code>.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>TOP</td><td>Dock to the top edge of the Interface window.</td></tr>
-    <tr><td><code>1</code></td><td>BOTTOM</td><td>Dock to the bottom edge of the Interface window.</td></tr>
-    <tr><td><code>2</code></td><td>LEFT</td><td>Dock to the left edge of the Interface window.</td></tr>
-    <tr><td><code>3</code></td><td>RIGHT</td><td>Dock to the right edge of the Interface window.</td></tr>
-  <tbody>
-</table>
+    <p>A docking location of an <code>InteractiveWindow</code>.</p><table>  <thead>    <tr><th>Value</th><th>Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>0</code></td><td>TOP</td><td>Dock to the top edge of the Interface window.</td></tr>    <tr><td><code>1</code></td><td>BOTTOM</td><td>Dock to the bottom edge of the Interface window.</td></tr>    <tr><td><code>2</code></td><td>LEFT</td><td>Dock to the left edge of the Interface window.</td></tr>    <tr><td><code>3</code></td><td>RIGHT</td><td>Dock to the right edge of the Interface window.</td></tr>  <tbody></table>
 
 
                                     
@@ -2073,18 +2014,7 @@ number
                     
 
 
-    <p>A set of  flags controlling <code>InteractiveWindow</code> behavior. The value is constructed by using the 
-<code>|</code> (bitwise OR) operator on the individual flag values.</p>
-<table>
-  <thead>
-    <tr><th>Flag Name</th><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>ALWAYS_ON_TOP</td><td><code>1</code></td><td>The window always displays on top.</td></tr>
-    <tr><td>CLOSE_BUTTON_HIDES</td><td><code>2</code></td><td>The window hides instead of closing when the user clicks 
-      the "close" button.</td></tr>
-  </tbody>
-</table>
+    <p>A set of  flags controlling <code>InteractiveWindow</code> behavior. The value is constructed by using the <code>|</code> (bitwise OR) operator on the individual flag values.</p><table>  <thead>    <tr><th>Flag Name</th><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td>ALWAYS_ON_TOP</td><td><code>1</code></td><td>The window always displays on top.</td></tr>    <tr><td>CLOSE_BUTTON_HIDES</td><td><code>2</code></td><td>The window hides instead of closing when the user clicks       the "close" button.</td></tr>  </tbody></table>
 
 
                                     
@@ -2159,18 +2089,7 @@ number
                     
 
 
-    <p>A display mode for an <code>InteractiveWindow</code>.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>VIRTUAL</td><td>The window is displayed inside Interface: in the desktop window in 
-      desktop mode or on the HUD surface in HMD mode.</td></tr>
-    <tr><td><code>1</code></td><td>NATIVE</td><td>The window is displayed separately from the Interface window, as its 
-    own separate window.</td></tr>
-  <tbody>
-</table>
+    <p>A display mode for an <code>InteractiveWindow</code>.</p><table>  <thead>    <tr><th>Value</th><th>Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>0</code></td><td>VIRTUAL</td><td>The window is displayed inside Interface: in the desktop window in       desktop mode or on the HUD surface in HMD mode.</td></tr>    <tr><td><code>1</code></td><td>NATIVE</td><td>The window is displayed separately from the Interface window, as its     own separate window.</td></tr>  <tbody></table>
 
 
                                     
@@ -2299,8 +2218,7 @@ object
                     
 
 
-    <p>The window is displayed inside Interface: in the desktop window in 
-    desktop mode or on the HUD surface in HMD mode.</p>
+    <p>The window is displayed inside Interface: in the desktop window in     desktop mode or on the HUD surface in HMD mode.</p>
 
 
                 
@@ -2331,8 +2249,7 @@ object
                     
 
 
-    <p>The window is displayed separately from the Interface window, as its 
-    own separate window.</p>
+    <p>The window is displayed separately from the Interface window, as its     own separate window.</p>
 
 
                 
@@ -2733,8 +2650,7 @@ boolean
                     
 
 
-    <p><code>true</code> to make the window visible when created, <code>false</code> to make
-    it invisible.</p>
+    <p><code>true</code> to make the window visible when created, <code>false</code> to make    it invisible.</p>
 
 
                 
@@ -2777,8 +2693,7 @@ boolean
                     
 
 
-    <p><code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Interface, <code>.NATIVE</code> to display it
-    as its own separate window.</p>
+    <p><code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Interface, <code>.NATIVE</code> to display it    as its own separate window.</p>
 
 
                 
@@ -2821,9 +2736,7 @@ boolean
                     
 
 
-    <p>Controls how a <code>NATIVE</code> window is
-    displayed. If used, the window is docked to the specified edge of the Interface window, otherwise the window is
-    displayed as its own separate window.</p>
+    <p>Controls how a <code>NATIVE</code> window is    displayed. If used, the window is docked to the specified edge of the Interface window, otherwise the window is    displayed as its own separate window.</p>
 
 
                 
@@ -2864,9 +2777,7 @@ InteractiveWindow.AdditionalFlags
                     
 
 
-    <p>Window behavior flags in addition to "native window flags" (minimize/maximize/close),
-    set at window creation. Possible flag values are provided as <a href="Desktop.html">Desktop.ALWAYS_ON_TOP</a> and <a href="Desktop.html">Desktop.CLOSE_BUTTON_HIDES</a>.
-    Additional flag values can be found on Qt's website at https://doc.qt.io/qt-5/qt.html#WindowType-enum.</p>
+    <p>Window behavior flags in addition to "native window flags" (minimize/maximize/close),    set at window creation. Possible flag values are provided as <a href="Desktop.html">Desktop.ALWAYS_ON_TOP</a> and <a href="Desktop.html">Desktop.CLOSE_BUTTON_HIDES</a>.    Additional flag values can be found on Qt's website at https://doc.qt.io/qt-5/qt.html#WindowType-enum.</p>
 
 
                 
@@ -2909,9 +2820,7 @@ InteractiveWindow.OverrideFlags
                     
 
 
-    <p>Window behavior flags instead of the default window flags.
-    Set at window creation. Possible flag values are provided as <a href="Desktop.html">Desktop.ALWAYS_ON_TOP</a> and <a href="Desktop.html">Desktop.CLOSE_BUTTON_HIDES</a>.
-    Additional flag values can be found on Qt's website at https://doc.qt.io/qt-5/qt.html#WindowType-enum.</p>
+    <p>Window behavior flags instead of the default window flags.    Set at window creation. Possible flag values are provided as <a href="Desktop.html">Desktop.ALWAYS_ON_TOP</a> and <a href="Desktop.html">Desktop.CLOSE_BUTTON_HIDES</a>.    Additional flag values can be found on Qt's website at https://doc.qt.io/qt-5/qt.html#WindowType-enum.</p>
 
 
                 
@@ -3352,12 +3261,8 @@ InteractiveWindow.RelativePositionAnchor
                             
 
 
-    <p>Sends a message to an embedded HTML web page. To receive the message, the HTML page's script must connect to the 
-<code>EventBridge</code> that is automatically provided to the script:
-</p>
-    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {
-    ...
-});</code></pre>
+    <p>Sends a message to an embedded HTML web page. To receive the message, the HTML page's script must connect to the <code>EventBridge</code> that is automatically provided to the script:</p>
+    <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {    ...});</code></pre>
 
 
                         
@@ -3759,11 +3664,8 @@ string
                             
 
 
-    <p>Sends a message to the QML page. To receive the message, the QML page must implement a function:
-</p>
-    <pre class="prettyprint"><code>function fromScript(message) {
-  ...
-}</code></pre>
+    <p>Sends a message to the QML page. To receive the message, the QML page must implement a function:</p>
+    <pre class="prettyprint"><code>function fromScript(message) {  ...}</code></pre>
 
 
                         
@@ -3878,43 +3780,9 @@ object
                         
         <p class="code-caption">Send and receive messages with a QML window.</p>
     
-    <pre class="prettyprint"><code>// JavaScript file.
+    <pre class="prettyprint"><code>// JavaScript file.var qmlWindow = Desktop.createWindow(Script.resolvePath("QMLWindow.qml"), {    title: "QML Window",    size: { x: 400, y: 300 }});qmlWindow.fromQml.connect(function (message) {    print("Message received: " + message);});Script.setTimeout(function () {    qmlWindow.sendToQml("Hello world!");}, 2000);Script.scriptEnding.connect(function () {    qmlWindow.close();});</code></pre>
 
-var qmlWindow = Desktop.createWindow(Script.resolvePath("QMLWindow.qml"), {
-    title: "QML Window",
-    size: { x: 400, y: 300 }
-});
-
-qmlWindow.fromQml.connect(function (message) {
-    print("Message received: " + message);
-});
-
-Script.setTimeout(function () {
-    qmlWindow.sendToQml("Hello world!");
-}, 2000);
-
-Script.scriptEnding.connect(function () {
-    qmlWindow.close();
-});</code></pre>
-
-    <pre class="prettyprint"><code>// QML file, "QMLWindow.qml".
-
-import QtQuick 2.5
-import QtQuick.Controls 1.4
-
-Rectangle {
-
-    function fromScript(message) {
-        text.text = message;
-        sendToScript("Hello back!");
-    }
-
-    Label {
-        id: text
-        anchors.centerIn: parent
-        text: "..."
-    }
-}</code></pre>
+    <pre class="prettyprint"><code>// QML file, "QMLWindow.qml".import QtQuick 2.5import QtQuick.Controls 1.4Rectangle {    function fromScript(message) {        text.text = message;        sendToScript("Hello back!");    }    Label {        id: text        anchors.centerIn: parent        text: "..."    }}</code></pre>
 
                     
                   
@@ -4191,8 +4059,7 @@ Signal
                             
 
 
-    <p>Triggered when a message from the QML page is received. The QML page can send a message (string or object) by calling:
-</p>
+    <p>Triggered when a message from the QML page is received. The QML page can send a message (string or object) by calling:</p>
     <pre class="prettyprint"><code>sendToScript(message);</code></pre>
 
 
@@ -5228,8 +5095,7 @@ Signal
                             
 
 
-    <p>Triggered when a message from an embedded HTML web page is received. The HTML web page can send a message by calling:
-</p>
+    <p>Triggered when a message from an embedded HTML web page is received. The HTML web page can send a message by calling:</p>
     <pre class="prettyprint"><code>EventBridge.emitWebEvent(message);</code></pre>
 
 

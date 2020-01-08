@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -102,8 +103,7 @@
                     
 
 
-    <p>Prints a message to the program log.
-</p>
+    <p>Prints a message to the program log.</p>
     <p>This is an alias of <a href="Script.html#.print">Script.print</a>.</p>
 
 
@@ -204,8 +204,7 @@ object
                     
 
 
-    <p>An axis-aligned cube, defined as the bottom right near (minimum axes values) corner of the cube plus the dimension of its 
-sides.</p>
+    <p>An axis-aligned cube, defined as the bottom right near (minimum axes values) corner of the cube plus the dimension of its sides.</p>
 
 
                                     
@@ -485,8 +484,7 @@ string
                     
 
 
-    <p>The URL of the glTF, FBX, or OBJ model file. glTF models may be in JSON or binary format 
-    (".gltf" or ".glb" URLs respectively).</p>
+    <p>The URL of the glTF, FBX, or OBJ model file. glTF models may be in JSON or binary format     (".gltf" or ".glb" URLs respectively).</p>
 
 
                 
@@ -641,9 +639,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> and the model has a skeleton, the bones of the attached model's skeleton are 
-  rotated to fit the avatar's current pose. If <code>true</code>, the <code>translation</code>, <code>rotation</code>, and 
-  <code>scale</code> parameters are ignored.</p>
+    <p>If <code>true</code> and the model has a skeleton, the bones of the attached model's skeleton are   rotated to fit the avatar's current pose. If <code>true</code>, the <code>translation</code>, <code>rotation</code>, and   <code>scale</code> parameters are ignored.</p>
 
 
                 
@@ -807,8 +803,7 @@ number
                     
 
 
-    <p>The target scale of the avatar without any restrictions on permissible values imposed by the 
-    domain.</p>
+    <p>The target scale of the avatar without any restrictions on permissible values imposed by the     domain.</p>
 
 
                 
@@ -839,8 +834,7 @@ number
                     
 
 
-    <p>A user-defined hand position, in world coordinates. The position moves with the avatar but 
-   is otherwise not used or changed by Interface.</p>
+    <p>A user-defined hand position, in world coordinates. The position moves with the avatar but    is otherwise not used or changed by Interface.</p>
 
 
                 
@@ -1243,8 +1237,7 @@ string
                     
 
 
-    <p>The avatar's display name, sanitized and versioned, as defined by the avatar mixer. 
-    It is unique among all avatars present in the domain at the time.</p>
+    <p>The avatar's display name, sanitized and versioned, as defined by the avatar mixer.     It is unique among all avatars present in the domain at the time.</p>
 
 
                 
@@ -1275,8 +1268,7 @@ boolean
                     
 
 
-    <p><span class="important">Deprecated: This property is deprecated and will be 
-    removed.</span></p>
+    <p><span class="important">Deprecated: This property is deprecated and will be     removed.</span></p>
 
 
                 
@@ -1307,8 +1299,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the avatar's eyes snap to look at another avatar's eyes 
-    when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p>
+    <p><code>true</code> if the avatar's eyes snap to look at another avatar's eyes     when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p>
 
 
                 
@@ -1370,8 +1361,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                     
 
 
-    <p>Information on the avatar's attachments.
-    </p>
+    <p>Information on the avatar's attachments.    </p>
     <p class="important">Deprecated: This property is deprecated and will be removed. Use avatar entities instead.</p>
 
 
@@ -1434,8 +1424,7 @@ number
                     
 
 
-    <p>The instantaneous loudness of the audio input that the avatar is injecting into the 
-    domain.</p>
+    <p>The instantaneous loudness of the audio input that the avatar is injecting into the     domain.</p>
 
 
                 
@@ -1466,8 +1455,7 @@ number
                     
 
 
-    <p>The rolling average loudness of the audio input that the avatar is injecting into 
-    the domain.</p>
+    <p>The rolling average loudness of the audio input that the avatar is injecting into     the domain.</p>
 
 
                 
@@ -1498,8 +1486,7 @@ number
                     
 
 
-    <p>The scale, rotation, and translation transform from the user's real world to the 
-    avatar's size, orientation, and position in the virtual world.</p>
+    <p>The scale, rotation, and translation transform from the user's real world to the     avatar's size, orientation, and position in the virtual world.</p>
 
 
                 
@@ -1561,8 +1548,7 @@ number
                     
 
 
-    <p>The rotation and translation of the right hand controller relative to the 
-    avatar.</p>
+    <p>The rotation and translation of the right hand controller relative to the     avatar.</p>
 
 
                 
@@ -1672,44 +1658,7 @@ string
                     
 
 
-    <p>The avatar mixer data comprises different types of data, with the data rates of each being tracked in kbps.</p>
-
-<table>
-  <thead>
-    <tr><th>Rate Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"globalPosition"</code></td><td>Incoming global position.</td></tr>
-    <tr><td><code>"localPosition"</code></td><td>Incoming local position.</td></tr>
-    <tr><td><code>"handControllers"</code></td><td>Incoming hand controllers.</td></tr>
-    <tr><td><code>"avatarBoundingBox"</code></td><td>Incoming avatar bounding box.</td></tr>
-    <tr><td><code>"avatarOrientation"</code></td><td>Incoming avatar orientation.</td></tr>
-    <tr><td><code>"avatarScale"</code></td><td>Incoming avatar scale.</td></tr>
-    <tr><td><code>"lookAtPosition"</code></td><td>Incoming look-at position.</td></tr>
-    <tr><td><code>"audioLoudness"</code></td><td>Incoming audio loudness.</td></tr>
-    <tr><td><code>"sensorToWorkMatrix"</code></td><td>Incoming sensor-to-world matrix.</td></tr>
-    <tr><td><code>"additionalFlags"</code></td><td>Incoming additional avatar flags.</td></tr>
-    <tr><td><code>"parentInfo"</code></td><td>Incoming parent information.</td></tr>
-    <tr><td><code>"faceTracker"</code></td><td>Incoming face tracker data.</td></tr>
-    <tr><td><code>"jointData"</code></td><td>Incoming joint data.</td></tr>
-    <tr><td><code>"jointDefaultPoseFlagsRate"</code></td><td>Incoming joint default pose flags.</td></tr>
-    <tr><td><code>"farGrabJointRate"</code></td><td>Incoming far grab joint.</td></tr>
-    <tr><td><code>"globalPositionOutbound"</code></td><td>Outgoing global position.</td></tr>
-    <tr><td><code>"localPositionOutbound"</code></td><td>Outgoing local position.</td></tr>
-    <tr><td><code>"avatarBoundingBoxOutbound"</code></td><td>Outgoing avatar bounding box.</td></tr>
-    <tr><td><code>"avatarOrientationOutbound"</code></td><td>Outgoing avatar orientation.</td></tr>
-    <tr><td><code>"avatarScaleOutbound"</code></td><td>Outgoing avatar scale.</td></tr>
-    <tr><td><code>"lookAtPositionOutbound"</code></td><td>Outgoing look-at position.</td></tr>
-    <tr><td><code>"audioLoudnessOutbound"</code></td><td>Outgoing audio loudness.</td></tr>
-    <tr><td><code>"sensorToWorkMatrixOutbound"</code></td><td>Outgoing sensor-to-world matrix.</td></tr>
-    <tr><td><code>"additionalFlagsOutbound"</code></td><td>Outgoing additional avatar flags.</td></tr>
-    <tr><td><code>"parentInfoOutbound"</code></td><td>Outgoing parent information.</td></tr>
-    <tr><td><code>"faceTrackerOutbound"</code></td><td>Outgoing face tracker data.</td></tr>
-    <tr><td><code>"jointDataOutbound"</code></td><td>Outgoing joint data.</td></tr>
-    <tr><td><code>"jointDefaultPoseFlagsOutbound"</code></td><td>Outgoing joint default pose flags.</td></tr>
-    <tr><td><code>""</code></td><td>When no rate name is specified, the total incoming data rate is provided.</td></tr>
-  </tbody>
-</table>
+    <p>The avatar mixer data comprises different types of data, with the data rates of each being tracked in kbps.</p><table>  <thead>    <tr><th>Rate Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"globalPosition"</code></td><td>Incoming global position.</td></tr>    <tr><td><code>"localPosition"</code></td><td>Incoming local position.</td></tr>    <tr><td><code>"handControllers"</code></td><td>Incoming hand controllers.</td></tr>    <tr><td><code>"avatarBoundingBox"</code></td><td>Incoming avatar bounding box.</td></tr>    <tr><td><code>"avatarOrientation"</code></td><td>Incoming avatar orientation.</td></tr>    <tr><td><code>"avatarScale"</code></td><td>Incoming avatar scale.</td></tr>    <tr><td><code>"lookAtPosition"</code></td><td>Incoming look-at position.</td></tr>    <tr><td><code>"audioLoudness"</code></td><td>Incoming audio loudness.</td></tr>    <tr><td><code>"sensorToWorkMatrix"</code></td><td>Incoming sensor-to-world matrix.</td></tr>    <tr><td><code>"additionalFlags"</code></td><td>Incoming additional avatar flags.</td></tr>    <tr><td><code>"parentInfo"</code></td><td>Incoming parent information.</td></tr>    <tr><td><code>"faceTracker"</code></td><td>Incoming face tracker data.</td></tr>    <tr><td><code>"jointData"</code></td><td>Incoming joint data.</td></tr>    <tr><td><code>"jointDefaultPoseFlagsRate"</code></td><td>Incoming joint default pose flags.</td></tr>    <tr><td><code>"farGrabJointRate"</code></td><td>Incoming far grab joint.</td></tr>    <tr><td><code>"globalPositionOutbound"</code></td><td>Outgoing global position.</td></tr>    <tr><td><code>"localPositionOutbound"</code></td><td>Outgoing local position.</td></tr>    <tr><td><code>"avatarBoundingBoxOutbound"</code></td><td>Outgoing avatar bounding box.</td></tr>    <tr><td><code>"avatarOrientationOutbound"</code></td><td>Outgoing avatar orientation.</td></tr>    <tr><td><code>"avatarScaleOutbound"</code></td><td>Outgoing avatar scale.</td></tr>    <tr><td><code>"lookAtPositionOutbound"</code></td><td>Outgoing look-at position.</td></tr>    <tr><td><code>"audioLoudnessOutbound"</code></td><td>Outgoing audio loudness.</td></tr>    <tr><td><code>"sensorToWorkMatrixOutbound"</code></td><td>Outgoing sensor-to-world matrix.</td></tr>    <tr><td><code>"additionalFlagsOutbound"</code></td><td>Outgoing additional avatar flags.</td></tr>    <tr><td><code>"parentInfoOutbound"</code></td><td>Outgoing parent information.</td></tr>    <tr><td><code>"faceTrackerOutbound"</code></td><td>Outgoing face tracker data.</td></tr>    <tr><td><code>"jointDataOutbound"</code></td><td>Outgoing joint data.</td></tr>    <tr><td><code>"jointDefaultPoseFlagsOutbound"</code></td><td>Outgoing joint default pose flags.</td></tr>    <tr><td><code>""</code></td><td>When no rate name is specified, the total incoming data rate is provided.</td></tr>  </tbody></table>
 
 
                                     
@@ -1859,22 +1808,7 @@ string
                     
 
 
-    <p>An avatar has different types of data simulated at different rates, in Hz.</p>
-
-<table>
-  <thead>
-    <tr><th>Rate Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"avatar" or ""</code></td><td>The rate at which the avatar is updated even if not in view.</td></tr>
-    <tr><td><code>"avatarInView"</code></td><td>The rate at which the avatar is updated if in view.</td></tr>
-    <tr><td><code>"skeletonModel"</code></td><td>The rate at which the skeleton model is being updated, even if there are no
-      joint data available.</td></tr>
-    <tr><td><code>"jointData"</code></td><td>The rate at which joint data are being updated.</td></tr>
-    <tr><td><code>""</code></td><td>When no rate name is specified, the <code>"avatar"</code> update rate is
-      provided.</td></tr>
-  </tbody>
-</table>
+    <p>An avatar has different types of data simulated at different rates, in Hz.</p><table>  <thead>    <tr><th>Rate Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"avatar" or ""</code></td><td>The rate at which the avatar is updated even if not in view.</td></tr>    <tr><td><code>"avatarInView"</code></td><td>The rate at which the avatar is updated if in view.</td></tr>    <tr><td><code>"skeletonModel"</code></td><td>The rate at which the skeleton model is being updated, even if there are no      joint data available.</td></tr>    <tr><td><code>"jointData"</code></td><td>The rate at which joint data are being updated.</td></tr>    <tr><td><code>""</code></td><td>When no rate name is specified, the <code>"avatar"</code> update rate is      provided.</td></tr>  </tbody></table>
 
 
                                     
@@ -1949,30 +1883,7 @@ string
                     
 
 
-    <p>The avatar mixer data comprises different types of data updated at different rates, in Hz.</p>
-
-<table>
-  <thead>
-    <tr><th>Rate Name</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"globalPosition"</code></td><td>Global position.</td></tr>
-    <tr><td><code>"localPosition"</code></td><td>Local position.</td></tr>
-    <tr><td><code>"handControllers"</code></td><td>Hand controller positions and orientations.</td></tr>
-    <tr><td><code>"avatarBoundingBox"</code></td><td>Avatar bounding box.</td></tr>
-    <tr><td><code>"avatarOrientation"</code></td><td>Avatar orientation.</td></tr>
-    <tr><td><code>"avatarScale"</code></td><td>Avatar scale.</td></tr>
-    <tr><td><code>"lookAtPosition"</code></td><td>Look-at position.</td></tr>
-    <tr><td><code>"audioLoudness"</code></td><td>Audio loudness.</td></tr>
-    <tr><td><code>"sensorToWorkMatrix"</code></td><td>Sensor-to-world matrix.</td></tr>
-    <tr><td><code>"additionalFlags"</code></td><td>Additional avatar flags.</td></tr>
-    <tr><td><code>"parentInfo"</code></td><td>Parent information.</td></tr>
-    <tr><td><code>"faceTracker"</code></td><td>Face tracker data.</td></tr>
-    <tr><td><code>"jointData"</code></td><td>Joint data.</td></tr>
-    <tr><td><code>"farGrabJointData"</code></td><td>Far grab joint data.</td></tr>
-    <tr><td><code>""</code></td><td>When no rate name is specified, the overall update rate is provided.</td></tr>
-  </tbody>
-</table>
+    <p>The avatar mixer data comprises different types of data updated at different rates, in Hz.</p><table>  <thead>    <tr><th>Rate Name</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"globalPosition"</code></td><td>Global position.</td></tr>    <tr><td><code>"localPosition"</code></td><td>Local position.</td></tr>    <tr><td><code>"handControllers"</code></td><td>Hand controller positions and orientations.</td></tr>    <tr><td><code>"avatarBoundingBox"</code></td><td>Avatar bounding box.</td></tr>    <tr><td><code>"avatarOrientation"</code></td><td>Avatar orientation.</td></tr>    <tr><td><code>"avatarScale"</code></td><td>Avatar scale.</td></tr>    <tr><td><code>"lookAtPosition"</code></td><td>Look-at position.</td></tr>    <tr><td><code>"audioLoudness"</code></td><td>Audio loudness.</td></tr>    <tr><td><code>"sensorToWorkMatrix"</code></td><td>Sensor-to-world matrix.</td></tr>    <tr><td><code>"additionalFlags"</code></td><td>Additional avatar flags.</td></tr>    <tr><td><code>"parentInfo"</code></td><td>Parent information.</td></tr>    <tr><td><code>"faceTracker"</code></td><td>Face tracker data.</td></tr>    <tr><td><code>"jointData"</code></td><td>Joint data.</td></tr>    <tr><td><code>"farGrabJointData"</code></td><td>Far grab joint data.</td></tr>    <tr><td><code>""</code></td><td>When no rate name is specified, the overall update rate is provided.</td></tr>  </tbody></table>
 
 
                                     
@@ -2047,19 +1958,7 @@ string
                     
 
 
-    <p>How an entity is billboarded.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"none"</code></td><td>The entity will not be billboarded.</td></tr>
-    <tr><td><code>"yaw"</code></td><td>The entity will yaw, but not pitch, to face the camera. Its actual rotation will be 
-      ignored.</td></tr>
-    <tr><td><code>"full"</code></td><td>The entity will yaw and pitch to face the camera. Its actual rotation will be 
-      ignored.</td></tr>
-  </tbody>
-</table>
+    <p>How an entity is billboarded.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"none"</code></td><td>The entity will not be billboarded.</td></tr>    <tr><td><code>"yaw"</code></td><td>The entity will yaw, but not pitch, to face the camera. Its actual rotation will be       ignored.</td></tr>    <tr><td><code>"full"</code></td><td>The entity will yaw and pitch to face the camera. Its actual rotation will be       ignored.</td></tr>  </tbody></table>
 
 
                                     
@@ -2134,21 +2033,7 @@ string
                     
 
 
-    <p>A <code>BoxFace</code> specifies the face of an axis-aligned (AA) box.
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"MIN_X_FACE"</code></td><td>The minimum x-axis face.</td></tr>
-    <tr><td><code>"MAX_X_FACE"</code></td><td>The maximum x-axis face.</td></tr>
-    <tr><td><code>"MIN_Y_FACE"</code></td><td>The minimum y-axis face.</td></tr>
-    <tr><td><code>"MAX_Y_FACE"</code></td><td>The maximum y-axis face.</td></tr>
-    <tr><td><code>"MIN_Z_FACE"</code></td><td>The minimum z-axis face.</td></tr>
-    <tr><td><code>"MAX_Z_FACE"</code></td><td>The maximum z-axis face.</td></tr>
-    <tr><td><code>"UNKNOWN_FACE"</code></td><td>Unknown value.</td></tr>
-  </tbody>
-</table>
+    <p>A <code>BoxFace</code> specifies the face of an axis-aligned (AA) box.<table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"MIN_X_FACE"</code></td><td>The minimum x-axis face.</td></tr>    <tr><td><code>"MAX_X_FACE"</code></td><td>The maximum x-axis face.</td></tr>    <tr><td><code>"MIN_Y_FACE"</code></td><td>The minimum y-axis face.</td></tr>    <tr><td><code>"MAX_Y_FACE"</code></td><td>The maximum y-axis face.</td></tr>    <tr><td><code>"MIN_Z_FACE"</code></td><td>The minimum z-axis face.</td></tr>    <tr><td><code>"MAX_Z_FACE"</code></td><td>The maximum z-axis face.</td></tr>    <tr><td><code>"UNKNOWN_FACE"</code></td><td>Unknown value.</td></tr>  </tbody></table>
 
 
                                     
@@ -2511,8 +2396,7 @@ object
                     
 
 
-    <p>A pair of points that represents part of an overlap between a CollisionPick and an object in the physics engine. 
-Points which are further apart represent deeper overlap.</p>
+    <p>A pair of points that represents part of an overlap between a CollisionPick and an object in the physics engine. Points which are further apart represent deeper overlap.</p>
 
 
                                     
@@ -2566,8 +2450,7 @@ Points which are further apart represent deeper overlap.</p>
                     
 
 
-    <p>A point representing a penetration of the object's surface into the volume of the pick, in 
-    world coordinates.</p>
+    <p>A point representing a penetration of the object's surface into the volume of the pick, in     world coordinates.</p>
 
 
                 
@@ -2598,8 +2481,7 @@ Points which are further apart represent deeper overlap.</p>
                     
 
 
-    <p>A point representing a penetration of the pick's surface into the volume of the object, in 
-    world coordinates.</p>
+    <p>A point representing a penetration of the pick's surface into the volume of the object, in     world coordinates.</p>
 
 
                 
@@ -2709,22 +2591,7 @@ number
                     
 
 
-    <p>A collision may occur with the following types of items:</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th>
-  </thead>
-  <tbody>
-    <tr><td><code>1</code></td><td>Static entities &mdash; non-dynamic entities with no velocity.</td></tr>
-    <tr><td><code>2</code></td><td>Dynamic entities &mdash; entities that have their <code>dynamic</code> property set to
-        <code>true</code>.</td></tr>
-    <tr><td><code>4</code></td><td>Kinematic entities &mdash; non-dynamic entities with velocity.</td></tr>
-    <tr><td><code>8</code></td><td>My avatar.</td></tr>
-    <tr><td><code>16</code></td><td>Other avatars.</td></tr>
-  </tbody>
-</table>
-<p>The values for the collision types that are enabled are added together to give the CollisionMask value. For example, a
-value of <code>31</code> means that an entity will collide with all item types.</p>
+    <p>A collision may occur with the following types of items:</p><table>  <thead>    <tr><th>Value</th><th>Description</th>  </thead>  <tbody>    <tr><td><code>1</code></td><td>Static entities &mdash; non-dynamic entities with no velocity.</td></tr>    <tr><td><code>2</code></td><td>Dynamic entities &mdash; entities that have their <code>dynamic</code> property set to        <code>true</code>.</td></tr>    <tr><td><code>4</code></td><td>Kinematic entities &mdash; non-dynamic entities with velocity.</td></tr>    <tr><td><code>8</code></td><td>My avatar.</td></tr>    <tr><td><code>16</code></td><td>Other avatars.</td></tr>  </tbody></table><p>The values for the collision types that are enabled are added together to give the CollisionMask value. For example, avalue of <code>31</code> means that an entity will collide with all item types.</p>
 
 
                                     
@@ -3056,8 +2923,7 @@ object
                     
 
 
-    <p>The collision region's shape and size. Dimensions are in world coordinates, but scale with the 
-    parent if defined.</p>
+    <p>The collision region's shape and size. Dimensions are in world coordinates, but scale with the     parent if defined.</p>
 
 
                 
@@ -3096,8 +2962,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the <code>shape</code> has no model, or has a model and it is loaded, 
-    <code>false</code> if otherwise.</p>
+    <p><code>true</code> if the <code>shape</code> has no model, or has a model and it is loaded,     <code>false</code> if otherwise.</p>
 
 
                 
@@ -3214,8 +3079,7 @@ number
                     
 
 
-    <p>The approximate minimum penetration depth for a test object to be considered in contact with
-    the collision region. The depth is in world coordinates but scales with the parent if defined.</p>
+    <p>The approximate minimum penetration depth for a test object to be considered in contact with    the collision region. The depth is in world coordinates but scales with the parent if defined.</p>
 
 
                 
@@ -3256,8 +3120,7 @@ number
                     
 
 
-    <p>The type of objects the collision region collides as. Objects whose collision
-    masks overlap with the region's collision group are considered to be colliding with the region.</p>
+    <p>The type of objects the collision region collides as. Objects whose collision    masks overlap with the region's collision group are considered to be colliding with the region.</p>
 
 
                 
@@ -3508,16 +3371,7 @@ number
                     
         <p class="code-caption">Colors can be set in multiple ways and modified with their aliases, but still stringify in the same way</p>
     
-    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { color: { x: 1, y: 2, z: 3 }});                 // { red: 1, green: 2, blue: 3 }
-Entities.editEntity(&lt;id>, { color: { r: 4, g: 5, b: 6 }});                 // { red: 4, green: 5, blue: 6 }
-Entities.editEntity(&lt;id>, { color: { red: 7, green: 8, blue: 9 }});        // { red: 7, green: 8, blue: 9 }
-Entities.editEntity(&lt;id>, { color: [10, 11, 12] });                        // { red: 10, green: 11, blue: 12 }
-Entities.editEntity(&lt;id>, { color: 13 });                                  // { red: 13, green: 13, blue: 13 }
-var color = Entities.getEntityProperties(&lt;id>).color;                      // { red: 13, green: 13, blue: 13 }
-color.g = 14;                                                              // { red: 13, green: 14, blue: 13 }
-color.blue = 15;                                                           // { red: 13, green: 14, blue: 15 }
-Entities.editEntity(&lt;id>, { color: "red"});                                // { red: 255, green: 0, blue: 0 }
-Entities.editEntity(&lt;id>, { color: "#00FF00"});                            // { red: 0, green: 255, blue: 0 }</code></pre>
+    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { color: { x: 1, y: 2, z: 3 }});                 // { red: 1, green: 2, blue: 3 }Entities.editEntity(&lt;id>, { color: { r: 4, g: 5, b: 6 }});                 // { red: 4, green: 5, blue: 6 }Entities.editEntity(&lt;id>, { color: { red: 7, green: 8, blue: 9 }});        // { red: 7, green: 8, blue: 9 }Entities.editEntity(&lt;id>, { color: [10, 11, 12] });                        // { red: 10, green: 11, blue: 12 }Entities.editEntity(&lt;id>, { color: 13 });                                  // { red: 13, green: 13, blue: 13 }var color = Entities.getEntityProperties(&lt;id>).color;                      // { red: 13, green: 13, blue: 13 }color.g = 14;                                                              // { red: 13, green: 14, blue: 13 }color.blue = 15;                                                           // { red: 13, green: 14, blue: 15 }Entities.editEntity(&lt;id>, { color: "red"});                                // { red: 255, green: 0, blue: 0 }Entities.editEntity(&lt;id>, { color: "#00FF00"});                            // { red: 0, green: 255, blue: 0 }</code></pre>
 
                 
                 
@@ -3719,16 +3573,7 @@ number
                     
         <p class="code-caption">ColorFloats can be set in multiple ways and modified with their aliases, but still stringify in the same way</p>
     
-    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { color: { x: 1, y: 2, z: 3 }});                 // { red: 1, green: 2, blue: 3 }
-Entities.editEntity(&lt;id>, { color: { r: 4, g: 5, b: 6 }});                 // { red: 4, green: 5, blue: 6 }
-Entities.editEntity(&lt;id>, { color: { red: 7, green: 8, blue: 9 }});        // { red: 7, green: 8, blue: 9 }
-Entities.editEntity(&lt;id>, { color: [10, 11, 12] });                        // { red: 10, green: 11, blue: 12 }
-Entities.editEntity(&lt;id>, { color: 13 });                                  // { red: 13, green: 13, blue: 13 }
-var color = Entities.getEntityProperties(&lt;id>).color;                      // { red: 13, green: 13, blue: 13 }
-color.g = 14;                                                              // { red: 13, green: 14, blue: 13 }
-color.blue = 15;                                                           // { red: 13, green: 14, blue: 15 }
-Entities.editEntity(&lt;id>, { color: "red"});                                // { red: 255, green: 0, blue: 0 }
-Entities.editEntity(&lt;id>, { color: "#00FF00"});                            // { red: 0, green: 255, blue: 0 }</code></pre>
+    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { color: { x: 1, y: 2, z: 3 }});                 // { red: 1, green: 2, blue: 3 }Entities.editEntity(&lt;id>, { color: { r: 4, g: 5, b: 6 }});                 // { red: 4, green: 5, blue: 6 }Entities.editEntity(&lt;id>, { color: { red: 7, green: 8, blue: 9 }});        // { red: 7, green: 8, blue: 9 }Entities.editEntity(&lt;id>, { color: [10, 11, 12] });                        // { red: 10, green: 11, blue: 12 }Entities.editEntity(&lt;id>, { color: 13 });                                  // { red: 13, green: 13, blue: 13 }var color = Entities.getEntityProperties(&lt;id>).color;                      // { red: 13, green: 13, blue: 13 }color.g = 14;                                                              // { red: 13, green: 14, blue: 13 }color.blue = 15;                                                           // { red: 13, green: 14, blue: 15 }Entities.editEntity(&lt;id>, { color: "red"});                                // { red: 255, green: 0, blue: 0 }Entities.editEntity(&lt;id>, { color: "#00FF00"});                            // { red: 0, green: 255, blue: 0 }</code></pre>
 
                 
                 
@@ -3762,17 +3607,7 @@ number
                     
 
 
-    <p>The type of a collision contact event.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>Start of the collision.</td></tr>
-    <tr><td><code>1</code></td><td>Continuation of the collision.</td></tr>
-    <tr><td><code>2</code></td><td>End of the collision.</td></tr>
-  </tbody>
-</table>
+    <p>The type of a collision contact event.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>0</code></td><td>Start of the collision.</td></tr>    <tr><td><code>1</code></td><td>Continuation of the collision.</td></tr>    <tr><td><code>2</code></td><td>End of the collision.</td></tr>  </tbody></table>
 
 
                                     
@@ -3847,30 +3682,7 @@ number
                     
 
 
-    <p>A set of flags for a pick filter. The value is constructed by using the <code>|</code> (bitwise OR) operator on the 
-individual flag values.</p>
-<table>
-  <thead>
-    <tr><th>Flag Name</th><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>PICK_DOMAIN_ENTITIES</td><td><code>1</code></td><td>Include domain entities when intersecting.</td></tr>
-    <tr><td>PICK_AVATAR_ENTITIES</td><td><code>2</code></td><td>Include avatar entities when intersecting.</td></tr>
-    <tr><td>PICK_LOCAL_ENTITIES</td><td><code>4</code></td><td>Include local entities when intersecting.</td></tr>
-    <tr><td>PICK_AVATATRS</td><td><code>8</code></td><td>Include avatars when intersecting.</td></tr>
-    <tr><td>PICK_HUD</td><td><code>16</code></td><td>Include the HUD surface when intersecting in HMD mode.</td></tr>
-    <tr><td>PICK_INCLUDE_VISIBLE</td><td><code>32</code></td><td>Include visible objects when intersecting.</td></tr>
-    <tr><td>PICK_INCLUDE_INVISIBLE</td><td><code>64</code></td><td>Include invisible objects when intersecting.</td></tr>
-    <tr><td>PICK_INCLUDE_COLLIDABLE</td><td><code>128</code></td><td>Include collidable objects when 
-      intersecting.</td></tr>
-    <tr><td>PICK_INCLUDE_NONCOLLIDABLE</td><td><code>256</code></td><td>Include non-collidable objects when 
-      intersecting.</td></tr>
-    <tr><td>PICK_PRECISE</td><td><code>512</code></td><td>Pick against exact meshes.</td></tr>
-    <tr><td>PICK_COARSE</td><td><code>1024</code></td><td>Pick against coarse meshes.</td></tr>
-    <tr><td>PICK_ALL_INTERSECTIONS</td><td><code>2048</code></td><td>Return all intersections instead of just the 
-      closest.</td></tr>
-  </tbody>
-</table>
+    <p>A set of flags for a pick filter. The value is constructed by using the <code>|</code> (bitwise OR) operator on the individual flag values.</p><table>  <thead>    <tr><th>Flag Name</th><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td>PICK_DOMAIN_ENTITIES</td><td><code>1</code></td><td>Include domain entities when intersecting.</td></tr>    <tr><td>PICK_AVATAR_ENTITIES</td><td><code>2</code></td><td>Include avatar entities when intersecting.</td></tr>    <tr><td>PICK_LOCAL_ENTITIES</td><td><code>4</code></td><td>Include local entities when intersecting.</td></tr>    <tr><td>PICK_AVATATRS</td><td><code>8</code></td><td>Include avatars when intersecting.</td></tr>    <tr><td>PICK_HUD</td><td><code>16</code></td><td>Include the HUD surface when intersecting in HMD mode.</td></tr>    <tr><td>PICK_INCLUDE_VISIBLE</td><td><code>32</code></td><td>Include visible objects when intersecting.</td></tr>    <tr><td>PICK_INCLUDE_INVISIBLE</td><td><code>64</code></td><td>Include invisible objects when intersecting.</td></tr>    <tr><td>PICK_INCLUDE_COLLIDABLE</td><td><code>128</code></td><td>Include collidable objects when       intersecting.</td></tr>    <tr><td>PICK_INCLUDE_NONCOLLIDABLE</td><td><code>256</code></td><td>Include non-collidable objects when       intersecting.</td></tr>    <tr><td>PICK_PRECISE</td><td><code>512</code></td><td>Pick against exact meshes.</td></tr>    <tr><td>PICK_COARSE</td><td><code>1024</code></td><td>Pick against coarse meshes.</td></tr>    <tr><td>PICK_ALL_INTERSECTIONS</td><td><code>2048</code></td><td>Return all intersections instead of just the       closest.</td></tr>  </tbody></table>
 
 
                                     
@@ -3945,20 +3757,7 @@ number
                     
 
 
-    <p>The pointing state of the hands is specified by the following values:</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>No hand is pointing.</td></tr>
-    <tr><td><code>1</code></td><td>The left hand is pointing.</td></tr>
-    <tr><td><code>2</code></td><td>The right hand is pointing.</td></tr>
-    <tr><td><code>4</code></td><td>It is the index finger that is pointing.</td></tr>
-  </tbody>
-</table>
-<p>The values for the hand states are added together to give the <code>HandState</code> value. For example, if the left
-hand's finger is pointing, the value is <code>1 + 4 == 5</code>.
+    <p>The pointing state of the hands is specified by the following values:</p><table>  <thead>    <tr><th>Value</th><th>Description</th>  </thead>  <tbody>    <tr><td><code>0</code></td><td>No hand is pointing.</td></tr>    <tr><td><code>1</code></td><td>The left hand is pointing.</td></tr>    <tr><td><code>2</code></td><td>The right hand is pointing.</td></tr>    <tr><td><code>4</code></td><td>It is the index finger that is pointing.</td></tr>  </tbody></table><p>The values for the hand states are added together to give the <code>HandState</code> value. For example, if the lefthand's finger is pointing, the value is <code>1 + 4 == 5</code>.
 
 
                                     
@@ -4118,8 +3917,7 @@ object
                     
 
 
-    <p>The type of the object, either <code>1</code> for INTERSECTED_ENTITY or <code>3</code> 
-    for INTERSECTED_AVATAR.</p>
+    <p>The type of the object, either <code>1</code> for INTERSECTED_ENTITY or <code>3</code>     for INTERSECTED_AVATAR.</p>
 
 
                 
@@ -4229,19 +4027,7 @@ number
                     
 
 
-    <p>The type of an intersection.</p>
-<table>
-  <thead>
-    <tr><th>Name</th><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>INTERSECTED_NONE</td><td><code>0</code></td><td>Intersected nothing.</td></tr>
-    <tr><td>INTERSECTED_ENTITY</td><td><code>1</code></td><td>Intersected an entity.</td></tr>
-    <tr><td>INTERSECTED_LOCAL_ENTITY</td><td><code>2</code></td><td>Intersected a local entity.</td></tr>
-    <tr><td>INTERSECTED_AVATAR</td><td><code>3</code></td><td>Intersected an avatar.</td></tr>
-    <tr><td>INTERSECTED_HUD</td><td><code>4</code></td><td>Intersected the HUD surface.</td></tr>
-  </tbody>
-</table>
+    <p>The type of an intersection.</p><table>  <thead>    <tr><th>Name</th><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td>INTERSECTED_NONE</td><td><code>0</code></td><td>Intersected nothing.</td></tr>    <tr><td>INTERSECTED_ENTITY</td><td><code>1</code></td><td>Intersected an entity.</td></tr>    <tr><td>INTERSECTED_LOCAL_ENTITY</td><td><code>2</code></td><td>Intersected a local entity.</td></tr>    <tr><td>INTERSECTED_AVATAR</td><td><code>3</code></td><td>Intersected an avatar.</td></tr>    <tr><td>INTERSECTED_HUD</td><td><code>4</code></td><td>Intersected the HUD surface.</td></tr>  </tbody></table>
 
 
                                     
@@ -4316,29 +4102,7 @@ number
                     
 
 
-    <p>A KeyboardModifiers value is used to specify which modifier keys on the keyboard are pressed. The value is the sum 
-(bitwise OR) of the relevant combination of values from the following table:</p>
-<table>
-  <thead>
-    <tr><th>Key</th><th>Hexadecimal value</th><th>Decimal value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Shift</td><td><code>0x02000000</code></td><td><code>33554432</code></td>
-        <td>A Shift key on the keyboard is pressed.</td></tr>
-    <tr><td>Control</td><td><code>0x04000000</code></td><td><code>67108864</code></td>
-        <td>A control key on the keyboard is pressed. On Windows the "control" key is the Ctrl key; on OSX it is the Command 
-        key.</td></tr>
-    <tr><td>Alt</td><td><code>0x08000000</code></td><td><code>134217728</code></td>
-        <td>An Alt key on the keyboard is pressed.</td></tr>
-    <tr><td>Meta</td><td><code>0x10000000</code></td><td><code>268435456</code></td>
-        <td>A meta key on the keyboard is pressed. On Windows the "meta" key is the Windows key; on OSX it is the Control 
-        (Splat) key.</td></tr>
-    <tr><td>Keypad</td><td><code>0x20000000</code></td><td><code>536870912</code></td>
-        <td>A keypad button is pressed.</td></tr>
-    <tr><td>Group</td><td><code>0x40000000</code></td><td><code>1073741824</code></td>
-        <td>X11 operating system only: An AltGr / Mode_switch key on the keyboard is pressed.</td></tr>
-  </tbody>
-</table>
+    <p>A KeyboardModifiers value is used to specify which modifier keys on the keyboard are pressed. The value is the sum (bitwise OR) of the relevant combination of values from the following table:</p><table>  <thead>    <tr><th>Key</th><th>Hexadecimal value</th><th>Decimal value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td>Shift</td><td><code>0x02000000</code></td><td><code>33554432</code></td>        <td>A Shift key on the keyboard is pressed.</td></tr>    <tr><td>Control</td><td><code>0x04000000</code></td><td><code>67108864</code></td>        <td>A control key on the keyboard is pressed. On Windows the "control" key is the Ctrl key; on OSX it is the Command         key.</td></tr>    <tr><td>Alt</td><td><code>0x08000000</code></td><td><code>134217728</code></td>        <td>An Alt key on the keyboard is pressed.</td></tr>    <tr><td>Meta</td><td><code>0x10000000</code></td><td><code>268435456</code></td>        <td>A meta key on the keyboard is pressed. On Windows the "meta" key is the Windows key; on OSX it is the Control         (Splat) key.</td></tr>    <tr><td>Keypad</td><td><code>0x20000000</code></td><td><code>536870912</code></td>        <td>A keypad button is pressed.</td></tr>    <tr><td>Group</td><td><code>0x40000000</code></td><td><code>1073741824</code></td>        <td>X11 operating system only: An AltGr / Mode_switch key on the keyboard is pressed.</td></tr>  </tbody></table>
 
 
                                     
@@ -4467,8 +4231,7 @@ number
                     
 
 
-    <p>The Qt keyboard code of the key pressed. For a list of keyboard codes, see 
-    <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">http://doc.qt.io/qt-5/qt.html#Key-enum</a>.</p>
+    <p>The Qt keyboard code of the key pressed. For a list of keyboard codes, see     <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">http://doc.qt.io/qt-5/qt.html#Key-enum</a>.</p>
 
 
                 
@@ -4499,8 +4262,7 @@ string
                     
 
 
-    <p>A string describing the key. For example, <code>"a"</code> for the "A" key if the Shift is not 
-    pressed, <code>"F1"</code> for the F1 key, <code>"SPACE"</code> for the space bar.</p>
+    <p>A string describing the key. For example, <code>"a"</code> for the "A" key if the Shift is not     pressed, <code>"F1"</code> for the F1 key, <code>"SPACE"</code> for the space bar.</p>
 
 
                 
@@ -4531,8 +4293,7 @@ boolean
                     
 
 
-    <p><code>true</code> if a Shift key was pressed when the event was generated, otherwise 
-    <code>false</code>.</p>
+    <p><code>true</code> if a Shift key was pressed when the event was generated, otherwise     <code>false</code>.</p>
 
 
                 
@@ -4563,8 +4324,7 @@ boolean
                     
 
 
-    <p><code>true</code> if a meta key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
+    <p><code>true</code> if a meta key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
 
 
                 
@@ -4595,8 +4355,7 @@ boolean
                     
 
 
-    <p><code>true</code> if a control key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
+    <p><code>true</code> if a control key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
 
 
                 
@@ -4627,8 +4386,7 @@ boolean
                     
 
 
-    <p><code>true</code> if an Alt key was pressed when the event was generated, otherwise 
-    <code>false</code>.</p>
+    <p><code>true</code> if an Alt key was pressed when the event was generated, otherwise     <code>false</code>.</p>
 
 
                 
@@ -4690,8 +4448,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the event is a repeat for key that is being held down, otherwise 
-    <code>false</code>.</p>
+    <p><code>true</code> if the event is a repeat for key that is being held down, otherwise     <code>false</code>.</p>
 
 
                 
@@ -4743,9 +4500,7 @@ boolean
                     
         <p class="code-caption">Report the KeyEvent details for each key press.</p>
     
-    <pre class="prettyprint"><code>Controller.keyPressEvent.connect(function (event) {
-    print(JSON.stringify(event));
-});
+    <pre class="prettyprint"><code>Controller.keyPressEvent.connect(function (event) {    print(JSON.stringify(event));});
  </code></pre>
 
                 
@@ -5494,8 +5249,7 @@ string
                     
 
 
-    <p><code>"LEFT"</code>, <code>"MIDDLE"</code>, or <code>"RIGHT"</code> if a button press or release 
-    caused the event, otherwise <code>"NONE"</code>.</p>
+    <p><code>"LEFT"</code>, <code>"MIDDLE"</code>, or <code>"RIGHT"</code> if a button press or release     caused the event, otherwise <code>"NONE"</code>.</p>
 
 
                 
@@ -5526,8 +5280,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the left button was pressed when the event was generated, otherwise 
-    <code>false</code>.</p>
+    <p><code>true</code> if the left button was pressed when the event was generated, otherwise     <code>false</code>.</p>
 
 
                 
@@ -5558,8 +5311,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the middle button was pressed when the event was generated, 
-    otherwise <code>false</code>.</p>
+    <p><code>true</code> if the middle button was pressed when the event was generated,     otherwise <code>false</code>.</p>
 
 
                 
@@ -5590,8 +5342,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the right button was pressed when the event was generated, 
-    otherwise <code>false</code>.</p>
+    <p><code>true</code> if the right button was pressed when the event was generated,     otherwise <code>false</code>.</p>
 
 
                 
@@ -5622,8 +5373,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the Shift key was pressed when the event was generated, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the Shift key was pressed when the event was generated, otherwise    <code>false</code>.</p>
 
 
                 
@@ -5654,8 +5404,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the "meta" key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
+    <p><code>true</code> if the "meta" key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
 
 
                 
@@ -5686,8 +5435,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the "control" key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
+    <p><code>true</code> if the "control" key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
 
 
                 
@@ -5718,8 +5466,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the Alt key was pressed when the event was generated, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the Alt key was pressed when the event was generated, otherwise    <code>false</code>.</p>
 
 
                 
@@ -5771,9 +5518,7 @@ boolean
                     
         <p class="code-caption">Report the MouseEvent details for each mouse move.</p>
     
-    <pre class="prettyprint"><code>Controller.mouseMoveEvent.connect(function (event) {
-    print(JSON.stringify(event));
-});
+    <pre class="prettyprint"><code>Controller.mouseMoveEvent.connect(function (event) {    print(JSON.stringify(event));});
  </code></pre>
 
                 
@@ -5986,8 +5731,7 @@ number
                     
 
 
-    <p>The distance from the parabola origin to the intersection point along the arc of
-    the parabola.</p>
+    <p>The distance from the parabola origin to the intersection point along the arc of    the parabola.</p>
 
 
                 
@@ -6049,8 +5793,7 @@ number
                     
 
 
-    <p>The surface normal at the intersected point. All <code>NaN</code>s if <code>type ==
-    Picks.INTERSECTED_HUD</code>.</p>
+    <p>The surface normal at the intersected point. All <code>NaN</code>s if <code>type ==    Picks.INTERSECTED_HUD</code>.</p>
 
 
                 
@@ -6081,8 +5824,7 @@ number
                     
 
 
-    <p>Additional intersection details for model objects, otherwise
-    <code>{ }</code>.</p>
+    <p>Additional intersection details for model objects, otherwise    <code>{ }</code>.</p>
 
 
                 
@@ -6192,8 +5934,7 @@ object
                     
 
 
-    <p>A parabola defined by a starting point, initial velocity, and acceleration. It is used, for example, when finding entities or
-avatars that intersect a parabolic beam.</p>
+    <p>A parabola defined by a starting point, initial velocity, and acceleration. It is used, for example, when finding entities oravatars that intersect a parabolic beam.</p>
 
 
                                     
@@ -6247,8 +5988,7 @@ avatars that intersect a parabolic beam.</p>
                     
 
 
-    <p>The starting position of the parabola, i.e., the initial position of a virtual projectile whose 
-    trajectory defines the parabola.</p>
+    <p>The starting position of the parabola, i.e., the initial position of a virtual projectile whose     trajectory defines the parabola.</p>
 
 
                 
@@ -6279,8 +6019,7 @@ avatars that intersect a parabolic beam.</p>
                     
 
 
-    <p>The starting velocity of the parabola in m/s, i.e., the initial speed of a virtual projectile 
-    whose trajectory defines the parabola.</p>
+    <p>The starting velocity of the parabola in m/s, i.e., the initial speed of a virtual projectile     whose trajectory defines the parabola.</p>
 
 
                 
@@ -6311,8 +6050,7 @@ avatars that intersect a parabolic beam.</p>
                     
 
 
-    <p>The acceleration that the parabola experiences in m/s<sup>2</sup>, i.e., the acceleration of 
-    a virtual projectile whose trajectory defines the parabola, both magnitude and direction.</p>
+    <p>The acceleration that the parabola experiences in m/s<sup>2</sup>, i.e., the acceleration of     a virtual projectile whose trajectory defines the parabola, both magnitude and direction.</p>
 
 
                 
@@ -6391,8 +6129,7 @@ object
                     
 
 
-    <p>A vector with a starting point. It is used, for example, when finding entities or avatars that lie under a mouse click or 
-intersect a laser beam.</p>
+    <p>A vector with a starting point. It is used, for example, when finding entities or avatars that lie under a mouse click or intersect a laser beam.</p>
 
 
                                     
@@ -6556,22 +6293,7 @@ number
                     
 
 
-    <p>A type of pick.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code><a href="PickType.html">PickType.Ray</a></code></td><td>Ray picks intersect a ray with objects in front of 
-      them, along their direction.</td></tr>
-    <tr><td><code><a href="PickType.html">PickType.Parabola</a></code></td><td>Parabola picks intersect a parabola with objects
-      in front of them, along their arc.</td></tr>
-    <tr><td><code><a href="PickType.html">PickType.Stylus</a></code></td><td>Stylus picks provide "tapping" functionality on or
-      into flat surfaces.</td></tr>
-    <tr><td><code><a href="PickType.html">PickType.Collision</a></code></td><td>Collision picks intersect a collision volume 
-      with avatars and entities that have collisions.</td></tr>
-  </tbody>
-</table>
+    <p>A type of pick.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code><a href="PickType.html">PickType.Ray</a></code></td><td>Ray picks intersect a ray with objects in front of       them, along their direction.</td></tr>    <tr><td><code><a href="PickType.html">PickType.Parabola</a></code></td><td>Parabola picks intersect a parabola with objects      in front of them, along their arc.</td></tr>    <tr><td><code><a href="PickType.html">PickType.Stylus</a></code></td><td>Stylus picks provide "tapping" functionality on or      into flat surfaces.</td></tr>    <tr><td><code><a href="PickType.html">PickType.Collision</a></code></td><td>Collision picks intersect a collision volume       with avatars and entities that have collisions.</td></tr>  </tbody></table>
 
 
                                     
@@ -6700,8 +6422,7 @@ string
                     
 
 
-    <p>The type of event: <code>"Press"</code>, <code>"DoublePress"</code>, <code>"Release"</code>, or
-    <code>"Move"</code>.</p>
+    <p>The type of event: <code>"Press"</code>, <code>"DoublePress"</code>, <code>"Release"</code>, or    <code>"Move"</code>.</p>
 
 
                 
@@ -6732,8 +6453,7 @@ number
                     
 
 
-    <p>Integer number used to identify the pointer: <code>0</code> = hardware mouse, <code>1</code> = left
-    controller, <code>2</code> = right controller.</p>
+    <p>Integer number used to identify the pointer: <code>0</code> = hardware mouse, <code>1</code> = left    controller, <code>2</code> = right controller.</p>
 
 
                 
@@ -6888,8 +6608,7 @@ string
                     
 
 
-    <p>The name of the button pressed: <code>None</code>, <code>Primary</code>, <code>Secondary</code>,
-   or <code>Tertiary</code>.</p>
+    <p>The name of the button pressed: <code>None</code>, <code>Primary</code>, <code>Secondary</code>,   or <code>Tertiary</code>.</p>
 
 
                 
@@ -6920,8 +6639,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the button pressed was the primary button, otherwise 
-    <code>undefined</code>;</p>
+    <p><code>true</code> if the button pressed was the primary button, otherwise     <code>undefined</code>;</p>
 
 
                 
@@ -6952,8 +6670,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the button pressed was the primary button, otherwise
-    <code>undefined</code>;</p>
+    <p><code>true</code> if the button pressed was the primary button, otherwise    <code>undefined</code>;</p>
 
 
                 
@@ -6984,8 +6701,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the button pressed was the secondary button, otherwise
-    <code>undefined</code>;</p>
+    <p><code>true</code> if the button pressed was the secondary button, otherwise    <code>undefined</code>;</p>
 
 
                 
@@ -7016,8 +6732,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the button pressed was the secondary button, otherwise
-    <code>undefined</code>;</p>
+    <p><code>true</code> if the button pressed was the secondary button, otherwise    <code>undefined</code>;</p>
 
 
                 
@@ -7048,8 +6763,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the button pressed was the tertiary button, otherwise
-    <code>undefined</code>;</p>
+    <p><code>true</code> if the button pressed was the tertiary button, otherwise    <code>undefined</code>;</p>
 
 
                 
@@ -7080,8 +6794,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the button pressed was the tertiary button, otherwise
-    <code>undefined</code>;</p>
+    <p><code>true</code> if the button pressed was the tertiary button, otherwise    <code>undefined</code>;</p>
 
 
                 
@@ -7112,8 +6825,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the primary button is currently being pressed, otherwise
-    <code>false</code></p>
+    <p><code>true</code> if the primary button is currently being pressed, otherwise    <code>false</code></p>
 
 
                 
@@ -7144,8 +6856,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the secondary button is currently being pressed, otherwise
-    <code>false</code></p>
+    <p><code>true</code> if the secondary button is currently being pressed, otherwise    <code>false</code></p>
 
 
                 
@@ -7176,8 +6887,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the tertiary button is currently being pressed, otherwise
-    <code>false</code></p>
+    <p><code>true</code> if the tertiary button is currently being pressed, otherwise    <code>false</code></p>
 
 
                 
@@ -7208,8 +6918,7 @@ boolean
                     
 
 
-    <p>Integer value with bits set according to which keyboard modifier keys were
-    pressed when the event was generated.</p>
+    <p>Integer value with bits set according to which keyboard modifier keys were    pressed when the event was generated.</p>
 
 
                 
@@ -7980,8 +7689,7 @@ number
                     
 
 
-    <p>The surface normal at the intersected point. All <code>NaN</code>s if <code>type == 
-    Picks.INTERSECTED_HUD</code>.</p>
+    <p>The surface normal at the intersected point. All <code>NaN</code>s if <code>type ==     Picks.INTERSECTED_HUD</code>.</p>
 
 
                 
@@ -8012,8 +7720,7 @@ number
                     
 
 
-    <p>Additional intersection details for model objects, otherwise
-    <code>{ }</code>.</p>
+    <p>Additional intersection details for model objects, otherwise    <code>{ }</code>.</p>
 
 
                 
@@ -8270,8 +7977,7 @@ string
                     
 
 
-    <p>The name of the box face that is intersected; <code>"UNKNOWN_FACE"</code> if mesh was picked 
-    against.</p>
+    <p>The name of the box face that is intersected; <code>"UNKNOWN_FACE"</code> if mesh was picked     against.</p>
 
 
                 
@@ -8395,8 +8101,7 @@ number
                     
 
 
-    <p>Extra information on the mesh intersected if mesh was picked against, 
-    <code>{}</code> if it wasn't.</p>
+    <p>Extra information on the mesh intersected if mesh was picked against,     <code>{}</code> if it wasn't.</p>
 
 
                 
@@ -8806,8 +8511,7 @@ string
                     
 
 
-    <p>The model to load to for the shape if <code>shapeType</code> is one of
-    <code>"compound"</code>, <code>"simple-hull"</code>, <code>"simple-compound"</code>, or <code>"static-mesh"</code>.</p>
+    <p>The model to load to for the shape if <code>shapeType</code> is one of    <code>"compound"</code>, <code>"simple-hull"</code>, <code>"simple-compound"</code>, or <code>"static-mesh"</code>.</p>
 
 
                 
@@ -8929,33 +8633,7 @@ string
                     
 
 
-    <p>Defines the shape used for collisions or zones.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"none"</code></td><td>No shape.</td></tr>
-    <tr><td><code>"box"</code></td><td>A cube.</td></tr>
-    <tr><td><code>"sphere"</code></td><td>A sphere.</td></tr>
-    <tr><td><code>"capsule-x"</code></td><td>A capsule (cylinder with spherical ends) oriented on the x-axis.</td></tr>
-    <tr><td><code>"capsule-y"</code></td><td>A capsule (cylinder with spherical ends) oriented on the y-axis.</td></tr>
-    <tr><td><code>"capsule-z"</code></td><td>A capsule (cylinder with spherical ends) oriented on the z-axis.</td></tr>
-    <tr><td><code>"cylinder-x"</code></td><td>A cylinder oriented on the x-axis.</td></tr>
-    <tr><td><code>"cylinder-y"</code></td><td>A cylinder oriented on the y-axis.</td></tr>
-    <tr><td><code>"cylinder-z"</code></td><td>A cylinder oriented on the z-axis.</td></tr>
-    <tr><td><code>"hull"</code></td><td><em>Not used.</em></td></tr>
-    <tr><td><code>"compound"</code></td><td>A compound convex hull specified in an OBJ file.</td></tr>
-    <tr><td><code>"simple-hull"</code></td><td>A convex hull automatically generated from the model.</td></tr>
-    <tr><td><code>"simple-compound"</code></td><td>A compound convex hull automatically generated from the model, using 
-        sub-meshes.</td></tr>
-    <tr><td><code>"static-mesh"</code></td><td>The exact shape of the model.</td></tr>
-    <tr><td><code>"plane"</code></td><td>A plane.</td></tr>
-    <tr><td><code>"ellipsoid"</code></td><td>An ellipsoid.</td></tr>
-    <tr><td><code>"circle"</code></td><td>A circle.</td></tr>
-    <tr><td><code>"multisphere"</code></td><td>A convex hull generated from a set of spheres.</td></tr>
-  </tbody>
-</table>
+    <p>Defines the shape used for collisions or zones.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"none"</code></td><td>No shape.</td></tr>    <tr><td><code>"box"</code></td><td>A cube.</td></tr>    <tr><td><code>"sphere"</code></td><td>A sphere.</td></tr>    <tr><td><code>"capsule-x"</code></td><td>A capsule (cylinder with spherical ends) oriented on the x-axis.</td></tr>    <tr><td><code>"capsule-y"</code></td><td>A capsule (cylinder with spherical ends) oriented on the y-axis.</td></tr>    <tr><td><code>"capsule-z"</code></td><td>A capsule (cylinder with spherical ends) oriented on the z-axis.</td></tr>    <tr><td><code>"cylinder-x"</code></td><td>A cylinder oriented on the x-axis.</td></tr>    <tr><td><code>"cylinder-y"</code></td><td>A cylinder oriented on the y-axis.</td></tr>    <tr><td><code>"cylinder-z"</code></td><td>A cylinder oriented on the z-axis.</td></tr>    <tr><td><code>"hull"</code></td><td><em>Not used.</em></td></tr>    <tr><td><code>"compound"</code></td><td>A compound convex hull specified in an OBJ file.</td></tr>    <tr><td><code>"simple-hull"</code></td><td>A convex hull automatically generated from the model.</td></tr>    <tr><td><code>"simple-compound"</code></td><td>A compound convex hull automatically generated from the model, using         sub-meshes.</td></tr>    <tr><td><code>"static-mesh"</code></td><td>The exact shape of the model.</td></tr>    <tr><td><code>"plane"</code></td><td>A plane.</td></tr>    <tr><td><code>"ellipsoid"</code></td><td>An ellipsoid.</td></tr>    <tr><td><code>"circle"</code></td><td>A circle.</td></tr>    <tr><td><code>"multisphere"</code></td><td>A convex hull generated from a set of spheres.</td></tr>  </tbody></table>
 
 
                                     
@@ -9567,8 +9245,7 @@ number
                     
 
 
-    <p>The hand that the stylus is attached to: <code>0</code> for left hand, <code>1</code> for the 
-    right hand, <code>-1</code> for invalid.</p>
+    <p>The hand that the stylus is attached to: <code>0</code> for left hand, <code>1</code> for the     right hand, <code>-1</code> for invalid.</p>
 
 
                 
@@ -10392,8 +10069,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the Shift key was pressed when the event was generated, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the Shift key was pressed when the event was generated, otherwise    <code>false</code>.</p>
 
 
                 
@@ -10424,8 +10100,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the "meta" key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
+    <p><code>true</code> if the "meta" key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
 
 
                 
@@ -10456,8 +10131,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the "control" key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
+    <p><code>true</code> if the "control" key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
 
 
                 
@@ -10488,8 +10162,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the Alt key was pressed when the event was generated, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the Alt key was pressed when the event was generated, otherwise    <code>false</code>.</p>
 
 
                 
@@ -10613,8 +10286,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the <code>radius</code> has reduced since the most recent touch event 
-    with a different <code>radius</code> value, otherwise <code>false</code>.</p>
+    <p><code>true</code> if the <code>radius</code> has reduced since the most recent touch event     with a different <code>radius</code> value, otherwise <code>false</code>.</p>
 
 
                 
@@ -10645,8 +10317,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the <code>radius</code> has increased since the most recent touch 
-    event with a different <code>radius</code> value, otherwise <code>false</code>.</p>
+    <p><code>true</code> if the <code>radius</code> has increased since the most recent touch     event with a different <code>radius</code> value, otherwise <code>false</code>.</p>
 
 
                 
@@ -10708,8 +10379,7 @@ number
                     
 
 
-    <p>The change in the <code>angle</code> value since the previous touch event, in degrees, if 
-    the number of touch points is the same, otherwise <code>0.0</code>.</p>
+    <p>The change in the <code>angle</code> value since the previous touch event, in degrees, if     the number of touch points is the same, otherwise <code>0.0</code>.</p>
 
 
                 
@@ -10771,8 +10441,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the <code>angle</code> of the touch event has changed since the 
-    previous touch event and the number of touch points is the same, otherwise <code>false</code>.</p>
+    <p><code>true</code> if the <code>angle</code> of the touch event has changed since the     previous touch event and the number of touch points is the same, otherwise <code>false</code>.</p>
 
 
                 
@@ -10803,9 +10472,7 @@ string
                     
 
 
-    <p><code>"clockwise"</code> or <code>"counterClockwise"</code> if the <code>angle</code> of the 
-    touch event has changed since the previous touch event and the number of touch points is the same, otherwise 
-    <code>"none"</code>.</p>
+    <p><code>"clockwise"</code> or <code>"counterClockwise"</code> if the <code>angle</code> of the     touch event has changed since the previous touch event and the number of touch points is the same, otherwise     <code>"none"</code>.</p>
 
 
                 
@@ -10857,9 +10524,7 @@ string
                     
         <p class="code-caption">Report the TouchEvent details when a touch event starts.</p>
     
-    <pre class="prettyprint"><code>Controller.touchBeginEvent.connect(function (event) {
-    print(JSON.stringify(event));
-});
+    <pre class="prettyprint"><code>Controller.touchBeginEvent.connect(function (event) {    print(JSON.stringify(event));});
  </code></pre>
 
                 
@@ -11089,9 +10754,7 @@ string
                     
 
 
-    <p>UUIDs (Universally Unique IDentifiers) are used to uniquely identify entities, avatars, and the like. They are represented 
-in JavaScript as strings in the format, <code>"{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}"</code>, where the "n"s are
-hexadecimal digits.</p>
+    <p>UUIDs (Universally Unique IDentifiers) are used to uniquely identify entities, avatars, and the like. They are represented in JavaScript as strings in the format, <code>"{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}"</code>, where the "n"s arehexadecimal digits.</p>
 
 
                                     
@@ -11303,12 +10966,7 @@ number
                     
         <p class="code-caption">Vec2s can be set in multiple ways and modified with their aliases, but still stringify in the same way</p>
     
-    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { materialMappingPos: { x: 0.1, y: 0.2 }});          // { x: 0.1, y: 0.2 }
-Entities.editEntity(&lt;id>, { materialMappingPos: { u: 0.3, v: 0.4 }});          // { x: 0.3, y: 0.4 }
-Entities.editEntity(&lt;id>, { materialMappingPos: [0.5, 0.6] });                 // { x: 0.5, y: 0.6 }
-Entities.editEntity(&lt;id>, { materialMappingPos: 0.7 });                        // { x: 0.7, y: 0.7 }
-var color = Entities.getEntityProperties(&lt;id>).materialMappingPos;             // { x: 0.7, y: 0.7 }
-color.v = 0.8;                                                                 // { x: 0.7, y: 0.8 }</code></pre>
+    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { materialMappingPos: { x: 0.1, y: 0.2 }});          // { x: 0.1, y: 0.2 }Entities.editEntity(&lt;id>, { materialMappingPos: { u: 0.3, v: 0.4 }});          // { x: 0.3, y: 0.4 }Entities.editEntity(&lt;id>, { materialMappingPos: [0.5, 0.6] });                 // { x: 0.5, y: 0.6 }Entities.editEntity(&lt;id>, { materialMappingPos: 0.7 });                        // { x: 0.7, y: 0.7 }var color = Entities.getEntityProperties(&lt;id>).materialMappingPos;             // { x: 0.7, y: 0.7 }color.v = 0.8;                                                                 // { x: 0.7, y: 0.8 }</code></pre>
 
                 
                 
@@ -11508,19 +11166,9 @@ number
                 
                     <h5>Example</h5>
                     
-        <p class="code-caption">Vec3 values can be set in multiple ways and modified with their aliases, but still stringify in the same 
-    way.</p>
+        <p class="code-caption">Vec3 values can be set in multiple ways and modified with their aliases, but still stringify in the same     way.</p>
     
-    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { position: { x: 1, y: 2, z: 3 }});                 // { x: 1, y: 2, z: 3 }
-Entities.editEntity(&lt;id>, { position: { r: 4, g: 5, b: 6 }});                 // { x: 4, y: 5, z: 6 }
-Entities.editEntity(&lt;id>, { position: { red: 7, green: 8, blue: 9 }});        // { x: 7, y: 8, z: 9 }
-Entities.editEntity(&lt;id>, { position: [10, 11, 12] });                        // { x: 10, y: 11, z: 12 }
-Entities.editEntity(&lt;id>, { position: 13 });                                  // { x: 13, y: 13, z: 13 }
-var position = Entities.getEntityProperties(&lt;id>).position;                   // { x: 13, y: 13, z: 13 }
-position.g = 14;                                                              // { x: 13, y: 14, z: 13 }
-position.blue = 15;                                                           // { x: 13, y: 14, z: 15 }
-Entities.editEntity(&lt;id>, { position: "red"});                                // { x: 255, y: 0, z: 0 }
-Entities.editEntity(&lt;id>, { position: "#00FF00"});                            // { x: 0, y: 255, z: 0 }</code></pre>
+    <pre class="prettyprint"><code>Entities.editEntity(&lt;id>, { position: { x: 1, y: 2, z: 3 }});                 // { x: 1, y: 2, z: 3 }Entities.editEntity(&lt;id>, { position: { r: 4, g: 5, b: 6 }});                 // { x: 4, y: 5, z: 6 }Entities.editEntity(&lt;id>, { position: { red: 7, green: 8, blue: 9 }});        // { x: 7, y: 8, z: 9 }Entities.editEntity(&lt;id>, { position: [10, 11, 12] });                        // { x: 10, y: 11, z: 12 }Entities.editEntity(&lt;id>, { position: 13 });                                  // { x: 13, y: 13, z: 13 }var position = Entities.getEntityProperties(&lt;id>).position;                   // { x: 13, y: 13, z: 13 }position.g = 14;                                                              // { x: 13, y: 14, z: 13 }position.blue = 15;                                                           // { x: 13, y: 14, z: 15 }Entities.editEntity(&lt;id>, { position: "red"});                                // { x: 255, y: 0, z: 0 }Entities.editEntity(&lt;id>, { position: "#00FF00"});                            // { x: 0, y: 255, z: 0 }</code></pre>
 
                 
                 
@@ -11780,8 +11428,7 @@ object
                     
 
 
-    <p>A ViewFrustum has a "keyhole" shape: a regular frustum for stuff that is visible plus a central sphere for stuff that is
-nearby (for physics simulation).</p>
+    <p>A ViewFrustum has a "keyhole" shape: a regular frustum for stuff that is visible plus a central sphere for stuff that isnearby (for physics simulation).</p>
 
 
                                     
@@ -12069,16 +11716,7 @@ string
                     
 
 
-    <p>Specifies how a web surface processes events.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"touch"</code></td><td>Events are processed as touch events.</td></tr>
-    <tr><td><code>"mouse"</code></td><td>Events are processed as mouse events.</td></tr>
-  </tbody>
-</table>
+    <p>Specifies how a web surface processes events.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"touch"</code></td><td>Events are processed as touch events.</td></tr>    <tr><td><code>"mouse"</code></td><td>Events are processed as mouse events.</td></tr>  </tbody></table>
 
 
                                     
@@ -12269,8 +11907,7 @@ number
                     
 
 
-    <p>Integer number indicating the direction and speed to scroll: positive numbers to scroll up, and 
-    negative numers to scroll down.</p>
+    <p>Integer number indicating the direction and speed to scroll: positive numbers to scroll up, and     negative numers to scroll down.</p>
 
 
                 
@@ -12301,8 +11938,7 @@ string
                     
 
 
-    <p>The orientation of the wheel: <code>"VERTICAL"</code> for a typical mouse; 
-    <code>"HORIZONTAL"</code> for a "horizontal" wheel.</p>
+    <p>The orientation of the wheel: <code>"VERTICAL"</code> for a typical mouse;     <code>"HORIZONTAL"</code> for a "horizontal" wheel.</p>
 
 
                 
@@ -12333,8 +11969,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the left button was pressed when the event was generated, otherwise 
-    <code>false</code>.</p>
+    <p><code>true</code> if the left button was pressed when the event was generated, otherwise     <code>false</code>.</p>
 
 
                 
@@ -12365,8 +12000,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the middle button was pressed when the event was generated, 
-    otherwise <code>false</code>.</p>
+    <p><code>true</code> if the middle button was pressed when the event was generated,     otherwise <code>false</code>.</p>
 
 
                 
@@ -12397,8 +12031,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the right button was pressed when the event was generated, 
-    otherwise <code>false</code>.</p>
+    <p><code>true</code> if the right button was pressed when the event was generated,     otherwise <code>false</code>.</p>
 
 
                 
@@ -12429,8 +12062,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the Shift key was pressed when the event was generated, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the Shift key was pressed when the event was generated, otherwise    <code>false</code>.</p>
 
 
                 
@@ -12461,8 +12093,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the "meta" key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
+    <p><code>true</code> if the "meta" key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "meta" key is the Windows key; on OSX it is the Control (Splat) key.</p>
 
 
                 
@@ -12493,8 +12124,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the "control" key was pressed when the event was generated, otherwise
-    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
+    <p><code>true</code> if the "control" key was pressed when the event was generated, otherwise    <code>false</code>. On Windows the "control" key is the Ctrl key; on OSX it is the Command key.</p>
 
 
                 
@@ -12525,8 +12155,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the Alt key was pressed when the event was generated, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the Alt key was pressed when the event was generated, otherwise    <code>false</code>.</p>
 
 
                 
@@ -12578,9 +12207,7 @@ boolean
                     
         <p class="code-caption">Report the WheelEvent details for each wheel rotation.</p>
     
-    <pre class="prettyprint"><code>Controller.wheelEvent.connect(function (event) {
-    print(JSON.stringify(event));
-});
+    <pre class="prettyprint"><code>Controller.wheelEvent.connect(function (event) {    print(JSON.stringify(event));});
  </code></pre>
 
                 
@@ -12621,8 +12248,7 @@ boolean
                             
 
 
-    <p>Prints a message to the program log.
-</p>
+    <p>Prints a message to the program log.</p>
     <p>This is an alias of <a href="Script.html#.print">Script.print</a>.</p>
 
 

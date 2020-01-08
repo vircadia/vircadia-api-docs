@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -63,8 +64,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>AccountServices</code> API provides functions that give information on user connectivity, visibility, and 
-asset download progress.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>AccountServices</code> API provides functions that give information on user connectivity, visibility, and asset download progress.</div>
                 
 
                 
@@ -119,8 +119,7 @@ string
                     
 
 
-    <p>The user name of the user logged in. If there is no user logged in, it is
-    <code>"Unknown user"</code>. <em>Read-only.</em></p>
+    <p>The user name of the user logged in. If there is no user logged in, it is    <code>"Unknown user"</code>. <em>Read-only.</em></p>
 
 
                 
@@ -151,8 +150,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the user is logged in, otherwise <code>false</code>. 
-    <em>Read-only.</em></p>
+    <p><code>true</code> if the user is logged in, otherwise <code>false</code>.     <em>Read-only.</em></p>
 
 
                 
@@ -183,14 +181,8 @@ string
                     
 
 
-    <p>The user's visibility to other users:
-    </p>
-    <ul>
-        <li><code>"none"</code> &mdash; user appears offline.</li>
-        <li><code>"friends"</code> &mdash; user is visible only to friends.</li>
-        <li><code>"connections"</code> &mdash; user is visible to friends and connections.</li>
-        <li><code>"all"</code> &mdash; user is visible to everyone.</li>
-    </ul>
+    <p>The user's visibility to other users:    </p>
+    <ul>        <li><code>"none"</code> &mdash; user appears offline.</li>        <li><code>"friends"</code> &mdash; user is visible only to friends.</li>        <li><code>"connections"</code> &mdash; user is visible to friends and connections.</li>        <li><code>"all"</code> &mdash; user is visible to everyone.</li>    </ul>
 
 
                 
@@ -221,8 +213,7 @@ string
                     
 
 
-    <p>The metaverse server that the user is authenticated against when logged in
-    &mdash; typically <code>"https://metaverse.highfidelity.com"</code>. <em>Read-only.</em></p>
+    <p>The metaverse server that the user is authenticated against when logged in    &mdash; typically <code>"https://metaverse.highfidelity.com"</code>. <em>Read-only.</em></p>
 
 
                 
@@ -590,8 +581,7 @@ boolean
     
         <p class="code-caption">Report whether you are logged in.</p>
     
-    <pre class="prettyprint"><code>var isLoggedIn = AccountServices.isLoggedIn();
-print("You are logged in: " + isLoggedIn);  // true or false</code></pre>
+    <pre class="prettyprint"><code>var isLoggedIn = AccountServices.isLoggedIn();print("You are logged in: " + isLoggedIn);  // true or false</code></pre>
 
 
 -->
@@ -702,8 +692,7 @@ print("You are logged in: " + isLoggedIn);  // true or false</code></pre>
                     
 
 
-    <p>Triggers a <a href="AccountServices.html#.downloadInfoChanged">downloadInfoChanged</a> signal with information on the current 
-download progress of the assets in the domain.</p>
+    <p>Triggers a <a href="AccountServices.html#.downloadInfoChanged">downloadInfoChanged</a> signal with information on the current download progress of the assets in the domain.</p>
 
 
                 
@@ -1116,19 +1105,7 @@ download progress of the assets in the domain.</p>
     
         <p class="code-caption">Report when your visiblity changes.</p>
     
-    <pre class="prettyprint"><code>AccountServices.findableByChanged.connect(function (findableBy) {
-    print("Findable by changed: " + findableBy);
-});
-
-var originalFindableBy = AccountServices.findableBy;
-Script.setTimeout(function () {
-    // Change visiblity.
-    AccountServices.findableBy = originalFindableBy === "none" ? "all" : "none";
-}, 2000);
-Script.setTimeout(function () {
-    // Restore original visibility.
-    AccountServices.findableBy = originalFindableBy;
-}, 4000);</code></pre>
+    <pre class="prettyprint"><code>AccountServices.findableByChanged.connect(function (findableBy) {    print("Findable by changed: " + findableBy);});var originalFindableBy = AccountServices.findableBy;Script.setTimeout(function () {    // Change visiblity.    AccountServices.findableBy = originalFindableBy === "none" ? "all" : "none";}, 2000);Script.setTimeout(function () {    // Restore original visibility.    AccountServices.findableBy = originalFindableBy;}, 4000);</code></pre>
 
 
 -->
@@ -1217,9 +1194,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Report when your login status changes.</p>
     
-    <pre class="prettyprint"><code>AccountServices.loggedInChanged.connect(function(loggedIn) {
-    print("Logged in: " + loggedIn);
-});
+    <pre class="prettyprint"><code>AccountServices.loggedInChanged.connect(function(loggedIn) {    print("Logged in: " + loggedIn);});
      </code></pre>
 
 
@@ -1309,9 +1284,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Report when your username changes.</p>
     
-    <pre class="prettyprint"><code>AccountServices.myUsernameChanged.connect(function (username) {
-    print("Username changed: " + username);
-});</code></pre>
+    <pre class="prettyprint"><code>AccountServices.myUsernameChanged.connect(function (username) {    print("Username changed: " + username);});</code></pre>
 
 
 -->
@@ -1787,8 +1760,7 @@ number
                         
         <p class="code-caption">Report whether you are logged in.</p>
     
-    <pre class="prettyprint"><code>var isLoggedIn = AccountServices.isLoggedIn();
-print("You are logged in: " + isLoggedIn);  // true or false</code></pre>
+    <pre class="prettyprint"><code>var isLoggedIn = AccountServices.isLoggedIn();print("You are logged in: " + isLoggedIn);  // true or false</code></pre>
 
                     
                   
@@ -1931,8 +1903,7 @@ print("You are logged in: " + isLoggedIn);  // true or false</code></pre>
                             
 
 
-    <p>Triggers a <a href="AccountServices.html#.downloadInfoChanged">downloadInfoChanged</a> signal with information on the current 
-download progress of the assets in the domain.</p>
+    <p>Triggers a <a href="AccountServices.html#.downloadInfoChanged">downloadInfoChanged</a> signal with information on the current download progress of the assets in the domain.</p>
 
 
                         
@@ -2602,14 +2573,8 @@ string
                     
 
 
-    <p>The user's visibility to other people:
-    </p>
-    <ul>
-        <li><code>"none"</code> &mdash; user appears offline.</li>
-        <li><code>"friends"</code> &mdash; user is visible only to friends.</li>
-        <li><code>"connections"</code> &mdash; user is visible to friends and connections.</li>
-        <li><code>"all"</code> &mdash; user is visible to everyone.</li>
-    </ul>
+    <p>The user's visibility to other people:    </p>
+    <ul>        <li><code>"none"</code> &mdash; user appears offline.</li>        <li><code>"friends"</code> &mdash; user is visible only to friends.</li>        <li><code>"connections"</code> &mdash; user is visible to friends and connections.</li>        <li><code>"all"</code> &mdash; user is visible to everyone.</li>    </ul>
 
 
                 
@@ -2626,19 +2591,7 @@ string
                         
         <p class="code-caption">Report when your visiblity changes.</p>
     
-    <pre class="prettyprint"><code>AccountServices.findableByChanged.connect(function (findableBy) {
-    print("Findable by changed: " + findableBy);
-});
-
-var originalFindableBy = AccountServices.findableBy;
-Script.setTimeout(function () {
-    // Change visiblity.
-    AccountServices.findableBy = originalFindableBy === "none" ? "all" : "none";
-}, 2000);
-Script.setTimeout(function () {
-    // Restore original visibility.
-    AccountServices.findableBy = originalFindableBy;
-}, 4000);</code></pre>
+    <pre class="prettyprint"><code>AccountServices.findableByChanged.connect(function (findableBy) {    print("Findable by changed: " + findableBy);});var originalFindableBy = AccountServices.findableBy;Script.setTimeout(function () {    // Change visiblity.    AccountServices.findableBy = originalFindableBy === "none" ? "all" : "none";}, 2000);Script.setTimeout(function () {    // Restore original visibility.    AccountServices.findableBy = originalFindableBy;}, 4000);</code></pre>
 
                     
                   
@@ -2818,9 +2771,7 @@ boolean
                         
         <p class="code-caption">Report when your login status changes.</p>
     
-    <pre class="prettyprint"><code>AccountServices.loggedInChanged.connect(function(loggedIn) {
-    print("Logged in: " + loggedIn);
-});
+    <pre class="prettyprint"><code>AccountServices.loggedInChanged.connect(function(loggedIn) {    print("Logged in: " + loggedIn);});
      </code></pre>
 
                     
@@ -3001,9 +2952,7 @@ string
                         
         <p class="code-caption">Report when your username changes.</p>
     
-    <pre class="prettyprint"><code>AccountServices.myUsernameChanged.connect(function (username) {
-    print("Username changed: " + username);
-});</code></pre>
+    <pre class="prettyprint"><code>AccountServices.myUsernameChanged.connect(function (username) {    print("Username changed: " + username);});</code></pre>
 
                     
                   

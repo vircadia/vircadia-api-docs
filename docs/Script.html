@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -118,15 +119,8 @@ string
                     
 
 
-    <p>The context that the script is running in:
-    </p>
-    <ul>
-      <li><code>"client"</code>: An Interface or avatar script.</li>
-      <li><code>"entity_client"</code>: A client entity script.</li>
-      <li><code>"entity_server"</code>: A server entity script.</li>
-      <li><code>"agent"</code>: An assignment client script.</li>
-    </ul>
-    <em>Read-only.</em>
+    <p>The context that the script is running in:    </p>
+    <ul>      <li><code>"client"</code>: An Interface or avatar script.</li>      <li><code>"entity_client"</code>: A client entity script.</li>      <li><code>"entity_server"</code>: A server entity script.</li>      <li><code>"agent"</code>: An assignment client script.</li>    </ul>    <em>Read-only.</em>
 
 
                 
@@ -312,8 +306,7 @@ string
                     
 
 
-    <p>Adds a function to the list of functions called when an entity event occurs on a particular entity.
-</p>
+    <p>Adds a function to the list of functions called when an entity event occurs on a particular entity.</p>
     <p>See also, the <a href="Entities.html">Entities</a> API.</p>
 
 
@@ -384,18 +377,7 @@ string
     
         <p class="code-caption">Report when a mouse press occurs on a particular entity.</p>
     
-    <pre class="prettyprint"><code>var entityID = Entities.addEntity({
-    type: "Box",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),
-    dimensions: { x: 0.5, y: 0.5, z: 0.5 },
-    lifetime: 300  // Delete after 5 minutes.
-});
-
-function reportMousePress(entityID, event) {
-    print("Mouse pressed on entity: " + JSON.stringify(event));
-}
-
-Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);</code></pre>
+    <pre class="prettyprint"><code>var entityID = Entities.addEntity({    type: "Box",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),    dimensions: { x: 0.5, y: 0.5, z: 0.5 },    lifetime: 300  // Delete after 5 minutes.});function reportMousePress(entityID, event) {    print("Mouse pressed on entity: " + JSON.stringify(event));}Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);</code></pre>
 
 
 -->
@@ -419,8 +401,7 @@ Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);</code>
                     
 
 
-    <p>Starts timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the 
-standard scripts.</p>
+    <p>Starts timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the standard scripts.</p>
 
 
                 
@@ -924,16 +905,7 @@ standard scripts.</p>
     
         <p class="code-caption">Stop an interval timer.</p>
     
-    <pre class="prettyprint"><code>// Print a message every second.
-var timer = Script.setInterval(function () {
-    print("Interval timer fired");
-}, 1000);
-
-// Stop the timer after 10 seconds.
-Script.setTimeout(function () {
-    print("Stop interval timer");
-    Script.clearInterval(timer);
-}, 10000);</code></pre>
+    <pre class="prettyprint"><code>// Print a message every second.var timer = Script.setInterval(function () {    print("Interval timer fired");}, 1000);// Stop the timer after 10 seconds.Script.setTimeout(function () {    print("Stop interval timer");    Script.clearInterval(timer);}, 10000);</code></pre>
 
 
 -->
@@ -1027,13 +999,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Stop a timeout timer.</p>
     
-    <pre class="prettyprint"><code>// Print a message after two seconds.
-var timer = Script.setTimeout(function () {
-    print("Timer fired");
-}, 2000);
-
-// Uncomment the following line to stop the timer from firing.
-//Script.clearTimeout(timer);</code></pre>
+    <pre class="prettyprint"><code>// Print a message after two seconds.var timer = Script.setTimeout(function () {    print("Timer fired");}, 2000);// Uncomment the following line to stop the timer from firing.//Script.clearTimeout(timer);</code></pre>
 
 
 -->
@@ -1057,8 +1023,7 @@ var timer = Script.setTimeout(function () {
                     
 
 
-    <p>Finishes timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of 
-the standard scripts.</p>
+    <p>Finishes timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the standard scripts.</p>
 
 
                 
@@ -1774,8 +1739,7 @@ string
                     
 
 
-    <p>Includes JavaScript from another file in the current script. If a callback is specified, the file is loaded and included
-asynchronously, otherwise it is included synchronously (i.e., script execution blocks while the file is included).</p>
+    <p>Includes JavaScript from another file in the current script. If a callback is specified, the file is loaded and includedasynchronously, otherwise it is included synchronously (i.e., script execution blocks while the file is included).</p>
 
 
                 
@@ -1845,20 +1809,7 @@ asynchronously, otherwise it is included synchronously (i.e., script execution b
     
         <p class="code-caption">Include a script file asynchronously.</p>
     
-    <pre class="prettyprint"><code>// First file: scriptA.js
-print("This is script A");
-
-// Second file: scriptB.js
-print("This is script B");
-Script.include("scriptA.js", function () {
-    print("Script A has been included");
-});
-
-// If you run scriptB.js you should see only scriptB.js in the running scripts list.
-// And you should see the following output:
-// This is script B
-// This is script A
-// Script A has been included</code></pre>
+    <pre class="prettyprint"><code>// First file: scriptA.jsprint("This is script A");// Second file: scriptB.jsprint("This is script B");Script.include("scriptA.js", function () {    print("Script A has been included");});// If you run scriptB.js you should see only scriptB.js in the running scripts list.// And you should see the following output:// This is script B// This is script A// Script A has been included</code></pre>
 
 
 -->
@@ -1882,9 +1833,7 @@ Script.include("scriptA.js", function () {
                     
 
 
-    <p>Includes JavaScript from other files in the current script. If a callback is specified, the files are loaded and 
-included asynchronously, otherwise they are included synchronously (i.e., script execution blocks while the files are 
-included).</p>
+    <p>Includes JavaScript from other files in the current script. If a callback is specified, the files are loaded and included asynchronously, otherwise they are included synchronously (i.e., script execution blocks while the files are included).</p>
 
 
                 
@@ -2645,11 +2594,8 @@ object
                     
 
 
-    <p>Starts running another script in Interface, if it isn't already running. The script is not automatically loaded next 
-time Interface starts.
-</p>
-    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>
-<p>See also, <a href="ScriptDiscoveryService.html#.loadScript">ScriptDiscoveryService.loadScript</a>.</p>
+    <p>Starts running another script in Interface, if it isn't already running. The script is not automatically loaded next time Interface starts.</p>
+    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p><p>See also, <a href="ScriptDiscoveryService.html#.loadScript">ScriptDiscoveryService.loadScript</a>.</p>
 
 
                 
@@ -2719,17 +2665,7 @@ time Interface starts.
     
         <p class="code-caption">Load a script from another script.</p>
     
-    <pre class="prettyprint"><code>// First file: scriptA.js
-print("This is script A");
-
-// Second file: scriptB.js
-print("This is script B");
-Script.load("scriptA.js");
-
-// If you run scriptB.js you should see both scripts in the Running Scripts dialog.
-// And you should see the following output:
-// This is script B
-// This is script A</code></pre>
+    <pre class="prettyprint"><code>// First file: scriptA.jsprint("This is script A");// Second file: scriptB.jsprint("This is script B");Script.load("scriptA.js");// If you run scriptB.js you should see both scripts in the Running Scripts dialog.// And you should see the following output:// This is script B// This is script A</code></pre>
 
 
 -->
@@ -2927,8 +2863,7 @@ object
                     
 
 
-    <p>Prints a message to the program log.
-</p>
+    <p>Prints a message to the program log.</p>
     <p>Alternatively, you can use <a href="global.html#print">print</a>, console.log, or one of the other console methods.</p>
 
 
@@ -3426,8 +3361,7 @@ object
                     
 
 
-    <p>Removes a function from the list of functions called when an entity event occurs on a particular entity.
-</p>
+    <p>Removes a function from the list of functions called when an entity event occurs on a particular entity.</p>
     <p>See also, the <a href="Entities.html">Entities</a> API.</p>
 
 
@@ -3515,8 +3449,7 @@ object
                     
 
 
-    <p>Manually runs the JavaScript garbage collector which reclaims memory by disposing of objects that are no longer 
-reachable.</p>
+    <p>Manually runs the JavaScript garbage collector which reclaims memory by disposing of objects that are no longer reachable.</p>
 
 
                 
@@ -3616,8 +3549,7 @@ array
                     
 
 
-    <p>Provides access to methods or objects provided in an external JavaScript or JSON file. 
-See <a href="https://docs.highfidelity.com/script/js-tips.html">https://docs.highfidelity.com/script/js-tips.html</a> for further details.</p>
+    <p>Provides access to methods or objects provided in an external JavaScript or JSON file. See <a href="https://docs.highfidelity.com/script/js-tips.html">https://docs.highfidelity.com/script/js-tips.html</a> for further details.</p>
 
 
                 
@@ -4075,9 +4007,7 @@ object
     
         <p class="code-caption">Print a message every second.</p>
     
-    <pre class="prettyprint"><code>Script.setInterval(function () {
-    print("Interval timer fired");
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>Script.setInterval(function () {    print("Interval timer fired");}, 1000);</code></pre>
 
 
 -->
@@ -4181,9 +4111,7 @@ object
     
         <p class="code-caption">Print a message once, after a second.</p>
     
-    <pre class="prettyprint"><code>Script.setTimeout(function () {
-    print("Timeout timer fired");
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>Script.setTimeout(function () {    print("Timeout timer fired");}, 1000);</code></pre>
 
 
 -->
@@ -4207,8 +4135,7 @@ object
                     
 
 
-    <p>Stops and unloads the current script.
-</p>
+    <p>Stops and unloads the current script.</p>
     <p><strong>Warning:</strong> If an assignment client script, the script gets restarted after stopping.</p>
 
 
@@ -4279,13 +4206,7 @@ object
     
         <p class="code-caption">Stop a script after 5s.</p>
     
-    <pre class="prettyprint"><code>Script.setInterval(function () {
-    print("Hello");
-}, 1000);
-
-Script.setTimeout(function () {
-    Script.stop(true);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>Script.setInterval(function () {    print("Hello");}, 1000);Script.setTimeout(function () {    Script.stop(true);}, 5000);</code></pre>
 
 
 -->
@@ -4878,8 +4799,7 @@ Script.setTimeout(function () {
                         
 
 
-    <p>Triggered when the script starts for the user. See also, <a href="Entities.html#.preload">Entities.preload</a>.
-</p>
+    <p>Triggered when the script starts for the user. See also, <a href="Entities.html#.preload">Entities.preload</a>.</p>
     <p class="availableIn"><strong>Supported Script Types:</strong> Client Entity Scripts &bull; Server Entity Scripts</p>
 
 
@@ -4950,23 +4870,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Get the ID of the entity that a client entity script is running in.</p>
     
-    <pre class="prettyprint"><code>var entityScript = function () {
-    this.entityID = Uuid.NULL;
-};
-
-Script.entityScriptPreloadFinished.connect(function (entityID) {
-    this.entityID = entityID;
-    print("Entity ID: " + this.entityID);
-});
-
-var entityID = Entities.addEntity({
-    type: "Box",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),
-    dimensions: { x: 0.5, y: 0.5, z: 0.5 },
-    color: { red: 255, green: 0, blue: 0 },
-    script: "(" + entityScript + ")",  // Could host the script on a Web server instead.
-    lifetime: 300  // Delete after 5 minutes.
-});</code></pre>
+    <pre class="prettyprint"><code>var entityScript = function () {    this.entityID = Uuid.NULL;};Script.entityScriptPreloadFinished.connect(function (entityID) {    this.entityID = entityID;    print("Entity ID: " + this.entityID);});var entityID = Entities.addEntity({    type: "Box",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),    dimensions: { x: 0.5, y: 0.5, z: 0.5 },    color: { red: 255, green: 0, blue: 0 },    script: "(" + entityScript + ")",  // Could host the script on a Web server instead.    lifetime: 300  // Delete after 5 minutes.});</code></pre>
 
 
 -->
@@ -5380,8 +5284,7 @@ var entityID = Entities.addEntity({
                         
 
 
-    <p>Triggered when the script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>, 
-console.log, or console.debug.</p>
+    <p>Triggered when the script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>, console.log, or console.debug.</p>
 
 
                     
@@ -5692,16 +5595,7 @@ console.log, or console.debug.</p>
     
         <p class="code-caption">Report when a script is stopping.</p>
     
-    <pre class="prettyprint"><code>print("Script started");
-
-Script.scriptEnding.connect(function () {
-    print("Script ending");
-});
-
-Script.setTimeout(function () {
-    print("Stopping script");
-    Script.stop();
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>print("Script started");Script.scriptEnding.connect(function () {    print("Script ending");});Script.setTimeout(function () {    print("Stopping script");    Script.stop();}, 1000);</code></pre>
 
 
 -->
@@ -5944,10 +5838,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Report the details of an unhandled exception.</p>
     
-    <pre class="prettyprint"><code>Script.unhandledException.connect(function (exception) {
-    print("Unhandled exception: " + JSON.stringify(exception));
-});
-var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
+    <pre class="prettyprint"><code>Script.unhandledException.connect(function (exception) {    print("Unhandled exception: " + JSON.stringify(exception));});var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
      </code></pre>
 
 
@@ -6037,9 +5928,7 @@ var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
     
         <p class="code-caption">Report script update intervals.</p>
     
-    <pre class="prettyprint"><code>Script.update.connect(function (deltaTime) {
-    print("Update: " + deltaTime);
-});</code></pre>
+    <pre class="prettyprint"><code>Script.update.connect(function (deltaTime) {    print("Update: " + deltaTime);});</code></pre>
 
 
 -->
@@ -6156,27 +6045,7 @@ string
                     
 
 
-    <p>The name of an entity event. When the entity event occurs, any function that has been registered for that event via 
-<a href="Script.html#.addEventHandler">Script.addEventHandler</a> is called with parameters per the entity event.</p>
-<table>
-  <thead>
-    <tr><th>Event Name</th><th>Entity Event</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"enterEntity"</code></td><td><a href="Entities.html#.enterEntity">Entities.enterEntity</a></td></tr>
-    <tr><td><code>"leaveEntity"</code></td><td><a href="Entities.html#.leaveEntity">Entities.leaveEntity</a></td></tr>
-    <tr><td><code>"mousePressOnEntity"</code></td><td><a href="Entities.html#.mousePressOnEntity">Entities.mousePressOnEntity</a></td></tr>
-    <tr><td><code>"mouseMoveOnEntity"</code></td><td><a href="Entities.html#.mouseMoveOnEntity">Entities.mouseMoveOnEntity</a></td></tr>
-    <tr><td><code>"mouseReleaseOnEntity"</code></td><td><a href="Entities.html#.mouseReleaseOnEntity">Entities.mouseReleaseOnEntity</a></td></tr>
-    <tr><td><code>"clickDownOnEntity"</code></td><td><a href="Entities.html#.clickDownOnEntity">Entities.clickDownOnEntity</a></td></tr>
-    <tr><td><code>"holdingClickOnEntity"</code></td><td><a href="Entities.html#.holdingClickOnEntity">Entities.holdingClickOnEntity</a></td></tr>
-    <tr><td><code>"clickReleaseOnEntity"</code></td><td><a href="Entities.html#.clickReleaseOnEntity">Entities.clickReleaseOnEntity</a></td></tr>
-    <tr><td><code>"hoverEnterEntity"</code></td><td><a href="Entities.html#.hoverEnterEntity">Entities.hoverEnterEntity</a></td></tr>
-    <tr><td><code>"hoverOverEntity"</code></td><td><a href="Entities.html#.hoverOverEntity">Entities.hoverOverEntity</a></td></tr>
-    <tr><td><code>"hoverLeaveEntity"</code></td><td><a href="Entities.html#.hoverLeaveEntity">Entities.hoverLeaveEntity</a></td></tr>
-    <tr><td><code>"collisionWithEntity"</code></td><td><a href="Entities.html#.collisionWithEntity">Entities.collisionWithEntity</a></td></tr>
-  </tbody>
-</table>
+    <p>The name of an entity event. When the entity event occurs, any function that has been registered for that event via <a href="Script.html#.addEventHandler">Script.addEventHandler</a> is called with parameters per the entity event.</p><table>  <thead>    <tr><th>Event Name</th><th>Entity Event</th></tr>  </thead>  <tbody>    <tr><td><code>"enterEntity"</code></td><td><a href="Entities.html#.enterEntity">Entities.enterEntity</a></td></tr>    <tr><td><code>"leaveEntity"</code></td><td><a href="Entities.html#.leaveEntity">Entities.leaveEntity</a></td></tr>    <tr><td><code>"mousePressOnEntity"</code></td><td><a href="Entities.html#.mousePressOnEntity">Entities.mousePressOnEntity</a></td></tr>    <tr><td><code>"mouseMoveOnEntity"</code></td><td><a href="Entities.html#.mouseMoveOnEntity">Entities.mouseMoveOnEntity</a></td></tr>    <tr><td><code>"mouseReleaseOnEntity"</code></td><td><a href="Entities.html#.mouseReleaseOnEntity">Entities.mouseReleaseOnEntity</a></td></tr>    <tr><td><code>"clickDownOnEntity"</code></td><td><a href="Entities.html#.clickDownOnEntity">Entities.clickDownOnEntity</a></td></tr>    <tr><td><code>"holdingClickOnEntity"</code></td><td><a href="Entities.html#.holdingClickOnEntity">Entities.holdingClickOnEntity</a></td></tr>    <tr><td><code>"clickReleaseOnEntity"</code></td><td><a href="Entities.html#.clickReleaseOnEntity">Entities.clickReleaseOnEntity</a></td></tr>    <tr><td><code>"hoverEnterEntity"</code></td><td><a href="Entities.html#.hoverEnterEntity">Entities.hoverEnterEntity</a></td></tr>    <tr><td><code>"hoverOverEntity"</code></td><td><a href="Entities.html#.hoverOverEntity">Entities.hoverOverEntity</a></td></tr>    <tr><td><code>"hoverLeaveEntity"</code></td><td><a href="Entities.html#.hoverLeaveEntity">Entities.hoverLeaveEntity</a></td></tr>    <tr><td><code>"collisionWithEntity"</code></td><td><a href="Entities.html#.collisionWithEntity">Entities.collisionWithEntity</a></td></tr>  </tbody></table>
 
 
                                     
@@ -6479,8 +6348,7 @@ string
                             
 
 
-    <p>Adds a function to the list of functions called when an entity event occurs on a particular entity.
-</p>
+    <p>Adds a function to the list of functions called when an entity event occurs on a particular entity.</p>
     <p>See also, the <a href="Entities.html">Entities</a> API.</p>
 
 
@@ -6642,8 +6510,7 @@ function
                     
 
 
-    <p>The function to call when the entity event occurs on the entity. It can be either the name 
-    of a function or an in-line definition.</p>
+    <p>The function to call when the entity event occurs on the entity. It can be either the name     of a function or an in-line definition.</p>
 
 
                 
@@ -6660,18 +6527,7 @@ function
                         
         <p class="code-caption">Report when a mouse press occurs on a particular entity.</p>
     
-    <pre class="prettyprint"><code>var entityID = Entities.addEntity({
-    type: "Box",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),
-    dimensions: { x: 0.5, y: 0.5, z: 0.5 },
-    lifetime: 300  // Delete after 5 minutes.
-});
-
-function reportMousePress(entityID, event) {
-    print("Mouse pressed on entity: " + JSON.stringify(event));
-}
-
-Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);</code></pre>
+    <pre class="prettyprint"><code>var entityID = Entities.addEntity({    type: "Box",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),    dimensions: { x: 0.5, y: 0.5, z: 0.5 },    lifetime: 300  // Delete after 5 minutes.});function reportMousePress(entityID, event) {    print("Mouse pressed on entity: " + JSON.stringify(event));}Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);</code></pre>
 
                     
                   
@@ -6719,8 +6575,7 @@ Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);</code>
                             
 
 
-    <p>Starts timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the 
-standard scripts.</p>
+    <p>Starts timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the standard scripts.</p>
 
 
                         
@@ -8052,16 +7907,7 @@ object
                         
         <p class="code-caption">Stop an interval timer.</p>
     
-    <pre class="prettyprint"><code>// Print a message every second.
-var timer = Script.setInterval(function () {
-    print("Interval timer fired");
-}, 1000);
-
-// Stop the timer after 10 seconds.
-Script.setTimeout(function () {
-    print("Stop interval timer");
-    Script.clearInterval(timer);
-}, 10000);</code></pre>
+    <pre class="prettyprint"><code>// Print a message every second.var timer = Script.setInterval(function () {    print("Interval timer fired");}, 1000);// Stop the timer after 10 seconds.Script.setTimeout(function () {    print("Stop interval timer");    Script.clearInterval(timer);}, 10000);</code></pre>
 
                     
                   
@@ -8221,13 +8067,7 @@ object
                         
         <p class="code-caption">Stop a timeout timer.</p>
     
-    <pre class="prettyprint"><code>// Print a message after two seconds.
-var timer = Script.setTimeout(function () {
-    print("Timer fired");
-}, 2000);
-
-// Uncomment the following line to stop the timer from firing.
-//Script.clearTimeout(timer);</code></pre>
+    <pre class="prettyprint"><code>// Print a message after two seconds.var timer = Script.setTimeout(function () {    print("Timer fired");}, 2000);// Uncomment the following line to stop the timer from firing.//Script.clearTimeout(timer);</code></pre>
 
                     
                   
@@ -8275,8 +8115,7 @@ var timer = Script.setTimeout(function () {
                             
 
 
-    <p>Finishes timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of 
-the standard scripts.</p>
+    <p>Finishes timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the standard scripts.</p>
 
 
                         
@@ -9692,13 +9531,7 @@ boolean
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The context that the script is running in:
-<ul>
-  <li><code>"client"</code>: An Interface or avatar script.</li>
-  <li><code>"entity_client"</code>: A client entity script.</li>
-  <li><code>"entity_server"</code>: A server entity script.</li>
-  <li><code>"agent"</code>: An assignment client script.</li>
-</ul>
+    The context that the script is running in:<ul>  <li><code>"client"</code>: An Interface or avatar script.</li>  <li><code>"entity_client"</code>: A client entity script.</li>  <li><code>"entity_server"</code>: A server entity script.</li>  <li><code>"agent"</code>: An assignment client script.</li></ul>
 
 
                         
@@ -9811,8 +9644,7 @@ boolean
                             
 
 
-    <p>Includes JavaScript from another file in the current script. If a callback is specified, the file is loaded and included
-asynchronously, otherwise it is included synchronously (i.e., script execution blocks while the file is included).</p>
+    <p>Includes JavaScript from another file in the current script. If a callback is specified, the file is loaded and includedasynchronously, otherwise it is included synchronously (i.e., script execution blocks while the file is included).</p>
 
 
                         
@@ -9972,8 +9804,7 @@ function
                     
 
 
-    <p>The function to call back when the script has been included. It can be either the 
-    name of a function or an in-line definition.</p>
+    <p>The function to call back when the script has been included. It can be either the     name of a function or an in-line definition.</p>
 
 
                 
@@ -9990,20 +9821,7 @@ function
                         
         <p class="code-caption">Include a script file asynchronously.</p>
     
-    <pre class="prettyprint"><code>// First file: scriptA.js
-print("This is script A");
-
-// Second file: scriptB.js
-print("This is script B");
-Script.include("scriptA.js", function () {
-    print("Script A has been included");
-});
-
-// If you run scriptB.js you should see only scriptB.js in the running scripts list.
-// And you should see the following output:
-// This is script B
-// This is script A
-// Script A has been included</code></pre>
+    <pre class="prettyprint"><code>// First file: scriptA.jsprint("This is script A");// Second file: scriptB.jsprint("This is script B");Script.include("scriptA.js", function () {    print("Script A has been included");});// If you run scriptB.js you should see only scriptB.js in the running scripts list.// And you should see the following output:// This is script B// This is script A// Script A has been included</code></pre>
 
                     
                   
@@ -10051,9 +9869,7 @@ Script.include("scriptA.js", function () {
                             
 
 
-    <p>Includes JavaScript from other files in the current script. If a callback is specified, the files are loaded and 
-included asynchronously, otherwise they are included synchronously (i.e., script execution blocks while the files are 
-included).</p>
+    <p>Includes JavaScript from other files in the current script. If a callback is specified, the files are loaded and included asynchronously, otherwise they are included synchronously (i.e., script execution blocks while the files are included).</p>
 
 
                         
@@ -10213,8 +10029,7 @@ function
                     
 
 
-    <p>The function to call back when the scripts have been included. It can be either the 
-    name of a function or an in-line definition.</p>
+    <p>The function to call back when the scripts have been included. It can be either the     name of a function or an in-line definition.</p>
 
 
                 
@@ -10263,8 +10078,7 @@ function
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the script is running as an assignment client script, <code>false</code> if it 
-    isn't.
+    <code>true</code> if the script is running as an assignment client script, <code>false</code> if it     isn't.
 
 
                         
@@ -10368,8 +10182,7 @@ function
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the script is running as an Interface or avatar script, <code>false</code> if it 
-    isn't.
+    <code>true</code> if the script is running as an Interface or avatar script, <code>false</code> if it     isn't.
 
 
                         
@@ -10473,8 +10286,7 @@ function
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the application was compiled as a debug build, <code>false</code> if it was 
-    compiled as a release build.
+    <code>true</code> if the application was compiled as a debug build, <code>false</code> if it was     compiled as a release build.
 
 
                         
@@ -11224,11 +11036,8 @@ number
                             
 
 
-    <p>Starts running another script in Interface, if it isn't already running. The script is not automatically loaded next 
-time Interface starts.
-</p>
-    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>
-<p>See also, <a href="ScriptDiscoveryService.html#.loadScript">ScriptDiscoveryService.loadScript</a>.</p>
+    <p>Starts running another script in Interface, if it isn't already running. The script is not automatically loaded next time Interface starts.</p>
+    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p><p>See also, <a href="ScriptDiscoveryService.html#.loadScript">ScriptDiscoveryService.loadScript</a>.</p>
 
 
                         
@@ -11340,17 +11149,7 @@ string
                         
         <p class="code-caption">Load a script from another script.</p>
     
-    <pre class="prettyprint"><code>// First file: scriptA.js
-print("This is script A");
-
-// Second file: scriptB.js
-print("This is script B");
-Script.load("scriptA.js");
-
-// If you run scriptB.js you should see both scripts in the Running Scripts dialog.
-// And you should see the following output:
-// This is script B
-// This is script A</code></pre>
+    <pre class="prettyprint"><code>// First file: scriptA.jsprint("This is script A");// Second file: scriptB.jsprint("This is script B");Script.load("scriptA.js");// If you run scriptB.js you should see both scripts in the Running Scripts dialog.// And you should see the following output:// This is script B// This is script A</code></pre>
 
                     
                   
@@ -11836,8 +11635,7 @@ string
                             
 
 
-    <p>Prints a message to the program log.
-</p>
+    <p>Prints a message to the program log.</p>
     <p>Alternatively, you can use <a href="global.html#print">print</a>, console.log, or one of the other console methods.</p>
 
 
@@ -13217,8 +13015,7 @@ object
                             
 
 
-    <p>Removes a function from the list of functions called when an entity event occurs on a particular entity.
-</p>
+    <p>Removes a function from the list of functions called when an entity event occurs on a particular entity.</p>
     <p>See also, the <a href="Entities.html">Entities</a> API.</p>
 
 
@@ -13438,8 +13235,7 @@ function
                             
 
 
-    <p>Manually runs the JavaScript garbage collector which reclaims memory by disposing of objects that are no longer 
-reachable.</p>
+    <p>Manually runs the JavaScript garbage collector which reclaims memory by disposing of objects that are no longer reachable.</p>
 
 
                         
@@ -13525,8 +13321,7 @@ reachable.</p>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The value assigned to <code>module.exports</code> in the JavaScript file, or the value defined 
-    in the JSON file.
+    The value assigned to <code>module.exports</code> in the JavaScript file, or the value defined     in the JSON file.
 
 
                         
@@ -13544,8 +13339,7 @@ reachable.</p>
                             
 
 
-    <p>Provides access to methods or objects provided in an external JavaScript or JSON file. 
-See <a href="https://docs.highfidelity.com/script/js-tips.html">https://docs.highfidelity.com/script/js-tips.html</a> for further details.</p>
+    <p>Provides access to methods or objects provided in an external JavaScript or JSON file. See <a href="https://docs.highfidelity.com/script/js-tips.html">https://docs.highfidelity.com/script/js-tips.html</a> for further details.</p>
 
 
                         
@@ -13640,8 +13434,7 @@ string
                     
 
 
-    <p>The module to use. May be a JavaScript file, a JSON file, or the name of a system module such 
-    as <code>"appUi"</code> (i.e., the "appUi.js" system module JavaScript file).</p>
+    <p>The module to use. May be a JavaScript file, a JSON file, or the name of a system module such     as <code>"appUi"</code> (i.e., the "appUi.js" system module JavaScript file).</p>
 
 
                 
@@ -14302,9 +14095,7 @@ number
                         
         <p class="code-caption">Print a message every second.</p>
     
-    <pre class="prettyprint"><code>Script.setInterval(function () {
-    print("Interval timer fired");
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>Script.setInterval(function () {    print("Interval timer fired");}, 1000);</code></pre>
 
                     
                   
@@ -14506,9 +14297,7 @@ number
                         
         <p class="code-caption">Print a message once, after a second.</p>
     
-    <pre class="prettyprint"><code>Script.setTimeout(function () {
-    print("Timeout timer fired");
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>Script.setTimeout(function () {    print("Timeout timer fired");}, 1000);</code></pre>
 
                     
                   
@@ -14556,8 +14345,7 @@ number
                             
 
 
-    <p>Stops and unloads the current script.
-</p>
+    <p>Stops and unloads the current script.</p>
     <p><strong>Warning:</strong> If an assignment client script, the script gets restarted after stopping.</p>
 
 
@@ -14673,8 +14461,7 @@ boolean
                     
 
 
-    <p>Marshal.
-    </p>
+    <p>Marshal.    </p>
     <p class="important">Deprecated: This parameter is deprecated and will be removed.</p>
 
 
@@ -14692,13 +14479,7 @@ boolean
                         
         <p class="code-caption">Stop a script after 5s.</p>
     
-    <pre class="prettyprint"><code>Script.setInterval(function () {
-    print("Hello");
-}, 1000);
-
-Script.setTimeout(function () {
-    Script.stop(true);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>Script.setInterval(function () {    print("Hello");}, 1000);Script.setTimeout(function () {    Script.stop(true);}, 5000);</code></pre>
 
                     
                   
@@ -15779,8 +15560,7 @@ Signal
                             
 
 
-    <p>Triggered when the script starts for the user. See also, <a href="Entities.html#.preload">Entities.preload</a>.
-</p>
+    <p>Triggered when the script starts for the user. See also, <a href="Entities.html#.preload">Entities.preload</a>.</p>
     <p class="availableIn"><strong>Supported Script Types:</strong> Client Entity Scripts &bull; Server Entity Scripts</p>
 
 
@@ -15893,23 +15673,7 @@ Signal
                         
         <p class="code-caption">Get the ID of the entity that a client entity script is running in.</p>
     
-    <pre class="prettyprint"><code>var entityScript = function () {
-    this.entityID = Uuid.NULL;
-};
-
-Script.entityScriptPreloadFinished.connect(function (entityID) {
-    this.entityID = entityID;
-    print("Entity ID: " + this.entityID);
-});
-
-var entityID = Entities.addEntity({
-    type: "Box",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),
-    dimensions: { x: 0.5, y: 0.5, z: 0.5 },
-    color: { red: 255, green: 0, blue: 0 },
-    script: "(" + entityScript + ")",  // Could host the script on a Web server instead.
-    lifetime: 300  // Delete after 5 minutes.
-});</code></pre>
+    <pre class="prettyprint"><code>var entityScript = function () {    this.entityID = Uuid.NULL;};Script.entityScriptPreloadFinished.connect(function (entityID) {    this.entityID = entityID;    print("Entity ID: " + this.entityID);});var entityID = Entities.addEntity({    type: "Box",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5 })),    dimensions: { x: 0.5, y: 0.5, z: 0.5 },    color: { red: 255, green: 0, blue: 0 },    script: "(" + entityScript + ")",  // Could host the script on a Web server instead.    lifetime: 300  // Delete after 5 minutes.});</code></pre>
 
                     
                   
@@ -16984,8 +16748,7 @@ Signal
                             
 
 
-    <p>Triggered when the script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>, 
-console.log, or console.debug.</p>
+    <p>Triggered when the script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>, console.log, or console.debug.</p>
 
 
                         
@@ -17548,16 +17311,7 @@ Signal
                         
         <p class="code-caption">Report when a script is stopping.</p>
     
-    <pre class="prettyprint"><code>print("Script started");
-
-Script.scriptEnding.connect(function () {
-    print("Script ending");
-});
-
-Script.setTimeout(function () {
-    print("Stopping script");
-    Script.stop();
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>print("Script started");Script.scriptEnding.connect(function () {    print("Script ending");});Script.setTimeout(function () {    print("Stopping script");    Script.stop();}, 1000);</code></pre>
 
                     
                   
@@ -18073,10 +17827,7 @@ object
                         
         <p class="code-caption">Report the details of an unhandled exception.</p>
     
-    <pre class="prettyprint"><code>Script.unhandledException.connect(function (exception) {
-    print("Unhandled exception: " + JSON.stringify(exception));
-});
-var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
+    <pre class="prettyprint"><code>Script.unhandledException.connect(function (exception) {    print("Unhandled exception: " + JSON.stringify(exception));});var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
      </code></pre>
 
                     
@@ -18257,9 +18008,7 @@ number
                         
         <p class="code-caption">Report script update intervals.</p>
     
-    <pre class="prettyprint"><code>Script.update.connect(function (deltaTime) {
-    print("Update: " + deltaTime);
-});</code></pre>
+    <pre class="prettyprint"><code>Script.update.connect(function (deltaTime) {    print("Update: " + deltaTime);});</code></pre>
 
                     
                   

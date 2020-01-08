@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -61,11 +62,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>AvatarManager</code> API provides information about avatars within the current domain. The avatars available are 
-those that Interface has displayed and therefore knows about.
-
-<p><strong>Warning:</strong> This API is also provided to Interface, client entity, and avatar scripts as the synonym, 
-"<code>AvatarList</code>". For assignment client scripts, see the separate <a href="AvatarList.html">AvatarList</a> API.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>AvatarManager</code> API provides information about avatars within the current domain. The avatars available are those that Interface has displayed and therefore knows about.<p><strong>Warning:</strong> This API is also provided to Interface, client entity, and avatar scripts as the synonym, "<code>AvatarList</code>". For assignment client scripts, see the separate <a href="AvatarList.html">AvatarList</a> API.</p></div>
                 
 
                 
@@ -328,17 +325,7 @@ ParabolaToAvatarIntersectionResult
     
         <p class="code-caption">Find the first avatar directly in front of you.</p>
     
-    <pre class="prettyprint"><code>var pickRay = {
-    origin: MyAvatar.position,
-    direction: Quat.getFront(MyAvatar.orientation)
-};
-
-var intersection = AvatarManager.findRayIntersection(pickRay);
-if (intersection.intersects) {
-    print("Avatar found: " + JSON.stringify(intersection));
-} else {
-    print("No avatar found.");
-}</code></pre>
+    <pre class="prettyprint"><code>var pickRay = {    origin: MyAvatar.position,    direction: Quat.getFront(MyAvatar.orientation)};var intersection = AvatarManager.findRayIntersection(pickRay);if (intersection.intersects) {    print("Avatar found: " + JSON.stringify(intersection));} else {    print("No avatar found.");}</code></pre>
 
 
 -->
@@ -658,8 +645,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                     
 
 
-    <p>Gets the IDs of all avatars known about in the domain.
-Your own avatar is included in the list as a <code>null</code> value.</p>
+    <p>Gets the IDs of all avatars known about in the domain.Your own avatar is included in the list as a <code>null</code> value.</p>
 
 
                 
@@ -729,9 +715,7 @@ Your own avatar is included in the list as a <code>null</code> value.</p>
     
         <p class="code-caption">Report the IDS of all avatars within the domain.</p>
     
-    <pre class="prettyprint"><code>var avatars = AvatarManager.getAvatarIdentifiers();
-print("Avatars in the domain: " + JSON.stringify(avatars));
-// A null item is included for your avatar.</code></pre>
+    <pre class="prettyprint"><code>var avatars = AvatarManager.getAvatarIdentifiers();print("Avatars in the domain: " + JSON.stringify(avatars));// A null item is included for your avatar.</code></pre>
 
 
 -->
@@ -862,8 +846,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                     
 
 
-    <p>Gets the IDs of all avatars known about within a specified distance from a point.
-Your own avatar's ID is included in the list if it is in range.</p>
+    <p>Gets the IDs of all avatars known about within a specified distance from a point.Your own avatar's ID is included in the list if it is in range.</p>
 
 
                 
@@ -933,10 +916,7 @@ Your own avatar's ID is included in the list if it is in range.</p>
     
         <p class="code-caption">Report the IDs of all avatars within 10m of your avatar.</p>
     
-    <pre class="prettyprint"><code>var RANGE = 10;
-var avatars = AvatarManager.getAvatarsInRange(MyAvatar.position, RANGE);
-print("Nearby avatars: " + JSON.stringify(avatars));
-print("Own avatar: " + MyAvatar.sessionUUID);</code></pre>
+    <pre class="prettyprint"><code>var RANGE = 10;var avatars = AvatarManager.getAvatarsInRange(MyAvatar.position, RANGE);print("Nearby avatars: " + JSON.stringify(avatars));print("Own avatar: " + MyAvatar.sessionUUID);</code></pre>
 
 
 -->
@@ -1159,8 +1139,7 @@ Object.&lt;"data", Array.&lt;<a href="AvatarManager.html#.PalData">AvatarManager
                     
 
 
-    <p>Gets PAL (People Access List) data for one or more avatars. Using this method is faster than iterating over each avatar 
-and obtaining data about each individually.</p>
+    <p>Gets PAL (People Access List) data for one or more avatars. Using this method is faster than iterating over each avatar and obtaining data about each individually.</p>
 
 
                 
@@ -1230,8 +1209,7 @@ and obtaining data about each individually.</p>
     
         <p class="code-caption">Report the PAL data for an avatar nearby.</p>
     
-    <pre class="prettyprint"><code>var palData = AvatarManager.getPalData();
-print("PAL data for one avatar: " + JSON.stringify(palData.data[0]));</code></pre>
+    <pre class="prettyprint"><code>var palData = AvatarManager.getPalData();print("PAL data for one avatar: " + JSON.stringify(palData.data[0]));</code></pre>
 
 
 -->
@@ -2093,11 +2071,7 @@ boolean
     
         <p class="code-caption">Report when an avatar arrives in the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {
-    print("Avatar arrived: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {    print("Avatar arrived: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
 
 -->
@@ -2186,11 +2160,7 @@ boolean
     
         <p class="code-caption">Report when an avatar leaves the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {
-    print("Avatar left: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {    print("Avatar left: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
 
 -->
@@ -2279,11 +2249,7 @@ boolean
     
         <p class="code-caption">Report when an avatar's session ID changes.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {
-    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
 
 -->
@@ -2403,8 +2369,7 @@ string
                     
 
 
-    <p>The avatar's display name, sanitized and versioned, as defined by the avatar mixer. 
-    It is unique among all avatars present in the domain at the time.</p>
+    <p>The avatar's display name, sanitized and versioned, as defined by the avatar mixer.     It is unique among all avatars present in the domain at the time.</p>
 
 
                 
@@ -2435,8 +2400,7 @@ number
                     
 
 
-    <p>The instantaneous loudness of the audio input that the avatar is injecting into the 
-    domain.</p>
+    <p>The instantaneous loudness of the audio input that the avatar is injecting into the     domain.</p>
 
 
                 
@@ -2467,8 +2431,7 @@ boolean
                     
 
 
-    <p><span class="important">Deprecated: This property is deprecated and will be 
-    removed.</span></p>
+    <p><span class="important">Deprecated: This property is deprecated and will be     removed.</span></p>
 
 
                 
@@ -3105,8 +3068,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then the exact intersection with the avatar mesh is 
-    calculated, if <code>false</code> then the intersection is approximate.</p>
+    <p>If <code>true</code> then the exact intersection with the avatar mesh is     calculated, if <code>false</code> then the intersection is approximate.</p>
 
 
                 
@@ -3123,17 +3085,7 @@ boolean
                         
         <p class="code-caption">Find the first avatar directly in front of you.</p>
     
-    <pre class="prettyprint"><code>var pickRay = {
-    origin: MyAvatar.position,
-    direction: Quat.getFront(MyAvatar.orientation)
-};
-
-var intersection = AvatarManager.findRayIntersection(pickRay);
-if (intersection.intersects) {
-    print("Avatar found: " + JSON.stringify(intersection));
-} else {
-    print("No avatar found.");
-}</code></pre>
+    <pre class="prettyprint"><code>var pickRay = {    origin: MyAvatar.position,    direction: Quat.getFront(MyAvatar.orientation)};var intersection = AvatarManager.findRayIntersection(pickRay);if (intersection.intersects) {    print("Avatar found: " + JSON.stringify(intersection));} else {    print("No avatar found.");}</code></pre>
 
                     
                   
@@ -3835,8 +3787,7 @@ boolean
                             
 
 
-    <p>Gets the IDs of all avatars known about in the domain.
-Your own avatar is included in the list as a <code>null</code> value.</p>
+    <p>Gets the IDs of all avatars known about in the domain.Your own avatar is included in the list as a <code>null</code> value.</p>
 
 
                         
@@ -3890,9 +3841,7 @@ Your own avatar is included in the list as a <code>null</code> value.</p>
                         
         <p class="code-caption">Report the IDS of all avatars within the domain.</p>
     
-    <pre class="prettyprint"><code>var avatars = AvatarManager.getAvatarIdentifiers();
-print("Avatars in the domain: " + JSON.stringify(avatars));
-// A null item is included for your avatar.</code></pre>
+    <pre class="prettyprint"><code>var avatars = AvatarManager.getAvatarIdentifiers();print("Avatars in the domain: " + JSON.stringify(avatars));// A null item is included for your avatar.</code></pre>
 
                     
                   
@@ -4176,8 +4125,7 @@ print("Avatars in the domain: " + JSON.stringify(avatars));
                             
 
 
-    <p>Gets the IDs of all avatars known about within a specified distance from a point.
-Your own avatar's ID is included in the list if it is in range.</p>
+    <p>Gets the IDs of all avatars known about within a specified distance from a point.Your own avatar's ID is included in the list if it is in range.</p>
 
 
                         
@@ -4322,10 +4270,7 @@ number
                         
         <p class="code-caption">Report the IDs of all avatars within 10m of your avatar.</p>
     
-    <pre class="prettyprint"><code>var RANGE = 10;
-var avatars = AvatarManager.getAvatarsInRange(MyAvatar.position, RANGE);
-print("Nearby avatars: " + JSON.stringify(avatars));
-print("Own avatar: " + MyAvatar.sessionUUID);</code></pre>
+    <pre class="prettyprint"><code>var RANGE = 10;var avatars = AvatarManager.getAvatarsInRange(MyAvatar.position, RANGE);print("Nearby avatars: " + JSON.stringify(avatars));print("Own avatar: " + MyAvatar.sessionUUID);</code></pre>
 
                     
                   
@@ -4766,8 +4711,7 @@ string
                             
 
 
-    <p>Gets PAL (People Access List) data for one or more avatars. Using this method is faster than iterating over each avatar 
-and obtaining data about each individually.</p>
+    <p>Gets PAL (People Access List) data for one or more avatars. Using this method is faster than iterating over each avatar and obtaining data about each individually.</p>
 
 
                         
@@ -4882,8 +4826,7 @@ Array.&lt;string>
                     
 
 
-    <p>The IDs of the avatars to get the PAL data for. If empty, then PAL data is obtained 
-    for all avatars.</p>
+    <p>The IDs of the avatars to get the PAL data for. If empty, then PAL data is obtained     for all avatars.</p>
 
 
                 
@@ -4900,8 +4843,7 @@ Array.&lt;string>
                         
         <p class="code-caption">Report the PAL data for an avatar nearby.</p>
     
-    <pre class="prettyprint"><code>var palData = AvatarManager.getPalData();
-print("PAL data for one avatar: " + JSON.stringify(palData.data[0]));</code></pre>
+    <pre class="prettyprint"><code>var palData = AvatarManager.getPalData();print("PAL data for one avatar: " + JSON.stringify(palData.data[0]));</code></pre>
 
                     
                   
@@ -4940,8 +4882,7 @@ print("PAL data for one avatar: " + JSON.stringify(palData.data[0]));</code></pr
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if there's an avatar within the specified distance of the point, <code>false</code> 
-    if not.
+    <code>true</code> if there's an avatar within the specified distance of the point, <code>false</code>     if not.
 
 
                         
@@ -6672,11 +6613,7 @@ Signal
                         
         <p class="code-caption">Report when an avatar arrives in the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {
-    print("Avatar arrived: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {    print("Avatar arrived: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
                     
                   
@@ -6856,11 +6793,7 @@ Signal
                         
         <p class="code-caption">Report when an avatar leaves the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {
-    print("Avatar left: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {    print("Avatar left: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
                     
                   
@@ -7078,11 +7011,7 @@ Signal
                         
         <p class="code-caption">Report when an avatar's session ID changes.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {
-    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
                     
                   

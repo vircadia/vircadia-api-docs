@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -61,16 +62,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Menu</code> API provides access to the menu that is displayed at the top of the window on a user's desktop and in 
-the tablet when the "MENU" button is pressed.
-
-<h3>Groupings</h3>
-
-<p>A "grouping" provides a way to group a set of menus or menu items together so that they can all be set visible or invisible 
-as a group.</p>
-<p>There is currently only one available group: <code>"Developer"</code>. This grouping can be toggled in the 
-"Settings" menu.</p>
-<p>If a menu item doesn't belong to a group, it is always displayed.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Menu</code> API provides access to the menu that is displayed at the top of the window on a user's desktop and in the tablet when the "MENU" button is pressed.<h3>Groupings</h3><p>A "grouping" provides a way to group a set of menus or menu items together so that they can all be set visible or invisible as a group.</p><p>There is currently only one available group: <code>"Developer"</code>. This grouping can be toggled in the "Settings" menu.</p><p>If a menu item doesn't belong to a group, it is always displayed.</p></div>
                 
 
                 
@@ -231,8 +223,7 @@ as a group.</p>
     
         <p class="code-caption">Add a menu and a nested submenu.</p>
     
-    <pre class="prettyprint"><code>Menu.addMenu("Test Menu");
-Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
+    <pre class="prettyprint"><code>Menu.addMenu("Test Menu");Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
 
         <p class="code-caption">Add a menu to the Settings menu that is only visible if Settings > Developer is enabled.</p>
     
@@ -330,12 +321,7 @@ Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
     
         <p class="code-caption">Add a menu item at a particular position in the "Developer" menu.</p>
     
-    <pre class="prettyprint"><code>Menu.addMenuItem({
-    menuName:     "Developer",
-    menuItemName: "Test",
-    afterItem:    "Log",
-    shortcutKey:  "Ctrl+Shift+T"
-});</code></pre>
+    <pre class="prettyprint"><code>Menu.addMenuItem({    menuName:     "Developer",    menuItemName: "Test",    afterItem:    "Log",    shortcutKey:  "Ctrl+Shift+T"});</code></pre>
 
 
 -->
@@ -453,8 +439,7 @@ Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
                     
 
 
-    <p>Adds a separator with an unclickable label below it. The separator will be placed at the bottom of the menu. To add a 
-separator at a specific point in the menu, use <a href="Menu.html#.addMenuItem">Menu.addMenuItem</a> with <a href="Menu.html#.MenuItemProperties">Menu.MenuItemProperties</a> instead.</p>
+    <p>Adds a separator with an unclickable label below it. The separator will be placed at the bottom of the menu. To add a separator at a specific point in the menu, use <a href="Menu.html#.addMenuItem">Menu.addMenuItem</a> with <a href="Menu.html#.MenuItemProperties">Menu.MenuItemProperties</a> instead.</p>
 
 
                 
@@ -558,8 +543,7 @@ boolean
                     
 
 
-    <p>Checks whether a menu or menu item is enabled. If disabled, the item is grayed out and unusable.
-Menus are enabled by default.</p>
+    <p>Checks whether a menu or menu item is enabled. If disabled, the item is grayed out and unusable.Menus are enabled by default.</p>
 
 
                 
@@ -837,9 +821,7 @@ boolean
     
         <p class="code-caption">Check if the "Developer" menu exists.</p>
     
-    <pre class="prettyprint"><code>if (Menu.menuExists("Developer")) {
-    print("Developer menu exists.");
-}</code></pre>
+    <pre class="prettyprint"><code>if (Menu.menuExists("Developer")) {    print("Developer menu exists.");}</code></pre>
 
 
 -->
@@ -943,9 +925,7 @@ boolean
     
         <p class="code-caption">Determine if the Developer &gt; Stats menu exists.</p>
     
-    <pre class="prettyprint"><code>if (Menu.menuItemExists("Developer", "Stats")) {
-    print("Developer > Stats menu item exists.");
-}</code></pre>
+    <pre class="prettyprint"><code>if (Menu.menuItemExists("Developer", "Stats")) {    print("Developer > Stats menu item exists.");}</code></pre>
 
 
 -->
@@ -1039,8 +1019,7 @@ boolean
     
         <p class="code-caption">Remove a menu and nested submenu.</p>
     
-    <pre class="prettyprint"><code>Menu.removeMenu("Test Menu > Test Sub Menu");
-Menu.removeMenu("Test Menu");</code></pre>
+    <pre class="prettyprint"><code>Menu.removeMenu("Test Menu > Test Sub Menu");Menu.removeMenu("Test Menu");</code></pre>
 
 
 -->
@@ -1322,8 +1301,7 @@ Menu.removeMenu("Test Menu");</code></pre>
     
         <p class="code-caption">Turn on Settings > Developer Menu.</p>
     
-    <pre class="prettyprint"><code>Menu.setIsOptionChecked("Developer Menu", true);
-print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));</code></pre>
+    <pre class="prettyprint"><code>Menu.setIsOptionChecked("Developer Menu", true);print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));</code></pre>
 
 
 -->
@@ -1417,8 +1395,7 @@ print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));</cod
     
         <p class="code-caption">Disable the Settings > Developer Menu item.</p>
     
-    <pre class="prettyprint"><code>Menu.setMenuEnabled("Settings > Developer Menu", false);
-print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer Menu"));</code></pre>
+    <pre class="prettyprint"><code>Menu.setMenuEnabled("Settings > Developer Menu", false);print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer Menu"));</code></pre>
 
 
 -->
@@ -1616,11 +1593,7 @@ print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer
     
         <p class="code-caption">Detect menu item events.</p>
     
-    <pre class="prettyprint"><code>function onMenuItemEvent(menuItem) {
-    print("Menu item clicked: " + menuItem);
-}
-
-Menu.menuItemEvent.connect(onMenuItemEvent);
+    <pre class="prettyprint"><code>function onMenuItemEvent(menuItem) {    print("Menu item clicked: " + menuItem);}Menu.menuItemEvent.connect(onMenuItemEvent);
      </code></pre>
 
 
@@ -1656,10 +1629,7 @@ object
                     
 
 
-    <p>A set of properties that can be passed to <a href="Menu.html#.addMenuItem">Menu.addMenuItem</a> to create a new menu item.
-
-If none of the properties, <code>position</code>, <code>beforeItem</code>, <code>afterItem</code>, or <code>grouping</code> 
-are specified, the menu item will be placed at the end of the menu.</p>
+    <p>A set of properties that can be passed to <a href="Menu.html#.addMenuItem">Menu.addMenuItem</a> to create a new menu item.If none of the properties, <code>position</code>, <code>beforeItem</code>, <code>afterItem</code>, or <code>grouping</code> are specified, the menu item will be placed at the end of the menu.</p>
 
 
                                     
@@ -2012,8 +1982,7 @@ number
                     
 
 
-    <p>The position to place the new menu item. An integer number with <code>0</code> being the first
-    menu item.</p>
+    <p>The position to place the new menu item. An integer number with <code>0</code> being the first    menu item.</p>
 
 
                 
@@ -2328,8 +2297,7 @@ string
                     
 
 
-    <p>Name that will be displayed for the menu. Nested menus can be specified using the 
-    <code>"&gt;"</code> character.</p>
+    <p>Name that will be displayed for the menu. Nested menus can be specified using the     <code>"&gt;"</code> character.</p>
 
 
                 
@@ -2389,8 +2357,7 @@ string
                         
         <p class="code-caption">Add a menu and a nested submenu.</p>
     
-    <pre class="prettyprint"><code>Menu.addMenu("Test Menu");
-Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
+    <pre class="prettyprint"><code>Menu.addMenu("Test Menu");Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
 
         <p class="code-caption">Add a menu to the Settings menu that is only visible if Settings > Developer is enabled.</p>
     
@@ -2554,12 +2521,7 @@ Menu.addMenu("Test Menu > Test Sub Menu");</code></pre>
                         
         <p class="code-caption">Add a menu item at a particular position in the "Developer" menu.</p>
     
-    <pre class="prettyprint"><code>Menu.addMenuItem({
-    menuName:     "Developer",
-    menuItemName: "Test",
-    afterItem:    "Log",
-    shortcutKey:  "Ctrl+Shift+T"
-});</code></pre>
+    <pre class="prettyprint"><code>Menu.addMenuItem({    menuName:     "Developer",    menuItemName: "Test",    afterItem:    "Log",    shortcutKey:  "Ctrl+Shift+T"});</code></pre>
 
                     
                   
@@ -2861,8 +2823,7 @@ string
                             
 
 
-    <p>Adds a separator with an unclickable label below it. The separator will be placed at the bottom of the menu. To add a 
-separator at a specific point in the menu, use <a href="Menu.html#.addMenuItem">Menu.addMenuItem</a> with <a href="Menu.html#.MenuItemProperties">Menu.MenuItemProperties</a> instead.</p>
+    <p>Adds a separator with an unclickable label below it. The separator will be placed at the bottom of the menu. To add a separator at a specific point in the menu, use <a href="Menu.html#.addMenuItem">Menu.addMenuItem</a> with <a href="Menu.html#.MenuItemProperties">Menu.MenuItemProperties</a> instead.</p>
 
 
                         
@@ -3064,8 +3025,7 @@ string
                             
 
 
-    <p>Checks whether a menu or menu item is enabled. If disabled, the item is grayed out and unusable.
-Menus are enabled by default.</p>
+    <p>Checks whether a menu or menu item is enabled. If disabled, the item is grayed out and unusable.Menus are enabled by default.</p>
 
 
                         
@@ -3515,9 +3475,7 @@ string
                         
         <p class="code-caption">Check if the "Developer" menu exists.</p>
     
-    <pre class="prettyprint"><code>if (Menu.menuExists("Developer")) {
-    print("Developer menu exists.");
-}</code></pre>
+    <pre class="prettyprint"><code>if (Menu.menuExists("Developer")) {    print("Developer menu exists.");}</code></pre>
 
                     
                   
@@ -3719,9 +3677,7 @@ string
                         
         <p class="code-caption">Determine if the Developer &gt; Stats menu exists.</p>
     
-    <pre class="prettyprint"><code>if (Menu.menuItemExists("Developer", "Stats")) {
-    print("Developer > Stats menu item exists.");
-}</code></pre>
+    <pre class="prettyprint"><code>if (Menu.menuItemExists("Developer", "Stats")) {    print("Developer > Stats menu item exists.");}</code></pre>
 
                     
                   
@@ -3881,8 +3837,7 @@ string
                         
         <p class="code-caption">Remove a menu and nested submenu.</p>
     
-    <pre class="prettyprint"><code>Menu.removeMenu("Test Menu > Test Sub Menu");
-Menu.removeMenu("Test Menu");</code></pre>
+    <pre class="prettyprint"><code>Menu.removeMenu("Test Menu > Test Sub Menu");Menu.removeMenu("Test Menu");</code></pre>
 
                     
                   
@@ -4461,8 +4416,7 @@ boolean
                         
         <p class="code-caption">Turn on Settings > Developer Menu.</p>
     
-    <pre class="prettyprint"><code>Menu.setIsOptionChecked("Developer Menu", true);
-print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));</code></pre>
+    <pre class="prettyprint"><code>Menu.setIsOptionChecked("Developer Menu", true);print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));</code></pre>
 
                     
                   
@@ -4655,8 +4609,7 @@ boolean
                         
         <p class="code-caption">Disable the Settings > Developer Menu item.</p>
     
-    <pre class="prettyprint"><code>Menu.setMenuEnabled("Settings > Developer Menu", false);
-print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer Menu"));</code></pre>
+    <pre class="prettyprint"><code>Menu.setMenuEnabled("Settings > Developer Menu", false);print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer Menu"));</code></pre>
 
                     
                   
@@ -5004,11 +4957,7 @@ string
                         
         <p class="code-caption">Detect menu item events.</p>
     
-    <pre class="prettyprint"><code>function onMenuItemEvent(menuItem) {
-    print("Menu item clicked: " + menuItem);
-}
-
-Menu.menuItemEvent.connect(onMenuItemEvent);
+    <pre class="prettyprint"><code>function onMenuItemEvent(menuItem) {    print("Menu item clicked: " + menuItem);}Menu.menuItemEvent.connect(onMenuItemEvent);
      </code></pre>
 
                     

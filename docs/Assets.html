@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -57,13 +58,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Assets</code> API provides facilities for interacting with the domain's asset server and the client cache. 
-<p>Assets are stored in the asset server in files with SHA256 names. These files are mapped to user-friendly URLs of the 
-format: <code>atp:/path/filename</code>. The assets may optionally be baked, in which case a request for the original 
-unbaked version of the asset is automatically redirected to the baked version. The asset data may optionally be stored as 
-compressed.</p>
-<p>The client cache can be accessed directly, using <code>"atp:"</code> or <code>"cache:"</code> URLs. Interface, avatar, 
-and assignment client scripts can write to the cache. All script types can read from the cache.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Assets</code> API provides facilities for interacting with the domain's asset server and the client cache. <p>Assets are stored in the asset server in files with SHA256 names. These files are mapped to user-friendly URLs of the format: <code>atp:/path/filename</code>. The assets may optionally be baked, in which case a request for the original unbaked version of the asset is automatically redirected to the baked version. The asset data may optionally be stored as compressed.</p><p>The client cache can be accessed directly, using <code>"atp:"</code> or <code>"cache:"</code> URLs. Interface, avatar, and assignment client scripts can write to the cache. All script types can read from the cache.</p></div>
                 
 
                 
@@ -432,8 +427,7 @@ boolean
                     
 
 
-    <p>Deletes content from the asset server.
-</p>
+    <p>Deletes content from the asset server.</p>
     <p class="important">Not implemented: This method is not implemented yet.</p>
 
 
@@ -591,27 +585,7 @@ boolean
     
         <p class="code-caption">Store and retrieve a string from the asset server.</p>
     
-    <pre class="prettyprint"><code>var assetURL;
-
-// Store the string.
-Assets.uploadData("Hello world!", function (url, hash) {
-    assetURL = url;
-    print("url: " + assetURL);  // atp:a0g89...
-    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {
-        if (error) {
-            print("ERROR: Could not set mapping!");
-            return;
-        }
-    });
-});
-
-// Retrieve the string.
-Script.setTimeout(function () {
-    Assets.downloadData(assetURL, function (data, error) {
-        print("Downloaded data: " + data);
-        print("Error: " + JSON.stringify(error));
-    });
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>var assetURL;// Store the string.Assets.uploadData("Hello world!", function (url, hash) {    assetURL = url;    print("url: " + assetURL);  // atp:a0g89...    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {        if (error) {            print("ERROR: Could not set mapping!");            return;        }    });});// Retrieve the string.Script.setTimeout(function () {    Assets.downloadData(assetURL, function (data, error) {        print("Downloaded data: " + data);        print("Error: " + JSON.stringify(error));    });}, 1000);</code></pre>
 
 
 -->
@@ -802,19 +776,7 @@ string
     
         <p class="code-caption">Retrieve a string from the asset server.</p>
     
-    <pre class="prettyprint"><code>Assets.getAsset(
-    {
-        url: "/assetsExamples/helloWorld.txt",
-        responseType: "text"
-    },
-    function (error, result) {
-        if (error) {
-            print("ERROR: Data not downloaded");
-        } else {
-            print("Data: " + result.response);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.getAsset(    {        url: "/assetsExamples/helloWorld.txt",        responseType: "text"    },    function (error, result) {        if (error) {            print("ERROR: Data not downloaded");        } else {            print("Data: " + result.response);        }    });</code></pre>
 
 
 -->
@@ -1005,11 +967,7 @@ string
     
         <p class="code-caption">Report the cache status.</p>
     
-    <pre class="prettyprint"><code>Assets.getCacheStatus(function (error, status) {
-    print("Cache status");
-    print("- Error: " + error);
-    print("- Status: " + JSON.stringify(status));
-});</code></pre>
+    <pre class="prettyprint"><code>Assets.getCacheStatus(function (error, status) {    print("Cache status");    print("- Error: " + error);    print("- Status: " + JSON.stringify(status));});</code></pre>
 
 
 -->
@@ -1033,8 +991,7 @@ string
                     
 
 
-    <p>Gets the hash for a path within the asset server. The hash is for the unbaked or baked version of the
-asset, according to the asset server setting for the particular path.</p>
+    <p>Gets the hash for a path within the asset server. The hash is for the unbaked or baked version of theasset, according to the asset server setting for the particular path.</p>
 
 
                 
@@ -1104,14 +1061,7 @@ asset, according to the asset server setting for the particular path.</p>
     
         <p class="code-caption">Report the hash of an asset server item.</p>
     
-    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();
-if (assetPath) {
-    var mapping = Assets.getMapping(assetPath, function (error, hash) {
-        print("Asset: " + assetPath);
-        print("- hash:  " + hash);
-        print("- error: " + error);
-    });
-}</code></pre>
+    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();if (assetPath) {    var mapping = Assets.getMapping(assetPath, function (error, hash) {        print("Asset: " + assetPath);        print("- hash:  " + hash);        print("- error: " + error);    });}</code></pre>
 
 
 -->
@@ -1312,8 +1262,7 @@ string
     
         <p class="code-caption">Calculate the hash of some text.</p>
     
-    <pre class="prettyprint"><code>var text = "Hello world!";
-print("Hash: " + Assets.hashDataHex(text));
+    <pre class="prettyprint"><code>var text = "Hello world!";print("Hash: " + Assets.hashDataHex(text));
      </code></pre>
 
 
@@ -1445,8 +1394,7 @@ boolean
                     
 
 
-    <p>Checks whether a string is a valid path and filename. Note: A valid path and filename must start with a <code>"/"</code> 
-but must not end with a <code>"/"</code>.</p>
+    <p>Checks whether a string is a valid path and filename. Note: A valid path and filename must start with a <code>"/"</code> but must not end with a <code>"/"</code>.</p>
 
 
                 
@@ -1797,21 +1745,7 @@ boolean
     
         <p class="code-caption">Retrieve a string from the cache.</p>
     
-    <pre class="prettyprint"><code>Assets.loadFromCache(
-    "cache:/cacheExample/helloCache.txt",
-    function (error, result) {
-        if (error) {
-            print("Error: " + error);
-        } else {
-            print("Success:");
-            print("- Response: " + result.response);
-            print("- Content type: " + result.contentType);
-            print("- Number of bytes: " + result.byteLength);
-            print("- Bytes: " + [].slice.call(new Uint8Array(result.data), 0, result.byteLength));
-            print("- URL: " + result.url);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.loadFromCache(    "cache:/cacheExample/helloCache.txt",    function (error, result) {        if (error) {            print("Error: " + error);        } else {            print("Success:");            print("- Response: " + result.response);            print("- Content type: " + result.contentType);            print("- Number of bytes: " + result.byteLength);            print("- Bytes: " + [].slice.call(new Uint8Array(result.data), 0, result.byteLength));            print("- URL: " + result.url);        }    });</code></pre>
 
 
 -->
@@ -1905,19 +1839,7 @@ boolean
     
         <p class="code-caption">Store a string in the asset server.</p>
     
-    <pre class="prettyprint"><code>Assets.putAsset(
-    {
-        data: "Hello world!",
-        path: "/assetsExamples/helloWorld.txt"
-    },
-    function (error, result) {
-        if (error) {
-            print("ERROR: Data not uploaded or mapping not set");
-        } else {
-            print("URL: " + result.url);  // atp:/assetsExamples/helloWorld.txt
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.putAsset(    {        data: "Hello world!",        path: "/assetsExamples/helloWorld.txt"    },    function (error, result) {        if (error) {            print("ERROR: Data not uploaded or mapping not set");        } else {            print("URL: " + result.url);  // atp:/assetsExamples/helloWorld.txt        }    });</code></pre>
 
 
 -->
@@ -2011,20 +1933,7 @@ boolean
     
         <p class="code-caption">Report details of a string store in the cache.</p>
     
-    <pre class="prettyprint"><code>Assets.queryCacheMeta(
-    "cache:/cacheExample/helloCache.txt",
-    function (error, result) {
-        if (error) {
-            print("Error: " + error);
-        } else {
-            print("Success:");
-            print("- URL: " + result.url);
-            print("- isValid: " + result.isValid);
-            print("- saveToDisk: " + result.saveToDisk);
-            print("- expirationDate: " + result.expirationDate);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.queryCacheMeta(    "cache:/cacheExample/helloCache.txt",    function (error, result) {        if (error) {            print("Error: " + error);        } else {            print("Success:");            print("- URL: " + result.url);            print("- isValid: " + result.isValid);            print("- saveToDisk: " + result.saveToDisk);            print("- expirationDate: " + result.expirationDate);        }    });</code></pre>
 
 
 -->
@@ -2118,17 +2027,7 @@ boolean
     
         <p class="code-caption">Get the hash and URL for a path.</p>
     
-    <pre class="prettyprint"><code>Assets.resolveAsset(
-    "/assetsExamples/helloWorld.txt",
-    function (error, result) {
-        if (error) {
-            print("ERROR: " + error);
-        } else {
-            print("Hash: " + result.hash);
-            print("URL: " + result.url);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.resolveAsset(    "/assetsExamples/helloWorld.txt",    function (error, result) {        if (error) {            print("ERROR: " + error);        } else {            print("Hash: " + result.hash);            print("URL: " + result.url);        }    });</code></pre>
 
 
 -->
@@ -2152,8 +2051,7 @@ boolean
                     
 
 
-    <p>Saves asset data to the cache directly, without downloading it from a URL.
-</p>
+    <p>Saves asset data to the cache directly, without downloading it from a URL.</p>
     <p>Note: Can only be used in Interface, avatar, and assignment client scripts.</p>
 
 
@@ -2241,8 +2139,7 @@ boolean
                     
 
 
-    <p>Saves asset data to the cache directly, without downloading it from a URL.
-</p>
+    <p>Saves asset data to the cache directly, without downloading it from a URL.</p>
     <p>Note: Can only be used in Interface, avatar, and assignment client scripts.</p>
 
 
@@ -2313,21 +2210,7 @@ boolean
     
         <p class="code-caption">Save a string in the cache.</p>
     
-    <pre class="prettyprint"><code>Assets.saveToCache(
-    {
-        url: "cache:/cacheExample/helloCache.txt",
-        data: "Hello cache"
-    },
-    function (error, result) {
-        if (error) {
-            print("Error: " + error);
-        } else {
-            print("Success:");
-            print("- Bytes: " + result.byteLength);
-            print("- URL: " + result.url);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.saveToCache(    {        url: "cache:/cacheExample/helloCache.txt",        data: "Hello cache"    },    function (error, result) {        if (error) {            print("Error: " + error);        } else {            print("Success:");            print("- Bytes: " + result.byteLength);            print("- URL: " + result.url);        }    });</code></pre>
 
 
 -->
@@ -2525,10 +2408,8 @@ boolean
                     
 
 
-    <p>Uploads content to the asset server, storing it in a SHA256-named file.
-</p>
-    <p>Note: The asset server destroys any unmapped SHA256-named file at server restart. Use <a href="Assets.html#.setMapping">Assets.setMapping</a> to 
-set a path-to-hash mapping for the new file.</p>
+    <p>Uploads content to the asset server, storing it in a SHA256-named file.</p>
+    <p>Note: The asset server destroys any unmapped SHA256-named file at server restart. Use <a href="Assets.html#.setMapping">Assets.setMapping</a> to set a path-to-hash mapping for the new file.</p>
 
 
                 
@@ -2598,15 +2479,7 @@ set a path-to-hash mapping for the new file.</p>
     
         <p class="code-caption">Store a string in the asset server.</p>
     
-    <pre class="prettyprint"><code>Assets.uploadData("Hello world!", function (url, hash) {
-    print("URL: " + url);  // atp:0a1b...9g
-    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {
-        if (error) {
-            print("ERROR: Could not set mapping!");
-            return;
-        }
-    });
-});</code></pre>
+    <pre class="prettyprint"><code>Assets.uploadData("Hello world!", function (url, hash) {    print("URL: " + url);  // atp:0a1b...9g    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {        if (error) {            print("ERROR: Could not set mapping!");            return;        }    });});</code></pre>
 
 
 -->
@@ -2643,8 +2516,7 @@ object
                     
 
 
-    <p>Information on an asset in the cache. Value returned by <a href="Assets.html#.queryCacheMeta">Assets.queryCacheMeta</a> and included in the data returned by 
-<a href="Assets.html#.loadFromCache">Assets.loadFromCache</a>.</p>
+    <p>Information on an asset in the cache. Value returned by <a href="Assets.html#.queryCacheMeta">Assets.queryCacheMeta</a> and included in the data returned by <a href="Assets.html#.loadFromCache">Assets.loadFromCache</a>.</p>
 
 
                                     
@@ -2784,8 +2656,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the item specified in the URL is in the cache, <code>false</code> if
-    it isn't.</p>
+    <p><code>true</code> if the item specified in the URL is in the cache, <code>false</code> if    it isn't.</p>
 
 
                 
@@ -2902,8 +2773,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the cache item is allowed to be store on disk,
-    <code>false</code> if it isn't.</p>
+    <p><code>true</code> if the cache item is allowed to be store on disk,    <code>false</code> if it isn't.</p>
 
 
                 
@@ -3075,8 +2945,7 @@ object
                     
 
 
-    <p>The scope that the <code>callback</code> function is defined in. This object is bound to 
-    <code>this</code> when the function is called.</p>
+    <p>The scope that the <code>callback</code> function is defined in. This object is bound to     <code>this</code> when the function is called.</p>
 
 
                 
@@ -3131,8 +3000,7 @@ object
                     
 
 
-    <p>The function to call upon completion. May be an inline function or a function identifier. If a function 
-    identifier, it must be a member of <code>scope</code>.</p>
+    <p>The function to call upon completion. May be an inline function or a function identifier. If a function     identifier, it must be a member of <code>scope</code>.</p>
 
 
                 
@@ -3299,9 +3167,7 @@ number
                     
 
 
-    <p>The compression level, range <code>-1</code> &ndash; <code>9</code>. <code>-1</code> means 
-    use the default gzip compression level, <code>0</code> means no compression, and <code>9</code> means maximum 
-    compression.</p>
+    <p>The compression level, range <code>-1</code> &ndash; <code>9</code>. <code>-1</code> means     use the default gzip compression level, <code>0</code> means no compression, and <code>9</code> means maximum     compression.</p>
 
 
                 
@@ -4523,8 +4389,7 @@ boolean
                     
 
 
-    <p><code>true</code> to gunzip decompress the downloaded data. Synonym:
-    <code>compressed</code>.</p>
+    <p><code>true</code> to gunzip decompress the downloaded data. Synonym:    <code>compressed</code>.</p>
 
 
                 
@@ -4790,8 +4655,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the item was retrieved from the cache, <code>false</code> if it was 
-    downloaded.</p>
+    <p><code>true</code> if the item was retrieved from the cache, <code>false</code> if it was     downloaded.</p>
 
 
                 
@@ -5109,8 +4973,7 @@ string
                     
 
 
-    <p>The URL of the asset requested: the path with leading <code>"atp:"</code> if a path was 
-    requested, otherwise the requested URL.</p>
+    <p>The URL of the asset requested: the path with leading <code>"atp:"</code> if a path was     requested, otherwise the requested URL.</p>
 
 
                 
@@ -5149,8 +5012,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the downloaded data is the baked version of the asset, 
-     <code>false</code> if it isn't baked.</p>
+    <p><code>true</code> if the downloaded data is the baked version of the asset,      <code>false</code> if it isn't baked.</p>
 
 
                 
@@ -5293,8 +5155,7 @@ boolean
                     
 
 
-    <p><code>true</code> to gunzip decompress the cached data. Synonym:
-    <code>compressed</code>.</p>
+    <p><code>true</code> to gunzip decompress the cached data. Synonym:    <code>compressed</code>.</p>
 
 
                 
@@ -5378,8 +5239,7 @@ string
                     
 
 
-    <p>The URL of the asset to load from cache. Must start with <code>"atp:"</code> or
-    <code>"cache:"</code>.</p>
+    <p>The URL of the asset to load from cache. Must start with <code>"atp:"</code> or    <code>"cache:"</code>.</p>
 
 
                 
@@ -5899,8 +5759,7 @@ boolean
                     
 
 
-    <p><code>true</code> to gzip compress the content for upload and storage,
-    <code>false</code> to upload and store the data without gzip compression. Synonym: <code>compressed</code>.</p>
+    <p><code>true</code> to gzip compress the content for upload and storage,    <code>false</code> to upload and store the data without gzip compression. Synonym: <code>compressed</code>.</p>
 
 
                 
@@ -5985,11 +5844,8 @@ string
                     
 
 
-    <p>A user-friendly path for the file in the asset server. May have a leading 
-    <code>"atp:"</code>. IF not specified, no path-to-hash mapping is set.
-    </p>
-    <p>Note: The asset server destroys any unmapped SHA256-named file at server restart. Either set the mapping path 
-    with this property or use <a href="Assets.html#.setMapping">Assets.setMapping</a> to set a path-to-hash mapping for the uploaded file.</p>
+    <p>A user-friendly path for the file in the asset server. May have a leading     <code>"atp:"</code>. IF not specified, no path-to-hash mapping is set.    </p>
+    <p>Note: The asset server destroys any unmapped SHA256-named file at server restart. Either set the mapping path     with this property or use <a href="Assets.html#.setMapping">Assets.setMapping</a> to set a path-to-hash mapping for the uploaded file.</p>
 
 
                 
@@ -6462,8 +6318,7 @@ string
                     
 
 
-    <p>The URL of the cached asset to get information on. Must start with <code>"atp:"</code> or 
-    <code>"cache:"</code>.</p>
+    <p>The URL of the cached asset to get information on. Must start with <code>"atp:"</code> or     <code>"cache:"</code>.</p>
 
 
                 
@@ -6675,8 +6530,7 @@ object
                     
 
 
-    <p>Result value returned by <a href="Assets.html#.resolveAsset">Assets.resolveAsset</a>.
-</p>
+    <p>Result value returned by <a href="Assets.html#.resolveAsset">Assets.resolveAsset</a>.</p>
     <p>Note: If resolving a hash, a file of that hash need not be present on the asset server for the hash to resolve.</p>
 
 
@@ -6897,8 +6751,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the resolved data is for the baked version of the asset,
-     <code>false</code> if it isn't.</p>
+    <p><code>true</code> if the resolved data is for the baked version of the asset,     <code>false</code> if it isn't.</p>
 
 
                 
@@ -6977,18 +6830,7 @@ string
                     
 
 
-    <p>Types of response that <a href="Assets.html#.decompressData">Assets.decompressData</a>, <a href="Assets.html#.getAsset">Assets.getAsset</a>, or <a href="Assets.html#.loadFromCache">Assets.loadFromCache</a> may 
-provide.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"arraybuffer"</code></td><td>A binary <code>ArrayBuffer</code> object.</td></tr>
-    <tr><td><code>"json"</code></td><td>A parsed <code>JSON</code> object.</td></tr>
-    <tr><td><code>"text"</code></td><td>UTF-8 decoded <code>string</code> value.</td></tr>
-  </tbody>
-</table>
+    <p>Types of response that <a href="Assets.html#.decompressData">Assets.decompressData</a>, <a href="Assets.html#.getAsset">Assets.getAsset</a>, or <a href="Assets.html#.loadFromCache">Assets.loadFromCache</a> may provide.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"arraybuffer"</code></td><td>A binary <code>ArrayBuffer</code> object.</td></tr>    <tr><td><code>"json"</code></td><td>A parsed <code>JSON</code> object.</td></tr>    <tr><td><code>"text"</code></td><td>UTF-8 decoded <code>string</code> value.</td></tr>  </tbody></table>
 
 
                                     
@@ -7127,8 +6969,7 @@ string
                     
 
 
-    <p>The date and time the cache value expires, in the format:
-    <code>"ddd, dd MMM yyyy HH:mm:ss"</code>. The default value is an invalid date, representing "never expires".</p>
+    <p>The date and time the cache value expires, in the format:    <code>"ddd, dd MMM yyyy HH:mm:ss"</code>. The default value is an invalid date, representing "never expires".</p>
 
 
                 
@@ -7167,8 +7008,7 @@ string
                     
 
 
-    <p>The date and time the cache value was last modified, in the format:
-    <code>"ddd, dd MMM yyyy HH:mm:ss"</code>. The default value is the current date and time.</p>
+    <p>The date and time the cache value was last modified, in the format:    <code>"ddd, dd MMM yyyy HH:mm:ss"</code>. The default value is the current date and time.</p>
 
 
                 
@@ -7390,8 +7230,7 @@ string
                     
 
 
-    <p>The URL to associate with the cache item. Must start with <code>"atp:"</code> or
-    <code>"cache:"</code>. If not specified, the URL is <code>"atp:"</code> followed by the SHA256 hash of the content.</p>
+    <p>The URL to associate with the cache item. Must start with <code>"atp:"</code> or    <code>"cache:"</code>. If not specified, the URL is <code>"atp:"</code> followed by the SHA256 hash of the content.</p>
 
 
                 
@@ -8194,8 +8033,7 @@ function
                             
 
 
-    <p>Called when an <a href="Assets.html#.deleteAsset">Assets.deleteAsset</a> call is complete.
-</p>
+    <p>Called when an <a href="Assets.html#.deleteAsset">Assets.deleteAsset</a> call is complete.</p>
     <p class="important">Not implemented: This type is not implemented yet.</p>
 
 
@@ -8864,8 +8702,7 @@ string
                     
 
 
-    <p><code>null</code> if the cache status was retrieved without error, otherwise a description of 
-    the error.</p>
+    <p><code>null</code> if the cache status was retrieved without error, otherwise a description of     the error.</p>
 
 
                 
@@ -9247,8 +9084,7 @@ string
                     
 
 
-    <p><code>null</code> if the cache item was successfully retrieved, otherwise a description of the 
-    error.</p>
+    <p><code>null</code> if the cache item was successfully retrieved, otherwise a description of the     error.</p>
 
 
                 
@@ -9439,8 +9275,7 @@ string
                     
 
 
-    <p><code>null</code> if the content was uploaded and any path-to-hash mapping set, otherwise a 
-    description of the error.</p>
+    <p><code>null</code> if the content was uploaded and any path-to-hash mapping set, otherwise a     description of the error.</p>
 
 
                 
@@ -10013,8 +9848,7 @@ string
                     
 
 
-    <p><code>null</code> if the asset data was successfully saved to the cache, otherwise a description 
-    of the error.</p>
+    <p><code>null</code> if the asset data was successfully saved to the cache, otherwise a description     of the error.</p>
 
 
                 
@@ -10205,8 +10039,7 @@ string
                     
 
 
-    <p><code>null</code> if baking was successfully enabled or disabled, otherwise a description of the 
-error.</p>
+    <p><code>null</code> if baking was successfully enabled or disabled, otherwise a description of the error.</p>
 
 
                 
@@ -10522,8 +10355,7 @@ string
                     
 
 
-    <p>The raw URL of the file that the content is stored in, with <code>atp:</code> as the scheme and 
-    the SHA256 hash as the filename (with no extension).</p>
+    <p>The raw URL of the file that the content is stored in, with <code>atp:</code> as the scheme and     the SHA256 hash as the filename (with no extension).</p>
 
 
                 
@@ -10612,8 +10444,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the script is an Interface, avatar, or assignment client script, 
-    <code>false</code> if the script is a client entity or server entity script.
+    <code>true</code> if the script is an Interface, avatar, or assignment client script,     <code>false</code> if the script is a client entity or server entity script.
 
 
                         
@@ -10902,8 +10733,7 @@ ArrayBuffer
                     
 
 
-    <p>What to compress and compression options. If a string or 
-    ArrayBuffer, the data to compress.</p>
+    <p>What to compress and compression options. If a string or     ArrayBuffer, the data to compress.</p>
 
 
                 
@@ -10950,10 +10780,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -10997,11 +10824,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -11211,10 +11035,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -11258,11 +11079,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -11320,8 +11138,7 @@ object
                             
 
 
-    <p>Deletes content from the asset server.
-</p>
+    <p>Deletes content from the asset server.</p>
     <p class="important">Not implemented: This method is not implemented yet.</p>
 
 
@@ -11686,27 +11503,7 @@ string
                         
         <p class="code-caption">Store and retrieve a string from the asset server.</p>
     
-    <pre class="prettyprint"><code>var assetURL;
-
-// Store the string.
-Assets.uploadData("Hello world!", function (url, hash) {
-    assetURL = url;
-    print("url: " + assetURL);  // atp:a0g89...
-    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {
-        if (error) {
-            print("ERROR: Could not set mapping!");
-            return;
-        }
-    });
-});
-
-// Retrieve the string.
-Script.setTimeout(function () {
-    Assets.downloadData(assetURL, function (data, error) {
-        print("Downloaded data: " + data);
-        print("Error: " + JSON.stringify(error));
-    });
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>var assetURL;// Store the string.Assets.uploadData("Hello world!", function (url, hash) {    assetURL = url;    print("url: " + assetURL);  // atp:a0g89...    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {        if (error) {            print("ERROR: Could not set mapping!");            return;        }    });});// Retrieve the string.Script.setTimeout(function () {    Assets.downloadData(assetURL, function (data, error) {        print("Downloaded data: " + data);        print("Error: " + JSON.stringify(error));    });}, 1000);</code></pre>
 
                     
                   
@@ -12024,8 +11821,7 @@ string
                     
 
 
-    <p>What to download and download options. If a string, the mapped path or hash 
-    to download, optionally including a leading <code>"atp:"</code>.</p>
+    <p>What to download and download options. If a string, the mapped path or hash     to download, optionally including a leading <code>"atp:"</code>.</p>
 
 
                 
@@ -12072,10 +11868,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -12119,11 +11912,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -12140,19 +11930,7 @@ object
                         
         <p class="code-caption">Retrieve a string from the asset server.</p>
     
-    <pre class="prettyprint"><code>Assets.getAsset(
-    {
-        url: "/assetsExamples/helloWorld.txt",
-        responseType: "text"
-    },
-    function (error, result) {
-        if (error) {
-            print("ERROR: Data not downloaded");
-        } else {
-            print("Data: " + result.response);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.getAsset(    {        url: "/assetsExamples/helloWorld.txt",        responseType: "text"    },    function (error, result) {        if (error) {            print("ERROR: Data not downloaded");        } else {            print("Data: " + result.response);        }    });</code></pre>
 
                     
                   
@@ -12473,10 +12251,7 @@ object
                     
 
 
-    <p>If an object, then the scope that 
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is 
-    called. 
-    </p>
+    <p>If an object, then the scope that     the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is     called.     </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -12520,11 +12295,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function 
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by 
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function     in a string. If the name of a function or a function identifier, it must be a member of the scope specified by     <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -12541,11 +12313,7 @@ object
                         
         <p class="code-caption">Report the cache status.</p>
     
-    <pre class="prettyprint"><code>Assets.getCacheStatus(function (error, status) {
-    print("Cache status");
-    print("- Error: " + error);
-    print("- Status: " + JSON.stringify(status));
-});</code></pre>
+    <pre class="prettyprint"><code>Assets.getCacheStatus(function (error, status) {    print("Cache status");    print("- Error: " + error);    print("- Status: " + JSON.stringify(status));});</code></pre>
 
                     
                   
@@ -12593,8 +12361,7 @@ object
                             
 
 
-    <p>Gets the hash for a path within the asset server. The hash is for the unbaked or baked version of the
-asset, according to the asset server setting for the particular path.</p>
+    <p>Gets the hash for a path within the asset server. The hash is for the unbaked or baked version of theasset, according to the asset server setting for the particular path.</p>
 
 
                         
@@ -12739,14 +12506,7 @@ string
                         
         <p class="code-caption">Report the hash of an asset server item.</p>
     
-    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();
-if (assetPath) {
-    var mapping = Assets.getMapping(assetPath, function (error, hash) {
-        print("Asset: " + assetPath);
-        print("- hash:  " + hash);
-        print("- error: " + error);
-    });
-}</code></pre>
+    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();if (assetPath) {    var mapping = Assets.getMapping(assetPath, function (error, hash) {        print("Asset: " + assetPath);        print("- hash:  " + hash);        print("- error: " + error);    });}</code></pre>
 
                     
                   
@@ -13083,8 +12843,7 @@ ArrayBuffer
                         
         <p class="code-caption">Calculate the hash of some text.</p>
     
-    <pre class="prettyprint"><code>var text = "Hello world!";
-print("Hash: " + Assets.hashDataHex(text));
+    <pre class="prettyprint"><code>var text = "Hello world!";print("Hash: " + Assets.hashDataHex(text));
      </code></pre>
 
                     
@@ -13246,8 +13005,7 @@ print("Hash: " + Assets.hashDataHex(text));
                             
 
 
-    <p>Checks whether a string is a valid path and filename. Note: A valid path and filename must start with a <code>"/"</code> 
-but must not end with a <code>"/"</code>.</p>
+    <p>Checks whether a string is a valid path and filename. Note: A valid path and filename must start with a <code>"/"</code> but must not end with a <code>"/"</code>.</p>
 
 
                         
@@ -13832,9 +13590,7 @@ string
                     
 
 
-    <p>The URL of the asset to load from the cache if a string, otherwise 
-    an object specifying the asset to load from the cache and load options. The URL must start with <code>"atp:"</code> 
-    or <code>"cache:"</code>.</p>
+    <p>The URL of the asset to load from the cache if a string, otherwise     an object specifying the asset to load from the cache and load options. The URL must start with <code>"atp:"</code>     or <code>"cache:"</code>.</p>
 
 
                 
@@ -13881,10 +13637,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -13928,11 +13681,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -13949,21 +13699,7 @@ object
                         
         <p class="code-caption">Retrieve a string from the cache.</p>
     
-    <pre class="prettyprint"><code>Assets.loadFromCache(
-    "cache:/cacheExample/helloCache.txt",
-    function (error, result) {
-        if (error) {
-            print("Error: " + error);
-        } else {
-            print("Success:");
-            print("- Response: " + result.response);
-            print("- Content type: " + result.contentType);
-            print("- Number of bytes: " + result.byteLength);
-            print("- Bytes: " + [].slice.call(new Uint8Array(result.data), 0, result.byteLength));
-            print("- URL: " + result.url);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.loadFromCache(    "cache:/cacheExample/helloCache.txt",    function (error, result) {        if (error) {            print("Error: " + error);        } else {            print("Success:");            print("- Response: " + result.response);            print("- Content type: " + result.contentType);            print("- Number of bytes: " + result.byteLength);            print("- Bytes: " + [].slice.call(new Uint8Array(result.data), 0, result.byteLength));            print("- URL: " + result.url);        }    });</code></pre>
 
                     
                   
@@ -14119,8 +13855,7 @@ string
                     
 
 
-    <p>The content to upload and upload options. If a string, the value of the
-    string is uploaded but a path-to-hash mapping is not set.</p>
+    <p>The content to upload and upload options. If a string, the value of the    string is uploaded but a path-to-hash mapping is not set.</p>
 
 
                 
@@ -14167,10 +13902,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -14214,11 +13946,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -14235,19 +13964,7 @@ object
                         
         <p class="code-caption">Store a string in the asset server.</p>
     
-    <pre class="prettyprint"><code>Assets.putAsset(
-    {
-        data: "Hello world!",
-        path: "/assetsExamples/helloWorld.txt"
-    },
-    function (error, result) {
-        if (error) {
-            print("ERROR: Data not uploaded or mapping not set");
-        } else {
-            print("URL: " + result.url);  // atp:/assetsExamples/helloWorld.txt
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.putAsset(    {        data: "Hello world!",        path: "/assetsExamples/helloWorld.txt"    },    function (error, result) {        if (error) {            print("ERROR: Data not uploaded or mapping not set");        } else {            print("URL: " + result.url);  // atp:/assetsExamples/helloWorld.txt        }    });</code></pre>
 
                     
                   
@@ -14403,9 +14120,7 @@ string
                     
 
 
-    <p>The URL of the cached asset to get information on if a string, 
-    otherwise an object specifying the cached asset to get information on. The URL must start with <code>"atp:"</code> 
-    or <code>"cache:"</code>.</p>
+    <p>The URL of the cached asset to get information on if a string,     otherwise an object specifying the cached asset to get information on. The URL must start with <code>"atp:"</code>     or <code>"cache:"</code>.</p>
 
 
                 
@@ -14452,10 +14167,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -14499,11 +14211,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -14520,20 +14229,7 @@ object
                         
         <p class="code-caption">Report details of a string store in the cache.</p>
     
-    <pre class="prettyprint"><code>Assets.queryCacheMeta(
-    "cache:/cacheExample/helloCache.txt",
-    function (error, result) {
-        if (error) {
-            print("Error: " + error);
-        } else {
-            print("Success:");
-            print("- URL: " + result.url);
-            print("- isValid: " + result.isValid);
-            print("- saveToDisk: " + result.saveToDisk);
-            print("- expirationDate: " + result.expirationDate);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.queryCacheMeta(    "cache:/cacheExample/helloCache.txt",    function (error, result) {        if (error) {            print("Error: " + error);        } else {            print("Success:");            print("- URL: " + result.url);            print("- isValid: " + result.isValid);            print("- saveToDisk: " + result.saveToDisk);            print("- expirationDate: " + result.expirationDate);        }    });</code></pre>
 
                     
                   
@@ -14689,8 +14385,7 @@ string
                     
 
 
-    <p>The hash or path to resolve if a string, otherwise an object specifying 
-    what to resolve. If a string, it may have a leading <code>"atp:"</code>.</p>
+    <p>The hash or path to resolve if a string, otherwise an object specifying     what to resolve. If a string, it may have a leading <code>"atp:"</code>.</p>
 
 
                 
@@ -14737,10 +14432,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -14784,11 +14476,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -14805,17 +14494,7 @@ object
                         
         <p class="code-caption">Get the hash and URL for a path.</p>
     
-    <pre class="prettyprint"><code>Assets.resolveAsset(
-    "/assetsExamples/helloWorld.txt",
-    function (error, result) {
-        if (error) {
-            print("ERROR: " + error);
-        } else {
-            print("Hash: " + result.hash);
-            print("URL: " + result.url);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.resolveAsset(    "/assetsExamples/helloWorld.txt",    function (error, result) {        if (error) {            print("ERROR: " + error);        } else {            print("Hash: " + result.hash);            print("URL: " + result.url);        }    });</code></pre>
 
                     
                   
@@ -14863,8 +14542,7 @@ object
                             
 
 
-    <p>Saves asset data to the cache directly, without downloading it from a URL.
-</p>
+    <p>Saves asset data to the cache directly, without downloading it from a URL.</p>
     <p>Note: Can only be used in Interface, avatar, and assignment client scripts.</p>
 
 
@@ -14970,8 +14648,7 @@ string
                     
 
 
-    <p>The URL to associate with the cache item. Must start with <code>"atp:"</code> or 
-    <code>"cache:"</code>.</p>
+    <p>The URL to associate with the cache item. Must start with <code>"atp:"</code> or     <code>"cache:"</code>.</p>
 
 
                 
@@ -15103,10 +14780,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -15150,11 +14824,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -15212,8 +14883,7 @@ object
                             
 
 
-    <p>Saves asset data to the cache directly, without downloading it from a URL.
-</p>
+    <p>Saves asset data to the cache directly, without downloading it from a URL.</p>
     <p>Note: Can only be used in Interface, avatar, and assignment client scripts.</p>
 
 
@@ -15366,10 +15036,7 @@ object
                     
 
 
-    <p>If an object, then the scope that
-    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is
-    called.
-    </p>
+    <p>If an object, then the scope that    the <code>callback</code> function is defined in. This object is bound to <code>this</code> when the function is    called.    </p>
     <p>Otherwise, the function to call upon completion. This may be an inline function or a function identifier.</p>
 
 
@@ -15413,11 +15080,8 @@ object
                     
 
 
-    <p>Used if <code>scopeOrCallback</code> specifies the scope.
-    </p>
-    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function
-    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by
-    <code>scopeOrCallback</code>.</p>
+    <p>Used if <code>scopeOrCallback</code> specifies the scope.    </p>
+    <p>The function to call upon completion. May be an inline function, a function identifier, or the name of a function    in a string. If the name of a function or a function identifier, it must be a member of the scope specified by    <code>scopeOrCallback</code>.</p>
 
 
                 
@@ -15434,21 +15098,7 @@ object
                         
         <p class="code-caption">Save a string in the cache.</p>
     
-    <pre class="prettyprint"><code>Assets.saveToCache(
-    {
-        url: "cache:/cacheExample/helloCache.txt",
-        data: "Hello cache"
-    },
-    function (error, result) {
-        if (error) {
-            print("Error: " + error);
-        } else {
-            print("Success:");
-            print("- Bytes: " + result.byteLength);
-            print("- URL: " + result.url);
-        }
-    }
-);</code></pre>
+    <pre class="prettyprint"><code>Assets.saveToCache(    {        url: "cache:/cacheExample/helloCache.txt",        data: "Hello cache"    },    function (error, result) {        if (error) {            print("Error: " + error);        } else {            print("Success:");            print("- Bytes: " + result.byteLength);            print("- URL: " + result.url);        }    });</code></pre>
 
                     
                   
@@ -15934,10 +15584,8 @@ string
                             
 
 
-    <p>Uploads content to the asset server, storing it in a SHA256-named file.
-</p>
-    <p>Note: The asset server destroys any unmapped SHA256-named file at server restart. Use <a href="Assets.html#.setMapping">Assets.setMapping</a> to 
-set a path-to-hash mapping for the new file.</p>
+    <p>Uploads content to the asset server, storing it in a SHA256-named file.</p>
+    <p>Note: The asset server destroys any unmapped SHA256-named file at server restart. Use <a href="Assets.html#.setMapping">Assets.setMapping</a> to set a path-to-hash mapping for the new file.</p>
 
 
                         
@@ -16082,15 +15730,7 @@ string
                         
         <p class="code-caption">Store a string in the asset server.</p>
     
-    <pre class="prettyprint"><code>Assets.uploadData("Hello world!", function (url, hash) {
-    print("URL: " + url);  // atp:0a1b...9g
-    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {
-        if (error) {
-            print("ERROR: Could not set mapping!");
-            return;
-        }
-    });
-});</code></pre>
+    <pre class="prettyprint"><code>Assets.uploadData("Hello world!", function (url, hash) {    print("URL: " + url);  // atp:0a1b...9g    Assets.setMapping("/assetsExamples/helloWorld.txt", hash, function (error) {        if (error) {            print("ERROR: Could not set mapping!");            return;        }    });});</code></pre>
 
                     
                   

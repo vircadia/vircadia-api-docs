@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -54,33 +55,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p><p>A <a href="Controller.html">Controller</a> mapping object that can contain a set of routes that map:</p>
-<ul>
-    <li><a href="Controller.html#.Standard">Controller.Standard</a> outputs to <a href="Controller.html#.Actions">Controller.Actions</a> actions or script functions.</li>
-    <li><a href="Controller.html#.Hardware">Controller.Hardware</a> outputs to <a href="Controller.html#.Standard">Controller.Standard</a> outputs, <a href="Controller.html#.Actions">Controller.Actions</a> actions, or 
-    script functions.</li>
-</ul>
-
-<p>Create by one of the following methods:</p>
-<ul>
-    <li>Use <a href="Controller.html#.newMapping">Controller.newMapping</a> to create the mapping object, add routes using <a href="MappingObject.html#from">from</a> or
-    <a href="MappingObject.html#makeAxis">makeAxis</a>, and map the routes to actions or functions using <a href="RouteObject.html">RouteObject</a> 
-    methods.</li>
-    <li>Use <a href="Controller.html#.parseMapping">Controller.parseMapping</a> or <a href="Controller.html#.loadMapping">Controller.loadMapping</a> to load a <a href="Controller.html#.MappingJSON">Controller.MappingJSON</a>.</li>
-</ul>
-
-<p>Enable the mapping using <a href="MappingObject.html#enable">enable</a> or <a href="Controller.html#.enableMapping">Controller.enableMapping</a> for it to take 
-effect.</p>
-
-<p>Mappings and their routes are applied according to the following rules:</p>
-<ul>
-    <li>One read per output: after a controller output has been read, it can't be read again. Exception: You can use 
-    <a href="RouteObject.html#peek">RouteObject#peek</a> to read a value without marking that output as having been read.</li>
-    <li>Existing mapping routes take precedence over new mapping routes: within a mapping, if a route is added for a control 
-    output that already has a route the new route is ignored.</li>
-    <li>New mappings override previous mappings: each output is processed using the route in the most recently enabled 
-    mapping that contains that output.</li>
-</ul></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p><p>A <a href="Controller.html">Controller</a> mapping object that can contain a set of routes that map:</p><ul>    <li><a href="Controller.html#.Standard">Controller.Standard</a> outputs to <a href="Controller.html#.Actions">Controller.Actions</a> actions or script functions.</li>    <li><a href="Controller.html#.Hardware">Controller.Hardware</a> outputs to <a href="Controller.html#.Standard">Controller.Standard</a> outputs, <a href="Controller.html#.Actions">Controller.Actions</a> actions, or     script functions.</li></ul><p>Create by one of the following methods:</p><ul>    <li>Use <a href="Controller.html#.newMapping">Controller.newMapping</a> to create the mapping object, add routes using <a href="MappingObject.html#from">from</a> or    <a href="MappingObject.html#makeAxis">makeAxis</a>, and map the routes to actions or functions using <a href="RouteObject.html">RouteObject</a>     methods.</li>    <li>Use <a href="Controller.html#.parseMapping">Controller.parseMapping</a> or <a href="Controller.html#.loadMapping">Controller.loadMapping</a> to load a <a href="Controller.html#.MappingJSON">Controller.MappingJSON</a>.</li></ul><p>Enable the mapping using <a href="MappingObject.html#enable">enable</a> or <a href="Controller.html#.enableMapping">Controller.enableMapping</a> for it to take effect.</p><p>Mappings and their routes are applied according to the following rules:</p><ul>    <li>One read per output: after a controller output has been read, it can't be read again. Exception: You can use     <a href="RouteObject.html#peek">RouteObject#peek</a> to read a value without marking that output as having been read.</li>    <li>Existing mapping routes take precedence over new mapping routes: within a mapping, if a route is added for a control     output that already has a route the new route is ignored.</li>    <li>New mappings override previous mappings: each output is processed using the route in the most recently enabled     mapping that contains that output.</li></ul></div>
                 
 
 
@@ -192,8 +167,7 @@ effect.</p>
                     
 
 
-    <p>Disables the mapping. When disabled, the routes in the mapping have no effect.
-</p>
+    <p>Disables the mapping. When disabled, the routes in the mapping have no effect.</p>
     <p>Synonymous with <a href="Controller.html#.disableMapping">Controller.disableMapping</a>.</p>
 
 
@@ -291,8 +265,7 @@ effect.</p>
                     
 
 
-    <p>Enables or disables the mapping. When enabled, the routes in the mapping take effect.
-</p>
+    <p>Enables or disables the mapping. When enabled, the routes in the mapping take effect.</p>
     <p>Synonymous with <a href="Controller.html#.enableMapping">Controller.enableMapping</a>.</p>
 
 
@@ -390,8 +363,7 @@ effect.</p>
                     
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or 
-function.</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or function.</p>
 
 
                 
@@ -488,9 +460,7 @@ function.</p>
                     
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or 
-function.
-</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or function.</p>
     <p>This is a QML-specific version of <a href="MappingObject.html#from">from</a>: use this version in QML files.</p>
 
 
@@ -588,8 +558,7 @@ function.
                     
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative 
-direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.</p>
 
 
                 
@@ -659,16 +628,7 @@ direction and the other in the positive direction, ready to be mapped to a stand
     
         <p class="code-caption">Make the Oculus Touch triggers move your avatar up and down.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping
-    .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)
-    .to(Controller.Actions.Up);
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping    .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)    .to(Controller.Actions.Up);Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -702,9 +662,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative 
-direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.
-</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.</p>
     <p>This is a QML-specific version of <a href="MappingObject.html#makeAxis">makeAxis</a>: use this version in QML files.</p>
 
 
@@ -814,8 +772,7 @@ direction and the other in the positive direction, ready to be mapped to a stand
                             
 
 
-    <p>Disables the mapping. When disabled, the routes in the mapping have no effect.
-</p>
+    <p>Disables the mapping. When disabled, the routes in the mapping have no effect.</p>
     <p>Synonymous with <a href="Controller.html#.disableMapping">Controller.disableMapping</a>.</p>
 
 
@@ -920,8 +877,7 @@ direction and the other in the positive direction, ready to be mapped to a stand
                             
 
 
-    <p>Enables or disables the mapping. When enabled, the routes in the mapping take effect.
-</p>
+    <p>Enables or disables the mapping. When enabled, the routes in the mapping take effect.</p>
     <p>Synonymous with <a href="Controller.html#.enableMapping">Controller.enableMapping</a>.</p>
 
 
@@ -1092,8 +1048,7 @@ boolean
                             
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or 
-function.</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or function.</p>
 
 
                         
@@ -1194,8 +1149,7 @@ function
                     
 
 
-    <p>The controller output or function that is the source 
-    of the route data. If a function, it must return a number or a <a href="global.html#Pose">Pose</a> value as the route data.</p>
+    <p>The controller output or function that is the source     of the route data. If a function, it must return a number or a <a href="global.html#Pose">Pose</a> value as the route data.</p>
 
 
                 
@@ -1262,9 +1216,7 @@ function
                             
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or 
-function.
-</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from a controller output, ready to be mapped to a standard control, action, or function.</p>
     <p>This is a QML-specific version of <a href="MappingObject.html#from">from</a>: use this version in QML files.</p>
 
 
@@ -1366,8 +1318,7 @@ function
                     
 
 
-    <p>The controller output or function that is the source
-    of the route data. If a function, it must return a number or a <a href="global.html#Pose">Pose</a> value as the route data.</p>
+    <p>The controller output or function that is the source    of the route data. If a function, it must return a number or a <a href="global.html#Pose">Pose</a> value as the route data.</p>
 
 
                 
@@ -1416,8 +1367,7 @@ function
                         Returns: <span style="font-weight: normal;">
                         
                             
-    A route ready for mapping to an action or function using <a href="RouteObject.html">RouteObject</a> methods. The data
-    value passed to the route is the combined value of <code>source2 - source1</code>.
+    A route ready for mapping to an action or function using <a href="RouteObject.html">RouteObject</a> methods. The data    value passed to the route is the combined value of <code>source2 - source1</code>.
 
 
                         
@@ -1435,8 +1385,7 @@ function
                             
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative 
-direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.</p>
 
 
                         
@@ -1581,16 +1530,7 @@ direction and the other in the positive direction, ready to be mapped to a stand
                         
         <p class="code-caption">Make the Oculus Touch triggers move your avatar up and down.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping
-    .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)
-    .to(Controller.Actions.Up);
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping    .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)    .to(Controller.Actions.Up);Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -1629,8 +1569,7 @@ Script.scriptEnding.connect(function () {
                         Returns: <span style="font-weight: normal;">
                         
                             
-    A route ready for mapping to an action or function using <a href="RouteObject.html">RouteObject</a> methods. The data 
-    value passed to the route is the combined value of <code>source2 - source1</code>.
+    A route ready for mapping to an action or function using <a href="RouteObject.html">RouteObject</a> methods. The data     value passed to the route is the combined value of <code>source2 - source1</code>.
 
 
                         
@@ -1648,9 +1587,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative 
-direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.
-</p>
+    <p>Creates a new <a href="RouteObject.html">RouteObject</a> from two numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> outputs, one applied in the negative direction and the other in the positive direction, ready to be mapped to a standard control, action, or function.</p>
     <p>This is a QML-specific version of <a href="MappingObject.html#makeAxis">makeAxis</a>: use this version in QML files.</p>
 
 

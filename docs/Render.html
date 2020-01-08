@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -180,8 +181,7 @@ boolean
                     
 
 
-    <p><code>true</code> if ambient occlusion is enabled, <code>false</code> if it's 
-    disabled.</p>
+    <p><code>true</code> if ambient occlusion is enabled, <code>false</code> if it's     disabled.</p>
 
 
                 
@@ -541,8 +541,7 @@ object
                     
 
 
-    <p>Gets the configuration for a rendering job by name.
-</p>
+    <p>Gets the configuration for a rendering job by name.</p>
     <p><strong>Warning:</strong> For internal, debugging purposes. Subject to change.</p>
 
 
@@ -710,8 +709,7 @@ object
     
         <p class="code-caption">Report the current render method.</p>
     
-    <pre class="prettyprint"><code>var renderMethod = Render.getRenderMethod();
-print("Current render method: " + Render.getRenderMethodNames()[renderMethod]);</code></pre>
+    <pre class="prettyprint"><code>var renderMethod = Render.getRenderMethod();print("Current render method: " + Render.getRenderMethodNames()[renderMethod]);</code></pre>
 
 
 -->
@@ -815,11 +813,7 @@ Array.&lt;string>
     
         <p class="code-caption">Report the names of the possible render methods.</p>
     
-    <pre class="prettyprint"><code>var renderMethods = Render.getRenderMethodNames();
-print("Render methods:");
-for (var i = 0; i &lt; renderMethods.length; i++) {
-    print("- " + renderMethods[i]);
-}</code></pre>
+    <pre class="prettyprint"><code>var renderMethods = Render.getRenderMethodNames();print("Render methods:");for (var i = 0; i &lt; renderMethods.length; i++) {    print("- " + renderMethods[i]);}</code></pre>
 
 
 -->
@@ -1552,10 +1546,7 @@ number
     
         <p class="code-caption">Report when a render setting changes.</p>
     
-    <pre class="prettyprint"><code>Render.settingsChanged.connect(function () {
-    print("Render setting changed");
-});
-// Toggle Developer > Render > Shadows or similar to trigger.
+    <pre class="prettyprint"><code>Render.settingsChanged.connect(function () {    print("Render setting changed");});// Toggle Developer > Render > Shadows or similar to trigger.
      </code></pre>
 
 
@@ -1591,18 +1582,7 @@ number
                     
 
 
-    <p>The rendering method is specified by the following values:</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Name</th><th>Description</th>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>DEFERRED</td><td>More complex rendering pipeline where lighting is applied to the 
-      scene as a whole after all objects have been rendered.</td></tr>
-    <tr><td><code>1</code></td><td>FORWARD</td><td>Simpler rendering pipeline where each object in the scene, in turn, 
-      is rendered and has lighting applied.</td></tr>
-  </tbody>
-</table>
+    <p>The rendering method is specified by the following values:</p><table>  <thead>    <tr><th>Value</th><th>Name</th><th>Description</th>  </thead>  <tbody>    <tr><td><code>0</code></td><td>DEFERRED</td><td>More complex rendering pipeline where lighting is applied to the       scene as a whole after all objects have been rendered.</td></tr>    <tr><td><code>1</code></td><td>FORWARD</td><td>Simpler rendering pipeline where each object in the scene, in turn,       is rendered and has lighting applied.</td></tr>  </tbody></table>
 
 
                                     
@@ -1900,8 +1880,7 @@ number
                             
 
 
-    <p>Gets the configuration for a rendering job by name.
-</p>
+    <p>Gets the configuration for a rendering job by name.</p>
     <p><strong>Warning:</strong> For internal, debugging purposes. Subject to change.</p>
 
 
@@ -2118,8 +2097,7 @@ string
                         
         <p class="code-caption">Report the current render method.</p>
     
-    <pre class="prettyprint"><code>var renderMethod = Render.getRenderMethod();
-print("Current render method: " + Render.getRenderMethodNames()[renderMethod]);</code></pre>
+    <pre class="prettyprint"><code>var renderMethod = Render.getRenderMethod();print("Current render method: " + Render.getRenderMethodNames()[renderMethod]);</code></pre>
 
                     
                   
@@ -2230,11 +2208,7 @@ print("Current render method: " + Render.getRenderMethodNames()[renderMethod]);<
                         
         <p class="code-caption">Report the names of the possible render methods.</p>
     
-    <pre class="prettyprint"><code>var renderMethods = Render.getRenderMethodNames();
-print("Render methods:");
-for (var i = 0; i &lt; renderMethods.length; i++) {
-    print("- " + renderMethods[i]);
-}</code></pre>
+    <pre class="prettyprint"><code>var renderMethods = Render.getRenderMethodNames();print("Render methods:");for (var i = 0; i &lt; renderMethods.length; i++) {    print("- " + renderMethods[i]);}</code></pre>
 
                     
                   
@@ -3328,10 +3302,7 @@ Signal
                         
         <p class="code-caption">Report when a render setting changes.</p>
     
-    <pre class="prettyprint"><code>Render.settingsChanged.connect(function () {
-    print("Render setting changed");
-});
-// Toggle Developer > Render > Shadows or similar to trigger.
+    <pre class="prettyprint"><code>Render.settingsChanged.connect(function () {    print("Render setting changed");});// Toggle Developer > Render > Shadows or similar to trigger.
      </code></pre>
 
                     

@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -57,9 +58,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Pointers</code> API lets you create, manage, and visually represent objects for repeatedly calculating 
-intersections with avatars, entities, and overlays. Pointers can also be configured to generate events on entities and 
-overlays intersected.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Pointers</code> API lets you create, manage, and visually represent objects for repeatedly calculating intersections with avatars, entities, and overlays. Pointers can also be configured to generate events on entities and overlays intersected.</div>
                 
 
                 
@@ -160,12 +159,8 @@ number
                     
 
 
-    <p>Creates a new ray, parabola, or stylus pointer. The pointer can have a wide range of behaviors depending on the 
-properties specified. For example, a ray pointer may be a static ray pointer, a mouse ray pointer, or joint ray 
-pointer.
-</p>
-    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible and 
-collidable things but this may not always be the case.</p>
+    <p>Creates a new ray, parabola, or stylus pointer. The pointer can have a wide range of behaviors depending on the properties specified. For example, a ray pointer may be a static ray pointer, a mouse ray pointer, or joint ray pointer.</p>
+    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible and collidable things but this may not always be the case.</p>
 
 
                 
@@ -233,71 +228,9 @@ collidable things but this may not always be the case.</p>
 
     <h5>Example</h5>
     
-        <p class="code-caption">Create a ray pointer on the left hand that changes color when it's intersecting and that triggers 
-events.<br />
-Note: Stop controllerScripts.js from running to disable similar behavior from it.</p>
+        <p class="code-caption">Create a ray pointer on the left hand that changes color when it's intersecting and that triggers events.<br />Note: Stop controllerScripts.js from running to disable similar behavior from it.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    type: "line3d",
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    type: "line3d",
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];
-var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];
-
-// Create the pointer.
-var rayPointer = Pointers.createPointer(PickType.Ray, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    hover: true,  // Generate hover events.
-    triggers: [
-        { action: Controller.Standard.LTClick, button: "Primary" },  // Generate mouse events.
-        { action: Controller.Standard.LTClick, button: "Focus" }  // Focus on web entities.
-    ],
-    enabled: true
-});
-Pointers.setRenderState(rayPointer, "example");
-
-// Hover events.
-Entities.hoverEnterEntity.connect(function (entityID, event) {
-    print("hoverEnterEntity() : " + entityID);
-});
-Entities.hoverLeaveEntity.connect(function (entityID, event) {
-    print("hoverLeaveEntity() : " + entityID);
-});
-
-// Mouse events.
-Entities.mousePressOnEntity.connect(function (entityID, event) {
-    print("mousePressOnEntity() : " + entityID + " , " + event.button);
-});
-Entities.mouseReleaseOnEntity.connect(function (entityID, event) {
-    print("mouseReleaseOnEntity() : " + entityID + " , " + event.button);
-});
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(rayPointer);
-});</code></pre>
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    type: "line3d",    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    type: "line3d",    color: { red: 255, green: 0, blue: 0 },};var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];// Create the pointer.var rayPointer = Pointers.createPointer(PickType.Ray, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    hover: true,  // Generate hover events.    triggers: [        { action: Controller.Standard.LTClick, button: "Primary" },  // Generate mouse events.        { action: Controller.Standard.LTClick, button: "Focus" }  // Focus on web entities.    ],    enabled: true});Pointers.setRenderState(rayPointer, "example");// Hover events.Entities.hoverEnterEntity.connect(function (entityID, event) {    print("hoverEnterEntity() : " + entityID);});Entities.hoverLeaveEntity.connect(function (entityID, event) {    print("hoverLeaveEntity() : " + entityID);});// Mouse events.Entities.mousePressOnEntity.connect(function (entityID, event) {    print("mousePressOnEntity() : " + entityID + " , " + event.button);});Entities.mouseReleaseOnEntity.connect(function (entityID, event) {    print("mouseReleaseOnEntity() : " + entityID + " , " + event.button);});// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(rayPointer);});</code></pre>
 
 
 -->
@@ -408,14 +341,8 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Edits a render state of a <a href="Pointers.html#.RayPointerProperties">ray</a> or 
-<a href="Pointers.html#.ParabolaPointerProperties">parabola</a> pointer, to change its visual appearance for the state when the 
-pointer is intersecting something.
-</p>
-    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change the 
-type of any part.</p>
-<p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p>
-<p><strong>Note:</strong> Not able to be used with stylus pointers.</p>
+    <p>Edits a render state of a <a href="Pointers.html#.RayPointerProperties">ray</a> or <a href="Pointers.html#.ParabolaPointerProperties">parabola</a> pointer, to change its visual appearance for the state when the pointer is intersecting something.</p>
+    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change the type of any part.</p><p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p><p><strong>Note:</strong> Not able to be used with stylus pointers.</p>
 
 
                 
@@ -485,61 +412,7 @@ type of any part.</p>
     
         <p class="code-caption">Change the dimensions of a ray pointer's intersecting end overlay.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    type: "line3d",
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    type: "line3d",
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [ { name: "example", path: intersectedPath, end: intersectEnd } ];
-var defaultRenderStates = [ { name: "example", distance: 20.0, path: searchPath, end: searchEnd } ];
-
-// Create the pointer.
-var rayPointer = Pointers.createPointer(PickType.Ray, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    enabled: true
-});
-Pointers.setRenderState(rayPointer, "example");
-
-// Edit the intersecting render state.
-Script.setTimeout(function () {
-    print("Edit render state");
-    Pointers.editRenderState(rayPointer, "example", {
-        end: { dimensions: { x: 0.5, y: 0.5, z: 0.5 } }
-    });
-}, 10000);
-
-Script.setTimeout(function () {
-    print("Edit render state");
-    Pointers.editRenderState(rayPointer, "example", {
-        end: { dimensions: { x: 0.2, y: 0.2, z: 0.2 } }
-    });
-}, 15000);
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(rayPointer);
-});</code></pre>
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    type: "line3d",    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    type: "line3d",    color: { red: 255, green: 0, blue: 0 },};var renderStates = [ { name: "example", path: intersectedPath, end: intersectEnd } ];var defaultRenderStates = [ { name: "example", distance: 20.0, path: searchPath, end: searchEnd } ];// Create the pointer.var rayPointer = Pointers.createPointer(PickType.Ray, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    enabled: true});Pointers.setRenderState(rayPointer, "example");// Edit the intersecting render state.Script.setTimeout(function () {    print("Edit render state");    Pointers.editRenderState(rayPointer, "example", {        end: { dimensions: { x: 0.5, y: 0.5, z: 0.5 } }    });}, 10000);Script.setTimeout(function () {    print("Edit render state");    Pointers.editRenderState(rayPointer, "example", {        end: { dimensions: { x: 0.2, y: 0.2, z: 0.2 } }    });}, 15000);// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(rayPointer);});</code></pre>
 
 
 -->
@@ -736,50 +609,7 @@ object
     
         <p class="code-caption">Report the properties of a parabola pointer.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];
-var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];
-
-// Create the pointer.
-var parabolaPointer = Pointers.createPointer(PickType.Parabola, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    enabled: true
-});
-Pointers.setRenderState(parabolaPointer, "example");
-
-// Report the pointer properties.
-Script.setTimeout(function () {
-    var properties = Pointers.getPointerProperties(parabolaPointer);
-    print("Pointer properties:" + JSON.stringify(properties));
-}, 500);
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(parabolaPointer);
-});
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    color: { red: 255, green: 0, blue: 0 },};var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];// Create the pointer.var parabolaPointer = Pointers.createPointer(PickType.Parabola, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    enabled: true});Pointers.setRenderState(parabolaPointer, "example");// Report the pointer properties.Script.setTimeout(function () {    var properties = Pointers.getPointerProperties(parabolaPointer);    print("Pointer properties:" + JSON.stringify(properties));}, 500);// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(parabolaPointer);});
      </code></pre>
 
 
@@ -917,11 +747,7 @@ Picks.StylusPointerProperties
                     
 
 
-    <p>Gets the parameters that were passed in to <a href="Pointers.html#.createPointer">Pointers.createPointer</a> to create the pointer when the pointer was 
-created through a script. 
-</p>
-    <p><strong>Note:</strong> These properties do not reflect the current state of the pointer. To get the current state 
-of the pointer, see <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.
+    <p>Gets the parameters that were passed in to <a href="Pointers.html#.createPointer">Pointers.createPointer</a> to create the pointer,if the pointer was created through a script.Note that these properties do not reflect the current state of the pointer.See <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.</p>
 
 
                 
@@ -1024,8 +850,7 @@ of the pointer, see <a href="Pointers.html#.getPointerProperties">Pointers.getPo
                     
 
 
-    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long as  
-it is enabled, regardless of the render state.</p>
+    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long as  it is enabled, regardless of the render state.</p>
 
 
                 
@@ -1122,9 +947,7 @@ boolean
                     
 
 
-    <p>Checks if a pointer is associated with the left hand: a ray or parabola pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pointer with 
-<code>hand</code> property set to <code>0</code>.</p>
+    <p>Checks if a pointer is associated with the left hand: a ray or parabola pointer with <code>joint</code> property set to<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pointer with <code>hand</code> property set to <code>0</code>.</p>
 
 
                 
@@ -1221,8 +1044,7 @@ boolean
                     
 
 
-    <p>Checks if a pointer is associated with the system mouse: a ray or parabola pointer with <code>joint</code> property set 
-to <code>"Mouse"</code>.</p>
+    <p>Checks if a pointer is associated with the system mouse: a ray or parabola pointer with <code>joint</code> property set to <code>"Mouse"</code>.</p>
 
 
                 
@@ -1416,9 +1238,7 @@ boolean
                     
 
 
-    <p>Checks if a pointer is associated with the right hand: a ray or parabola pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pointer with 
-<code>hand</code> property set to <code>1</code>.</p>
+    <p>Checks if a pointer is associated with the right hand: a ray or parabola pointer with <code>joint</code> property set to<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pointer with <code>hand</code> property set to <code>1</code>.</p>
 
 
                 
@@ -1592,8 +1412,7 @@ boolean
                     
 
 
-    <p>Sets a list of entity and avatar IDs that a pointer should ignore during intersection.
-</p>
+    <p>Sets a list of entity and avatar IDs that a pointer should ignore during intersection.</p>
     <p><strong>Note:</strong> Not used by stylus pointers.</p>
 
 
@@ -1681,9 +1500,7 @@ boolean
                     
 
 
-    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting with 
-everything.  
-</p>
+    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting with everything.  </p>
     <p><strong>Note:</strong> Stylus pointers only intersect with items in their include list.</p>
 
 
@@ -1771,8 +1588,7 @@ everything.
                     
 
 
-    <p>Sets the length of a pointer.
-</p>
+    <p>Sets the length of a pointer.</p>
     <p><strong>Note:</strong> Not used by stylus pointers.</p>
 
 
@@ -1860,8 +1676,7 @@ everything.
                     
 
 
-    <p>Locks a pointer onto a specific entity or avatar.
-</p>
+    <p>Locks a pointer onto a specific entity or avatar.</p>
     <p><strong>Note:</strong> Not used by stylus pointers.</p>
 
 
@@ -1949,8 +1764,7 @@ everything.
                     
 
 
-    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or 
-coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
+    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
 
 
                 
@@ -2107,63 +1921,7 @@ coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> o
     
         <p class="code-caption">Switch a ray pointer between having a path and not having a path.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    type: "line3d",
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    type: "line3d",
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [
-    { name: "examplePath", path: intersectedPath, end: intersectEnd },
-    { name: "exampleNoPath", end: intersectEnd }
-];
-var defaultRenderStates = [
-    { name: "examplePath", distance: 20.0, path: searchPath, end: searchEnd },
-    { name: "exampleNoPath", distance: 20.0, end: searchEnd }
-];
-
-// Create the pointer.
-var rayPointer = Pointers.createPointer(PickType.Ray, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    enabled: true
-});
-Pointers.setRenderState(rayPointer, "examplePath");
-
-// Change states.
-Script.setTimeout(function () {
-    print("Without path");
-    Pointers.setRenderState(rayPointer, "exampleNoPath");
-}, 10000);
-
-Script.setTimeout(function () {
-    print("With path");
-    Pointers.setRenderState(rayPointer, "examplePath");
-}, 15000);
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(rayPointer);
-});</code></pre>
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    type: "line3d",    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    type: "line3d",    color: { red: 255, green: 0, blue: 0 },};var renderStates = [    { name: "examplePath", path: intersectedPath, end: intersectEnd },    { name: "exampleNoPath", end: intersectEnd }];var defaultRenderStates = [    { name: "examplePath", distance: 20.0, path: searchPath, end: searchEnd },    { name: "exampleNoPath", distance: 20.0, end: searchEnd }];// Create the pointer.var rayPointer = Pointers.createPointer(PickType.Ray, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    enabled: true});Pointers.setRenderState(rayPointer, "examplePath");// Change states.Script.setTimeout(function () {    print("Without path");    Pointers.setRenderState(rayPointer, "exampleNoPath");}, 10000);Script.setTimeout(function () {    print("With path");    Pointers.setRenderState(rayPointer, "examplePath");}, 15000);// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(rayPointer);});</code></pre>
 
 
 -->
@@ -2200,8 +1958,7 @@ object
                     
 
 
-    <p>Properties that define the visual appearance of a parabola pointer when the pointer is not intersecting something. These are
-properties of <a href="Pointers.html#.ParabolaPointerRenderState">Pointers.ParabolaPointerRenderState</a> but with an additional property.</p>
+    <p>Properties that define the visual appearance of a parabola pointer when the pointer is not intersecting something. These areproperties of <a href="Pointers.html#.ParabolaPointerRenderState">Pointers.ParabolaPointerRenderState</a> but with an additional property.</p>
 
 
                                     
@@ -2341,8 +2098,7 @@ object
                     
 
 
-    <p>Properties that define the visual appearance of a ray pointer when the pointer is not intersecting something. These are the 
-properties of <a href="Pointers.html#.RayPointerRenderState">Pointers.RayPointerRenderState</a> but with an additional property.</p>
+    <p>Properties that define the visual appearance of a ray pointer when the pointer is not intersecting something. These are the properties of <a href="Pointers.html#.RayPointerRenderState">Pointers.RayPointerRenderState</a> but with an additional property.</p>
 
 
                                     
@@ -2675,8 +2431,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the parabola is rendered in the secondary 
-    camera, <code>false</code> if it isn't.</p>
+    <p><code>true</code> if the parabola is rendered in the secondary     camera, <code>false</code> if it isn't.</p>
 
 
                 
@@ -2719,8 +2474,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the parabola is rendered in front of objects in the world, 
-    but behind the HUD, <code>false</code> if it is occluded by objects in front of it.</p>
+    <p><code>true</code> if the parabola is rendered in front of objects in the world,     but behind the HUD, <code>false</code> if it is occluded by objects in front of it.</p>
 
 
                 
@@ -2867,8 +2621,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay rendered at the end of the ray rotates about the
-    world y-axis to always face the avatar; <code>false</code> if it maintains its world orientation.</p>
+    <p><code>true</code> if the overlay rendered at the end of the ray rotates about the    world y-axis to always face the avatar; <code>false</code> if it maintains its world orientation.</p>
 
 
                 
@@ -2911,9 +2664,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay rendered at the end of the ray is centered on
-    the ray end; <code>false</code> if the overlay is positioned against the surface if <code>followNormal</code> is
-    <code>true</code>, or above the ray end if <code>followNormal</code> is <code>false</code>.</p>
+    <p><code>true</code> if the overlay rendered at the end of the ray is centered on    the ray end; <code>false</code> if the overlay is positioned against the surface if <code>followNormal</code> is    <code>true</code>, or above the ray end if <code>followNormal</code> is <code>false</code>.</p>
 
 
                 
@@ -2956,8 +2707,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the end of the ray is locked to the center of the object at
-    which the ray is pointing; <code>false</code> if the end of the ray is at the intersected surface.</p>
+    <p><code>true</code> if the end of the ray is locked to the center of the object at    which the ray is pointing; <code>false</code> if the end of the ray is at the intersected surface.</p>
 
 
                 
@@ -3000,8 +2750,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the dimensions of the overlay at the end of the ray
-    scale linearly with distance; <code>false</code> if they aren't.</p>
+    <p><code>true</code> if the dimensions of the overlay at the end of the ray    scale linearly with distance; <code>false</code> if they aren't.</p>
 
 
                 
@@ -3044,8 +2793,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the width of the ray's path and the size of the
-    start and end overlays scale linearly with the pointer parent's scale; <code>false</code> if they don't scale.</p>
+    <p><code>true</code> if the width of the ray's path and the size of the    start and end overlays scale linearly with the pointer parent's scale; <code>false</code> if they don't scale.</p>
 
 
                 
@@ -3088,8 +2836,7 @@ boolean
                     
 
 
-    <p>A synonym for <code>scalewithParent</code>.
-    </p>
+    <p>A synonym for <code>scalewithParent</code>.    </p>
     <p class="important">Deprecated: This property is deprecated and will be removed.</p>
 
 
@@ -3133,8 +2880,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay rendered at the end of the ray rotates to
-    follow the normal of the surface if one is intersected; <code>false</code> if it doesn't.</p>
+    <p><code>true</code> if the overlay rendered at the end of the ray rotates to    follow the normal of the surface if one is intersected; <code>false</code> if it doesn't.</p>
 
 
                 
@@ -3177,9 +2923,7 @@ number
                     
 
 
-    <p>How quickly the overlay rendered at the end of the ray rotates to follow
-    the normal of an intersected surface. If <code>0</code> or <code>1</code>, the overlay rotation follows instantaneously;
-   for other values, the larger the value the more quickly the rotation follows.</p>
+    <p>How quickly the overlay rendered at the end of the ray rotates to follow    the normal of an intersected surface. If <code>0</code> or <code>1</code>, the overlay rotation follows instantaneously;   for other values, the larger the value the more quickly the rotation follows.</p>
 
 
                 
@@ -3225,12 +2969,7 @@ Object.&lt;string, <a href="Pointers.html#.ParabolaPointerRenderState">Pointers.
                     
 
 
-    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual
-    appearance of the pointer when it is intersecting something.</p>
-    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of
-    <a href="Pointers.html#.ParabolaPointerRenderState">ParabolaPointerRenderState</a> values.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to
-    <a href="Pointers.html#.ParabolaPointerRenderState">ParabolaPointerRenderState</a> values.</p>
+    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual    appearance of the pointer when it is intersecting something.</p>    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of    <a href="Pointers.html#.ParabolaPointerRenderState">ParabolaPointerRenderState</a> values.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to    <a href="Pointers.html#.ParabolaPointerRenderState">ParabolaPointerRenderState</a> values.</p>
 
 
                 
@@ -3274,12 +3013,7 @@ Object.&lt;string, <a href="Pointers.html#.DefaultParabolaPointerRenderState">Po
                     
 
 
-    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual
-    appearance of the pointer when it is not intersecting something.</p>
-    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of
-    <a href="Pointers.html#.DefaultParabolaPointerRenderState">DefaultParabolaPointerRenderState</a> values.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to
-    <a href="Pointers.html#.DefaultParabolaPointerRenderState">DefaultParabolaPointerRenderState</a> values.</p>
+    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual    appearance of the pointer when it is not intersecting something.</p>    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of    <a href="Pointers.html#.DefaultParabolaPointerRenderState">DefaultParabolaPointerRenderState</a> values.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to    <a href="Pointers.html#.DefaultParabolaPointerRenderState">DefaultParabolaPointerRenderState</a> values.</p>
 
 
                 
@@ -3320,8 +3054,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the pointer generates <a href="Entities.html">Entities</a> hover events,
-    <code>false</code> if it doesn't.</p>
+    <p><code>true</code> if the pointer generates <a href="Entities.html">Entities</a> hover events,    <code>false</code> if it doesn't.</p>
 
 
                 
@@ -3364,8 +3097,7 @@ Array.&lt;<a href="Pointers.html#.Trigger">Pointers.Trigger</a>>
                     
 
 
-    <p>A list of ways that a <a href="Controller.html">Controller</a> action or function should trigger
-    events on the entity or overlay currently intersected.</p>
+    <p>A list of ways that a <a href="Controller.html">Controller</a> action or function should trigger    events on the entity or overlay currently intersected.</p>
 
 
                 
@@ -3406,8 +3138,7 @@ Array.&lt;<a href="Pointers.html#.Trigger">Pointers.Trigger</a>>
                     
 
 
-    <p>The type of pointer returned from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a> or 
-    <a href="Pointers.html#.getPointerScriptParameters">Pointers.getPointerScriptParameters</a>. A parabola pointer's type is PickType.Parabola.</p>
+    <p>The type of pointer when getting these properties from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a> or <a href="Pointers.html#.getPointerScriptParameters">Pointers.getPointerScriptParameters</a>. A parabola pointer's type is PickType.Parabola.</p>
 
 
                 
@@ -3448,8 +3179,7 @@ number
                     
 
 
-    <p>The ID of the pick created alongside this pointer, returned from 
-    <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.</p>
+    <p>Returned from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>. The ID of the pick created alongside this pointer.</p>
 
 
                 
@@ -3641,10 +3371,7 @@ string
                     
 
 
-    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of
-    an overlay to render at the start of the parabola pointer. The <code>type</code> property must be specified.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the start of the 
-    parabola; <code>null</code> if there is no overlay.
+    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of    an overlay to render at the start of the parabola pointer. The <code>type</code> property must be specified.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the start of the     parabola; <code>null</code> if there is no overlay.
 
 
                 
@@ -3686,9 +3413,7 @@ string
                     
 
 
-    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of
-    the rendered path of the parabola pointer.</p>
-    <p>This property is not provided when getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.
+    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of    the rendered path of the parabola pointer.</p>    <p>This property is not provided when getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.
 
 
                 
@@ -3730,10 +3455,7 @@ string
                     
 
 
-    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of
-    an overlay to render at the end of the ray pointer. The <code>type</code> property must be specified.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the end of the parabola;
-    <code>null</code> if there is no overlay.
+    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of    an overlay to render at the end of the ray pointer. The <code>type</code> property must be specified.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the end of the parabola;    <code>null</code> if there is no overlay.
 
 
                 
@@ -3876,8 +3598,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay rendered at the end of the ray rotates about the 
-    world y-axis to always face the avatar; <code>false</code> if it maintains its world orientation.</p>
+    <p><code>true</code> if the overlay rendered at the end of the ray rotates about the     world y-axis to always face the avatar; <code>false</code> if it maintains its world orientation.</p>
 
 
                 
@@ -3920,9 +3641,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay rendered at the end of the ray is centered on 
-    the ray end; <code>false</code> if the overlay is positioned against the surface if <code>followNormal</code> is 
-    <code>true</code>, or above the ray end if <code>followNormal</code> is <code>false</code>.</p>
+    <p><code>true</code> if the overlay rendered at the end of the ray is centered on     the ray end; <code>false</code> if the overlay is positioned against the surface if <code>followNormal</code> is     <code>true</code>, or above the ray end if <code>followNormal</code> is <code>false</code>.</p>
 
 
                 
@@ -3965,8 +3684,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the end of the ray is locked to the center of the object at 
-    which the ray is pointing; <code>false</code> if the end of the ray is at the intersected surface.</p>
+    <p><code>true</code> if the end of the ray is locked to the center of the object at     which the ray is pointing; <code>false</code> if the end of the ray is at the intersected surface.</p>
 
 
                 
@@ -4009,8 +3727,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the dimensions of the overlay at the end of the ray 
-    scale linearly with distance; <code>false</code> if they aren't.</p>
+    <p><code>true</code> if the dimensions of the overlay at the end of the ray     scale linearly with distance; <code>false</code> if they aren't.</p>
 
 
                 
@@ -4053,8 +3770,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the width of the ray's path and the size of the 
-    start and end overlays scale linearly with the pointer parent's scale; <code>false</code> if they don't scale.</p>
+    <p><code>true</code> if the width of the ray's path and the size of the     start and end overlays scale linearly with the pointer parent's scale; <code>false</code> if they don't scale.</p>
 
 
                 
@@ -4097,8 +3813,7 @@ boolean
                     
 
 
-    <p>A synonym for <code>scalewithParent</code>.
-    </p>
+    <p>A synonym for <code>scalewithParent</code>.    </p>
     <p class="important">Deprecated: This property is deprecated and will be removed.</p>
 
 
@@ -4142,8 +3857,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay rendered at the end of the ray rotates to 
-    follow the normal of the surface if one is intersected; <code>false</code> if it doesn't.</p>
+    <p><code>true</code> if the overlay rendered at the end of the ray rotates to     follow the normal of the surface if one is intersected; <code>false</code> if it doesn't.</p>
 
 
                 
@@ -4186,9 +3900,7 @@ number
                     
 
 
-    <p>How quickly the overlay rendered at the end of the ray rotates to follow 
-    the normal of an intersected surface. If <code>0</code> or <code>1</code>, the overlay rotation follows instantaneously; 
-   for other values, the larger the value the more quickly the rotation follows.</p>
+    <p>How quickly the overlay rendered at the end of the ray rotates to follow     the normal of an intersected surface. If <code>0</code> or <code>1</code>, the overlay rotation follows instantaneously;    for other values, the larger the value the more quickly the rotation follows.</p>
 
 
                 
@@ -4234,12 +3946,7 @@ Object.&lt;string, <a href="Pointers.html#.RayPointerRenderState">Pointers.RayPo
                     
 
 
-    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual 
-    appearance of the pointer when it is intersecting something.</p>
-    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of 
-    <a href="Pointers.html#.RayPointerRenderState">RayPointerRenderState</a> values.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to 
-    <a href="Pointers.html#.RayPointerRenderState">RayPointerRenderState</a> values.</p>
+    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual     appearance of the pointer when it is intersecting something.</p>    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of     <a href="Pointers.html#.RayPointerRenderState">RayPointerRenderState</a> values.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to     <a href="Pointers.html#.RayPointerRenderState">RayPointerRenderState</a> values.</p>
 
 
                 
@@ -4283,12 +3990,7 @@ Object.&lt;string, <a href="Pointers.html#.DefaultRayPointerRenderState">Pointer
                     
 
 
-    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual
-    appearance of the pointer when it is not intersecting something.</p>
-    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of 
-    <a href="Pointers.html#.DefaultRayPointerRenderState">DefaultRayPointerRenderState</a> values.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to 
-    <a href="Pointers.html#.DefaultRayPointerRenderState">DefaultRayPointerRenderState</a> values.</p>
+    <p>A set of visual states that can be switched among using <a href="Pointers.html#.setRenderState">Pointers.setRenderState</a>. These define the visual    appearance of the pointer when it is not intersecting something.</p>    <p>When setting using <a href="Pointers.html#.createPointer">Pointers.createPointer</a>, an array of     <a href="Pointers.html#.DefaultRayPointerRenderState">DefaultRayPointerRenderState</a> values.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, an object mapping render state names to     <a href="Pointers.html#.DefaultRayPointerRenderState">DefaultRayPointerRenderState</a> values.</p>
 
 
                 
@@ -4329,8 +4031,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the pointer generates <a href="Entities.html">Entities</a> hover events, 
-    <code>false</code> if it doesn't.</p>
+    <p><code>true</code> if the pointer generates <a href="Entities.html">Entities</a> hover events,     <code>false</code> if it doesn't.</p>
 
 
                 
@@ -4373,8 +4074,7 @@ Array.&lt;<a href="Pointers.html#.Trigger">Pointers.Trigger</a>>
                     
 
 
-    <p>A list of ways that a <a href="Controller.html">Controller</a> action or function should trigger 
-    events on the entity or overlay currently intersected.</p>
+    <p>A list of ways that a <a href="Controller.html">Controller</a> action or function should trigger     events on the entity or overlay currently intersected.</p>
 
 
                 
@@ -4415,8 +4115,7 @@ Array.&lt;<a href="Pointers.html#.Trigger">Pointers.Trigger</a>>
                     
 
 
-    <p>The type of pointer returned from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a> or 
-    <a href="Pointers.html#.getPointerScriptParameters">Pointers.getPointerScriptParameters</a>. A laser pointer's type is PickType.Ray.</p>
+    <p>The type of pointer when getting these properties from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a> or <a href="Pointers.html#.getPointerScriptParameters">Pointers.getPointerScriptParameters</a>. A laser pointer's type is PickType.Ray.</p>
 
 
                 
@@ -4457,8 +4156,7 @@ number
                     
 
 
-    <p>The ID of the pick created alongside this pointer, returned from 
-    <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.</p>
+    <p>Returned from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>. The ID of the pick created alongside this pointer.</p>
 
 
                 
@@ -4650,10 +4348,7 @@ string
                     
 
 
-    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of 
-    an overlay to render at the start of the ray pointer. The <code>type</code> property must be specified.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the start of the ray;
-    <code>null</code> if there is no overlay.
+    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of     an overlay to render at the start of the ray pointer. The <code>type</code> property must be specified.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the start of the ray;    <code>null</code> if there is no overlay.
 
 
                 
@@ -4695,11 +4390,7 @@ string
                     
 
 
-    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of
-    the overlay rendered for the path of the ray pointer. The <code>type</code> property must be specified and be 
-    <code>"line3d"</code>.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered for the path of the ray;
-    <code>null</code> if there is no overlay.
+    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of    the overlay rendered for the path of the ray pointer. The <code>type</code> property must be specified and be     <code>"line3d"</code>.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered for the path of the ray;    <code>null</code> if there is no overlay.
 
 
                 
@@ -4741,10 +4432,7 @@ string
                     
 
 
-    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of
-    an overlay to render at the end of the ray pointer. The <code>type</code> property must be specified.</p>
-    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the end of the ray; 
-    <code>null</code> if there is no overlay.
+    <p>When creating or editing using <a href="Pointers.html#.createPointer">Pointers.createPointer</a> or <a href="Pointers.html#.editRenderState">Pointers.editRenderState</a>, the properties of    an overlay to render at the end of the ray pointer. The <code>type</code> property must be specified.</p>    <p>When getting using <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>, the ID of the overlay rendered at the end of the ray;     <code>null</code> if there is no overlay.
 
 
                 
@@ -4965,8 +4653,7 @@ string
                     
 
 
-    <p>The position offset of the model from the stylus tip, to override the default position 
-    offset.</p>
+    <p>The position offset of the model from the stylus tip, to override the default position     offset.</p>
 
 
                 
@@ -5189,8 +4876,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the pointer generates <a href="Entities.html">Entities</a> hover events, 
-    <code>false</code> if it doesn't.</p>
+    <p><code>true</code> if the pointer generates <a href="Entities.html">Entities</a> hover events,     <code>false</code> if it doesn't.</p>
 
 
                 
@@ -5231,8 +4917,7 @@ boolean
                     
 
 
-    <p>The type of the stylus pointer returned from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a> 
-    or <a href="Pointers.html#.getPointerScriptParameters">Pointers.getPointerScriptParameters</a>. A stylus pointer's type is PickType.Stylus.</p>
+    <p>The type of pointer when getting these properties from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a> or <a href="Pointers.html#.getPointerScriptParameters">Pointers.getPointerScriptParameters</a>. A stylus pointer's type is PickType.Stylus.</p>
 
 
                 
@@ -5273,8 +4958,7 @@ number
                     
 
 
-    <p>The ID of the pick created alongside this pointer, returned from 
-    <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.</p>
+    <p>Returned from <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>. The ID of the pick created alongside this pointer.</p>
 
 
                 
@@ -5362,9 +5046,7 @@ object
                     
 
 
-    <p>Specifies that a <a href="Controller.html">Controller</a> action or function should trigger events on the entity or overlay currently 
-intersected by a <a href="Pointers.html#.RayPointerProperties">Ray</a> or <a href="Pointers.html#.ParabolaPointerProperties">Parabola</a> 
-pointer.</p>
+    <p>Specifies that a <a href="Controller.html">Controller</a> action or function should trigger events on the entity or overlay currently intersected by a <a href="Pointers.html#.RayPointerProperties">Ray</a> or <a href="Pointers.html#.ParabolaPointerProperties">Parabola</a> pointer.</p>
 
 
                                     
@@ -5424,9 +5106,7 @@ function
                     
 
 
-    <p>The controller output or function that triggers the 
-    events on the entity or overlay. If a function, it must return a number <code>&gt;= 1.0</code> to start the action 
-    and <code>&lt; 1.0</code> to terminate the action.</p>
+    <p>The controller output or function that triggers the     events on the entity or overlay. If a function, it must return a number <code>&gt;= 1.0</code> to start the action     and <code>&lt; 1.0</code> to terminate the action.</p>
 
 
                 
@@ -5457,14 +5137,8 @@ string
                     
 
 
-    <p>Which button to trigger:
-   </p>
-    <ul>
-     <li><code>"Primary"</code>, <code>"Secondary"</code>, and <code>"Tertiary"</code> cause <a href="Entities.html">Entities</a> and 
-     <a href="Overlays.html">Overlays</a> mouse pointer events. Other button names also cause mouse events but the <code>button</code> 
-     property in the event will be <code>"None"</code>.</li>
-     <li><code>"Focus"</code> will try to give focus to the entity or overlay which the pointer is intersecting.</li>
-   </ul>
+    <p>Which button to trigger:   </p>
+    <ul>     <li><code>"Primary"</code>, <code>"Secondary"</code>, and <code>"Tertiary"</code> cause <a href="Entities.html">Entities</a> and      <a href="Overlays.html">Overlays</a> mouse pointer events. Other button names also cause mouse events but the <code>button</code>      property in the event will be <code>"None"</code>.</li>     <li><code>"Focus"</code> will try to give focus to the entity or overlay which the pointer is intersecting.</li>   </ul>
 
 
                 
@@ -5558,12 +5232,8 @@ string
                             
 
 
-    <p>Creates a new ray, parabola, or stylus pointer. The pointer can have a wide range of behaviors depending on the 
-properties specified. For example, a ray pointer may be a static ray pointer, a mouse ray pointer, or joint ray 
-pointer.
-</p>
-    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible and 
-collidable things but this may not always be the case.</p>
+    <p>Creates a new ray, parabola, or stylus pointer. The pointer can have a wide range of behaviors depending on the properties specified. For example, a ray pointer may be a static ray pointer, a mouse ray pointer, or joint ray pointer.</p>
+    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible and collidable things but this may not always be the case.</p>
 
 
                         
@@ -5697,8 +5367,7 @@ collidable things but this may not always be the case.</p>
                     
 
 
-    <p>The properties of the pointer, per the pointer <code>type</code>, including the properties of the underlying pick 
-    that the pointer uses to do its picking.</p>
+    <p>The properties of the pointer, per the pointer <code>type</code>, including the properties of the underlying pick     that the pointer uses to do its picking.</p>
 
 
                 
@@ -5713,71 +5382,9 @@ collidable things but this may not always be the case.</p>
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Create a ray pointer on the left hand that changes color when it's intersecting and that triggers 
-events.<br />
-Note: Stop controllerScripts.js from running to disable similar behavior from it.</p>
+        <p class="code-caption">Create a ray pointer on the left hand that changes color when it's intersecting and that triggers events.<br />Note: Stop controllerScripts.js from running to disable similar behavior from it.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    type: "line3d",
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    type: "line3d",
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];
-var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];
-
-// Create the pointer.
-var rayPointer = Pointers.createPointer(PickType.Ray, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    hover: true,  // Generate hover events.
-    triggers: [
-        { action: Controller.Standard.LTClick, button: "Primary" },  // Generate mouse events.
-        { action: Controller.Standard.LTClick, button: "Focus" }  // Focus on web entities.
-    ],
-    enabled: true
-});
-Pointers.setRenderState(rayPointer, "example");
-
-// Hover events.
-Entities.hoverEnterEntity.connect(function (entityID, event) {
-    print("hoverEnterEntity() : " + entityID);
-});
-Entities.hoverLeaveEntity.connect(function (entityID, event) {
-    print("hoverLeaveEntity() : " + entityID);
-});
-
-// Mouse events.
-Entities.mousePressOnEntity.connect(function (entityID, event) {
-    print("mousePressOnEntity() : " + entityID + " , " + event.button);
-});
-Entities.mouseReleaseOnEntity.connect(function (entityID, event) {
-    print("mouseReleaseOnEntity() : " + entityID + " , " + event.button);
-});
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(rayPointer);
-});</code></pre>
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    type: "line3d",    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    type: "line3d",    color: { red: 255, green: 0, blue: 0 },};var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];// Create the pointer.var rayPointer = Pointers.createPointer(PickType.Ray, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    hover: true,  // Generate hover events.    triggers: [        { action: Controller.Standard.LTClick, button: "Primary" },  // Generate mouse events.        { action: Controller.Standard.LTClick, button: "Focus" }  // Focus on web entities.    ],    enabled: true});Pointers.setRenderState(rayPointer, "example");// Hover events.Entities.hoverEnterEntity.connect(function (entityID, event) {    print("hoverEnterEntity() : " + entityID);});Entities.hoverLeaveEntity.connect(function (entityID, event) {    print("hoverLeaveEntity() : " + entityID);});// Mouse events.Entities.mousePressOnEntity.connect(function (entityID, event) {    print("mousePressOnEntity() : " + entityID + " , " + event.button);});Entities.mouseReleaseOnEntity.connect(function (entityID, event) {    print("mouseReleaseOnEntity() : " + entityID + " , " + event.button);});// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(rayPointer);});</code></pre>
 
                     
                   
@@ -5978,14 +5585,8 @@ number
                             
 
 
-    <p>Edits a render state of a <a href="Pointers.html#.RayPointerProperties">ray</a> or 
-<a href="Pointers.html#.ParabolaPointerProperties">parabola</a> pointer, to change its visual appearance for the state when the 
-pointer is intersecting something.
-</p>
-    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change the 
-type of any part.</p>
-<p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p>
-<p><strong>Note:</strong> Not able to be used with stylus pointers.</p>
+    <p>Edits a render state of a <a href="Pointers.html#.RayPointerProperties">ray</a> or <a href="Pointers.html#.ParabolaPointerProperties">parabola</a> pointer, to change its visual appearance for the state when the pointer is intersecting something.</p>
+    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change the type of any part.</p><p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p><p><strong>Note:</strong> Not able to be used with stylus pointers.</p>
 
 
                         
@@ -6149,8 +5750,7 @@ string
                     
 
 
-    <p>The new properties for the 
-    render state. Only the overlay properties to change need be specified.</p>
+    <p>The new properties for the     render state. Only the overlay properties to change need be specified.</p>
 
 
                 
@@ -6167,61 +5767,7 @@ string
                         
         <p class="code-caption">Change the dimensions of a ray pointer's intersecting end overlay.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    type: "line3d",
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    type: "line3d",
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [ { name: "example", path: intersectedPath, end: intersectEnd } ];
-var defaultRenderStates = [ { name: "example", distance: 20.0, path: searchPath, end: searchEnd } ];
-
-// Create the pointer.
-var rayPointer = Pointers.createPointer(PickType.Ray, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    enabled: true
-});
-Pointers.setRenderState(rayPointer, "example");
-
-// Edit the intersecting render state.
-Script.setTimeout(function () {
-    print("Edit render state");
-    Pointers.editRenderState(rayPointer, "example", {
-        end: { dimensions: { x: 0.5, y: 0.5, z: 0.5 } }
-    });
-}, 10000);
-
-Script.setTimeout(function () {
-    print("Edit render state");
-    Pointers.editRenderState(rayPointer, "example", {
-        end: { dimensions: { x: 0.2, y: 0.2, z: 0.2 } }
-    });
-}, 15000);
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(rayPointer);
-});</code></pre>
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    type: "line3d",    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    type: "line3d",    color: { red: 255, green: 0, blue: 0 },};var renderStates = [ { name: "example", path: intersectedPath, end: intersectEnd } ];var defaultRenderStates = [ { name: "example", distance: 20.0, path: searchPath, end: searchEnd } ];// Create the pointer.var rayPointer = Pointers.createPointer(PickType.Ray, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    enabled: true});Pointers.setRenderState(rayPointer, "example");// Edit the intersecting render state.Script.setTimeout(function () {    print("Edit render state");    Pointers.editRenderState(rayPointer, "example", {        end: { dimensions: { x: 0.5, y: 0.5, z: 0.5 } }    });}, 10000);Script.setTimeout(function () {    print("Edit render state");    Pointers.editRenderState(rayPointer, "example", {        end: { dimensions: { x: 0.2, y: 0.2, z: 0.2 } }    });}, 15000);// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(rayPointer);});</code></pre>
 
                     
                   
@@ -6413,8 +5959,7 @@ number
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The <code>renderStates</code> and 
-    <code>defaultRenderStates</code> for ray and parabola pointers, <code>{}</code> for stylus pointers.
+    The <code>renderStates</code> and     <code>defaultRenderStates</code> for ray and parabola pointers, <code>{}</code> for stylus pointers.
 
 
                         
@@ -6544,50 +6089,7 @@ number
                         
         <p class="code-caption">Report the properties of a parabola pointer.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];
-var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];
-
-// Create the pointer.
-var parabolaPointer = Pointers.createPointer(PickType.Parabola, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    enabled: true
-});
-Pointers.setRenderState(parabolaPointer, "example");
-
-// Report the pointer properties.
-Script.setTimeout(function () {
-    var properties = Pointers.getPointerProperties(parabolaPointer);
-    print("Pointer properties:" + JSON.stringify(properties));
-}, 500);
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(parabolaPointer);
-});
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    color: { red: 255, green: 0, blue: 0 },};var renderStates = [{ name: "example", path: intersectedPath, end: intersectEnd }];var defaultRenderStates = [{ name: "example", distance: 20.0, path: searchPath, end: searchEnd }];// Create the pointer.var parabolaPointer = Pointers.createPointer(PickType.Parabola, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    enabled: true});Pointers.setRenderState(parabolaPointer, "example");// Report the pointer properties.Script.setTimeout(function () {    var properties = Pointers.getPointerProperties(parabolaPointer);    print("Pointer properties:" + JSON.stringify(properties));}, 500);// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(parabolaPointer);});
      </code></pre>
 
                     
@@ -6749,11 +6251,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Gets the parameters that were passed in to <a href="Pointers.html#.createPointer">Pointers.createPointer</a> to create the pointer when the pointer was 
-created through a script. 
-</p>
-    <p><strong>Note:</strong> These properties do not reflect the current state of the pointer. To get the current state 
-of the pointer, see <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.
+    <p>Gets the parameters that were passed in to <a href="Pointers.html#.createPointer">Pointers.createPointer</a> to create the pointer,if the pointer was created through a script.Note that these properties do not reflect the current state of the pointer.See <a href="Pointers.html#.getPointerProperties">Pointers.getPointerProperties</a>.</p>
 
 
                         
@@ -6915,8 +6413,7 @@ number
                             
 
 
-    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long as  
-it is enabled, regardless of the render state.</p>
+    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long as  it is enabled, regardless of the render state.</p>
 
 
                         
@@ -7078,9 +6575,7 @@ number
                             
 
 
-    <p>Checks if a pointer is associated with the left hand: a ray or parabola pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pointer with 
-<code>hand</code> property set to <code>0</code>.</p>
+    <p>Checks if a pointer is associated with the left hand: a ray or parabola pointer with <code>joint</code> property set to<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pointer with <code>hand</code> property set to <code>0</code>.</p>
 
 
                         
@@ -7242,8 +6737,7 @@ number
                             
 
 
-    <p>Checks if a pointer is associated with the system mouse: a ray or parabola pointer with <code>joint</code> property set 
-to <code>"Mouse"</code>.</p>
+    <p>Checks if a pointer is associated with the system mouse: a ray or parabola pointer with <code>joint</code> property set to <code>"Mouse"</code>.</p>
 
 
                         
@@ -7567,9 +7061,7 @@ number
                             
 
 
-    <p>Checks if a pointer is associated with the right hand: a ray or parabola pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pointer with 
-<code>hand</code> property set to <code>1</code>.</p>
+    <p>Checks if a pointer is associated with the right hand: a ray or parabola pointer with <code>joint</code> property set to<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pointer with <code>hand</code> property set to <code>1</code>.</p>
 
 
                         
@@ -7875,8 +7367,7 @@ number
                             
 
 
-    <p>Sets a list of entity and avatar IDs that a pointer should ignore during intersection.
-</p>
+    <p>Sets a list of entity and avatar IDs that a pointer should ignore during intersection.</p>
     <p><strong>Note:</strong> Not used by stylus pointers.</p>
 
 
@@ -8063,9 +7554,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                             
 
 
-    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting with 
-everything.  
-</p>
+    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting with everything.  </p>
     <p><strong>Note:</strong> Stylus pointers only intersect with items in their include list.</p>
 
 
@@ -8252,8 +7741,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                             
 
 
-    <p>Sets the length of a pointer.
-</p>
+    <p>Sets the length of a pointer.</p>
     <p><strong>Note:</strong> Not used by stylus pointers.</p>
 
 
@@ -8440,8 +7928,7 @@ number
                             
 
 
-    <p>Locks a pointer onto a specific entity or avatar.
-</p>
+    <p>Locks a pointer onto a specific entity or avatar.</p>
     <p><strong>Note:</strong> Not used by stylus pointers.</p>
 
 
@@ -8672,8 +8159,7 @@ boolean
                     
 
 
-    <p>The offset of the target point from the center of the target item. If not specified, the 
-    pointer locks on to the center of the target item.</p>
+    <p>The offset of the target point from the center of the target item. If not specified, the     pointer locks on to the center of the target item.</p>
 
 
                 
@@ -8731,8 +8217,7 @@ boolean
                             
 
 
-    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or 
-coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
+    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
 
 
                         
@@ -9046,19 +8531,7 @@ string
                     
 
 
-    <p>The name of the render state to set the pointer to.</p>
-    <p>For <a href="Pointers.html#.RayPointerProperties">ray</a> and <a href="Pointers.html#.ParabolaPointerProperties">parabola</a> pointers, 
-    this may be:</p>
-    <ul>
-      <li>The name of one of the render states set in the pointer's properties.</li>
-      <li><code>""</code>, to hide the pointer and disable emitting of events.</li>
-    </ul>
-    <p>For <a href="Pointers.html#.StylusPointerProperties">stylus</a> pointers, the values may be:</p>
-    <ul>
-      <li><code>"events on"</code>, to render and emit events (the default).</li>
-      <li><code>"events off"</code>, to render but don't emit events.</li>
-      <li><code>"disabled"</code>, to not render and not emit events.</li>
-    </ul>
+    <p>The name of the render state to set the pointer to.</p>    <p>For <a href="Pointers.html#.RayPointerProperties">ray</a> and <a href="Pointers.html#.ParabolaPointerProperties">parabola</a> pointers,     this may be:</p>    <ul>      <li>The name of one of the render states set in the pointer's properties.</li>      <li><code>""</code>, to hide the pointer and disable emitting of events.</li>    </ul>    <p>For <a href="Pointers.html#.StylusPointerProperties">stylus</a> pointers, the values may be:</p>    <ul>      <li><code>"events on"</code>, to render and emit events (the default).</li>      <li><code>"events off"</code>, to render but don't emit events.</li>      <li><code>"disabled"</code>, to not render and not emit events.</li>    </ul>
 
 
                 
@@ -9075,63 +8548,7 @@ string
                         
         <p class="code-caption">Switch a ray pointer between having a path and not having a path.</p>
     
-    <pre class="prettyprint"><code>var intersectEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 0, green: 255, blue: 0 },
-    ignorePickIntersection: true
-};
-var intersectedPath = {
-    type: "line3d",
-    color: { red: 0, green: 255, blue: 0 },
-};
-var searchEnd = {
-    type: "sphere",
-    dimensions: { x: 0.2, y: 0.2, z: 0.2 },
-    solid: true,
-    color: { red: 255, green: 0, blue: 0 },
-    ignorePickIntersection: true
-};
-var searchPath = {
-    type: "line3d",
-    color: { red: 255, green: 0, blue: 0 },
-};
-
-var renderStates = [
-    { name: "examplePath", path: intersectedPath, end: intersectEnd },
-    { name: "exampleNoPath", end: intersectEnd }
-];
-var defaultRenderStates = [
-    { name: "examplePath", distance: 20.0, path: searchPath, end: searchEnd },
-    { name: "exampleNoPath", distance: 20.0, end: searchEnd }
-];
-
-// Create the pointer.
-var rayPointer = Pointers.createPointer(PickType.Ray, {
-    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",
-    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    renderStates: renderStates,
-    defaultRenderStates: defaultRenderStates,
-    enabled: true
-});
-Pointers.setRenderState(rayPointer, "examplePath");
-
-// Change states.
-Script.setTimeout(function () {
-    print("Without path");
-    Pointers.setRenderState(rayPointer, "exampleNoPath");
-}, 10000);
-
-Script.setTimeout(function () {
-    print("With path");
-    Pointers.setRenderState(rayPointer, "examplePath");
-}, 15000);
-
-// Tidy up.
-Script.scriptEnding.connect(function () {
-    Pointers.removePointer(rayPointer);
-});</code></pre>
+    <pre class="prettyprint"><code>var intersectEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 0, green: 255, blue: 0 },    ignorePickIntersection: true};var intersectedPath = {    type: "line3d",    color: { red: 0, green: 255, blue: 0 },};var searchEnd = {    type: "sphere",    dimensions: { x: 0.2, y: 0.2, z: 0.2 },    solid: true,    color: { red: 255, green: 0, blue: 0 },    ignorePickIntersection: true};var searchPath = {    type: "line3d",    color: { red: 255, green: 0, blue: 0 },};var renderStates = [    { name: "examplePath", path: intersectedPath, end: intersectEnd },    { name: "exampleNoPath", end: intersectEnd }];var defaultRenderStates = [    { name: "examplePath", distance: 20.0, path: searchPath, end: searchEnd },    { name: "exampleNoPath", distance: 20.0, end: searchEnd }];// Create the pointer.var rayPointer = Pointers.createPointer(PickType.Ray, {    joint: "_CAMERA_RELATIVE_CONTROLLER_LEFTHAND",    filter: Picks.PICK_LOCAL_ENTITIES | Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_INCLUDE_NONCOLLIDABLE,    renderStates: renderStates,    defaultRenderStates: defaultRenderStates,    enabled: true});Pointers.setRenderState(rayPointer, "examplePath");// Change states.Script.setTimeout(function () {    print("Without path");    Pointers.setRenderState(rayPointer, "exampleNoPath");}, 10000);Script.setTimeout(function () {    print("With path");    Pointers.setRenderState(rayPointer, "examplePath");}, 15000);// Tidy up.Script.scriptEnding.connect(function () {    Pointers.removePointer(rayPointer);});</code></pre>
 
                     
                   

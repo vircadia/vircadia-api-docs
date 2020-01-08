@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -55,9 +56,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>LaserPointers</code> API is a subset of the <a href="Pointers.html">Pointers</a> API. It lets you create, manage, and visually 
-represent objects for repeatedly calculating ray intersections with avatars, entities, and overlays. Ray pointers can also 
-be configured to generate events on entities and overlays intersected.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>LaserPointers</code> API is a subset of the <a href="Pointers.html">Pointers</a> API. It lets you create, manage, and visually represent objects for repeatedly calculating ray intersections with avatars, entities, and overlays. Ray pointers can also be configured to generate events on entities and overlays intersected.</div>
                 
 
                 
@@ -160,11 +159,8 @@ number
                     
 
 
-    <p>Creates a new ray pointer. The pointer can have a wide range of behaviors depending on the properties specified. For
-example, it may be a static ray pointer, a mouse ray pointer, or joint ray pointer.
-</p>
-    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible and
-collidable things but this may not always be the case.</p>
+    <p>Creates a new ray pointer. The pointer can have a wide range of behaviors depending on the properties specified. Forexample, it may be a static ray pointer, a mouse ray pointer, or joint ray pointer.</p>
+    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible andcollidable things but this may not always be the case.</p>
 
 
                 
@@ -338,12 +334,8 @@ collidable things but this may not always be the case.</p>
                     
 
 
-    <p>Edits a render state of a pointer, to change its visual appearance for the state when the pointer is intersecting 
-something.
-</p>
-    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change the
-type of any part.</p>
-<p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p>
+    <p>Edits a render state of a pointer, to change its visual appearance for the state when the pointer is intersecting something.</p>
+    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change thetype of any part.</p><p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p>
 
 
                 
@@ -527,8 +519,7 @@ type of any part.</p>
                     
 
 
-    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long as
-it is enabled, regardless of the render state.</p>
+    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long asit is enabled, regardless of the render state.</p>
 
 
                 
@@ -625,8 +616,7 @@ boolean
                     
 
 
-    <p>Checks if a pointer is associated with the left hand: a pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>.</p>
+    <p>Checks if a pointer is associated with the left hand: a pointer with <code>joint</code> property set to<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>.</p>
 
 
                 
@@ -723,8 +713,7 @@ boolean
                     
 
 
-    <p>Checks if a pointer is associated with the system mouse: a pointer with <code>joint</code> property set to 
-<code>"Mouse"</code>.</p>
+    <p>Checks if a pointer is associated with the system mouse: a pointer with <code>joint</code> property set to <code>"Mouse"</code>.</p>
 
 
                 
@@ -821,8 +810,7 @@ boolean
                     
 
 
-    <p>Checks if a pointer is associated with the right hand: a pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>.</p>
+    <p>Checks if a pointer is associated with the right hand: a pointer with <code>joint</code> property set to<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>.</p>
 
 
                 
@@ -1083,8 +1071,7 @@ boolean
                     
 
 
-    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting with
-everything.</p>
+    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting witheverything.</p>
 
 
                 
@@ -1345,8 +1332,7 @@ everything.</p>
                     
 
 
-    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or 
-coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
+    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
 
 
                 
@@ -1542,11 +1528,8 @@ coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> o
                             
 
 
-    <p>Creates a new ray pointer. The pointer can have a wide range of behaviors depending on the properties specified. For
-example, it may be a static ray pointer, a mouse ray pointer, or joint ray pointer.
-</p>
-    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible and
-collidable things but this may not always be the case.</p>
+    <p>Creates a new ray pointer. The pointer can have a wide range of behaviors depending on the properties specified. Forexample, it may be a static ray pointer, a mouse ray pointer, or joint ray pointer.</p>
+    <p><strong>Warning:</strong> Pointers created using this method currently always intersect at least visible andcollidable things but this may not always be the case.</p>
 
 
                         
@@ -1641,8 +1624,7 @@ collidable things but this may not always be the case.</p>
                     
 
 
-    <p>The properties of the pointer, including the properties of the 
-    underlying pick that the pointer uses to do its picking.</p>
+    <p>The properties of the pointer, including the properties of the     underlying pick that the pointer uses to do its picking.</p>
 
 
                 
@@ -1853,12 +1835,8 @@ number
                             
 
 
-    <p>Edits a render state of a pointer, to change its visual appearance for the state when the pointer is intersecting 
-something.
-</p>
-    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change the
-type of any part.</p>
-<p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p>
+    <p>Edits a render state of a pointer, to change its visual appearance for the state when the pointer is intersecting something.</p>
+    <p><strong>Note:</strong> You can only edit the properties of the existing parts of the pointer; you cannot change thetype of any part.</p><p><strong>Note:</strong> You cannot use this method to change the appearance of a default render state.</p>
 
 
                         
@@ -2019,8 +1997,7 @@ string
                     
 
 
-    <p>The new properties for the render state. Only the overlay 
-    properties to change need be specified.</p>
+    <p>The new properties for the render state. Only the overlay     properties to change need be specified.</p>
 
 
                 
@@ -2240,8 +2217,7 @@ number
                             
 
 
-    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long as
-it is enabled, regardless of the render state.</p>
+    <p>Gets the most recent intersection of a pointer. A pointer continues to be updated ready to return a result, as long asit is enabled, regardless of the render state.</p>
 
 
                         
@@ -2403,8 +2379,7 @@ number
                             
 
 
-    <p>Checks if a pointer is associated with the left hand: a pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>.</p>
+    <p>Checks if a pointer is associated with the left hand: a pointer with <code>joint</code> property set to<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>.</p>
 
 
                         
@@ -2566,8 +2541,7 @@ number
                             
 
 
-    <p>Checks if a pointer is associated with the system mouse: a pointer with <code>joint</code> property set to 
-<code>"Mouse"</code>.</p>
+    <p>Checks if a pointer is associated with the system mouse: a pointer with <code>joint</code> property set to <code>"Mouse"</code>.</p>
 
 
                         
@@ -2729,8 +2703,7 @@ number
                             
 
 
-    <p>Checks if a pointer is associated with the right hand: a pointer with <code>joint</code> property set to
-<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>.</p>
+    <p>Checks if a pointer is associated with the right hand: a pointer with <code>joint</code> property set to<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>.</p>
 
 
                         
@@ -3222,8 +3195,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                             
 
 
-    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting with
-everything.</p>
+    <p>Sets a list of entity and avatar IDs that a pointer should include during intersection, instead of intersecting witheverything.</p>
 
 
                         
@@ -3825,8 +3797,7 @@ boolean
                     
 
 
-    <p>The offset of the target point from the center of the target item. If not specified, the
-    pointer locks on to the center of the target item.</p>
+    <p>The offset of the target point from the center of the target item. If not specified, the    pointer locks on to the center of the target item.</p>
 
 
                 
@@ -3884,8 +3855,7 @@ boolean
                             
 
 
-    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or 
-coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
+    <p>Sets whether or not a pointer should use precision picking, i.e., whether it should pick against precise meshes or coarse meshes. This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
 
 
                         
@@ -4166,11 +4136,7 @@ string
                     
 
 
-    <p>The name of the render state to set the pointer to. This may be:</p>
-    <ul>
-      <li>The name of one of the render states set in the pointer's properties.</li>
-      <li><code>""</code>, to hide the pointer and disable emitting of events.</li>
-    </ul>
+    <p>The name of the render state to set the pointer to. This may be:</p>    <ul>      <li>The name of one of the render states set in the pointer's properties.</li>      <li><code>""</code>, to hide the pointer and disable emitting of events.</li>    </ul>
 
 
                 

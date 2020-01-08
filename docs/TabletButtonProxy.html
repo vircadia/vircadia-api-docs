@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -62,10 +63,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>A tablet button. In toolbar mode (Developer &gt; UI &gt; Tablet Becomes Toolbar), the tablet button is displayed on the 
-toolbar.
-
-<p>Create a new button using <a href="TabletProxy.html#addButton">TabletProxy#addButton</a>.</p></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>A tablet button. In toolbar mode (Developer &gt; UI &gt; Tablet Becomes Toolbar), the tablet button is displayed on the toolbar.<p>Create a new button using <a href="TabletProxy.html#addButton">TabletProxy#addButton</a>.</p></div>
                 
 
 
@@ -146,8 +144,7 @@ toolbar.
                     
 
 
-    <p>The current values of the button's properties. Only properties 
-    that have been set during button creation or subsequently edited are returned. <em>Read-only.</em></p>
+    <p>The current values of the button's properties. Only properties     that have been set during button creation or subsequently edited are returned. <em>Read-only.</em></p>
 
 
                 
@@ -327,20 +324,7 @@ toolbar.
     
         <p class="code-caption">Set a button's hover text after a delay.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-button.propertiesChanged.connect(function () {
-    print("TEST button properties changed");
-});
-
-Script.setTimeout(function () {
-    button.editProperties({ text: "CHANGED" });
-}, 2000);
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });button.propertiesChanged.connect(function () {    print("TEST button properties changed");});Script.setTimeout(function () {    button.editProperties({ text: "CHANGED" });}, 2000);Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
 
 -->
@@ -374,8 +358,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Gets the current values of the button's properties. Only properties that have been set during button creation or 
-subsequently edited are returned.</p>
+    <p>Gets the current values of the button's properties. Only properties that have been set during button creation or subsequently edited are returned.</p>
 
 
                 
@@ -445,15 +428,7 @@ subsequently edited are returned.</p>
     
         <p class="code-caption">Report a test button's properties.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-var properties = button.getProperties();
-print("TEST button properties: " + JSON.stringify(properties));
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });var properties = button.getProperties();print("TEST button properties: " + JSON.stringify(properties));Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
 
 -->
@@ -557,16 +532,7 @@ Script.scriptEnding.connect(function () {
     
         <p class="code-caption">Report a menu button click.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-button.clicked.connect(function () {
-    print("TEST button clicked");
-});
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });button.clicked.connect(function () {    print("TEST button clicked");});Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
 
 -->
@@ -803,8 +769,7 @@ number
                     
 
 
-    <p>The order in which the button was created: each button created gets a value incremented by 
-    one.</p>
+    <p>The order in which the button was created: each button created gets a value incremented by     one.</p>
 
 
                 
@@ -1239,8 +1204,7 @@ number
                     
 
 
-    <p>Determines the order of the buttons: buttons with lower numbers appear before buttons
-    with larger numbers.</p>
+    <p>Determines the order of the buttons: buttons with lower numbers appear before buttons    with larger numbers.</p>
 
 
                 
@@ -1275,8 +1239,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> and the tablet is being used, the button's <code>isActive</code> 
-    state toggles each time the button is clicked. <em>Tablet only.</em></p>
+    <p>If <code>true</code> and the tablet is being used, the button's <code>isActive</code>     state toggles each time the button is clicked. <em>Tablet only.</em></p>
 
 
                 
@@ -1574,20 +1537,7 @@ number
                         
         <p class="code-caption">Set a button's hover text after a delay.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-button.propertiesChanged.connect(function () {
-    print("TEST button properties changed");
-});
-
-Script.setTimeout(function () {
-    button.editProperties({ text: "CHANGED" });
-}, 2000);
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });button.propertiesChanged.connect(function () {    print("TEST button properties changed");});Script.setTimeout(function () {    button.editProperties({ text: "CHANGED" });}, 2000);Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
                     
                   
@@ -1644,8 +1594,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Gets the current values of the button's properties. Only properties that have been set during button creation or 
-subsequently edited are returned.</p>
+    <p>Gets the current values of the button's properties. Only properties that have been set during button creation or subsequently edited are returned.</p>
 
 
                         
@@ -1699,15 +1648,7 @@ subsequently edited are returned.</p>
                         
         <p class="code-caption">Report a test button's properties.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-var properties = button.getProperties();
-print("TEST button properties: " + JSON.stringify(properties));
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });var properties = button.getProperties();print("TEST button properties: " + JSON.stringify(properties));Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
                     
                   
@@ -1828,16 +1769,7 @@ Signal
                         
         <p class="code-caption">Report a menu button click.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-var button = tablet.addButton({ text: "TEST" });
-
-button.clicked.connect(function () {
-    print("TEST button clicked");
-});
-
-Script.scriptEnding.connect(function () {
-    tablet.removeButton(button);
-});</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");var button = tablet.addButton({ text: "TEST" });button.clicked.connect(function () {    print("TEST button clicked");});Script.scriptEnding.connect(function () {    tablet.removeButton(button);});</code></pre>
 
                     
                   

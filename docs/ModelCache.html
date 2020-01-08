@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -383,10 +384,7 @@ Array.&lt;string>
     
         <p class="code-caption">Report cached resources.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-
-var cachedResources = AnimationCache.getResourceList();
-print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.var cachedResources = AnimationCache.getResourceList();print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
 
 
 -->
@@ -490,29 +488,7 @@ print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
     
         <p class="code-caption">Prefetch a resource and wait until it has loaded.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-// TextureCache has its own version of this function.
-
-var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";
-var resourceObject = AnimationCache.prefetch(resourceURL);
-
-function checkIfResourceLoaded(state) {
-    if (state === Resource.State.FINISHED) {
-        print("Resource loaded and ready.");
-    } else if (state === Resource.State.FAILED) {
-        print("Resource not loaded.");
-    }
-}
-
-// Resource may have already been loaded.
-print("Resource state: " + resourceObject.state);
-checkIfResourceLoaded(resourceObject.state);
-
-// Resource may still be loading.
-resourceObject.stateChanged.connect(function (state) {
-    print("Resource state changed to: " + state);
-    checkIfResourceLoaded(state);
-});</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.// TextureCache has its own version of this function.var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";var resourceObject = AnimationCache.prefetch(resourceURL);function checkIfResourceLoaded(state) {    if (state === Resource.State.FINISHED) {        print("Resource loaded and ready.");    } else if (state === Resource.State.FAILED) {        print("Resource not loaded.");    }}// Resource may have already been loaded.print("Resource state: " + resourceObject.state);checkIfResourceLoaded(resourceObject.state);// Resource may still be loading.resourceObject.stateChanged.connect(function (state) {    print("Resource state changed to: " + state);    checkIfResourceLoaded(state);});</code></pre>
 
 
 -->
@@ -789,10 +765,7 @@ resourceObject.stateChanged.connect(function (state) {
                         
         <p class="code-caption">Report cached resources.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-
-var cachedResources = AnimationCache.getResourceList();
-print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.var cachedResources = AnimationCache.getResourceList();print("Cached resources: " + JSON.stringify(cachedResources));</code></pre>
 
                     
                   
@@ -961,29 +934,7 @@ string
                         
         <p class="code-caption">Prefetch a resource and wait until it has loaded.</p>
     
-    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.
-// TextureCache has its own version of this function.
-
-var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";
-var resourceObject = AnimationCache.prefetch(resourceURL);
-
-function checkIfResourceLoaded(state) {
-    if (state === Resource.State.FINISHED) {
-        print("Resource loaded and ready.");
-    } else if (state === Resource.State.FAILED) {
-        print("Resource not loaded.");
-    }
-}
-
-// Resource may have already been loaded.
-print("Resource state: " + resourceObject.state);
-checkIfResourceLoaded(resourceObject.state);
-
-// Resource may still be loading.
-resourceObject.stateChanged.connect(function (state) {
-    print("Resource state changed to: " + state);
-    checkIfResourceLoaded(state);
-});</code></pre>
+    <pre class="prettyprint"><code>// Replace AnimationCache with ModelCache, SoundCache, or TextureCache as appropriate.// TextureCache has its own version of this function.var resourceURL = "https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx";var resourceObject = AnimationCache.prefetch(resourceURL);function checkIfResourceLoaded(state) {    if (state === Resource.State.FINISHED) {        print("Resource loaded and ready.");    } else if (state === Resource.State.FAILED) {        print("Resource not loaded.");    }}// Resource may have already been loaded.print("Resource state: " + resourceObject.state);checkIfResourceLoaded(resourceObject.state);// Resource may still be loading.resourceObject.stateChanged.connect(function (state) {    print("Resource state changed to: " + state);    checkIfResourceLoaded(state);});</code></pre>
 
                     
                   

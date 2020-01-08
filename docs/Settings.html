@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -235,11 +236,7 @@ object
     
         <p class="code-caption">Retrieve non-existent setting values.</p>
     
-    <pre class="prettyprint"><code>var value1 = Settings.getValue("Script Example/Nonexistent Key");
-print("Value: " + (typeof value1) + " " + JSON.stringify(value1));  // string ""
-
-var value2 = Settings.getValue("Script Example/Nonexistent Key", true);
-print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean true</code></pre>
+    <pre class="prettyprint"><code>var value1 = Settings.getValue("Script Example/Nonexistent Key");print("Value: " + (typeof value1) + " " + JSON.stringify(value1));  // string ""var value2 = Settings.getValue("Script Example/Nonexistent Key", true);print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean true</code></pre>
 
 
 -->
@@ -263,8 +260,7 @@ print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean t
                     
 
 
-    <p>Stores a value in a named setting. If the setting already exists, its value is overwritten. If the value is 
-<code>null</code> or <code>undefined</code>, the setting is deleted.</p>
+    <p>Stores a value in a named setting. If the setting already exists, its value is overwritten. If the value is <code>null</code> or <code>undefined</code>, the setting is deleted.</p>
 
 
                 
@@ -334,10 +330,7 @@ print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean t
     
         <p class="code-caption">Store and retrieve an object value.</p>
     
-    <pre class="prettyprint"><code>Settings.setValue("Script Example/My Key", { x: 0, y: 10, z: 0 });
-
-var value = Settings.getValue("Script Example/My Key");
-print("Value: " + (typeof value) + " " + JSON.stringify(value));  // object {"x":0,"y":10,"z":0}
+    <pre class="prettyprint"><code>Settings.setValue("Script Example/My Key", { x: 0, y: 10, z: 0 });var value = Settings.getValue("Script Example/My Key");print("Value: " + (typeof value) + " " + JSON.stringify(value));  // object {"x":0,"y":10,"z":0}
      </code></pre>
 
 
@@ -366,8 +359,7 @@ print("Value: " + (typeof value) + " " + JSON.stringify(value));  // object {"x"
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The value stored in the named setting if it exists, otherwise the 
-    <code>defaultValue</code>.
+    The value stored in the named setting if it exists, otherwise the     <code>defaultValue</code>.
 
 
                         
@@ -571,11 +563,7 @@ object
                         
         <p class="code-caption">Retrieve non-existent setting values.</p>
     
-    <pre class="prettyprint"><code>var value1 = Settings.getValue("Script Example/Nonexistent Key");
-print("Value: " + (typeof value1) + " " + JSON.stringify(value1));  // string ""
-
-var value2 = Settings.getValue("Script Example/Nonexistent Key", true);
-print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean true</code></pre>
+    <pre class="prettyprint"><code>var value1 = Settings.getValue("Script Example/Nonexistent Key");print("Value: " + (typeof value1) + " " + JSON.stringify(value1));  // string ""var value2 = Settings.getValue("Script Example/Nonexistent Key", true);print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean true</code></pre>
 
                     
                   
@@ -623,8 +611,7 @@ print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean t
                             
 
 
-    <p>Stores a value in a named setting. If the setting already exists, its value is overwritten. If the value is 
-<code>null</code> or <code>undefined</code>, the setting is deleted.</p>
+    <p>Stores a value in a named setting. If the setting already exists, its value is overwritten. If the value is <code>null</code> or <code>undefined</code>, the setting is deleted.</p>
 
 
                         
@@ -764,8 +751,7 @@ undefined
                     
 
 
-    <p>The value to store in the setting. If <code>null</code> or 
-    <code>undefined</code> is specified, the setting is deleted.</p>
+    <p>The value to store in the setting. If <code>null</code> or     <code>undefined</code> is specified, the setting is deleted.</p>
 
 
                 
@@ -782,10 +768,7 @@ undefined
                         
         <p class="code-caption">Store and retrieve an object value.</p>
     
-    <pre class="prettyprint"><code>Settings.setValue("Script Example/My Key", { x: 0, y: 10, z: 0 });
-
-var value = Settings.getValue("Script Example/My Key");
-print("Value: " + (typeof value) + " " + JSON.stringify(value));  // object {"x":0,"y":10,"z":0}
+    <pre class="prettyprint"><code>Settings.setValue("Script Example/My Key", { x: 0, y: 10, z: 0 });var value = Settings.getValue("Script Example/My Key");print("Value: " + (typeof value) + " " + JSON.stringify(value));  // object {"x":0,"y":10,"z":0}
      </code></pre>
 
                     

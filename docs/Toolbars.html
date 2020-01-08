@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -59,9 +60,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Toolbars</code> API provides facilities to work with the system or other toolbar.
-
-<p>See also the <a href="Tablet.html">Tablet</a> API for use of the system tablet and toolbar in desktop and HMD modes.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Toolbars</code> API provides facilities to work with the system or other toolbar.<p>See also the <a href="Tablet.html">Tablet</a> API for use of the system tablet and toolbar in desktop and HMD modes.</p></div>
                 
 
                 
@@ -329,17 +328,7 @@
     
         <p class="code-caption">Briefly hide the system toolbar.</p>
     
-    <pre class="prettyprint"><code>Toolbars.toolbarVisibleChanged.connect(function(visible, name) {
-    print("Toolbar " + name + " visible changed to " + visible);
-});
-
-var toolbar = Toolbars.getToolbar("com.highfidelity.interface.toolbar.system");
-if (toolbar) {
-    toolbar.writeProperty("visible", false);
-    Script.setTimeout(function () {
-        toolbar.writeProperty("visible", true);
-    }, 2000);
-}
+    <pre class="prettyprint"><code>Toolbars.toolbarVisibleChanged.connect(function(visible, name) {    print("Toolbar " + name + " visible changed to " + visible);});var toolbar = Toolbars.getToolbar("com.highfidelity.interface.toolbar.system");if (toolbar) {    toolbar.writeProperty("visible", false);    Script.setTimeout(function () {        toolbar.writeProperty("visible", true);    }, 2000);}
      </code></pre>
 
 
@@ -715,17 +704,7 @@ string
                         
         <p class="code-caption">Briefly hide the system toolbar.</p>
     
-    <pre class="prettyprint"><code>Toolbars.toolbarVisibleChanged.connect(function(visible, name) {
-    print("Toolbar " + name + " visible changed to " + visible);
-});
-
-var toolbar = Toolbars.getToolbar("com.highfidelity.interface.toolbar.system");
-if (toolbar) {
-    toolbar.writeProperty("visible", false);
-    Script.setTimeout(function () {
-        toolbar.writeProperty("visible", true);
-    }, 2000);
-}
+    <pre class="prettyprint"><code>Toolbars.toolbarVisibleChanged.connect(function(visible, name) {    print("Toolbar " + name + " visible changed to " + visible);});var toolbar = Toolbars.getToolbar("com.highfidelity.interface.toolbar.system");if (toolbar) {    toolbar.writeProperty("visible", false);    Script.setTimeout(function () {        toolbar.writeProperty("visible", true);    }, 2000);}
      </code></pre>
 
                     

@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -214,23 +215,7 @@
     
         <p class="code-caption">Report when a particular Clipboard.importEntities() resource request is made.</p>
     
-    <pre class="prettyprint"><code>ResourceRequestObserver.resourceRequestEvent.connect(function (request) {
-    if (request.callerId === 100) {
-        print("Resource request: " + JSON.stringify(request));
-    }
-});
-
-function importEntities() {
-    var filename = Window.browse("Import entities to clipboard", "", "*.json");
-    if (filename) {
-        Clipboard.importEntities(filename, true, 100);
-        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,
-            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));
-        print("Entities pasted: " + JSON.stringify(pastedEntities));
-    }
-}
-
-Script.setTimeout(importEntities, 2000);
+    <pre class="prettyprint"><code>ResourceRequestObserver.resourceRequestEvent.connect(function (request) {    if (request.callerId === 100) {        print("Resource request: " + JSON.stringify(request));    }});function importEntities() {    var filename = Window.browse("Import entities to clipboard", "", "*.json");    if (filename) {        Clipboard.importEntities(filename, true, 100);        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));        print("Entities pasted: " + JSON.stringify(pastedEntities));    }}Script.setTimeout(importEntities, 2000);
      </code></pre>
 
 
@@ -602,23 +587,7 @@ Signal
                         
         <p class="code-caption">Report when a particular Clipboard.importEntities() resource request is made.</p>
     
-    <pre class="prettyprint"><code>ResourceRequestObserver.resourceRequestEvent.connect(function (request) {
-    if (request.callerId === 100) {
-        print("Resource request: " + JSON.stringify(request));
-    }
-});
-
-function importEntities() {
-    var filename = Window.browse("Import entities to clipboard", "", "*.json");
-    if (filename) {
-        Clipboard.importEntities(filename, true, 100);
-        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,
-            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));
-        print("Entities pasted: " + JSON.stringify(pastedEntities));
-    }
-}
-
-Script.setTimeout(importEntities, 2000);
+    <pre class="prettyprint"><code>ResourceRequestObserver.resourceRequestEvent.connect(function (request) {    if (request.callerId === 100) {        print("Resource request: " + JSON.stringify(request));    }});function importEntities() {    var filename = Window.browse("Import entities to clipboard", "", "*.json");    if (filename) {        Clipboard.importEntities(filename, true, 100);        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));        print("Entities pasted: " + JSON.stringify(pastedEntities));    }}Script.setTimeout(importEntities, 2000);
      </code></pre>
 
                     
