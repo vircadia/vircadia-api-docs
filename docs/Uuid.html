@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -286,14 +287,7 @@
     
         <p class="code-caption">Valid and invalid parameters.</p>
     
-    <pre class="prettyprint"><code>var uuid = Uuid.fromString("{527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}");
-print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}
-
-uuid = Uuid.fromString("527c27ea-6d7b-4b47-9ae2-b3051d50d2cd");
-print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}
-
-uuid = Uuid.fromString("527c27ea");
-print(uuid); // null</code></pre>
+    <pre class="prettyprint"><code>var uuid = Uuid.fromString("{527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}");print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}uuid = Uuid.fromString("527c27ea-6d7b-4b47-9ae2-b3051d50d2cd");print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}uuid = Uuid.fromString("527c27ea");print(uuid); // null</code></pre>
 
 
 -->
@@ -397,9 +391,7 @@ print(uuid); // null</code></pre>
     
         <p class="code-caption">Generate a new UUID and reports its JavaScript type.</p>
     
-    <pre class="prettyprint"><code>var uuid = Uuid.generate();
-print(uuid);        // {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
-print(typeof uuid); // string</code></pre>
+    <pre class="prettyprint"><code>var uuid = Uuid.generate();print(uuid);        // {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}print(typeof uuid); // string</code></pre>
 
 
 -->
@@ -503,11 +495,7 @@ boolean
     
         <p class="code-caption">Demonstrate <code>true</code> and <code>false</code> cases.</p>
     
-    <pre class="prettyprint"><code>var uuidA = Uuid.generate();
-var uuidB = Uuid.generate();
-print(Uuid.isEqual(uuidA, uuidB)); // false
-uuidB = uuidA;
-print(Uuid.isEqual(uuidA, uuidB)); // true</code></pre>
+    <pre class="prettyprint"><code>var uuidA = Uuid.generate();var uuidB = Uuid.generate();print(Uuid.isEqual(uuidA, uuidB)); // falseuuidB = uuidA;print(Uuid.isEqual(uuidA, uuidB)); // true</code></pre>
 
 
 -->
@@ -611,14 +599,7 @@ boolean
     
         <p class="code-caption">Demonstrate <code>true</code> and <code>false</code> cases.</p>
     
-    <pre class="prettyprint"><code>var uuid; // undefined
-print(Uuid.isNull(uuid)); // false
-uuid = Uuid.generate();
-print(Uuid.isNull(uuid)); // false
-uuid = Uuid.NULL;
-print(Uuid.isNull(uuid)); // true
-uuid = null;
-print(Uuid.isNull(uuid)); // true</code></pre>
+    <pre class="prettyprint"><code>var uuid; // undefinedprint(Uuid.isNull(uuid)); // falseuuid = Uuid.generate();print(Uuid.isNull(uuid)); // falseuuid = Uuid.NULL;print(Uuid.isNull(uuid)); // trueuuid = null;print(Uuid.isNull(uuid)); // true</code></pre>
 
 
 -->
@@ -712,9 +693,7 @@ print(Uuid.isNull(uuid)); // true</code></pre>
     
         <p class="code-caption">Two ways of printing a label plus UUID.</p>
     
-    <pre class="prettyprint"><code>var uuid = Uuid.generate();
-Uuid.print("Generated UUID:", uuid); // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
-print("Generated UUID: " + uuid);    // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
+    <pre class="prettyprint"><code>var uuid = Uuid.generate();Uuid.print("Generated UUID:", uuid); // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}print("Generated UUID: " + uuid);    // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
      </code></pre>
 
 
@@ -749,8 +728,7 @@ string
                     
 
 
-    <p>Generates a string representation of a UUID. However, because UUIDs are represented in JavaScript as strings, this is in
-effect a no-op.</p>
+    <p>Generates a string representation of a UUID. However, because UUIDs are represented in JavaScript as strings, this is ineffect a no-op.</p>
 
 
                 
@@ -971,14 +949,7 @@ string
                         
         <p class="code-caption">Valid and invalid parameters.</p>
     
-    <pre class="prettyprint"><code>var uuid = Uuid.fromString("{527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}");
-print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}
-
-uuid = Uuid.fromString("527c27ea-6d7b-4b47-9ae2-b3051d50d2cd");
-print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}
-
-uuid = Uuid.fromString("527c27ea");
-print(uuid); // null</code></pre>
+    <pre class="prettyprint"><code>var uuid = Uuid.fromString("{527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}");print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}uuid = Uuid.fromString("527c27ea-6d7b-4b47-9ae2-b3051d50d2cd");print(uuid); // {527c27ea-6d7b-4b47-9ae2-b3051d50d2cd}uuid = Uuid.fromString("527c27ea");print(uuid); // null</code></pre>
 
                     
                   
@@ -1089,9 +1060,7 @@ print(uuid); // null</code></pre>
                         
         <p class="code-caption">Generate a new UUID and reports its JavaScript type.</p>
     
-    <pre class="prettyprint"><code>var uuid = Uuid.generate();
-print(uuid);        // {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
-print(typeof uuid); // string</code></pre>
+    <pre class="prettyprint"><code>var uuid = Uuid.generate();print(uuid);        // {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}print(typeof uuid); // string</code></pre>
 
                     
                   
@@ -1293,11 +1262,7 @@ print(typeof uuid); // string</code></pre>
                         
         <p class="code-caption">Demonstrate <code>true</code> and <code>false</code> cases.</p>
     
-    <pre class="prettyprint"><code>var uuidA = Uuid.generate();
-var uuidB = Uuid.generate();
-print(Uuid.isEqual(uuidA, uuidB)); // false
-uuidB = uuidA;
-print(Uuid.isEqual(uuidA, uuidB)); // true</code></pre>
+    <pre class="prettyprint"><code>var uuidA = Uuid.generate();var uuidB = Uuid.generate();print(Uuid.isEqual(uuidA, uuidB)); // falseuuidB = uuidA;print(Uuid.isEqual(uuidA, uuidB)); // true</code></pre>
 
                     
                   
@@ -1336,8 +1301,7 @@ print(Uuid.isEqual(uuidA, uuidB)); // true</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the UUID equals <code>Uuid.NULL</code> or is <code>null</code>, otherwise 
-    <code>false</code>.
+    <code>true</code> if the UUID equals <code>Uuid.NULL</code> or is <code>null</code>, otherwise     <code>false</code>.
 
 
                         
@@ -1467,14 +1431,7 @@ print(Uuid.isEqual(uuidA, uuidB)); // true</code></pre>
                         
         <p class="code-caption">Demonstrate <code>true</code> and <code>false</code> cases.</p>
     
-    <pre class="prettyprint"><code>var uuid; // undefined
-print(Uuid.isNull(uuid)); // false
-uuid = Uuid.generate();
-print(Uuid.isNull(uuid)); // false
-uuid = Uuid.NULL;
-print(Uuid.isNull(uuid)); // true
-uuid = null;
-print(Uuid.isNull(uuid)); // true</code></pre>
+    <pre class="prettyprint"><code>var uuid; // undefinedprint(Uuid.isNull(uuid)); // falseuuid = Uuid.generate();print(Uuid.isNull(uuid)); // falseuuid = Uuid.NULL;print(Uuid.isNull(uuid)); // trueuuid = null;print(Uuid.isNull(uuid)); // true</code></pre>
 
                     
                   
@@ -1667,9 +1624,7 @@ string
                         
         <p class="code-caption">Two ways of printing a label plus UUID.</p>
     
-    <pre class="prettyprint"><code>var uuid = Uuid.generate();
-Uuid.print("Generated UUID:", uuid); // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
-print("Generated UUID: " + uuid);    // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
+    <pre class="prettyprint"><code>var uuid = Uuid.generate();Uuid.print("Generated UUID:", uuid); // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}print("Generated UUID: " + uuid);    // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
      </code></pre>
 
                     
@@ -1727,8 +1682,7 @@ print("Generated UUID: " + uuid);    // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn
                             
 
 
-    <p>Generates a string representation of a UUID. However, because UUIDs are represented in JavaScript as strings, this is in
-effect a no-op.</p>
+    <p>Generates a string representation of a UUID. However, because UUIDs are represented in JavaScript as strings, this is ineffect a no-op.</p>
 
 
                         

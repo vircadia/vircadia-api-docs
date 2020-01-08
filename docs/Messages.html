@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -59,17 +60,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p><p>The <code>Messages</code> API enables text and data to be sent between scripts over named "channels". A channel can have 
-an arbitrary name to help separate messaging between different sets of scripts.</p>
-
-<p><strong>Note:</strong> To call a function in another script, you should use one of the following rather than sending a 
-message:</p>
-<ul>
-  <li><a href="Entities.html#.callEntityClientMethod">Entities.callEntityClientMethod</a></li>
-  <li><a href="Entities.html#.callEntityMethod">Entities.callEntityMethod</a></li>
-  <li><a href="Entities.html#.callEntityServerMethod">Entities.callEntityServerMethod</a></li>
-  <li><a href="Script.html#.callEntityScriptMethod">Script.callEntityScriptMethod</a></li>
-</ul></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p><p>The <code>Messages</code> API enables text and data to be sent between scripts over named "channels". A channel can have an arbitrary name to help separate messaging between different sets of scripts.</p><p><strong>Note:</strong> To call a function in another script, you should use one of the following rather than sending a message:</p><ul>  <li><a href="Entities.html#.callEntityClientMethod">Entities.callEntityClientMethod</a></li>  <li><a href="Entities.html#.callEntityMethod">Entities.callEntityMethod</a></li>  <li><a href="Entities.html#.callEntityServerMethod">Entities.callEntityServerMethod</a></li>  <li><a href="Script.html#.callEntityScriptMethod">Script.callEntityScriptMethod</a></li></ul></div>
                 
 
                 
@@ -230,38 +221,7 @@ message:</p>
     
         <p class="code-caption">Send and receive data.</p>
     
-    <pre class="prettyprint"><code>// Receiving script.
-var channelName = "com.highfidelity.example.messages-example";
-
-function onDataReceived(channel, data, sender, localOnly) {
-    var int8data = new Int8Array(data);
-    var dataAsString = "";
-    for (var i = 0; i &lt; int8data.length; i++) {
-        if (i > 0) {
-            dataAsString += ", ";
-        }
-        dataAsString += int8data[i];
-    }
-    print("Data received:");
-    print("- channel: " + channel);
-    print("- data: " + dataAsString);
-    print("- sender: " + sender);
-    print("- localOnly: " + localOnly);
-}
-
-Messages.subscribe(channelName);
-Messages.dataReceived.connect(onDataReceived);
-
-Script.scriptEnding.connect(function () {
-    Messages.dataReceived.disconnect(onDataReceived);
-    Messages.unsubscribe(channelName);
-});
-
-
-// Sending script.
-var channelName = "com.highfidelity.example.messages-example";
-var int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);
-Messages.sendData(channelName, int8data.buffer);</code></pre>
+    <pre class="prettyprint"><code>// Receiving script.var channelName = "com.highfidelity.example.messages-example";function onDataReceived(channel, data, sender, localOnly) {    var int8data = new Int8Array(data);    var dataAsString = "";    for (var i = 0; i &lt; int8data.length; i++) {        if (i > 0) {            dataAsString += ", ";        }        dataAsString += int8data[i];    }    print("Data received:");    print("- channel: " + channel);    print("- data: " + dataAsString);    print("- sender: " + sender);    print("- localOnly: " + localOnly);}Messages.subscribe(channelName);Messages.dataReceived.connect(onDataReceived);Script.scriptEnding.connect(function () {    Messages.dataReceived.disconnect(onDataReceived);    Messages.unsubscribe(channelName);});// Sending script.var channelName = "com.highfidelity.example.messages-example";var int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);Messages.sendData(channelName, int8data.buffer);</code></pre>
 
 
 -->
@@ -285,8 +245,7 @@ Messages.sendData(channelName, int8data.buffer);</code></pre>
                     
 
 
-    <p>Sends a text message locally on a channel.
-This is the same as calling <a href="Messages.html#.sendMessage">sendMessage</a> with <code>localOnly == true</code>.</p>
+    <p>Sends a text message locally on a channel.This is the same as calling <a href="Messages.html#.sendMessage">sendMessage</a> with <code>localOnly == true</code>.</p>
 
 
                 
@@ -443,30 +402,7 @@ This is the same as calling <a href="Messages.html#.sendMessage">sendMessage</a>
     
         <p class="code-caption">Send and receive a message.</p>
     
-    <pre class="prettyprint"><code>// Receiving script.
-var channelName = "com.highfidelity.example.messages-example";
-
-function onMessageReceived(channel, message, sender, localOnly) {
-    print("Message received:");
-    print("- channel: " + channel);
-    print("- message: " + message);
-    print("- sender: " + sender);
-    print("- localOnly: " + localOnly);
-}
-
-Messages.subscribe(channelName);
-Messages.messageReceived.connect(onMessageReceived);
-
-Script.scriptEnding.connect(function () {
-    Messages.messageReceived.disconnect(onMessageReceived);
-    Messages.unsubscribe(channelName);
-});
-
-
-// Sending script.
-var channelName = "com.highfidelity.example.messages-example";
-var message = "Hello";
-Messages.sendMessage(channelName, message);</code></pre>
+    <pre class="prettyprint"><code>// Receiving script.var channelName = "com.highfidelity.example.messages-example";function onMessageReceived(channel, message, sender, localOnly) {    print("Message received:");    print("- channel: " + channel);    print("- message: " + message);    print("- sender: " + sender);    print("- localOnly: " + localOnly);}Messages.subscribe(channelName);Messages.messageReceived.connect(onMessageReceived);Script.scriptEnding.connect(function () {    Messages.messageReceived.disconnect(onMessageReceived);    Messages.unsubscribe(channelName);});// Sending script.var channelName = "com.highfidelity.example.messages-example";var message = "Hello";Messages.sendMessage(channelName, message);</code></pre>
 
 
 -->
@@ -490,9 +426,7 @@ Messages.sendMessage(channelName, message);</code></pre>
                     
 
 
-    <p>Subscribes the scripting environment &mdash; Interface, the entity script server, or assignment client instance &mdash; 
-to receive messages on a specific channel. This means, for example, that if there are two Interface scripts that 
-subscribe to different channels, both scripts will receive messages on both channels.</p>
+    <p>Subscribes the scripting environment &mdash; Interface, the entity script server, or assignment client instance &mdash; to receive messages on a specific channel. This means, for example, that if there are two Interface scripts that subscribe to different channels, both scripts will receive messages on both channels.</p>
 
 
                 
@@ -1012,8 +946,7 @@ object
                     
 
 
-    <p>The data to send. The data is handled as a byte stream, for example, as may be provided via a 
-    JavaScript <code>Int8Array</code> object.</p>
+    <p>The data to send. The data is handled as a byte stream, for example, as may be provided via a     JavaScript <code>Int8Array</code> object.</p>
 
 
                 
@@ -1062,12 +995,8 @@ boolean
                     
 
 
-    <p>If <code>false</code> then the message is sent to all Interface, client entity,
-    server entity, and assignment client scripts in the domain.
-    </p>
-    <p>If <code>true</code> then: if sent from an Interface or client entity script it is received by all Interface and
-    client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent
-    from an assignment client script it is received only by that same assignment client script.</p>
+    <p>If <code>false</code> then the message is sent to all Interface, client entity,    server entity, and assignment client scripts in the domain.    </p>
+    <p>If <code>true</code> then: if sent from an Interface or client entity script it is received by all Interface and    client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent    from an assignment client script it is received only by that same assignment client script.</p>
 
 
                 
@@ -1084,38 +1013,7 @@ boolean
                         
         <p class="code-caption">Send and receive data.</p>
     
-    <pre class="prettyprint"><code>// Receiving script.
-var channelName = "com.highfidelity.example.messages-example";
-
-function onDataReceived(channel, data, sender, localOnly) {
-    var int8data = new Int8Array(data);
-    var dataAsString = "";
-    for (var i = 0; i &lt; int8data.length; i++) {
-        if (i > 0) {
-            dataAsString += ", ";
-        }
-        dataAsString += int8data[i];
-    }
-    print("Data received:");
-    print("- channel: " + channel);
-    print("- data: " + dataAsString);
-    print("- sender: " + sender);
-    print("- localOnly: " + localOnly);
-}
-
-Messages.subscribe(channelName);
-Messages.dataReceived.connect(onDataReceived);
-
-Script.scriptEnding.connect(function () {
-    Messages.dataReceived.disconnect(onDataReceived);
-    Messages.unsubscribe(channelName);
-});
-
-
-// Sending script.
-var channelName = "com.highfidelity.example.messages-example";
-var int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);
-Messages.sendData(channelName, int8data.buffer);</code></pre>
+    <pre class="prettyprint"><code>// Receiving script.var channelName = "com.highfidelity.example.messages-example";function onDataReceived(channel, data, sender, localOnly) {    var int8data = new Int8Array(data);    var dataAsString = "";    for (var i = 0; i &lt; int8data.length; i++) {        if (i > 0) {            dataAsString += ", ";        }        dataAsString += int8data[i];    }    print("Data received:");    print("- channel: " + channel);    print("- data: " + dataAsString);    print("- sender: " + sender);    print("- localOnly: " + localOnly);}Messages.subscribe(channelName);Messages.dataReceived.connect(onDataReceived);Script.scriptEnding.connect(function () {    Messages.dataReceived.disconnect(onDataReceived);    Messages.unsubscribe(channelName);});// Sending script.var channelName = "com.highfidelity.example.messages-example";var int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);Messages.sendData(channelName, int8data.buffer);</code></pre>
 
                     
                   
@@ -1163,8 +1061,7 @@ Messages.sendData(channelName, int8data.buffer);</code></pre>
                             
 
 
-    <p>Sends a text message locally on a channel.
-This is the same as calling <a href="Messages.html#.sendMessage">sendMessage</a> with <code>localOnly == true</code>.</p>
+    <p>Sends a text message locally on a channel.This is the same as calling <a href="Messages.html#.sendMessage">sendMessage</a> with <code>localOnly == true</code>.</p>
 
 
                         
@@ -1555,12 +1452,8 @@ boolean
                     
 
 
-    <p>If <code>false</code> then the message is sent to all Interface, client entity, 
-    server entity, and assignment client scripts in the domain.
-    </p>
-    <p>If <code>true</code> then: if sent from an Interface or client entity script it is received by all Interface and 
-    client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent 
-    from an assignment client script it is received only by that same assignment client script.</p>
+    <p>If <code>false</code> then the message is sent to all Interface, client entity,     server entity, and assignment client scripts in the domain.    </p>
+    <p>If <code>true</code> then: if sent from an Interface or client entity script it is received by all Interface and     client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent     from an assignment client script it is received only by that same assignment client script.</p>
 
 
                 
@@ -1577,30 +1470,7 @@ boolean
                         
         <p class="code-caption">Send and receive a message.</p>
     
-    <pre class="prettyprint"><code>// Receiving script.
-var channelName = "com.highfidelity.example.messages-example";
-
-function onMessageReceived(channel, message, sender, localOnly) {
-    print("Message received:");
-    print("- channel: " + channel);
-    print("- message: " + message);
-    print("- sender: " + sender);
-    print("- localOnly: " + localOnly);
-}
-
-Messages.subscribe(channelName);
-Messages.messageReceived.connect(onMessageReceived);
-
-Script.scriptEnding.connect(function () {
-    Messages.messageReceived.disconnect(onMessageReceived);
-    Messages.unsubscribe(channelName);
-});
-
-
-// Sending script.
-var channelName = "com.highfidelity.example.messages-example";
-var message = "Hello";
-Messages.sendMessage(channelName, message);</code></pre>
+    <pre class="prettyprint"><code>// Receiving script.var channelName = "com.highfidelity.example.messages-example";function onMessageReceived(channel, message, sender, localOnly) {    print("Message received:");    print("- channel: " + channel);    print("- message: " + message);    print("- sender: " + sender);    print("- localOnly: " + localOnly);}Messages.subscribe(channelName);Messages.messageReceived.connect(onMessageReceived);Script.scriptEnding.connect(function () {    Messages.messageReceived.disconnect(onMessageReceived);    Messages.unsubscribe(channelName);});// Sending script.var channelName = "com.highfidelity.example.messages-example";var message = "Hello";Messages.sendMessage(channelName, message);</code></pre>
 
                     
                   
@@ -1648,9 +1518,7 @@ Messages.sendMessage(channelName, message);</code></pre>
                             
 
 
-    <p>Subscribes the scripting environment &mdash; Interface, the entity script server, or assignment client instance &mdash; 
-to receive messages on a specific channel. This means, for example, that if there are two Interface scripts that 
-subscribe to different channels, both scripts will receive messages on both channels.</p>
+    <p>Subscribes the scripting environment &mdash; Interface, the entity script server, or assignment client instance &mdash; to receive messages on a specific channel. This means, for example, that if there are two Interface scripts that subscribe to different channels, both scripts will receive messages on both channels.</p>
 
 
                         
@@ -2094,8 +1962,7 @@ string
                     
 
 
-    <p>The channel that the message was sent on. This can be used to filter out messages not relevant
-    to your script.</p>
+    <p>The channel that the message was sent on. This can be used to filter out messages not relevant    to your script.</p>
 
 
                 
@@ -2128,8 +1995,7 @@ object
                     
 
 
-    <p>The data received. The data is handled as a byte stream, for example, as may be used by a 
-    JavaScript <code>Int8Array</code> object.</p>
+    <p>The data received. The data is handled as a byte stream, for example, as may be used by a     JavaScript <code>Int8Array</code> object.</p>
 
 
                 
@@ -2162,9 +2028,7 @@ object
                     
 
 
-    <p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity
-    script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client
-    instance if sent by an assignment client script.</p>
+    <p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity    script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client    instance if sent by an assignment client script.</p>
 
 
                 
@@ -2385,8 +2249,7 @@ string
                     
 
 
-    <p>The channel that the message was sent on. This can be used to filter out messages not relevant 
-    to your script.</p>
+    <p>The channel that the message was sent on. This can be used to filter out messages not relevant     to your script.</p>
 
 
                 
@@ -2452,9 +2315,7 @@ string
                     
 
 
-    <p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity 
-    script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client 
-    instance if sent by an assignment client script.</p>
+    <p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity     script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client     instance if sent by an assignment client script.</p>
 
 
                 

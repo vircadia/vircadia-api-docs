@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -61,8 +62,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>AvatarBookmarks</code> API provides facilities for working with avatar bookmarks ("favorites" in the Avatar app). 
-An avatar bookmark associates a name with an avatar model, scale, and avatar entities (wearables).</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>AvatarBookmarks</code> API provides facilities for working with avatar bookmarks ("favorites" in the Avatar app). An avatar bookmark associates a name with an avatar model, scale, and avatar entities (wearables).</div>
                 
 
                 
@@ -223,10 +223,7 @@ An avatar bookmark associates a name with an avatar model, scale, and avatar ent
     
         <p class="code-caption">Add a new avatar bookmark and report the bookmark data.</p>
     
-    <pre class="prettyprint"><code>var bookmarkName = "New Bookmark";
-AvatarBookmarks.addBookmark(bookmarkName);
-var bookmarkData = AvatarBookmarks.getBookmark(bookmarkName);
-print("Bookmark data: " + JSON.stringify(bookmarkData));</code></pre>
+    <pre class="prettyprint"><code>var bookmarkName = "New Bookmark";AvatarBookmarks.addBookmark(bookmarkName);var bookmarkData = AvatarBookmarks.getBookmark(bookmarkName);print("Bookmark data: " + JSON.stringify(bookmarkData));</code></pre>
 
 
 -->
@@ -519,11 +516,7 @@ Object.&lt;string, <a href="AvatarBookmarks.html#.BookmarkData">AvatarBookmarks.
     
         <p class="code-caption">List the names and URLs of all the avatar bookmarks.</p>
     
-    <pre class="prettyprint"><code>var bookmarks = AvatarBookmarks.getBookmarks();
-print("Avatar bookmarks:");
-for (var key in bookmarks) {
-    print("- " + key + " " + bookmarks[key].avatarUrl);
-};</code></pre>
+    <pre class="prettyprint"><code>var bookmarks = AvatarBookmarks.getBookmarks();print("Avatar bookmarks:");for (var key in bookmarks) {    print("- " + key + " " + bookmarks[key].avatarUrl);};</code></pre>
 
 
 -->
@@ -547,8 +540,7 @@ for (var key in bookmarks) {
                     
 
 
-    <p>Loads an avatar bookmark, setting your avatar model, scale, and avatar entities (or attachments if an old bookmark) to 
-those in the bookmark.</p>
+    <p>Loads an avatar bookmark, setting your avatar model, scale, and avatar entities (or attachments if an old bookmark) to those in the bookmark.</p>
 
 
                 
@@ -722,8 +714,7 @@ those in the bookmark.</p>
                     
 
 
-    <p>Updates an existing bookmark with your current avatar model, scale, and wearables. No action is taken if the bookmark 
-doesn't exist.</p>
+    <p>Updates an existing bookmark with your current avatar model, scale, and wearables. No action is taken if the bookmark doesn't exist.</p>
 
 
                 
@@ -909,8 +900,7 @@ doesn't exist.</p>
                         
 
 
-    <p>Triggered when a new avatar bookmark is added or an existing avatar bookmark is updated, using 
-<a href="AvatarBookmarks.html#.addBookmark">addBookmark</a>.</p>
+    <p>Triggered when a new avatar bookmark is added or an existing avatar bookmark is updated, using <a href="AvatarBookmarks.html#.addBookmark">addBookmark</a>.</p>
 
 
                     
@@ -1062,9 +1052,7 @@ doesn't exist.</p>
     
         <p class="code-caption">Report when a bookmark is deleted.</p>
     
-    <pre class="prettyprint"><code>AvatarBookmarks.bookmarkDeleted.connect(function (bookmarkName) {
-    print("Bookmark deleted: " + bookmarkName);
-});</code></pre>
+    <pre class="prettyprint"><code>AvatarBookmarks.bookmarkDeleted.connect(function (bookmarkName) {    print("Bookmark deleted: " + bookmarkName);});</code></pre>
 
 
 -->
@@ -1083,8 +1071,7 @@ doesn't exist.</p>
                         
 
 
-    <p>Triggered when an avatar bookmark is loaded, setting your avatar model, scale, and avatar entities (or attachments if an 
-old bookmark) to those in the bookmark.</p>
+    <p>Triggered when an avatar bookmark is loaded, setting your avatar model, scale, and avatar entities (or attachments if an old bookmark) to those in the bookmark.</p>
 
 
                     
@@ -1357,8 +1344,7 @@ Array.&lt;Object.&lt;"properties", <a href="Entities.html#.EntityProperties">Ent
                     
 
 
-    <p>The avatar entities included with the 
-    bookmark.</p>
+    <p>The avatar entities included with the     bookmark.</p>
 
 
                 
@@ -1397,8 +1383,7 @@ Array.&lt;MyAvatar.AttachmentData>
                     
 
 
-    <p>The attachments included with the bookmark.
-    </p>
+    <p>The attachments included with the bookmark.    </p>
     <p class="important">Deprecated: Use avatar entities instead.
 
 
@@ -1596,10 +1581,7 @@ string
                         
         <p class="code-caption">Add a new avatar bookmark and report the bookmark data.</p>
     
-    <pre class="prettyprint"><code>var bookmarkName = "New Bookmark";
-AvatarBookmarks.addBookmark(bookmarkName);
-var bookmarkData = AvatarBookmarks.getBookmark(bookmarkName);
-print("Bookmark data: " + JSON.stringify(bookmarkData));</code></pre>
+    <pre class="prettyprint"><code>var bookmarkName = "New Bookmark";AvatarBookmarks.addBookmark(bookmarkName);var bookmarkData = AvatarBookmarks.getBookmark(bookmarkName);print("Bookmark data: " + JSON.stringify(bookmarkData));</code></pre>
 
                     
                   
@@ -1897,8 +1879,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The current avatar bookmarks in an object where the keys are the 
-    bookmark names and the values are the bookmark details.
+    The current avatar bookmarks in an object where the keys are the     bookmark names and the values are the bookmark details.
 
 
                         
@@ -1970,11 +1951,7 @@ string
                         
         <p class="code-caption">List the names and URLs of all the avatar bookmarks.</p>
     
-    <pre class="prettyprint"><code>var bookmarks = AvatarBookmarks.getBookmarks();
-print("Avatar bookmarks:");
-for (var key in bookmarks) {
-    print("- " + key + " " + bookmarks[key].avatarUrl);
-};</code></pre>
+    <pre class="prettyprint"><code>var bookmarks = AvatarBookmarks.getBookmarks();print("Avatar bookmarks:");for (var key in bookmarks) {    print("- " + key + " " + bookmarks[key].avatarUrl);};</code></pre>
 
                     
                   
@@ -2022,8 +1999,7 @@ for (var key in bookmarks) {
                             
 
 
-    <p>Loads an avatar bookmark, setting your avatar model, scale, and avatar entities (or attachments if an old bookmark) to 
-those in the bookmark.</p>
+    <p>Loads an avatar bookmark, setting your avatar model, scale, and avatar entities (or attachments if an old bookmark) to those in the bookmark.</p>
 
 
                         
@@ -2329,8 +2305,7 @@ string
                             
 
 
-    <p>Updates an existing bookmark with your current avatar model, scale, and wearables. No action is taken if the bookmark 
-doesn't exist.</p>
+    <p>Updates an existing bookmark with your current avatar model, scale, and wearables. No action is taken if the bookmark doesn't exist.</p>
 
 
                         
@@ -2666,8 +2641,7 @@ Signal
                             
 
 
-    <p>Triggered when a new avatar bookmark is added or an existing avatar bookmark is updated, using 
-<a href="AvatarBookmarks.html#.addBookmark">addBookmark</a>.</p>
+    <p>Triggered when a new avatar bookmark is added or an existing avatar bookmark is updated, using <a href="AvatarBookmarks.html#.addBookmark">addBookmark</a>.</p>
 
 
                         
@@ -2952,9 +2926,7 @@ string
                         
         <p class="code-caption">Report when a bookmark is deleted.</p>
     
-    <pre class="prettyprint"><code>AvatarBookmarks.bookmarkDeleted.connect(function (bookmarkName) {
-    print("Bookmark deleted: " + bookmarkName);
-});</code></pre>
+    <pre class="prettyprint"><code>AvatarBookmarks.bookmarkDeleted.connect(function (bookmarkName) {    print("Bookmark deleted: " + bookmarkName);});</code></pre>
 
                     
                   
@@ -3022,8 +2994,7 @@ Signal
                             
 
 
-    <p>Triggered when an avatar bookmark is loaded, setting your avatar model, scale, and avatar entities (or attachments if an 
-old bookmark) to those in the bookmark.</p>
+    <p>Triggered when an avatar bookmark is loaded, setting your avatar model, scale, and avatar entities (or attachments if an old bookmark) to those in the bookmark.</p>
 
 
                         

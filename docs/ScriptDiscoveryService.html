@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -118,9 +119,7 @@ string
                     
 
 
-    <p>The path and name of a script to debug using the "API Debugger" developer tool 
-    (currentAPI.js). If set, the API Debugger dialog displays the objects and values exposed by the script using 
-    <a href="Script.html#.registerValue">Script.registerValue</a> and similar.</p>
+    <p>The path and name of a script to debug using the "API Debugger" developer tool     (currentAPI.js). If set, the API Debugger dialog displays the objects and values exposed by the script using     <a href="Script.html#.registerValue">Script.registerValue</a> and similar.</p>
 
 
                 
@@ -155,8 +154,7 @@ string
                     
 
 
-    <p>The path where the default scripts are located in the Interface installation. 
-    <em>Read-only.</em></p>
+    <p>The path where the default scripts are located in the Interface installation.     <em>Read-only.</em></p>
 
 
                 
@@ -189,9 +187,7 @@ string
                     
 
 
-    <p>Information on the scripts that are in the default scripts directory of the 
-    Interface installation.
-    <em>Read-only.</em></p>
+    <p>Information on the scripts that are in the default scripts directory of the     Interface installation.    <em>Read-only.</em></p>
 
 
                 
@@ -224,9 +220,7 @@ string
                     
 
 
-    <p>Sorted and filtered information on the scripts that are in the default 
-    scripts directory of the Interface installation.
-    <em>Read-only.</em></p>
+    <p>Sorted and filtered information on the scripts that are in the default     scripts directory of the Interface installation.    <em>Read-only.</em></p>
 
 
                 
@@ -591,11 +585,7 @@ Array.&lt;<a href="ScriptDiscoveryService.html#.RunningScript">ScriptDiscoverySe
     
         <p class="code-caption">Report all running scripts.</p>
     
-    <pre class="prettyprint"><code>var runningScripts = ScriptDiscoveryService.getRunning();
-print("Running scripts:");
-for (var i = 0; i &lt; runningScripts.length; i++) {
-    print(JSON.stringify(runningScripts[i]));
-}</code></pre>
+    <pre class="prettyprint"><code>var runningScripts = ScriptDiscoveryService.getRunning();print("Running scripts:");for (var i = 0; i &lt; runningScripts.length; i++) {    print(JSON.stringify(runningScripts[i]));}</code></pre>
 
 
 -->
@@ -619,12 +609,8 @@ for (var i = 0; i &lt; runningScripts.length; i++) {
                     
 
 
-    <p>Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface 
-starts.
-</p>
-    <p>This is a synonym for calling <a href="ScriptDiscoveryService.html#.loadScript">loadScript</a> with just the script URL.</p>
-<p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>
-<p>See also, <a href="Script.html#.load">Script.load</a>.</p>
+    <p>Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface starts.</p>
+    <p>This is a synonym for calling <a href="ScriptDiscoveryService.html#.loadScript">loadScript</a> with just the script URL.</p><p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p><p>See also, <a href="Script.html#.load">Script.load</a>.</p>
 
 
                 
@@ -721,10 +707,8 @@ object
                     
 
 
-    <p>Starts running an Interface script, if it isn't already running.
-</p>
-    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>
-<p>See also, <a href="Script.html#.load">Script.load</a>.</p>
+    <p>Starts running an Interface script, if it isn't already running.</p>
+    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p><p>See also, <a href="Script.html#.load">Script.load</a>.</p>
 
 
                 
@@ -1472,8 +1456,7 @@ object
                     
 
 
-    <p>Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity 
-scripts are also restarted.</p>
+    <p>Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity scripts are also restarted.</p>
 
 
                 
@@ -1990,8 +1973,7 @@ boolean
                         
 
 
-    <p>Triggered when any script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>,
-console.log, or console.debug.</p>
+    <p>Triggered when any script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>,console.log, or console.debug.</p>
 
 
                     
@@ -2143,9 +2125,7 @@ console.log, or console.debug.</p>
     
         <p class="code-caption">Report when the number of running scripts changes.</p>
     
-    <pre class="prettyprint"><code>ScriptDiscoveryService.scriptCountChanged.connect(function () {
-    print("Scripts count changed: " + ScriptDiscoveryService.getRunning().length);
-});</code></pre>
+    <pre class="prettyprint"><code>ScriptDiscoveryService.scriptCountChanged.connect(function () {    print("Scripts count changed: " + ScriptDiscoveryService.getRunning().length);});</code></pre>
 
 
 -->
@@ -2246,9 +2226,7 @@ console.log, or console.debug.</p>
                         
 
 
-    <p>Triggered when Interface, avatar, and client entity scripts are restarting as a result of
-<a href="ScriptDiscoveryService.html#.reloadAllScripts">reloadAllScripts</a> or 
-<a href="ScriptDiscoveryService.html#.stopAllScripts">stopAllScripts</a>.</p>
+    <p>Triggered when Interface, avatar, and client entity scripts are restarting as a result of<a href="ScriptDiscoveryService.html#.reloadAllScripts">reloadAllScripts</a> or <a href="ScriptDiscoveryService.html#.stopAllScripts">stopAllScripts</a>.</p>
 
 
                     
@@ -2693,10 +2671,8 @@ string
                     
 
 
-    <p><code>"script"</code> or <code>"folder"</code>.
-    </p>
-    <p class="important">Deprecated: This property is deprecated and will be removed. It currently always has the value, 
-    <code>"script"</code>.</p>
+    <p><code>"script"</code> or <code>"folder"</code>.    </p>
+    <p class="important">Deprecated: This property is deprecated and will be removed. It currently always has the value,     <code>"script"</code>.</p>
 
 
                 
@@ -2735,8 +2711,7 @@ Array.&lt;<a href="ScriptDiscoveryService.html#.PublicScript">ScriptDiscoverySer
                     
 
 
-    <p>Only present if <code>type == "folder"</code>.
-    </p>
+    <p>Only present if <code>type == "folder"</code>.    </p>
     <p class="important">Deprecated: This property is deprecated and will be removed. It currently is never present.
 
 
@@ -2776,8 +2751,7 @@ string
                     
 
 
-    <p>The full URL of the script &mdash; including the <code>"file:///"</code> scheme at the start.
-    </p>
+    <p>The full URL of the script &mdash; including the <code>"file:///"</code> scheme at the start.    </p>
     <p>Only present if <code>type == "script"</code>.</p>
 
 
@@ -2911,8 +2885,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the script is a local file (i.e., the scheme is "file"), <code>false</code> 
-    if it isn't (e.g., the scheme is "http").</p>
+    <p><code>true</code> if the script is a local file (i.e., the scheme is "file"), <code>false</code>     if it isn't (e.g., the scheme is "http").</p>
 
 
                 
@@ -3180,8 +3153,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    All scripts in the "scripts" directory of the Interface 
-    installation.
+    All scripts in the "scripts" directory of the Interface     installation.
 
 
                         
@@ -3357,11 +3329,7 @@ string
                         
         <p class="code-caption">Report all running scripts.</p>
     
-    <pre class="prettyprint"><code>var runningScripts = ScriptDiscoveryService.getRunning();
-print("Running scripts:");
-for (var i = 0; i &lt; runningScripts.length; i++) {
-    print(JSON.stringify(runningScripts[i]));
-}</code></pre>
+    <pre class="prettyprint"><code>var runningScripts = ScriptDiscoveryService.getRunning();print("Running scripts:");for (var i = 0; i &lt; runningScripts.length; i++) {    print(JSON.stringify(runningScripts[i]));}</code></pre>
 
                     
                   
@@ -3409,12 +3377,8 @@ for (var i = 0; i &lt; runningScripts.length; i++) {
                             
 
 
-    <p>Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface 
-starts.
-</p>
-    <p>This is a synonym for calling <a href="ScriptDiscoveryService.html#.loadScript">loadScript</a> with just the script URL.</p>
-<p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>
-<p>See also, <a href="Script.html#.load">Script.load</a>.</p>
+    <p>Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface starts.</p>
+    <p>This is a synonym for calling <a href="ScriptDiscoveryService.html#.loadScript">loadScript</a> with just the script URL.</p><p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p><p>See also, <a href="Script.html#.load">Script.load</a>.</p>
 
 
                         
@@ -3509,8 +3473,7 @@ string
                     
 
 
-    <p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is 
-    optional.</p>
+    <p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is     optional.</p>
 
 
                 
@@ -3577,10 +3540,8 @@ string
                             
 
 
-    <p>Starts running an Interface script, if it isn't already running.
-</p>
-    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>
-<p>See also, <a href="Script.html#.load">Script.load</a>.</p>
+    <p>Starts running an Interface script, if it isn't already running.</p>
+    <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p><p>See also, <a href="Script.html#.load">Script.load</a>.</p>
 
 
                         
@@ -3695,8 +3656,7 @@ string
                     
 
 
-    <p>The path and name of the script. If a local file, including the <code>"file:///"</code> 
-    scheme is optional.</p>
+    <p>The path and name of the script. If a local file, including the <code>"file:///"</code>     scheme is optional.</p>
 
 
                 
@@ -3745,8 +3705,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the user specifically loaded it, <code>false</code> if not 
-    (e.g., a script loaded it). If <code>false</code>, the script is not automatically loaded next time Interface starts.</p>
+    <p><code>true</code> if the user specifically loaded it, <code>false</code> if not     (e.g., a script loaded it). If <code>false</code>, the script is not automatically loaded next time Interface starts.</p>
 
 
                 
@@ -3893,8 +3852,7 @@ boolean
                     
 
 
-    <p><code>true</code> to redownload the script, <code>false</code> to use the copy from 
-    the cache if available.</p>
+    <p><code>true</code> to redownload the script, <code>false</code> to use the copy from     the cache if available.</p>
 
 
                 
@@ -3943,8 +3901,7 @@ boolean
                     
 
 
-    <p><code>true</code> to close Interface when the script finishes, 
-    <code>false</code> to not close Interface.</p>
+    <p><code>true</code> to close Interface when the script finishes,     <code>false</code> to not close Interface.</p>
 
 
                 
@@ -5240,8 +5197,7 @@ string
                             
 
 
-    <p>Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity 
-scripts are also restarted.</p>
+    <p>Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity scripts are also restarted.</p>
 
 
                         
@@ -5405,8 +5361,7 @@ boolean
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the script was successfully stopped or restarted, <code>false</code> if it 
-    wasn't (e.g., the script couldn't be found).
+    <code>true</code> if the script was successfully stopped or restarted, <code>false</code> if it     wasn't (e.g., the script couldn't be found).
 
 
                         
@@ -5535,8 +5490,7 @@ string
                     
 
 
-    <p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is 
-    optional.</p>
+    <p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is     optional.</p>
 
 
                 
@@ -5585,8 +5539,7 @@ boolean
                     
 
 
-    <p><code>true</code> to redownload and restart the script, <code>false</code> to stop 
-    it.</p>
+    <p><code>true</code> to redownload and restart the script, <code>false</code> to stop     it.</p>
 
 
                 
@@ -6373,8 +6326,7 @@ Signal
                             
 
 
-    <p>Triggered when any script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>,
-console.log, or console.debug.</p>
+    <p>Triggered when any script prints a message to the program log via <a href="global.html#print">print</a>, <a href="Script.html#.print">Script.print</a>,console.log, or console.debug.</p>
 
 
                         
@@ -6625,9 +6577,7 @@ Signal
                         
         <p class="code-caption">Report when the number of running scripts changes.</p>
     
-    <pre class="prettyprint"><code>ScriptDiscoveryService.scriptCountChanged.connect(function () {
-    print("Scripts count changed: " + ScriptDiscoveryService.getRunning().length);
-});</code></pre>
+    <pre class="prettyprint"><code>ScriptDiscoveryService.scriptCountChanged.connect(function () {    print("Scripts count changed: " + ScriptDiscoveryService.getRunning().length);});</code></pre>
 
                     
                   
@@ -6897,9 +6847,7 @@ Signal
                             
 
 
-    <p>Triggered when Interface, avatar, and client entity scripts are restarting as a result of
-<a href="ScriptDiscoveryService.html#.reloadAllScripts">reloadAllScripts</a> or 
-<a href="ScriptDiscoveryService.html#.stopAllScripts">stopAllScripts</a>.</p>
+    <p>Triggered when Interface, avatar, and client entity scripts are restarting as a result of<a href="ScriptDiscoveryService.html#.reloadAllScripts">reloadAllScripts</a> or <a href="ScriptDiscoveryService.html#.stopAllScripts">stopAllScripts</a>.</p>
 
 
                         

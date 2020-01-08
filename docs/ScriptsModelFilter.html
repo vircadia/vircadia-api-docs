@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -50,28 +51,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>Sorted and filtered information on the scripts that are in the default scripts directory of the Interface installation. This 
-is provided as a property of <a href="ScriptDiscoveryService.html">ScriptDiscoveryService</a>.
-
-<p>The information provided reflects the subdirectory structure. Properties, methods, and signals are per QT's
-<a href="https://doc.qt.io/qt-5/qsortfilterproxymodel.html">QSortFilterProxyModel</a> class, with the following details:</p>
-<ul>
-  <li>The rows are sorted per directory and file names.</li>
-  <li>A single column of data: <code>columnCount(index)</code> returns <code>1</code>. </li>
-  <li>Data is provided for the following roles:
-    <table>
-      <thead>
-        <tr><th>Role</th><th>Value</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Display</td><td><code>0</code></td><td>The directory or script file name.</td></tr>
-        <tr><td>Path</td><td><code>256</code></td><td>The path and filename of the data item if it is a script,
-        <code>undefined</code> if it is a directory.</td></tr>
-      </tbody>
-    </table>
-  </li>
-  <li>Use <code>null</code> for the root directory's index.</li>
-</ul></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>Sorted and filtered information on the scripts that are in the default scripts directory of the Interface installation. This is provided as a property of <a href="ScriptDiscoveryService.html">ScriptDiscoveryService</a>.<p>The information provided reflects the subdirectory structure. Properties, methods, and signals are per QT's<a href="https://doc.qt.io/qt-5/qsortfilterproxymodel.html">QSortFilterProxyModel</a> class, with the following details:</p><ul>  <li>The rows are sorted per directory and file names.</li>  <li>A single column of data: <code>columnCount(index)</code> returns <code>1</code>. </li>  <li>Data is provided for the following roles:    <table>      <thead>        <tr><th>Role</th><th>Value</th><th>Description</th></tr>      </thead>      <tbody>        <tr><td>Display</td><td><code>0</code></td><td>The directory or script file name.</td></tr>        <tr><td>Path</td><td><code>256</code></td><td>The path and filename of the data item if it is a script,        <code>undefined</code> if it is a directory.</td></tr>      </tbody>    </table>  </li>  <li>Use <code>null</code> for the root directory's index.</li></ul></div>
                 
 
 
@@ -130,29 +110,7 @@ is provided as a property of <a href="ScriptDiscoveryService.html">ScriptDiscove
                     
         <p class="code-caption">List all scripts that include "edit" in their name.</p>
     
-    <pre class="prettyprint"><code>var DISPLAY_ROLE = 0;
-var PATH_ROLE = 256;
-
-function printDirectory(parentIndex, directoryLevel, indent) {
-    var numRows = ScriptDiscoveryService.scriptsModelFilter.rowCount(parentIndex);
-    for (var i = 0; i &lt; numRows; i++) {
-        var rowIndex = ScriptDiscoveryService.scriptsModelFilter.index(i, 0, parentIndex);
-
-        var name = ScriptDiscoveryService.scriptsModelFilter.data(rowIndex, DISPLAY_ROLE);
-        var hasChildren = ScriptDiscoveryService.scriptsModelFilter.hasChildren(rowIndex);
-        var path = hasChildren ? "" : ScriptDiscoveryService.scriptsModelFilter.data(rowIndex, PATH_ROLE);
-
-        print(indent + "- " + name + (hasChildren ? "" : " - " + path));
-
-        if (hasChildren) {
-            printDirectory(rowIndex, directoryLevel + 1, indent + "    ");
-        }
-    }
-}
-
-ScriptDiscoveryService.scriptsModelFilter.filterRegExp = new RegExp("^.*edit.*$", "i");  // Set the filter.
-print("Edit scripts:");
-printDirectory(null, 0, "");  // null index for the root directory.
+    <pre class="prettyprint"><code>var DISPLAY_ROLE = 0;var PATH_ROLE = 256;function printDirectory(parentIndex, directoryLevel, indent) {    var numRows = ScriptDiscoveryService.scriptsModelFilter.rowCount(parentIndex);    for (var i = 0; i &lt; numRows; i++) {        var rowIndex = ScriptDiscoveryService.scriptsModelFilter.index(i, 0, parentIndex);        var name = ScriptDiscoveryService.scriptsModelFilter.data(rowIndex, DISPLAY_ROLE);        var hasChildren = ScriptDiscoveryService.scriptsModelFilter.hasChildren(rowIndex);        var path = hasChildren ? "" : ScriptDiscoveryService.scriptsModelFilter.data(rowIndex, PATH_ROLE);        print(indent + "- " + name + (hasChildren ? "" : " - " + path));        if (hasChildren) {            printDirectory(rowIndex, directoryLevel + 1, indent + "    ");        }    }}ScriptDiscoveryService.scriptsModelFilter.filterRegExp = new RegExp("^.*edit.*$", "i");  // Set the filter.print("Edit scripts:");printDirectory(null, 0, "");  // null index for the root directory.
  </code></pre>
 
                                 

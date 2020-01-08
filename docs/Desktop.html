@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -57,8 +58,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Desktop</code> API provides the dimensions of the computer screen, sets the opacity of the HUD surface, and 
-enables QML and HTML windows to be shown inside or outside of Interface.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Desktop</code> API provides the dimensions of the computer screen, sets the opacity of the HUD surface, and enables QML and HTML windows to be shown inside or outside of Interface.</div>
                 
 
                 
@@ -113,8 +113,7 @@ number
                     
 
 
-    <p>The width of the computer screen including task bar and system menu, in pixels. 
-    <em>Read-only.</em></p>
+    <p>The width of the computer screen including task bar and system menu, in pixels.     <em>Read-only.</em></p>
 
 
                 
@@ -145,8 +144,7 @@ number
                     
 
 
-    <p>The height of the computer screen including task bar and system menu, in pixels. 
-    <em>Read-only.</em></p>
+    <p>The height of the computer screen including task bar and system menu, in pixels.     <em>Read-only.</em></p>
 
 
                 
@@ -177,8 +175,7 @@ number
                     
 
 
-    <p>A flag value that makes an <a href="InteractiveWindow.html">InteractiveWindow</a> always display on 
-    top. <em>Read-only.</em></p>
+    <p>A flag value that makes an <a href="InteractiveWindow.html">InteractiveWindow</a> always display on     top. <em>Read-only.</em></p>
 
 
                 
@@ -209,8 +206,7 @@ number
                     
 
 
-    <p>A flag value that makes an <a href="InteractiveWindow.html">InteractiveWindow</a> hide instead 
-    of closing when the user clicks the "close" button.<em> Read-only.</em></p>
+    <p>A flag value that makes an <a href="InteractiveWindow.html">InteractiveWindow</a> hide instead     of closing when the user clicks the "close" button.<em> Read-only.</em></p>
 
 
                 
@@ -241,8 +237,7 @@ number
                     
 
 
-    <p>The possible display options for an 
-    <a href="InteractiveWindow.html">InteractiveWindow</a>: display inside Interface or in a separate desktop window. <em>Read-only.</em></p>
+    <p>The possible display options for an     <a href="InteractiveWindow.html">InteractiveWindow</a>: display inside Interface or in a separate desktop window. <em>Read-only.</em></p>
 
 
                 
@@ -273,9 +268,7 @@ number
                     
 
 
-    <p>The possible docking locations of an <a href="InteractiveWindow.html">InteractiveWindow</a>: top, 
-    bottom, left, or right of the Interface window. 
-    <em>Read-only.</em></p>
+    <p>The possible docking locations of an <a href="InteractiveWindow.html">InteractiveWindow</a>: top,     bottom, left, or right of the Interface window.     <em>Read-only.</em></p>
 
 
                 
@@ -306,9 +299,7 @@ number
                     
 
 
-    <p>The possible "relative position anchors" for an <a href="InteractiveWindow.html">InteractiveWindow</a>: top left, 
-    top right, bottom right, or bottom left of the Interface window. 
-    <em>Read-only.</em></p>
+    <p>The possible "relative position anchors" for an <a href="InteractiveWindow.html">InteractiveWindow</a>: top left,     top right, bottom right, or bottom left of the Interface window.     <em>Read-only.</em></p>
 
 
                 
@@ -482,15 +473,7 @@ number
     
         <p class="code-caption">Open a dialog in its own window separate from Interface.</p>
     
-    <pre class="prettyprint"><code>var nativeWindow = Desktop.createWindow(Script.resourcesPath() + 'qml/OverlayWindowTest.qml', {
-    title: "Native Window",
-    presentationMode: Desktop.PresentationMode.NATIVE,
-    size: { x: 500, y: 400 }
-});
-
-Script.scriptEnding.connect(function () {
-    nativeWindow.close();
-});
+    <pre class="prettyprint"><code>var nativeWindow = Desktop.createWindow(Script.resourcesPath() + 'qml/OverlayWindowTest.qml', {    title: "Native Window",    presentationMode: Desktop.PresentationMode.NATIVE,    size: { x: 500, y: 400 }});Script.scriptEnding.connect(function () {    nativeWindow.close();});
      </code></pre>
 
 
@@ -602,8 +585,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Opens a QML window within Interface: in the Interface window in desktop mode or on the HUD surface in HMD mode. If a 
-window of the specified name already exists, it is shown, otherwise a new window is created from the QML.</p>
+    <p>Opens a QML window within Interface: in the Interface window in desktop mode or on the HUD surface in HMD mode. If a window of the specified name already exists, it is shown, otherwise a new window is created from the QML.</p>
 
 
                 
@@ -824,9 +806,7 @@ string
                     
 
 
-    <p>The QML file that specifies the window content. The QML file can use a <code>WebView</code> 
-    control (defined by "WebView.qml" included in the Interface install) to embed an HTML web page (complete with  
-    <code>EventBridge</code> object).</p>
+    <p>The QML file that specifies the window content. The QML file can use a <code>WebView</code>     control (defined by "WebView.qml" included in the Interface install) to embed an HTML web page (complete with      <code>EventBridge</code> object).</p>
 
 
                 
@@ -886,15 +866,7 @@ string
                         
         <p class="code-caption">Open a dialog in its own window separate from Interface.</p>
     
-    <pre class="prettyprint"><code>var nativeWindow = Desktop.createWindow(Script.resourcesPath() + 'qml/OverlayWindowTest.qml', {
-    title: "Native Window",
-    presentationMode: Desktop.PresentationMode.NATIVE,
-    size: { x: 500, y: 400 }
-});
-
-Script.scriptEnding.connect(function () {
-    nativeWindow.close();
-});
+    <pre class="prettyprint"><code>var nativeWindow = Desktop.createWindow(Script.resourcesPath() + 'qml/OverlayWindowTest.qml', {    title: "Native Window",    presentationMode: Desktop.PresentationMode.NATIVE,    size: { x: 500, y: 400 }});Script.scriptEnding.connect(function () {    nativeWindow.close();});
      </code></pre>
 
                     
@@ -1096,8 +1068,7 @@ number
                             
 
 
-    <p>Opens a QML window within Interface: in the Interface window in desktop mode or on the HUD surface in HMD mode. If a 
-window of the specified name already exists, it is shown, otherwise a new window is created from the QML.</p>
+    <p>Opens a QML window within Interface: in the Interface window in desktop mode or on the HUD surface in HMD mode. If a window of the specified name already exists, it is shown, otherwise a new window is created from the QML.</p>
 
 
                         

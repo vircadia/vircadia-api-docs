@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -61,10 +62,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Tablet</code> API provides the facilities to work with the system or other tablet. In toolbar mode (see Developer 
-&gt; UI options), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed in a dialog.
-
-<p>See also the <a href="Toolbars.html">Toolbars</a> API for working with toolbars.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Tablet</code> API provides the facilities to work with the system or other tablet. In toolbar mode (see Developer &gt; UI options), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed in a dialog.<p>See also the <a href="Toolbars.html">Toolbars</a> API for working with toolbars.</p></div>
                 
 
                 
@@ -235,8 +233,7 @@
     
         <p class="code-caption">Display the High Fidelity home page on the system tablet.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-tablet.gotoWebScreen("https://highfidelity.com/");</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");tablet.gotoWebScreen("https://highfidelity.com/");</code></pre>
 
 
 -->
@@ -260,8 +257,7 @@ tablet.gotoWebScreen("https://highfidelity.com/");</code></pre>
                     
 
 
-    <p>Plays a standard tablet sound. The sound is played locally (only the user running the script hears it) without a 
-position.</p>
+    <p>Plays a standard tablet sound. The sound is played locally (only the user running the script hears it) without a position.</p>
 
 
                 
@@ -331,8 +327,7 @@ position.</p>
     
         <p class="code-caption">Play a tablet sound.</p>
     
-    <pre class="prettyprint"><code>var TABLET_BUTTON_CLICK = 0;
-Tablet.playSound(TABLET_BUTTON_CLICK);</code></pre>
+    <pre class="prettyprint"><code>var TABLET_BUTTON_CLICK = 0;Tablet.playSound(TABLET_BUTTON_CLICK);</code></pre>
 
 
 -->
@@ -366,10 +361,8 @@ Tablet.playSound(TABLET_BUTTON_CLICK);</code></pre>
                         
 
 
-    <p>Triggered when a tablet message or dialog is displayed on the tablet that needs the user's attention.
-</p>
-    <p><strong>Note:</strong> Only triggered if the script is running in the same script engine as the script that created 
-the tablet. By default, this means in scripts included as part of the default scripts.</p>
+    <p>Triggered when a tablet message or dialog is displayed on the tablet that needs the user's attention.</p>
+    <p><strong>Note:</strong> Only triggered if the script is running in the same script engine as the script that created the tablet. By default, this means in scripts included as part of the default scripts.</p>
 
 
                     
@@ -467,19 +460,7 @@ number
                     
 
 
-    <p>Standard tablet sounds.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>0</code></td><td>Button click.</td></tr>
-    <tr><td><code>1</code></td><td>Button hover.</td></tr>
-    <tr><td><code>2</code></td><td>Tablet open.</td></tr>
-    <tr><td><code>3</code></td><td>Tablet hands in.</td></tr>
-    <tr><td><code>4</code></td><td>Tablet hands out.</td></tr>
-  </tbody>
-</table>
+    <p>Standard tablet sounds.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>0</code></td><td>Button click.</td></tr>    <tr><td><code>1</code></td><td>Button hover.</td></tr>    <tr><td><code>2</code></td><td>Tablet open.</td></tr>    <tr><td><code>3</code></td><td>Tablet hands in.</td></tr>    <tr><td><code>4</code></td><td>Tablet hands out.</td></tr>  </tbody></table>
 
 
                                     
@@ -681,8 +662,7 @@ string
                         
         <p class="code-caption">Display the High Fidelity home page on the system tablet.</p>
     
-    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
-tablet.gotoWebScreen("https://highfidelity.com/");</code></pre>
+    <pre class="prettyprint"><code>var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");tablet.gotoWebScreen("https://highfidelity.com/");</code></pre>
 
                     
                   
@@ -730,8 +710,7 @@ tablet.gotoWebScreen("https://highfidelity.com/");</code></pre>
                             
 
 
-    <p>Plays a standard tablet sound. The sound is played locally (only the user running the script hears it) without a 
-position.</p>
+    <p>Plays a standard tablet sound. The sound is played locally (only the user running the script hears it) without a position.</p>
 
 
                         
@@ -843,8 +822,7 @@ position.</p>
                         
         <p class="code-caption">Play a tablet sound.</p>
     
-    <pre class="prettyprint"><code>var TABLET_BUTTON_CLICK = 0;
-Tablet.playSound(TABLET_BUTTON_CLICK);</code></pre>
+    <pre class="prettyprint"><code>var TABLET_BUTTON_CLICK = 0;Tablet.playSound(TABLET_BUTTON_CLICK);</code></pre>
 
                     
                   
@@ -911,10 +889,8 @@ Signal
                             
 
 
-    <p>Triggered when a tablet message or dialog is displayed on the tablet that needs the user's attention.
-</p>
-    <p><strong>Note:</strong> Only triggered if the script is running in the same script engine as the script that created 
-the tablet. By default, this means in scripts included as part of the default scripts.</p>
+    <p>Triggered when a tablet message or dialog is displayed on the tablet that needs the user's attention.</p>
+    <p><strong>Note:</strong> Only triggered if the script is running in the same script engine as the script that created the tablet. By default, this means in scripts included as part of the default scripts.</p>
 
 
                         

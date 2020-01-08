@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -69,37 +70,7 @@
                     
         <p class="code-caption">Outline an entity when it is grabbed by the mouse or a controller.</p>
     
-    <pre class="prettyprint"><code>// Create an entity and copy the following script into the entity's "Script URL" field.
-// Move the entity behind another entity to see the occluded outline.
-(function () {
-    var LIST_NAME = "SelectionExample",
-        ITEM_TYPE = "entity",
-        HIGHLIGHT_STYLE = {
-            outlineUnoccludedColor: { red: 0, green: 180, blue: 239 },
-            outlineUnoccludedAlpha: 0.5,
-            outlineOccludedColor: { red: 239, green: 180, blue: 0 },
-            outlineOccludedAlpha: 0.5,
-            outlineWidth: 4
-        };
-
-    Selection.enableListHighlight(LIST_NAME, HIGHLIGHT_STYLE);
-
-    this.startNearGrab = function (entityID) {
-        Selection.addToSelectedItemsList(LIST_NAME, ITEM_TYPE, entityID);
-    };
-
-    this.startDistanceGrab = function (entityID) {
-        Selection.addToSelectedItemsList(LIST_NAME, ITEM_TYPE, entityID);
-    };
-
-    this.releaseGrab = function (entityID) {
-        Selection.removeFromSelectedItemsList(LIST_NAME, ITEM_TYPE, entityID);
-    };
-
-    Script.scriptEnding.connect(function () {
-        Selection.removeListFromMap(LIST_NAME);
-    });
-});</code></pre>
+    <pre class="prettyprint"><code>// Create an entity and copy the following script into the entity's "Script URL" field.// Move the entity behind another entity to see the occluded outline.(function () {    var LIST_NAME = "SelectionExample",        ITEM_TYPE = "entity",        HIGHLIGHT_STYLE = {            outlineUnoccludedColor: { red: 0, green: 180, blue: 239 },            outlineUnoccludedAlpha: 0.5,            outlineOccludedColor: { red: 239, green: 180, blue: 0 },            outlineOccludedAlpha: 0.5,            outlineWidth: 4        };    Selection.enableListHighlight(LIST_NAME, HIGHLIGHT_STYLE);    this.startNearGrab = function (entityID) {        Selection.addToSelectedItemsList(LIST_NAME, ITEM_TYPE, entityID);    };    this.startDistanceGrab = function (entityID) {        Selection.addToSelectedItemsList(LIST_NAME, ITEM_TYPE, entityID);    };    this.releaseGrab = function (entityID) {        Selection.removeFromSelectedItemsList(LIST_NAME, ITEM_TYPE, entityID);    };    Script.scriptEnding.connect(function () {        Selection.removeListFromMap(LIST_NAME);    });});</code></pre>
 
                 
                 
@@ -393,8 +364,7 @@ boolean
                     
 
 
-    <p>Disables highlighting for a selection list.
-</p>
+    <p>Disables highlighting for a selection list.</p>
     <p>Note: This function implicitly calls <a href="Selection.html#.disableListToScene">disableListToScene</a>.</p>
 
 
@@ -589,10 +559,7 @@ boolean
                     
 
 
-    <p>Enables highlighting for a selection list. All items in or subsequently added to the list are displayed with the 
-highlight effect specified. The method can be called multiple times with different values in the style to modify the 
-highlighting.
-</p>
+    <p>Enables highlighting for a selection list. All items in or subsequently added to the list are displayed with the highlight effect specified. The method can be called multiple times with different values in the style to modify the highlighting.</p>
     <p>Note: This function implicitly calls <a href="Selection.html#.enableListToScene">enableListToScene</a>.</p>
 
 
@@ -690,8 +657,7 @@ boolean
                     
 
 
-    <p>Enables scene selection for a selection list. All items in or subsequently added to the list are sent to a scene 
-selection in the rendering engine for debugging purposes.</p>
+    <p>Enables scene selection for a selection list. All items in or subsequently added to the list are sent to a scene selection in the rendering engine for debugging purposes.</p>
 
 
                 
@@ -1931,8 +1897,7 @@ boolean
                     
 
 
-    <p><code>true</code> to fade the outside edge of the outline, <code>false</code> 
-    to have a sharp edge.</p>
+    <p><code>true</code> to fade the outside edge of the outline, <code>false</code>     to have a sharp edge.</p>
 
 
                 
@@ -2015,16 +1980,7 @@ string
                     
 
 
-    <p>The type of a specific item in a selection list.</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"avatar"</code></td><td>The item is an avatar.</td></tr>
-    <tr><td><code>"entity"</code></td><td>The item is an entity.</td></tr>
-  </tbody>
-</table>
+    <p>The type of a specific item in a selection list.</p><table>  <thead>    <tr><th>Value</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"avatar"</code></td><td>The item is an avatar.</td></tr>    <tr><td><code>"entity"</code></td><td>The item is an entity.</td></tr>  </tbody></table>
 
 
                                     
@@ -2260,8 +2216,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the item was successfully added or already existed in the list, otherwise 
-    <code>false</code>.
+    <code>true</code> if the item was successfully added or already existed in the list, otherwise     <code>false</code>.
 
 
                         
@@ -2669,8 +2624,7 @@ string
                             
 
 
-    <p>Disables highlighting for a selection list.
-</p>
+    <p>Disables highlighting for a selection list.</p>
     <p>Note: This function implicitly calls <a href="Selection.html#.disableListToScene">disableListToScene</a>.</p>
 
 
@@ -2995,10 +2949,7 @@ string
                             
 
 
-    <p>Enables highlighting for a selection list. All items in or subsequently added to the list are displayed with the 
-highlight effect specified. The method can be called multiple times with different values in the style to modify the 
-highlighting.
-</p>
+    <p>Enables highlighting for a selection list. All items in or subsequently added to the list are displayed with the highlight effect specified. The method can be called multiple times with different values in the style to modify the highlighting.</p>
     <p>Note: This function implicitly calls <a href="Selection.html#.enableListToScene">enableListToScene</a>.</p>
 
 
@@ -3194,8 +3145,7 @@ string
                             
 
 
-    <p>Enables scene selection for a selection list. All items in or subsequently added to the list are sent to a scene 
-selection in the rendering engine for debugging purposes.</p>
+    <p>Enables scene selection for a selection list. All items in or subsequently added to the list are sent to a scene selection in the rendering engine for debugging purposes.</p>
 
 
                         
@@ -3443,8 +3393,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The highlight style of the selection list if the list exists and highlighting is 
-    enabled, otherwise an empty object.
+    The highlight style of the selection list if the list exists and highlighting is     enabled, otherwise an empty object.
 
 
                         
@@ -4032,8 +3981,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the item was successfully removed or was not in the list, otherwise 
-    <code>false</code>.
+    <code>true</code> if the item was successfully removed or was not in the list, otherwise     <code>false</code>.
 
 
                         

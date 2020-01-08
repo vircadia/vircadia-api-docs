@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -59,10 +60,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>AvatarList</code> API provides information about avatars within the current domain.
-
-<p><strong>Warning:</strong> An API named "<code>AvatarList</code>" is also provided for Interface, client entity, and avatar 
-scripts, however, it is a synonym for the <a href="AvatarManager.html">AvatarManager</a> API.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>AvatarList</code> API provides information about avatars within the current domain.<p><strong>Warning:</strong> An API named "<code>AvatarList</code>" is also provided for Interface, client entity, and avatar scripts, however, it is a synonym for the <a href="AvatarManager.html">AvatarManager</a> API.</p></div>
                 
 
                 
@@ -260,10 +258,8 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                     
 
 
-    <p>Gets the IDs of all avatars in the domain.
-</p>
-    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) the 
-avatar's ID is NOT included in results.</p>
+    <p>Gets the IDs of all avatars in the domain.</p>
+    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) the avatar's ID is NOT included in results.</p>
 
 
                 
@@ -333,8 +329,7 @@ avatar's ID is NOT included in results.</p>
     
         <p class="code-caption">Report the IDS of all avatars within the domain.</p>
     
-    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarIdentifiers();
-print("Avatars in the domain: " + JSON.stringify(avatars));</code></pre>
+    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarIdentifiers();print("Avatars in the domain: " + JSON.stringify(avatars));</code></pre>
 
 
 -->
@@ -368,10 +363,8 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                     
 
 
-    <p>Gets the IDs of all avatars within a specified distance from a point.
-</p>
-    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) the
-avatar's ID is NOT included in results.</p>
+    <p>Gets the IDs of all avatars within a specified distance from a point.</p>
+    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) theavatar's ID is NOT included in results.</p>
 
 
                 
@@ -441,9 +434,7 @@ avatar's ID is NOT included in results.</p>
     
         <p class="code-caption">Report the IDs of all avatars within 10m of the origin.</p>
     
-    <pre class="prettyprint"><code>var RANGE = 10;
-var avatars = AvatarList.getAvatarsInRange(Vec3.ZERO, RANGE);
-print("Avatars near the origin: " + JSON.stringify(avatars));</code></pre>
+    <pre class="prettyprint"><code>var RANGE = 10;var avatars = AvatarList.getAvatarsInRange(Vec3.ZERO, RANGE);print("Avatars near the origin: " + JSON.stringify(avatars));</code></pre>
 
 
 -->
@@ -1054,11 +1045,7 @@ boolean
     
         <p class="code-caption">Report when an avatar arrives in the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {
-    print("Avatar arrived: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {    print("Avatar arrived: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
 
 -->
@@ -1147,11 +1134,7 @@ boolean
     
         <p class="code-caption">Report when an avatar leaves the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {
-    print("Avatar left: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {    print("Avatar left: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
 
 -->
@@ -1240,11 +1223,7 @@ boolean
     
         <p class="code-caption">Report when an avatar's session ID changes.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {
-    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
 
 -->
@@ -1450,10 +1429,8 @@ boolean
                             
 
 
-    <p>Gets the IDs of all avatars in the domain.
-</p>
-    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) the 
-avatar's ID is NOT included in results.</p>
+    <p>Gets the IDs of all avatars in the domain.</p>
+    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) the avatar's ID is NOT included in results.</p>
 
 
                         
@@ -1507,8 +1484,7 @@ avatar's ID is NOT included in results.</p>
                         
         <p class="code-caption">Report the IDS of all avatars within the domain.</p>
     
-    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarIdentifiers();
-print("Avatars in the domain: " + JSON.stringify(avatars));</code></pre>
+    <pre class="prettyprint"><code>var avatars = AvatarList.getAvatarIdentifiers();print("Avatars in the domain: " + JSON.stringify(avatars));</code></pre>
 
                     
                   
@@ -1565,10 +1541,8 @@ print("Avatars in the domain: " + JSON.stringify(avatars));</code></pre>
                             
 
 
-    <p>Gets the IDs of all avatars within a specified distance from a point.
-</p>
-    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) the
-avatar's ID is NOT included in results.</p>
+    <p>Gets the IDs of all avatars within a specified distance from a point.</p>
+    <p><strong>Warning:</strong> If the AC script is acting as an avatar (i.e., <code>Agent.isAvatar == true</code>) theavatar's ID is NOT included in results.</p>
 
 
                         
@@ -1713,9 +1687,7 @@ number
                         
         <p class="code-caption">Report the IDs of all avatars within 10m of the origin.</p>
     
-    <pre class="prettyprint"><code>var RANGE = 10;
-var avatars = AvatarList.getAvatarsInRange(Vec3.ZERO, RANGE);
-print("Avatars near the origin: " + JSON.stringify(avatars));</code></pre>
+    <pre class="prettyprint"><code>var RANGE = 10;var avatars = AvatarList.getAvatarsInRange(Vec3.ZERO, RANGE);print("Avatars near the origin: " + JSON.stringify(avatars));</code></pre>
 
                     
                   
@@ -1754,8 +1726,7 @@ print("Avatars near the origin: " + JSON.stringify(avatars));</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if there's an avatar within the specified distance of the point, <code>false</code> 
-    if not.
+    <code>true</code> if there's an avatar within the specified distance of the point, <code>false</code>     if not.
 
 
                         
@@ -3004,11 +2975,7 @@ Signal
                         
         <p class="code-caption">Report when an avatar arrives in the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {
-    print("Avatar arrived: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarAddedEvent.connect(function (sessionID) {    print("Avatar arrived: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
                     
                   
@@ -3188,11 +3155,7 @@ Signal
                         
         <p class="code-caption">Report when an avatar leaves the domain.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {
-    print("Avatar left: " + sessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarRemovedEvent.connect(function (sessionID) {    print("Avatar left: " + sessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
                     
                   
@@ -3410,11 +3373,7 @@ Signal
                         
         <p class="code-caption">Report when an avatar's session ID changes.</p>
     
-    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {
-    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);
-});
-
-// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
+    <pre class="prettyprint"><code>AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessionID) {    print("Avatar session ID changed from " + oldSessionID + " to " + newSessionID);});// Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".</code></pre>
 
                     
                   

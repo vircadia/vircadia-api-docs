@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -62,9 +63,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>Plays or "injects" the content of an audio file.
-
-<p>Create using <a href="Audio.html">Audio</a> API methods.</p></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>Plays or "injects" the content of an audio file.<p>Create using <a href="Audio.html">Audio</a> API methods.</p></div>
                 
 
 
@@ -114,8 +113,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the audio is currently playing, otherwise <code>false</code>. 
-    <em>Read-only.</em></p>
+    <p><code>true</code> if the audio is currently playing, otherwise <code>false</code>.     <em>Read-only.</em></p>
 
 
                 
@@ -146,8 +144,7 @@ number
                     
 
 
-    <p>The loudness in the last frame of audio, range <code>0.0</code> &ndash; <code>1.0</code>. 
-    <em>Read-only.</em></p>
+    <p>The loudness in the last frame of audio, range <code>0.0</code> &ndash; <code>1.0</code>.     <em>Read-only.</em></p>
 
 
                 
@@ -562,19 +559,7 @@ boolean
     
         <p class="code-caption">See if a sound is playing.</p>
     
-    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");
-var injector;
-var injectorOptions = {
-    position: MyAvatar.position
-};
-
-Script.setTimeout(function () { // Give the sound time to load.
-    injector = Audio.playSound(sound, injectorOptions);
-}, 1000);
-
-Script.setTimeout(function () {
-    print("Sound is playing: " + injector.isPlaying());
-}, 2000);</code></pre>
+    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");var injector;var injectorOptions = {    position: MyAvatar.position};Script.setTimeout(function () { // Give the sound time to load.    injector = Audio.playSound(sound, injectorOptions);}, 1000);Script.setTimeout(function () {    print("Sound is playing: " + injector.isPlaying());}, 2000);</code></pre>
 
 
 -->
@@ -842,19 +827,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Stop playing a sound before it finishes.</p>
     
-    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");
-var injector;
-var injectorOptions = {
-    position: MyAvatar.position
-};
-
-Script.setTimeout(function () { // Give the sound time to load.
-    injector = Audio.playSound(sound, injectorOptions);
-}, 1000);
-
-Script.setTimeout(function () {
-    injector.stop();
-}, 2000);</code></pre>
+    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");var injector;var injectorOptions = {    position: MyAvatar.position};Script.setTimeout(function () { // Give the sound time to load.    injector = Audio.playSound(sound, injectorOptions);}, 1000);Script.setTimeout(function () {    injector.stop();}, 2000);</code></pre>
 
 
 -->
@@ -958,18 +931,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Report when a sound has finished playing.</p>
     
-    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");
-var injector;
-var injectorOptions = {
-    position: MyAvatar.position
-};
-
-Script.setTimeout(function () { // Give the sound time to load.
-    injector = Audio.playSound(sound, injectorOptions);
-    injector.finished.connect(function () {
-        print("Finished playing sound");
-    });
-}, 1000);
+    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");var injector;var injectorOptions = {    position: MyAvatar.position};Script.setTimeout(function () { // Give the sound time to load.    injector = Audio.playSound(sound, injectorOptions);    injector.finished.connect(function () {        print("Finished playing sound");    });}, 1000);
      </code></pre>
 
 
@@ -1164,11 +1126,7 @@ number
                     
 
 
-    <p>Alter the pitch of the sound, within +/- 2 octaves. The value is the relative sample rate to 
-    resample the sound at, range <code>0.0625</code> &ndash; <code>16.0</code>.<br />
-    A value of <code>0.0625</code> lowers the pitch by 2 octaves.<br />
-    A value of <code>1.0</code> means there is no change in pitch.<br />
-    A value of <code>16.0</code> raises the pitch by 2 octaves.</p>
+    <p>Alter the pitch of the sound, within +/- 2 octaves. The value is the relative sample rate to     resample the sound at, range <code>0.0625</code> &ndash; <code>16.0</code>.<br />    A value of <code>0.0625</code> lowers the pitch by 2 octaves.<br />    A value of <code>1.0</code> means there is no change in pitch.<br />    A value of <code>16.0</code> raises the pitch by 2 octaves.</p>
 
 
                 
@@ -1238,8 +1196,7 @@ number
                     
 
 
-    <p>Starts playback from a specified time (seconds) within the sound file, &ge; 
-    <code>0</code>.</p>
+    <p>Starts playback from a specified time (seconds) within the sound file, &ge;     <code>0</code>.</p>
 
 
                 
@@ -1274,8 +1231,7 @@ boolean
                     
 
 
-    <p>If <code>true</code>, the sound is played back locally on the client rather than to
-    others via the audio mixer.</p>
+    <p>If <code>true</code>, the sound is played back locally on the client rather than to    others via the audio mixer.</p>
 
 
                 
@@ -1310,8 +1266,7 @@ boolean
                     
 
 
-    <p class="important">Deprecated: This property is deprecated and will be
-    removed.</p>
+    <p class="important">Deprecated: This property is deprecated and will be    removed.</p>
 
 
                 
@@ -1671,19 +1626,7 @@ boolean
                         
         <p class="code-caption">See if a sound is playing.</p>
     
-    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");
-var injector;
-var injectorOptions = {
-    position: MyAvatar.position
-};
-
-Script.setTimeout(function () { // Give the sound time to load.
-    injector = Audio.playSound(sound, injectorOptions);
-}, 1000);
-
-Script.setTimeout(function () {
-    print("Sound is playing: " + injector.isPlaying());
-}, 2000);</code></pre>
+    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");var injector;var injectorOptions = {    position: MyAvatar.position};Script.setTimeout(function () { // Give the sound time to load.    injector = Audio.playSound(sound, injectorOptions);}, 1000);Script.setTimeout(function () {    print("Sound is playing: " + injector.isPlaying());}, 2000);</code></pre>
 
                     
                   
@@ -2033,19 +1976,7 @@ Script.setTimeout(function () {
                         
         <p class="code-caption">Stop playing a sound before it finishes.</p>
     
-    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");
-var injector;
-var injectorOptions = {
-    position: MyAvatar.position
-};
-
-Script.setTimeout(function () { // Give the sound time to load.
-    injector = Audio.playSound(sound, injectorOptions);
-}, 1000);
-
-Script.setTimeout(function () {
-    injector.stop();
-}, 2000);</code></pre>
+    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");var injector;var injectorOptions = {    position: MyAvatar.position};Script.setTimeout(function () { // Give the sound time to load.    injector = Audio.playSound(sound, injectorOptions);}, 1000);Script.setTimeout(function () {    injector.stop();}, 2000);</code></pre>
 
                     
                   
@@ -2166,18 +2097,7 @@ Signal
                         
         <p class="code-caption">Report when a sound has finished playing.</p>
     
-    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");
-var injector;
-var injectorOptions = {
-    position: MyAvatar.position
-};
-
-Script.setTimeout(function () { // Give the sound time to load.
-    injector = Audio.playSound(sound, injectorOptions);
-    injector.finished.connect(function () {
-        print("Finished playing sound");
-    });
-}, 1000);
+    <pre class="prettyprint"><code>var sound = SoundCache.getSound(Script.resourcesPath() + "sounds/sample.wav");var injector;var injectorOptions = {    position: MyAvatar.position};Script.setTimeout(function () { // Give the sound time to load.    injector = Audio.playSound(sound, injectorOptions);    injector.finished.connect(function () {        print("Finished playing sound");    });}, 1000);
      </code></pre>
 
                     

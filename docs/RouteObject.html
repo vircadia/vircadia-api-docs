@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -54,14 +55,7 @@
         <div class="container-overview">
             
                 <h3>Description</h3>
-                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p><p>A route in a <a href="MappingObject.html">MappingObject</a> used by the <a href="Controller.html">Controller</a> API.</p>
-
-<p>Create a route using <a href="MappingObject.html">MappingObject</a> methods and apply this object's methods to process it, terminating with 
-<a href="RouteObject.html#to">RouteObject#to</a> to apply it to a <code>Standard</code> control, action, or script function. Note: Loops are not 
-permitted.</p>
-
-<p>Some methods apply to routes with number data, some apply routes with <a href="global.html#Pose">Pose</a> data, and some apply to both route 
-types.<p></div>
+                <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p><p>A route in a <a href="MappingObject.html">MappingObject</a> used by the <a href="Controller.html">Controller</a> API.</p><p>Create a route using <a href="MappingObject.html">MappingObject</a> methods and apply this object's methods to process it, terminating with <a href="RouteObject.html#to">RouteObject#to</a> to apply it to a <code>Standard</code> control, action, or script function. Note: Loops are not permitted.</p><p>Some methods apply to routes with number data, some apply routes with <a href="global.html#Pose">Pose</a> data, and some apply to both route types.<p></div>
                 
 
 
@@ -173,8 +167,7 @@ types.<p></div>
                     
 
 
-    <p>Filters numeric route values to lie between two values; values outside this range are not passed on through the 
-route.</p>
+    <p>Filters numeric route values to lie between two values; values outside this range are not passed on through the route.</p>
 
 
                 
@@ -244,16 +237,7 @@ route.</p>
     
         <p class="code-caption">Clamp right trigger values to between 0.3 and 0.7.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {
-    print("Value: " + value);
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {    print("Value: " + value);});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -287,9 +271,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters numeric route values such that they are rounded to <code>-1</code>, <code>0</code>, or <code>1</code>.
-For example, this enables you to use an analog input as if it were a toggle or, in the case of a bidirectional axis, 
-a tri-state switch.</p>
+    <p>Filters numeric route values such that they are rounded to <code>-1</code>, <code>0</code>, or <code>1</code>.For example, this enables you to use an analog input as if it were a toggle or, in the case of a bidirectional axis, a tri-state switch.</p>
 
 
                 
@@ -357,19 +339,9 @@ a tri-state switch.</p>
 
     <h5>Example</h5>
     
-        <p class="code-caption">Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or 
-    <code>1</code>.</p>
+        <p class="code-caption">Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or     <code>1</code>.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {
-    print("Value: " + value);  // -1, 0, or 1
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {    print("Value: " + value);  // -1, 0, or 1});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -403,8 +375,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code>. For example, this 
-enables you to use an analog input as if it were a toggle.</p>
+    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code>. For example, this enables you to use an analog input as if it were a toggle.</p>
 
 
                 
@@ -474,16 +445,7 @@ enables you to use an analog input as if it were a toggle.</p>
     
         <p class="code-caption">Round the right joystick forward/back values to <code>0</code> or <code>1</code>.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {
-    print("Value: " + value);  // 0, or 1
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {    print("Value: " + value);  // 0, or 1});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -517,9 +479,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters numeric route values such that they're sent only when the input value is outside a dead-zone. When the input 
-passes the dead-zone value, output is sent starting at <code>0.0</code> and catching up with the input value. As the 
-input returns toward the dead-zone value, output values reduce to <code>0.0</code> at the dead-zone value.</p>
+    <p>Filters numeric route values such that they're sent only when the input value is outside a dead-zone. When the input passes the dead-zone value, output is sent starting at <code>0.0</code> and catching up with the input value. As the input returns toward the dead-zone value, output values reduce to <code>0.0</code> at the dead-zone value.</p>
 
 
                 
@@ -589,16 +549,7 @@ input returns toward the dead-zone value, output values reduce to <code>0.0</cod
     
         <p class="code-caption">Apply a dead-zone to the right joystick forward/back values.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {
-    print("Value: " + value);  // 0.0 - 1.0 values once outside the dead-zone.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {    print("Value: " + value);  // 0.0 - 1.0 values once outside the dead-zone.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -702,26 +653,7 @@ Script.scriptEnding.connect(function () {
     
         <p class="code-caption">Write debug information to the program log for a right trigger mapping.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RT).debug().to(function (value) {
-    print("Value: " + value);
-});
-
-// Information similar to the following is written each frame:
-[DEBUG] [hifi.controllers] Beginning mapping frame
-[DEBUG] [hifi.controllers] Processing device routes
-[DEBUG] [hifi.controllers] Processing standard routes
-[DEBUG] [hifi.controllers] Applying route  ""
-[DEBUG] [hifi.controllers] Value was  5.96046e-07
-[DEBUG] [hifi.controllers] Filtered value was  5.96046e-07
-
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).debug().to(function (value) {    print("Value: " + value);});// Information similar to the following is written each frame:[DEBUG] [hifi.controllers] Beginning mapping frame[DEBUG] [hifi.controllers] Processing device routes[DEBUG] [hifi.controllers] Processing standard routes[DEBUG] [hifi.controllers] Applying route  ""[DEBUG] [hifi.controllers] Value was  5.96046e-07[DEBUG] [hifi.controllers] Filtered value was  5.96046e-07Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -755,10 +687,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by an exponential decay filter. The filter's rotation and 
-translation values are calculated as: <code>filterConstant * currentValue + (1 - filterConstant) * 
-previousValue</code>. Values near 1 are less smooth with lower latency; values near 0 are more smooth with higher 
-latency.</p>
+    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by an exponential decay filter. The filter's rotation and translation values are calculated as: <code>filterConstant * currentValue + (1 - filterConstant) * previousValue</code>. Values near 1 are less smooth with lower latency; values near 0 are more smooth with higher latency.</p>
 
 
                 
@@ -855,9 +784,7 @@ latency.</p>
                     
 
 
-    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code> without output values 
-flickering when the input value hovers around <code>0.5</code>. For example, this enables you to use an analog input 
-as if it were a toggle.</p>
+    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code> without output values flickering when the input value hovers around <code>0.5</code>. For example, this enables you to use an analog input as if it were a toggle.</p>
 
 
                 
@@ -927,19 +854,7 @@ as if it were a toggle.</p>
     
         <p class="code-caption">Round the right joystick forward/back values to 0 or 1 with hysteresis.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).peek().to(function (value) {
-    print("Raw value: " + value);  // 0.0 - 1.0.
-});
-mapping.from(Controller.Standard.RY).hysteresis(0.3, 0.7).to(function (value) {
-    print("Hysteresis value: " + value);  // 0 or 1.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).peek().to(function (value) {    print("Raw value: " + value);  // 0.0 - 1.0.});mapping.from(Controller.Standard.RY).hysteresis(0.3, 0.7).to(function (value) {    print("Hysteresis value: " + value);  // 0 or 1.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -973,8 +888,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters numeric and <a href="global.html#Pose">Pose</a> route values to have the opposite sign, e.g., <code>0.5</code> is changed to 
-<code>-0.5</code>.</p>
+    <p>Filters numeric and <a href="global.html#Pose">Pose</a> route values to have the opposite sign, e.g., <code>0.5</code> is changed to <code>-0.5</code>.</p>
 
 
                 
@@ -1044,19 +958,7 @@ Script.scriptEnding.connect(function () {
     
         <p class="code-caption">Invert the value of the right joystick forward/back values.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.LY).to(function (value) {
-    print("L value: " + value);  // -1.0 to 1.0 values, forward to back.
-});
-mapping.from(Controller.Standard.RY).invert().to(function (value) {
-    print("R value: " + value);  // 1.0 to -1.0 values, forward to back.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.LY).to(function (value) {    print("L value: " + value);  // -1.0 to 1.0 values, forward to back.});mapping.from(Controller.Standard.RY).invert().to(function (value) {    print("R value: " + value);  // 1.0 to -1.0 values, forward to back.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -1090,8 +992,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters numeric route values such that a value of <code>0.0</code> is changed to <code>1.0</code>, and other values 
-are changed to <code>0.0</code>.</p>
+    <p>Filters numeric route values such that a value of <code>0.0</code> is changed to <code>1.0</code>, and other values are changed to <code>0.0</code>.</p>
 
 
                 
@@ -1161,20 +1062,7 @@ are changed to <code>0.0</code>.</p>
     
         <p class="code-caption">Logical NOT of LSTouch value.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RSTouch).peek().to(function (value) {
-    print("RSTouch: " + value);
-});
-mapping.from(Controller.Standard.RSTouch).logicalNot().to(function (value) {
-    print("localNot of RSTouch: " + value);
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RSTouch).peek().to(function (value) {    print("RSTouch: " + value);});mapping.from(Controller.Standard.RSTouch).logicalNot().to(function (value) {    print("localNot of RSTouch: " + value);});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});
          </code></pre>
 
 
@@ -1209,10 +1097,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by a low velocity filter. The filter's rotation and translation 
-values are calculated as: <code>(1 - f) * currentValue + f * previousValue</code> where 
-<code>f = currentVelocity / filterConstant</code>. At low velocities, the filter value is largely the previous 
-value; at high velocities the value is wholly the current controller value.</p>
+    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by a low velocity filter. The filter's rotation and translation values are calculated as: <code>(1 - f) * currentValue + f * previousValue</code> where <code>f = currentVelocity / filterConstant</code>. At low velocities, the filter value is largely the previous value; at high velocities the value is wholly the current controller value.</p>
 
 
                 
@@ -1309,8 +1194,7 @@ value; at high velocities the value is wholly the current controller value.</p>
                     
 
 
-    <p>Processes the route without marking the controller output as having been read, so that other routes from the same 
-controller output can also process.</p>
+    <p>Processes the route without marking the controller output as having been read, so that other routes from the same controller output can also process.</p>
 
 
                 
@@ -1574,16 +1458,7 @@ controller output can also process.</p>
     
         <p class="code-caption">Send right trigger values every half second.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {
-    print("Value: " + value);
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {    print("Value: " + value);});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -1784,19 +1659,7 @@ Script.scriptEnding.connect(function () {
     
         <p class="code-caption">Scale the value of the right joystick forward/back values by 10.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.LY).to(function (value) {
-    print("L value: " + value);  // -1.0 to 1.0 values.
-});
-mapping.from(Controller.Standard.RY).scale(10.0).to(function (value) {
-    print("R value: " + value);  // -10.0 to -10.0 values.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.LY).to(function (value) {    print("L value: " + value);  // -1.0 to 1.0 values.});mapping.from(Controller.Standard.RY).scale(10.0).to(function (value) {    print("R value: " + value);  // -10.0 to -10.0 values.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -1820,8 +1683,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is 
-sent to the specified destination.</p>
+    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is sent to the specified destination.</p>
 
 
                 
@@ -1891,31 +1753,11 @@ sent to the specified destination.</p>
     
         <p class="code-caption">Make the right trigger move your avatar up.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
         <p class="code-caption">Make the right trigger call a function.</p>
     
-    <pre class="prettyprint"><code>function onRightTrigger(value) {
-    print("Trigger value: " + value);
-}
-
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RT).to(onRightTrigger);
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>function onRightTrigger(value) {    print("Trigger value: " + value);}var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).to(onRightTrigger);Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -1939,9 +1781,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is 
-sent to the specified destination.
-</p>
+    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is sent to the specified destination.</p>
     <p>This is a QML-specific version of to: use this version in QML files.</p>
 
 
@@ -2233,9 +2073,7 @@ sent to the specified destination.
                     
 
 
-    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, and 
-the input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequent 
-routes using the same input are processed.</p>
+    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, and the input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequent routes using the same input are processed.</p>
 
 
                 
@@ -2305,23 +2143,7 @@ routes using the same input are processed.</p>
     
         <p class="code-caption">Process the right trigger differently in HMD and desktop modes.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-// Processed only if in HMD mode.
-mapping.from(Controller.Standard.RT)
-    .when(Controller.Hardware.Application.InHMD)
-    .to(function () { print("Trigger pressed in HMD mode."); });
-
-// Processed only if previous route not processed.
-mapping.from(Controller.Standard.RT)
-    .to(function () { print("Trigger pressed in desktop mode."); });
-
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);// Processed only if in HMD mode.mapping.from(Controller.Standard.RT)    .when(Controller.Hardware.Application.InHMD)    .to(function () { print("Trigger pressed in HMD mode."); });// Processed only if previous route not processed.mapping.from(Controller.Standard.RT)    .to(function () { print("Trigger pressed in desktop mode."); });Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
 
 -->
@@ -2355,10 +2177,7 @@ Script.scriptEnding.connect(function () {
                     
 
 
-    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, and
-the input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequent
-routes using the same input are processed.
-</p>
+    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, andthe input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequentroutes using the same input are processed.</p>
     <p>This is a QML-specific version of when: use this version in QML files.</p>
 
 
@@ -2468,8 +2287,7 @@ routes using the same input are processed.
                             
 
 
-    <p>Filters numeric route values to lie between two values; values outside this range are not passed on through the 
-route.</p>
+    <p>Filters numeric route values to lie between two values; values outside this range are not passed on through the route.</p>
 
 
                         
@@ -2614,16 +2432,7 @@ number
                         
         <p class="code-caption">Clamp right trigger values to between 0.3 and 0.7.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {
-    print("Value: " + value);
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {    print("Value: " + value);});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -2680,9 +2489,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters numeric route values such that they are rounded to <code>-1</code>, <code>0</code>, or <code>1</code>.
-For example, this enables you to use an analog input as if it were a toggle or, in the case of a bidirectional axis, 
-a tri-state switch.</p>
+    <p>Filters numeric route values such that they are rounded to <code>-1</code>, <code>0</code>, or <code>1</code>.For example, this enables you to use an analog input as if it were a toggle or, in the case of a bidirectional axis, a tri-state switch.</p>
 
 
                         
@@ -2734,19 +2541,9 @@ a tri-state switch.</p>
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or 
-    <code>1</code>.</p>
+        <p class="code-caption">Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or     <code>1</code>.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {
-    print("Value: " + value);  // -1, 0, or 1
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {    print("Value: " + value);  // -1, 0, or 1});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -2803,8 +2600,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code>. For example, this 
-enables you to use an analog input as if it were a toggle.</p>
+    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code>. For example, this enables you to use an analog input as if it were a toggle.</p>
 
 
                         
@@ -2858,16 +2654,7 @@ enables you to use an analog input as if it were a toggle.</p>
                         
         <p class="code-caption">Round the right joystick forward/back values to <code>0</code> or <code>1</code>.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {
-    print("Value: " + value);  // 0, or 1
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {    print("Value: " + value);  // 0, or 1});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -2924,9 +2711,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters numeric route values such that they're sent only when the input value is outside a dead-zone. When the input 
-passes the dead-zone value, output is sent starting at <code>0.0</code> and catching up with the input value. As the 
-input returns toward the dead-zone value, output values reduce to <code>0.0</code> at the dead-zone value.</p>
+    <p>Filters numeric route values such that they're sent only when the input value is outside a dead-zone. When the input passes the dead-zone value, output is sent starting at <code>0.0</code> and catching up with the input value. As the input returns toward the dead-zone value, output values reduce to <code>0.0</code> at the dead-zone value.</p>
 
 
                         
@@ -3021,8 +2806,7 @@ number
                     
 
 
-    <p>The minimum input value at which to start sending output. For negative input values, the 
-   negative of this value is used.</p>
+    <p>The minimum input value at which to start sending output. For negative input values, the    negative of this value is used.</p>
 
 
                 
@@ -3039,16 +2823,7 @@ number
                         
         <p class="code-caption">Apply a dead-zone to the right joystick forward/back values.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {
-    print("Value: " + value);  // 0.0 - 1.0 values once outside the dead-zone.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {    print("Value: " + value);  // 0.0 - 1.0 values once outside the dead-zone.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -3220,8 +2995,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then writing debug information is enabled for the route, 
-    otherwise it is disabled.</p>
+    <p>If <code>true</code> then writing debug information is enabled for the route,     otherwise it is disabled.</p>
 
 
                 
@@ -3238,26 +3012,7 @@ boolean
                         
         <p class="code-caption">Write debug information to the program log for a right trigger mapping.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RT).debug().to(function (value) {
-    print("Value: " + value);
-});
-
-// Information similar to the following is written each frame:
-[DEBUG] [hifi.controllers] Beginning mapping frame
-[DEBUG] [hifi.controllers] Processing device routes
-[DEBUG] [hifi.controllers] Processing standard routes
-[DEBUG] [hifi.controllers] Applying route  ""
-[DEBUG] [hifi.controllers] Value was  5.96046e-07
-[DEBUG] [hifi.controllers] Filtered value was  5.96046e-07
-
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).debug().to(function (value) {    print("Value: " + value);});// Information similar to the following is written each frame:[DEBUG] [hifi.controllers] Beginning mapping frame[DEBUG] [hifi.controllers] Processing device routes[DEBUG] [hifi.controllers] Processing standard routes[DEBUG] [hifi.controllers] Applying route  ""[DEBUG] [hifi.controllers] Value was  5.96046e-07[DEBUG] [hifi.controllers] Filtered value was  5.96046e-07Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -3314,10 +3069,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by an exponential decay filter. The filter's rotation and 
-translation values are calculated as: <code>filterConstant * currentValue + (1 - filterConstant) * 
-previousValue</code>. Values near 1 are less smooth with lower latency; values near 0 are more smooth with higher 
-latency.</p>
+    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by an exponential decay filter. The filter's rotation and translation values are calculated as: <code>filterConstant * currentValue + (1 - filterConstant) * previousValue</code>. Values near 1 are less smooth with lower latency; values near 0 are more smooth with higher latency.</p>
 
 
                         
@@ -3512,9 +3264,7 @@ number
                             
 
 
-    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code> without output values 
-flickering when the input value hovers around <code>0.5</code>. For example, this enables you to use an analog input 
-as if it were a toggle.</p>
+    <p>Filters numeric route values such that they are rounded to <code>0</code> or <code>1</code> without output values flickering when the input value hovers around <code>0.5</code>. For example, this enables you to use an analog input as if it were a toggle.</p>
 
 
                         
@@ -3659,19 +3409,7 @@ number
                         
         <p class="code-caption">Round the right joystick forward/back values to 0 or 1 with hysteresis.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RY).peek().to(function (value) {
-    print("Raw value: " + value);  // 0.0 - 1.0.
-});
-mapping.from(Controller.Standard.RY).hysteresis(0.3, 0.7).to(function (value) {
-    print("Hysteresis value: " + value);  // 0 or 1.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RY).peek().to(function (value) {    print("Raw value: " + value);  // 0.0 - 1.0.});mapping.from(Controller.Standard.RY).hysteresis(0.3, 0.7).to(function (value) {    print("Hysteresis value: " + value);  // 0 or 1.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -3728,8 +3466,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters numeric and <a href="global.html#Pose">Pose</a> route values to have the opposite sign, e.g., <code>0.5</code> is changed to 
-<code>-0.5</code>.</p>
+    <p>Filters numeric and <a href="global.html#Pose">Pose</a> route values to have the opposite sign, e.g., <code>0.5</code> is changed to <code>-0.5</code>.</p>
 
 
                         
@@ -3783,19 +3520,7 @@ Script.scriptEnding.connect(function () {
                         
         <p class="code-caption">Invert the value of the right joystick forward/back values.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.LY).to(function (value) {
-    print("L value: " + value);  // -1.0 to 1.0 values, forward to back.
-});
-mapping.from(Controller.Standard.RY).invert().to(function (value) {
-    print("R value: " + value);  // 1.0 to -1.0 values, forward to back.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.LY).to(function (value) {    print("L value: " + value);  // -1.0 to 1.0 values, forward to back.});mapping.from(Controller.Standard.RY).invert().to(function (value) {    print("R value: " + value);  // 1.0 to -1.0 values, forward to back.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -3852,8 +3577,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters numeric route values such that a value of <code>0.0</code> is changed to <code>1.0</code>, and other values 
-are changed to <code>0.0</code>.</p>
+    <p>Filters numeric route values such that a value of <code>0.0</code> is changed to <code>1.0</code>, and other values are changed to <code>0.0</code>.</p>
 
 
                         
@@ -3907,20 +3631,7 @@ are changed to <code>0.0</code>.</p>
                         
         <p class="code-caption">Logical NOT of LSTouch value.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RSTouch).peek().to(function (value) {
-    print("RSTouch: " + value);
-});
-mapping.from(Controller.Standard.RSTouch).logicalNot().to(function (value) {
-    print("localNot of RSTouch: " + value);
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RSTouch).peek().to(function (value) {    print("RSTouch: " + value);});mapping.from(Controller.Standard.RSTouch).logicalNot().to(function (value) {    print("localNot of RSTouch: " + value);});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});
          </code></pre>
 
                     
@@ -3978,10 +3689,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by a low velocity filter. The filter's rotation and translation 
-values are calculated as: <code>(1 - f) * currentValue + f * previousValue</code> where 
-<code>f = currentVelocity / filterConstant</code>. At low velocities, the filter value is largely the previous 
-value; at high velocities the value is wholly the current controller value.</p>
+    <p>Filters <a href="global.html#Pose">Pose</a> route values to be smoothed by a low velocity filter. The filter's rotation and translation values are calculated as: <code>(1 - f) * currentValue + f * previousValue</code> where <code>f = currentVelocity / filterConstant</code>. At low velocities, the filter value is largely the previous value; at high velocities the value is wholly the current controller value.</p>
 
 
                         
@@ -4076,8 +3784,7 @@ number
                     
 
 
-    <p>The rotational velocity, in rad/s, at which the filter value is wholly the latest 
-    controller value.</p>
+    <p>The rotational velocity, in rad/s, at which the filter value is wholly the latest     controller value.</p>
 
 
                 
@@ -4110,8 +3817,7 @@ number
                     
 
 
-    <p>The linear velocity, in m/s, at which the filter value is wholly the latest 
-    controller value.</p>
+    <p>The linear velocity, in m/s, at which the filter value is wholly the latest     controller value.</p>
 
 
                 
@@ -4178,8 +3884,7 @@ number
                             
 
 
-    <p>Processes the route without marking the controller output as having been read, so that other routes from the same 
-controller output can also process.</p>
+    <p>Processes the route without marking the controller output as having been read, so that other routes from the same controller output can also process.</p>
 
 
                         
@@ -4294,8 +3999,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then the route is processed without marking the route's 
-    controller source as having been read.</p>
+    <p>If <code>true</code> then the route is processed without marking the route's     controller source as having been read.</p>
 
 
                 
@@ -4636,16 +4340,7 @@ number
                         
         <p class="code-caption">Send right trigger values every half second.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {
-    print("Value: " + value);
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {    print("Value: " + value);});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -4976,19 +4671,7 @@ number
                         
         <p class="code-caption">Scale the value of the right joystick forward/back values by 10.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-mapping.from(Controller.Standard.LY).to(function (value) {
-    print("L value: " + value);  // -1.0 to 1.0 values.
-});
-mapping.from(Controller.Standard.RY).scale(10.0).to(function (value) {
-    print("R value: " + value);  // -10.0 to -10.0 values.
-});
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.LY).to(function (value) {    print("L value: " + value);  // -1.0 to 1.0 values.});mapping.from(Controller.Standard.RY).scale(10.0).to(function (value) {    print("R value: " + value);  // -10.0 to -10.0 values.});Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -5036,8 +4719,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is 
-sent to the specified destination.</p>
+    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is sent to the specified destination.</p>
 
 
                         
@@ -5138,9 +4820,7 @@ function
                     
 
 
-    <p>The standard control, action, or JavaScript 
-function that the route output is mapped to. For a function, the parameter can be either the name of the function or 
-an in-line function definition.</p>
+    <p>The standard control, action, or JavaScript function that the route output is mapped to. For a function, the parameter can be either the name of the function or an in-line function definition.</p>
 
 
                 
@@ -5157,31 +4837,11 @@ an in-line function definition.</p>
                         
         <p class="code-caption">Make the right trigger move your avatar up.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
         <p class="code-caption">Make the right trigger call a function.</p>
     
-    <pre class="prettyprint"><code>function onRightTrigger(value) {
-    print("Trigger value: " + value);
-}
-
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-mapping.from(Controller.Standard.RT).to(onRightTrigger);
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>function onRightTrigger(value) {    print("Trigger value: " + value);}var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);mapping.from(Controller.Standard.RT).to(onRightTrigger);Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -5229,9 +4889,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is 
-sent to the specified destination.
-</p>
+    <p>Terminates the route with a standard control, an action, or a script function. The output value from the route is sent to the specified destination.</p>
     <p>This is a QML-specific version of to: use this version in QML files.</p>
 
 
@@ -5333,9 +4991,7 @@ function
                     
 
 
-    <p>The standard control, action, or JavaScript
-function that the route output is mapped to. For a function, the parameter can be either the name of the function or
-an in-line function definition.</p>
+    <p>The standard control, action, or JavaScriptfunction that the route output is mapped to. For a function, the parameter can be either the name of the function oran in-line function definition.</p>
 
 
                 
@@ -5726,9 +5382,7 @@ an in-line function definition.</p>
                             
 
 
-    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, and 
-the input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequent 
-routes using the same input are processed.</p>
+    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, and the input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequent routes using the same input are processed.</p>
 
 
                         
@@ -5826,17 +5480,7 @@ Array.&lt;condition>
                     
 
 
-    <p>A <code>condition</code> may be a:</p>
-    <ul>
-        <li>A numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> property, which is evaluated as a boolean.</li>
-        <li><code>!</code> followed by a <a href="Controller.html#.Hardware">Controller.Hardware</a> property to use the logical NOT of the property 
-        value.</li>
-        <li>A script function returning a boolean value. This can be either the name of the function or an in-line 
-        definition.</li>
-    </ul>
-<p>If an array of conditions is provided, their values are ANDed together.</p>
-<p><strong>Warning:</strong> The use of <code>!</code> is not currently supported in JavaScript <code>.when()</code> 
-calls.</p>
+    <p>A <code>condition</code> may be a:</p>    <ul>        <li>A numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> property, which is evaluated as a boolean.</li>        <li><code>!</code> followed by a <a href="Controller.html#.Hardware">Controller.Hardware</a> property to use the logical NOT of the property         value.</li>        <li>A script function returning a boolean value. This can be either the name of the function or an in-line         definition.</li>    </ul><p>If an array of conditions is provided, their values are ANDed together.</p><p><strong>Warning:</strong> The use of <code>!</code> is not currently supported in JavaScript <code>.when()</code> calls.</p>
 
 
                 
@@ -5853,23 +5497,7 @@ calls.</p>
                         
         <p class="code-caption">Process the right trigger differently in HMD and desktop modes.</p>
     
-    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
-var mapping = Controller.newMapping(MAPPING_NAME);
-
-// Processed only if in HMD mode.
-mapping.from(Controller.Standard.RT)
-    .when(Controller.Hardware.Application.InHMD)
-    .to(function () { print("Trigger pressed in HMD mode."); });
-
-// Processed only if previous route not processed.
-mapping.from(Controller.Standard.RT)
-    .to(function () { print("Trigger pressed in desktop mode."); });
-
-Controller.enableMapping(MAPPING_NAME);
-
-Script.scriptEnding.connect(function () {
-    Controller.disableMapping(MAPPING_NAME);
-});</code></pre>
+    <pre class="prettyprint"><code>var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";var mapping = Controller.newMapping(MAPPING_NAME);// Processed only if in HMD mode.mapping.from(Controller.Standard.RT)    .when(Controller.Hardware.Application.InHMD)    .to(function () { print("Trigger pressed in HMD mode."); });// Processed only if previous route not processed.mapping.from(Controller.Standard.RT)    .to(function () { print("Trigger pressed in desktop mode."); });Controller.enableMapping(MAPPING_NAME);Script.scriptEnding.connect(function () {    Controller.disableMapping(MAPPING_NAME);});</code></pre>
 
                     
                   
@@ -5926,10 +5554,7 @@ Script.scriptEnding.connect(function () {
                             
 
 
-    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, and
-the input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequent
-routes using the same input are processed.
-</p>
+    <p>Processes the route only if a condition is satisfied. The condition is evaluated before the route input is read, andthe input is read only if the condition is <code>true</code>. Thus, if the condition is not met then subsequentroutes using the same input are processed.</p>
     <p>This is a QML-specific version of when: use this version in QML files.</p>
 
 
@@ -6028,15 +5653,7 @@ Array.&lt;condition>
                     
 
 
-    <p>A <code>condition</code> may be a:</p>
-    <ul>
-        <li>A boolean or numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> property, which is evaluated as a boolean.</li>
-        <li><code>!</code> followed by a <a href="Controller.html#.Hardware">Controller.Hardware</a> property, indicating the logical NOT should be
-        used.</li>
-        <li>A script function returning a boolean value. This can be either the name of the function or an in-line
-        definition.</li>
-    </ul>
-<p>If an array of conditions is provided, their values are ANDed together.</p>
+    <p>A <code>condition</code> may be a:</p>    <ul>        <li>A boolean or numeric <a href="Controller.html#.Hardware">Controller.Hardware</a> property, which is evaluated as a boolean.</li>        <li><code>!</code> followed by a <a href="Controller.html#.Hardware">Controller.Hardware</a> property, indicating the logical NOT should be        used.</li>        <li>A script function returning a boolean value. This can be either the name of the function or an in-line        definition.</li>    </ul><p>If an array of conditions is provided, their values are ANDed together.</p>
 
 
                 

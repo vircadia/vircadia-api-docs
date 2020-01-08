@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -57,8 +58,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>The <code>Recording</code> API makes and plays back recordings of voice and avatar movements. Playback may be done on a 
-user's avatar or an assignment client agent (see the <a href="Agent.html">Agent</a> API).</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>The <code>Recording</code> API makes and plays back recordings of voice and avatar movements. Playback may be done on a user's avatar or an assignment client agent (see the <a href="Agent.html">Agent</a> API).</div>
                 
 
                 
@@ -1103,12 +1103,7 @@ boolean
     
         <p class="code-caption">Make a 5 second recording and immediately play it back on your avatar.</p>
     
-    <pre class="prettyprint"><code>Recording.startRecording();
-
-Script.setTimeout(function () {
-    Recording.stopRecording();
-    Recording.loadLastRecording();
-}, 5000);
+    <pre class="prettyprint"><code>Recording.startRecording();Script.setTimeout(function () {    Recording.stopRecording();    Recording.loadLastRecording();}, 5000);
      </code></pre>
 
 
@@ -1203,18 +1198,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Load and play back a recording from the asset server.</p>
     
-    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();
-print("Asset path: " + assetPath);
-
-if (assetPath.slice(-4) === ".hfr") {
-    Recording.loadRecording("atp:" + assetPath, function (success, url) {
-        if (!success) {
-            print("Error loading recording.");
-            return;
-        }
-        Recording.startPlaying();
-    });
-}</code></pre>
+    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();print("Asset path: " + assetPath);if (assetPath.slice(-4) === ".hfr") {    Recording.loadRecording("atp:" + assetPath, function (success, url) {        if (!success) {            print("Error loading recording.");            return;        }        Recording.startPlaying();    });}</code></pre>
 
 
 -->
@@ -1238,8 +1222,7 @@ if (assetPath.slice(-4) === ".hfr") {
                     
 
 
-    <p>Pauses playback of the recording currently playing. Use <a href="Recording.html#.startPlaying">startPlaying</a> to resume playback 
-or <a href="Recording.html#.stopPlaying">stopPlaying</a> to stop playback.</p>
+    <p>Pauses playback of the recording currently playing. Use <a href="Recording.html#.startPlaying">startPlaying</a> to resume playback or <a href="Recording.html#.stopPlaying">stopPlaying</a> to stop playback.</p>
 
 
                 
@@ -1687,17 +1670,7 @@ number
     
         <p class="code-caption">Save a 5 second recording to a file.</p>
     
-    <pre class="prettyprint"><code>Recording.startRecording();
-
-Script.setTimeout(function () {
-    Recording.stopRecording();
-    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ
-    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-") 
-        + ".hfr";  // yyyymmmdd-hhmmss.hfr
-    filename = Recording.getDefaultRecordingSaveDirectory() + filename;
-    Recording.saveRecording(filename);
-    print("Saved recording: " + filename);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>Recording.startRecording();Script.setTimeout(function () {    Recording.stopRecording();    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-")         + ".hfr";  // yyyymmmdd-hhmmss.hfr    filename = Recording.getDefaultRecordingSaveDirectory() + filename;    Recording.saveRecording(filename);    print("Saved recording: " + filename);}, 5000);</code></pre>
 
 
 -->
@@ -1801,36 +1774,7 @@ boolean
     
         <p class="code-caption">Save a 5 second recording to the asset server.</p>
     
-    <pre class="prettyprint"><code>function onSavedRecordingToAsset(url) {
-    if (url === "") {
-        print("Couldn't save recording.");
-        return;
-    }
-
-    print("Saved recording: " + url);  // atp:SHA256
-
-    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ
-    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-")
-        + ".hfr";  // yyyymmmdd-hhmmss.hfr
-    var hash = url.slice(4);  // Remove leading "atp:" from url.
-    mappingPath = "/recordings/" + filename;
-    Assets.setMapping(mappingPath, hash, function (error) {
-        if (error) {
-            print("Mapping error: " + error);
-        }
-    });
-    print("Mapped recording: " + mappingPath);  // /recordings/filename
-}
-
-Recording.startRecording();
-
-Script.setTimeout(function () {
-    Recording.stopRecording();
-    var success = Recording.saveRecordingToAsset(onSavedRecordingToAsset);
-    if (!success) {
-        print("Couldn't save recording.");
-    }
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>function onSavedRecordingToAsset(url) {    if (url === "") {        print("Couldn't save recording.");        return;    }    print("Saved recording: " + url);  // atp:SHA256    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-")        + ".hfr";  // yyyymmmdd-hhmmss.hfr    var hash = url.slice(4);  // Remove leading "atp:" from url.    mappingPath = "/recordings/" + filename;    Assets.setMapping(mappingPath, hash, function (error) {        if (error) {            print("Mapping error: " + error);        }    });    print("Mapped recording: " + mappingPath);  // /recordings/filename}Recording.startRecording();Script.setTimeout(function () {    Recording.stopRecording();    var success = Recording.saveRecordingToAsset(onSavedRecordingToAsset);    if (!success) {        print("Couldn't save recording.");    }}, 5000);</code></pre>
 
 
 -->
@@ -2902,9 +2846,7 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Stops making a recording. The recording may be saved using <a href="Recording.html#.saveRecording">saveRecording</a> or 
-<a href="Recording.html#.saveRecordingToAsset">saveRecordingToAsset</a>, or immediately played back with 
-<a href="Recording.html#.loadLastRecording">loadLastRecording</a>.</p>
+    <p>Stops making a recording. The recording may be saved using <a href="Recording.html#.saveRecording">saveRecording</a> or <a href="Recording.html#.saveRecordingToAsset">saveRecordingToAsset</a>, or immediately played back with <a href="Recording.html#.loadLastRecording">loadLastRecording</a>.</p>
 
 
                 
@@ -3103,8 +3045,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the recording has successfully been loaded, <code>false</code> if it 
-    hasn't.</p>
+    <p><code>true</code> if the recording has successfully been loaded, <code>false</code> if it     hasn't.</p>
 
 
                 
@@ -3295,8 +3236,7 @@ string
                     
 
 
-    <p>The URL of the recording stored in the asset server if successful, <code>""</code> if 
-    unsuccessful. The URL has <code>atp:</code> as the scheme and the SHA256 hash as the filename (with no extension).</p>
+    <p>The URL of the recording stored in the asset server if successful, <code>""</code> if     unsuccessful. The URL has <code>atp:</code> as the scheme and the SHA256 hash as the filename (with no extension).</p>
 
 
                 
@@ -3569,8 +3509,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if recording playback will use the display name that the recording was made with, 
-    <code>false</code> if playback will keep the current display name.
+    <code>true</code> if recording playback will use the display name that the recording was made with,     <code>false</code> if playback will keep the current display name.
 
 
                         
@@ -3780,8 +3719,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if recording playback will use the avatar model that the recording was made with, 
-    <code>false</code> if playback will use the current avatar model.
+    <code>true</code> if recording playback will use the avatar model that the recording was made with,     <code>false</code> if playback will use the current avatar model.
 
 
                         
@@ -3885,8 +3823,7 @@ string
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if recordings are played at the current avatar location, <code>false</code> if 
-    played at the recorded location.
+    <code>true</code> if recordings are played at the current avatar location, <code>false</code> if     played at the recorded location.
 
 
                         
@@ -4365,12 +4302,7 @@ string
                         
         <p class="code-caption">Make a 5 second recording and immediately play it back on your avatar.</p>
     
-    <pre class="prettyprint"><code>Recording.startRecording();
-
-Script.setTimeout(function () {
-    Recording.stopRecording();
-    Recording.loadLastRecording();
-}, 5000);
+    <pre class="prettyprint"><code>Recording.startRecording();Script.setTimeout(function () {    Recording.stopRecording();    Recording.loadLastRecording();}, 5000);
      </code></pre>
 
                     
@@ -4596,18 +4528,7 @@ string
                         
         <p class="code-caption">Load and play back a recording from the asset server.</p>
     
-    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();
-print("Asset path: " + assetPath);
-
-if (assetPath.slice(-4) === ".hfr") {
-    Recording.loadRecording("atp:" + assetPath, function (success, url) {
-        if (!success) {
-            print("Error loading recording.");
-            return;
-        }
-        Recording.startPlaying();
-    });
-}</code></pre>
+    <pre class="prettyprint"><code>var assetPath = Window.browseAssets();print("Asset path: " + assetPath);if (assetPath.slice(-4) === ".hfr") {    Recording.loadRecording("atp:" + assetPath, function (success, url) {        if (!success) {            print("Error loading recording.");            return;        }        Recording.startPlaying();    });}</code></pre>
 
                     
                   
@@ -4655,8 +4576,7 @@ if (assetPath.slice(-4) === ".hfr") {
                             
 
 
-    <p>Pauses playback of the recording currently playing. Use <a href="Recording.html#.startPlaying">startPlaying</a> to resume playback 
-or <a href="Recording.html#.stopPlaying">stopPlaying</a> to stop playback.</p>
+    <p>Pauses playback of the recording currently playing. Use <a href="Recording.html#.startPlaying">startPlaying</a> to resume playback or <a href="Recording.html#.stopPlaying">stopPlaying</a> to stop playback.</p>
 
 
                         
@@ -5175,17 +5095,7 @@ string
                         
         <p class="code-caption">Save a 5 second recording to a file.</p>
     
-    <pre class="prettyprint"><code>Recording.startRecording();
-
-Script.setTimeout(function () {
-    Recording.stopRecording();
-    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ
-    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-") 
-        + ".hfr";  // yyyymmmdd-hhmmss.hfr
-    filename = Recording.getDefaultRecordingSaveDirectory() + filename;
-    Recording.saveRecording(filename);
-    print("Saved recording: " + filename);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>Recording.startRecording();Script.setTimeout(function () {    Recording.stopRecording();    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-")         + ".hfr";  // yyyymmmdd-hhmmss.hfr    filename = Recording.getDefaultRecordingSaveDirectory() + filename;    Recording.saveRecording(filename);    print("Saved recording: " + filename);}, 5000);</code></pre>
 
                     
                   
@@ -5354,36 +5264,7 @@ Script.setTimeout(function () {
                         
         <p class="code-caption">Save a 5 second recording to the asset server.</p>
     
-    <pre class="prettyprint"><code>function onSavedRecordingToAsset(url) {
-    if (url === "") {
-        print("Couldn't save recording.");
-        return;
-    }
-
-    print("Saved recording: " + url);  // atp:SHA256
-
-    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ
-    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-")
-        + ".hfr";  // yyyymmmdd-hhmmss.hfr
-    var hash = url.slice(4);  // Remove leading "atp:" from url.
-    mappingPath = "/recordings/" + filename;
-    Assets.setMapping(mappingPath, hash, function (error) {
-        if (error) {
-            print("Mapping error: " + error);
-        }
-    });
-    print("Mapped recording: " + mappingPath);  // /recordings/filename
-}
-
-Recording.startRecording();
-
-Script.setTimeout(function () {
-    Recording.stopRecording();
-    var success = Recording.saveRecordingToAsset(onSavedRecordingToAsset);
-    if (!success) {
-        print("Couldn't save recording.");
-    }
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>function onSavedRecordingToAsset(url) {    if (url === "") {        print("Couldn't save recording.");        return;    }    print("Saved recording: " + url);  // atp:SHA256    var filename = (new Date()).toISOString();  // yyyy-mm-ddThh:mm:ss.sssZ    filename = filename.slice(0, -5).replace(/:/g, "").replace("T", "-")        + ".hfr";  // yyyymmmdd-hhmmss.hfr    var hash = url.slice(4);  // Remove leading "atp:" from url.    mappingPath = "/recordings/" + filename;    Assets.setMapping(mappingPath, hash, function (error) {        if (error) {            print("Mapping error: " + error);        }    });    print("Mapped recording: " + mappingPath);  // /recordings/filename}Recording.startRecording();Script.setTimeout(function () {    Recording.stopRecording();    var success = Recording.saveRecordingToAsset(onSavedRecordingToAsset);    if (!success) {        print("Couldn't save recording.");    }}, 5000);</code></pre>
 
                     
                   
@@ -6140,8 +6021,7 @@ boolean
                     
 
 
-    <p><code>true</code> to have recording playback use the display name that the recording 
-    was made with, <code>false</code> to have recording playback keep the current display name.</p>
+    <p><code>true</code> to have recording playback use the display name that the recording     was made with, <code>false</code> to have recording playback keep the current display name.</p>
 
 
                 
@@ -6449,8 +6329,7 @@ boolean
                     
 
 
-    <p><code>true</code> to have recording playback use the avatar model that the recording 
-    was made with, <code>false</code> to have playback use the current avatar model.</p>
+    <p><code>true</code> to have recording playback use the avatar model that the recording     was made with, <code>false</code> to have playback use the current avatar model.</p>
 
 
                 
@@ -6756,8 +6635,7 @@ boolean
                     
 
 
-    <p><code>true</code> to play recordings at the current avatar location, 
-    <code>false</code> to play recordings at the recorded location.</p>
+    <p><code>true</code> to play recordings at the current avatar location,     <code>false</code> to play recordings at the recorded location.</p>
 
 
                 
@@ -7100,9 +6978,7 @@ boolean
                             
 
 
-    <p>Stops making a recording. The recording may be saved using <a href="Recording.html#.saveRecording">saveRecording</a> or 
-<a href="Recording.html#.saveRecordingToAsset">saveRecordingToAsset</a>, or immediately played back with 
-<a href="Recording.html#.loadLastRecording">loadLastRecording</a>.</p>
+    <p>Stops making a recording. The recording may be saved using <a href="Recording.html#.saveRecording">saveRecording</a> or <a href="Recording.html#.saveRecordingToAsset">saveRecordingToAsset</a>, or immediately played back with <a href="Recording.html#.loadLastRecording">loadLastRecording</a>.</p>
 
 
                         

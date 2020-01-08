@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -269,10 +270,8 @@
                     
 
 
-    <p>Include domain and avatar entities when intersecting. <em>Read-only.</em>
-    </p>
-    <p class="important">Deprecated: This property is deprecated and will be removed. Use <code>PICK_DOMAIN_ENTITIES | 
-    PICK_AVATAR_ENTITIES</code> instead.</p>
+    <p>Include domain and avatar entities when intersecting. <em>Read-only.</em>    </p>
+    <p class="important">Deprecated: This property is deprecated and will be removed. Use <code>PICK_DOMAIN_ENTITIES |     PICK_AVATAR_ENTITIES</code> instead.</p>
 
 
                 
@@ -303,10 +302,8 @@
                     
 
 
-    <p>Include local entities when intersecting. <em>Read-only.</em>
-    </p>
-    <p class="important">Deprecated: This property is deprecated and will be removed. Use <code>PICK_LOCAL_ENTITIES</code> 
-    instead.</p>
+    <p>Include local entities when intersecting. <em>Read-only.</em>    </p>
+    <p class="important">Deprecated: This property is deprecated and will be removed. Use <code>PICK_LOCAL_ENTITIES</code>     instead.</p>
 
 
                 
@@ -337,8 +334,7 @@
                     
 
 
-    <p>Include visible objects when intersecting. <em>Read-only.</em>
-    </p>
+    <p>Include visible objects when intersecting. <em>Read-only.</em>    </p>
     <p><strong>Warning:</strong> Is currently always enabled by default but may not be in the future.</p>
 
 
@@ -401,8 +397,7 @@
                     
 
 
-    <p>Include collidable objects when intersecting. <em>Read-only.</em>
-    </p>
+    <p>Include collidable objects when intersecting. <em>Read-only.</em>    </p>
     <p><strong>Warning:</strong> Is currently always enabled by default but may not be in the future.</p>
 
 
@@ -527,9 +522,7 @@
                     
 
 
-    <p>If set, returns all intersections instead of just the closest. 
-    <em>Read-only.</em>
-    </p>
+    <p>If set, returns all intersections instead of just the closest.     <em>Read-only.</em>    </p>
     <p><strong>Warning:</strong> Not yet implemented.</p>
 
 
@@ -654,11 +647,8 @@
                     
 
 
-    <p>Intersected a local entity. (3D overlays no longer exist.) 
-    <em>Read-only.</em>
-    </p>
-    <p class="important">Deprecated: This property is deprecated and will be removed. Use 
-    <code>INTERSECTED_LOCAL_ENTITY</code> instead.</p>
+    <p>Intersected a local entity. (3D overlays no longer exist.)     <em>Read-only.</em>    </p>
+    <p class="important">Deprecated: This property is deprecated and will be removed. Use     <code>INTERSECTED_LOCAL_ENTITY</code> instead.</p>
 
 
                 
@@ -855,12 +845,8 @@ number
                     
 
 
-    <p>Creates a new pick. Different <a href="global.html#PickType">PickType</a>s use different properties, and within one PickType the properties you 
-choose can lead to a wide range of behaviors. For example, with <code>PickType.Ray</code>, the properties could 
-configure a mouse ray pick, an avatar head ray pick, or a joint ray pick.
-</p>
-    <p><strong>Warning:</strong> Picks created using this method currently always intersect at least visible and collidable 
-things but this may not always be the case.</p>
+    <p>Creates a new pick. Different <a href="global.html#PickType">PickType</a>s use different properties, and within one PickType the properties you choose can lead to a wide range of behaviors. For example, with <code>PickType.Ray</code>, the properties could configure a mouse ray pick, an avatar head ray pick, or a joint ray pick.</p>
+    <p><strong>Warning:</strong> Picks created using this method currently always intersect at least visible and collidable things but this may not always be the case.</p>
 
 
                 
@@ -1343,9 +1329,7 @@ Array.&lt;number>
                     
 
 
-    <p>Gets the parameters that were passed in to <a href="Picks.html#.createPick">Picks.createPick</a> to create the pick, if the pick was created through 
-a script. Note that these properties do not reflect the current state of the pick.
-See <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a>.</p>
+    <p>Gets the parameters that were passed in to <a href="Picks.html#.createPick">Picks.createPick</a> to create the pick,if the pick was created through a script.Note that these properties do not reflect the current state of the pick.See <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a>.</p>
 
 
                 
@@ -1451,11 +1435,8 @@ See <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a>.</p>
                     
 
 
-    <p>Gets the most recent result from a pick. A pick continues to be updated ready to return a result, as long as it is 
-enabled.
-</p>
-    <p><strong>Note:</strong> Stylus picks only intersect with objects in their include list, set using 
-<a href="Picks.html#.setIncludeItems">setIncludeItems</a>.</p>
+    <p>Gets the most recent result from a pick. A pick continues to be updated ready to return a result, as long as it is enabled.</p>
+    <p><strong>Note:</strong> Stylus picks only intersect with objects in their include list, set using <a href="Picks.html#.setIncludeItems">setIncludeItems</a>.</p>
 
 
                 
@@ -1525,46 +1506,7 @@ enabled.
     
         <p class="code-caption">Highlight entities under your mouse in desktop mode or that you're looking at in HMD mode.</p>
     
-    <pre class="prettyprint"><code>// Highlight.
-var HIGHLIGHT_LIST_NAME = "highlightEntitiesExampleList";
-var HIGHLIGHT_LIST_TYPE = "entity";
-Selection.enableListHighlight(HIGHLIGHT_LIST_NAME, {});
-
-// Ray pick.
-var PICK_FILTER = Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_AVATAR_ENTITIES
-        | Picks.PICK_INCLUDE_COLLIDABLE | Picks.PICK_INCLUDE_NONCOLLIDABLE;
-var rayPick = Picks.createPick(PickType.Ray, {
-    enabled: true,
-    filter: PICK_FILTER,
-    joint: HMD.active ? "Avatar" : "Mouse"
-});
-
-// Highlight intersected entity.
-var highlightedEntityID = null;
-Script.update.connect(function () {
-    var rayPickResult = Picks.getPrevPickResult(rayPick);
-    if (rayPickResult.intersects) {
-        if (rayPickResult.objectID !== highlightedEntityID) {
-            if (highlightedEntityID) {
-                Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-            }
-            highlightedEntityID = rayPickResult.objectID;
-            Selection.addToSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-        }
-    } else {
-        if (highlightedEntityID) {
-            Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-            highlightedEntityID = null;
-        }
-    }
-});
-
-// Clean up.
-Script.scriptEnding.connect(function () {
-    if (highlightedEntityID) {
-        Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-    }
-});</code></pre>
+    <pre class="prettyprint"><code>// Highlight.var HIGHLIGHT_LIST_NAME = "highlightEntitiesExampleList";var HIGHLIGHT_LIST_TYPE = "entity";Selection.enableListHighlight(HIGHLIGHT_LIST_NAME, {});// Ray pick.var PICK_FILTER = Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_AVATAR_ENTITIES        | Picks.PICK_INCLUDE_COLLIDABLE | Picks.PICK_INCLUDE_NONCOLLIDABLE;var rayPick = Picks.createPick(PickType.Ray, {    enabled: true,    filter: PICK_FILTER,    joint: HMD.active ? "Avatar" : "Mouse"});// Highlight intersected entity.var highlightedEntityID = null;Script.update.connect(function () {    var rayPickResult = Picks.getPrevPickResult(rayPick);    if (rayPickResult.intersects) {        if (rayPickResult.objectID !== highlightedEntityID) {            if (highlightedEntityID) {                Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);            }            highlightedEntityID = rayPickResult.objectID;            Selection.addToSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);        }    } else {        if (highlightedEntityID) {            Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);            highlightedEntityID = null;        }    }});// Clean up.Script.scriptEnding.connect(function () {    if (highlightedEntityID) {        Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);    }});</code></pre>
 
 
 -->
@@ -1598,8 +1540,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_AVATAR</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_AVATAR</code> property     instead.</p>
 
 
 
@@ -1691,8 +1632,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_ENTITY</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_ENTITY</code> property     instead.</p>
 
 
 
@@ -1784,8 +1724,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_HUD</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_HUD</code> property     instead.</p>
 
 
 
@@ -1877,8 +1816,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code> 
-    property instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code>     property instead.</p>
 
 
 
@@ -1970,8 +1908,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_NONE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_NONE</code> property     instead.</p>
 
 
 
@@ -2063,8 +2000,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code> 
-    property instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code>     property instead.</p>
 
 
 
@@ -2156,9 +2092,7 @@ boolean
                     
 
 
-    <p>Checks if a pick is associated with the left hand: a ray or parabola pick with <code>joint</code> property set to 
-<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pick with 
-<code>hand</code> property set to <code>0</code>.</p>
+    <p>Checks if a pick is associated with the left hand: a ray or parabola pick with <code>joint</code> property set to <code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pick with <code>hand</code> property set to <code>0</code>.</p>
 
 
                 
@@ -2255,8 +2189,7 @@ boolean
                     
 
 
-    <p>Checks if a pick is associated with the system mouse: a ray or parabola pick with <code>joint</code> property set to 
-<code>"Mouse"</code>.</p>
+    <p>Checks if a pick is associated with the system mouse: a ray or parabola pick with <code>joint</code> property set to <code>"Mouse"</code>.</p>
 
 
                 
@@ -2450,9 +2383,7 @@ boolean
                     
 
 
-    <p>Checks if a pick is associated with the right hand: a ray or parabola pick with <code>joint</code> property set to
-<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pick with 
-<code>hand</code> property set to <code>1</code>.</p>
+    <p>Checks if a pick is associated with the right hand: a ray or parabola pick with <code>joint</code> property set to<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pick with <code>hand</code> property set to <code>1</code>.</p>
 
 
                 
@@ -2549,8 +2480,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_ALL_INTERSECTIONS</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_ALL_INTERSECTIONS</code> property     instead.</p>
 
 
 
@@ -2642,8 +2572,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATAR_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATAR_ENTITIES</code> property     instead.</p>
 
 
 
@@ -2735,8 +2664,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATARS</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATARS</code> property     instead.</p>
 
 
 
@@ -2920,8 +2848,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES</code> property     instead.</p>
 
 
 
@@ -3013,8 +2940,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES | 
-    Picks.PICK_AVATAR_ENTITIES</code> properties expression instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES |     Picks.PICK_AVATAR_ENTITIES</code> properties expression instead.</p>
 
 
 
@@ -3198,8 +3124,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_COLLIDABLE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_COLLIDABLE</code> property     instead.</p>
 
 
 
@@ -3291,8 +3216,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_INVISIBLE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_INVISIBLE</code> property     instead.</p>
 
 
 
@@ -3384,8 +3308,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_NONCOLLIDABLE</code> 
-    property instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_NONCOLLIDABLE</code>     property instead.</p>
 
 
 
@@ -3477,8 +3400,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_VISIBLE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_VISIBLE</code> property     instead.</p>
 
 
 
@@ -3570,8 +3492,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property     instead.</p>
 
 
 
@@ -3663,8 +3584,7 @@ number
                 
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property     instead.</p>
 
 
 
@@ -3925,8 +3845,7 @@ number
                     
 
 
-    <p>Sets a list of entity and avatar IDs that a pick should ignore during intersection.
-</p>
+    <p>Sets a list of entity and avatar IDs that a pick should ignore during intersection.</p>
     <p><strong>Note:</strong> Not used by stylus picks.</p>
 
 
@@ -4014,9 +3933,7 @@ number
                     
 
 
-    <p>Sets a list of entity and avatar IDs that a pick should include during intersection, instead of intersecting with 
-everything.
-</p>
+    <p>Sets a list of entity and avatar IDs that a pick should include during intersection, instead of intersecting with everything.</p>
     <p><strong>Note:</strong> Stylus picks only intersect with items in their include list.</p>
 
 
@@ -4104,9 +4021,7 @@ everything.
                     
 
 
-    <p>Sets whether or not a pick should use precision picking, i.e., whether it should pick against precise meshes or coarse 
-meshes.
-This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
+    <p>Sets whether or not a pick should use precision picking, i.e., whether it should pick against precise meshes or coarse meshes.This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
 
 
                 
@@ -4270,8 +4185,7 @@ boolean
                     
 
 
-    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should
-    start disabled. Disabled picks do not update their pick results.</p>
+    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should    start disabled. Disabled picks do not update their pick results.</p>
 
 
                 
@@ -4314,9 +4228,7 @@ boolean
                     
 
 
-    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property
-    values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.
-    </p>
+    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property    values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.    </p>
     <p><strong>Note:</strong> Collision picks do not intersect the HUD.</p>
 
 
@@ -4360,8 +4272,7 @@ number
                     
 
 
-    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code>
-    means no maximum.</p>
+    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code>    means no maximum.</p>
 
 
                 
@@ -4445,9 +4356,7 @@ number
                     
 
 
-    <p>The joint of the parent to parent to, for example, an avatar joint.
-    A value of <code>0</code> means no joint.
-    </p>
+    <p>The joint of the parent to parent to, for example, an avatar joint.    A value of <code>0</code> means no joint.    </p>
     <p><em>Used only if <code>parentID</code> is specified.</em></p>
 
 
@@ -4491,10 +4400,7 @@ string
                     
 
 
-    <p><code>"Mouse"</code> parents the pick to the mouse; <code>"Avatar"</code> parents the pick to
-    the user's avatar head; a joint name parents to the joint in the user's avatar; otherwise, the pick is "static", not
-    parented to anything.
-    </p>
+    <p><code>"Mouse"</code> parents the pick to the mouse; <code>"Avatar"</code> parents the pick to    the user's avatar head; a joint name parents to the joint in the user's avatar; otherwise, the pick is "static", not    parented to anything.    </p>
     <p><em>Used only if <code>parentID</code> is not specified.</em></p>
 
 
@@ -4536,8 +4442,7 @@ boolean
                     
 
 
-    <p><code>true</code> to scale the pick's dimensions and threshold according to the 
-    scale of the parent.</p>
+    <p><code>true</code> to scale the pick's dimensions and threshold according to the     scale of the parent.</p>
 
 
                 
@@ -4578,8 +4483,7 @@ boolean
                     
 
 
-    <p>The collision region's shape and size. Dimensions are in world coordinates but scale with the 
-    parent if defined.</p>
+    <p>The collision region's shape and size. Dimensions are in world coordinates but scale with the     parent if defined.</p>
 
 
                 
@@ -4696,8 +4600,7 @@ number
                     
 
 
-    <p>The approximate minimum penetration depth for a test object to be considered in contact with
-    the collision region. The depth is in world coordinates but scales with the parent if defined.</p>
+    <p>The approximate minimum penetration depth for a test object to be considered in contact with    the collision region. The depth is in world coordinates but scales with the parent if defined.</p>
 
 
                 
@@ -4738,8 +4641,7 @@ number
                     
 
 
-    <p>The type of objects the collision region collides as. Objects whose collision
-    masks overlap with the region's collision group are considered to be colliding with the region.</p>
+    <p>The type of objects the collision region collides as. Objects whose collision    masks overlap with the region's collision group are considered to be colliding with the region.</p>
 
 
                 
@@ -4780,8 +4682,7 @@ number
                     
 
 
-    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or 
-    <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A collision pick's type is PickType.Collision.</p>
+    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or     <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A collision pick's type is PickType.Collision.</p>
 
 
                 
@@ -4820,9 +4721,7 @@ number
                     
 
 
-    <p>Returned from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> when the pick has a parent with varying scale 
-    (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and 
-    is used to rescale the pick, and/or the pointer which owns this pick, if any.</p>
+    <p>Returned from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> when the pick has a parent with varying scale     (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and     is used to rescale the pick, and/or the pointer which owns this pick, if any.</p>
 
 
                 
@@ -4967,8 +4866,7 @@ boolean
                     
 
 
-    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should 
-    start disabled. Disabled picks do not update their pick results.</p>
+    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should     start disabled. Disabled picks do not update their pick results.</p>
 
 
                 
@@ -5011,8 +4909,7 @@ number
                     
 
 
-    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property 
-    values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.</p>
+    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property     values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.</p>
 
 
                 
@@ -5055,8 +4952,7 @@ number
                     
 
 
-    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code> 
-    means no maximum.</p>
+    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code>     means no maximum.</p>
 
 
                 
@@ -5140,9 +5036,7 @@ number
                     
 
 
-    <p>The joint of the parent to parent to, for example, an avatar joint.
-    A value of <code>0</code> means no joint.
-    </p>
+    <p>The joint of the parent to parent to, for example, an avatar joint.    A value of <code>0</code> means no joint.    </p>
     <p><em>Used only if <code>parentID</code> is specified.</em></p>
 
 
@@ -5186,10 +5080,7 @@ string
                     
 
 
-    <p><code>"Mouse"</code> parents the pick to the mouse; <code>"Avatar"</code> parents the pick to 
-    the user's avatar head; a joint name parents to the joint in the user's avatar; otherwise, the pick is "static", not 
-    parented to anything.
-    </p>
+    <p><code>"Mouse"</code> parents the pick to the mouse; <code>"Avatar"</code> parents the pick to     the user's avatar head; a joint name parents to the joint in the user's avatar; otherwise, the pick is "static", not     parented to anything.    </p>
     <p><em>Used only if <code>parentID</code> is not specified.</em></p>
 
 
@@ -5231,8 +5122,7 @@ string
                     
 
 
-    <p>The offset of the parabola origin from its parent if parented, otherwise the 
-    parabola origin in world coordinates.</p>
+    <p>The offset of the parabola origin from its parent if parented, otherwise the     parabola origin in world coordinates.</p>
 
 
                 
@@ -5316,11 +5206,8 @@ string
                     
 
 
-    <p>The offset of the parabola direction from its parent's y-axis if parented, otherwise the 
-    parabola direction in world coordinates.
-    </p>
-    <p><strong>Default Value:</strong> <code>Vec3.UP</code> direction if <code>joint</code> is specified, otherwise
-    <code>Vec3.FRONT</code>.</p>
+    <p>The offset of the parabola direction from its parent's y-axis if parented, otherwise the     parabola direction in world coordinates.    </p>
+    <p><strong>Default Value:</strong> <code>Vec3.UP</code> direction if <code>joint</code> is specified, otherwise    <code>Vec3.FRONT</code>.</p>
 
 
                 
@@ -5402,8 +5289,7 @@ string
                     
 
 
-    <p>Alternative property for specifying <code>direction</code>. The value is applied to the 
-    default <code>direction</code> value.</p>
+    <p>Alternative property for specifying <code>direction</code>. The value is applied to the     default <code>direction</code> value.</p>
 
 
                 
@@ -5444,8 +5330,7 @@ number
                     
 
 
-    <p>The initial speed of the parabola in m/s, i.e., the initial speed of a virtual projectile 
-    whose trajectory defines the parabola.</p>
+    <p>The initial speed of the parabola in m/s, i.e., the initial speed of a virtual projectile     whose trajectory defines the parabola.</p>
 
 
                 
@@ -5488,8 +5373,7 @@ number
                     
 
 
-    <p>The acceleration of the parabola in m/s<sup>2</sup>, i.e., the acceleration
-    of a virtual projectile whose trajectory defines the parabola, both magnitude and direction.</p>
+    <p>The acceleration of the parabola in m/s<sup>2</sup>, i.e., the acceleration    of a virtual projectile whose trajectory defines the parabola, both magnitude and direction.</p>
 
 
                 
@@ -5532,8 +5416,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the acceleration axis should rotate with the
-    avatar about the avatar's y-axis, <code>false</code> if it shouldn't.</p>
+    <p><code>true</code> if the acceleration axis should rotate with the    avatar about the avatar's y-axis, <code>false</code> if it shouldn't.</p>
 
 
                 
@@ -5576,8 +5459,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the acceleration axis should rotate with the
-    parent about the parent's y-axis, if available.</p>
+    <p><code>true</code> if the acceleration axis should rotate with the    parent about the parent's y-axis, if available.</p>
 
 
                 
@@ -5620,8 +5502,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the velocity and acceleration of the pick should scale
-    with the avatar or other parent.</p>
+    <p><code>true</code> if the velocity and acceleration of the pick should scale    with the avatar or other parent.</p>
 
 
                 
@@ -5664,8 +5545,7 @@ boolean
                     
 
 
-    <p>Synonym for <code>scalewithParent</code>.
-    </p>
+    <p>Synonym for <code>scalewithParent</code>.    </p>
     <p class="important">Deprecated: This property is deprecated and will be removed.</p>
 
 
@@ -5707,8 +5587,7 @@ boolean
                     
 
 
-    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or 
-    <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A parabola pick's type is PickType.Parabola.</p>
+    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A parabola pick's type is PickType.Parabola.</p>
 
 
                 
@@ -5747,9 +5626,7 @@ boolean
                     
 
 
-    <p>Returned from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> when the pick has a parent with varying scale 
-    (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and 
-    is used to rescale the pick, and/or the pointer which owns this pick, if any.</p>
+    <p>Returned from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> when the pick has a parent with varying scale (usually an avatar or an entity).    Its value is the original scale of the parent at the moment the pick was created, and is used to rescale the pick, and/or the pointer which owns this pick, if any.</p>
 
 
                 
@@ -5894,8 +5771,7 @@ boolean
                     
 
 
-    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should 
-    start disabled. Disabled picks do not update their pick results.</p>
+    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should     start disabled. Disabled picks do not update their pick results.</p>
 
 
                 
@@ -5938,8 +5814,7 @@ boolean
                     
 
 
-    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property 
-    values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.</p>
+    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property     values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.</p>
 
 
                 
@@ -5982,8 +5857,7 @@ number
                     
 
 
-    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code> 
-    means no maximum.</p>
+    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code>     means no maximum.</p>
 
 
                 
@@ -6067,9 +5941,7 @@ number
                     
 
 
-    <p>The joint of the parent to parent to, for example, an avatar joint. 
-    A value of <code>0</code> means no joint.
-    </p>
+    <p>The joint of the parent to parent to, for example, an avatar joint.     A value of <code>0</code> means no joint.    </p>
     <p><em>Used only if <code>parentID</code> is specified.</em></p>
 
 
@@ -6113,10 +5985,7 @@ string
                     
 
 
-    <p><code>"Mouse"</code> parents the pick to the mouse; <code>"Avatar"</code> parents the pick to 
-    the user's avatar head; a joint name parents to the joint in the user's avatar; otherwise, the pick is "static", not 
-    parented to anything.
-    </p>
+    <p><code>"Mouse"</code> parents the pick to the mouse; <code>"Avatar"</code> parents the pick to     the user's avatar head; a joint name parents to the joint in the user's avatar; otherwise, the pick is "static", not     parented to anything.    </p>
     <p><em>Used only if <code>parentID</code> is not specified.</em></p>
 
 
@@ -6158,8 +6027,7 @@ string
                     
 
 
-    <p>The offset of the ray origin from its parent if parented, otherwise the ray origin 
-    in world coordinates.</p>
+    <p>The offset of the ray origin from its parent if parented, otherwise the ray origin     in world coordinates.</p>
 
 
                 
@@ -6243,11 +6111,8 @@ string
                     
 
 
-    <p>The offset of the ray direction from its parent's y-axis if parented, otherwise the ray
-    direction in world coordinates.
-    </p>
-    <p><strong>Default Value:</strong> <code>Vec3.UP</code> direction if <code>joint</code> is specified, otherwise
-    <code>-Vec3.UP</code>.</p>
+    <p>The offset of the ray direction from its parent's y-axis if parented, otherwise the ray    direction in world coordinates.    </p>
+    <p><strong>Default Value:</strong> <code>Vec3.UP</code> direction if <code>joint</code> is specified, otherwise    <code>-Vec3.UP</code>.</p>
 
 
                 
@@ -6329,8 +6194,7 @@ string
                     
 
 
-    <p>Alternative property for specifying <code>direction</code>. The value is applied to the 
-    default <code>direction</code> value.</p>
+    <p>Alternative property for specifying <code>direction</code>. The value is applied to the     default <code>direction</code> value.</p>
 
 
                 
@@ -6369,8 +6233,7 @@ string
                     
 
 
-    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or 
-    <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A ray pick's type is PickType.Ray.</p>
+    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A ray pick's type is PickType.Ray.</p>
 
 
                 
@@ -6409,9 +6272,7 @@ string
                     
 
 
-    <p>Returned from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> when the pick has a parent with varying scale 
-    (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and 
-    is used to scale the pointer which owns this pick, if any.</p>
+    <p>Returned from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> when the pick has a parent with varying scale (usually an avatar or an entity).    Its value is the original scale of the parent at the moment the pick was created, and is used to scale the pointer which owns this pick, if any.</p>
 
 
                 
@@ -6556,8 +6417,7 @@ number
                     
 
 
-    <p><code>0</code> for the left hand, <code>1</code> for the right hand, invalid (<code>-1</code>) 
-    otherwise.</p>
+    <p><code>0</code> for the left hand, <code>1</code> for the right hand, invalid (<code>-1</code>)     otherwise.</p>
 
 
                 
@@ -6600,8 +6460,7 @@ boolean
                     
 
 
-    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should
-    start disabled. Disabled picks do not update their pick results.</p>
+    <p><code>true</code> if this pick should start enabled, <code>false</code> if it should    start disabled. Disabled picks do not update their pick results.</p>
 
 
                 
@@ -6644,9 +6503,7 @@ number
                     
 
 
-    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property
-    values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.
-    </p>
+    <p>The filter for this pick to use. Construct using <a href="Picks.html">Picks</a> FilterFlags property    values (e.g., <code>Picks.PICK_DOMAIN_ENTITIES</code>) combined with <code>|</code> (bitwise OR) operators.    </p>
     <p><strong>Note:</strong> Stylus picks do not intersect avatars or the HUD.</p>
 
 
@@ -6690,8 +6547,7 @@ number
                     
 
 
-    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code>
-    means no maximum.</p>
+    <p>The maximum distance at which this pick will intersect. A value of <code>0.0</code>    means no maximum.</p>
 
 
                 
@@ -6734,8 +6590,7 @@ number
                     
 
 
-    <p>The position of the stylus tip relative to the hand position at default avatar 
-    scale.</p>
+    <p>The position of the stylus tip relative to the hand position at default avatar     scale.</p>
 
 
                 
@@ -6776,8 +6631,7 @@ number
                     
 
 
-    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or 
-    <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A stylus pick's type is PickType.Stylus.</p>
+    <p>The type of pick when getting these properties from <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a> or <a href="Picks.html#.getPickScriptParameters">Picks.getPickScriptParameters</a>. A stylus pick's type is PickType.Stylus.</p>
 
 
                 
@@ -6873,12 +6727,8 @@ number
                             
 
 
-    <p>Creates a new pick. Different <a href="global.html#PickType">PickType</a>s use different properties, and within one PickType the properties you 
-choose can lead to a wide range of behaviors. For example, with <code>PickType.Ray</code>, the properties could 
-configure a mouse ray pick, an avatar head ray pick, or a joint ray pick.
-</p>
-    <p><strong>Warning:</strong> Picks created using this method currently always intersect at least visible and collidable 
-things but this may not always be the case.</p>
+    <p>Creates a new pick. Different <a href="global.html#PickType">PickType</a>s use different properties, and within one PickType the properties you choose can lead to a wide range of behaviors. For example, with <code>PickType.Ray</code>, the properties could configure a mouse ray pick, an avatar head ray pick, or a joint ray pick.</p>
+    <p><strong>Warning:</strong> Picks created using this method currently always intersect at least visible and collidable things but this may not always be the case.</p>
 
 
                         
@@ -7654,9 +7504,7 @@ number
                             
 
 
-    <p>Gets the parameters that were passed in to <a href="Picks.html#.createPick">Picks.createPick</a> to create the pick, if the pick was created through 
-a script. Note that these properties do not reflect the current state of the pick.
-See <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a>.</p>
+    <p>Gets the parameters that were passed in to <a href="Picks.html#.createPick">Picks.createPick</a> to create the pick,if the pick was created through a script.Note that these properties do not reflect the current state of the pick.See <a href="Picks.html#.getPickProperties">Picks.getPickProperties</a>.</p>
 
 
                         
@@ -7818,11 +7666,8 @@ number
                             
 
 
-    <p>Gets the most recent result from a pick. A pick continues to be updated ready to return a result, as long as it is 
-enabled.
-</p>
-    <p><strong>Note:</strong> Stylus picks only intersect with objects in their include list, set using 
-<a href="Picks.html#.setIncludeItems">setIncludeItems</a>.</p>
+    <p>Gets the most recent result from a pick. A pick continues to be updated ready to return a result, as long as it is enabled.</p>
+    <p><strong>Note:</strong> Stylus picks only intersect with objects in their include list, set using <a href="Picks.html#.setIncludeItems">setIncludeItems</a>.</p>
 
 
                         
@@ -7934,46 +7779,7 @@ number
                         
         <p class="code-caption">Highlight entities under your mouse in desktop mode or that you're looking at in HMD mode.</p>
     
-    <pre class="prettyprint"><code>// Highlight.
-var HIGHLIGHT_LIST_NAME = "highlightEntitiesExampleList";
-var HIGHLIGHT_LIST_TYPE = "entity";
-Selection.enableListHighlight(HIGHLIGHT_LIST_NAME, {});
-
-// Ray pick.
-var PICK_FILTER = Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_AVATAR_ENTITIES
-        | Picks.PICK_INCLUDE_COLLIDABLE | Picks.PICK_INCLUDE_NONCOLLIDABLE;
-var rayPick = Picks.createPick(PickType.Ray, {
-    enabled: true,
-    filter: PICK_FILTER,
-    joint: HMD.active ? "Avatar" : "Mouse"
-});
-
-// Highlight intersected entity.
-var highlightedEntityID = null;
-Script.update.connect(function () {
-    var rayPickResult = Picks.getPrevPickResult(rayPick);
-    if (rayPickResult.intersects) {
-        if (rayPickResult.objectID !== highlightedEntityID) {
-            if (highlightedEntityID) {
-                Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-            }
-            highlightedEntityID = rayPickResult.objectID;
-            Selection.addToSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-        }
-    } else {
-        if (highlightedEntityID) {
-            Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-            highlightedEntityID = null;
-        }
-    }
-});
-
-// Clean up.
-Script.scriptEnding.connect(function () {
-    if (highlightedEntityID) {
-        Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);
-    }
-});</code></pre>
+    <pre class="prettyprint"><code>// Highlight.var HIGHLIGHT_LIST_NAME = "highlightEntitiesExampleList";var HIGHLIGHT_LIST_TYPE = "entity";Selection.enableListHighlight(HIGHLIGHT_LIST_NAME, {});// Ray pick.var PICK_FILTER = Picks.PICK_DOMAIN_ENTITIES | Picks.PICK_AVATAR_ENTITIES        | Picks.PICK_INCLUDE_COLLIDABLE | Picks.PICK_INCLUDE_NONCOLLIDABLE;var rayPick = Picks.createPick(PickType.Ray, {    enabled: true,    filter: PICK_FILTER,    joint: HMD.active ? "Avatar" : "Mouse"});// Highlight intersected entity.var highlightedEntityID = null;Script.update.connect(function () {    var rayPickResult = Picks.getPrevPickResult(rayPick);    if (rayPickResult.intersects) {        if (rayPickResult.objectID !== highlightedEntityID) {            if (highlightedEntityID) {                Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);            }            highlightedEntityID = rayPickResult.objectID;            Selection.addToSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);        }    } else {        if (highlightedEntityID) {            Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);            highlightedEntityID = null;        }    }});// Clean up.Script.scriptEnding.connect(function () {    if (highlightedEntityID) {        Selection.removeFromSelectedItemsList(HIGHLIGHT_LIST_NAME, HIGHLIGHT_LIST_TYPE, highlightedEntityID);    }});</code></pre>
 
                     
                   
@@ -8033,8 +7839,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_AVATAR</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_AVATAR</code> property     instead.</p>
 
 
 
@@ -8136,8 +7941,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_ENTITY</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_ENTITY</code> property     instead.</p>
 
 
 
@@ -8239,8 +8043,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_HUD</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_HUD</code> property     instead.</p>
 
 
 
@@ -8342,8 +8145,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code> 
-    property instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code>     property instead.</p>
 
 
 
@@ -8445,8 +8247,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_NONE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_NONE</code> property     instead.</p>
 
 
 
@@ -8548,8 +8349,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code> 
-    property instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.INTERSECTED_LOCAL_ENTITY</code>     property instead.</p>
 
 
 
@@ -8648,9 +8448,7 @@ number
                             
 
 
-    <p>Checks if a pick is associated with the left hand: a ray or parabola pick with <code>joint</code> property set to 
-<code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pick with 
-<code>hand</code> property set to <code>0</code>.</p>
+    <p>Checks if a pick is associated with the left hand: a ray or parabola pick with <code>joint</code> property set to <code>"_CONTROLLER_LEFTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_LEFTHAND"</code>, or a stylus pick with <code>hand</code> property set to <code>0</code>.</p>
 
 
                         
@@ -8812,8 +8610,7 @@ number
                             
 
 
-    <p>Checks if a pick is associated with the system mouse: a ray or parabola pick with <code>joint</code> property set to 
-<code>"Mouse"</code>.</p>
+    <p>Checks if a pick is associated with the system mouse: a ray or parabola pick with <code>joint</code> property set to <code>"Mouse"</code>.</p>
 
 
                         
@@ -9137,9 +8934,7 @@ number
                             
 
 
-    <p>Checks if a pick is associated with the right hand: a ray or parabola pick with <code>joint</code> property set to
-<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pick with 
-<code>hand</code> property set to <code>1</code>.</p>
+    <p>Checks if a pick is associated with the right hand: a ray or parabola pick with <code>joint</code> property set to<code>"_CONTROLLER_RIGHTHAND"</code> or <code>"_CAMERA_RELATIVE_CONTROLLER_RIGHTHAND"</code>, or a stylus pick with <code>hand</code> property set to <code>1</code>.</p>
 
 
                         
@@ -9304,8 +9099,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_ALL_INTERSECTIONS</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_ALL_INTERSECTIONS</code> property     instead.</p>
 
 
 
@@ -9407,8 +9201,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATAR_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATAR_ENTITIES</code> property     instead.</p>
 
 
 
@@ -9510,8 +9303,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATARS</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_AVATARS</code> property     instead.</p>
 
 
 
@@ -9715,8 +9507,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES</code> property     instead.</p>
 
 
 
@@ -9818,8 +9609,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES | 
-    Picks.PICK_AVATAR_ENTITIES</code> properties expression instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_DOMAIN_ENTITIES |     Picks.PICK_AVATAR_ENTITIES</code> properties expression instead.</p>
 
 
 
@@ -10023,8 +9813,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_COLLIDABLE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_COLLIDABLE</code> property     instead.</p>
 
 
 
@@ -10126,8 +9915,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_INVISIBLE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_INVISIBLE</code> property     instead.</p>
 
 
 
@@ -10229,8 +10017,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_NONCOLLIDABLE</code> 
-    property instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_NONCOLLIDABLE</code>     property instead.</p>
 
 
 
@@ -10332,8 +10119,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_VISIBLE</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_INCLUDE_VISIBLE</code> property     instead.</p>
 
 
 
@@ -10435,8 +10221,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property     instead.</p>
 
 
 
@@ -10538,8 +10323,7 @@ number
                         
 
 
-    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property 
-    instead.</p>
+    <p class="important">Deprecated: This function is deprecated and will be removed. Use the <code>Picks.PICK_LOCAL_ENTITIES</code> property     instead.</p>
 
 
 
@@ -10884,8 +10668,7 @@ number
                             
 
 
-    <p>Sets a list of entity and avatar IDs that a pick should ignore during intersection.
-</p>
+    <p>Sets a list of entity and avatar IDs that a pick should ignore during intersection.</p>
     <p><strong>Note:</strong> Not used by stylus picks.</p>
 
 
@@ -11072,9 +10855,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                             
 
 
-    <p>Sets a list of entity and avatar IDs that a pick should include during intersection, instead of intersecting with 
-everything.
-</p>
+    <p>Sets a list of entity and avatar IDs that a pick should include during intersection, instead of intersecting with everything.</p>
     <p><strong>Note:</strong> Stylus picks only intersect with items in their include list.</p>
 
 
@@ -11261,9 +11042,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                             
 
 
-    <p>Sets whether or not a pick should use precision picking, i.e., whether it should pick against precise meshes or coarse 
-meshes.
-This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
+    <p>Sets whether or not a pick should use precision picking, i.e., whether it should pick against precise meshes or coarse meshes.This has the same effect as using the <code>PICK_PRECISE</code> or <code>PICK_COARSE</code> filter flags.</p>
 
 
                         

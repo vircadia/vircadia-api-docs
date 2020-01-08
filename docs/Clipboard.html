@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -226,23 +227,7 @@ boolean
     
         <p class="code-caption">Create and export a cube and a sphere.</p>
     
-    <pre class="prettyprint"><code>// Create entities.
-var box = Entities.addEntity({
-    type: "Box",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.2, y: 0, z: -3 })),
-    lifetime: 300 // Delete after 5 minutes.
-});
-var sphere = Entities.addEntity({
-    type: "Sphere",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.2, y: 0, z: -3 })),
-    lifetime: 300 // Delete after 5 minutes.
-});
-
-// Export entities.
-var filename = Window.save("Export entities to JSON file", Paths.resources, "*.json");
-if (filename) {
-    Clipboard.exportEntities(filename, [box, sphere]);
-}</code></pre>
+    <pre class="prettyprint"><code>// Create entities.var box = Entities.addEntity({    type: "Box",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.2, y: 0, z: -3 })),    lifetime: 300 // Delete after 5 minutes.});var sphere = Entities.addEntity({    type: "Sphere",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.2, y: 0, z: -3 })),    lifetime: 300 // Delete after 5 minutes.});// Export entities.var filename = Window.save("Export entities to JSON file", Paths.resources, "*.json");if (filename) {    Clipboard.exportEntities(filename, [box, sphere]);}</code></pre>
 
 
 -->
@@ -540,12 +525,7 @@ number
     
         <p class="code-caption">Import entities to the clipboard and report their overall dimensions.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");
-if (filename) {
-    if (Clipboard.importEntities(filename)) {
-        print("Clipboard dimensions: " + JSON.stringify(Clipboard.getContentsDimensions()));
-    }
-}</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");if (filename) {    if (Clipboard.importEntities(filename)) {        print("Clipboard dimensions: " + JSON.stringify(Clipboard.getContentsDimensions()));    }}</code></pre>
 
 
 -->
@@ -649,14 +629,7 @@ boolean
     
         <p class="code-caption">Import entities and paste into the domain.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");
-if (filename) {
-    if (Clipboard.importEntities(filename)) {
-        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,
-            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));
-        print("Entities pasted: " + JSON.stringify(pastedEntities));
-    }
-}</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");if (filename) {    if (Clipboard.importEntities(filename)) {        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));        print("Entities pasted: " + JSON.stringify(pastedEntities));    }}</code></pre>
 
 
 -->
@@ -944,23 +917,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
                         
         <p class="code-caption">Create and export a cube and a sphere.</p>
     
-    <pre class="prettyprint"><code>// Create entities.
-var box = Entities.addEntity({
-    type: "Box",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.2, y: 0, z: -3 })),
-    lifetime: 300 // Delete after 5 minutes.
-});
-var sphere = Entities.addEntity({
-    type: "Sphere",
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.2, y: 0, z: -3 })),
-    lifetime: 300 // Delete after 5 minutes.
-});
-
-// Export entities.
-var filename = Window.save("Export entities to JSON file", Paths.resources, "*.json");
-if (filename) {
-    Clipboard.exportEntities(filename, [box, sphere]);
-}</code></pre>
+    <pre class="prettyprint"><code>// Create entities.var box = Entities.addEntity({    type: "Box",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.2, y: 0, z: -3 })),    lifetime: 300 // Delete after 5 minutes.});var sphere = Entities.addEntity({    type: "Sphere",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.2, y: 0, z: -3 })),    lifetime: 300 // Delete after 5 minutes.});// Export entities.var filename = Window.save("Export entities to JSON file", Paths.resources, "*.json");if (filename) {    Clipboard.exportEntities(filename, [box, sphere]);}</code></pre>
 
                     
                   
@@ -1469,12 +1426,7 @@ number
                         
         <p class="code-caption">Import entities to the clipboard and report their overall dimensions.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");
-if (filename) {
-    if (Clipboard.importEntities(filename)) {
-        print("Clipboard dimensions: " + JSON.stringify(Clipboard.getContentsDimensions()));
-    }
-}</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");if (filename) {    if (Clipboard.importEntities(filename)) {        print("Clipboard dimensions: " + JSON.stringify(Clipboard.getContentsDimensions()));    }}</code></pre>
 
                     
                   
@@ -1691,8 +1643,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the <a href="ResourceRequestObserver.html">ResourceRequestObserver</a> can observe this 
-    request, <code>false</code> if it can't.</p>
+    <p><code>true</code> if the <a href="ResourceRequestObserver.html">ResourceRequestObserver</a> can observe this     request, <code>false</code> if it can't.</p>
 
 
                 
@@ -1758,14 +1709,7 @@ number
                         
         <p class="code-caption">Import entities and paste into the domain.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");
-if (filename) {
-    if (Clipboard.importEntities(filename)) {
-        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,
-            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));
-        print("Entities pasted: " + JSON.stringify(pastedEntities));
-    }
-}</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Import entities to clipboard", "", "*.json");if (filename) {    if (Clipboard.importEntities(filename)) {        pastedEntities = Clipboard.pasteEntities(Vec3.sum(MyAvatar.position,            Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })));        print("Entities pasted: " + JSON.stringify(pastedEntities));    }}</code></pre>
 
                     
                   
@@ -1804,8 +1748,7 @@ if (filename) {
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The IDs of the new entities that were created as a result of the paste operation. If entities couldn't 
-    be created then an empty array is returned.
+    The IDs of the new entities that were created as a result of the paste operation. If entities couldn't     be created then an empty array is returned.
 
 
                         

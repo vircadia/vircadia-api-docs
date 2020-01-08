@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -55,8 +56,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>DebugDraw</code> API renders debug markers and lines. These markers are only visible locally; they are not visible 
-to other users.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>DebugDraw</code> API renders debug markers and lines. These markers are only visible locally; they are not visible to other users.</div>
                 
 
                 
@@ -147,9 +147,7 @@ to other users.</div>
                     
 
 
-    <p>Adds or updates a debug marker in world coordinates. This marker is drawn every frame until it is removed using  
-<a href="DebugDraw.html#.removeMarker">removeMarker</a>. If a world coordinates debug marker of the specified <code>name</code> 
-already exists, its parameters are updated.</p>
+    <p>Adds or updates a debug marker in world coordinates. This marker is drawn every frame until it is removed using  <a href="DebugDraw.html#.removeMarker">removeMarker</a>. If a world coordinates debug marker of the specified <code>name</code> already exists, its parameters are updated.</p>
 
 
                 
@@ -219,17 +217,7 @@ already exists, its parameters are updated.</p>
     
         <p class="code-caption">Briefly draw a debug marker in front of your avatar, in world coordinates.</p>
     
-    <pre class="prettyprint"><code>var MARKER_NAME = "my marker";
-DebugDraw.addMarker(
-    MARKER_NAME,
-    Quat.ZERO,
-    Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5})),
-    { red: 255, green: 0, blue: 0 },
-    1.0
-);
-Script.setTimeout(function () {
-    DebugDraw.removeMarker(MARKER_NAME);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>var MARKER_NAME = "my marker";DebugDraw.addMarker(    MARKER_NAME,    Quat.ZERO,    Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5})),    { red: 255, green: 0, blue: 0 },    1.0);Script.setTimeout(function () {    DebugDraw.removeMarker(MARKER_NAME);}, 5000);</code></pre>
 
 
 -->
@@ -253,9 +241,7 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Adds or updates a debug marker to the world in avatar coordinates. This marker is drawn every frame until it is removed 
-using <a href="DebugDraw.html#.removeMyAvatarMarker">removeMyAvatarMarker</a>. If an avatar coordinates debug marker of the 
-specified <code>name</code> already exists, its parameters are updated. The debug marker moves with your avatar.</p>
+    <p>Adds or updates a debug marker to the world in avatar coordinates. This marker is drawn every frame until it is removed using <a href="DebugDraw.html#.removeMyAvatarMarker">removeMyAvatarMarker</a>. If an avatar coordinates debug marker of the specified <code>name</code> already exists, its parameters are updated. The debug marker moves with your avatar.</p>
 
 
                 
@@ -325,17 +311,7 @@ specified <code>name</code> already exists, its parameters are updated. The debu
     
         <p class="code-caption">Briefly draw a debug marker in front of your avatar, in avatar coordinates.</p>
     
-    <pre class="prettyprint"><code>var MARKER_NAME = "My avatar marker";
-DebugDraw.addMyAvatarMarker(
-    MARKER_NAME,
-    Quat.ZERO,
-    { x: 0, y: 0, z: -5 },
-    { red: 255, green: 0, blue: 0 },
-    1.0
-);
-Script.setTimeout(function () {
-    DebugDraw.removeMyAvatarMarker(MARKER_NAME);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>var MARKER_NAME = "My avatar marker";DebugDraw.addMyAvatarMarker(    MARKER_NAME,    Quat.ZERO,    { x: 0, y: 0, z: -5 },    { red: 255, green: 0, blue: 0 },    1.0);Script.setTimeout(function () {    DebugDraw.removeMyAvatarMarker(MARKER_NAME);}, 5000);</code></pre>
 
 
 -->
@@ -359,8 +335,7 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Draws a line in world space, visible for a single frame. To make the line visually persist, you need to repeatedly draw 
-it.</p>
+    <p>Draws a line in world space, visible for a single frame. To make the line visually persist, you need to repeatedly draw it.</p>
 
 
                 
@@ -430,13 +405,7 @@ it.</p>
     
         <p class="code-caption">Draw a red ray from your initial avatar position to 10m in front of it.</p>
     
-    <pre class="prettyprint"><code>var start = MyAvatar.position;
-var end = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -10 }));
-var color = { x: 1.0, y: 0.0, z: 0.0, w: 1.0 };
-
-Script.update.connect(function () {
-    DebugDraw.drawRay(start, end, color);
-});</code></pre>
+    <pre class="prettyprint"><code>var start = MyAvatar.position;var end = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -10 }));var color = { x: 1.0, y: 0.0, z: 0.0, w: 1.0 };Script.update.connect(function () {    DebugDraw.drawRay(start, end, color);});</code></pre>
 
 
 -->
@@ -460,9 +429,7 @@ Script.update.connect(function () {
                     
 
 
-    <p>Draws lines in world space, visible for a single frame. To make the lines visually persist, you need to repeatedly draw 
-them.
-</p>
+    <p>Draws lines in world space, visible for a single frame. To make the lines visually persist, you need to repeatedly draw them.</p>
     <p><strong>Note:</strong> Currently doesn't work.
 
 
@@ -533,17 +500,7 @@ them.
     
         <p class="code-caption">Draw a red "V" in front of your initial avatar position.</p>
     
-    <pre class="prettyprint"><code>var lines = [
-    [{ x: -1, y: 0.5, z: 0 }, { x: 0, y: 0, z: 0 }],
-    [{ x: 0, y: 0, z: 0 }, { x: 1, y: 0.5, z: 0 }]
-];
-var color = { x: 1, y: 0, z: 0, w: 1 };
-var translation = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -5 }));
-var rotation = MyAvatar.orientation;
-
-Script.update.connect(function () {
-    DebugDraw.drawRays(lines, color, translation, rotation);
-});</code></pre>
+    <pre class="prettyprint"><code>var lines = [    [{ x: -1, y: 0.5, z: 0 }, { x: 0, y: 0, z: 0 }],    [{ x: 0, y: 0, z: 0 }, { x: 1, y: 0.5, z: 0 }]];var color = { x: 1, y: 0, z: 0, w: 1 };var translation = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -5 }));var rotation = MyAvatar.orientation;Script.update.connect(function () {    DebugDraw.drawRays(lines, color, translation, rotation);});</code></pre>
 
 
 -->
@@ -754,9 +711,7 @@ Script.update.connect(function () {
                             
 
 
-    <p>Adds or updates a debug marker in world coordinates. This marker is drawn every frame until it is removed using  
-<a href="DebugDraw.html#.removeMarker">removeMarker</a>. If a world coordinates debug marker of the specified <code>name</code> 
-already exists, its parameters are updated.</p>
+    <p>Adds or updates a debug marker in world coordinates. This marker is drawn every frame until it is removed using  <a href="DebugDraw.html#.removeMarker">removeMarker</a>. If a world coordinates debug marker of the specified <code>name</code> already exists, its parameters are updated.</p>
 
 
                         
@@ -1000,17 +955,7 @@ float
                         
         <p class="code-caption">Briefly draw a debug marker in front of your avatar, in world coordinates.</p>
     
-    <pre class="prettyprint"><code>var MARKER_NAME = "my marker";
-DebugDraw.addMarker(
-    MARKER_NAME,
-    Quat.ZERO,
-    Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5})),
-    { red: 255, green: 0, blue: 0 },
-    1.0
-);
-Script.setTimeout(function () {
-    DebugDraw.removeMarker(MARKER_NAME);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>var MARKER_NAME = "my marker";DebugDraw.addMarker(    MARKER_NAME,    Quat.ZERO,    Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -5})),    { red: 255, green: 0, blue: 0 },    1.0);Script.setTimeout(function () {    DebugDraw.removeMarker(MARKER_NAME);}, 5000);</code></pre>
 
                     
                   
@@ -1058,9 +1003,7 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Adds or updates a debug marker to the world in avatar coordinates. This marker is drawn every frame until it is removed 
-using <a href="DebugDraw.html#.removeMyAvatarMarker">removeMyAvatarMarker</a>. If an avatar coordinates debug marker of the 
-specified <code>name</code> already exists, its parameters are updated. The debug marker moves with your avatar.</p>
+    <p>Adds or updates a debug marker to the world in avatar coordinates. This marker is drawn every frame until it is removed using <a href="DebugDraw.html#.removeMyAvatarMarker">removeMyAvatarMarker</a>. If an avatar coordinates debug marker of the specified <code>name</code> already exists, its parameters are updated. The debug marker moves with your avatar.</p>
 
 
                         
@@ -1304,17 +1247,7 @@ float
                         
         <p class="code-caption">Briefly draw a debug marker in front of your avatar, in avatar coordinates.</p>
     
-    <pre class="prettyprint"><code>var MARKER_NAME = "My avatar marker";
-DebugDraw.addMyAvatarMarker(
-    MARKER_NAME,
-    Quat.ZERO,
-    { x: 0, y: 0, z: -5 },
-    { red: 255, green: 0, blue: 0 },
-    1.0
-);
-Script.setTimeout(function () {
-    DebugDraw.removeMyAvatarMarker(MARKER_NAME);
-}, 5000);</code></pre>
+    <pre class="prettyprint"><code>var MARKER_NAME = "My avatar marker";DebugDraw.addMyAvatarMarker(    MARKER_NAME,    Quat.ZERO,    { x: 0, y: 0, z: -5 },    { red: 255, green: 0, blue: 0 },    1.0);Script.setTimeout(function () {    DebugDraw.removeMyAvatarMarker(MARKER_NAME);}, 5000);</code></pre>
 
                     
                   
@@ -1362,8 +1295,7 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Draws a line in world space, visible for a single frame. To make the line visually persist, you need to repeatedly draw 
-it.</p>
+    <p>Draws a line in world space, visible for a single frame. To make the line visually persist, you need to repeatedly draw it.</p>
 
 
                         
@@ -1524,8 +1456,7 @@ it.</p>
                     
 
 
-    <p>The color of the line. Each component should be in the range <code>0.0</code> &ndash; 
-<code>1.0</code>, with <code>x</code> = red, <code>y</code> = green, <code>z</code> = blue, and <code>w</code> = alpha.</p>
+    <p>The color of the line. Each component should be in the range <code>0.0</code> &ndash; <code>1.0</code>, with <code>x</code> = red, <code>y</code> = green, <code>z</code> = blue, and <code>w</code> = alpha.</p>
 
 
                 
@@ -1542,13 +1473,7 @@ it.</p>
                         
         <p class="code-caption">Draw a red ray from your initial avatar position to 10m in front of it.</p>
     
-    <pre class="prettyprint"><code>var start = MyAvatar.position;
-var end = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -10 }));
-var color = { x: 1.0, y: 0.0, z: 0.0, w: 1.0 };
-
-Script.update.connect(function () {
-    DebugDraw.drawRay(start, end, color);
-});</code></pre>
+    <pre class="prettyprint"><code>var start = MyAvatar.position;var end = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -10 }));var color = { x: 1.0, y: 0.0, z: 0.0, w: 1.0 };Script.update.connect(function () {    DebugDraw.drawRay(start, end, color);});</code></pre>
 
                     
                   
@@ -1596,9 +1521,7 @@ Script.update.connect(function () {
                             
 
 
-    <p>Draws lines in world space, visible for a single frame. To make the lines visually persist, you need to repeatedly draw 
-them.
-</p>
+    <p>Draws lines in world space, visible for a single frame. To make the lines visually persist, you need to repeatedly draw them.</p>
     <p><strong>Note:</strong> Currently doesn't work.
 
 
@@ -1755,8 +1678,7 @@ Array.&lt;Vec3Pair>
                     
 
 
-    <p>The color of the lines. Each component should be in the range <code>0.0</code> &ndash; 
-<code>1.0</code>, with <code>x</code> = red, <code>y</code> = green, <code>z</code> = blue, and <code>w</code> = alpha.</p>
+    <p>The color of the lines. Each component should be in the range <code>0.0</code> &ndash; <code>1.0</code>, with <code>x</code> = red, <code>y</code> = green, <code>z</code> = blue, and <code>w</code> = alpha.</p>
 
 
                 
@@ -1871,17 +1793,7 @@ Array.&lt;Vec3Pair>
                         
         <p class="code-caption">Draw a red "V" in front of your initial avatar position.</p>
     
-    <pre class="prettyprint"><code>var lines = [
-    [{ x: -1, y: 0.5, z: 0 }, { x: 0, y: 0, z: 0 }],
-    [{ x: 0, y: 0, z: 0 }, { x: 1, y: 0.5, z: 0 }]
-];
-var color = { x: 1, y: 0, z: 0, w: 1 };
-var translation = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -5 }));
-var rotation = MyAvatar.orientation;
-
-Script.update.connect(function () {
-    DebugDraw.drawRays(lines, color, translation, rotation);
-});</code></pre>
+    <pre class="prettyprint"><code>var lines = [    [{ x: -1, y: 0.5, z: 0 }, { x: 0, y: 0, z: 0 }],    [{ x: 0, y: 0, z: 0 }, { x: 1, y: 0.5, z: 0 }]];var color = { x: 1, y: 0, z: 0, w: 1 };var translation = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -5 }));var rotation = MyAvatar.orientation;Script.update.connect(function () {    DebugDraw.drawRays(lines, color, translation, rotation);});</code></pre>
 
                     
                   

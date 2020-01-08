@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -63,9 +64,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Window</code> API provides various facilities not covered elsewhere, including: window dimensions, window focus, 
-camera view, announcements, user connections, common dialog boxes, snapshots, file import, domain navigation, domain changes, 
-domain physics, OS clipboard, build number.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Window</code> API provides various facilities not covered elsewhere, including: window dimensions, window focus, camera view, announcements, user connections, common dialog boxes, snapshots, file import, domain navigation, domain changes, domain physics, OS clipboard, build number.</div>
                 
 
                 
@@ -120,8 +119,7 @@ number
                     
 
 
-    <p>The width of the drawable area of the Interface window (i.e., without borders or other
-    chrome), in pixels. <em>Read-only.</em></p>
+    <p>The width of the drawable area of the Interface window (i.e., without borders or other    chrome), in pixels. <em>Read-only.</em></p>
 
 
                 
@@ -154,8 +152,7 @@ number
                     
 
 
-    <p>The height of the drawable area of the Interface window (i.e., without borders or other
-    chrome), in pixels. <em>Read-only.</em></p>
+    <p>The height of the drawable area of the Interface window (i.e., without borders or other    chrome), in pixels. <em>Read-only.</em></p>
 
 
                 
@@ -188,8 +185,7 @@ number
                     
 
 
-    <p>The x display coordinate of the top left corner of the drawable area of the Interface window. 
-    <em>Read-only.</em></p>
+    <p>The x display coordinate of the top left corner of the drawable area of the Interface window.     <em>Read-only.</em></p>
 
 
                 
@@ -222,8 +218,7 @@ number
                     
 
 
-    <p>The y display coordinate of the top left corner of the drawable area of the Interface window. 
-    <em>Read-only.</em></p>
+    <p>The y display coordinate of the top left corner of the drawable area of the Interface window.     <em>Read-only.</em></p>
 
 
                 
@@ -256,8 +251,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the interstitial graphics are displayed when a 
-    domain is loading, otherwise <code>false</code>.</p>
+    <p><code>true</code> if the interstitial graphics are displayed when a     domain is loading, otherwise <code>false</code>.</p>
 
 
                 
@@ -388,8 +382,7 @@ boolean
                     
 
 
-    <p>Displays a dialog with the specified message and an "OK" button. The dialog is non-modal; the script continues without
-waiting for a user response.</p>
+    <p>Displays a dialog with the specified message and an "OK" button. The dialog is non-modal; the script continues withoutwaiting for a user response.</p>
 
 
                 
@@ -459,8 +452,7 @@ waiting for a user response.</p>
     
         <p class="code-caption">Display a friendly greeting.</p>
     
-    <pre class="prettyprint"><code>Window.alert("Welcome!");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>Window.alert("Welcome!");print("Script continues without waiting");</code></pre>
 
 
 -->
@@ -564,8 +556,7 @@ string
     
         <p class="code-caption">Ask the user to choose an image file.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");
-print("File: " + filename);</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");print("File: " + filename);</code></pre>
 
 
 -->
@@ -599,8 +590,7 @@ string
                     
 
 
-    <p>Prompts the user to choose an Asset Server item. Displays a modal dialog that navigates the tree of assets on the Asset
-Server.</p>
+    <p>Prompts the user to choose an Asset Server item. Displays a modal dialog that navigates the tree of assets on the AssetServer.</p>
 
 
                 
@@ -670,8 +660,7 @@ Server.</p>
     
         <p class="code-caption">Ask the user to select an FBX asset.</p>
     
-    <pre class="prettyprint"><code>var asset = Window.browseAssets("Select FBX File", "/", "*.fbx");
-print("FBX file: " + asset);</code></pre>
+    <pre class="prettyprint"><code>var asset = Window.browseAssets("Select FBX File", "/", "*.fbx");print("FBX file: " + asset);</code></pre>
 
 
 -->
@@ -695,9 +684,7 @@ print("FBX file: " + asset);</code></pre>
                     
 
 
-    <p>Prompts the user to choose an Asset Server item. Displays a non-modal dialog that navigates the tree of assets on the 
-Asset Server. An <a href="Window.html#.assetsDirChanged">assetsDirChanged</a> signal is emitted when an asset is chosen; no signal is
-emitted if the user cancels the dialog.</p>
+    <p>Prompts the user to choose an Asset Server item. Displays a non-modal dialog that navigates the tree of assets on the Asset Server. An <a href="Window.html#.assetsDirChanged">assetsDirChanged</a> signal is emitted when an asset is chosen; no signal isemitted if the user cancels the dialog.</p>
 
 
                 
@@ -765,13 +752,7 @@ emitted if the user cancels the dialog.</p>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>function onAssetsDirChanged(asset) {
-    print("FBX file: " + asset);
-}
-Window.assetsDirChanged.connect(onAssetsDirChanged);
-
-Window.browseAssetsAsync("Select FBX File", "/", "*.fbx");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onAssetsDirChanged(asset) {    print("FBX file: " + asset);}Window.assetsDirChanged.connect(onAssetsDirChanged);Window.browseAssetsAsync("Select FBX File", "/", "*.fbx");print("Script continues without waiting");</code></pre>
 
 
 -->
@@ -795,9 +776,7 @@ print("Script continues without waiting");</code></pre>
                     
 
 
-    <p>Prompts the user to choose a file. Displays a non-modal dialog that navigates the directory tree. A
-<a href="Window.html#.browseChanged">browseChanged</a> signal is emitted when a file is chosen; no signal is emitted if the user
-cancels the dialog.</p>
+    <p>Prompts the user to choose a file. Displays a non-modal dialog that navigates the directory tree. A<a href="Window.html#.browseChanged">browseChanged</a> signal is emitted when a file is chosen; no signal is emitted if the usercancels the dialog.</p>
 
 
                 
@@ -867,13 +846,7 @@ cancels the dialog.</p>
     
         <p class="code-caption">Ask the user to choose an image file without waiting for the answer.</p>
     
-    <pre class="prettyprint"><code>function onBrowseChanged(filename) {
-    print("File: " + filename);
-}
-Window.browseChanged.connect(onBrowseChanged);
-
-Window.browseAsync("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onBrowseChanged(filename) {    print("File: " + filename);}Window.browseChanged.connect(onBrowseChanged);Window.browseAsync("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");print("Script continues without waiting");</code></pre>
 
 
 -->
@@ -977,8 +950,7 @@ string
     
         <p class="code-caption">Ask the user to choose a directory.</p>
     
-    <pre class="prettyprint"><code>var directory = Window.browseDir("Select Directory", Paths.resources);
-print("Directory: " + directory);</code></pre>
+    <pre class="prettyprint"><code>var directory = Window.browseDir("Select Directory", Paths.resources);print("Directory: " + directory);</code></pre>
 
 
 -->
@@ -1002,9 +974,7 @@ print("Directory: " + directory);</code></pre>
                     
 
 
-    <p>Prompts the user to choose a directory. Displays a non-modal dialog that navigates the directory tree. A
-<a href="Window.html#.browseDirChanged">browseDirChanged</a> signal is emitted when a directory is chosen; no signal is emitted if
-the user cancels the dialog.</p>
+    <p>Prompts the user to choose a directory. Displays a non-modal dialog that navigates the directory tree. A<a href="Window.html#.browseDirChanged">browseDirChanged</a> signal is emitted when a directory is chosen; no signal is emitted ifthe user cancels the dialog.</p>
 
 
                 
@@ -1074,13 +1044,7 @@ the user cancels the dialog.</p>
     
         <p class="code-caption">Ask the user to choose a directory without waiting for the answer.</p>
     
-    <pre class="prettyprint"><code>function onBrowseDirChanged(directory) {
-    print("Directory: " + directory);
-}
-Window.browseDirChanged.connect(onBrowseDirChanged);
-
-Window.browseDirAsync("Select Directory", Paths.resources);
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onBrowseDirChanged(directory) {    print("Directory: " + directory);}Window.browseDirChanged.connect(onBrowseDirChanged);Window.browseDirAsync("Select Directory", Paths.resources);print("Script continues without waiting");</code></pre>
 
 
 -->
@@ -1368,8 +1332,7 @@ boolean
     
         <p class="code-caption">Ask the user a question requiring a yes/no answer.</p>
     
-    <pre class="prettyprint"><code>var answer = Window.confirm("Are you sure?");
-print(answer);  // true or false</code></pre>
+    <pre class="prettyprint"><code>var answer = Window.confirm("Are you sure?");print(answer);  // true or false</code></pre>
 
 
 -->
@@ -1480,8 +1443,7 @@ print(answer);  // true or false</code></pre>
                     
 
 
-    <p>Displays a notification message. Notifications are displayed in panels by the default script, nofications.js. An
-<a href="Window.html#.announcement">announcement</a> signal is emitted when this function is called.</p>
+    <p>Displays a notification message. Notifications are displayed in panels by the default script, nofications.js. An<a href="Window.html#.announcement">announcement</a> signal is emitted when this function is called.</p>
 
 
                 
@@ -1551,13 +1513,7 @@ print(answer);  // true or false</code></pre>
     
         <p class="code-caption">Send and capture an announcement message.</p>
     
-    <pre class="prettyprint"><code>function onAnnouncement(message) {
-    // The message is also displayed as a notification by notifications.js.
-    print("Announcement: " + message);
-}
-Window.announcement.connect(onAnnouncement);
-
-Window.displayAnnouncement("Hello");</code></pre>
+    <pre class="prettyprint"><code>function onAnnouncement(message) {    // The message is also displayed as a notification by notifications.js.    print("Announcement: " + message);}Window.announcement.connect(onAnnouncement);Window.displayAnnouncement("Hello");</code></pre>
 
 
 -->
@@ -2044,9 +2000,7 @@ string
     
         <p class="code-caption">Print the names of all available display plugins.</p>
     
-    <pre class="prettyprint"><code>for (var i = 0, length = Window.getDisplayPluginCount(); i &lt; length; i++) {
-    print(Window.getDisplayPluginName(i));
-}</code></pre>
+    <pre class="prettyprint"><code>for (var i = 0, length = Window.getDisplayPluginCount(); i &lt; length; i++) {    print(Window.getDisplayPluginName(i));}</code></pre>
 
 
 -->
@@ -2371,8 +2325,7 @@ boolean
                     
 
 
-    <p>Checks to see if physics is active for you in the domain you're visiting - there is a delay between your arrival at a
-domain and physics becoming active for you in that domain.</p>
+    <p>Checks to see if physics is active for you in the domain you're visiting - there is a delay between your arrival at adomain and physics becoming active for you in that domain.</p>
 
 
                 
@@ -2442,20 +2395,7 @@ domain and physics becoming active for you in that domain.</p>
     
         <p class="code-caption">Wait for physics to be enabled when you change domains.</p>
     
-    <pre class="prettyprint"><code>function checkForPhysics() {
-    var isPhysicsEnabled = Window.isPhysicsEnabled();
-    print("Physics enabled: " + isPhysicsEnabled);
-    if (!isPhysicsEnabled) {
-        Script.setTimeout(checkForPhysics, 1000);
-    }
-}
-
-function onDomainChanged(domain) {
-    print("Domain changed: " + domain);
-    Script.setTimeout(checkForPhysics, 1000);
-}
-
-Window.domainChanged.connect(onDomainChanged);</code></pre>
+    <pre class="prettyprint"><code>function checkForPhysics() {    var isPhysicsEnabled = Window.isPhysicsEnabled();    print("Physics enabled: " + isPhysicsEnabled);    if (!isPhysicsEnabled) {        Script.setTimeout(checkForPhysics, 1000);    }}function onDomainChanged(domain) {    print("Domain changed: " + domain);    Script.setTimeout(checkForPhysics, 1000);}Window.domainChanged.connect(onDomainChanged);</code></pre>
 
 
 -->
@@ -2489,8 +2429,7 @@ boolean
                     
 
 
-    <p>Checks if a 2D point is within the desktop window if in desktop mode, or the drawable area of the HUD overlay if in HMD
-mode.</p>
+    <p>Checks if a 2D point is within the desktop window if in desktop mode, or the drawable area of the HUD overlay if in HMDmode.</p>
 
 
                 
@@ -2577,8 +2516,7 @@ mode.</p>
                     
 
 
-    <p>Emits a <a href="Window.html#.connectionAdded">connectionAdded</a> or a <a href="Window.html#.connectionError">connectionError</a> signal that
-indicates whether or not a user connection was successfully made using the Web API.</p>
+    <p>Emits a <a href="Window.html#.connectionAdded">connectionAdded</a> or a <a href="Window.html#.connectionError">connectionError</a> signal thatindicates whether or not a user connection was successfully made using the Web API.</p>
 
 
                 
@@ -2762,8 +2700,7 @@ number
                     
 
 
-    <p>Opens a non-modal message box that can have a variety of button combinations. See also, 
-<a href="Window.html#.updateMessageBox">updateMessageBox</a> and <a href="Window.html#.closeMessageBox">closeMessageBox</a>.</p>
+    <p>Opens a non-modal message box that can have a variety of button combinations. See also, <a href="Window.html#.updateMessageBox">updateMessageBox</a> and <a href="Window.html#.closeMessageBox">closeMessageBox</a>.</p>
 
 
                 
@@ -2833,24 +2770,7 @@ number
     
         <p class="code-caption">Ask the user whether that want to reset something.</p>
     
-    <pre class="prettyprint"><code>var messageBox;
-var resetButton = 0x4000000;
-var cancelButton = 0x400000;
-
-function onMessageBoxClosed(id, button) {
-    if (id === messageBox) {
-        if (button === resetButton) {
-            print("Reset");
-        } else {
-            print("Don't reset");
-        }
-    }
-}
-Window.messageBoxClosed.connect(onMessageBoxClosed);
-
-messageBox = Window.openMessageBox("Reset Something", 
-    "Do you want to reset something?",
-    resetButton + cancelButton, cancelButton);</code></pre>
+    <pre class="prettyprint"><code>var messageBox;var resetButton = 0x4000000;var cancelButton = 0x400000;function onMessageBoxClosed(id, button) {    if (id === messageBox) {        if (button === resetButton) {            print("Reset");        } else {            print("Don't reset");        }    }}Window.messageBoxClosed.connect(onMessageBoxClosed);messageBox = Window.openMessageBox("Reset Something",     "Do you want to reset something?",    resetButton + cancelButton, cancelButton);</code></pre>
 
 
 -->
@@ -2874,15 +2794,8 @@ messageBox = Window.openMessageBox("Reset Something",
                     
 
 
-    <p>Opens a URL in the Interface window or other application, depending on the URL's scheme. The following schemes are 
-supported:
-</p>
-    <ul>
-  <li><code>hifi</code>: Navigate to the URL in Interface.</li>
-  <li><code>hifiapp</code>: Open a system app in Interface.</li>
-</ul>
-<p>Other schemes will either be handled by the OS (e.g. <code>http</code>, <code>https</code>, or <code>mailto</code>) or 
-will display a dialog asking the user to confirm that they want to try to open the URL.</p>
+    <p>Opens a URL in the Interface window or other application, depending on the URL's scheme. The following schemes are supported:</p>
+    <ul>  <li><code>hifi</code>: Navigate to the URL in Interface.</li>  <li><code>hifiapp</code>: Open a system app in Interface.</li></ul><p>Other schemes will either be handled by the OS (e.g. <code>http</code>, <code>https</code>, or <code>mailto</code>) or will display a dialog asking the user to confirm that they want to try to open the URL.</p>
 
 
                 
@@ -3066,8 +2979,7 @@ string
                     
 
 
-    <p>Prompts the user to enter some text. Displays a modal dialog with a message and a text box, plus "OK" and "Cancel" 
-buttons.</p>
+    <p>Prompts the user to enter some text. Displays a modal dialog with a message and a text box, plus "OK" and "Cancel" buttons.</p>
 
 
                 
@@ -3137,12 +3049,7 @@ buttons.</p>
     
         <p class="code-caption">Ask the user a question requiring a text answer.</p>
     
-    <pre class="prettyprint"><code>var answer = Window.prompt("Question", "answer");
-if (answer === "") {
-    print("User canceled");
-} else {
-    print("User answer: " + answer);
-}</code></pre>
+    <pre class="prettyprint"><code>var answer = Window.prompt("Question", "answer");if (answer === "") {    print("User canceled");} else {    print("User answer: " + answer);}</code></pre>
 
 
 -->
@@ -3166,9 +3073,7 @@ if (answer === "") {
                     
 
 
-    <p>Prompts the user to enter some text. Displays a non-modal dialog with a message and a text box, plus "OK" and "Cancel" 
-buttons. A <a href="Window.html#.promptTextChanged">promptTextChanged</a> signal is emitted when the user OKs the dialog; no signal 
-is emitted if the user cancels the dialog.</p>
+    <p>Prompts the user to enter some text. Displays a non-modal dialog with a message and a text box, plus "OK" and "Cancel" buttons. A <a href="Window.html#.promptTextChanged">promptTextChanged</a> signal is emitted when the user OKs the dialog; no signal is emitted if the user cancels the dialog.</p>
 
 
                 
@@ -3238,13 +3143,7 @@ is emitted if the user cancels the dialog.</p>
     
         <p class="code-caption">Ask the user a question requiring a text answer without waiting for the answer.</p>
     
-    <pre class="prettyprint"><code>function onPromptTextChanged(text) {
-    print("User answer: " + text);
-}
-Window.promptTextChanged.connect(onPromptTextChanged);
-
-Window.promptAsync("Question", "answer");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onPromptTextChanged(text) {    print("User answer: " + text);}Window.promptTextChanged.connect(onPromptTextChanged);Window.promptAsync("Question", "answer");print("Script continues without waiting");</code></pre>
 
 
 -->
@@ -3462,8 +3361,7 @@ string
                     
 
 
-    <p>Prompts the user to specify the path and name of a file to save to. Displays a model dialog that navigates the directory
-tree and allows the user to type in a file name.</p>
+    <p>Prompts the user to specify the path and name of a file to save to. Displays a model dialog that navigates the directorytree and allows the user to type in a file name.</p>
 
 
                 
@@ -3533,8 +3431,7 @@ tree and allows the user to type in a file name.</p>
     
         <p class="code-caption">Ask the user to specify a file to save to.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.save("Save to JSON file", Paths.resources, "*.json");
-print("File: " + filename);</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.save("Save to JSON file", Paths.resources, "*.json");print("File: " + filename);</code></pre>
 
 
 -->
@@ -3558,9 +3455,7 @@ print("File: " + filename);</code></pre>
                     
 
 
-    <p>Prompts the user to specify the path and name of a file to save to. Displays a non-model dialog that navigates the
-directory tree and allows the user to type in a file name. A <a href="Window.html#.saveFileChanged">saveFileChanged</a> signal is
-emitted when a file is specified; no signal is emitted if the user cancels the dialog.</p>
+    <p>Prompts the user to specify the path and name of a file to save to. Displays a non-model dialog that navigates thedirectory tree and allows the user to type in a file name. A <a href="Window.html#.saveFileChanged">saveFileChanged</a> signal isemitted when a file is specified; no signal is emitted if the user cancels the dialog.</p>
 
 
                 
@@ -3630,13 +3525,7 @@ emitted when a file is specified; no signal is emitted if the user cancels the d
     
         <p class="code-caption">Ask the user to specify a file to save to without waiting for an answer.</p>
     
-    <pre class="prettyprint"><code>function onSaveFileChanged(filename) {
-    print("File: " + filename);
-}
-Window.saveFileChanged.connect(onSaveFileChanged);
-
-Window.saveAsync("Save to JSON file", Paths.resources, "*.json");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onSaveFileChanged(filename) {    print("File: " + filename);}Window.saveFileChanged.connect(onSaveFileChanged);Window.saveAsync("Save to JSON file", Paths.resources, "*.json");print("Script continues without waiting");</code></pre>
 
 
 -->
@@ -3757,8 +3646,7 @@ boolean
                     
 
 
-    <p>Sets what to show on the PC display. For entity camera view, the entity camera is configured using 
-<a href="Camera.html#.setCameraEntity">Camera.setCameraEntity</a> and <a href="Camera.html">Camera.mode</a>.</p>
+    <p>Sets what to show on the PC display. For entity camera view, the entity camera is configured using <a href="Camera.html#.setCameraEntity">Camera.setCameraEntity</a> and <a href="Camera.html">Camera.mode</a>.</p>
 
 
                 
@@ -3845,8 +3733,7 @@ boolean
                     
 
 
-    <p>Makes the Interface window have focus. On Windows, if Interface doesn't already have focus, the task bar icon flashes to 
-indicate that Interface wants attention but focus isn't taken away from the application that the user is using.</p>
+    <p>Makes the Interface window have focus. On Windows, if Interface doesn't already have focus, the task bar icon flashes to indicate that Interface wants attention but focus isn't taken away from the application that the user is using.</p>
 
 
                 
@@ -3933,8 +3820,7 @@ indicate that Interface wants attention but focus isn't taken away from the appl
                     
 
 
-    <p>Prepares a snapshot ready for sharing. A <a href="Window.html#.snapshotShared">snapshotShared</a> signal is emitted when the snapshot
-has been prepared.</p>
+    <p>Prepares a snapshot ready for sharing. A <a href="Window.html#.snapshotShared">snapshotShared</a> signal is emitted when the snapshothas been prepared.</p>
 
 
                 
@@ -4021,8 +3907,7 @@ has been prepared.</p>
                     
 
 
-    <p>Opens the Asset Browser dialog. If a file to upload is specified, the user is prompted to enter the folder and name to
-map the file to on the asset server.</p>
+    <p>Opens the Asset Browser dialog. If a file to upload is specified, the user is prompted to enter the folder and name tomap the file to on the asset server.</p>
 
 
                 
@@ -4092,9 +3977,7 @@ map the file to on the asset server.</p>
     
         <p class="code-caption">Upload a file to the asset server.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Select File to Add to Asset Server", Paths.resources);
-print("File: " + filename);
-Window.showAssetServer(filename);</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Select File to Add to Asset Server", Paths.resources);print("File: " + filename);Window.showAssetServer(filename);</code></pre>
 
 
 -->
@@ -4118,11 +4001,8 @@ Window.showAssetServer(filename);</code></pre>
                     
 
 
-    <p>Takes a 360&deg; snapshot at a given position for the secondary camera. The secondary camera does not need to have been 
-    set up.
-</p>
-    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the
-<a href="Snapshot.html">Snapshot</a> API.</p>
+    <p>Takes a 360&deg; snapshot at a given position for the secondary camera. The secondary camera does not need to have been     set up.</p>
+    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the<a href="Snapshot.html">Snapshot</a> API.</p>
 
 
                 
@@ -4209,10 +4089,8 @@ Window.showAssetServer(filename);</code></pre>
                     
 
 
-    <p>Takes a still snapshot of the current view from the secondary camera that can be set up through the <a href="Render.html">Render</a> API.
-</p>
-    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the
-<a href="Snapshot.html">Snapshot</a> API.</p>
+    <p>Takes a still snapshot of the current view from the secondary camera that can be set up through the <a href="Render.html">Render</a> API.</p>
+    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the<a href="Snapshot.html">Snapshot</a> API.</p>
 
 
                 
@@ -4299,13 +4177,8 @@ Window.showAssetServer(filename);</code></pre>
                     
 
 
-    <p>Takes a snapshot of the current Interface view from the primary camera. When a still image only is captured, 
-<a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a> is emitted; when a still image plus moving images are captured, 
-<a href="Window.html#.processingGifStarted">processingGifStarted</a> and <a href="Window.html#.processingGifCompleted">processingGifCompleted</a>
-are emitted.
-</p>
-    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the 
-<a href="Snapshot.html">Snapshot</a> API.</p>
+    <p>Takes a snapshot of the current Interface view from the primary camera. When a still image only is captured, <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a> is emitted; when a still image plus moving images are captured, <a href="Window.html#.processingGifStarted">processingGifStarted</a> and <a href="Window.html#.processingGifCompleted">processingGifCompleted</a>are emitted.</p>
+    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the <a href="Snapshot.html">Snapshot</a> API.</p>
 
 
                 
@@ -4375,28 +4248,7 @@ are emitted.
     
         <p class="code-caption">Using the snapshot function and signals.</p>
     
-    <pre class="prettyprint"><code>function onStillSnapshotTaken(path, notify) {
-    print("Still snapshot taken: " + path);
-    print("Notify: " + notify);
-}
-
-function onProcessingGifStarted(stillPath) {
-    print("Still snapshot taken: " + stillPath);
-}
-
-function onProcessingGifCompleted(animatedPath) {
-    print("Animated snapshot taken: " + animatedPath);
-}
-
-Window.stillSnapshotTaken.connect(onStillSnapshotTaken);
-Window.processingGifStarted.connect(onProcessingGifStarted);
-Window.processingGifCompleted.connect(onProcessingGifCompleted);
-
-var notify = true;
-var animated = true;
-var aspect = 1920 / 1080;
-var filename = "example-snapshot";
-Window.takeSnapshot(notify, animated, aspect, filename);</code></pre>
+    <pre class="prettyprint"><code>function onStillSnapshotTaken(path, notify) {    print("Still snapshot taken: " + path);    print("Notify: " + notify);}function onProcessingGifStarted(stillPath) {    print("Still snapshot taken: " + stillPath);}function onProcessingGifCompleted(animatedPath) {    print("Animated snapshot taken: " + animatedPath);}Window.stillSnapshotTaken.connect(onStillSnapshotTaken);Window.processingGifStarted.connect(onProcessingGifStarted);Window.processingGifCompleted.connect(onProcessingGifCompleted);var notify = true;var animated = true;var aspect = 1920 / 1080;var filename = "example-snapshot";Window.takeSnapshot(notify, animated, aspect, filename);</code></pre>
 
 
 -->
@@ -5009,8 +4861,7 @@ Window.takeSnapshot(notify, animated, aspect, filename);</code></pre>
                         
 
 
-    <p>Triggered when you change the domain you're visiting.
-</p>
+    <p>Triggered when you change the domain you're visiting.</p>
     <p><strong>Warning:</strong> Is not emitted if you go to a domain that isn't running.</p>
 
 
@@ -5081,11 +4932,7 @@ Window.takeSnapshot(notify, animated, aspect, filename);</code></pre>
     
         <p class="code-caption">Report when you change domains.</p>
     
-    <pre class="prettyprint"><code>function onDomainChanged(domain) {
-    print("Domain changed: " + domain);
-}
-
-Window.domainChanged.connect(onDomainChanged);</code></pre>
+    <pre class="prettyprint"><code>function onDomainChanged(domain) {    print("Domain changed: " + domain);}Window.domainChanged.connect(onDomainChanged);</code></pre>
 
 
 -->
@@ -5256,11 +5103,7 @@ Window.domainChanged.connect(onDomainChanged);</code></pre>
     
         <p class="code-caption">Report the position of size of the Interface window when it changes.</p>
     
-    <pre class="prettyprint"><code>function onWindowGeometryChanged(rect) {
-    print("Window geometry: " + JSON.stringify(rect));
-}
-
-Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
+    <pre class="prettyprint"><code>function onWindowGeometryChanged(rect) {    print("Window geometry: " + JSON.stringify(rect));}Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
 
 
 -->
@@ -5607,8 +5450,7 @@ Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
                         
 
 
-    <p>Triggered when the snapshot images have been captured by <a href="Window.html#.takeSnapshot">takeSnapshot</a> and the GIF is
-    starting to be processed.</p>
+    <p>Triggered when the snapshot images have been captured by <a href="Window.html#.takeSnapshot">takeSnapshot</a> and the GIF is    starting to be processed.</p>
 
 
                     
@@ -5936,8 +5778,7 @@ Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
                         
 
 
-    <p>Triggered when a still 360&deg; snapshot has been taken by calling 
-    <a href="Window.html#.takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a>.</p>
+    <p>Triggered when a still 360&deg; snapshot has been taken by calling     <a href="Window.html#.takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a>.</p>
 
 
                     
@@ -6019,8 +5860,7 @@ Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
                         
 
 
-    <p>Triggered when a snapshot submitted via <a href="Window.html#.shareSnapshot">shareSnapshot</a> is ready for sharing. The snapshot
-may then be shared via the Account.metaverseServerURL Web API.</p>
+    <p>Triggered when a snapshot submitted via <a href="Window.html#.shareSnapshot">shareSnapshot</a> is ready for sharing. The snapshotmay then be shared via the Account.metaverseServerURL Web API.</p>
 
 
                     
@@ -6102,8 +5942,7 @@ may then be shared via the Account.metaverseServerURL Web API.</p>
                         
 
 
-    <p>Triggered when a still snapshot has been taken by calling <a href="Window.html#.takeSnapshot">takeSnapshot</a> with 
-    <code>includeAnimated = false</code> or <a href="Window.html#.takeSecondaryCameraSnapshot">takeSecondaryCameraSnapshot</a>.</p>
+    <p>Triggered when a still snapshot has been taken by calling <a href="Window.html#.takeSnapshot">takeSnapshot</a> with     <code>includeAnimated = false</code> or <a href="Window.html#.takeSecondaryCameraSnapshot">takeSecondaryCameraSnapshot</a>.</p>
 
 
                     
@@ -6283,48 +6122,7 @@ number
                     
 
 
-    <p>The reasons that you may be refused connection to a domain are defined by numeric values:</p>
-<table>
-  <thead>
-    <tr>
-      <th>Reason</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Unknown</strong></td>
-      <td><code>0</code></td>
-      <td>Some unknown reason.</td>
-    </tr>
-    <tr>
-      <td><strong>ProtocolMismatch</strong></td>
-      <td><code>1</code></td>
-      <td>The communications protocols of the domain and your Interface are not the same.</td>
-    </tr>
-    <tr>
-      <td><strong>LoginError</strong></td>
-      <td><code>2</code></td>
-      <td>You could not be logged into the domain.</td>
-    </tr>
-    <tr>
-      <td><strong>NotAuthorized</strong></td>
-      <td><code>3</code></td>
-      <td>You are not authorized to connect to the domain.</td>
-    </tr>
-    <tr>
-      <td><strong>TooManyUsers</strong></td>
-      <td><code>4</code></td>
-      <td>The domain already has its maximum number of users.</td>
-    </tr>
-    <tr>
-      <td><strong>TimedOut</strong></td>
-      <td><code>5</code></td>
-      <td>Connecting to the domain timed out.</td>
-    </tr>
-  </tbody>
-</table>
+    <p>The reasons that you may be refused connection to a domain are defined by numeric values:</p><table>  <thead>    <tr>      <th>Reason</th>      <th>Value</th>      <th>Description</th>    </tr>  </thead>  <tbody>    <tr>      <td><strong>Unknown</strong></td>      <td><code>0</code></td>      <td>Some unknown reason.</td>    </tr>    <tr>      <td><strong>ProtocolMismatch</strong></td>      <td><code>1</code></td>      <td>The communications protocols of the domain and your Interface are not the same.</td>    </tr>    <tr>      <td><strong>LoginError</strong></td>      <td><code>2</code></td>      <td>You could not be logged into the domain.</td>    </tr>    <tr>      <td><strong>NotAuthorized</strong></td>      <td><code>3</code></td>      <td>You are not authorized to connect to the domain.</td>    </tr>    <tr>      <td><strong>TooManyUsers</strong></td>      <td><code>4</code></td>      <td>The domain already has its maximum number of users.</td>    </tr>    <tr>      <td><strong>TimedOut</strong></td>      <td><code>5</code></td>      <td>Connecting to the domain timed out.</td>    </tr>  </tbody></table>
 
 
                                     
@@ -6399,29 +6197,7 @@ string
                     
 
 
-    <p>The views that may be visible on the PC display.</p>
-<table>
-  <thead>
-    <tr>
-      <th>Value</th>
-      <th>View Displayed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>""</code></td>
-      <td>Normal view.</td>
-    </tr>
-    <tr>
-      <td><code>"resource://hmdPreviewFrame"</code></td>
-      <td>HMD preview.</td>
-    </tr>
-    <tr>
-      <td><code>"resource://spectatorCameraFrame"</code></td>
-      <td>Entity camera view.</td>
-    </tr>
-  </tbody>
-</table>
+    <p>The views that may be visible on the PC display.</p><table>  <thead>    <tr>      <th>Value</th>      <th>View Displayed</th>    </tr>  </thead>  <tbody>    <tr>      <td><code>""</code></td>      <td>Normal view.</td>    </tr>    <tr>      <td><code>"resource://hmdPreviewFrame"</code></td>      <td>HMD preview.</td>    </tr>    <tr>      <td><code>"resource://spectatorCameraFrame"</code></td>      <td>Entity camera view.</td>    </tr>  </tbody></table>
 
 
                                     
@@ -6496,38 +6272,7 @@ number
                     
 
 
-    <p>The buttons that may be included in a message box created by <a href="Window.html#.openMessageBox">openMessageBox</a> are defined by
-numeric values:
-<table>
-  <thead>
-    <tr>
-      <th>Button</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr> <td><strong>NoButton</strong></td> <td><code>0x0</code></td> <td>An invalid button.</td> </tr>
-    <tr> <td><strong>Ok</strong></td> <td><code>0x400</code></td> <td>"OK"</td> </tr>
-    <tr> <td><strong>Save</strong></td> <td><code>0x800</code></td> <td>"Save"</td> </tr>
-    <tr> <td><strong>SaveAll</strong></td> <td><code>0x1000</code></td> <td>"Save All"</td> </tr>
-    <tr> <td><strong>Open</strong></td> <td><code>0x2000</code></td> <td>"Open"</td> </tr>
-    <tr> <td><strong>Yes</strong></td> <td><code>0x4000</code></td> <td>"Yes"</td> </tr>
-    <tr> <td><strong>YesToAll</strong></td> <td><code>0x8000</code></td> <td>"Yes to All"</td> </tr>
-    <tr> <td><strong>No</strong></td> <td><code>0x10000</code></td> <td>"No"</td> </tr>
-    <tr> <td><strong>NoToAll</strong></td> <td><code>0x20000</code></td> <td>"No to All"</td> </tr>
-    <tr> <td><strong>Abort</strong></td> <td><code>0x40000</code></td> <td>"Abort"</td> </tr>
-    <tr> <td><strong>Retry</strong></td> <td><code>0x80000</code></td> <td>"Retry"</td> </tr>
-    <tr> <td><strong>Ignore</strong></td> <td><code>0x100000</code></td> <td>"Ignore"</td> </tr>
-    <tr> <td><strong>Close</strong></td> <td><code>0x200000</code></td> <td>"Close"</td> </tr>
-    <tr> <td><strong>Cancel</strong></td> <td><code>0x400000</code></td> <td>"Cancel"</td> </tr>
-    <tr> <td><strong>Discard</strong></td> <td><code>0x800000</code></td> <td>"Discard" or "Don't Save"</td> </tr>
-    <tr> <td><strong>Help</strong></td> <td><code>0x1000000</code></td> <td>"Help"</td> </tr>
-    <tr> <td><strong>Apply</strong></td> <td><code>0x2000000</code></td> <td>"Apply"</td> </tr>
-    <tr> <td><strong>Reset</strong></td> <td><code>0x4000000</code></td> <td>"Reset"</td> </tr>
-    <tr> <td><strong>RestoreDefaults</strong></td> <td><code>0x8000000</code></td> <td>"Restore Defaults"</td> </tr>
-  </tbody>
-</table>
+    <p>The buttons that may be included in a message box created by <a href="Window.html#.openMessageBox">openMessageBox</a> are defined bynumeric values:<table>  <thead>    <tr>      <th>Button</th>      <th>Value</th>      <th>Description</th>    </tr>  </thead>  <tbody>    <tr> <td><strong>NoButton</strong></td> <td><code>0x0</code></td> <td>An invalid button.</td> </tr>    <tr> <td><strong>Ok</strong></td> <td><code>0x400</code></td> <td>"OK"</td> </tr>    <tr> <td><strong>Save</strong></td> <td><code>0x800</code></td> <td>"Save"</td> </tr>    <tr> <td><strong>SaveAll</strong></td> <td><code>0x1000</code></td> <td>"Save All"</td> </tr>    <tr> <td><strong>Open</strong></td> <td><code>0x2000</code></td> <td>"Open"</td> </tr>    <tr> <td><strong>Yes</strong></td> <td><code>0x4000</code></td> <td>"Yes"</td> </tr>    <tr> <td><strong>YesToAll</strong></td> <td><code>0x8000</code></td> <td>"Yes to All"</td> </tr>    <tr> <td><strong>No</strong></td> <td><code>0x10000</code></td> <td>"No"</td> </tr>    <tr> <td><strong>NoToAll</strong></td> <td><code>0x20000</code></td> <td>"No to All"</td> </tr>    <tr> <td><strong>Abort</strong></td> <td><code>0x40000</code></td> <td>"Abort"</td> </tr>    <tr> <td><strong>Retry</strong></td> <td><code>0x80000</code></td> <td>"Retry"</td> </tr>    <tr> <td><strong>Ignore</strong></td> <td><code>0x100000</code></td> <td>"Ignore"</td> </tr>    <tr> <td><strong>Close</strong></td> <td><code>0x200000</code></td> <td>"Close"</td> </tr>    <tr> <td><strong>Cancel</strong></td> <td><code>0x400000</code></td> <td>"Cancel"</td> </tr>    <tr> <td><strong>Discard</strong></td> <td><code>0x800000</code></td> <td>"Discard" or "Don't Save"</td> </tr>    <tr> <td><strong>Help</strong></td> <td><code>0x1000000</code></td> <td>"Help"</td> </tr>    <tr> <td><strong>Apply</strong></td> <td><code>0x2000000</code></td> <td>"Apply"</td> </tr>    <tr> <td><strong>Reset</strong></td> <td><code>0x4000000</code></td> <td>"Reset"</td> </tr>    <tr> <td><strong>RestoreDefaults</strong></td> <td><code>0x8000000</code></td> <td>"Restore Defaults"</td> </tr>  </tbody></table>
 
 
                                     
@@ -6608,8 +6353,7 @@ numeric values:
                             
 
 
-    <p>Displays a dialog with the specified message and an "OK" button. The dialog is non-modal; the script continues without
-waiting for a user response.</p>
+    <p>Displays a dialog with the specified message and an "OK" button. The dialog is non-modal; the script continues withoutwaiting for a user response.</p>
 
 
                         
@@ -6741,8 +6485,7 @@ string
                         
         <p class="code-caption">Display a friendly greeting.</p>
     
-    <pre class="prettyprint"><code>Window.alert("Welcome!");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>Window.alert("Welcome!");print("Script continues without waiting");</code></pre>
 
                     
                   
@@ -7012,8 +6755,7 @@ string
                     
 
 
-    <p>The types of files to display. Examples: <code>"*.json"</code> and 
-    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
+    <p>The types of files to display. Examples: <code>"*.json"</code> and     <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
 
 
                 
@@ -7030,8 +6772,7 @@ string
                         
         <p class="code-caption">Ask the user to choose an image file.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");
-print("File: " + filename);</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");print("File: " + filename);</code></pre>
 
                     
                   
@@ -7088,8 +6829,7 @@ print("File: " + filename);</code></pre>
                             
 
 
-    <p>Prompts the user to choose an Asset Server item. Displays a modal dialog that navigates the tree of assets on the Asset
-Server.</p>
+    <p>Prompts the user to choose an Asset Server item. Displays a modal dialog that navigates the tree of assets on the AssetServer.</p>
 
 
                         
@@ -7302,8 +7042,7 @@ string
                     
 
 
-    <p>The types of files to display. Examples: <code>"*.json"</code> and 
-    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
+    <p>The types of files to display. Examples: <code>"*.json"</code> and     <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
 
 
                 
@@ -7320,8 +7059,7 @@ string
                         
         <p class="code-caption">Ask the user to select an FBX asset.</p>
     
-    <pre class="prettyprint"><code>var asset = Window.browseAssets("Select FBX File", "/", "*.fbx");
-print("FBX file: " + asset);</code></pre>
+    <pre class="prettyprint"><code>var asset = Window.browseAssets("Select FBX File", "/", "*.fbx");print("FBX file: " + asset);</code></pre>
 
                     
                   
@@ -7369,9 +7107,7 @@ print("FBX file: " + asset);</code></pre>
                             
 
 
-    <p>Prompts the user to choose an Asset Server item. Displays a non-modal dialog that navigates the tree of assets on the 
-Asset Server. An <a href="Window.html#.assetsDirChanged">assetsDirChanged</a> signal is emitted when an asset is chosen; no signal is
-emitted if the user cancels the dialog.</p>
+    <p>Prompts the user to choose an Asset Server item. Displays a non-modal dialog that navigates the tree of assets on the Asset Server. An <a href="Window.html#.assetsDirChanged">assetsDirChanged</a> signal is emitted when an asset is chosen; no signal isemitted if the user cancels the dialog.</p>
 
 
                         
@@ -7584,8 +7320,7 @@ string
                     
 
 
-    <p>The types of files to display. Examples: <code>"*.json"</code> and
-    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
+    <p>The types of files to display. Examples: <code>"*.json"</code> and    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
 
 
                 
@@ -7600,13 +7335,7 @@ string
                     
                         <h5>Example</h5>
                         
-    <pre class="prettyprint"><code>function onAssetsDirChanged(asset) {
-    print("FBX file: " + asset);
-}
-Window.assetsDirChanged.connect(onAssetsDirChanged);
-
-Window.browseAssetsAsync("Select FBX File", "/", "*.fbx");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onAssetsDirChanged(asset) {    print("FBX file: " + asset);}Window.assetsDirChanged.connect(onAssetsDirChanged);Window.browseAssetsAsync("Select FBX File", "/", "*.fbx");print("Script continues without waiting");</code></pre>
 
                     
                   
@@ -7654,9 +7383,7 @@ print("Script continues without waiting");</code></pre>
                             
 
 
-    <p>Prompts the user to choose a file. Displays a non-modal dialog that navigates the directory tree. A
-<a href="Window.html#.browseChanged">browseChanged</a> signal is emitted when a file is chosen; no signal is emitted if the user
-cancels the dialog.</p>
+    <p>Prompts the user to choose a file. Displays a non-modal dialog that navigates the directory tree. A<a href="Window.html#.browseChanged">browseChanged</a> signal is emitted when a file is chosen; no signal is emitted if the usercancels the dialog.</p>
 
 
                         
@@ -7869,8 +7596,7 @@ string
                     
 
 
-    <p>The types of files to display. Examples: <code>"*.json"</code> and
-    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
+    <p>The types of files to display. Examples: <code>"*.json"</code> and    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
 
 
                 
@@ -7887,13 +7613,7 @@ string
                         
         <p class="code-caption">Ask the user to choose an image file without waiting for the answer.</p>
     
-    <pre class="prettyprint"><code>function onBrowseChanged(filename) {
-    print("File: " + filename);
-}
-Window.browseChanged.connect(onBrowseChanged);
-
-Window.browseAsync("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onBrowseChanged(filename) {    print("File: " + filename);}Window.browseChanged.connect(onBrowseChanged);Window.browseAsync("Select Image File", Paths.resources, "Images (*.png *.jpg *.svg)");print("Script continues without waiting");</code></pre>
 
                     
                   
@@ -8131,8 +7851,7 @@ string
                         
         <p class="code-caption">Ask the user to choose a directory.</p>
     
-    <pre class="prettyprint"><code>var directory = Window.browseDir("Select Directory", Paths.resources);
-print("Directory: " + directory);</code></pre>
+    <pre class="prettyprint"><code>var directory = Window.browseDir("Select Directory", Paths.resources);print("Directory: " + directory);</code></pre>
 
                     
                   
@@ -8180,9 +7899,7 @@ print("Directory: " + directory);</code></pre>
                             
 
 
-    <p>Prompts the user to choose a directory. Displays a non-modal dialog that navigates the directory tree. A
-<a href="Window.html#.browseDirChanged">browseDirChanged</a> signal is emitted when a directory is chosen; no signal is emitted if
-the user cancels the dialog.</p>
+    <p>Prompts the user to choose a directory. Displays a non-modal dialog that navigates the directory tree. A<a href="Window.html#.browseDirChanged">browseDirChanged</a> signal is emitted when a directory is chosen; no signal is emitted ifthe user cancels the dialog.</p>
 
 
                         
@@ -8363,13 +8080,7 @@ string
                         
         <p class="code-caption">Ask the user to choose a directory without waiting for the answer.</p>
     
-    <pre class="prettyprint"><code>function onBrowseDirChanged(directory) {
-    print("Directory: " + directory);
-}
-Window.browseDirChanged.connect(onBrowseDirChanged);
-
-Window.browseDirAsync("Select Directory", Paths.resources);
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onBrowseDirChanged(directory) {    print("Directory: " + directory);}Window.browseDirChanged.connect(onBrowseDirChanged);Window.browseDirAsync("Select Directory", Paths.resources);print("Script continues without waiting");</code></pre>
 
                     
                   
@@ -8815,8 +8526,7 @@ string
                         
         <p class="code-caption">Ask the user a question requiring a yes/no answer.</p>
     
-    <pre class="prettyprint"><code>var answer = Window.confirm("Are you sure?");
-print(answer);  // true or false</code></pre>
+    <pre class="prettyprint"><code>var answer = Window.confirm("Are you sure?");print(answer);  // true or false</code></pre>
 
                     
                   
@@ -9017,8 +8727,7 @@ string
                             
 
 
-    <p>Displays a notification message. Notifications are displayed in panels by the default script, nofications.js. An
-<a href="Window.html#.announcement">announcement</a> signal is emitted when this function is called.</p>
+    <p>Displays a notification message. Notifications are displayed in panels by the default script, nofications.js. An<a href="Window.html#.announcement">announcement</a> signal is emitted when this function is called.</p>
 
 
                         
@@ -9130,13 +8839,7 @@ string
                         
         <p class="code-caption">Send and capture an announcement message.</p>
     
-    <pre class="prettyprint"><code>function onAnnouncement(message) {
-    // The message is also displayed as a notification by notifications.js.
-    print("Announcement: " + message);
-}
-Window.announcement.connect(onAnnouncement);
-
-Window.displayAnnouncement("Hello");</code></pre>
+    <pre class="prettyprint"><code>function onAnnouncement(message) {    // The message is also displayed as a notification by notifications.js.    print("Announcement: " + message);}Window.announcement.connect(onAnnouncement);Window.displayAnnouncement("Hello");</code></pre>
 
                     
                   
@@ -9274,8 +8977,7 @@ Window.displayAnnouncement("Hello");</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The index of the currently active display plugin. The first display plugin has an index of 
-    <code>0</code>.
+    The index of the currently active display plugin. The first display plugin has an index of     <code>0</code>.
 
 
                         
@@ -9700,8 +9402,7 @@ number
                     
 
 
-    <p>The index of the display plugin. Must be less than the value returned by 
-    <a href="Window.html#.getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p>
+    <p>The index of the display plugin. Must be less than the value returned by     <a href="Window.html#.getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p>
 
 
                 
@@ -9718,9 +9419,7 @@ number
                         
         <p class="code-caption">Print the names of all available display plugins.</p>
     
-    <pre class="prettyprint"><code>for (var i = 0, length = Window.getDisplayPluginCount(); i &lt; length; i++) {
-    print(Window.getDisplayPluginName(i));
-}</code></pre>
+    <pre class="prettyprint"><code>for (var i = 0, length = Window.getDisplayPluginCount(); i &lt; length; i++) {    print(Window.getDisplayPluginName(i));}</code></pre>
 
                     
                   
@@ -10080,8 +9779,7 @@ number
                     
 
 
-    <p>The index of the display plugin. Must be less than the value returned by 
-    <a href="Window.html#.getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p>
+    <p>The index of the display plugin. Must be less than the value returned by     <a href="Window.html#.getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p>
 
 
                 
@@ -10148,8 +9846,7 @@ number
                             
 
 
-    <p>Checks to see if physics is active for you in the domain you're visiting - there is a delay between your arrival at a
-domain and physics becoming active for you in that domain.</p>
+    <p>Checks to see if physics is active for you in the domain you're visiting - there is a delay between your arrival at adomain and physics becoming active for you in that domain.</p>
 
 
                         
@@ -10203,20 +9900,7 @@ domain and physics becoming active for you in that domain.</p>
                         
         <p class="code-caption">Wait for physics to be enabled when you change domains.</p>
     
-    <pre class="prettyprint"><code>function checkForPhysics() {
-    var isPhysicsEnabled = Window.isPhysicsEnabled();
-    print("Physics enabled: " + isPhysicsEnabled);
-    if (!isPhysicsEnabled) {
-        Script.setTimeout(checkForPhysics, 1000);
-    }
-}
-
-function onDomainChanged(domain) {
-    print("Domain changed: " + domain);
-    Script.setTimeout(checkForPhysics, 1000);
-}
-
-Window.domainChanged.connect(onDomainChanged);</code></pre>
+    <pre class="prettyprint"><code>function checkForPhysics() {    var isPhysicsEnabled = Window.isPhysicsEnabled();    print("Physics enabled: " + isPhysicsEnabled);    if (!isPhysicsEnabled) {        Script.setTimeout(checkForPhysics, 1000);    }}function onDomainChanged(domain) {    print("Domain changed: " + domain);    Script.setTimeout(checkForPhysics, 1000);}Window.domainChanged.connect(onDomainChanged);</code></pre>
 
                     
                   
@@ -10273,8 +9957,7 @@ Window.domainChanged.connect(onDomainChanged);</code></pre>
                             
 
 
-    <p>Checks if a 2D point is within the desktop window if in desktop mode, or the drawable area of the HUD overlay if in HMD
-mode.</p>
+    <p>Checks if a 2D point is within the desktop window if in desktop mode, or the drawable area of the HUD overlay if in HMDmode.</p>
 
 
                         
@@ -10427,8 +10110,7 @@ mode.</p>
                             
 
 
-    <p>Emits a <a href="Window.html#.connectionAdded">connectionAdded</a> or a <a href="Window.html#.connectionError">connectionError</a> signal that
-indicates whether or not a user connection was successfully made using the Web API.</p>
+    <p>Emits a <a href="Window.html#.connectionAdded">connectionAdded</a> or a <a href="Window.html#.connectionError">connectionError</a> signal thatindicates whether or not a user connection was successfully made using the Web API.</p>
 
 
                         
@@ -10523,8 +10205,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then <a href="Window.html#.connectionAdded">connectionAdded</a> is emitted, otherwise
-    <a href="Window.html#.connectionError">connectionError</a> is emitted.</p>
+    <p>If <code>true</code> then <a href="Window.html#.connectionAdded">connectionAdded</a> is emitted, otherwise    <a href="Window.html#.connectionError">connectionError</a> is emitted.</p>
 
 
                 
@@ -10710,8 +10391,7 @@ string
                     
 
 
-    <p>The name of the activity to open: one of <code>"Home"</code>, <code>"Login"</code>, or 
-    <code>"Privacy Policy"</code>.</p>
+    <p>The name of the activity to open: one of <code>"Home"</code>, <code>"Login"</code>, or     <code>"Privacy Policy"</code>.</p>
 
 
                 
@@ -10744,8 +10424,7 @@ boolean
                     
 
 
-    <p>If <code>true</code>, the user is automatically returned back to the scene when the 
-    activity is completed.</p>
+    <p>If <code>true</code>, the user is automatically returned back to the scene when the     activity is completed.</p>
 
 
                 
@@ -10812,8 +10491,7 @@ boolean
                             
 
 
-    <p>Opens a non-modal message box that can have a variety of button combinations. See also, 
-<a href="Window.html#.updateMessageBox">updateMessageBox</a> and <a href="Window.html#.closeMessageBox">closeMessageBox</a>.</p>
+    <p>Opens a non-modal message box that can have a variety of button combinations. See also, <a href="Window.html#.updateMessageBox">updateMessageBox</a> and <a href="Window.html#.closeMessageBox">closeMessageBox</a>.</p>
 
 
                         
@@ -10974,8 +10652,7 @@ string
                     
 
 
-    <p>The buttons to display on the message box; one or more button values added
-    together.</p>
+    <p>The buttons to display on the message box; one or more button values added    together.</p>
 
 
                 
@@ -11025,24 +10702,7 @@ string
                         
         <p class="code-caption">Ask the user whether that want to reset something.</p>
     
-    <pre class="prettyprint"><code>var messageBox;
-var resetButton = 0x4000000;
-var cancelButton = 0x400000;
-
-function onMessageBoxClosed(id, button) {
-    if (id === messageBox) {
-        if (button === resetButton) {
-            print("Reset");
-        } else {
-            print("Don't reset");
-        }
-    }
-}
-Window.messageBoxClosed.connect(onMessageBoxClosed);
-
-messageBox = Window.openMessageBox("Reset Something", 
-    "Do you want to reset something?",
-    resetButton + cancelButton, cancelButton);</code></pre>
+    <pre class="prettyprint"><code>var messageBox;var resetButton = 0x4000000;var cancelButton = 0x400000;function onMessageBoxClosed(id, button) {    if (id === messageBox) {        if (button === resetButton) {            print("Reset");        } else {            print("Don't reset");        }    }}Window.messageBoxClosed.connect(onMessageBoxClosed);messageBox = Window.openMessageBox("Reset Something",     "Do you want to reset something?",    resetButton + cancelButton, cancelButton);</code></pre>
 
                     
                   
@@ -11090,15 +10750,8 @@ messageBox = Window.openMessageBox("Reset Something",
                             
 
 
-    <p>Opens a URL in the Interface window or other application, depending on the URL's scheme. The following schemes are 
-supported:
-</p>
-    <ul>
-  <li><code>hifi</code>: Navigate to the URL in Interface.</li>
-  <li><code>hifiapp</code>: Open a system app in Interface.</li>
-</ul>
-<p>Other schemes will either be handled by the OS (e.g. <code>http</code>, <code>https</code>, or <code>mailto</code>) or 
-will display a dialog asking the user to confirm that they want to try to open the URL.</p>
+    <p>Opens a URL in the Interface window or other application, depending on the URL's scheme. The following schemes are supported:</p>
+    <ul>  <li><code>hifi</code>: Navigate to the URL in Interface.</li>  <li><code>hifiapp</code>: Open a system app in Interface.</li></ul><p>Other schemes will either be handled by the OS (e.g. <code>http</code>, <code>https</code>, or <code>mailto</code>) or will display a dialog asking the user to confirm that they want to try to open the URL.</p>
 
 
                         
@@ -11355,8 +11008,7 @@ string
                             
 
 
-    <p>Prompts the user to enter some text. Displays a modal dialog with a message and a text box, plus "OK" and "Cancel" 
-buttons.</p>
+    <p>Prompts the user to enter some text. Displays a modal dialog with a message and a text box, plus "OK" and "Cancel" buttons.</p>
 
 
                         
@@ -11501,12 +11153,7 @@ string
                         
         <p class="code-caption">Ask the user a question requiring a text answer.</p>
     
-    <pre class="prettyprint"><code>var answer = Window.prompt("Question", "answer");
-if (answer === "") {
-    print("User canceled");
-} else {
-    print("User answer: " + answer);
-}</code></pre>
+    <pre class="prettyprint"><code>var answer = Window.prompt("Question", "answer");if (answer === "") {    print("User canceled");} else {    print("User answer: " + answer);}</code></pre>
 
                     
                   
@@ -11554,9 +11201,7 @@ if (answer === "") {
                             
 
 
-    <p>Prompts the user to enter some text. Displays a non-modal dialog with a message and a text box, plus "OK" and "Cancel" 
-buttons. A <a href="Window.html#.promptTextChanged">promptTextChanged</a> signal is emitted when the user OKs the dialog; no signal 
-is emitted if the user cancels the dialog.</p>
+    <p>Prompts the user to enter some text. Displays a non-modal dialog with a message and a text box, plus "OK" and "Cancel" buttons. A <a href="Window.html#.promptTextChanged">promptTextChanged</a> signal is emitted when the user OKs the dialog; no signal is emitted if the user cancels the dialog.</p>
 
 
                         
@@ -11737,13 +11382,7 @@ string
                         
         <p class="code-caption">Ask the user a question requiring a text answer without waiting for the answer.</p>
     
-    <pre class="prettyprint"><code>function onPromptTextChanged(text) {
-    print("User answer: " + text);
-}
-Window.promptTextChanged.connect(onPromptTextChanged);
-
-Window.promptAsync("Question", "answer");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onPromptTextChanged(text) {    print("User answer: " + text);}Window.promptTextChanged.connect(onPromptTextChanged);Window.promptAsync("Question", "answer");print("Script continues without waiting");</code></pre>
 
                     
                   
@@ -11981,8 +11620,7 @@ print("Script continues without waiting");</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The path and name of the file if one is specified, otherwise <code>null</code>. If a single file type
-    is specified in the nameFilter, that file type extension is automatically appended to the result when appropriate.
+    The path and name of the file if one is specified, otherwise <code>null</code>. If a single file type    is specified in the nameFilter, that file type extension is automatically appended to the result when appropriate.
 
 
                         
@@ -12000,8 +11638,7 @@ print("Script continues without waiting");</code></pre>
                             
 
 
-    <p>Prompts the user to specify the path and name of a file to save to. Displays a model dialog that navigates the directory
-tree and allows the user to type in a file name.</p>
+    <p>Prompts the user to specify the path and name of a file to save to. Displays a model dialog that navigates the directorytree and allows the user to type in a file name.</p>
 
 
                         
@@ -12214,8 +11851,7 @@ string
                     
 
 
-    <p>The types of files to display. Examples: <code>"*.json"</code> and
-    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
+    <p>The types of files to display. Examples: <code>"*.json"</code> and    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
 
 
                 
@@ -12232,8 +11868,7 @@ string
                         
         <p class="code-caption">Ask the user to specify a file to save to.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.save("Save to JSON file", Paths.resources, "*.json");
-print("File: " + filename);</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.save("Save to JSON file", Paths.resources, "*.json");print("File: " + filename);</code></pre>
 
                     
                   
@@ -12281,9 +11916,7 @@ print("File: " + filename);</code></pre>
                             
 
 
-    <p>Prompts the user to specify the path and name of a file to save to. Displays a non-model dialog that navigates the
-directory tree and allows the user to type in a file name. A <a href="Window.html#.saveFileChanged">saveFileChanged</a> signal is
-emitted when a file is specified; no signal is emitted if the user cancels the dialog.</p>
+    <p>Prompts the user to specify the path and name of a file to save to. Displays a non-model dialog that navigates thedirectory tree and allows the user to type in a file name. A <a href="Window.html#.saveFileChanged">saveFileChanged</a> signal isemitted when a file is specified; no signal is emitted if the user cancels the dialog.</p>
 
 
                         
@@ -12496,8 +12129,7 @@ string
                     
 
 
-    <p>The types of files to display. Examples: <code>"*.json"</code> and
-    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
+    <p>The types of files to display. Examples: <code>"*.json"</code> and    <code>"Images (*.png *.jpg *.svg)"</code>. All files are displayed if a filter isn't specified.</p>
 
 
                 
@@ -12514,13 +12146,7 @@ string
                         
         <p class="code-caption">Ask the user to specify a file to save to without waiting for an answer.</p>
     
-    <pre class="prettyprint"><code>function onSaveFileChanged(filename) {
-    print("File: " + filename);
-}
-Window.saveFileChanged.connect(onSaveFileChanged);
-
-Window.saveAsync("Save to JSON file", Paths.resources, "*.json");
-print("Script continues without waiting");</code></pre>
+    <pre class="prettyprint"><code>function onSaveFileChanged(filename) {    print("File: " + filename);}Window.saveFileChanged.connect(onSaveFileChanged);Window.saveAsync("Save to JSON file", Paths.resources, "*.json");print("Script continues without waiting");</code></pre>
 
                     
                   
@@ -12663,8 +12289,7 @@ number
                     
 
 
-    <p>The index of the display plugin. Must be less than the value returned by 
-    <a href="Window.html#.getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p>
+    <p>The index of the display plugin. Must be less than the value returned by     <a href="Window.html#.getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p>
 
 
                 
@@ -12731,8 +12356,7 @@ number
                             
 
 
-    <p>Sets what to show on the PC display. For entity camera view, the entity camera is configured using 
-<a href="Camera.html#.setCameraEntity">Camera.setCameraEntity</a> and <a href="Camera.html">Camera.mode</a>.</p>
+    <p>Sets what to show on the PC display. For entity camera view, the entity camera is configured using <a href="Camera.html#.setCameraEntity">Camera.setCameraEntity</a> and <a href="Camera.html">Camera.mode</a>.</p>
 
 
                         
@@ -12885,8 +12509,7 @@ number
                             
 
 
-    <p>Makes the Interface window have focus. On Windows, if Interface doesn't already have focus, the task bar icon flashes to 
-indicate that Interface wants attention but focus isn't taken away from the application that the user is using.</p>
+    <p>Makes the Interface window have focus. On Windows, if Interface doesn't already have focus, the task bar icon flashes to indicate that Interface wants attention but focus isn't taken away from the application that the user is using.</p>
 
 
                         
@@ -12981,8 +12604,7 @@ indicate that Interface wants attention but focus isn't taken away from the appl
                             
 
 
-    <p>Prepares a snapshot ready for sharing. A <a href="Window.html#.snapshotShared">snapshotShared</a> signal is emitted when the snapshot
-has been prepared.</p>
+    <p>Prepares a snapshot ready for sharing. A <a href="Window.html#.snapshotShared">snapshotShared</a> signal is emitted when the snapshothas been prepared.</p>
 
 
                         
@@ -13200,8 +12822,7 @@ string
                             
 
 
-    <p>Opens the Asset Browser dialog. If a file to upload is specified, the user is prompted to enter the folder and name to
-map the file to on the asset server.</p>
+    <p>Opens the Asset Browser dialog. If a file to upload is specified, the user is prompted to enter the folder and name tomap the file to on the asset server.</p>
 
 
                         
@@ -13333,9 +12954,7 @@ string
                         
         <p class="code-caption">Upload a file to the asset server.</p>
     
-    <pre class="prettyprint"><code>var filename = Window.browse("Select File to Add to Asset Server", Paths.resources);
-print("File: " + filename);
-Window.showAssetServer(filename);</code></pre>
+    <pre class="prettyprint"><code>var filename = Window.browse("Select File to Add to Asset Server", Paths.resources);print("File: " + filename);Window.showAssetServer(filename);</code></pre>
 
                     
                   
@@ -13383,11 +13002,8 @@ Window.showAssetServer(filename);</code></pre>
                             
 
 
-    <p>Takes a 360&deg; snapshot at a given position for the secondary camera. The secondary camera does not need to have been 
-    set up.
-</p>
-    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the
-<a href="Snapshot.html">Snapshot</a> API.</p>
+    <p>Takes a 360&deg; snapshot at a given position for the secondary camera. The secondary camera does not need to have been     set up.</p>
+    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the<a href="Snapshot.html">Snapshot</a> API.</p>
 
 
                         
@@ -13547,8 +13163,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then the snapshot is saved as a cube map image, 
-    otherwise it is saved as an equirectangular image.</p>
+    <p>If <code>true</code> then the snapshot is saved as a cube map image,     otherwise it is saved as an equirectangular image.</p>
 
 
                 
@@ -13597,8 +13212,7 @@ boolean
                     
 
 
-    <p>This value is passed on through the <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a>
-    signal.</p>
+    <p>This value is passed on through the <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a>    signal.</p>
 
 
                 
@@ -13647,12 +13261,8 @@ string
                     
 
 
-    <p>If a filename is not provided, the image is saved as "hifi-snap-by-&lt;user
-    name&gt;-on-YYYY-MM-DD_HH-MM-SS".
-    </p>
-    <p>Images are saved in JPEG or PNG format according to the extension provided &mdash; <code>".jpg"</code>,
-    <code>".jpeg"</code>, or <code>".png"</code> &mdash; or if not provided then in JPEG format with an extension of
-    <code>".jpg"</code>.</p>
+    <p>If a filename is not provided, the image is saved as "hifi-snap-by-&lt;user    name&gt;-on-YYYY-MM-DD_HH-MM-SS".    </p>
+    <p>Images are saved in JPEG or PNG format according to the extension provided &mdash; <code>".jpg"</code>,    <code>".jpeg"</code>, or <code>".png"</code> &mdash; or if not provided then in JPEG format with an extension of    <code>".jpg"</code>.</p>
 
 
                 
@@ -13710,10 +13320,8 @@ string
                             
 
 
-    <p>Takes a still snapshot of the current view from the secondary camera that can be set up through the <a href="Render.html">Render</a> API.
-</p>
-    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the
-<a href="Snapshot.html">Snapshot</a> API.</p>
+    <p>Takes a still snapshot of the current view from the secondary camera that can be set up through the <a href="Render.html">Render</a> API.</p>
+    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the<a href="Snapshot.html">Snapshot</a> API.</p>
 
 
                         
@@ -13828,8 +13436,7 @@ boolean
                     
 
 
-    <p>This value is passed on through the <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a>
-    signal.</p>
+    <p>This value is passed on through the <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a>    signal.</p>
 
 
                 
@@ -13878,12 +13485,8 @@ string
                     
 
 
-    <p>If a filename is not provided, the image is saved as "hifi-snap-by-&lt;user
-    name&gt;-on-YYYY-MM-DD_HH-MM-SS".
-    </p>
-    <p>Images are saved in JPEG or PNG format according to the extension provided &mdash; <code>".jpg"</code>,
-    <code>".jpeg"</code>, or <code>".png"</code> &mdash; or if not provided then in JPEG format with an extension of
-    <code>".jpg"</code>.</p>
+    <p>If a filename is not provided, the image is saved as "hifi-snap-by-&lt;user    name&gt;-on-YYYY-MM-DD_HH-MM-SS".    </p>
+    <p>Images are saved in JPEG or PNG format according to the extension provided &mdash; <code>".jpg"</code>,    <code>".jpeg"</code>, or <code>".png"</code> &mdash; or if not provided then in JPEG format with an extension of    <code>".jpg"</code>.</p>
 
 
                 
@@ -13941,13 +13544,8 @@ string
                             
 
 
-    <p>Takes a snapshot of the current Interface view from the primary camera. When a still image only is captured, 
-<a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a> is emitted; when a still image plus moving images are captured, 
-<a href="Window.html#.processingGifStarted">processingGifStarted</a> and <a href="Window.html#.processingGifCompleted">processingGifCompleted</a>
-are emitted.
-</p>
-    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the 
-<a href="Snapshot.html">Snapshot</a> API.</p>
+    <p>Takes a snapshot of the current Interface view from the primary camera. When a still image only is captured, <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a> is emitted; when a still image plus moving images are captured, <a href="Window.html#.processingGifStarted">processingGifStarted</a> and <a href="Window.html#.processingGifCompleted">processingGifCompleted</a>are emitted.</p>
+    <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the <a href="Snapshot.html">Snapshot</a> API.</p>
 
 
                         
@@ -14062,8 +13660,7 @@ boolean
                     
 
 
-    <p>This value is passed on through the <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a>
-    signal.</p>
+    <p>This value is passed on through the <a href="Window.html#.stillSnapshotTaken">stillSnapshotTaken</a>    signal.</p>
 
 
                 
@@ -14112,8 +13709,7 @@ boolean
                     
 
 
-    <p>If <code>true</code>, a moving image is captured as an animated GIF in addition 
-    to a still image.</p>
+    <p>If <code>true</code>, a moving image is captured as an animated GIF in addition     to a still image.</p>
 
 
                 
@@ -14162,9 +13758,7 @@ number
                     
 
 
-    <p>The width/height ratio of the snapshot required. If the value is <code>0</code>, the
-    full resolution is used (window dimensions in desktop mode; HMD display dimensions in HMD mode), otherwise one of the
-    dimensions is adjusted in order to match the aspect ratio.</p>
+    <p>The width/height ratio of the snapshot required. If the value is <code>0</code>, the    full resolution is used (window dimensions in desktop mode; HMD display dimensions in HMD mode), otherwise one of the    dimensions is adjusted in order to match the aspect ratio.</p>
 
 
                 
@@ -14213,12 +13807,8 @@ string
                     
 
 
-    <p>If a filename is not provided, the image is saved as "hifi-snap-by-&lt;user 
-    name&gt;-on-YYYY-MM-DD_HH-MM-SS".
-    </p>
-    <p>Still images are saved in JPEG or PNG format according to the extension provided &mdash; <code>".jpg"</code>, 
-    <code>".jpeg"</code>, or <code>".png"</code> &mdash; or if not provided then in JPEG format with an extension of 
-    <code>".jpg"</code>. Animated images are saved in GIF format.</p>
+    <p>If a filename is not provided, the image is saved as "hifi-snap-by-&lt;user     name&gt;-on-YYYY-MM-DD_HH-MM-SS".    </p>
+    <p>Still images are saved in JPEG or PNG format according to the extension provided &mdash; <code>".jpg"</code>,     <code>".jpeg"</code>, or <code>".png"</code> &mdash; or if not provided then in JPEG format with an extension of     <code>".jpg"</code>. Animated images are saved in GIF format.</p>
 
 
                 
@@ -14235,28 +13825,7 @@ string
                         
         <p class="code-caption">Using the snapshot function and signals.</p>
     
-    <pre class="prettyprint"><code>function onStillSnapshotTaken(path, notify) {
-    print("Still snapshot taken: " + path);
-    print("Notify: " + notify);
-}
-
-function onProcessingGifStarted(stillPath) {
-    print("Still snapshot taken: " + stillPath);
-}
-
-function onProcessingGifCompleted(animatedPath) {
-    print("Animated snapshot taken: " + animatedPath);
-}
-
-Window.stillSnapshotTaken.connect(onStillSnapshotTaken);
-Window.processingGifStarted.connect(onProcessingGifStarted);
-Window.processingGifCompleted.connect(onProcessingGifCompleted);
-
-var notify = true;
-var animated = true;
-var aspect = 1920 / 1080;
-var filename = "example-snapshot";
-Window.takeSnapshot(notify, animated, aspect, filename);</code></pre>
+    <pre class="prettyprint"><code>function onStillSnapshotTaken(path, notify) {    print("Still snapshot taken: " + path);    print("Notify: " + notify);}function onProcessingGifStarted(stillPath) {    print("Still snapshot taken: " + stillPath);}function onProcessingGifCompleted(animatedPath) {    print("Animated snapshot taken: " + animatedPath);}Window.stillSnapshotTaken.connect(onStillSnapshotTaken);Window.processingGifStarted.connect(onProcessingGifStarted);Window.processingGifCompleted.connect(onProcessingGifCompleted);var notify = true;var animated = true;var aspect = 1920 / 1080;var filename = "example-snapshot";Window.takeSnapshot(notify, animated, aspect, filename);</code></pre>
 
                     
                   
@@ -14498,8 +14067,7 @@ string
                     
 
 
-    <p>The buttons to display on the message box; one or more button values added
-    together.</p>
+    <p>The buttons to display on the message box; one or more button values added    together.</p>
 
 
                 
@@ -15656,8 +15224,7 @@ Signal
                             
 
 
-    <p>Triggered when you change the domain you're visiting.
-</p>
+    <p>Triggered when you change the domain you're visiting.</p>
     <p><strong>Warning:</strong> Is not emitted if you go to a domain that isn't running.</p>
 
 
@@ -15770,11 +15337,7 @@ string
                         
         <p class="code-caption">Report when you change domains.</p>
     
-    <pre class="prettyprint"><code>function onDomainChanged(domain) {
-    print("Domain changed: " + domain);
-}
-
-Window.domainChanged.connect(onDomainChanged);</code></pre>
+    <pre class="prettyprint"><code>function onDomainChanged(domain) {    print("Domain changed: " + domain);}Window.domainChanged.connect(onDomainChanged);</code></pre>
 
                     
                   
@@ -16203,11 +15766,7 @@ Signal
                         
         <p class="code-caption">Report the position of size of the Interface window when it changes.</p>
     
-    <pre class="prettyprint"><code>function onWindowGeometryChanged(rect) {
-    print("Window geometry: " + JSON.stringify(rect));
-}
-
-Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
+    <pre class="prettyprint"><code>function onWindowGeometryChanged(rect) {    print("Window geometry: " + JSON.stringify(rect));}Window.geometryChanged.connect(onWindowGeometryChanged);</code></pre>
 
                     
                   
@@ -16370,8 +15929,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the interstitial graphics are displayed when the domain is 
-    loading, <code>false</code> if they are not.</p>
+    <p><code>true</code> if the interstitial graphics are displayed when the domain is     loading, <code>false</code> if they are not.</p>
 
 
                 
@@ -16582,8 +16140,7 @@ number
                     
 
 
-    <p>The button that the user clicked. If the user presses Esc, the Cancel button value is returned,
-   whether or not the Cancel button is displayed in the message box.</p>
+    <p>The button that the user clicked. If the user presses Esc, the Cancel button value is returned,   whether or not the Cancel button is displayed in the message box.</p>
 
 
                 
@@ -17004,8 +16561,7 @@ Signal
                             
 
 
-    <p>Triggered when the snapshot images have been captured by <a href="Window.html#.takeSnapshot">takeSnapshot</a> and the GIF is
-    starting to be processed.</p>
+    <p>Triggered when the snapshot images have been captured by <a href="Window.html#.takeSnapshot">takeSnapshot</a> and the GIF is    starting to be processed.</p>
 
 
                         
@@ -17446,8 +17002,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the user has been redirected to the error URL, <code>false</code> 
-    if they haven't.</p>
+    <p><code>true</code> if the user has been redirected to the error URL, <code>false</code>     if they haven't.</p>
 
 
                 
@@ -17703,8 +17258,7 @@ Signal
                             
 
 
-    <p>Triggered when a still 360&deg; snapshot has been taken by calling 
-    <a href="Window.html#.takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a>.</p>
+    <p>Triggered when a still 360&deg; snapshot has been taken by calling     <a href="Window.html#.takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a>.</p>
 
 
                         
@@ -17832,8 +17386,7 @@ boolean
                     
 
 
-    <p>The value of the <code>notify</code> parameter that <a href="Window.html#.takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a>
-    was called with.</p>
+    <p>The value of the <code>notify</code> parameter that <a href="Window.html#.takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a>    was called with.</p>
 
 
                 
@@ -17916,8 +17469,7 @@ Signal
                             
 
 
-    <p>Triggered when a snapshot submitted via <a href="Window.html#.shareSnapshot">shareSnapshot</a> is ready for sharing. The snapshot
-may then be shared via the Account.metaverseServerURL Web API.</p>
+    <p>Triggered when a snapshot submitted via <a href="Window.html#.shareSnapshot">shareSnapshot</a> is ready for sharing. The snapshotmay then be shared via the Account.metaverseServerURL Web API.</p>
 
 
                         
@@ -18012,8 +17564,7 @@ boolean
                     
 
 
-    <p><code>true</code> if an error was encountered preparing the snapshot for sharing, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if an error was encountered preparing the snapshot for sharing, otherwise    <code>false</code>.</p>
 
 
                 
@@ -18129,8 +17680,7 @@ Signal
                             
 
 
-    <p>Triggered when a still snapshot has been taken by calling <a href="Window.html#.takeSnapshot">takeSnapshot</a> with 
-    <code>includeAnimated = false</code> or <a href="Window.html#.takeSecondaryCameraSnapshot">takeSecondaryCameraSnapshot</a>.</p>
+    <p>Triggered when a still snapshot has been taken by calling <a href="Window.html#.takeSnapshot">takeSnapshot</a> with     <code>includeAnimated = false</code> or <a href="Window.html#.takeSecondaryCameraSnapshot">takeSecondaryCameraSnapshot</a>.</p>
 
 
                         
@@ -18258,8 +17808,7 @@ boolean
                     
 
 
-    <p>The value of the <code>notify</code> parameter that <a href="Window.html#.takeSnapshot">takeSnapshot</a>
-    was called with.</p>
+    <p>The value of the <code>notify</code> parameter that <a href="Window.html#.takeSnapshot">takeSnapshot</a>    was called with.</p>
 
 
                 

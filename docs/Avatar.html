@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -63,10 +64,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Assignment Client Scripts</p>The <code>Avatar</code> API is used to manipulate scriptable avatars on the domain. This API is a subset of the 
-<a href="MyAvatar.html">MyAvatar</a> API. To enable this API, set <a href="Agent.html">Agent.isAvatar</a> to <code>true</code>.
-
-<p>For Interface, client entity, and avatar scripts, see <a href="MyAvatar.html">MyAvatar</a>.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Assignment Client Scripts</p>The <code>Avatar</code> API is used to manipulate scriptable avatars on the domain. This API is a subset of the <a href="MyAvatar.html">MyAvatar</a> API. To enable this API, set <a href="Agent.html">Agent.isAvatar</a> to <code>true</code>.<p>For Interface, client entity, and avatar scripts, see <a href="MyAvatar.html">MyAvatar</a>.</p></div>
                 
 
                 
@@ -74,10 +72,7 @@
                     
         <p class="code-caption">Create a scriptable avatar.</p>
     
-    <pre class="prettyprint"><code>(function () {
-    Agent.setIsAvatar(true);
-    print("Position: " + JSON.stringify(Avatar.position));  // 0, 0, 0
-}());</code></pre>
+    <pre class="prettyprint"><code>(function () {    Agent.setIsAvatar(true);    print("Position: " + JSON.stringify(Avatar.position));  // 0, 0, 0}());</code></pre>
 
                 
                 
@@ -164,8 +159,7 @@ number
                     
 
 
-    <p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and 
-    <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the domain's settings.</p>
+    <p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and     <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the domain's settings.</p>
 
 
                 
@@ -200,8 +194,7 @@ number
                     
 
 
-    <p>The density of the avatar in kg/m<sup>3</sup>. The density is used to work out its mass in
-    the application of physics. <em>Read-only.</em></p>
+    <p>The density of the avatar in kg/m<sup>3</sup>. The density is used to work out its mass in    the application of physics. <em>Read-only.</em></p>
 
 
                 
@@ -234,8 +227,7 @@ number
                     
 
 
-    <p>A user-defined hand position, in world coordinates. The position moves with the avatar
-   but is otherwise not used or changed by Interface.</p>
+    <p>A user-defined hand position, in world coordinates. The position moves with the avatar   but is otherwise not used or changed by Interface.</p>
 
 
                 
@@ -268,8 +260,7 @@ number
                     
 
 
-    <p>The left or right rotation about an axis running from the head to the feet of the avatar.
-    Yaw is sometimes called "heading".</p>
+    <p>The left or right rotation about an axis running from the head to the feet of the avatar.    Yaw is sometimes called "heading".</p>
 
 
                 
@@ -302,8 +293,7 @@ number
                     
 
 
-    <p>The rotation about an axis running from shoulder to shoulder of the avatar. Pitch is
-    sometimes called "elevation".</p>
+    <p>The rotation about an axis running from shoulder to shoulder of the avatar. Pitch is    sometimes called "elevation".</p>
 
 
                 
@@ -336,8 +326,7 @@ number
                     
 
 
-    <p>The rotation about an axis running from the chest to the back of the avatar. Roll is
-    sometimes called "bank".</p>
+    <p>The rotation about an axis running from the chest to the back of the avatar. Roll is    sometimes called "bank".</p>
 
 
                 
@@ -436,8 +425,7 @@ number
                     
 
 
-    <p>The rotation about an axis running from ear to ear of the avatar's head. Pitch is
-    sometimes called "elevation".</p>
+    <p>The rotation about an axis running from ear to ear of the avatar's head. Pitch is    sometimes called "elevation".</p>
 
 
                 
@@ -470,8 +458,7 @@ number
                     
 
 
-    <p>The rotation left or right about an axis running from the base to the crown of the avatar's
-    head. Yaw is sometimes called "heading".</p>
+    <p>The rotation left or right about an axis running from the base to the crown of the avatar's    head. Yaw is sometimes called "heading".</p>
 
 
                 
@@ -504,8 +491,7 @@ number
                     
 
 
-    <p>The rotation about an axis running from the nose to the back of the avatar's head. Roll is
-    sometimes called "bank".</p>
+    <p>The rotation about an axis running from the nose to the back of the avatar's head. Roll is    sometimes called "bank".</p>
 
 
                 
@@ -604,8 +590,7 @@ number
                     
 
 
-    <p>The instantaneous loudness of the audio input that the avatar is injecting into the
-    domain.</p>
+    <p>The instantaneous loudness of the audio input that the avatar is injecting into the    domain.</p>
 
 
                 
@@ -638,8 +623,7 @@ number
                     
 
 
-    <p>The rolling average loudness of the audio input that the avatar is injecting
-    into the domain.</p>
+    <p>The rolling average loudness of the audio input that the avatar is injecting    into the domain.</p>
 
 
                 
@@ -705,8 +689,7 @@ string
                     
 
 
-    <p><code>displayName's</code> sanitized and default version defined by the avatar mixer 
-    rather than Interface clients. The result is unique among all avatars present in the domain at the time.</p>
+    <p><code>displayName's</code> sanitized and default version defined by the avatar mixer     rather than Interface clients. The result is unique among all avatars present in the domain at the time.</p>
 
 
                 
@@ -739,8 +722,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the avatar's eyes snap to look at another avatar's
-    eyes when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p>
+    <p><code>true</code> if the avatar's eyes snap to look at another avatar's    eyes when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p>
 
 
                 
@@ -808,8 +790,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                     
 
 
-    <p>Information on the avatar's attachments. 
-    </p>
+    <p>Information on the avatar's attachments.     </p>
     <p class="important">Deprecated: This property is deprecated and will be removed. Use avatar entities instead.</p>
 
 
@@ -909,8 +890,7 @@ Array.&lt;string>
                     
 
 
-    <p>The scale, rotation, and translation transform from the user's real world to the
-    avatar's size, orientation, and position in the virtual world. <em>Read-only.</em></p>
+    <p>The scale, rotation, and translation transform from the user's real world to the    avatar's size, orientation, and position in the virtual world. <em>Read-only.</em></p>
 
 
                 
@@ -943,8 +923,7 @@ Array.&lt;string>
                     
 
 
-    <p>The rotation and translation of the left hand controller relative to the
-    avatar. <em>Read-only.</em></p>
+    <p>The rotation and translation of the left hand controller relative to the    avatar. <em>Read-only.</em></p>
 
 
                 
@@ -977,8 +956,7 @@ Array.&lt;string>
                     
 
 
-    <p>The rotation and translation of the right hand controller relative to the
-    avatar. <em>Read-only.</em></p>
+    <p>The rotation and translation of the right hand controller relative to the    avatar. <em>Read-only.</em></p>
 
 
                 
@@ -1011,8 +989,7 @@ number
                     
 
 
-    <p>The scale that transforms dimensions in the user's real world to the avatar's
-    size in the virtual world. <em>Read-only.</em></p>
+    <p>The scale that transforms dimensions in the user's real world to the avatar's    size in the virtual world. <em>Read-only.</em></p>
 
 
                 
@@ -1045,8 +1022,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the avatar is in a "hero" zone, <code>false</code> if it isn't.
-    <em>Read-only.</em></p>
+    <p><code>true</code> if the avatar is in a "hero" zone, <code>false</code> if it isn't.    <em>Read-only.</em></p>
 
 
                 
@@ -1142,8 +1118,7 @@ boolean
                     
 
 
-    <p>Attaches a model to your avatar. For example, you can give your avatar a hat to wear, a guitar to hold, or a surfboard to
-stand on.</p>
+    <p>Attaches a model to your avatar. For example, you can give your avatar a hat to wear, a guitar to hold, or a surfboard tostand on.</p>
 
 
                 
@@ -1215,23 +1190,7 @@ stand on.</p>
     
         <p class="code-caption">Attach a cowboy hat to your avatar's head.</p>
     
-    <pre class="prettyprint"><code>var attachment = {
-    modelURL: "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx",
-    jointName: "Head",
-    translation: {"x": 0, "y": 0.25, "z": 0},
-    rotation: {"x": 0, "y": 0, "z": 0, "w": 1},
-    scale: 0.01,
-    isSoft: false
-};
-
- MyAvatar.attach(attachment.modelURL,
-                 attachment.jointName,
-                 attachment.translation,
-                 attachment.rotation,
-                 attachment.scale,
-                 attachment.isSoft);
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var attachment = {    modelURL: "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx",    jointName: "Head",    translation: {"x": 0, "y": 0.25, "z": 0},    rotation: {"x": 0, "y": 0, "z": 0, "w": 1},    scale: 0.01,    isSoft: false}; MyAvatar.attach(attachment.modelURL,                 attachment.jointName,                 attachment.translation,                 attachment.rotation,                 attachment.scale,                 attachment.isSoft);// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -1337,9 +1296,7 @@ stand on.</p>
                     
 
 
-    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default 
-animation system including inverse kinematics for that joint.
-</p>
+    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default animation system including inverse kinematics for that joint.</p>
     <p>Note: This is slightly faster than the function variation that specifies the joint name.</p>
 
 
@@ -1427,9 +1384,7 @@ animation system including inverse kinematics for that joint.
                     
 
 
-    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default 
-animation system including inverse kinematics for that joint.
-</p>
+    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default animation system including inverse kinematics for that joint.</p>
     <p>Note: This is slightly slower than the function variation that specifies the joint index.</p>
 
 
@@ -1500,15 +1455,7 @@ animation system including inverse kinematics for that joint.
     
         <p class="code-caption">Offset and restore the position of your avatar's head.</p>
     
-    <pre class="prettyprint"><code>// Stretch your avatar's neck.
-MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));
-
-// Restore your avatar's neck after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointData("Neck");
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Stretch your avatar's neck.MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));// Restore your avatar's neck after 5s.Script.setTimeout(function () {    MyAvatar.clearJointData("Neck");}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -1532,8 +1479,7 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Clears all joint translations and rotations that have been set by script. This restores all motion from the default 
-animation system including inverse kinematics for all joints.</p>
+    <p>Clears all joint translations and rotations that have been set by script. This restores all motion from the default animation system including inverse kinematics for all joints.</p>
 
 
                 
@@ -1603,20 +1549,7 @@ animation system including inverse kinematics for all joints.</p>
     
         <p class="code-caption">Set your avatar to it's default T-pose for a while.</p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -1828,8 +1761,7 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Gets the rotation of a joint relative to the avatar.
-</p>
+    <p>Gets the rotation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -1927,8 +1859,7 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Gets the translation of a joint relative to the avatar.
-</p>
+    <p>Gets the translation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -2096,8 +2027,7 @@ Script.setTimeout(function () {
     
         <p class="code-caption">Report the current animation details.</p>
     
-    <pre class="prettyprint"><code>var animationDetails = Avatar.getAnimationDetails();
-print("Animation details: " + JSON.stringify(animationDetails));</code></pre>
+    <pre class="prettyprint"><code>var animationDetails = Avatar.getAnimationDetails();print("Animation details: " + JSON.stringify(animationDetails));</code></pre>
 
 
 -->
@@ -2203,12 +2133,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
     
         <p class="code-caption">Report the URLs of all current attachments.</p>
     
-    <pre class="prettyprint"><code>var attachments = MyAvatar.getaAttachmentData();
-for (var i = 0; i &lt; attachments.length; i++) {
-    print(attachments[i].modelURL);
-}
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var attachments = MyAvatar.getaAttachmentData();for (var i = 0; i &lt; attachments.length; i++) {    print(attachments[i].modelURL);}// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -2341,8 +2266,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                     
 
 
-    <p>Gets details of all avatar entities.
-</p>
+    <p>Gets details of all avatar entities.</p>
     <p><strong>Warning:</strong> Potentially an expensive call. Do not use if possible.</p>
 
 
@@ -2413,8 +2337,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
     
         <p class="code-caption">Report the current avatar entities.</p>
     
-    <pre class="prettyprint"><code>var avatarEntityData = Avatar.getAvatarEntityData();
-print("Avatar entities: " + JSON.stringify(avatarEntityData));</code></pre>
+    <pre class="prettyprint"><code>var avatarEntityData = Avatar.getAvatarEntityData();print("Avatar entities: " + JSON.stringify(avatarEntityData));</code></pre>
 
 
 -->
@@ -2518,13 +2441,7 @@ print("Avatar entities: " + JSON.stringify(avatarEntityData));</code></pre>
     
         <p class="code-caption">Report the left hand controller matrix.</p>
     
-    <pre class="prettyprint"><code>var leftHandMatrix = MyAvatar.getControllerLeftHandMatrix();
-print("Controller left hand matrix: " + JSON.stringify(leftHandMatrix));
-print("Rotation: " + JSON.stringify(Mat4.extractRotation(leftHandMatrix)));
-print("Translation: " + JSON.stringify(Mat4.extractTranslation(leftHandMatrix)));
-print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 1,1,1.
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var leftHandMatrix = MyAvatar.getControllerLeftHandMatrix();print("Controller left hand matrix: " + JSON.stringify(leftHandMatrix));print("Rotation: " + JSON.stringify(Mat4.extractRotation(leftHandMatrix)));print("Translation: " + JSON.stringify(Mat4.extractTranslation(leftHandMatrix)));print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 1,1,1.// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -2752,8 +2669,7 @@ number
                     
 
 
-    <p>Gets the maximum scale allowed for this avatar in the current domain.
-This value can change as the user changes avatars or when changing domains.</p>
+    <p>Gets the maximum scale allowed for this avatar in the current domain.This value can change as the user changes avatars or when changing domains.</p>
 
 
                 
@@ -2850,8 +2766,7 @@ number
                     
 
 
-    <p>Gets the minimum scale allowed for this avatar in the current domain.
-This value can change as the user changes avatars or when changing domains.</p>
+    <p>Gets the minimum scale allowed for this avatar in the current domain.This value can change as the user changes avatars or when changing domains.</p>
 
 
                 
@@ -2948,8 +2863,7 @@ number
                     
 
 
-    <p>Gets the current eye height of the avatar.
-This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
+    <p>Gets the current eye height of the avatar.This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
 
 
                 
@@ -3046,8 +2960,7 @@ This height is only an estimate and might be incorrect for avatars that are miss
                     
 
 
-    <p>Gets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the
-laser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
+    <p>Gets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, thelaser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
 
 
                 
@@ -3144,8 +3057,7 @@ number
                     
 
 
-    <p>Gets the current height of the avatar.
-This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
+    <p>Gets the current height of the avatar.This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
 
 
                 
@@ -3242,8 +3154,7 @@ number
                     
 
 
-    <p>Gets the joint index for a named joint. The joint index value is the position of the joint in the array returned by 
-<a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.</p>
+    <p>Gets the joint index for a named joint. The joint index value is the position of the joint in the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.</p>
 
 
                 
@@ -3313,9 +3224,7 @@ number
     
         <p class="code-caption">Report the index of your avatar's left arm joint.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointIndex("LeftArm")));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointIndex("LeftArm")));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -3419,9 +3328,7 @@ Array.&lt;string>
     
         <p class="code-caption">Report the names of all the joints in your current avatar.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointNames()));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointNames()));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -3455,8 +3362,7 @@ Array.&lt;string>
                     
 
 
-    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see 
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see <a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                 
@@ -3526,9 +3432,7 @@ Array.&lt;string>
     
         <p class="code-caption">Report the rotation of your avatar's hips joint.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -3562,8 +3466,7 @@ Array.&lt;string>
                     
 
 
-    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see 
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see <a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                 
@@ -3730,9 +3633,7 @@ Array.&lt;<a href="global.html#Quat">Quat</a>>
     
         <p class="code-caption">Report the rotations of all your avatar's joints.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotations()));
-
-// Note: If using from the Avatar API, replace all "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotations()));// Note: If using from the Avatar API, replace all "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -3766,11 +3667,8 @@ Array.&lt;<a href="global.html#Quat">Quat</a>>
                     
 
 
-    <p>Gets the translation of a joint relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>For information on the joint hierarchy used, see 
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the translation of a joint relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>For information on the joint hierarchy used, see <a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                 
@@ -3867,11 +3765,8 @@ Array.&lt;<a href="global.html#Quat">Quat</a>>
                     
 
 
-    <p>Gets the translation of a joint relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>For information on the joint hierarchy used, see
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the translation of a joint relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>For information on the joint hierarchy used, see<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                 
@@ -3941,9 +3836,7 @@ Array.&lt;<a href="global.html#Quat">Quat</a>>
     
         <p class="code-caption">Report the translation of your avatar's hips joint.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -3977,9 +3870,7 @@ Array.&lt;<a href="global.html#Vec3">Vec3</a>>
                     
 
 
-    <p>Gets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, in
-model coordinates.
-</p>
+    <p>Gets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, inmodel coordinates.</p>
     <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
 
 
@@ -4147,13 +4038,7 @@ model coordinates.
     
         <p class="code-caption">Report the sensor to world matrix.</p>
     
-    <pre class="prettyprint"><code>var sensorToWorldMatrix = MyAvatar.getSensorToWorldMatrix();
-print("Sensor to woprld matrix: " + JSON.stringify(sensorToWorldMatrix));
-print("Rotation: " + JSON.stringify(Mat4.extractRotation(sensorToWorldMatrix)));
-print("Translation: " + JSON.stringify(Mat4.extractTranslation(sensorToWorldMatrix)));
-print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var sensorToWorldMatrix = MyAvatar.getSensorToWorldMatrix();print("Sensor to woprld matrix: " + JSON.stringify(sensorToWorldMatrix));print("Rotation: " + JSON.stringify(Mat4.extractRotation(sensorToWorldMatrix)));print("Translation: " + JSON.stringify(Mat4.extractTranslation(sensorToWorldMatrix)));print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -4284,8 +4169,7 @@ number
                     
 
 
-    <p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the domain. In contrast, the 
-<code>scale</code> property's value may be limited by the domain's settings.</p>
+    <p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the domain. In contrast, the <code>scale</code> property's value may be limited by the domain's settings.</p>
 
 
                 
@@ -4355,10 +4239,7 @@ number
     
         <p class="code-caption">Compare the target and current avatar scales.</p>
     
-    <pre class="prettyprint"><code>print("Current avatar scale: " + MyAvatar.scale);
-print("Target avatar scale:  " + MyAvatar.getTargetScale());
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print("Current avatar scale: " + MyAvatar.scale);print("Target avatar scale:  " + MyAvatar.getTargetScale());// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -4949,8 +4830,7 @@ boolean
                     
 
 
-    <p>Sets the rotation of a joint relative to the avatar.
-</p>
+    <p>Sets the rotation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -5048,8 +4928,7 @@ boolean
                     
 
 
-    <p>Sets the translation of a joint relative to the avatar.
-</p>
+    <p>Sets the translation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -5137,9 +5016,7 @@ boolean
                     
 
 
-    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using
-<a href="MyAvatar.html#.getAttachmentData">MyAvatar.getAttachmentData</a> or <a href="Avatar.html#.getAttachmentData">Avatar.getAttachmentData</a>, make changes to it, and then want to update your avatar's attachments per the 
-changed data. You can also remove all attachments by using setting <code>attachmentData</code> to <code>null</code>.</p>
+    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using<a href="MyAvatar.html#.getAttachmentData">MyAvatar.getAttachmentData</a> or <a href="Avatar.html#.getAttachmentData">Avatar.getAttachmentData</a>, make changes to it, and then want to update your avatar's attachments per the changed data. You can also remove all attachments by using setting <code>attachmentData</code> to <code>null</code>.</p>
 
 
                 
@@ -5211,18 +5088,7 @@ changed data. You can also remove all attachments by using setting <code>attachm
     
         <p class="code-caption">Remove a hat attachment if your avatar is wearing it.</p>
     
-    <pre class="prettyprint"><code>var hatURL = "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx";
-var attachments = MyAvatar.getAttachmentData();
-
-for (var i = 0; i &lt; attachments.length; i++) {
-    if (attachments[i].modelURL === hatURL) {
-        attachments.splice(i, 1);
-        MyAvatar.setAttachmentData(attachments);
-        break;
-    }
- }
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var hatURL = "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx";var attachments = MyAvatar.getAttachmentData();for (var i = 0; i &lt; attachments.length; i++) {    if (attachments[i].modelURL === hatURL) {        attachments.splice(i, 1);        MyAvatar.setAttachmentData(attachments);        break;    } }// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -5246,9 +5112,7 @@ for (var i = 0; i &lt; attachments.length; i++) {
                     
 
 
-    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using
-<a href="MyAvatar.html#.getAttachmentsVariant">MyAvatar.getAttachmentsVariant</a> or <a href="Avatar.html#.getAttachmentsVariant">Avatar.getAttachmentsVariant</a>, make changes to it, and then want to 
-update your avatar's attachments per the changed data.</p>
+    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using<a href="MyAvatar.html#.getAttachmentsVariant">MyAvatar.getAttachmentsVariant</a> or <a href="Avatar.html#.getAttachmentsVariant">Avatar.getAttachmentsVariant</a>, make changes to it, and then want to update your avatar's attachments per the changed data.</p>
 
 
                 
@@ -5337,8 +5201,7 @@ update your avatar's attachments per the changed data.</p>
                     
 
 
-    <p>Sets all avatar entities from an object.
-</p>
+    <p>Sets all avatar entities from an object.</p>
     <p><strong>Warning:</strong> Potentially an expensive call. Do not use if possible.</p>
 
 
@@ -5426,9 +5289,7 @@ update your avatar's attachments per the changed data.</p>
                     
 
 
-    <p>Sets the value of a blendshape to animate your avatar's face. In order for other users to see the resulting animations 
-on your avatar's face, set Avatar.hasScriptedBlendshapes to true. When you are done using this API, set 
-Avatar.hasScriptedBlendshapes back to false when the animation is complete.</p>
+    <p>Sets the value of a blendshape to animate your avatar's face. To enable other users to see the resulting animation of your avatar's face, set Avatar.hasScriptedBlendshapes to true while using this API and back to false when youranimation is complete.</p>
 
 
                 
@@ -5498,10 +5359,7 @@ Avatar.hasScriptedBlendshapes back to false when the animation is complete.</p>
     
         <p class="code-caption">Open your avatar's mouth wide.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.hasScriptedBlendshapes = true;
-MyAvatar.setBlendshape("JawOpen", 1.0);
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.hasScriptedBlendshapes = true;MyAvatar.setBlendshape("JawOpen", 1.0);// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -5525,10 +5383,7 @@ MyAvatar.setBlendshape("JawOpen", 1.0);
                     
 
 
-    <p class="important">Deprecated: This method is deprecated and will be removed.</p>
-Use Avatar.hasScriptedBlendshapes property instead.
-Enables blendshapes set using <a href="Avatar.html#.setBlendshape">Avatar.setBlendshape</a> or <a href="MyAvatar.html#.setBlendshape">MyAvatar.setBlendshape</a> to be transmitted to other 
-users so that they can see the animation of your avatar's face.
+    <p class="important">Deprecated: This method is deprecated and will be removed.</p>Use Avatar.hasScriptedBlendshapes property instead.Enables blendshapes set using <a href="Avatar.html#.setBlendshape">Avatar.setBlendshape</a> or <a href="MyAvatar.html#.setBlendshape">MyAvatar.setBlendshape</a> to be transmitted to other users so that they can see the animation of your avatar's face.
 
 
                 
@@ -5615,8 +5470,7 @@ users so that they can see the animation of your avatar's face.
                     
 
 
-    <p>Sets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the 
-laser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
+    <p>Sets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the laser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
 
 
                 
@@ -5703,14 +5557,8 @@ laser emanates from the tip of that finger, otherwise it emanates from the palm.
                     
 
 
-    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -5797,14 +5645,8 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
                     
 
 
-    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -5872,23 +5714,9 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
 
     <h5>Example</h5>
     
-        <p class="code-caption">Set your avatar to it's default T-pose for a while.<br />
-<img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/t-pose.png" /></p>
+        <p class="code-caption">Set your avatar to it's default T-pose for a while.<br /><img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/t-pose.png" /></p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -5994,13 +5822,8 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Sets a specific joint's rotation relative to its parent.
-</p>
-    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse 
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation relative to its parent.</p>
+    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -6087,13 +5910,8 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
                     
 
 
-    <p>Sets a specific joint's rotation relative to its parent.
-</p>
-    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse 
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation relative to its parent.</p>
+    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -6161,27 +5979,9 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
 
     <h5>Example</h5>
     
-        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br />
-<img alt="Avatar in T-pose with arm rotated" src="https://docs.highfidelity.com/images/armpose.png" /></p>
+        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br /><img alt="Avatar in T-pose with arm rotated" src="https://docs.highfidelity.com/images/armpose.png" /></p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Rotate the right arm.
-var newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };
-MyAvatar.setJointRotation("RightArm", newArmRotation);
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Rotate the right arm.var newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };MyAvatar.setJointRotation("RightArm", newArmRotation);// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -6205,13 +6005,8 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Sets the rotations of all joints in the current avatar. Each joint's rotation is relative to its parent joint.
-</p>
-    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets the rotations of all joints in the current avatar. Each joint's rotation is relative to its parent joint.</p>
+    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulatejoints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you setthe rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -6279,32 +6074,9 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
 
     <h5>Example</h5>
     
-        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br />
-<img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/armpose.png" /></p>
+        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br /><img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/armpose.png" /></p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Get all join rotations.
-var jointRotations = MyAvatar.getJointRotations(); 
-
-// Update the rotation of the right arm in the array.
-jointRotations[MyAvatar.getJointIndex("RightArm")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };
-
-// Update all joint rotations.
-MyAvatar.setJointRotations(jointRotations);
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Get all join rotations.var jointRotations = MyAvatar.getJointRotations(); // Update the rotation of the right arm in the array.jointRotations[MyAvatar.getJointIndex("RightArm")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };// Update all joint rotations.MyAvatar.setJointRotations(jointRotations);// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -6328,14 +6100,8 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Sets a specific joint's translation relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's translation relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -6403,19 +6169,9 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
 
     <h5>Example</h5>
     
-        <p class="code-caption">Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between 
-the head and body or you will see the neck stretched.<br />
-<img alt="Avatar with neck stretched" src="https://docs.highfidelity.com/images/stretched-neck.png" /></p>
+        <p class="code-caption">Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between the head and body or you will see the neck stretched.<br /><img alt="Avatar with neck stretched" src="https://docs.highfidelity.com/images/stretched-neck.png" /></p>
     
-    <pre class="prettyprint"><code>// Stretch your avatar's neck.
-MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));
-
-// Restore your avatar's neck after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointData("Neck");
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Stretch your avatar's neck.MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));// Restore your avatar's neck after 5s.Script.setTimeout(function () {    MyAvatar.clearJointData("Neck");}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -6439,14 +6195,8 @@ Script.setTimeout(function () {
                     
 
 
-    <p>Sets a specific joint's translation relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's translation relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -6533,15 +6283,8 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
                     
 
 
-    <p>Sets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, in 
-model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulatejoints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you setthe rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                 
@@ -7304,11 +7047,7 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
     
         <p class="code-caption">Report when your avatar display name changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.displayNameChanged.connect(function () {
-    print("Avatar display name changed to: " + MyAvatar.displayName);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.displayNameChanged.connect(function () {    print("Avatar display name changed to: " + MyAvatar.displayName);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -7397,11 +7136,7 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
     
         <p class="code-caption">Report when your look-at snapping setting changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.lookAtSnappingChanged.connect(function () {
-    print("Avatar look-at snapping changed to: " + MyAvatar.lookAtSnappingEnabled);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.lookAtSnappingChanged.connect(function () {    print("Avatar look-at snapping changed to: " + MyAvatar.lookAtSnappingEnabled);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -7490,11 +7225,7 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
     
         <p class="code-caption">Report when your avatar's session display name changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.sessionDisplayNameChanged.connect(function () {
-    print("Avatar session display name changed to: " + MyAvatar.sessionDisplayName);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.sessionDisplayNameChanged.connect(function () {    print("Avatar session display name changed to: " + MyAvatar.sessionDisplayName);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -7583,11 +7314,7 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
     
         <p class="code-caption">Report when your avatar's session UUID changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.sessionUUIDChanged.connect(function () {
-    print("Avatar session UUID changed to: " + MyAvatar.sessionUUID);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.sessionUUIDChanged.connect(function () {    print("Avatar session UUID changed to: " + MyAvatar.sessionUUID);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -7676,11 +7403,7 @@ the rotation of the elbow, the hand inverse kinematics position won't end up in 
     
         <p class="code-caption">Report when your avatar's skeleton model changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.skeletonModelURLChanged.connect(function () {
-    print("Skeleton model changed to: " + MyAvatar.skeletonModelURL);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.skeletonModelURLChanged.connect(function () {    print("Skeleton model changed to: " + MyAvatar.skeletonModelURL);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
 
 -->
@@ -7800,10 +7523,7 @@ string
                     
 
 
-    <p>The URL to the animation file. Animation files need to be in glTF or FBX format but only need to 
-    contain the avatar skeleton and animation data. glTF models may be in JSON or binary format (".gltf" or ".glb" URLs 
-    respectively).
-    </p>
+    <p>The URL to the animation file. Animation files need to be in glTF or FBX format but only need to     contain the avatar skeleton and animation data. glTF models may be in JSON or binary format (".gltf" or ".glb" URLs     respectively).    </p>
     <p><strong>Warning:</strong> glTF animations currently do not always animate correctly.</p>
 
 
@@ -8199,8 +7919,7 @@ boolean
                             
 
 
-    <p>Attaches a model to your avatar. For example, you can give your avatar a hat to wear, a guitar to hold, or a surfboard to
-stand on.</p>
+    <p>Attaches a model to your avatar. For example, you can give your avatar a hat to wear, a guitar to hold, or a surfboard tostand on.</p>
 
 
                         
@@ -8313,8 +8032,7 @@ string
                     
 
 
-    <p>The URL of the glTF, FBX, or OBJ model to attach. glTF models may be in JSON or binary format 
-    (".gltf" or ".glb" URLs respectively).</p>
+    <p>The URL of the glTF, FBX, or OBJ model to attach. glTF models may be in JSON or binary format     (".gltf" or ".glb" URLs respectively).</p>
 
 
                 
@@ -8363,8 +8081,7 @@ string
                     
 
 
-    <p>The name of the avatar joint (see <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a> or 
-    <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a>) to attach the model to.</p>
+    <p>The name of the avatar joint (see <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a> or     <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a>) to attach the model to.</p>
 
 
                 
@@ -8560,12 +8277,8 @@ boolean
                     
 
 
-    <p>If the model has a skeleton, set this to <code>true</code> so that the bones of the 
-    attached model's skeleton are rotated to fit the avatar's current pose. <code>isSoft</code> is used, for example, 
-    to have clothing that moves with the avatar.
-    </p>
-    <p>If <code>true</code>, the <code>translation</code>, <code>rotation</code>, and <code>scale</code> parameters are 
-    ignored.</p>
+    <p>If the model has a skeleton, set this to <code>true</code> so that the bones of the     attached model's skeleton are rotated to fit the avatar's current pose. <code>isSoft</code> is used, for example,     to have clothing that moves with the avatar.    </p>
+    <p>If <code>true</code>, the <code>translation</code>, <code>rotation</code>, and <code>scale</code> parameters are     ignored.</p>
 
 
                 
@@ -8614,8 +8327,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then more than one copy of any particular model may be 
-    attached to the same joint; if <code>false</code> then the same model cannot be attached to the same joint.</p>
+    <p>If <code>true</code> then more than one copy of any particular model may be     attached to the same joint; if <code>false</code> then the same model cannot be attached to the same joint.</p>
 
 
                 
@@ -8681,23 +8393,7 @@ boolean
                         
         <p class="code-caption">Attach a cowboy hat to your avatar's head.</p>
     
-    <pre class="prettyprint"><code>var attachment = {
-    modelURL: "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx",
-    jointName: "Head",
-    translation: {"x": 0, "y": 0.25, "z": 0},
-    rotation: {"x": 0, "y": 0, "z": 0, "w": 1},
-    scale: 0.01,
-    isSoft: false
-};
-
- MyAvatar.attach(attachment.modelURL,
-                 attachment.jointName,
-                 attachment.translation,
-                 attachment.rotation,
-                 attachment.scale,
-                 attachment.isSoft);
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var attachment = {    modelURL: "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx",    jointName: "Head",    translation: {"x": 0, "y": 0.25, "z": 0},    rotation: {"x": 0, "y": 0, "z": 0, "w": 1},    scale: 0.01,    isSoft: false}; MyAvatar.attach(attachment.modelURL,                 attachment.jointName,                 attachment.translation,                 attachment.rotation,                 attachment.scale,                 attachment.isSoft);// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -8958,9 +8654,7 @@ boolean
                             
 
 
-    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default 
-animation system including inverse kinematics for that joint.
-</p>
+    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default animation system including inverse kinematics for that joint.</p>
     <p>Note: This is slightly faster than the function variation that specifies the joint name.</p>
 
 
@@ -9114,9 +8808,7 @@ number
                             
 
 
-    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default 
-animation system including inverse kinematics for that joint.
-</p>
+    <p>Clears joint translations and rotations set by script for a specific joint. This restores all motion from the default animation system including inverse kinematics for that joint.</p>
     <p>Note: This is slightly slower than the function variation that specifies the joint index.</p>
 
 
@@ -9229,15 +8921,7 @@ string
                         
         <p class="code-caption">Offset and restore the position of your avatar's head.</p>
     
-    <pre class="prettyprint"><code>// Stretch your avatar's neck.
-MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));
-
-// Restore your avatar's neck after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointData("Neck");
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Stretch your avatar's neck.MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));// Restore your avatar's neck after 5s.Script.setTimeout(function () {    MyAvatar.clearJointData("Neck");}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -9285,8 +8969,7 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Clears all joint translations and rotations that have been set by script. This restores all motion from the default 
-animation system including inverse kinematics for all joints.</p>
+    <p>Clears all joint translations and rotations that have been set by script. This restores all motion from the default animation system including inverse kinematics for all joints.</p>
 
 
                         
@@ -9340,20 +9023,7 @@ animation system including inverse kinematics for all joints.</p>
                         
         <p class="code-caption">Set your avatar to it's default T-pose for a while.</p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -9563,8 +9233,7 @@ string
                     
 
 
-    <p>The name of the joint to detach the model from. If <code>""</code>, then the model is 
-    detached from all joints.</p>
+    <p>The name of the joint to detach the model from. If <code>""</code>, then the model is     detached from all joints.</p>
 
 
                 
@@ -9784,8 +9453,7 @@ string
                     
 
 
-    <p>The name of the joint to detach the model from. If <code>""</code>, then the most 
-    recently attached model is removed from which ever joint it was attached to.</p>
+    <p>The name of the joint to detach the model from. If <code>""</code>, then the most     recently attached model is removed from which ever joint it was attached to.</p>
 
 
                 
@@ -9852,8 +9520,7 @@ string
                             
 
 
-    <p>Gets the rotation of a joint relative to the avatar.
-</p>
+    <p>Gets the rotation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -10016,8 +9683,7 @@ number
                             
 
 
-    <p>Gets the translation of a joint relative to the avatar.
-</p>
+    <p>Gets the translation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -10234,8 +9900,7 @@ number
                         
         <p class="code-caption">Report the current animation details.</p>
     
-    <pre class="prettyprint"><code>var animationDetails = Avatar.getAnimationDetails();
-print("Animation details: " + JSON.stringify(animationDetails));</code></pre>
+    <pre class="prettyprint"><code>var animationDetails = Avatar.getAnimationDetails();print("Animation details: " + JSON.stringify(animationDetails));</code></pre>
 
                     
                   
@@ -10348,12 +10013,7 @@ print("Animation details: " + JSON.stringify(animationDetails));</code></pre>
                         
         <p class="code-caption">Report the URLs of all current attachments.</p>
     
-    <pre class="prettyprint"><code>var attachments = MyAvatar.getaAttachmentData();
-for (var i = 0; i &lt; attachments.length; i++) {
-    print(attachments[i].modelURL);
-}
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var attachments = MyAvatar.getaAttachmentData();for (var i = 0; i &lt; attachments.length; i++) {    print(attachments[i].modelURL);}// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -10516,8 +10176,7 @@ for (var i = 0; i &lt; attachments.length; i++) {
                             
 
 
-    <p>Gets details of all avatar entities.
-</p>
+    <p>Gets details of all avatar entities.</p>
     <p><strong>Warning:</strong> Potentially an expensive call. Do not use if possible.</p>
 
 
@@ -10572,8 +10231,7 @@ for (var i = 0; i &lt; attachments.length; i++) {
                         
         <p class="code-caption">Report the current avatar entities.</p>
     
-    <pre class="prettyprint"><code>var avatarEntityData = Avatar.getAvatarEntityData();
-print("Avatar entities: " + JSON.stringify(avatarEntityData));</code></pre>
+    <pre class="prettyprint"><code>var avatarEntityData = Avatar.getAvatarEntityData();print("Avatar entities: " + JSON.stringify(avatarEntityData));</code></pre>
 
                     
                   
@@ -10684,13 +10342,7 @@ print("Avatar entities: " + JSON.stringify(avatarEntityData));</code></pre>
                         
         <p class="code-caption">Report the left hand controller matrix.</p>
     
-    <pre class="prettyprint"><code>var leftHandMatrix = MyAvatar.getControllerLeftHandMatrix();
-print("Controller left hand matrix: " + JSON.stringify(leftHandMatrix));
-print("Rotation: " + JSON.stringify(Mat4.extractRotation(leftHandMatrix)));
-print("Translation: " + JSON.stringify(Mat4.extractTranslation(leftHandMatrix)));
-print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 1,1,1.
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var leftHandMatrix = MyAvatar.getControllerLeftHandMatrix();print("Controller left hand matrix: " + JSON.stringify(leftHandMatrix));print("Rotation: " + JSON.stringify(Mat4.extractRotation(leftHandMatrix)));print("Translation: " + JSON.stringify(Mat4.extractTranslation(leftHandMatrix)));print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 1,1,1.// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -11033,8 +10685,7 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 
                             
 
 
-    <p>Gets the maximum scale allowed for this avatar in the current domain.
-This value can change as the user changes avatars or when changing domains.</p>
+    <p>Gets the maximum scale allowed for this avatar in the current domain.This value can change as the user changes avatars or when changing domains.</p>
 
 
                         
@@ -11138,8 +10789,7 @@ This value can change as the user changes avatars or when changing domains.</p>
                             
 
 
-    <p>Gets the minimum scale allowed for this avatar in the current domain.
-This value can change as the user changes avatars or when changing domains.</p>
+    <p>Gets the minimum scale allowed for this avatar in the current domain.This value can change as the user changes avatars or when changing domains.</p>
 
 
                         
@@ -11243,8 +10893,7 @@ This value can change as the user changes avatars or when changing domains.</p>
                             
 
 
-    <p>Gets the current eye height of the avatar.
-This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
+    <p>Gets the current eye height of the avatar.This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
 
 
                         
@@ -11348,8 +10997,7 @@ This height is only an estimate and might be incorrect for avatars that are miss
                             
 
 
-    <p>Gets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the
-laser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
+    <p>Gets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, thelaser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
 
 
                         
@@ -11453,8 +11101,7 @@ laser emanates from the tip of that finger, otherwise it emanates from the palm.
                             
 
 
-    <p>Gets the current height of the avatar.
-This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
+    <p>Gets the current height of the avatar.This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p>
 
 
                         
@@ -11558,8 +11205,7 @@ This height is only an estimate and might be incorrect for avatars that are miss
                             
 
 
-    <p>Gets the joint index for a named joint. The joint index value is the position of the joint in the array returned by 
-<a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.</p>
+    <p>Gets the joint index for a named joint. The joint index value is the position of the joint in the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.</p>
 
 
                         
@@ -11671,9 +11317,7 @@ string
                         
         <p class="code-caption">Report the index of your avatar's left arm joint.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointIndex("LeftArm")));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointIndex("LeftArm")));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -11784,9 +11428,7 @@ string
                         
         <p class="code-caption">Report the names of all the joints in your current avatar.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointNames()));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointNames()));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -11843,8 +11485,7 @@ string
                             
 
 
-    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see 
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see <a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                         
@@ -11956,9 +11597,7 @@ string
                         
         <p class="code-caption">Report the rotation of your avatar's hips joint.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -12015,8 +11654,7 @@ string
                             
 
 
-    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see 
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see <a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                         
@@ -12160,8 +11798,7 @@ number
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The rotations of all joints relative to each's parent. The values are in the same order as the array 
-returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.
+    The rotations of all joints relative to each's parent. The values are in the same order as the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.
 
 
                         
@@ -12233,9 +11870,7 @@ returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, o
                         
         <p class="code-caption">Report the rotations of all your avatar's joints.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotations()));
-
-// Note: If using from the Avatar API, replace all "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotations()));// Note: If using from the Avatar API, replace all "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -12292,11 +11927,8 @@ returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, o
                             
 
 
-    <p>Gets the translation of a joint relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>For information on the joint hierarchy used, see 
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the translation of a joint relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>For information on the joint hierarchy used, see <a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                         
@@ -12458,11 +12090,8 @@ number
                             
 
 
-    <p>Gets the translation of a joint relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>For information on the joint hierarchy used, see
-<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
+    <p>Gets the translation of a joint relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>For information on the joint hierarchy used, see<a href="https://docs.highfidelity.com/create/avatars/avatar-standards">Avatar Standards</a>.</p>
 
 
                         
@@ -12574,9 +12203,7 @@ number
                         
         <p class="code-caption">Report the translation of your avatar's hips joint.</p>
     
-    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print(JSON.stringify(MyAvatar.getJointRotation("Hips")));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -12615,9 +12242,7 @@ number
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The translations of all joints relative to each's parent, in model coordinates. The values are in the 
-    same order as the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the 
-    <code>Avatar</code> API.
+    The translations of all joints relative to each's parent, in model coordinates. The values are in the     same order as the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the     <code>Avatar</code> API.
 
 
                         
@@ -12635,9 +12260,7 @@ number
                             
 
 
-    <p>Gets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, in
-model coordinates.
-</p>
+    <p>Gets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, inmodel coordinates.</p>
     <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
 
 
@@ -12724,8 +12347,7 @@ model coordinates.
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The scale, rotation, and translation transform from the user's real world to the avatar's size, 
-    orientation, and position in the virtual world.
+    The scale, rotation, and translation transform from the user's real world to the avatar's size,     orientation, and position in the virtual world.
 
 
                         
@@ -12797,13 +12419,7 @@ model coordinates.
                         
         <p class="code-caption">Report the sensor to world matrix.</p>
     
-    <pre class="prettyprint"><code>var sensorToWorldMatrix = MyAvatar.getSensorToWorldMatrix();
-print("Sensor to woprld matrix: " + JSON.stringify(sensorToWorldMatrix));
-print("Rotation: " + JSON.stringify(Mat4.extractRotation(sensorToWorldMatrix)));
-print("Translation: " + JSON.stringify(Mat4.extractTranslation(sensorToWorldMatrix)));
-print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var sensorToWorldMatrix = MyAvatar.getSensorToWorldMatrix();print("Sensor to woprld matrix: " + JSON.stringify(sensorToWorldMatrix));print("Rotation: " + JSON.stringify(Mat4.extractRotation(sensorToWorldMatrix)));print("Translation: " + JSON.stringify(Mat4.extractTranslation(sensorToWorldMatrix)));print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -12842,8 +12458,7 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The scale that transforms dimensions in the user's real world to the avatar's size in the virtual 
-    world.
+    The scale that transforms dimensions in the user's real world to the avatar's size in the virtual     world.
 
 
                         
@@ -12965,8 +12580,7 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
                             
 
 
-    <p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the domain. In contrast, the 
-<code>scale</code> property's value may be limited by the domain's settings.</p>
+    <p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the domain. In contrast, the <code>scale</code> property's value may be limited by the domain's settings.</p>
 
 
                         
@@ -13020,10 +12634,7 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
                         
         <p class="code-caption">Compare the target and current avatar scales.</p>
     
-    <pre class="prettyprint"><code>print("Current avatar scale: " + MyAvatar.scale);
-print("Target avatar scale:  " + MyAvatar.getTargetScale());
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>print("Current avatar scale: " + MyAvatar.scale);print("Target avatar scale:  " + MyAvatar.getTargetScale());// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -13958,8 +13569,7 @@ number
                             
 
 
-    <p>Sets the rotation of a joint relative to the avatar.
-</p>
+    <p>Sets the rotation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -14155,8 +13765,7 @@ number
                             
 
 
-    <p>Sets the translation of a joint relative to the avatar.
-</p>
+    <p>Sets the translation of a joint relative to the avatar.</p>
     <p><strong>Warning:</strong> Not able to be used in the <code>Avatar</code> API.</p>
 
 
@@ -14343,9 +13952,7 @@ number
                             
 
 
-    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using
-<a href="MyAvatar.html#.getAttachmentData">MyAvatar.getAttachmentData</a> or <a href="Avatar.html#.getAttachmentData">Avatar.getAttachmentData</a>, make changes to it, and then want to update your avatar's attachments per the 
-changed data. You can also remove all attachments by using setting <code>attachmentData</code> to <code>null</code>.</p>
+    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using<a href="MyAvatar.html#.getAttachmentData">MyAvatar.getAttachmentData</a> or <a href="Avatar.html#.getAttachmentData">Avatar.getAttachmentData</a>, make changes to it, and then want to update your avatar's attachments per the changed data. You can also remove all attachments by using setting <code>attachmentData</code> to <code>null</code>.</p>
 
 
                         
@@ -14442,8 +14049,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                     
 
 
-    <p>The attachment data defining the models to have attached to your avatar. Use
-    <code>null</code> to remove all attachments.</p>
+    <p>The attachment data defining the models to have attached to your avatar. Use    <code>null</code> to remove all attachments.</p>
 
 
                 
@@ -14460,18 +14066,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                         
         <p class="code-caption">Remove a hat attachment if your avatar is wearing it.</p>
     
-    <pre class="prettyprint"><code>var hatURL = "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx";
-var attachments = MyAvatar.getAttachmentData();
-
-for (var i = 0; i &lt; attachments.length; i++) {
-    if (attachments[i].modelURL === hatURL) {
-        attachments.splice(i, 1);
-        MyAvatar.setAttachmentData(attachments);
-        break;
-    }
- }
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>var hatURL = "https://s3.amazonaws.com/hifi-public/tony/cowboy-hat.fbx";var attachments = MyAvatar.getAttachmentData();for (var i = 0; i &lt; attachments.length; i++) {    if (attachments[i].modelURL === hatURL) {        attachments.splice(i, 1);        MyAvatar.setAttachmentData(attachments);        break;    } }// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -14519,9 +14114,7 @@ for (var i = 0; i &lt; attachments.length; i++) {
                             
 
 
-    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using
-<a href="MyAvatar.html#.getAttachmentsVariant">MyAvatar.getAttachmentsVariant</a> or <a href="Avatar.html#.getAttachmentsVariant">Avatar.getAttachmentsVariant</a>, make changes to it, and then want to 
-update your avatar's attachments per the changed data.</p>
+    <p>Sets all models currently attached to your avatar. For example, if you retrieve attachment data using<a href="MyAvatar.html#.getAttachmentsVariant">MyAvatar.getAttachmentsVariant</a> or <a href="Avatar.html#.getAttachmentsVariant">Avatar.getAttachmentsVariant</a>, make changes to it, and then want to update your avatar's attachments per the changed data.</p>
 
 
                         
@@ -14676,8 +14269,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                             
 
 
-    <p>Sets all avatar entities from an object.
-</p>
+    <p>Sets all avatar entities from an object.</p>
     <p><strong>Warning:</strong> Potentially an expensive call. Do not use if possible.</p>
 
 
@@ -14831,9 +14423,7 @@ Array.&lt;<a href="global.html#AttachmentData">AttachmentData</a>>
                             
 
 
-    <p>Sets the value of a blendshape to animate your avatar's face. In order for other users to see the resulting animations 
-on your avatar's face, set Avatar.hasScriptedBlendshapes to true. When you are done using this API, set 
-Avatar.hasScriptedBlendshapes back to false when the animation is complete.</p>
+    <p>Sets the value of a blendshape to animate your avatar's face. To enable other users to see the resulting animation of your avatar's face, set Avatar.hasScriptedBlendshapes to true while using this API and back to false when youranimation is complete.</p>
 
 
                         
@@ -14928,8 +14518,7 @@ string
                     
 
 
-    <p>The name of the blendshape, per the 
-    <a href="https://docs.highfidelity.com/create/avatars/avatar-standards.html#blendshapes">Avatar Standards</a>.</p>
+    <p>The name of the blendshape, per the     <a href="https://docs.highfidelity.com/create/avatars/avatar-standards.html#blendshapes">Avatar Standards</a>.</p>
 
 
                 
@@ -14979,10 +14568,7 @@ number
                         
         <p class="code-caption">Open your avatar's mouth wide.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.hasScriptedBlendshapes = true;
-MyAvatar.setBlendshape("JawOpen", 1.0);
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.hasScriptedBlendshapes = true;MyAvatar.setBlendshape("JawOpen", 1.0);// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -15030,10 +14616,7 @@ MyAvatar.setBlendshape("JawOpen", 1.0);
                             
 
 
-    <p class="important">Deprecated: This method is deprecated and will be removed.</p>
-Use Avatar.hasScriptedBlendshapes property instead.
-Enables blendshapes set using <a href="Avatar.html#.setBlendshape">Avatar.setBlendshape</a> or <a href="MyAvatar.html#.setBlendshape">MyAvatar.setBlendshape</a> to be transmitted to other 
-users so that they can see the animation of your avatar's face.
+    <p class="important">Deprecated: This method is deprecated and will be removed.</p>Use Avatar.hasScriptedBlendshapes property instead.Enables blendshapes set using <a href="Avatar.html#.setBlendshape">Avatar.setBlendshape</a> or <a href="MyAvatar.html#.setBlendshape">MyAvatar.setBlendshape</a> to be transmitted to other users so that they can see the animation of your avatar's face.
 
 
                         
@@ -15128,8 +14711,7 @@ boolean
                     
 
 
-    <p><code>true</code> to enable blendshape changes to be transmitted to other users, 
-    <code>false</code> to disable.</p>
+    <p><code>true</code> to enable blendshape changes to be transmitted to other users,     <code>false</code> to disable.</p>
 
 
                 
@@ -15187,8 +14769,7 @@ boolean
                             
 
 
-    <p>Sets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the 
-laser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
+    <p>Sets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the laser emanates from the tip of that finger, otherwise it emanates from the palm.</p>
 
 
                         
@@ -15341,14 +14922,8 @@ laser emanates from the tip of that finger, otherwise it emanates from the palm.
                             
 
 
-    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -15567,14 +15142,8 @@ string
                             
 
 
-    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation and position relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -15750,23 +15319,9 @@ number
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Set your avatar to it's default T-pose for a while.<br />
-<img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/t-pose.png" /></p>
+        <p class="code-caption">Set your avatar to it's default T-pose for a while.<br /><img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/t-pose.png" /></p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -15904,13 +15459,8 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Sets a specific joint's rotation relative to its parent.
-</p>
-    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse 
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation relative to its parent.</p>
+    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -16096,13 +15646,8 @@ number
                             
 
 
-    <p>Sets a specific joint's rotation relative to its parent.
-</p>
-    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse 
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's rotation relative to its parent.</p>
+    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -16245,27 +15790,9 @@ string
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br />
-<img alt="Avatar in T-pose with arm rotated" src="https://docs.highfidelity.com/images/armpose.png" /></p>
+        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br /><img alt="Avatar in T-pose with arm rotated" src="https://docs.highfidelity.com/images/armpose.png" /></p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Rotate the right arm.
-var newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };
-MyAvatar.setJointRotation("RightArm", newArmRotation);
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Rotate the right arm.var newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };MyAvatar.setJointRotation("RightArm", newArmRotation);// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -16313,13 +15840,8 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Sets the rotations of all joints in the current avatar. Each joint's rotation is relative to its parent joint.
-</p>
-    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets the rotations of all joints in the current avatar. Each joint's rotation is relative to its parent joint.</p>
+    <p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulatejoints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you setthe rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -16414,8 +15936,7 @@ Array.&lt;<a href="global.html#Quat">Quat</a>>
                     
 
 
-    <p>The rotations for all joints in the avatar. The values are in the same order as the 
-array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.</p>
+    <p>The rotations for all joints in the avatar. The values are in the same order as the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the <code>Avatar</code> API.</p>
 
 
                 
@@ -16430,32 +15951,9 @@ array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames<
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br />
-<img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/armpose.png" /></p>
+        <p class="code-caption">Set your avatar to its default T-pose then rotate its right arm.<br /><img alt="Avatar in T-pose" src="https://docs.highfidelity.com/images/armpose.png" /></p>
     
-    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.
-var i, length, rotation, translation;
-for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {
-    rotation = MyAvatar.getDefaultJointRotation(i);
-    translation = MyAvatar.getDefaultJointTranslation(i);
-    MyAvatar.setJointData(i, rotation, translation);
-}
-
-// Get all join rotations.
-var jointRotations = MyAvatar.getJointRotations(); 
-
-// Update the rotation of the right arm in the array.
-jointRotations[MyAvatar.getJointIndex("RightArm")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };
-
-// Update all joint rotations.
-MyAvatar.setJointRotations(jointRotations);
-
-// Restore your avatar's motion after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointsData();
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Set all joint translations and rotations to defaults.var i, length, rotation, translation;for (i = 0, length = MyAvatar.getJointNames().length; i &lt; length; i++) {    rotation = MyAvatar.getDefaultJointRotation(i);    translation = MyAvatar.getDefaultJointTranslation(i);    MyAvatar.setJointData(i, rotation, translation);}// Get all join rotations.var jointRotations = MyAvatar.getJointRotations(); // Update the rotation of the right arm in the array.jointRotations[MyAvatar.getJointIndex("RightArm")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };// Update all joint rotations.MyAvatar.setJointRotations(jointRotations);// Restore your avatar's motion after 5s.Script.setTimeout(function () {    MyAvatar.clearJointsData();}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -16503,14 +16001,8 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Sets a specific joint's translation relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's translation relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -16653,19 +16145,9 @@ string
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between 
-the head and body or you will see the neck stretched.<br />
-<img alt="Avatar with neck stretched" src="https://docs.highfidelity.com/images/stretched-neck.png" /></p>
+        <p class="code-caption">Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between the head and body or you will see the neck stretched.<br /><img alt="Avatar with neck stretched" src="https://docs.highfidelity.com/images/stretched-neck.png" /></p>
     
-    <pre class="prettyprint"><code>// Stretch your avatar's neck.
-MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));
-
-// Restore your avatar's neck after 5s.
-Script.setTimeout(function () {
-    MyAvatar.clearJointData("Neck");
-}, 5000);
-
-// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>// Stretch your avatar's neck.MyAvatar.setJointTranslation("Neck", Vec3.multiply(2, MyAvatar.getJointTranslation("Neck")));// Restore your avatar's neck after 5s.Script.setTimeout(function () {    MyAvatar.clearJointData("Neck");}, 5000);// Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -16713,14 +16195,8 @@ Script.setTimeout(function () {
                             
 
 
-    <p>Sets a specific joint's translation relative to its parent, in model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, 
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate 
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set 
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets a specific joint's translation relative to its parent, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints, the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -16906,15 +16382,8 @@ number
                             
 
 
-    <p>Sets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, in 
-model coordinates.
-</p>
-    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
-<p>Setting joint data completely overrides/replaces all motion from the default animation system including inverse
-kinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,
-the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulate
-joints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you set
-the rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
+    <p>Sets the translations of all joints in the current avatar. Each joint's translation is relative to its parent joint, in model coordinates.</p>
+    <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p><p>Setting joint data completely overrides/replaces all motion from the default animation system including inversekinematics, but just for the specified joint. So for example, if you were to procedurally manipulate the finger joints,the avatar's hand and head would still do inverse kinematics properly. However, as soon as you start to manipulatejoints in the inverse kinematics chain, the inverse kinematics might not function as you expect. For example, if you setthe rotation of the elbow, the hand inverse kinematics position won't end up in the right place.</p>
 
 
                         
@@ -17009,9 +16478,7 @@ Array.&lt;<a href="global.html#Vec3">Vec3</a>>
                     
 
 
-    <p>The translations for all joints in the avatar, in model coordinates. The values are in 
-    the same order as the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the 
-    <code>Avatar</code> API.</p>
+    <p>The translations for all joints in the avatar, in model coordinates. The values are in     the same order as the array returned by <a href="MyAvatar.html#.getJointNames">MyAvatar.getJointNames</a>, or <a href="Avatar.html#.getJointNames">Avatar.getJointNames</a> if using the     <code>Avatar</code> API.</p>
 
 
                 
@@ -17636,10 +17103,7 @@ string
                     
 
 
-    <p>The animation file's URL. Animation files need to be in glTF or FBX format but only need to 
-    contain the avatar skeleton and animation data. glTF models may be in JSON or binary format (".gltf" or ".glb" URLs 
-    respectively).
-    </p>
+    <p>The animation file's URL. Animation files need to be in glTF or FBX format but only need to     contain the avatar skeleton and animation data. glTF models may be in JSON or binary format (".gltf" or ".glb" URLs     respectively).    </p>
     <p><strong>Warning:</strong> glTF animations currently do not always animate correctly.</p>
 
 
@@ -18538,11 +18002,7 @@ Signal
                         
         <p class="code-caption">Report when your avatar display name changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.displayNameChanged.connect(function () {
-    print("Avatar display name changed to: " + MyAvatar.displayName);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.displayNameChanged.connect(function () {    print("Avatar display name changed to: " + MyAvatar.displayName);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -18722,11 +18182,7 @@ boolean
                         
         <p class="code-caption">Report when your look-at snapping setting changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.lookAtSnappingChanged.connect(function () {
-    print("Avatar look-at snapping changed to: " + MyAvatar.lookAtSnappingEnabled);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.lookAtSnappingChanged.connect(function () {    print("Avatar look-at snapping changed to: " + MyAvatar.lookAtSnappingEnabled);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -18839,11 +18295,7 @@ Signal
                         
         <p class="code-caption">Report when your avatar's session display name changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.sessionDisplayNameChanged.connect(function () {
-    print("Avatar session display name changed to: " + MyAvatar.sessionDisplayName);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.sessionDisplayNameChanged.connect(function () {    print("Avatar session display name changed to: " + MyAvatar.sessionDisplayName);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -18956,11 +18408,7 @@ Signal
                         
         <p class="code-caption">Report when your avatar's session UUID changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.sessionUUIDChanged.connect(function () {
-    print("Avatar session UUID changed to: " + MyAvatar.sessionUUID);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.sessionUUIDChanged.connect(function () {    print("Avatar session UUID changed to: " + MyAvatar.sessionUUID);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   
@@ -19073,11 +18521,7 @@ Signal
                         
         <p class="code-caption">Report when your avatar's skeleton model changes.</p>
     
-    <pre class="prettyprint"><code>MyAvatar.skeletonModelURLChanged.connect(function () {
-    print("Skeleton model changed to: " + MyAvatar.skeletonModelURL);
-});
-
-// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
+    <pre class="prettyprint"><code>MyAvatar.skeletonModelURLChanged.connect(function () {    print("Skeleton model changed to: " + MyAvatar.skeletonModelURL);});// Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".</code></pre>
 
                     
                   

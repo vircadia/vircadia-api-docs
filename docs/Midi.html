@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -61,11 +62,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Midi</code> API provides the ability to connect Interface with musical instruments and other external or virtual 
-devices via the MIDI protocol. For further information and examples, see the tutorial: 
-<a href="https://docs.highfidelity.com/script/midi-tutorial.html">Use MIDI to Control Your Environment</a>.
-
-<p><strong>Note:</strong> Only works on Windows.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Midi</code> API provides the ability to connect Interface with musical instruments and other external or virtual devices via the MIDI protocol. For further information and examples, see the tutorial: <a href="https://docs.highfidelity.com/script/midi-tutorial.html">Use MIDI to Control Your Environment</a>.<p><strong>Note:</strong> Only works on Windows.</p></div>
                 
 
                 
@@ -2006,8 +2003,7 @@ object
                     
 
 
-    <p>A MIDI message.
-</p>
+    <p>A MIDI message.</p>
     <p><strong>Warning:</strong> The <code>status</code> property is NOT a MIDI status value.</p>
 
 
@@ -2389,22 +2385,7 @@ number
                     
 
 
-    <p>A MIDI status value. The following MIDI status values are supported:</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Description</th>
-  </thead>
-  <tbody>
-    <tr><td><code>8</code></td><td>Note off.</td></tr>
-    <tr><td><code>9</code></td><td>Note on.</td></tr>
-    <tr><td><code>10</code></td><td>Polyphonic key pressure.</td></tr>
-    <tr><td><code>11</code></td><td>Control change.</td></tr>
-    <tr><td><code>12</code></td><td>Program change.</td></tr>
-    <tr><td><code>13</code></td><td>Channel pressure.</td></tr>
-    <tr><td><code>14</code></td><td>Pitch bend.</td></tr>
-    <tr><td><code>15</code></td><td>System message.</td></tr>
-  </tbody>
-</table>
+    <p>A MIDI status value. The following MIDI status values are supported:</p><table>  <thead>    <tr><th>Value</th><th>Description</th>  </thead>  <tbody>    <tr><td><code>8</code></td><td>Note off.</td></tr>    <tr><td><code>9</code></td><td>Note on.</td></tr>    <tr><td><code>10</code></td><td>Polyphonic key pressure.</td></tr>    <tr><td><code>11</code></td><td>Control change.</td></tr>    <tr><td><code>12</code></td><td>Program change.</td></tr>    <tr><td><code>13</code></td><td>Channel pressure.</td></tr>    <tr><td><code>14</code></td><td>Pitch bend.</td></tr>    <tr><td><code>15</code></td><td>System message.</td></tr>  </tbody></table>
 
 
                                     
@@ -2479,26 +2460,8 @@ number
                     
 
 
-    <p>An integer DWORD (unsigned 32 bit) message with bits having values as follows:
-</p>
-    <table>
-  <tbody>
-    <tr>
-      <td width=25%><code>00000000</code></td>
-      <td width=25%><code>0vvvvvvv</code></td>
-      <td width=25%><code>0nnnnnnn</code></td>
-      <td width=12%><code>1sss</code></td>
-      <td width=12%><code>cccc</code></td>
-  </tbody>
-</table>
-<p>Where:</p>
-<ul>
-  <li><code>v</code> = Velocity.
-  <li><code>n</code> = Note.
-  <li><code>s</code> = Status - <a href="Midi.html#.MidiStatus">Midi.MidiStatus</a>
-  <li><code>c</code> = Channel.
-</ul>
-<p>The number in the first bit of each byte denotes whether it is a command (1) or data (0).
+    <p>An integer DWORD (unsigned 32 bit) message with bits having values as follows:</p>
+    <table>  <tbody>    <tr>      <td width=25%><code>00000000</code></td>      <td width=25%><code>0vvvvvvv</code></td>      <td width=25%><code>0nnnnnnn</code></td>      <td width=12%><code>1sss</code></td>      <td width=12%><code>cccc</code></td>  </tbody></table><p>Where:</p><ul>  <li><code>v</code> = Velocity.  <li><code>n</code> = Note.  <li><code>s</code> = Status - <a href="Midi.html#.MidiStatus">Midi.MidiStatus</a>  <li><code>c</code> = Channel.</ul><p>The number in the first bit of each byte denotes whether it is a command (1) or data (0).
 
 
                                     
@@ -2955,8 +2918,7 @@ boolean
                     
 
 
-    <p><code>true</code> to have "send" functions broadcast to all devices, <code>false</code> to 
-    have them send to specific output devices.</p>
+    <p><code>true</code> to have "send" functions broadcast to all devices, <code>false</code> to     have them send to specific output devices.</p>
 
 
                 
@@ -4059,8 +4021,7 @@ boolean
                     
 
 
-    <p><code>true</code> to enable repeating all incoming notes to all output, <code>false</code> to 
-    disable.</p>
+    <p><code>true</code> to enable repeating all incoming notes to all output, <code>false</code> to     disable.</p>
 
 
                 

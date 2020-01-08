@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -63,13 +64,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Overlays</code> API provides facilities to create and interact with overlays. These are 2D and 3D objects visible 
-only to yourself and that aren't persisted to the domain. They are used for UI.
-
-<p><strong>Note:</strong> 3D overlays are local <a href="Entities.html">Entities</a>, internally, so many of the methods also work with 
-entities.</p>
-
-<p class="important">3D overlays are deprecated: Use local <a href="Entities.html">Entities</a> for these instead.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Overlays</code> API provides facilities to create and interact with overlays. These are 2D and 3D objects visible only to yourself and that aren't persisted to the domain. They are used for UI.<p><strong>Note:</strong> 3D overlays are local <a href="Entities.html">Entities</a>, internally, so many of the methods also work with entities.</p><p class="important">3D overlays are deprecated: Use local <a href="Entities.html">Entities</a> for these instead.</p></div>
                 
 
                 
@@ -124,9 +119,7 @@ entities.</p>
                     
 
 
-    <p>The <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-    (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus. If no overlay (entity) has keyboard focus, 
-    returns <code>null</code>; set to <code>null</code> or <a href="Uuid.html">Uuid.NULL</a> to clear keyboard focus.</p>
+    <p>The <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay     (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus. If no overlay (entity) has keyboard focus,     returns <code>null</code>; set to <code>null</code> or <a href="Uuid.html">Uuid.NULL</a> to clear keyboard focus.</p>
 
 
                 
@@ -300,12 +293,7 @@ entities.</p>
     
         <p class="code-caption">Add a cube overlay in front of your avatar.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});</code></pre>
 
 
 -->
@@ -339,8 +327,7 @@ entities.</p>
                     
 
 
-    <p>Creates a clone of an existing overlay (or entity).
-</p>
+    <p>Creates a clone of an existing overlay (or entity).</p>
     <p>Note: For cloning behavior of 3D overlays and entities, see <a href="Entities.html#.cloneEntity">Entities.cloneEntity</a>.</p>
 
 
@@ -595,17 +582,7 @@ boolean
     
         <p class="code-caption">Add an overlay in front of your avatar then change its color.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-
-var success = Overlays.editOverlay(overlay, {
-    color: { red: 255, green: 0, blue: 0 }
-});
-print("Success: " + success);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var success = Overlays.editOverlay(overlay, {    color: { red: 255, green: 0, blue: 0 }});print("Success: " + success);</code></pre>
 
 
 -->
@@ -709,24 +686,7 @@ boolean
     
         <p class="code-caption">Create two overlays in front of your avatar then change their colors.</p>
     
-    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var overlayB = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-
-var overlayEdits = {};
-overlayEdits[overlayA] = { color: { red: 255, green: 0, blue: 0 } };
-overlayEdits[overlayB] = { color: { red: 0, green: 255, blue: 0 } };
-var success = Overlays.editOverlays(overlayEdits);
-print("Success: " + success);</code></pre>
+    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var overlayB = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var overlayEdits = {};overlayEdits[overlayA] = { color: { red: 255, green: 0, blue: 0 } };overlayEdits[overlayB] = { color: { red: 0, green: 255, blue: 0 } };var success = Overlays.editOverlays(overlayEdits);print("Success: " + success);</code></pre>
 
 
 -->
@@ -830,23 +790,7 @@ Array.&lt;<a href="global.html#Uuid">Uuid</a>>
     
         <p class="code-caption">Create two overlays in front of your avatar then search for overlays near your avatar.</p>
     
-    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay A: " + overlayA);
-var overlayB = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay B: " + overlayB);
-
-var overlaysFound = Overlays.findOverlays(MyAvatar.position, 5.0);
-print("Overlays found: " + JSON.stringify(overlaysFound));</code></pre>
+    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay A: " + overlayA);var overlayB = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay B: " + overlayB);var overlaysFound = Overlays.findOverlays(MyAvatar.position, 5.0);print("Overlays found: " + JSON.stringify(overlaysFound));</code></pre>
 
 
 -->
@@ -948,21 +892,9 @@ print("Overlays found: " + JSON.stringify(overlaysFound));</code></pre>
 
     <h5>Example</h5>
     
-        <p class="code-caption">Create a cube overlay in front of your avatar. Report 3D overlay intersection details for mouse 
-    clicks.</p>
+        <p class="code-caption">Create a cube overlay in front of your avatar. Report 3D overlay intersection details for mouse     clicks.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-
-Controller.mousePressEvent.connect(function (event) {
-    var pickRay = Camera.computePickRay(event.x, event.y);
-    var intersection = Overlays.findRayIntersection(pickRay);
-    print("Intersection: " + JSON.stringify(intersection));
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});Controller.mousePressEvent.connect(function (event) {    var pickRay = Camera.computePickRay(event.x, event.y);    var intersection = Overlays.findRayIntersection(pickRay);    print("Intersection: " + JSON.stringify(intersection));});</code></pre>
 
 
 -->
@@ -996,8 +928,7 @@ Controller.mousePressEvent.connect(function (event) {
                     
 
 
-    <p>Gets the ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-(<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
+    <p>Gets the ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
 
 
                 
@@ -1164,16 +1095,7 @@ Controller.mousePressEvent.connect(function (event) {
     
         <p class="code-caption">Create a 2D overlay and add an event function that reports the overlay clicked on, if any.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("rectangle", {
-    bounds: { x: 100, y: 100, width: 200, height: 100 },
-    color: { red: 255, green: 255, blue: 255 }
-});
-print("Created: " + overlay);
-
-Controller.mousePressEvent.connect(function (event) {
-    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });
-    print("Clicked: " + overlay);
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("rectangle", {    bounds: { x: 100, y: 100, width: 200, height: 100 },    color: { red: 255, green: 255, blue: 255 }});print("Created: " + overlay);Controller.mousePressEvent.connect(function (event) {    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });    print("Clicked: " + overlay);});</code></pre>
 
 
 -->
@@ -1207,18 +1129,8 @@ object
                     
 
 
-    <p>Gets an overlay's (or entity's) script object. In particular, this is useful for accessing a 
-<code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay's <code>EventBridge</code> script object to 
-exchange messages with the web page script.
-</p>
-    <p>To send a message from an Interface script to a <code>"web3d"</code> overlay over its event bridge:</p>
-<pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);
-overlayObject.emitScriptEvent(message);</code></pre>
-<p>To receive a message from a <code>"web3d"</code> overlay over its event bridge in an Interface script:</p>
-<pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);
-overlayObject.webEventReceived.connect(function(message) {
-    ...
-};</code></pre>
+    <p>Gets an overlay's (or entity's) script object. In particular, this is useful for accessing a <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay's <code>EventBridge</code> script object to exchange messages with the web page script.</p>
+    <p>To send a message from an Interface script to a <code>"web3d"</code> overlay over its event bridge:</p><pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);overlayObject.emitScriptEvent(message);</code></pre><p>To receive a message from a <code>"web3d"</code> overlay over its event bridge in an Interface script:</p><pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);overlayObject.webEventReceived.connect(function(message) {    ...};</code></pre>
 
 
                 
@@ -1288,57 +1200,7 @@ overlayObject.webEventReceived.connect(function(message) {
     
         <p class="code-caption">Exchange messages with a <code>"web3d"</code> overlay.</p>
     
-    <pre class="prettyprint"><code>// HTML file, name: "web3d.html".
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-    &lt;title>HELLO&lt;/title>
-&lt;/head>
-&lt;body>
-    &lt;h1>HELLO&lt;/h1>
-    &lt;script>
-        function onScriptEventReceived(message) {
-            // Message received from the script.
-            console.log("Message received: " + message);
-        }
-
-        EventBridge.scriptEventReceived.connect(onScriptEventReceived);
-
-        setInterval(function () {
-            // Send a message to the script.
-            EventBridge.emitWebEvent("hello");
-        }, 2000);
-    &lt;/script>
-&lt;/body>
-&lt;/html>
-
-// Interface script file.
-var web3DOverlay = Overlays.addOverlay("web3d", {
-    type: "Web",
-    position : Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y : 0.5, z : -3 })),
-    rotation : MyAvatar.orientation,
-    sourceUrl : Script.resolvePath("web3d.html"),
-    alpha : 1.0
-    });
-
-var overlayObject;
-
-function onWebEventReceived(message) {
-    // Message received.
-    print("Message received: " + message);
-
-    // Send a message back.
-    overlayObject.emitScriptEvent(message + " back");
-}
-
-Script.setTimeout(function() {
-    overlayObject = Overlays.getOverlayObject(web3DOverlay);
-    overlayObject.webEventReceived.connect(onWebEventReceived);
-}, 500);
-
-Script.scriptEnding.connect(function() {
-    Overlays.deleteOverlay(web3DOverlay);
-});</code></pre>
+    <pre class="prettyprint"><code>// HTML file, name: "web3d.html".&lt;!DOCTYPE html>&lt;html>&lt;head>    &lt;title>HELLO&lt;/title>&lt;/head>&lt;body>    &lt;h1>HELLO&lt;/h1>    &lt;script>        function onScriptEventReceived(message) {            // Message received from the script.            console.log("Message received: " + message);        }        EventBridge.scriptEventReceived.connect(onScriptEventReceived);        setInterval(function () {            // Send a message to the script.            EventBridge.emitWebEvent("hello");        }, 2000);    &lt;/script>&lt;/body>&lt;/html>// Interface script file.var web3DOverlay = Overlays.addOverlay("web3d", {    type: "Web",    position : Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y : 0.5, z : -3 })),    rotation : MyAvatar.orientation,    sourceUrl : Script.resolvePath("web3d.html"),    alpha : 1.0    });var overlayObject;function onWebEventReceived(message) {    // Message received.    print("Message received: " + message);    // Send a message back.    overlayObject.emitScriptEvent(message + " back");}Script.setTimeout(function() {    overlayObject = Overlays.getOverlayObject(web3DOverlay);    overlayObject.webEventReceived.connect(onWebEventReceived);}, 500);Script.scriptEnding.connect(function() {    Overlays.deleteOverlay(web3DOverlay);});</code></pre>
 
 
 -->
@@ -1442,23 +1304,7 @@ object.&lt;<a href="global.html#Uuid">Uuid</a>, <a href="Overlays.html#.OverlayP
     
         <p class="code-caption">Create two cube overlays in front of your avatar then get some of their properties.</p>
     
-    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var overlayB = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var propertiesToGet = {};
-propertiesToGet[overlayA] = ["color", "alpha"];
-propertiesToGet[overlayB] = ["dimensions"];
-var properties = Overlays.getOverlaysProperties(propertiesToGet);
-print("Overlays properties: " + JSON.stringify(properties));</code></pre>
+    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var overlayB = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var propertiesToGet = {};propertiesToGet[overlayA] = ["color", "alpha"];propertiesToGet[overlayB] = ["dimensions"];var properties = Overlays.getOverlaysProperties(propertiesToGet);print("Overlays properties: " + JSON.stringify(properties));</code></pre>
 
 
 -->
@@ -1562,14 +1408,7 @@ print("Overlays properties: " + JSON.stringify(properties));</code></pre>
     
         <p class="code-caption">Create an overlay in front of your avatar then get and report its type.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var type = Overlays.getOverlayType(overlay);
-print("Type: " + type); // cube</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var type = Overlays.getOverlayType(overlay);print("Type: " + type); // cube</code></pre>
 
 
 -->
@@ -1603,8 +1442,7 @@ print("Type: " + type); // cube</code></pre>
                     
 
 
-    <p>Gets specified property values of a 3D overlay (or entity).
-</p>
+    <p>Gets specified property values of a 3D overlay (or entity).</p>
     <p><strong>Note:</strong> 2D overlays' property values cannot be retrieved.</p>
 
 
@@ -1675,14 +1513,7 @@ print("Type: " + type); // cube</code></pre>
     
         <p class="code-caption">Create an overlay in front of your avatar then report some of its properties.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var properties = Overlays.getProperties(overlay, ["color", "alpha", "grabbable"]);
-print("Overlay properties: " + JSON.stringify(properties));</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var properties = Overlays.getProperties(overlay, ["color", "alpha", "grabbable"]);print("Overlay properties: " + JSON.stringify(properties));</code></pre>
 
 
 -->
@@ -1716,8 +1547,7 @@ object
                     
 
 
-    <p>Gets a specified property value of a 3D overlay (or entity).
-</p>
+    <p>Gets a specified property value of a 3D overlay (or entity).</p>
     <p><strong>Note:</strong> 2D overlays' property values cannot be retrieved.</p>
 
 
@@ -1788,14 +1618,7 @@ object
     
         <p class="code-caption">Create an overlay in front of your avatar then report its alpha property value.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var alpha = Overlays.getProperty(overlay, "alpha");
-print("Overlay alpha: " + alpha);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var alpha = Overlays.getProperty(overlay, "alpha");print("Overlay alpha: " + alpha);</code></pre>
 
 
 -->
@@ -2023,9 +1846,7 @@ boolean
                     
 
 
-    <p>Checks whether an overlay's (or entity's) assets have been loaded. For example, for an 
-<code><a href="Overlays.html#.OverlayProperties-Image">"image"</a></code> overlay, the result indicates whether its image has been 
-loaded.</p>
+    <p>Checks whether an overlay's (or entity's) assets have been loaded. For example, for an <code><a href="Overlays.html#.OverlayProperties-Image">"image"</a></code> overlay, the result indicates whether its image has been loaded.</p>
 
 
                 
@@ -2095,14 +1916,7 @@ loaded.</p>
     
         <p class="code-caption">Create an image overlay and report whether its image is loaded after 1s.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("image", {
-    bounds: { x: 100, y: 100, width: 200, height: 200 },
-    imageURL: "https://content.highfidelity.com/DomainContent/production/Particles/wispy-smoke.png"
-});
-Script.setTimeout(function () {
-    var isLoaded = Overlays.isLoaded(overlay);
-    print("Image loaded: " + isLoaded);
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("image", {    bounds: { x: 100, y: 100, width: 200, height: 200 },    imageURL: "https://content.highfidelity.com/DomainContent/production/Particles/wispy-smoke.png"});Script.setTimeout(function () {    var isLoaded = Overlays.isLoaded(overlay);    print("Image loaded: " + isLoaded);}, 1000);</code></pre>
 
 
 -->
@@ -2542,39 +2356,9 @@ Script.setTimeout(function () {
 
     <h5>Example</h5>
     
-        <p class="code-caption">Create a 2D rectangle overlay plus a 3D cube overlay and generate mousePressOnOverlay events for the 
-2D overlay.</p>
+        <p class="code-caption">Create a 2D rectangle overlay plus a 3D cube overlay and generate mousePressOnOverlay events for the 2D overlay.</p>
     
-    <pre class="prettyprint"><code>var overlay3D = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("3D overlay: " + overlay);
-
-var overlay2D = Overlays.addOverlay("rectangle", {
-    bounds: { x: 100, y: 100, width: 200, height: 100 },
-    color: { red: 255, green: 255, blue: 255 }
-});
-print("2D overlay: " + overlay);
-
-// Overlays.mousePressOnOverlay by default applies only to 3D overlays.
-Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
-    print("Clicked: " + overlayID);
-});
-
-Controller.mousePressEvent.connect(function (event) {
-    // Overlays.getOverlayAtPoint applies only to 2D overlays.
-    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });
-    if (overlay) {
-        Overlays.sendMousePressOnOverlay(overlay, {
-            type: "press",
-            id: 0,
-            pos2D: event
-        });
-    }
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay3D = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("3D overlay: " + overlay);var overlay2D = Overlays.addOverlay("rectangle", {    bounds: { x: 100, y: 100, width: 200, height: 100 },    color: { red: 255, green: 255, blue: 255 }});print("2D overlay: " + overlay);// Overlays.mousePressOnOverlay by default applies only to 3D overlays.Overlays.mousePressOnOverlay.connect(function(overlayID, event) {    print("Clicked: " + overlayID);});Controller.mousePressEvent.connect(function (event) {    // Overlays.getOverlayAtPoint applies only to 2D overlays.    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });    if (overlay) {        Overlays.sendMousePressOnOverlay(overlay, {            type: "press",            id: 0,            pos2D: event        });    }});</code></pre>
 
 
 -->
@@ -2685,8 +2469,7 @@ Controller.mousePressEvent.connect(function (event) {
                     
 
 
-    <p>Sets the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-(<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
+    <p>Sets the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
 
 
                 
@@ -2783,10 +2566,8 @@ Controller.mousePressEvent.connect(function (event) {
                     
 
 
-    <p>Calculates the size of some text in a text overlay (or entity). The overlay (or entity) need not be set visible.
-</p>
-    <p><strong>Note:</strong> The size of text in a 3D overlay (or entity) cannot be calculated immediately after the 
-overlay (or entity) is created; a short delay is required while the overlay (or entity) finishes being created.</p>
+    <p>Calculates the size of some text in a text overlay (or entity). The overlay (or entity) need not be set visible.</p>
+    <p><strong>Note:</strong> The size of text in a 3D overlay (or entity) cannot be calculated immediately after the overlay (or entity) is created; a short delay is required while the overlay (or entity) finishes being created.</p>
 
 
                 
@@ -2856,17 +2637,7 @@ overlay (or entity) is created; a short delay is required while the overlay (or 
     
         <p class="code-caption">Calculate the size of "hello" in a 3D text entity.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("text3d", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -2 })),
-    rotation: MyAvatar.orientation,
-    lineHeight: 0.2,
-    visible: false
-});
-
-Script.setTimeout(function() {
-    var textSize = Overlays.textSize(overlay, "hello");
-    print("Size of \"hello\": " + JSON.stringify(textSize));
-}, 500);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("text3d", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -2 })),    rotation: MyAvatar.orientation,    lineHeight: 0.2,    visible: false});Script.setTimeout(function() {    var textSize = Overlays.textSize(overlay, "hello");    print("Size of \"hello\": " + JSON.stringify(textSize));}, 500);</code></pre>
 
 
 -->
@@ -2997,8 +2768,7 @@ number
                         
 
 
-    <p>Triggered when a mouse cursor starts hovering over an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendHoverEnterOverlay">sendHoverEnterOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse cursor starts hovering over an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendHoverEnterOverlay">sendHoverEnterOverlay</a> for a 2D overlay).</p>
 
 
                     
@@ -3066,19 +2836,9 @@ number
 
     <h5>Example</h5>
     
-        <p class="code-caption">Create a cube overlay in front of your avatar and report when you start hovering your mouse over
-    it.</p>
+        <p class="code-caption">Create a cube overlay in front of your avatar and report when you start hovering your mouse over    it.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay: " + overlay);
-Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
-    print("Hover enter: " + overlayID);
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay: " + overlay);Overlays.hoverEnterOverlay.connect(function(overlayID, event) {    print("Hover enter: " + overlayID);});</code></pre>
 
 
 -->
@@ -3097,8 +2857,7 @@ Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
                         
 
 
-    <p>Triggered when a mouse cursor finishes hovering over an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendHoverLeaveOverlay">sendHoverLeaveOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse cursor finishes hovering over an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendHoverLeaveOverlay">sendHoverLeaveOverlay</a> for a 2D overlay).</p>
 
 
                     
@@ -3180,8 +2939,7 @@ Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
                         
 
 
-    <p>Triggered when a mouse cursor continues hovering over an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendHoverOverOverlay">sendHoverOverOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse cursor continues hovering over an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendHoverOverOverlay">sendHoverOverOverlay</a> for a 2D overlay).</p>
 
 
                     
@@ -3427,8 +3185,7 @@ Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
                         
 
 
-    <p>Triggered when a mouse move event occurs on an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendMouseMoveOnOverlay">sendMouseMoveOnOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse move event occurs on an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendMouseMoveOnOverlay">sendMouseMoveOnOverlay</a> for a 2D overlay).</p>
 
 
                     
@@ -3592,8 +3349,7 @@ Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
                         
 
 
-    <p>Triggered when a mouse press event occurs on an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendMousePressOnOverlay">sendMousePressOnOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse press event occurs on an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendMousePressOnOverlay">sendMousePressOnOverlay</a> for a 2D overlay).</p>
 
 
                     
@@ -3663,19 +3419,7 @@ Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
     
         <p class="code-caption">Create a cube overlay in front of your avatar and report mouse clicks on it.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("My overlay: " + overlay);
-
-Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
-    if (overlayID === overlay) {
-        print("Clicked on my overlay");
-    }
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("My overlay: " + overlay);Overlays.mousePressOnOverlay.connect(function(overlayID, event) {    if (overlayID === overlay) {        print("Clicked on my overlay");    }});</code></pre>
 
 
 -->
@@ -3694,8 +3438,7 @@ Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
                         
 
 
-    <p>Triggered when a mouse release event occurs on an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendMouseReleaseOnOverlay">sendMouseReleaseOnOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse release event occurs on an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendMouseReleaseOnOverlay">sendMouseReleaseOnOverlay</a> for a 2D overlay).</p>
 
 
                     
@@ -3847,20 +3590,7 @@ Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
     
         <p class="code-caption">Create an overlay then delete it after 1s.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay: " + overlay);
-
-Overlays.overlayDeleted.connect(function(overlayID) {
-    print("Deleted: " + overlayID);
-});
-Script.setTimeout(function () {
-    Overlays.deleteOverlay(overlay);
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay: " + overlay);Overlays.overlayDeleted.connect(function(overlayID) {    print("Deleted: " + overlayID);});Script.setTimeout(function () {    Overlays.deleteOverlay(overlay);}, 1000);</code></pre>
 
 
 -->
@@ -3895,9 +3625,7 @@ object
                     
 
 
-    <p>Different overlay types have different properties: some common to all overlays (listed in the table) and some specific to 
-each <a href="Overlays.html#.OverlayType">OverlayType</a> (linked to below).
-</p>
+    <p>Different overlay types have different properties: some common to all overlays (listed in the table) and some specific to each <a href="Overlays.html#.OverlayType">OverlayType</a> (linked to below).</p>
     <p>3D overlays are local entities, internally, so they also support the relevant entity's properties.</p>
 
 
@@ -4134,11 +3862,7 @@ object
                     
 
 
-    <p>The <code>"circle3d"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D circles.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Gizmo">Gizmo</a> entity, with the 
-<code>gizmoType</code> property value being <code>"ring"</code>.
-</p>
+    <p>The <code>"circle3d"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D circles.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Gizmo">Gizmo</a> entity, with the <code>gizmoType</code> property value being <code>"ring"</code>.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -4296,8 +4020,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -4332,10 +4055,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -4370,10 +4090,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -4408,8 +4125,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -4442,8 +4158,7 @@ number
                     
 
 
-    <p>The dimensions of the overlay. Synonyms: <code>scale</code>, <code>size</code>.
-    <em>Read-only.</em></p>
+    <p>The dimensions of the overlay. Synonyms: <code>scale</code>, <code>size</code>.    <em>Read-only.</em></p>
 
 
                 
@@ -4509,8 +4224,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -4543,8 +4257,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>. Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>. Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -4577,10 +4290,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is 
-    rendered as a wire frame. 
-    Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.
-    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
+    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is     rendered as a wire frame.     Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
 
 
                 
@@ -4615,9 +4325,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -4652,8 +4360,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -4688,8 +4395,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -4794,9 +4500,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -4971,9 +4675,7 @@ number
                     
 
 
-    <p>Sets the color of the overlay. Setting this value sets the values of <code>innerStartColor</code>, 
-    <code>innerEndColor</code>, <code>outerStartColor</code>, and <code>outerEndColor</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the color of the overlay. Setting this value sets the values of <code>innerStartColor</code>,     <code>innerEndColor</code>, <code>outerStartColor</code>, and <code>outerEndColor</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5006,8 +4708,7 @@ number
                     
 
 
-    <p>Sets the values of <code>innerStartColor</code> and <code>outerStartColor</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>innerStartColor</code> and <code>outerStartColor</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5040,8 +4741,7 @@ number
                     
 
 
-    <p>Sets the values of <code>innerEndColor</code> and <code>outerEndColor</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>innerEndColor</code> and <code>outerEndColor</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5074,8 +4774,7 @@ number
                     
 
 
-    <p>Sets the values of <code>innerStartColor</code> and <code>innerEndColor</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>innerStartColor</code> and <code>innerEndColor</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5108,8 +4807,7 @@ number
                     
 
 
-    <p>Sets the values of <code>outerStartColor</code> and <code>outerEndColor</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>outerStartColor</code> and <code>outerEndColor</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5282,9 +4980,7 @@ number
                     
 
 
-    <p>Sets the opacity of the overlay, <code>0.0</code> &ndash; <code>1.0</code>. Setting this value 
-    sets the values of <code>innerStartAlpha</code>, <code>innerEndAlpha</code>, <code>outerStartAlpha</code>, and
-    <code>outerEndAlpha</code>. Synonym: <code>Alpha</code>.</p>
+    <p>Sets the opacity of the overlay, <code>0.0</code> &ndash; <code>1.0</code>. Setting this value     sets the values of <code>innerStartAlpha</code>, <code>innerEndAlpha</code>, <code>outerStartAlpha</code>, and    <code>outerEndAlpha</code>. Synonym: <code>Alpha</code>.</p>
 
 
                 
@@ -5317,8 +5013,7 @@ number
                     
 
 
-    <p>Sets the values of <code>innerStartAlpha</code> and <code>outerStartAlpha</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>innerStartAlpha</code> and <code>outerStartAlpha</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5351,8 +5046,7 @@ number
                     
 
 
-    <p>Sets the values of <code>innerEndAlpha</code> and <code>outerEndAlpha</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>innerEndAlpha</code> and <code>outerEndAlpha</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5385,8 +5079,7 @@ number
                     
 
 
-    <p>Sets the values of <code>innerStartAlpha</code> and <code>innerEndAlpha</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>innerStartAlpha</code> and <code>innerEndAlpha</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5419,8 +5112,7 @@ number
                     
 
 
-    <p>Sets the values of <code>outerStartAlpha</code> and <code>outerEndAlpha</code>.
-    <em>Write-only.</em></p>
+    <p>Sets the values of <code>outerStartAlpha</code> and <code>outerEndAlpha</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -5453,8 +5145,7 @@ number
                     
 
 
-    <p>The opacity at the inner start point of the overlay, <code>0.0</code> &ndash; 
-    <code>1.0</code>.</p>
+    <p>The opacity at the inner start point of the overlay, <code>0.0</code> &ndash;     <code>1.0</code>.</p>
 
 
                 
@@ -5489,8 +5180,7 @@ number
                     
 
 
-    <p>The opacity at the inner end point of the overlay, <code>0.0</code> &ndash; 
-    <code>1.0</code>.</p>
+    <p>The opacity at the inner end point of the overlay, <code>0.0</code> &ndash;     <code>1.0</code>.</p>
 
 
                 
@@ -5525,8 +5215,7 @@ number
                     
 
 
-    <p>The opacity at the outer start point of the overlay, <code>0.0</code> &ndash; 
-    <code>1.0</code>.</p>
+    <p>The opacity at the outer start point of the overlay, <code>0.0</code> &ndash;     <code>1.0</code>.</p>
 
 
                 
@@ -5561,8 +5250,7 @@ number
                     
 
 
-    <p>The opacity at the outer end point of the overlay, <code>0.0</code> &ndash; 
-    <code>1.0</code>.</p>
+    <p>The opacity at the outer end point of the overlay, <code>0.0</code> &ndash;     <code>1.0</code>.</p>
 
 
                 
@@ -5702,8 +5390,7 @@ number
                     
 
 
-    <p>The length of the major tick marks, in meters. A positive value draws tick marks
-    outwards from the inner radius; a negative value draws tick marks inwards from the outer radius.</p>
+    <p>The length of the major tick marks, in meters. A positive value draws tick marks    outwards from the inner radius; a negative value draws tick marks inwards from the outer radius.</p>
 
 
                 
@@ -5738,8 +5425,7 @@ number
                     
 
 
-    <p>The length of the minor tick marks, in meters. A positive value draws tick marks
-    outwards from the inner radius; a negative value draws tick marks inwards from the outer radius.</p>
+    <p>The length of the minor tick marks, in meters. A positive value draws tick marks    outwards from the inner radius; a negative value draws tick marks inwards from the outer radius.</p>
 
 
                 
@@ -5892,10 +5578,7 @@ object
                     
 
 
-    <p>The <code>"cube"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D cubes.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Box">Box</a> entity.
-</p>
+    <p>The <code>"cube"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D cubes.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Box">Box</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -6123,8 +5806,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -6159,10 +5841,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -6197,10 +5876,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -6235,8 +5911,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -6335,8 +6010,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -6369,8 +6043,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -6403,10 +6076,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is 
-    rendered as a wire frame. 
-    Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.
-    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
+    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is     rendered as a wire frame.     Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
 
 
                 
@@ -6441,9 +6111,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code> 
-    if they don't. 
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>     if they don't.     Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -6478,8 +6146,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind 
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind     the HUD surface.</p>
 
 
                 
@@ -6514,8 +6181,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the 
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the     HUD surface.</p>
 
 
                 
@@ -6620,9 +6286,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is 
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather 
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is     parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather     than a joint.</p>
 
 
                 
@@ -6705,10 +6369,7 @@ object
                     
 
 
-    <p>The <code>"grid"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D grids.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Grid">Grid</a> entity.
-</p>
+    <p>The <code>"grid"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D grids.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Grid">Grid</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -6936,8 +6597,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -6972,10 +6632,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -7010,10 +6667,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -7048,8 +6702,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -7148,8 +6801,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -7182,8 +6834,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>. Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>. Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -7216,9 +6867,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -7253,8 +6902,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -7289,8 +6937,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -7395,9 +7042,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -7480,8 +7125,7 @@ object
                     
 
 
-    <p>The <code>"image"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 2D images.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.</p>
+    <p>The <code>"image"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 2D images.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.</p>
 
 
                                     
@@ -7568,8 +7212,7 @@ number
                     
 
 
-    <p>Integer left, x-coordinate value of the image display area = <code>bounds.x</code>.
-    <em>Write-only.</em></p>
+    <p>Integer left, x-coordinate value of the image display area = <code>bounds.x</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -7602,8 +7245,7 @@ number
                     
 
 
-    <p>Integer top, y-coordinate value of the image display area = <code>bounds.y</code>.
-    <em>Write-only.</em></p>
+    <p>Integer top, y-coordinate value of the image display area = <code>bounds.y</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -7702,8 +7344,7 @@ string
                     
 
 
-    <p>The URL of the image file to display. The image is scaled to fit to the <code>bounds</code>.
-    <em>Write-only.</em></p>
+    <p>The URL of the image file to display. The image is scaled to fit to the <code>bounds</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -7736,8 +7377,7 @@ string
                     
 
 
-    <p>The portion of the image to use. If not specified, the whole image is used.
-    <em>Write-only.</em></p>
+    <p>The portion of the image to use. If not specified, the whole image is used.    <em>Write-only.</em></p>
 
 
                 
@@ -7805,8 +7445,7 @@ number
                     
 
 
-    <p>The opacity of the color applied over the top of the image, <code>0.0</code> &ndash;
-    <code>1.0</code>. <em>Write-only.</em></p>
+    <p>The opacity of the color applied over the top of the image, <code>0.0</code> &ndash;    <code>1.0</code>. <em>Write-only.</em></p>
 
 
                 
@@ -7889,10 +7528,7 @@ object
                     
 
 
-    <p>The <code>"image3D"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D images.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Image">Image</a> entity.
-</p>
+    <p>The <code>"image3D"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D images.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Image">Image</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -8120,8 +7756,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -8156,10 +7791,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -8194,10 +7826,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -8232,8 +7861,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -8332,8 +7960,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -8366,8 +7993,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -8400,9 +8026,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -8437,8 +8061,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -8473,8 +8096,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -8579,9 +8201,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -8697,10 +8317,7 @@ object
                     
 
 
-    <p>The <code>"line3d"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D lines.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-PolyLine">PolyLine</a> entity.
-</p>
+    <p>The <code>"line3d"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D lines.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-PolyLine">PolyLine</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -8858,8 +8475,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -8958,8 +8574,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -8992,8 +8607,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -9026,9 +8640,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -9063,8 +8675,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -9099,8 +8710,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -9170,8 +8780,7 @@ boolean
                     
 
 
-    <p>The avatar, entity, or overlay that the overlay is parented to.
-    </p>
+    <p>The avatar, entity, or overlay that the overlay is parented to.    </p>
     <p><em>Currently doesn't work.</em></p>
 
 
@@ -9207,9 +8816,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -9244,8 +8851,7 @@ number
                     
 
 
-    <p>The avatar, entity, or overlay that the end point of the line is parented to.
-    </p>
+    <p>The avatar, entity, or overlay that the end point of the line is parented to.    </p>
     <p><em>Currently doesn't work.</em></p>
 
 
@@ -9281,9 +8887,7 @@ number
                     
 
 
-    <p>Integer value specifying the skeleton joint that the end point of the line is
-    attached to if <code>parentID</code> is an avatar skeleton. A value of <code>65535</code> means "no joint". 
-    </p>
+    <p>Integer value specifying the skeleton joint that the end point of the line is    attached to if <code>parentID</code> is an avatar skeleton. A value of <code>65535</code> means "no joint".     </p>
     <p><em>Currently doesn't work.</em></p>
 
 
@@ -9319,10 +8923,8 @@ number
                     
 
 
-    <p>The start point of the line. Synonyms: <code>startPoint</code> and <code>p1</code>.
-    </p>
-    <p><strong>Note:</strong> If <code>parentID</code> is set, use <code>localStart</code> to set the local position of the 
-    start point.</p>
+    <p>The start point of the line. Synonyms: <code>startPoint</code> and <code>p1</code>.    </p>
+    <p><strong>Note:</strong> If <code>parentID</code> is set, use <code>localStart</code> to set the local position of the     start point.</p>
 
 
                 
@@ -9355,10 +8957,8 @@ number
                     
 
 
-    <p>The end point of the line. Synonyms: <code>endPoint</code> and <code>p2</code>.
-    </p>
-    <p><strong>Note:</strong> If <code>parentID</code> is set, use <code>localEnd</code> to set the local position of the 
-    end point.</p>
+    <p>The end point of the line. Synonyms: <code>endPoint</code> and <code>p2</code>.    </p>
+    <p><strong>Note:</strong> If <code>parentID</code> is set, use <code>localEnd</code> to set the local position of the     end point.</p>
 
 
                 
@@ -9391,9 +8991,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>start</code>.
-    </p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>start</code>.    </p>
     <p><em>Currently doesn't work.</em></p>
 
 
@@ -9427,9 +9025,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>endParentID</code> set, otherwise the same value as <code>end</code>.
-    </p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>endParentID</code> set, otherwise the same value as <code>end</code>.    </p>
     <p><em>Currently doesn't work.</em></p>
 
 
@@ -9463,9 +9059,7 @@ number
                     
 
 
-    <p>The length of the line, in meters. This can be set after creating a line with start and end
-    points.
-    </p>
+    <p>The length of the line, in meters. This can be set after creating a line with start and end    points.    </p>
     <p><em>Currently doesn't work.</em></p>
 
 
@@ -9534,10 +9128,8 @@ number
                     
 
 
-    <p>Width of the line, in meters.
-    </p>
-    <p><em>You can set this property's value but currently cannot retrieve its value. Use the <code>strokeWidths</code> 
-    property to retrieve its value instead.</em></p>
+    <p>Width of the line, in meters.    </p>
+    <p><em>You can set this property's value but currently cannot retrieve its value. Use the <code>strokeWidths</code>     property to retrieve its value instead.</em></p>
 
 
                 
@@ -9620,10 +9212,7 @@ object
                     
 
 
-    <p>The <code>"model"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D models.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Model">Model</a> entity.
-</p>
+    <p>The <code>"model"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D models.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Model">Model</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -9711,8 +9300,7 @@ string
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -9844,8 +9432,7 @@ string
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -9878,8 +9465,7 @@ string
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -9912,9 +9498,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -9949,8 +9533,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -9985,8 +9568,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -10091,9 +9673,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -10128,9 +9708,7 @@ string
                     
 
 
-    <p>The URL of the glTF, FBX, or OBJ model used for the overlay. glTF models may be in JSON or binary 
-    format (".gltf" or ".glb" URLs respectively). Baked models' URLs have ".baked" before the file type. Model files may 
-    also be compressed in GZ format, in which case the URL ends in ".gz".</p>
+    <p>The URL of the glTF, FBX, or OBJ model used for the overlay. glTF models may be in JSON or binary     format (".gltf" or ".glb" URLs respectively). Baked models' URLs have ".baked" before the file type. Model files may     also be compressed in GZ format, in which case the URL ends in ".gz".</p>
 
 
                 
@@ -10163,8 +9741,7 @@ number
                     
 
 
-    <p>The priority for loading and displaying the overlay. Overlays with higher values load
-    first. <em>Currently not used.</em></p>
+    <p>The priority for loading and displaying the overlay. Overlays with higher values load    first. <em>Currently not used.</em></p>
 
 
                 
@@ -10202,9 +9779,7 @@ string
                     
 
 
-    <p>Texture name, URL pairs used when rendering the model in place of the 
-    model's original textures, per the <a href="Entities.html#.EntityProperties-Model">Entities.EntityProperties-Model</a> property of the same name.
-    </p>
+    <p>Texture name, URL pairs used when rendering the model in place of the     model's original textures, per the <a href="Entities.html#.EntityProperties-Model">Entities.EntityProperties-Model</a> property of the same name.    </p>
     <p>The value can be an object or a JSON string when setting the value; it is a JSON string when getting the value.</p>
 
 
@@ -10319,8 +9894,7 @@ object
                     
 
 
-    <p>The <code>"rectangle"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 2D rectangles.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.</p>
+    <p>The <code>"rectangle"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 2D rectangles.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.</p>
 
 
                                     
@@ -10644,8 +10218,7 @@ number
                     
 
 
-    <p>Integer width of the border, in pixels. The border is drawn within the rectangle's bounds.
-    It is not drawn unless either <code>borderColor</code> or <code>borderAlpha</code> are specified. <em>Write-only.</em></p>
+    <p>Integer width of the border, in pixels. The border is drawn within the rectangle's bounds.    It is not drawn unless either <code>borderColor</code> or <code>borderAlpha</code> are specified. <em>Write-only.</em></p>
 
 
                 
@@ -10715,8 +10288,7 @@ number
                     
 
 
-    <p>The opacity of the border, <code>0.0</code> &ndash; <code>1.0</code>.
-    <em>Write-only.</em></p>
+    <p>The opacity of the border, <code>0.0</code> &ndash; <code>1.0</code>.    <em>Write-only.</em></p>
 
 
                 
@@ -10799,11 +10371,7 @@ object
                     
 
 
-    <p>The <code>"rectangle3D"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D rectangles.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Shape">Shape</a> entity, with the <code>shape</code> 
-property value being <code>"Quad"</code>.
-</p>
+    <p>The <code>"rectangle3D"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D rectangles.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Shape">Shape</a> entity, with the <code>shape</code> property value being <code>"Quad"</code>.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -11031,8 +10599,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -11067,10 +10634,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -11105,10 +10669,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -11143,8 +10704,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -11243,8 +10803,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -11277,8 +10836,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -11311,10 +10869,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is 
-    rendered as a wire frame. 
-    Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.
-    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
+    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is     rendered as a wire frame.     Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
 
 
                 
@@ -11349,9 +10904,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -11386,8 +10939,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -11422,8 +10974,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -11528,9 +11079,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is 
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather 
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is     parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather     than a joint.</p>
 
 
                 
@@ -11613,10 +11162,7 @@ object
                     
 
 
-    <p>The <code>"shape"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D shapes.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Shape">Shape</a> entity.
-</p>
+    <p>The <code>"shape"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D shapes.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Shape">Shape</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -11844,8 +11390,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -11880,10 +11425,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -11918,10 +11460,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -11956,8 +11495,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -12056,8 +11594,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -12090,8 +11627,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -12124,10 +11660,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is 
-    rendered as a wire frame. 
-    Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.
-    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
+    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is     rendered as a wire frame.     Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
 
 
                 
@@ -12162,9 +11695,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -12199,8 +11730,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -12235,8 +11765,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -12341,9 +11870,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -12461,10 +11988,7 @@ object
                     
 
 
-    <p>The <code>"sphere"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D spheres.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Sphere">Sphere</a> entity.
-</p>
+    <p>The <code>"sphere"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D spheres.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Sphere">Sphere</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -12692,8 +12216,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -12728,10 +12251,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -12766,10 +12286,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -12804,8 +12321,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -12904,8 +12420,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -12938,8 +12453,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -12972,10 +12486,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is 
-    rendered as a wire frame. 
-    Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.
-    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
+    <p><code>true</code> if the overlay is rendered as a solid, <code>false</code> if it is     rendered as a wire frame.     Synonyms: <code>solid</code>, <code>isFilled</code>, and <code>filled</code>.    Antonyms: <code>isWire</code> and <code>wire</code>.</p>
 
 
                 
@@ -13010,9 +12521,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -13047,8 +12556,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -13083,8 +12591,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -13189,9 +12696,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -13274,8 +12779,7 @@ object
                     
 
 
-    <p>The <code>"text"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 2D text.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.</p>
+    <p>The <code>"text"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 2D text.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.</p>
 
 
                                     
@@ -13494,8 +12998,7 @@ number
                     
 
 
-    <p>The <code>leftMargin</code> and <code>topMargin</code> values, in pixels.
-    <em>Write-only.</em></p>
+    <p>The <code>leftMargin</code> and <code>topMargin</code> values, in pixels.    <em>Write-only.</em></p>
 
 
                 
@@ -13530,8 +13033,7 @@ number
                     
 
 
-    <p>The left margin's size, in pixels. This value is also used for the right margin.
-    <em>Write-only.</em></p>
+    <p>The left margin's size, in pixels. This value is also used for the right margin.    <em>Write-only.</em></p>
 
 
                 
@@ -13566,8 +13068,7 @@ number
                     
 
 
-    <p>The top margin's size, in pixels. This value is also used for the bottom margin.
-    <em>Write-only.</em></p>
+    <p>The top margin's size, in pixels. This value is also used for the bottom margin.    <em>Write-only.</em></p>
 
 
                 
@@ -13602,8 +13103,7 @@ string
                     
 
 
-    <p>The text to display. Text does not automatically wrap; use <code>"\n"</code> for a line break. 
-    Text is clipped to the <code>bounds</code>. <em>Write-only.</em></p>
+    <p>The text to display. Text does not automatically wrap; use <code>"\n"</code> for a line break.     Text is clipped to the <code>bounds</code>. <em>Write-only.</em></p>
 
 
                 
@@ -13813,8 +13313,7 @@ number
                     
 
 
-    <p>The opacity of the background rectangle, <code>0.0</code> &ndash; <code>1.0</code>. 
-    <em>Write-only.</em></p>
+    <p>The opacity of the background rectangle, <code>0.0</code> &ndash; <code>1.0</code>.     <em>Write-only.</em></p>
 
 
                 
@@ -13897,10 +13396,7 @@ object
                     
 
 
-    <p>The <code>"text3D"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D text.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Text">Text</a> entity.
-</p>
+    <p>The <code>"text3D"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D text.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Text">Text</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -14023,8 +13519,7 @@ number
                     
 
 
-    <p>The opacity of the overlay text, <code>0.0</code> &ndash; <code>1.0</code>.
-    </p>
+    <p>The opacity of the overlay text, <code>0.0</code> &ndash; <code>1.0</code>.    </p>
     <p><em>Currently not used; use <code>textAlpha</code> instead.</em></p>
 
 
@@ -14130,8 +13625,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -14166,10 +13660,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -14204,10 +13695,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -14242,8 +13730,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -14342,8 +13829,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -14376,8 +13862,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -14410,9 +13895,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -14447,8 +13930,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -14483,8 +13965,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -14589,9 +14070,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -14674,10 +14153,7 @@ object
                     
 
 
-    <p>The <code>"web3d"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D web surfaces.
-It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.
-It additionally has properties per the <a href="Entities.html#.EntityProperties-Web">Web</a> entity.
-</p>
+    <p>The <code>"web3d"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> is for 3D web surfaces.It has properties in addition to the common <a href="Overlays.html#.OverlayProperties">OverlayProperties</a>.It additionally has properties per the <a href="Entities.html#.EntityProperties-Web">Web</a> entity.</p>
     <p class="important">Deprecated: Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
@@ -14905,8 +14381,7 @@ number
                     
 
 
-    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from
-    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
+    <p>The duration of the color and alpha pulse, in seconds. A pulse multiplier value goes from    <code>pulseMin</code> to <code>pulseMax</code>, then <code>pulseMax</code> to <code>pulseMin</code> in one period.</p>
 
 
                 
@@ -14941,10 +14416,7 @@ number
                     
 
 
-    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the alpha of the overlay is pulsed: the alpha value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -14979,10 +14451,7 @@ number
                     
 
 
-    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the
-    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0
-    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise
-    used.)</p>
+    <p>If non-zero, the color of the overlay is pulsed: the color value is multiplied by the    current pulse multiplier value each frame. If &gt; 0 the pulse multiplier is applied in phase with the pulse period; if &lt; 0    the pulse multiplier is applied out of phase with the pulse period. (The magnitude of the property isn't otherwise    used.)</p>
 
 
                 
@@ -15017,8 +14486,7 @@ number
                     
 
 
-    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and
-    <code>start</code>.</p>
+    <p>The position of the overlay center. Synonyms: <code>p1</code>, <code>point</code>, and    <code>start</code>.</p>
 
 
                 
@@ -15117,8 +14585,7 @@ number
                     
 
 
-    <p>The local position of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
+    <p>The local position of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>position</code>.</p>
 
 
                 
@@ -15151,8 +14618,7 @@ number
                     
 
 
-    <p>The orientation of the overlay relative to its parent if the overlay has a
-    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
+    <p>The orientation of the overlay relative to its parent if the overlay has a    <code>parentID</code> set, otherwise the same value as <code>rotation</code>.  Synonym: <code>localOrientation</code>.</p>
 
 
                 
@@ -15185,9 +14651,7 @@ boolean
                     
 
 
-    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>
-    if they don't.
-    Synonym: <code>ignoreRayIntersection</code>.</p>
+    <p><code>true</code> if <a href="Picks.html">Picks</a> ignore the overlay, <code>false</code>    if they don't.    Synonym: <code>ignoreRayIntersection</code>.</p>
 
 
                 
@@ -15222,8 +14686,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered on top of the world layer but behind
-    the HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered on top of the world layer but behind    the HUD surface.</p>
 
 
                 
@@ -15258,8 +14721,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the overlay is rendered in front of everything, including the
-    HUD surface.</p>
+    <p><code>true</code> if the overlay is rendered in front of everything, including the    HUD surface.</p>
 
 
                 
@@ -15364,9 +14826,7 @@ number
                     
 
 
-    <p>Integer value specifying the joint of the entity or avatar that the entity is
-    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather
-    than a joint.</p>
+    <p>Integer value specifying the joint of the entity or avatar that the entity is    parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather    than a joint.</p>
 
 
                 
@@ -15482,70 +14942,7 @@ string
                     
 
 
-    <p>An overlay may be one of the following types:</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>2D/3D</th><th>Description</th><th>Properties</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"rectangle"</code></td><td>2D</td>
-      <td>A rectangle.</td>
-      <td><a href="Overlays.html#.OverlayProperties-Rectangle">OverlayProperties-Rectangle</a></td></tr>
-    <tr><td><code>"image"</code></td><td>2D</td>
-      <td>An image.</td>
-      <td><a href="Overlays.html#.OverlayProperties-Image">OverlayProperties-Image</a></td></tr>
-    <tr><td><code>"text"</code></td><td>2D</td>
-      <td>Some text.</td>
-      <td><a href="Overlays.html#.OverlayProperties-Text">OverlayProperties-Text</a></td></tr>
-    <tr><td><code>"cube"</code></td><td>3D</td>
-      <td><p>A cube. A <code>"shape"</code> overlay can also be used to create a cube.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Cube">OverlayProperties-Cube</a></td></tr>
-    <tr><td><code>"sphere"</code></td><td>3D</td>
-      <td><p>A sphere. A <code>"shape"</code> overlay can also be used to create a sphere.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Sphere">OverlayProperties-Sphere</a></td></tr>
-    <tr><td><code>"shape"</code></td><td>3D</td>
-      <td><p>A geometric shape, such as a cube, sphere, or cylinder.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Shape">OverlayProperties-Shape</a></td></tr>
-    <tr><td><code>"model"</code></td><td>3D</td>
-      <td><p>A model.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Model">OverlayProperties-Model</a></td></tr>
-    <tr><td><code>"image3d"</code></td><td>3D</td>
-      <td><p>An image. Synonym: <code>"billboard"</code>.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Image3D">OverlayProperties-Image3D</a></td></tr>
-    <tr><td><code>"rectangle3d"</code></td><td>3D</td>
-      <td><p>A rectangle.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Rectangle3D">OverlayProperties-Rectangle3D</a></td></tr>
-    <tr><td><code>"text3d"</code></td><td>3D</td>
-      <td><p>Some text.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Text3D">OverlayProperties-Text3D</a></td></tr>
-    <tr><td><code>"web3d"</code></td><td>3D</td>
-      <td><p>Web content.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Web3D">OverlayProperties-Web3D</a></td></tr>
-    <tr><td><code>"line3d"</code></td><td>3D</td>
-      <td><p>A line.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Line3D">OverlayProperties-Line3D</a></td></tr>
-    <tr><td><code>"grid"</code></td><td>3D</td>
-      <td><p>A grid of lines in a plane.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Grid">OverlayProperties-Grid</a></td></tr>
-    <tr><td><code>"circle3d"</code></td><td>3D</td>
-      <td><p>A circle.</p>
-      <p class="important">Deprecated.</p></td>
-      <td><a href="Overlays.html#.OverlayProperties-Circle3D">OverlayProperties-Circle3D</a></td></tr>
-  </tbody>
-</table>
-<p>2D overlays are rendered on the display surface in desktop mode and on the HUD surface in HMD mode. 3D overlays are
-rendered at a position and orientation in-world.</p>
-<p class="important">3D overlays are deprecated. Use local <a href="Entities.html">Entities</a> instead.</p>
+    <p>An overlay may be one of the following types:</p><table>  <thead>    <tr><th>Value</th><th>2D/3D</th><th>Description</th><th>Properties</th></tr>  </thead>  <tbody>    <tr><td><code>"rectangle"</code></td><td>2D</td>      <td>A rectangle.</td>      <td><a href="Overlays.html#.OverlayProperties-Rectangle">OverlayProperties-Rectangle</a></td></tr>    <tr><td><code>"image"</code></td><td>2D</td>      <td>An image.</td>      <td><a href="Overlays.html#.OverlayProperties-Image">OverlayProperties-Image</a></td></tr>    <tr><td><code>"text"</code></td><td>2D</td>      <td>Some text.</td>      <td><a href="Overlays.html#.OverlayProperties-Text">OverlayProperties-Text</a></td></tr>    <tr><td><code>"cube"</code></td><td>3D</td>      <td><p>A cube. A <code>"shape"</code> overlay can also be used to create a cube.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Cube">OverlayProperties-Cube</a></td></tr>    <tr><td><code>"sphere"</code></td><td>3D</td>      <td><p>A sphere. A <code>"shape"</code> overlay can also be used to create a sphere.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Sphere">OverlayProperties-Sphere</a></td></tr>    <tr><td><code>"shape"</code></td><td>3D</td>      <td><p>A geometric shape, such as a cube, sphere, or cylinder.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Shape">OverlayProperties-Shape</a></td></tr>    <tr><td><code>"model"</code></td><td>3D</td>      <td><p>A model.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Model">OverlayProperties-Model</a></td></tr>    <tr><td><code>"image3d"</code></td><td>3D</td>      <td><p>An image. Synonym: <code>"billboard"</code>.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Image3D">OverlayProperties-Image3D</a></td></tr>    <tr><td><code>"rectangle3d"</code></td><td>3D</td>      <td><p>A rectangle.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Rectangle3D">OverlayProperties-Rectangle3D</a></td></tr>    <tr><td><code>"text3d"</code></td><td>3D</td>      <td><p>Some text.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Text3D">OverlayProperties-Text3D</a></td></tr>    <tr><td><code>"web3d"</code></td><td>3D</td>      <td><p>Web content.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Web3D">OverlayProperties-Web3D</a></td></tr>    <tr><td><code>"line3d"</code></td><td>3D</td>      <td><p>A line.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Line3D">OverlayProperties-Line3D</a></td></tr>    <tr><td><code>"grid"</code></td><td>3D</td>      <td><p>A grid of lines in a plane.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Grid">OverlayProperties-Grid</a></td></tr>    <tr><td><code>"circle3d"</code></td><td>3D</td>      <td><p>A circle.</p>      <p class="important">Deprecated.</p></td>      <td><a href="Overlays.html#.OverlayProperties-Circle3D">OverlayProperties-Circle3D</a></td></tr>  </tbody></table><p>2D overlays are rendered on the display surface in desktop mode and on the HUD surface in HMD mode. 3D overlays arerendered at a position and orientation in-world.</p><p class="important">3D overlays are deprecated. Use local <a href="Entities.html">Entities</a> instead.</p>
 
 
                                     
@@ -15674,8 +15071,7 @@ boolean
                     
 
 
-    <p><code>true</code> if the <a href="global.html#PickRay">PickRay</a> intersected with a 3D overlay, otherwise
-    <code>false</code>.</p>
+    <p><code>true</code> if the <a href="global.html#PickRay">PickRay</a> intersected with a 3D overlay, otherwise    <code>false</code>.</p>
 
 
                 
@@ -15909,29 +15305,7 @@ string
                     
 
 
-    <p>A <code>"shape"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> may display as one of the following geometrical 
-shapes:</p>
-<table>
-  <thead>
-    <tr><th>Value</th><th>Dimensions</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>"Circle"</code></td><td>2D</td><td>A circle oriented in 3D.</td></tr>
-    <tr><td><code>"Cone"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Cube"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Cylinder"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Dodecahedron"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Hexagon"</code></td><td>3D</td><td>A hexagonal prism.</td></tr>
-    <tr><td><code>"Icosahedron"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Octagon"</code></td><td>3D</td><td>An octagonal prism.</td></tr>
-    <tr><td><code>"Octahedron"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Quad"</code></td><td>2D</td><td>A square oriented in 3D.</tr>
-    <tr><td><code>"Sphere"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Tetrahedron"</code></td><td>3D</td><td></td></tr>
-    <tr><td><code>"Torus"</code></td><td>3D</td><td><em>Not implemented.</em></td></tr>
-    <tr><td><code>"Triangle"</code></td><td>3D</td><td>A triangular prism.</td></tr>
-  </tbody>
-</table>
+    <p>A <code>"shape"</code> <a href="Overlays.html#.OverlayType">OverlayType</a> may display as one of the following geometrical shapes:</p><table>  <thead>    <tr><th>Value</th><th>Dimensions</th><th>Description</th></tr>  </thead>  <tbody>    <tr><td><code>"Circle"</code></td><td>2D</td><td>A circle oriented in 3D.</td></tr>    <tr><td><code>"Cone"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Cube"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Cylinder"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Dodecahedron"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Hexagon"</code></td><td>3D</td><td>A hexagonal prism.</td></tr>    <tr><td><code>"Icosahedron"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Octagon"</code></td><td>3D</td><td>An octagonal prism.</td></tr>    <tr><td><code>"Octahedron"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Quad"</code></td><td>2D</td><td>A square oriented in 3D.</tr>    <tr><td><code>"Sphere"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Tetrahedron"</code></td><td>3D</td><td></td></tr>    <tr><td><code>"Torus"</code></td><td>3D</td><td><em>Not implemented.</em></td></tr>    <tr><td><code>"Triangle"</code></td><td>3D</td><td>A triangular prism.</td></tr>  </tbody></table>
 
 
                                     
@@ -16166,12 +15540,7 @@ shapes:</p>
                         
         <p class="code-caption">Add a cube overlay in front of your avatar.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});</code></pre>
 
                     
                   
@@ -16228,8 +15597,7 @@ shapes:</p>
                             
 
 
-    <p>Creates a clone of an existing overlay (or entity).
-</p>
+    <p>Creates a clone of an existing overlay (or entity).</p>
     <p>Note: For cloning behavior of 3D overlays and entities, see <a href="Entities.html#.cloneEntity">Entities.cloneEntity</a>.</p>
 
 
@@ -16527,8 +15895,7 @@ shapes:</p>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>false</code> if Interface is exiting. Otherwise, if a 2D overlay then <code>true</code> always, 
-   and if a 3D overlay then <code>true</code> if the overlay was found and edited, otherwise <code>false</code>.
+    <code>false</code> if Interface is exiting. Otherwise, if a 2D overlay then <code>true</code> always,    and if a 3D overlay then <code>true</code> if the overlay was found and edited, otherwise <code>false</code>.
 
 
                         
@@ -16691,17 +16058,7 @@ shapes:</p>
                         
         <p class="code-caption">Add an overlay in front of your avatar then change its color.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-
-var success = Overlays.editOverlay(overlay, {
-    color: { red: 255, green: 0, blue: 0 }
-});
-print("Success: " + success);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var success = Overlays.editOverlay(overlay, {    color: { red: 255, green: 0, blue: 0 }});print("Success: " + success);</code></pre>
 
                     
                   
@@ -16853,8 +16210,7 @@ object.&lt;<a href="global.html#Uuid">Uuid</a>, <a href="Overlays.html#.OverlayP
                     
 
 
-    <p>An object with overlay (or entity) IDs as keys and
-    <a href="Overlays.html#.OverlayProperties">OverlayProperties</a> edits to make as values.</p>
+    <p>An object with overlay (or entity) IDs as keys and    <a href="Overlays.html#.OverlayProperties">OverlayProperties</a> edits to make as values.</p>
 
 
                 
@@ -16871,24 +16227,7 @@ object.&lt;<a href="global.html#Uuid">Uuid</a>, <a href="Overlays.html#.OverlayP
                         
         <p class="code-caption">Create two overlays in front of your avatar then change their colors.</p>
     
-    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var overlayB = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-
-var overlayEdits = {};
-overlayEdits[overlayA] = { color: { red: 255, green: 0, blue: 0 } };
-overlayEdits[overlayB] = { color: { red: 0, green: 255, blue: 0 } };
-var success = Overlays.editOverlays(overlayEdits);
-print("Success: " + success);</code></pre>
+    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var overlayB = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var overlayEdits = {};overlayEdits[overlayA] = { color: { red: 255, green: 0, blue: 0 } };overlayEdits[overlayB] = { color: { red: 0, green: 255, blue: 0 } };var success = Overlays.editOverlays(overlayEdits);print("Success: " + success);</code></pre>
 
                     
                   
@@ -16927,8 +16266,7 @@ print("Success: " + success);</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The IDs of the overlays (local entities) that are visible and have bounding boxes that touch a search 
-    sphere.
+    The IDs of the overlays (local entities) that are visible and have bounding boxes that touch a search     sphere.
 
 
                         
@@ -17091,23 +16429,7 @@ number
                         
         <p class="code-caption">Create two overlays in front of your avatar then search for overlays near your avatar.</p>
     
-    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay A: " + overlayA);
-var overlayB = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay B: " + overlayB);
-
-var overlaysFound = Overlays.findOverlays(MyAvatar.position, 5.0);
-print("Overlays found: " + JSON.stringify(overlaysFound));</code></pre>
+    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay A: " + overlayA);var overlayB = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay B: " + overlayB);var overlaysFound = Overlays.findOverlays(MyAvatar.position, 5.0);print("Overlays found: " + JSON.stringify(overlaysFound));</code></pre>
 
                     
                   
@@ -17146,8 +16468,7 @@ print("Overlays found: " + JSON.stringify(overlaysFound));</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The result of the search for the first intersected overlay (or local 
-    entity.
+    The result of the search for the first intersected overlay (or local     entity.
 
 
                         
@@ -17325,9 +16646,7 @@ boolean
                     
 
 
-    <p><code>true</code> to pick against precise meshes, <code>false</code> to pick 
-    against coarse meshes. If <code>true</code> and the intersected entity is a model, the result's 
-    <code>extraInfo</code> property includes more information than it otherwise would.</p>
+    <p><code>true</code> to pick against precise meshes, <code>false</code> to pick     against coarse meshes. If <code>true</code> and the intersected entity is a model, the result's     <code>extraInfo</code> property includes more information than it otherwise would.</p>
 
 
                 
@@ -17474,8 +16793,7 @@ boolean
                     
 
 
-    <p><code>true</code> if only overlays (and local entities) that are 
-    <code><a href="Overlays.html#.OverlayProperties">visible</a></code> should be searched.</p>
+    <p><code>true</code> if only overlays (and local entities) that are     <code><a href="Overlays.html#.OverlayProperties">visible</a></code> should be searched.</p>
 
 
                 
@@ -17524,8 +16842,7 @@ boolean
                     
 
 
-    <p><code>true</code> if only local entities that are not 
-    <code><a href="Entities.html#.EntityProperties">collisionless</a></code> should be searched.</p>
+    <p><code>true</code> if only local entities that are not     <code><a href="Entities.html#.EntityProperties">collisionless</a></code> should be searched.</p>
 
 
                 
@@ -17540,21 +16857,9 @@ boolean
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Create a cube overlay in front of your avatar. Report 3D overlay intersection details for mouse 
-    clicks.</p>
+        <p class="code-caption">Create a cube overlay in front of your avatar. Report 3D overlay intersection details for mouse     clicks.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-
-Controller.mousePressEvent.connect(function (event) {
-    var pickRay = Camera.computePickRay(event.x, event.y);
-    var intersection = Overlays.findRayIntersection(pickRay);
-    print("Intersection: " + JSON.stringify(intersection));
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});Controller.mousePressEvent.connect(function (event) {    var pickRay = Camera.computePickRay(event.x, event.y);    var intersection = Overlays.findRayIntersection(pickRay);    print("Intersection: " + JSON.stringify(intersection));});</code></pre>
 
                     
                   
@@ -17593,8 +16898,7 @@ Controller.mousePressEvent.connect(function (event) {
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-(<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has focus, if any, otherwise <code>null</code>.
+    The ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has focus, if any, otherwise <code>null</code>.
 
 
                         
@@ -17612,8 +16916,7 @@ Controller.mousePressEvent.connect(function (event) {
                             
 
 
-    <p>Gets the ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-(<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
+    <p>Gets the ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
 
 
                         
@@ -17829,16 +17132,7 @@ Controller.mousePressEvent.connect(function (event) {
                         
         <p class="code-caption">Create a 2D overlay and add an event function that reports the overlay clicked on, if any.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("rectangle", {
-    bounds: { x: 100, y: 100, width: 200, height: 100 },
-    color: { red: 255, green: 255, blue: 255 }
-});
-print("Created: " + overlay);
-
-Controller.mousePressEvent.connect(function (event) {
-    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });
-    print("Clicked: " + overlay);
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("rectangle", {    bounds: { x: 100, y: 100, width: 200, height: 100 },    color: { red: 255, green: 255, blue: 255 }});print("Created: " + overlay);Controller.mousePressEvent.connect(function (event) {    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });    print("Clicked: " + overlay);});</code></pre>
 
                     
                   
@@ -17895,18 +17189,8 @@ Controller.mousePressEvent.connect(function (event) {
                             
 
 
-    <p>Gets an overlay's (or entity's) script object. In particular, this is useful for accessing a 
-<code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay's <code>EventBridge</code> script object to 
-exchange messages with the web page script.
-</p>
-    <p>To send a message from an Interface script to a <code>"web3d"</code> overlay over its event bridge:</p>
-<pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);
-overlayObject.emitScriptEvent(message);</code></pre>
-<p>To receive a message from a <code>"web3d"</code> overlay over its event bridge in an Interface script:</p>
-<pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);
-overlayObject.webEventReceived.connect(function(message) {
-    ...
-};</code></pre>
+    <p>Gets an overlay's (or entity's) script object. In particular, this is useful for accessing a <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay's <code>EventBridge</code> script object to exchange messages with the web page script.</p>
+    <p>To send a message from an Interface script to a <code>"web3d"</code> overlay over its event bridge:</p><pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);overlayObject.emitScriptEvent(message);</code></pre><p>To receive a message from a <code>"web3d"</code> overlay over its event bridge in an Interface script:</p><pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);overlayObject.webEventReceived.connect(function(message) {    ...};</code></pre>
 
 
                         
@@ -18018,57 +17302,7 @@ overlayObject.webEventReceived.connect(function(message) {
                         
         <p class="code-caption">Exchange messages with a <code>"web3d"</code> overlay.</p>
     
-    <pre class="prettyprint"><code>// HTML file, name: "web3d.html".
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-    &lt;title>HELLO&lt;/title>
-&lt;/head>
-&lt;body>
-    &lt;h1>HELLO&lt;/h1>
-    &lt;script>
-        function onScriptEventReceived(message) {
-            // Message received from the script.
-            console.log("Message received: " + message);
-        }
-
-        EventBridge.scriptEventReceived.connect(onScriptEventReceived);
-
-        setInterval(function () {
-            // Send a message to the script.
-            EventBridge.emitWebEvent("hello");
-        }, 2000);
-    &lt;/script>
-&lt;/body>
-&lt;/html>
-
-// Interface script file.
-var web3DOverlay = Overlays.addOverlay("web3d", {
-    type: "Web",
-    position : Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y : 0.5, z : -3 })),
-    rotation : MyAvatar.orientation,
-    sourceUrl : Script.resolvePath("web3d.html"),
-    alpha : 1.0
-    });
-
-var overlayObject;
-
-function onWebEventReceived(message) {
-    // Message received.
-    print("Message received: " + message);
-
-    // Send a message back.
-    overlayObject.emitScriptEvent(message + " back");
-}
-
-Script.setTimeout(function() {
-    overlayObject = Overlays.getOverlayObject(web3DOverlay);
-    overlayObject.webEventReceived.connect(onWebEventReceived);
-}, 500);
-
-Script.scriptEnding.connect(function() {
-    Overlays.deleteOverlay(web3DOverlay);
-});</code></pre>
+    <pre class="prettyprint"><code>// HTML file, name: "web3d.html".&lt;!DOCTYPE html>&lt;html>&lt;head>    &lt;title>HELLO&lt;/title>&lt;/head>&lt;body>    &lt;h1>HELLO&lt;/h1>    &lt;script>        function onScriptEventReceived(message) {            // Message received from the script.            console.log("Message received: " + message);        }        EventBridge.scriptEventReceived.connect(onScriptEventReceived);        setInterval(function () {            // Send a message to the script.            EventBridge.emitWebEvent("hello");        }, 2000);    &lt;/script>&lt;/body>&lt;/html>// Interface script file.var web3DOverlay = Overlays.addOverlay("web3d", {    type: "Web",    position : Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y : 0.5, z : -3 })),    rotation : MyAvatar.orientation,    sourceUrl : Script.resolvePath("web3d.html"),    alpha : 1.0    });var overlayObject;function onWebEventReceived(message) {    // Message received.    print("Message received: " + message);    // Send a message back.    overlayObject.emitScriptEvent(message + " back");}Script.setTimeout(function() {    overlayObject = Overlays.getOverlayObject(web3DOverlay);    overlayObject.webEventReceived.connect(onWebEventReceived);}, 500);Script.scriptEnding.connect(function() {    Overlays.deleteOverlay(web3DOverlay);});</code></pre>
 
                     
                   
@@ -18107,8 +17341,7 @@ Script.scriptEnding.connect(function() {
                         Returns: <span style="font-weight: normal;">
                         
                             
-    An object with overlay (or entity) IDs as keys and
-    <a href="Overlays.html#.OverlayProperties">OverlayProperties</a> as values.
+    An object with overlay (or entity) IDs as keys and    <a href="Overlays.html#.OverlayProperties">OverlayProperties</a> as values.
 
 
                         
@@ -18221,8 +17454,7 @@ object.&lt;<a href="global.html#Uuid">Uuid</a>, Array.&lt;string>>
                     
 
 
-    <p>An object with overlay (or entity) IDs as keys and arrays of the 
-    names of properties to get for each as values.</p>
+    <p>An object with overlay (or entity) IDs as keys and arrays of the     names of properties to get for each as values.</p>
 
 
                 
@@ -18239,23 +17471,7 @@ object.&lt;<a href="global.html#Uuid">Uuid</a>, Array.&lt;string>>
                         
         <p class="code-caption">Create two cube overlays in front of your avatar then get some of their properties.</p>
     
-    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var overlayB = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var propertiesToGet = {};
-propertiesToGet[overlayA] = ["color", "alpha"];
-propertiesToGet[overlayB] = ["dimensions"];
-var properties = Overlays.getOverlaysProperties(propertiesToGet);
-print("Overlays properties: " + JSON.stringify(properties));</code></pre>
+    <pre class="prettyprint"><code>var overlayA = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: -0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var overlayB = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0.3, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var propertiesToGet = {};propertiesToGet[overlayA] = ["color", "alpha"];propertiesToGet[overlayB] = ["dimensions"];var properties = Overlays.getOverlaysProperties(propertiesToGet);print("Overlays properties: " + JSON.stringify(properties));</code></pre>
 
                     
                   
@@ -18424,14 +17640,7 @@ print("Overlays properties: " + JSON.stringify(properties));</code></pre>
                         
         <p class="code-caption">Create an overlay in front of your avatar then get and report its type.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var type = Overlays.getOverlayType(overlay);
-print("Type: " + type); // cube</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var type = Overlays.getOverlayType(overlay);print("Type: " + type); // cube</code></pre>
 
                     
                   
@@ -18470,8 +17679,7 @@ print("Type: " + type); // cube</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The values of valid properties if the overlay can be found, otherwise an empty 
-    object.
+    The values of valid properties if the overlay can be found, otherwise an empty     object.
 
 
                         
@@ -18489,8 +17697,7 @@ print("Type: " + type); // cube</code></pre>
                             
 
 
-    <p>Gets specified property values of a 3D overlay (or entity).
-</p>
+    <p>Gets specified property values of a 3D overlay (or entity).</p>
     <p><strong>Note:</strong> 2D overlays' property values cannot be retrieved.</p>
 
 
@@ -18636,14 +17843,7 @@ Array.&lt;string>
                         
         <p class="code-caption">Create an overlay in front of your avatar then report some of its properties.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var properties = Overlays.getProperties(overlay, ["color", "alpha", "grabbable"]);
-print("Overlay properties: " + JSON.stringify(properties));</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var properties = Overlays.getProperties(overlay, ["color", "alpha", "grabbable"]);print("Overlay properties: " + JSON.stringify(properties));</code></pre>
 
                     
                   
@@ -18682,8 +17882,7 @@ print("Overlay properties: " + JSON.stringify(properties));</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The value of the property if the 3D overlay and property can be found, otherwise
-    <code>undefined</code>.
+    The value of the property if the 3D overlay and property can be found, otherwise    <code>undefined</code>.
 
 
                         
@@ -18701,8 +17900,7 @@ print("Overlay properties: " + JSON.stringify(properties));</code></pre>
                             
 
 
-    <p>Gets a specified property value of a 3D overlay (or entity).
-</p>
+    <p>Gets a specified property value of a 3D overlay (or entity).</p>
     <p><strong>Note:</strong> 2D overlays' property values cannot be retrieved.</p>
 
 
@@ -18848,14 +18046,7 @@ string
                         
         <p class="code-caption">Create an overlay in front of your avatar then report its alpha property value.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-var alpha = Overlays.getProperty(overlay, "alpha");
-print("Overlay alpha: " + alpha);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});var alpha = Overlays.getProperty(overlay, "alpha");print("Overlay alpha: " + alpha);</code></pre>
 
                     
                   
@@ -19160,8 +18351,7 @@ print("Overlay alpha: " + alpha);</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    <code>true</code> if the overlay's (or entity's) assets have been loaded, otherwise 
-    <code>false</code>.
+    <code>true</code> if the overlay's (or entity's) assets have been loaded, otherwise     <code>false</code>.
 
 
                         
@@ -19179,9 +18369,7 @@ print("Overlay alpha: " + alpha);</code></pre>
                             
 
 
-    <p>Checks whether an overlay's (or entity's) assets have been loaded. For example, for an 
-<code><a href="Overlays.html#.OverlayProperties-Image">"image"</a></code> overlay, the result indicates whether its image has been 
-loaded.</p>
+    <p>Checks whether an overlay's (or entity's) assets have been loaded. For example, for an <code><a href="Overlays.html#.OverlayProperties-Image">"image"</a></code> overlay, the result indicates whether its image has been loaded.</p>
 
 
                         
@@ -19293,14 +18481,7 @@ loaded.</p>
                         
         <p class="code-caption">Create an image overlay and report whether its image is loaded after 1s.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("image", {
-    bounds: { x: 100, y: 100, width: 200, height: 200 },
-    imageURL: "https://content.highfidelity.com/DomainContent/production/Particles/wispy-smoke.png"
-});
-Script.setTimeout(function () {
-    var isLoaded = Overlays.isLoaded(overlay);
-    print("Image loaded: " + isLoaded);
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("image", {    bounds: { x: 100, y: 100, width: 200, height: 200 },    imageURL: "https://content.highfidelity.com/DomainContent/production/Particles/wispy-smoke.png"});Script.setTimeout(function () {    var isLoaded = Overlays.isLoaded(overlay);    print("Image loaded: " + isLoaded);}, 1000);</code></pre>
 
                     
                   
@@ -20235,39 +19416,9 @@ Script.setTimeout(function () {
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Create a 2D rectangle overlay plus a 3D cube overlay and generate mousePressOnOverlay events for the 
-2D overlay.</p>
+        <p class="code-caption">Create a 2D rectangle overlay plus a 3D cube overlay and generate mousePressOnOverlay events for the 2D overlay.</p>
     
-    <pre class="prettyprint"><code>var overlay3D = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("3D overlay: " + overlay);
-
-var overlay2D = Overlays.addOverlay("rectangle", {
-    bounds: { x: 100, y: 100, width: 200, height: 100 },
-    color: { red: 255, green: 255, blue: 255 }
-});
-print("2D overlay: " + overlay);
-
-// Overlays.mousePressOnOverlay by default applies only to 3D overlays.
-Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
-    print("Clicked: " + overlayID);
-});
-
-Controller.mousePressEvent.connect(function (event) {
-    // Overlays.getOverlayAtPoint applies only to 2D overlays.
-    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });
-    if (overlay) {
-        Overlays.sendMousePressOnOverlay(overlay, {
-            type: "press",
-            id: 0,
-            pos2D: event
-        });
-    }
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay3D = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("3D overlay: " + overlay);var overlay2D = Overlays.addOverlay("rectangle", {    bounds: { x: 100, y: 100, width: 200, height: 100 },    color: { red: 255, green: 255, blue: 255 }});print("2D overlay: " + overlay);// Overlays.mousePressOnOverlay by default applies only to 3D overlays.Overlays.mousePressOnOverlay.connect(function(overlayID, event) {    print("Clicked: " + overlayID);});Controller.mousePressEvent.connect(function (event) {    // Overlays.getOverlayAtPoint applies only to 2D overlays.    var overlay = Overlays.getOverlayAtPoint({ x: event.x, y: event.y });    if (overlay) {        Overlays.sendMousePressOnOverlay(overlay, {            type: "press",            id: 0,            pos2D: event        });    }});</code></pre>
 
                     
                   
@@ -20501,8 +19652,7 @@ Controller.mousePressEvent.connect(function (event) {
                             
 
 
-    <p>Sets the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-(<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
+    <p>Sets the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) that has keyboard focus.</p>
 
 
                         
@@ -20597,9 +19747,7 @@ Controller.mousePressEvent.connect(function (event) {
                     
 
 
-    <p>The ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay 
-(<a href="Entities.html#.EntityProperties-Web">Web</a> entity) to set keyboard focus to. Use <code>null</code> or 
-<a href="Uuid.html">Uuid.NULL</a> to unset keyboard focus from an overlay (entity).</p>
+    <p>The ID of the <code><a href="Overlays.html#.OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities.html#.EntityProperties-Web">Web</a> entity) to set keyboard focus to. Use <code>null</code> or <a href="Uuid.html">Uuid.NULL</a> to unset keyboard focus from an overlay (entity).</p>
 
 
                 
@@ -20648,9 +19796,7 @@ Controller.mousePressEvent.connect(function (event) {
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The size of the <code>text</code> if the object is a text overlay (or entity), otherwise
-    <code>{ height: 0, width : 0 }</code>. If the object is a 2D overlay, the size is in pixels; if the object is a 3D 
-    overlay (or entity), the size is in meters.
+    The size of the <code>text</code> if the object is a text overlay (or entity), otherwise    <code>{ height: 0, width : 0 }</code>. If the object is a 2D overlay, the size is in pixels; if the object is a 3D     overlay (or entity), the size is in meters.
 
 
                         
@@ -20668,10 +19814,8 @@ Controller.mousePressEvent.connect(function (event) {
                             
 
 
-    <p>Calculates the size of some text in a text overlay (or entity). The overlay (or entity) need not be set visible.
-</p>
-    <p><strong>Note:</strong> The size of text in a 3D overlay (or entity) cannot be calculated immediately after the 
-overlay (or entity) is created; a short delay is required while the overlay (or entity) finishes being created.</p>
+    <p>Calculates the size of some text in a text overlay (or entity). The overlay (or entity) need not be set visible.</p>
+    <p><strong>Note:</strong> The size of text in a 3D overlay (or entity) cannot be calculated immediately after the overlay (or entity) is created; a short delay is required while the overlay (or entity) finishes being created.</p>
 
 
                         
@@ -20816,17 +19960,7 @@ string
                         
         <p class="code-caption">Calculate the size of "hello" in a 3D text entity.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("text3d", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -2 })),
-    rotation: MyAvatar.orientation,
-    lineHeight: 0.2,
-    visible: false
-});
-
-Script.setTimeout(function() {
-    var textSize = Overlays.textSize(overlay, "hello");
-    print("Size of \"hello\": " + JSON.stringify(textSize));
-}, 500);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("text3d", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -2 })),    rotation: MyAvatar.orientation,    lineHeight: 0.2,    visible: false});Script.setTimeout(function() {    var textSize = Overlays.textSize(overlay, "hello");    print("Size of \"hello\": " + JSON.stringify(textSize));}, 500);</code></pre>
 
                     
                   
@@ -21011,8 +20145,7 @@ Signal
                             
 
 
-    <p>Triggered when a mouse cursor starts hovering over an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendHoverEnterOverlay">sendHoverEnterOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse cursor starts hovering over an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendHoverEnterOverlay">sendHoverEnterOverlay</a> for a 2D overlay).</p>
 
 
                         
@@ -21155,19 +20288,9 @@ Signal
                     
                         <h5>Example</h5>
                         
-        <p class="code-caption">Create a cube overlay in front of your avatar and report when you start hovering your mouse over
-    it.</p>
+        <p class="code-caption">Create a cube overlay in front of your avatar and report when you start hovering your mouse over    it.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay: " + overlay);
-Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
-    print("Hover enter: " + overlayID);
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay: " + overlay);Overlays.hoverEnterOverlay.connect(function(overlayID, event) {    print("Hover enter: " + overlayID);});</code></pre>
 
                     
                   
@@ -21240,8 +20363,7 @@ Signal
                             
 
 
-    <p>Triggered when a mouse cursor finishes hovering over an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendHoverLeaveOverlay">sendHoverLeaveOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse cursor finishes hovering over an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendHoverLeaveOverlay">sendHoverLeaveOverlay</a> for a 2D overlay).</p>
 
 
                         
@@ -21452,8 +20574,7 @@ Signal
                             
 
 
-    <p>Triggered when a mouse cursor continues hovering over an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendHoverOverOverlay">sendHoverOverOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse cursor continues hovering over an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendHoverOverOverlay">sendHoverOverOverlay</a> for a 2D overlay).</p>
 
 
                         
@@ -21981,8 +21102,7 @@ Signal
                             
 
 
-    <p>Triggered when a mouse move event occurs on an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendMouseMoveOnOverlay">sendMouseMoveOnOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse move event occurs on an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendMouseMoveOnOverlay">sendMouseMoveOnOverlay</a> for a 2D overlay).</p>
 
 
                         
@@ -22299,8 +21419,7 @@ Signal
                             
 
 
-    <p>Triggered when a mouse press event occurs on an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendMousePressOnOverlay">sendMousePressOnOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse press event occurs on an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendMousePressOnOverlay">sendMousePressOnOverlay</a> for a 2D overlay).</p>
 
 
                         
@@ -22445,19 +21564,7 @@ Signal
                         
         <p class="code-caption">Create a cube overlay in front of your avatar and report mouse clicks on it.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("My overlay: " + overlay);
-
-Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
-    if (overlayID === overlay) {
-        print("Clicked on my overlay");
-    }
-});</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("My overlay: " + overlay);Overlays.mousePressOnOverlay.connect(function(overlayID, event) {    if (overlayID === overlay) {        print("Clicked on my overlay");    }});</code></pre>
 
                     
                   
@@ -22530,8 +21637,7 @@ Signal
                             
 
 
-    <p>Triggered when a mouse release event occurs on an overlay. Only occurs for 3D overlays (unless you use 
-    <a href="Overlays.html#.sendMouseReleaseOnOverlay">sendMouseReleaseOnOverlay</a> for a 2D overlay).</p>
+    <p>Triggered when a mouse release event occurs on an overlay. Only occurs for 3D overlays (unless you use     <a href="Overlays.html#.sendMouseReleaseOnOverlay">sendMouseReleaseOnOverlay</a> for a 2D overlay).</p>
 
 
                         
@@ -22849,20 +21955,7 @@ Signal
                         
         <p class="code-caption">Create an overlay then delete it after 1s.</p>
     
-    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {
-    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),
-    rotation: MyAvatar.orientation,
-    dimensions: { x: 0.3, y: 0.3, z: 0.3 },
-    solid: true
-});
-print("Overlay: " + overlay);
-
-Overlays.overlayDeleted.connect(function(overlayID) {
-    print("Deleted: " + overlayID);
-});
-Script.setTimeout(function () {
-    Overlays.deleteOverlay(overlay);
-}, 1000);</code></pre>
+    <pre class="prettyprint"><code>var overlay = Overlays.addOverlay("cube", {    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0, z: -3 })),    rotation: MyAvatar.orientation,    dimensions: { x: 0.3, y: 0.3, z: 0.3 },    solid: true});print("Overlay: " + overlay);Overlays.overlayDeleted.connect(function(overlayID) {    print("Deleted: " + overlayID);});Script.setTimeout(function () {    Overlays.deleteOverlay(overlay);}, 1000);</code></pre>
 
                     
                   

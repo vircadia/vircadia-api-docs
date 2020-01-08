@@ -12,15 +12,16 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link href="images/fav-icon.ico" rel="shortcut icon">
 </head>
 <body>
 
 <div class="nav-header">
-    <p><a href="https://www.highfidelity.com"><img src="images/white-logo.png" width="214px" /></a></p>
+    <p><a href="https://projectathena.io"><img src="images/project-athena-logo.png" width="214px" /></a></p>
     
     <input type="text" class="search-input" id="nav-search" placeholder="Search API Docs ..." />
     
-    <p><a href="https://docs.highfidelity.com">Looking for <strong>High Fidelity</strong><br /> Documentation?</a></p>
+    <p><a href="https://docs.projectathena.dev">Looking for <strong>Project Athena</strong><br /> Documentation?</a></p>
 </div>
 
 <nav>
@@ -63,8 +64,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Camera</code> API provides access to the "camera" that defines your view in desktop and HMD display modes.
-The High Fidelity camera has axes <code>x</code> = right, <code>y</code> = up, <code>-z</code> = forward.</div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Camera</code> API provides access to the "camera" that defines your view in desktop and HMD display modes.The High Fidelity camera has axes <code>x</code> = right, <code>y</code> = up, <code>-z</code> = forward.</div>
                 
 
                 
@@ -119,8 +119,7 @@ The High Fidelity camera has axes <code>x</code> = right, <code>y</code> = up, <
                     
 
 
-    <p>The position of the camera. You can set this value only when the camera is in independent 
-    mode.</p>
+    <p>The position of the camera. You can set this value only when the camera is in independent     mode.</p>
 
 
                 
@@ -151,8 +150,7 @@ The High Fidelity camera has axes <code>x</code> = right, <code>y</code> = up, <
                     
 
 
-    <p>The orientation of the camera. You can set this value only when the camera is in 
-    independent mode.</p>
+    <p>The orientation of the camera. You can set this value only when the camera is in     independent mode.</p>
 
 
                 
@@ -245,8 +243,7 @@ The High Fidelity camera has axes <code>x</code> = right, <code>y</code> = up, <
                     
 
 
-    <p>The ID of the entity that is used for the camera position and orientation when the 
-    camera is in entity mode.</p>
+    <p>The ID of the entity that is used for the camera position and orientation when the     camera is in entity mode.</p>
 
 
                 
@@ -350,9 +347,7 @@ The High Fidelity camera has axes <code>x</code> = right, <code>y</code> = up, <
                     
 
 
-    <p>Computes a <a href="global.html#PickRay">PickRay</a> based on the current camera configuration and the specified <code>x, y</code> position on the 
-screen. The <a href="global.html#PickRay">PickRay</a> can be used in functions such as <a href="Entities.html#.findRayIntersection">Entities.findRayIntersection</a> and 
-<a href="Overlays.html#.findRayIntersection">Overlays.findRayIntersection</a>.</p>
+    <p>Computes a <a href="global.html#PickRay">PickRay</a> based on the current camera configuration and the specified <code>x, y</code> position on the screen. The <a href="global.html#PickRay">PickRay</a> can be used in functions such as <a href="Entities.html#.findRayIntersection">Entities.findRayIntersection</a> and <a href="Overlays.html#.findRayIntersection">Overlays.findRayIntersection</a>.</p>
 
 
                 
@@ -422,15 +417,7 @@ screen. The <a href="global.html#PickRay">PickRay</a> can be used in functions s
     
         <p class="code-caption">Use a PickRay to detect mouse clicks on entities.</p>
     
-    <pre class="prettyprint"><code>function onMousePressEvent(event) {
-    var pickRay = Camera.computePickRay(event.x, event.y);
-    var intersection = Entities.findRayIntersection(pickRay);
-    if (intersection.intersects) {
-        print("You clicked on entity " + intersection.entityID);
-    }
-}
-
-Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
+    <pre class="prettyprint"><code>function onMousePressEvent(event) {    var pickRay = Camera.computePickRay(event.x, event.y);    var intersection = Entities.findRayIntersection(pickRay);    if (intersection.intersects) {        print("You clicked on entity " + intersection.entityID);    }}Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
 
 
 -->
@@ -464,8 +451,7 @@ Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
                     
 
 
-    <p>Gets the ID of the entity that the camera is set to follow (i.e., use the position and orientation from) when it's in 
-entity mode. You can also get the entity ID using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
+    <p>Gets the ID of the entity that the camera is set to follow (i.e., use the position and orientation from) when it's in entity mode. You can also get the entity ID using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
 
 
                 
@@ -659,8 +645,7 @@ entity mode. You can also get the entity ID using the <a href="Camera.html">Came
                     
 
 
-    <p>Gets the current camera orientation. You can also get the orientation using the <a href="Camera.html">Camera.orientation</a> 
-property.</p>
+    <p>Gets the current camera orientation. You can also get the orientation using the <a href="Camera.html">Camera.orientation</a> property.</p>
 
 
                 
@@ -844,8 +829,7 @@ property.</p>
                     
 
 
-    <p>Sets the camera to continue looking at the specified <code>position</code> even while the camera moves. Only works if 
-the camera is in independent mode.</p>
+    <p>Sets the camera to continue looking at the specified <code>position</code> even while the camera moves. Only works if the camera is in independent mode.</p>
 
 
                 
@@ -1002,19 +986,7 @@ the camera is in independent mode.</p>
     
         <p class="code-caption">Rotate your camera to look at entities as you click on them with your mouse.</p>
     
-    <pre class="prettyprint"><code>function onMousePressEvent(event) {
-    var pickRay = Camera.computePickRay(event.x, event.y);
-    var intersection = Entities.findRayIntersection(pickRay);
-    if (intersection.intersects) {
-        // Switch to independent mode.
-        Camera.mode = "independent";
-        // Look at the entity that was clicked.
-        var properties = Entities.getEntityProperties(intersection.entityID, "position");
-        Camera.lookAt(properties.position);
-    }
-}
-
-Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
+    <pre class="prettyprint"><code>function onMousePressEvent(event) {    var pickRay = Camera.computePickRay(event.x, event.y);    var intersection = Entities.findRayIntersection(pickRay);    if (intersection.intersects) {        // Switch to independent mode.        Camera.mode = "independent";        // Look at the entity that was clicked.        var properties = Entities.getEntityProperties(intersection.entityID, "position");        Camera.lookAt(properties.position);    }}Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
 
 
 -->
@@ -1038,8 +1010,7 @@ Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
                     
 
 
-    <p>Sets the entity that the camera should follow (i.e., use the position and orientation from) when it's in entity mode. 
-You can also set the entity using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
+    <p>Sets the entity that the camera should follow (i.e., use the position and orientation from) when it's in entity mode. You can also set the entity using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
 
 
                 
@@ -1109,9 +1080,7 @@ You can also set the entity using the <a href="Camera.html">Camera.cameraEntity<
     
         <p class="code-caption">Move your camera to the position and orientation of the closest entity.</p>
     
-    <pre class="prettyprint"><code>Camera.setModeString("entity");
-var entity = Entities.findClosestEntity(MyAvatar.position, 100.0);
-Camera.setCameraEntity(entity);
+    <pre class="prettyprint"><code>Camera.setModeString("entity");var entity = Entities.findClosestEntity(MyAvatar.position, 100.0);Camera.setCameraEntity(entity);
      </code></pre>
 
 
@@ -1223,8 +1192,7 @@ Camera.setCameraEntity(entity);
                     
 
 
-    <p>Sets the camera orientation. You can also set the orientation using the <a href="Camera.html">Camera.orientation</a> property. Only
-works if the camera is in independent mode.</p>
+    <p>Sets the camera orientation. You can also set the orientation using the <a href="Camera.html">Camera.orientation</a> property. Onlyworks if the camera is in independent mode.</p>
 
 
                 
@@ -1311,8 +1279,7 @@ works if the camera is in independent mode.</p>
                     
 
 
-    <p>Sets the camera position. You can also set the position using the <a href="Camera.html">Camera.position</a> property. Only works if 
-the camera is in independent mode.</p>
+    <p>Sets the camera position. You can also set the position using the <a href="Camera.html">Camera.position</a> property. Only works if the camera is in independent mode.</p>
 
 
                 
@@ -1566,11 +1533,7 @@ the camera is in independent mode.</p>
     
         <p class="code-caption">Report camera mode changes.</p>
     
-    <pre class="prettyprint"><code>function onCameraModeUpdated(newMode) {
-    print("The camera mode has changed to " + newMode);
-}
-
-Camera.modeUpdated.connect(onCameraModeUpdated);
+    <pre class="prettyprint"><code>function onCameraModeUpdated(newMode) {    print("The camera mode has changed to " + newMode);}Camera.modeUpdated.connect(onCameraModeUpdated);
      </code></pre>
 
 
@@ -1606,75 +1569,7 @@ string
                     
 
 
-    <p>Camera modes affect the position of the camera and the controls for camera movement. The camera can be in one of the
-following modes:</p>
-<table>
-  <thead>
-    <tr>
-      <th>Mode</th>
-      <th>String</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>First&nbsp;Person</strong></td>
-      <td><code>"first&nbsp;person"</code></td>
-      <td><p>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with
-      your avatar.</p>
-      <p><em>Legacy first person camera mode.</em></p></td>
-    </tr>
-    <tr>
-      <td><strong>First&nbsp;Person&nbsp;Look&nbsp;At</strong></td>
-      <td><code>"first&nbsp;person&nbsp;look&nbsp;at"</code></td>
-      <td><p>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with 
-      your avatar's head.</p>
-      <p><em>Default first person camera mode.</em></p></td>
-    </tr>
-    <tr>
-      <td><strong>Third&nbsp;Person</strong></td>
-      <td><code>"third&nbsp;person"</code></td>
-      <td><p>The camera is positioned such that you have a view from just behind your avatar. The camera moves and rotates 
-      with your avatar.</p>  
-      <p><em>Legacy third person camera camera mode.</em></p> 
-      <pre class="prettyprint"><code>Camera.mode = "third person";</code></pre></td>
-    </tr>
-    <tr>
-      <td><strong>Look&nbsp;At</strong></td>
-      <td><code>"look&nbsp;at"</code></td>
-      <td><p>The camera is positioned behind your avatar. The camera moves and rotates independently from your avatar. The
-      avatar's head always faces the camera look at point.</p>
-      <p><em>Default third person camera mode.</em></td>
-    </tr>
-    <tr>
-      <td><strong>Selfie</strong></td>
-      <td><code>"selfie"</code></td>
-      <td><p>The camera is positioned in front of your avatar. The camera moves and rotates independently from your avatar.
-      Your avatar's head is always facing the camera.</p>
-      <p><em>Default "look at myself" camera mode.</em></p></td>
-    </tr>
-    <tr>
-      <td><strong>Mirror</strong></td>
-      <td><code>"mirror"</code></td>
-      <td><p>The camera is positioned such that you are looking directly at your avatar. The camera is fixed and does not 
-      move with your avatar.</p> 
-      <p><em>Legacy "look at myself" behavior.</em></p>
-      <pre class="prettyprint"><code>Camera.mode = "mirror";</code></pre></td>
-    </tr>
-    <tr>
-      <td><strong>Independent</strong></td>
-      <td><code>"independent"</code></td>
-      <td>The camera's position and orientation don't change with your avatar movement. Instead, they can be set via 
-      scripting.</td>
-    </tr>
-    <tr>
-      <td><strong>Entity</strong></td>
-      <td><code>"entity"</code></td>
-      <td>The camera's position and orientation are set to be the same as a specified entity's, and move with the entity as
-      it moves.
-    </tr>
-  </tbody>
-</table>
+    <p>Camera modes affect the position of the camera and the controls for camera movement. The camera can be in one of thefollowing modes:</p><table>  <thead>    <tr>      <th>Mode</th>      <th>String</th>      <th>Description</th>    </tr>  </thead>  <tbody>    <tr>      <td><strong>First&nbsp;Person</strong></td>      <td><code>"first&nbsp;person"</code></td>      <td><p>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with      your avatar.</p>      <p><em>Legacy first person camera mode.</em></p></td>    </tr>    <tr>      <td><strong>First&nbsp;Person&nbsp;Look&nbsp;At</strong></td>      <td><code>"first&nbsp;person&nbsp;look&nbsp;at"</code></td>      <td><p>The camera is positioned such that you have the same view as your avatar. The camera moves and rotates with       your avatar's head.</p>      <p><em>Default first person camera mode.</em></p></td>    </tr>    <tr>      <td><strong>Third&nbsp;Person</strong></td>      <td><code>"third&nbsp;person"</code></td>      <td><p>The camera is positioned such that you have a view from just behind your avatar. The camera moves and rotates       with your avatar.</p>        <p><em>Legacy third person camera camera mode.</em></p>       <pre class="prettyprint"><code>Camera.mode = "third person";</code></pre></td>    </tr>    <tr>      <td><strong>Look&nbsp;At</strong></td>      <td><code>"look&nbsp;at"</code></td>      <td><p>The camera is positioned behind your avatar. The camera moves and rotates independently from your avatar. The      avatar's head always faces the camera look at point.</p>      <p><em>Default third person camera mode.</em></td>    </tr>    <tr>      <td><strong>Selfie</strong></td>      <td><code>"selfie"</code></td>      <td><p>The camera is positioned in front of your avatar. The camera moves and rotates independently from your avatar.      Your avatar's head is always facing the camera.</p>      <p><em>Default "look at myself" camera mode.</em></p></td>    </tr>    <tr>      <td><strong>Mirror</strong></td>      <td><code>"mirror"</code></td>      <td><p>The camera is positioned such that you are looking directly at your avatar. The camera is fixed and does not       move with your avatar.</p>       <p><em>Legacy "look at myself" behavior.</em></p>      <pre class="prettyprint"><code>Camera.mode = "mirror";</code></pre></td>    </tr>    <tr>      <td><strong>Independent</strong></td>      <td><code>"independent"</code></td>      <td>The camera's position and orientation don't change with your avatar movement. Instead, they can be set via       scripting.</td>    </tr>    <tr>      <td><strong>Entity</strong></td>      <td><code>"entity"</code></td>      <td>The camera's position and orientation are set to be the same as a specified entity's, and move with the entity as      it moves.    </tr>  </tbody></table>
 
 
                                     
@@ -1764,9 +1659,7 @@ following modes:</p>
                             
 
 
-    <p>Computes a <a href="global.html#PickRay">PickRay</a> based on the current camera configuration and the specified <code>x, y</code> position on the 
-screen. The <a href="global.html#PickRay">PickRay</a> can be used in functions such as <a href="Entities.html#.findRayIntersection">Entities.findRayIntersection</a> and 
-<a href="Overlays.html#.findRayIntersection">Overlays.findRayIntersection</a>.</p>
+    <p>Computes a <a href="global.html#PickRay">PickRay</a> based on the current camera configuration and the specified <code>x, y</code> position on the screen. The <a href="global.html#PickRay">PickRay</a> can be used in functions such as <a href="Entities.html#.findRayIntersection">Entities.findRayIntersection</a> and <a href="Overlays.html#.findRayIntersection">Overlays.findRayIntersection</a>.</p>
 
 
                         
@@ -1911,15 +1804,7 @@ number
                         
         <p class="code-caption">Use a PickRay to detect mouse clicks on entities.</p>
     
-    <pre class="prettyprint"><code>function onMousePressEvent(event) {
-    var pickRay = Camera.computePickRay(event.x, event.y);
-    var intersection = Entities.findRayIntersection(pickRay);
-    if (intersection.intersects) {
-        print("You clicked on entity " + intersection.entityID);
-    }
-}
-
-Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
+    <pre class="prettyprint"><code>function onMousePressEvent(event) {    var pickRay = Camera.computePickRay(event.x, event.y);    var intersection = Entities.findRayIntersection(pickRay);    if (intersection.intersects) {        print("You clicked on entity " + intersection.entityID);    }}Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
 
                     
                   
@@ -1958,8 +1843,7 @@ Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
                         Returns: <span style="font-weight: normal;">
                         
                             
-    The ID of the entity that the camera is set to follow when in entity mode; <code>null</code> if no 
-    camera entity has been set.
+    The ID of the entity that the camera is set to follow when in entity mode; <code>null</code> if no     camera entity has been set.
 
 
                         
@@ -1977,8 +1861,7 @@ Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
                             
 
 
-    <p>Gets the ID of the entity that the camera is set to follow (i.e., use the position and orientation from) when it's in 
-entity mode. You can also get the entity ID using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
+    <p>Gets the ID of the entity that the camera is set to follow (i.e., use the position and orientation from) when it's in entity mode. You can also get the entity ID using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
 
 
                         
@@ -2186,8 +2069,7 @@ entity mode. You can also get the entity ID using the <a href="Camera.html">Came
                             
 
 
-    <p>Gets the current camera orientation. You can also get the orientation using the <a href="Camera.html">Camera.orientation</a> 
-property.</p>
+    <p>Gets the current camera orientation. You can also get the orientation using the <a href="Camera.html">Camera.orientation</a> property.</p>
 
 
                         
@@ -2386,8 +2268,7 @@ property.</p>
                             
 
 
-    <p>Sets the camera to continue looking at the specified <code>position</code> even while the camera moves. Only works if 
-the camera is in independent mode.</p>
+    <p>Sets the camera to continue looking at the specified <code>position</code> even while the camera moves. Only works if the camera is in independent mode.</p>
 
 
                         
@@ -2652,19 +2533,7 @@ the camera is in independent mode.</p>
                         
         <p class="code-caption">Rotate your camera to look at entities as you click on them with your mouse.</p>
     
-    <pre class="prettyprint"><code>function onMousePressEvent(event) {
-    var pickRay = Camera.computePickRay(event.x, event.y);
-    var intersection = Entities.findRayIntersection(pickRay);
-    if (intersection.intersects) {
-        // Switch to independent mode.
-        Camera.mode = "independent";
-        // Look at the entity that was clicked.
-        var properties = Entities.getEntityProperties(intersection.entityID, "position");
-        Camera.lookAt(properties.position);
-    }
-}
-
-Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
+    <pre class="prettyprint"><code>function onMousePressEvent(event) {    var pickRay = Camera.computePickRay(event.x, event.y);    var intersection = Entities.findRayIntersection(pickRay);    if (intersection.intersects) {        // Switch to independent mode.        Camera.mode = "independent";        // Look at the entity that was clicked.        var properties = Entities.getEntityProperties(intersection.entityID, "position");        Camera.lookAt(properties.position);    }}Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
 
                     
                   
@@ -2712,8 +2581,7 @@ Controller.mousePressEvent.connect(onMousePressEvent);</code></pre>
                             
 
 
-    <p>Sets the entity that the camera should follow (i.e., use the position and orientation from) when it's in entity mode. 
-You can also set the entity using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
+    <p>Sets the entity that the camera should follow (i.e., use the position and orientation from) when it's in entity mode. You can also set the entity using the <a href="Camera.html">Camera.cameraEntity</a> property.</p>
 
 
                         
@@ -2825,9 +2693,7 @@ You can also set the entity using the <a href="Camera.html">Camera.cameraEntity<
                         
         <p class="code-caption">Move your camera to the position and orientation of the closest entity.</p>
     
-    <pre class="prettyprint"><code>Camera.setModeString("entity");
-var entity = Entities.findClosestEntity(MyAvatar.position, 100.0);
-Camera.setCameraEntity(entity);
+    <pre class="prettyprint"><code>Camera.setModeString("entity");var entity = Entities.findClosestEntity(MyAvatar.position, 100.0);Camera.setCameraEntity(entity);
      </code></pre>
 
                     
@@ -3029,8 +2895,7 @@ Camera.setCameraEntity(entity);
                             
 
 
-    <p>Sets the camera orientation. You can also set the orientation using the <a href="Camera.html">Camera.orientation</a> property. Only
-works if the camera is in independent mode.</p>
+    <p>Sets the camera orientation. You can also set the orientation using the <a href="Camera.html">Camera.orientation</a> property. Onlyworks if the camera is in independent mode.</p>
 
 
                         
@@ -3183,8 +3048,7 @@ works if the camera is in independent mode.</p>
                             
 
 
-    <p>Sets the camera position. You can also set the position using the <a href="Camera.html">Camera.position</a> property. Only works if 
-the camera is in independent mode.</p>
+    <p>Sets the camera position. You can also set the position using the <a href="Camera.html">Camera.position</a> property. Only works if the camera is in independent mode.</p>
 
 
                         
@@ -3572,11 +3436,7 @@ Signal
                         
         <p class="code-caption">Report camera mode changes.</p>
     
-    <pre class="prettyprint"><code>function onCameraModeUpdated(newMode) {
-    print("The camera mode has changed to " + newMode);
-}
-
-Camera.modeUpdated.connect(onCameraModeUpdated);
+    <pre class="prettyprint"><code>function onCameraModeUpdated(newMode) {    print("The camera mode has changed to " + newMode);}Camera.modeUpdated.connect(onCameraModeUpdated);
      </code></pre>
 
                     
