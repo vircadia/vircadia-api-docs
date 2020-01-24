@@ -3955,7 +3955,7 @@
         "scope": "static"
     },
     {
-        "description": "Overrides the default avatar animations.\r<p>The avatar animation system includes a set of default animations along with rules for how those animations are blended\rtogether with procedural data (such as look at vectors, hand sensors etc.). <code>overrideAnimation()</code> is used to \rcompletely override all motion from the default animation system (including inverse kinematics for hand and head \rcontrollers) and play a set of specified animations. To end these animations and restore the default animations, use \r{@link MyAvatar.restoreAnimation}.</p>\r<p>Note: When using pre-built animation data, it's critical that the joint orientation of the source animation and target \rrig are equivalent, since the animation data applies absolute values onto the joints. If the orientations are different, \rthe avatar will move in unpredictable ways. For more information about avatar joint orientation standards, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Overrides the default avatar animations.\r<p>The avatar animation system includes a set of default animations along with rules for how those animations are blended\rtogether with procedural data (such as look at vectors, hand sensors etc.). <code>overrideAnimation()</code> is used to \rcompletely override all motion from the default animation system (including inverse kinematics for hand and head \rcontrollers) and play a set of specified animations. To end these animations and restore the default animations, use \r{@link MyAvatar.restoreAnimation}.</p>\r<p>Note: When using pre-built animation data, it's critical that the joint orientation of the source animation and target \rrig are equivalent, since the animation data applies absolute values onto the joints. If the orientations are different, \rthe avatar will move in unpredictable ways. For more information about avatar joint orientation standards, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "overrideAnimation",
         "params": [
@@ -4134,7 +4134,7 @@
         "scope": "static"
     },
     {
-        "description": "Overrides a specific animation role.\r<p>Each avatar has an avatar-animation.json file that defines a set of animation roles. Animation roles map to easily \runderstandable actions that the avatar can perform, such as <code>\"idleStand\"</code>, <code>\"idleTalk\"</code>, or \r<code>\"walkFwd\"</code>. To get the full list of roles, use {@ link MyAvatar.getAnimationRoles}.\rFor each role, the avatar-animation.json defines when the animation is used, the animation clip (glTF or FBX) used, and \rhow animations are blended together with procedural data (such as look at vectors, hand sensors etc.).\r<code>overrideRoleAnimation()</code> is used to change the animation clip (glTF or FBX) associated with a specified \ranimation role. To end the role animation and restore the default, use {@link MyAvatar.restoreRoleAnimation}.</p>\r<p>Note: Hand roles only affect the hand. Other \"main\" roles, like \"idleStand\", \"idleTalk\", and \"takeoffStand\", are full \rbody.</p>\r<p>Note: When using pre-built animation data, it's critical that the joint orientation of the source animation and target\rrig are equivalent, since the animation data applies absolute values onto the joints. If the orientations are different,\rthe avatar will move in unpredictable ways. For more information about avatar joint orientation standards, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.",
+        "description": "Overrides a specific animation role.\r<p>Each avatar has an avatar-animation.json file that defines a set of animation roles. Animation roles map to easily \runderstandable actions that the avatar can perform, such as <code>\"idleStand\"</code>, <code>\"idleTalk\"</code>, or \r<code>\"walkFwd\"</code>. To get the full list of roles, use {@ link MyAvatar.getAnimationRoles}.\rFor each role, the avatar-animation.json defines when the animation is used, the animation clip (glTF or FBX) used, and \rhow animations are blended together with procedural data (such as look at vectors, hand sensors etc.).\r<code>overrideRoleAnimation()</code> is used to change the animation clip (glTF or FBX) associated with a specified \ranimation role. To end the role animation and restore the default, use {@link MyAvatar.restoreRoleAnimation}.</p>\r<p>Note: Hand roles only affect the hand. Other \"main\" roles, like \"idleStand\", \"idleTalk\", and \"takeoffStand\", are full \rbody.</p>\r<p>Note: When using pre-built animation data, it's critical that the joint orientation of the source animation and target\rrig are equivalent, since the animation data applies absolute values onto the joints. If the orientations are different,\rthe avatar will move in unpredictable ways. For more information about avatar joint orientation standards, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.",
         "kind": "function",
         "name": "overrideRoleAnimation",
         "params": [
@@ -6165,7 +6165,7 @@
         "scope": "static"
     },
     {
-        "description": "Enables and disables flow simulation of physics on the avatar's hair, clothes, and body parts. See \r{@link https://docs.highfidelity.com/create/avatars/add-flow.html|Add Flow to Your Avatar} for more \rinformation.",
+        "description": "Enables and disables flow simulation of physics on the avatar's hair, clothes, and body parts. See \r{@link https://docs.projectathena.dev/create/avatars/add-flow.html|Add Flow to Your Avatar} for more \rinformation.",
         "kind": "function",
         "name": "useFlow",
         "params": [
@@ -6987,7 +6987,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the URL of the override animation graph.\r<p>See {@link https://docs.highfidelity.com/create/avatars/custom-animations.html|Custom Avatar Animations} for\rinformation on animation graphs.</p>",
+        "description": "Gets the URL of the override animation graph.\r<p>See {@link https://docs.projectathena.dev/create/avatars/custom-animations.html|Custom Avatar Animations} for\rinformation on animation graphs.</p>",
         "kind": "function",
         "name": "getAnimGraphOverrideUrl",
         "returns": [
@@ -7005,7 +7005,7 @@
         "scope": "static"
     },
     {
-        "description": "Sets the animation graph to use in preference to the default animation graph.\r<p>See {@link https://docs.highfidelity.com/create/avatars/custom-animations.html|Custom Avatar Animations} for\rinformation on animation graphs.</p>",
+        "description": "Sets the animation graph to use in preference to the default animation graph.\r<p>See {@link https://docs.projectathena.dev/create/avatars/custom-animations.html|Custom Avatar Animations} for\rinformation on animation graphs.</p>",
         "kind": "function",
         "name": "setAnimGraphOverrideUrl",
         "params": [
@@ -7024,7 +7024,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the URL of animation graph (i.e., the avatar animation JSON) that's currently being used for avatar animations.\r<p>See {@link https://docs.highfidelity.com/create/avatars/custom-animations.html|Custom Avatar Animations} for \rinformation on animation graphs.</p>",
+        "description": "Gets the URL of animation graph (i.e., the avatar animation JSON) that's currently being used for avatar animations.\r<p>See {@link https://docs.projectathena.dev/create/avatars/custom-animations.html|Custom Avatar Animations} for \rinformation on animation graphs.</p>",
         "kind": "function",
         "name": "getAnimGraphUrl",
         "returns": [
@@ -7045,7 +7045,7 @@
         "scope": "static"
     },
     {
-        "description": "Sets the current animation graph  (i.e., the avatar animation JSON) to use for avatar animations and makes it the default.\r<p>See {@link https://docs.highfidelity.com/create/avatars/custom-animations.html|Custom Avatar Animations} for\rinformation on animation graphs.</p>",
+        "description": "Sets the current animation graph  (i.e., the avatar animation JSON) to use for avatar animations and makes it the default.\r<p>See {@link https://docs.projectathena.dev/create/avatars/custom-animations.html|Custom Avatar Animations} for\rinformation on animation graphs.</p>",
         "kind": "function",
         "name": "setAnimGraphUrl",
         "params": [
@@ -31916,7 +31916,7 @@
             }
         ],
         "examples": [
-            "<caption>Set your avatar to it's default T-pose for a while.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://docs.highfidelity.com/images/t-pose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Set your avatar to it's default T-pose for a while.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://apidocs.projectathena.dev/images/t-pose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "Avatar",
         "longname": "Avatar.setJointData",
@@ -32027,7 +32027,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.",
+        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.",
         "kind": "function",
         "name": "getJointRotation",
         "params": [
@@ -32056,7 +32056,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "getJointTranslation",
         "params": [
@@ -32146,7 +32146,7 @@
             }
         ],
         "examples": [
-            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose with arm rotated\" src=\"https://docs.highfidelity.com/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Rotate the right arm.\rvar newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\rMyAvatar.setJointRotation(\"RightArm\", newArmRotation);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose with arm rotated\" src=\"https://apidocs.projectathena.dev/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Rotate the right arm.\rvar newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\rMyAvatar.setJointRotation(\"RightArm\", newArmRotation);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "Avatar",
         "longname": "Avatar.setJointRotation",
@@ -32177,7 +32177,7 @@
             }
         ],
         "examples": [
-            "<caption>Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between \rthe head and body or you will see the neck stretched.<br />\r<img alt=\"Avatar with neck stretched\" src=\"https://docs.highfidelity.com/images/stretched-neck.png\" /></caption>\r// Stretch your avatar's neck.\rMyAvatar.setJointTranslation(\"Neck\", Vec3.multiply(2, MyAvatar.getJointTranslation(\"Neck\")));\r\r// Restore your avatar's neck after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointData(\"Neck\");\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between \rthe head and body or you will see the neck stretched.<br />\r<img alt=\"Avatar with neck stretched\" src=\"https://apidocs.projectathena.dev/images/stretched-neck.png\" /></caption>\r// Stretch your avatar's neck.\rMyAvatar.setJointTranslation(\"Neck\", Vec3.multiply(2, MyAvatar.getJointTranslation(\"Neck\")));\r\r// Restore your avatar's neck after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointData(\"Neck\");\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "Avatar",
         "longname": "Avatar.setJointTranslation",
@@ -32235,7 +32235,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.",
+        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.",
         "kind": "function",
         "name": "getJointRotation",
         "params": [
@@ -32267,7 +32267,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "getJointTranslation",
         "params": [
@@ -32353,7 +32353,7 @@
             }
         ],
         "examples": [
-            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://docs.highfidelity.com/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Get all join rotations.\rvar jointRotations = MyAvatar.getJointRotations(); \r\r// Update the rotation of the right arm in the array.\rjointRotations[MyAvatar.getJointIndex(\"RightArm\")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\r\r// Update all joint rotations.\rMyAvatar.setJointRotations(jointRotations);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://apidocs.projectathena.dev/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Get all join rotations.\rvar jointRotations = MyAvatar.getJointRotations(); \r\r// Update the rotation of the right arm in the array.\rjointRotations[MyAvatar.getJointIndex(\"RightArm\")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\r\r// Update all joint rotations.\rMyAvatar.setJointRotations(jointRotations);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "Avatar",
         "longname": "Avatar.setJointRotations",
@@ -32453,7 +32453,7 @@
                         "string"
                     ]
                 },
-                "description": "The name of the blendshape, per the \r    {@link https://docs.highfidelity.com/create/avatars/avatar-standards.html#blendshapes Avatar Standards}.",
+                "description": "The name of the blendshape, per the \r    {@link https://docs.projectathena.dev/create/avatars/avatar-standards.html#blendshapes Avatar Standards}.",
                 "name": "name"
             },
             {
@@ -33945,7 +33945,7 @@
         "scope": "global"
     },
     {
-        "description": "Gets the default rotation of a joint (in the current avatar) relative to its parent.\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Gets the default rotation of a joint (in the current avatar) relative to its parent.\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "getDefaultJointRotation",
         "params": [
@@ -33974,7 +33974,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the default translation of a joint (in the current avatar) relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Gets the default translation of a joint (in the current avatar) relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "getDefaultJointTranslation",
         "params": [
@@ -47230,7 +47230,7 @@
         "scope": "static"
     },
     {
-        "description": "<p>Describes the type of texture.</p>\r<p>See also: {@link Material} and \r{@link https://docs.highfidelity.com/create/3d-models/pbr-materials-guide.html|PBR Materials Guide}.</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Name</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>Default</td><td>Basic color.</td></tr>\r    <tr><td><code>1</code></td><td>Strict</td><td>Basic color. Quality never downgraded.</td></tr>\r    <tr><td><code>2</code></td><td>Albedo</td><td>Color for PBR.</td></tr>\r    <tr><td><code>3</code></td><td>Normal</td><td>Normal map.</td></tr>\r    <tr><td><code>4</code></td><td>Bump</td><td>Bump map.</td></tr>\r    <tr><td><code>5</code></td><td>Specular or metallic</td><td>Metallic or not.</td></tr>\r    <tr><td><code>6</code></td><td>Roughness</td><td>Rough or matte.</td></tr>\r    <tr><td><code>7</code></td><td>Gloss</td><td>Gloss or shine.</td></tr>\r    <tr><td><code>8</code></td><td>Emissive</td><td>The amount of light reflected.</td></tr>\r    <tr><td><code>9</code></td><td>Cube</td><td>Cubic image for sky boxes.</td></tr>\r    <tr><td><code>10</code></td><td>Occlusion or scattering</td><td>How objects or human skin interact with light.</td></tr>\r    <tr><td><code>11</code></td><td>Lightmap</td><td>Light map.</td></tr>\r    <tr><td><code>12</code></td><td>Unused</td><td>Texture is not currently used.</td></tr>\r  </tbody>\r</table>",
+        "description": "<p>Describes the type of texture.</p>\r<p>See also: {@link Material} and \r{@link https://docs.projectathena.dev/create/3d-models/pbr-materials-guide.html|PBR Materials Guide}.</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Name</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>Default</td><td>Basic color.</td></tr>\r    <tr><td><code>1</code></td><td>Strict</td><td>Basic color. Quality never downgraded.</td></tr>\r    <tr><td><code>2</code></td><td>Albedo</td><td>Color for PBR.</td></tr>\r    <tr><td><code>3</code></td><td>Normal</td><td>Normal map.</td></tr>\r    <tr><td><code>4</code></td><td>Bump</td><td>Bump map.</td></tr>\r    <tr><td><code>5</code></td><td>Specular or metallic</td><td>Metallic or not.</td></tr>\r    <tr><td><code>6</code></td><td>Roughness</td><td>Rough or matte.</td></tr>\r    <tr><td><code>7</code></td><td>Gloss</td><td>Gloss or shine.</td></tr>\r    <tr><td><code>8</code></td><td>Emissive</td><td>The amount of light reflected.</td></tr>\r    <tr><td><code>9</code></td><td>Cube</td><td>Cubic image for sky boxes.</td></tr>\r    <tr><td><code>10</code></td><td>Occlusion or scattering</td><td>How objects or human skin interact with light.</td></tr>\r    <tr><td><code>11</code></td><td>Lightmap</td><td>Light map.</td></tr>\r    <tr><td><code>12</code></td><td>Unused</td><td>Texture is not currently used.</td></tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "TextureType",
         "type": {
@@ -47506,7 +47506,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Midi</code> API provides the ability to connect Interface with musical instruments and other external or virtual \rdevices via the MIDI protocol. For further information and examples, see the tutorial: \r<a href=\"https://docs.highfidelity.com/script/midi-tutorial.html\">Use MIDI to Control Your Environment</a>.\r\r<p><strong>Note:</strong> Only works on Windows.</p>",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Midi</code> API provides the ability to connect Interface with musical instruments and other external or virtual \rdevices via the MIDI protocol. For further information and examples, see the tutorial: \r<a href=\"https://docs.projectathena.dev/script/midi-tutorial.html\">Use MIDI to Control Your Environment</a>.\r\r<p><strong>Note:</strong> Only works on Windows.</p>",
         "kind": "namespace",
         "name": "Midi",
         "hifiInterface": true,
@@ -57769,7 +57769,7 @@
         "scope": "static"
     },
     {
-        "description": "Provides access to methods or objects provided in an external JavaScript or JSON file. \rSee {@link https://docs.highfidelity.com/script/js-tips.html} for further details.",
+        "description": "Provides access to methods or objects provided in an external JavaScript or JSON file. \rSee {@link https://docs.projectathena.dev/script/js-tips.html} for further details.",
         "kind": "function",
         "name": "require",
         "params": [
@@ -60867,7 +60867,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Vec3</code> API provides facilities for generating and manipulating 3-dimensional vectors. High Fidelity uses a \rright-handed Cartesian coordinate system where the y-axis is the \"up\" and the negative z-axis is the \"front\" direction.\r<img alt=\"High Fidelity coordinate system\" src=\"https://docs.highfidelity.com/images/opengl-coord-system.jpg\" />",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Vec3</code> API provides facilities for generating and manipulating 3-dimensional vectors. High Fidelity uses a \rright-handed Cartesian coordinate system where the y-axis is the \"up\" and the negative z-axis is the \"front\" direction.\r<img alt=\"High Fidelity coordinate system\" src=\"https://apidocs.projectathena.dev/images/opengl-coord-system.jpg\" />",
         "kind": "namespace",
         "name": "Vec3",
         "variation": "0",
@@ -66810,7 +66810,7 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "D:\\Workspaces\\CtrlAltStudio\\Athena-B\\Athena-B\\tools\\jsdoc\\root.js"
+            "D:\\Workspaces\\CtrlAltStudio\\Athena-A\\Athena-A\\tools\\jsdoc\\root.js"
         ]
     },
     {
@@ -67285,7 +67285,7 @@
             }
         ],
         "examples": [
-            "<caption>Set your avatar to it's default T-pose for a while.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://docs.highfidelity.com/images/t-pose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Set your avatar to it's default T-pose for a while.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://apidocs.projectathena.dev/images/t-pose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.setJointData",
@@ -67381,7 +67381,7 @@
             }
         ],
         "examples": [
-            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose with arm rotated\" src=\"https://docs.highfidelity.com/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Rotate the right arm.\rvar newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\rMyAvatar.setJointRotation(\"RightArm\", newArmRotation);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose with arm rotated\" src=\"https://apidocs.projectathena.dev/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Rotate the right arm.\rvar newArmRotation = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\rMyAvatar.setJointRotation(\"RightArm\", newArmRotation);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.setJointRotation",
@@ -67440,7 +67440,7 @@
             }
         ],
         "examples": [
-            "<caption>Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between \rthe head and body or you will see the neck stretched.<br />\r<img alt=\"Avatar with neck stretched\" src=\"https://docs.highfidelity.com/images/stretched-neck.png\" /></caption>\r// Stretch your avatar's neck.\rMyAvatar.setJointTranslation(\"Neck\", Vec3.multiply(2, MyAvatar.getJointTranslation(\"Neck\")));\r\r// Restore your avatar's neck after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointData(\"Neck\");\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Stretch your avatar's neck. Depending on the avatar you are using, you will either see a gap between \rthe head and body or you will see the neck stretched.<br />\r<img alt=\"Avatar with neck stretched\" src=\"https://apidocs.projectathena.dev/images/stretched-neck.png\" /></caption>\r// Stretch your avatar's neck.\rMyAvatar.setJointTranslation(\"Neck\", Vec3.multiply(2, MyAvatar.getJointTranslation(\"Neck\")));\r\r// Restore your avatar's neck after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointData(\"Neck\");\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.setJointTranslation",
@@ -67546,7 +67546,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.",
+        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.",
         "kind": "function",
         "name": "getJointRotation",
         "params": [
@@ -67575,7 +67575,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.",
+        "description": "Gets the rotation of a joint relative to its parent. For information on the joint hierarchy used, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.",
         "kind": "function",
         "name": "getJointRotation",
         "params": [
@@ -67607,7 +67607,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see \r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see \r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "getJointTranslation",
         "params": [
@@ -67636,7 +67636,7 @@
         "scope": "static"
     },
     {
-        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.highfidelity.com/create/avatars/avatar-standards\">Avatar Standards</a>.</p>",
+        "description": "Gets the translation of a joint relative to its parent, in model coordinates.\r<p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>\r<p>For information on the joint hierarchy used, see\r<a href=\"https://docs.projectathena.dev/create/avatars/avatar-standards.html\">Avatar Standards</a>.</p>",
         "kind": "function",
         "name": "getJointTranslation",
         "params": [
@@ -67722,7 +67722,7 @@
             }
         ],
         "examples": [
-            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://docs.highfidelity.com/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Get all join rotations.\rvar jointRotations = MyAvatar.getJointRotations(); \r\r// Update the rotation of the right arm in the array.\rjointRotations[MyAvatar.getJointIndex(\"RightArm\")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\r\r// Update all joint rotations.\rMyAvatar.setJointRotations(jointRotations);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
+            "<caption>Set your avatar to its default T-pose then rotate its right arm.<br />\r<img alt=\"Avatar in T-pose\" src=\"https://apidocs.projectathena.dev/images/armpose.png\" /></caption>\r// Set all joint translations and rotations to defaults.\rvar i, length, rotation, translation;\rfor (i = 0, length = MyAvatar.getJointNames().length; i < length; i++) {\r    rotation = MyAvatar.getDefaultJointRotation(i);\r    translation = MyAvatar.getDefaultJointTranslation(i);\r    MyAvatar.setJointData(i, rotation, translation);\r}\r\r// Get all join rotations.\rvar jointRotations = MyAvatar.getJointRotations(); \r\r// Update the rotation of the right arm in the array.\rjointRotations[MyAvatar.getJointIndex(\"RightArm\")] = { x: 0.47, y: 0.22, z: -0.02, w: 0.87 };\r\r// Update all joint rotations.\rMyAvatar.setJointRotations(jointRotations);\r\r// Restore your avatar's motion after 5s.\rScript.setTimeout(function () {\r    MyAvatar.clearJointsData();\r}, 5000);\r\r// Note: If using from the Avatar API, replace all occurrences of \"MyAvatar\" with \"Avatar\"."
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.setJointRotations",
@@ -67822,7 +67822,7 @@
                         "string"
                     ]
                 },
-                "description": "The name of the blendshape, per the \r    {@link https://docs.highfidelity.com/create/avatars/avatar-standards.html#blendshapes Avatar Standards}.",
+                "description": "The name of the blendshape, per the \r    {@link https://docs.projectathena.dev/create/avatars/avatar-standards.html#blendshapes Avatar Standards}.",
                 "name": "name"
             },
             {
