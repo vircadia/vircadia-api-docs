@@ -34,17 +34,29 @@
     </style>
     <script>
     //We are running the check here to preload the theme because it may load the incorrect one first for a split second.
-    var darkDisabled = JSON.parse(localStorage.getItem('darkDisabled'));
-    if (darkDisabled == null) {
-        localStorage.setItem('darkDisabled', JSON.stringify(false));
+    var isLocalStorageSupported = false;
+    try { // Edge browsing files on local file system doesn't support localStorage.
+        if (localStorage) {
+            isLocalStorageSupported = true;
+        }
+    } catch (e) {
+        // nop
+    }
+    
+    var defaultDarkDisabled = false;
+    var darkDisabled = isLocalStorageSupported ? JSON.parse(localStorage.getItem('darkDisabled')) : defaultDarkDisabled;
+    if (darkDisabled === null) {
+        localStorage.setItem('darkDisabled', JSON.stringify(defaultDarkDisabled));
     } else {
         var nightSheet = document.querySelector('[href="styles/night.css"]');
         nightSheet.disabled = darkDisabled;
     }
 
-    var responsiveDisabled = JSON.parse(localStorage.getItem('responsiveDisabled'));
+    var defaultResponsiveDisabled = true;
+    var responsiveDisabled = 
+        isLocalStorageSupported ? JSON.parse(localStorage.getItem('responsiveDisabled')) : defaultResponsiveDisabled;
     if (responsiveDisabled === null) {
-        localStorage.setItem('responsiveDisabled', JSON.stringify(true));
+        localStorage.setItem('responsiveDisabled', JSON.stringify(defaultResponsiveDisabled));
     } else {
         var responsiveSheet = document.querySelector('[href="styles/responsive.css"]');
         responsiveSheet.disabled = responsiveDisabled;
@@ -114,7 +126,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Entities</code> API provides facilities to create and interact with entities. Entities are 2D or 3D objects displayed in-world. Depending on their <a href="Entities.html#.EntityHostType">EntityHostType</a>, they may persist in the domain as "domain" entities, travel to different domains with a user as "avatar" entities, or be visible only to an individual user as "local" entities (a.k.a. "overlays").<p>Note: For Interface, avatar, and client entity scripts, the entities available to scripts are those that Interface has displayed and so knows about. For assignment client scripts, the entities available are those that are "seen" by the <a href="EntityViewer.html">EntityViewer</a>. For entity server scripts, all entities are available.</p><h3>Entity Methods</h3><p>Some of the API's signals correspond to entity methods that are called, if present, in the entity being interacted with. The client or server entity script must expose them as a property. However, unlike <a href="Entities.html#.callEntityMethod">Entities.callEntityMethod</a>, server entity scripts do not need to list them in an <code>remotelyCallable</code> property. The entity methods are called with parameters per their corresponding signal.</p><table>  <thead>    <tr><th>Method Name</th><th>Corresponding Signal</th></tr>  </thead>  <tbody>    <tr><td><code>clickDownOnEntity</code></td><td><a href="Entities.html#.clickDownOnEntity">Entities.clickDownOnEntity</a></td></tr>    <tr><td><code>clickReleaseOnEntity</code></td><td><a href="Entities.html#.clickReleaseOnEntity">Entities.clickReleaseOnEntity</a></td></tr>    <tr><td><code>collisionWithEntity</code></td><td><a href="Entities.html#.collisionWithEntity">Entities.collisionWithEntity</a></td></tr>    <tr><td><code>enterEntity</code></td><td><a href="Entities.html#.enterEntity">Entities.enterEntity</a></td></tr>    <tr><td><code>holdingClickOnEntity</code></td><td><a href="Entities.html#.holdingClickOnEntity">Entities.holdingClickOnEntity</a></td></tr>    <tr><td><code>hoverEnterEntity</code></td><td><a href="Entities.html#.hoverEnterEntity">Entities.hoverEnterEntity</a></td></tr>    <tr><td><code>hoverLeaveEntity</code></td><td><a href="Entities.html#.hoverLeaveEntity">Entities.hoverLeaveEntity</a></td></tr>    <tr><td><code>hoverOverEntity</code></td><td><a href="Entities.html#.hoverOverEntity">Entities.hoverOverEntity</a></td></tr>    <tr><td><code>leaveEntity</code></td><td><a href="Entities.html#.leaveEntity">Entities.leaveEntity</a></td></tr>    <tr><td><code>mouseDoublePressOnEntity</code></td><td><a href="Entities.html#.mouseDoublePressOnEntity">Entities.mouseDoublePressOnEntity</a></td></tr>    <tr><td><code>mouseMoveOnEntity</code></td><td><a href="Entities.html#.mouseMoveOnEntity">Entities.mouseMoveOnEntity</a></td></tr>    <tr><td><code>mouseMoveEvent</code></td><td><span class="important">Deprecated: Use <code>mouseMoveOnEntity</code>       instead.</span></td></tr>    <tr><td><code>mousePressOnEntity</code></td><td><a href="Entities.html#.mousePressOnEntity">Entities.mousePressOnEntity</a></td></tr>    <tr><td><code>mouseReleaseOnEntity</code></td><td><a href="Entities.html#.mouseReleaseOnEntity">Entities.mouseReleaseOnEntity</a></td></tr>  </tbody></table><p>See <a href="Entities.html#.clickDownOnEntity">Entities.clickDownOnEntity</a> for an example.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Entities</code> API provides facilities to create and interact with entities. Entities are 2D or 3D objects displayed in-world. Depending on their <a href="Entities.html#.EntityHostType">EntityHostType</a>, they may persist in the domain as "domain" entities, travel to different domains with a user as "avatar" entities, or be visible only to an individual user as "local" entities (a.k.a. "overlays").<p>Note: For Interface, avatar, and client entity scripts, the entities available to scripts are those that Interface has displayed and so knows about. For assignment client scripts, the entities available are those that are "seen" by the <a href="EntityViewer.html">EntityViewer</a>. For entity server scripts, all entities are available.</p><h3>Entity Types</h3><p>For a list of the entity types that you can use, see <a href="Entities.html#.EntityType">Entity Types</a>.</p><h3>Entity Methods</h3><p>Some of the API's signals correspond to entity methods that are called, if present, in the entity being interacted with. The client or server entity script must expose them as a property. However, unlike <a href="Entities.html#.callEntityMethod">Entities.callEntityMethod</a>, server entity scripts do not need to list them in an <code>remotelyCallable</code> property. The entity methods are called with parameters per their corresponding signal.</p><table>  <thead>    <tr><th>Method Name</th><th>Corresponding Signal</th></tr>  </thead>  <tbody>    <tr><td><code>clickDownOnEntity</code></td><td><a href="Entities.html#.clickDownOnEntity">Entities.clickDownOnEntity</a></td></tr>    <tr><td><code>clickReleaseOnEntity</code></td><td><a href="Entities.html#.clickReleaseOnEntity">Entities.clickReleaseOnEntity</a></td></tr>    <tr><td><code>collisionWithEntity</code></td><td><a href="Entities.html#.collisionWithEntity">Entities.collisionWithEntity</a></td></tr>    <tr><td><code>enterEntity</code></td><td><a href="Entities.html#.enterEntity">Entities.enterEntity</a></td></tr>    <tr><td><code>holdingClickOnEntity</code></td><td><a href="Entities.html#.holdingClickOnEntity">Entities.holdingClickOnEntity</a></td></tr>    <tr><td><code>hoverEnterEntity</code></td><td><a href="Entities.html#.hoverEnterEntity">Entities.hoverEnterEntity</a></td></tr>    <tr><td><code>hoverLeaveEntity</code></td><td><a href="Entities.html#.hoverLeaveEntity">Entities.hoverLeaveEntity</a></td></tr>    <tr><td><code>hoverOverEntity</code></td><td><a href="Entities.html#.hoverOverEntity">Entities.hoverOverEntity</a></td></tr>    <tr><td><code>leaveEntity</code></td><td><a href="Entities.html#.leaveEntity">Entities.leaveEntity</a></td></tr>    <tr><td><code>mouseDoublePressOnEntity</code></td><td><a href="Entities.html#.mouseDoublePressOnEntity">Entities.mouseDoublePressOnEntity</a></td></tr>    <tr><td><code>mouseMoveOnEntity</code></td><td><a href="Entities.html#.mouseMoveOnEntity">Entities.mouseMoveOnEntity</a></td></tr>    <tr><td><code>mouseMoveEvent</code></td><td><span class="important">Deprecated: Use <code>mouseMoveOnEntity</code>       instead.</span></td></tr>    <tr><td><code>mousePressOnEntity</code></td><td><a href="Entities.html#.mousePressOnEntity">Entities.mousePressOnEntity</a></td></tr>    <tr><td><code>mouseReleaseOnEntity</code></td><td><a href="Entities.html#.mouseReleaseOnEntity">Entities.mouseReleaseOnEntity</a></td></tr>  </tbody></table><p>See <a href="Entities.html#.clickDownOnEntity">Entities.clickDownOnEntity</a> for an example.</p></div>
                 
 
                 
@@ -28836,7 +28848,7 @@ boolean
                     
         <p class="code-caption">Create a Web entity displaying at 1920 x 1080 resolution.</p>
     
-    <pre class="prettyprint"><code>var METERS_TO_INCHES = 39.3701;var entity = Entities.addEntity({    type: "Web",    sourceUrl: "https://highfidelity.com/",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -4 })),    rotation: MyAvatar.orientation,    dimensions: {        x: 3,        y: 3 * 1080 / 1920,        z: 0.01    },    dpi: 1920 / (3 * METERS_TO_INCHES),    lifetime: 300  // Delete after 5 minutes.});</code></pre>
+    <pre class="prettyprint"><code>var METERS_TO_INCHES = 39.3701;var entity = Entities.addEntity({    type: "Web",    sourceUrl: "https://projectathena.io/",    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -4 })),    rotation: MyAvatar.orientation,    dimensions: {        x: 3,        y: 3 * 1080 / 1920,        z: 0.01    },    dpi: 1920 / (3 * METERS_TO_INCHES),    lifetime: 300  // Delete after 5 minutes.});</code></pre>
 
                 
                 

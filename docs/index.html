@@ -34,17 +34,29 @@
     </style>
     <script>
     //We are running the check here to preload the theme because it may load the incorrect one first for a split second.
-    var darkDisabled = JSON.parse(localStorage.getItem('darkDisabled'));
-    if (darkDisabled == null) {
-        localStorage.setItem('darkDisabled', JSON.stringify(false));
+    var isLocalStorageSupported = false;
+    try { // Edge browsing files on local file system doesn't support localStorage.
+        if (localStorage) {
+            isLocalStorageSupported = true;
+        }
+    } catch (e) {
+        // nop
+    }
+    
+    var defaultDarkDisabled = false;
+    var darkDisabled = isLocalStorageSupported ? JSON.parse(localStorage.getItem('darkDisabled')) : defaultDarkDisabled;
+    if (darkDisabled === null) {
+        localStorage.setItem('darkDisabled', JSON.stringify(defaultDarkDisabled));
     } else {
         var nightSheet = document.querySelector('[href="styles/night.css"]');
         nightSheet.disabled = darkDisabled;
     }
 
-    var responsiveDisabled = JSON.parse(localStorage.getItem('responsiveDisabled'));
+    var defaultResponsiveDisabled = true;
+    var responsiveDisabled = 
+        isLocalStorageSupported ? JSON.parse(localStorage.getItem('responsiveDisabled')) : defaultResponsiveDisabled;
     if (responsiveDisabled === null) {
-        localStorage.setItem('responsiveDisabled', JSON.stringify(true));
+        localStorage.setItem('responsiveDisabled', JSON.stringify(defaultResponsiveDisabled));
     } else {
         var responsiveSheet = document.querySelector('[href="styles/responsive.css"]');
         responsiveSheet.disabled = responsiveDisabled;
@@ -98,11 +110,11 @@
 
 
     <section class="readme">
-        <article><p>The Project Athena JavaScript API lets content creators and developers create new experiences and transform virtual worlds within the High Fidelity metaverse. With it, you can build great content, customize avatars, play audio and so much more. </p>
+        <article><p>The Project Athena JavaScript API lets content creators and developers create new experiences and transform virtual worlds within the High Fidelity metaverse. With it, you can build great content, customize avatars, play audio and so much more.</p>
 <p>You are most likely to interact with these APIs:</p>
 <ul>
 <li>The <strong><a href="Entities.html">Entities</a></strong> namespace lets you add, remove, and edit entities around you to build an interactive environment. In addition, you can use this namespace to find entities in range, direction, collision, or raytrace.</li>
-<li>The <strong><a href="AvatarList.html">AvatarList</a></strong>, <strong><a href="MyAvatar.html">MyAvatar</a></strong>, and <strong><a href="Avatar.html">Avatar</a></strong> namespaces affect your personal avatars, and lets you get information on other people's avatars. </li>
+<li>The <strong><a href="AvatarList.html">AvatarList</a></strong>, <strong><a href="MyAvatar.html">MyAvatar</a></strong>, and <strong><a href="Avatar.html">Avatar</a></strong> namespaces affect your personal avatars, and lets you get information on other people's avatars.</li>
 <li>The <strong><a href="Script.html">Script</a></strong> namespace lets you to connect callbacks from your client to script, such as functionality that is dependent on time (<code>Script.update</code>, <code>Script.setTimeout</code>, <code>Script.setInterval</code>, etc), connect paths relatively to assets (<code>Script.resolvePath</code>), refer to other scripts (<code>Script.require</code>, <code>Script.include</code>), or connect functions to events which occur when the script is turned off (<code>Script.scriptEnding</code>).</li>
 </ul>
 <p>To learn more about using High Fidelity and exploring the metaverse, visit the <a href="https://docs.projectathena.dev">Project Athena Documentation</a>.</p></article>
