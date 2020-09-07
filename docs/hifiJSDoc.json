@@ -894,22 +894,13 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>About</code> API provides information about the version of Interface that is currently running. It also has the\rfunctionality to open a web page in an Interface browser window.",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>HifiAbout</code> API provides information about the version of Interface that is currently running. It also\rhas the functionality to open a web page in an Interface browser window.",
         "kind": "namespace",
-        "name": "About",
+        "name": "HifiAbout",
         "hifiInterface": true,
         "hifiClientEntity": true,
         "hifiAvatar": true,
         "properties": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The name of the Interface platform running, e,g., <code>\"Vircadia\"</code> for the Vircadia.\r    <em>Read-only.</em>",
-                "name": "platform"
-            },
             {
                 "type": {
                     "names": [
@@ -939,56 +930,7 @@
             }
         ],
         "examples": [
-            "<caption>Report information on the version of Interface currently running.</caption>\rprint(\"Interface platform: \" + About.platform);\rprint(\"Interface build date: \" + About.buildDate);\rprint(\"Interface version: \" + About.buildVersion);\rprint(\"Qt version: \" + About.qtVersion);"
-        ],
-        "longname": "About",
-        "scope": "global"
-    },
-    {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>HifiAbout</code> API provides information about the version of Interface that is currently running. It also\rhas the functionality to open a web page in an Interface browser window.",
-        "kind": "namespace",
-        "name": "HifiAbout",
-        "hifiInterface": true,
-        "hifiClientEntity": true,
-        "hifiAvatar": true,
-        "deprecated": "This API is deprecated and will be removed. Use the {@link About} API instead.",
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The name of the Interface platform running, e,g., <code>\"Vircadia\"</code> for the Vircadia.\r    <em>Read-only.</em>",
-                "name": "platform"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The build date of Interface that is currently running. <em>Read-only.</em>",
-                "name": "buildDate"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The build version of Interface that is currently running. <em>Read-only.</em>",
-                "name": "buildVersion"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The Qt version used in Interface that is currently running. <em>Read-only.</em>",
-                "name": "qtVersion"
-            }
+            "<caption>Report build information for the version of Interface currently running.</caption>\rprint(\"HiFi build date: \" + HifiAbout.buildDate);  // Returns the build date of the version of Interface currently running on your machine.\rprint(\"HiFi version: \" + HifiAbout.buildVersion);  // Returns the build version of Interface currently running on your machine.\rprint(\"Qt version: \" + HifiAbout.qtVersion);  // Returns the Qt version details of the version of Interface currently running on your machine."
         ],
         "longname": "HifiAbout",
         "scope": "global"
@@ -1008,12 +950,12 @@
                 "name": "url"
             }
         ],
-        "memberof": "About",
-        "longname": "About.openUrl",
+        "memberof": "HifiAbout",
+        "longname": "HifiAbout.openUrl",
         "scope": "static"
     },
     {
-        "description": "<p>The <code>Controller.Hardware.Application</code> object has properties representing Interface's state. The property\rvalues are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>\r<p>These states can be mapped to actions or functions or <code>Controller.Standard</code> items in a {@link RouteObject}\rmapping (e.g., using the {@link RouteObject#when} method). Each data value is either <code>1.0</code> for \"true\" or\r<code>0.0</code> for \"false\".</p>\r<table>\r  <thead>\r    <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>CameraFirstPerson</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Legacy first person camera mode.</em></td></tr>\r    <tr><td><code>CameraFirstPersonLookAt</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Default first person camera mode.</em></td></tr>\r    <tr><td><code>CameraThirdPerson</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Legacy third person camera mode.</em></td></tr>\r    <tr><td><code>CameraLookAt</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Default third person camera mode.</em></td></tr>\r    <tr><td><code>CameraFSM</code></td><td>number</td><td>number</td><td>The camera is in full screen mirror mode.\r      <em>Legacy \"look at myself\" behavior.</em></td></tr>\r    <tr><td><code>CameraSelfie</code></td><td>number</td><td>number</td><td>The camera is in selfie mode.\r      <em>Default \"look at myself\" camera mode.</em></td></tr>\r    <tr><td><code>CameraIndependent</code></td><td>number</td><td>number</td><td>The camera is in independent mode.</td></tr>\r    <tr><td><code>CameraEntity</code></td><td>number</td><td>number</td><td>The camera is in entity mode.</td></tr>\r    <tr><td><code>InHMD</code></td><td>number</td><td>number</td><td>The user is in HMD mode.</td></tr>\r    <tr><td><code>AdvancedMovement</code></td><td>number</td><td>number</td><td>Advanced movement (walking) controls are\r      enabled.</td></tr>\r    <tr><td><code>StrafeEnabled</code></td><td>number</td><td>number</td><td>Strafing is enabled</td></tr>\r    <tr><td><code>LeftHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to left.</td></tr>\r    <tr><td><code>RightHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to right.</td></tr>\r    <tr><td><code>SnapTurn</code></td><td>number</td><td>number</td><td>Snap turn is enabled.</td></tr>\r    <tr><td><code>Grounded</code></td><td>number</td><td>number</td><td>The user's avatar is on the ground.</td></tr>\r    <tr><td><code>NavigationFocused</code></td><td>number</td><td>number</td><td><em>Not used.</em></td></tr>\r    <tr><td><code>PlatformWindows</code></td><td>number</td><td>number</td><td>The operating system is Windows.</td></tr>\r    <tr><td><code>PlatformMac</code></td><td>number</td><td>number</td><td>The operating system is Mac.</td></tr>\r    <tr><td><code>PlatformAndroid</code></td><td>number</td><td>number</td><td>The operating system is Android.</td></tr>\r  </tbody>\r</table>",
+        "description": "<p>The <code>Controller.Hardware.Application</code> object has properties representing Interface's state. The property\rvalues are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>\r<p>These states can be mapped to actions or functions or <code>Controller.Standard</code> items in a {@link RouteObject} \rmapping (e.g., using the {@link RouteObject#when} method). Each data value is either <code>1.0</code> for \"true\" or \r<code>0.0</code> for \"false\".</p>\r<table>\r  <thead>\r    <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>CameraFirstPerson</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Legacy first person camera mode.</em></td></tr>\r    <tr><td><code>CameraFirstPersonLookAt</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Default first person camera mode.</em></td></tr>\r    <tr><td><code>CameraThirdPerson</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Legacy third person camera mode.</em></td></tr>\r    <tr><td><code>CameraLookAt</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Default third person camera mode.</em></td></tr>\r    <tr><td><code>CameraFSM</code></td><td>number</td><td>number</td><td>The camera is in full screen mirror mode.\r      <em>Legacy \"look at myself\" behavior.</em></td></tr>\r    <tr><td><code>CameraSelfie</code></td><td>number</td><td>number</td><td>The camera is in selfie mode.\r      <em>Default \"look at myself\" camera mode.</em></td></tr>\r    <tr><td><code>CameraIndependent</code></td><td>number</td><td>number</td><td>The camera is in independent mode.</td></tr>\r    <tr><td><code>CameraEntity</code></td><td>number</td><td>number</td><td>The camera is in entity mode.</td></tr>\r    <tr><td><code>InHMD</code></td><td>number</td><td>number</td><td>The user is in HMD mode.</td></tr>\r    <tr><td><code>AdvancedMovement</code></td><td>number</td><td>number</td><td>Advanced movement (walking) controls are \r      enabled.</td></tr>\r    <tr><td><code>StrafeEnabled</code></td><td>number</td><td>number</td><td>Strafing is enabled</td></tr>\r    <tr><td><code>LeftHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to left.</td></tr>\r    <tr><td><code>RightHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to right.</td></tr>\r    <tr><td><code>SnapTurn</code></td><td>number</td><td>number</td><td>Snap turn is enabled.</td></tr>\r    <tr><td><code>Grounded</code></td><td>number</td><td>number</td><td>The user's avatar is on the ground.</td></tr>\r    <tr><td><code>NavigationFocused</code></td><td>number</td><td>number</td><td><em>Not used.</em></td></tr>\r    <tr><td><code>PlatformWindows</code></td><td>number</td><td>number</td><td>The operating system is Windows.</td></tr>\r    <tr><td><code>PlatformMac</code></td><td>number</td><td>number</td><td>The operating system is Mac.</td></tr>\r    <tr><td><code>PlatformAndroid</code></td><td>number</td><td>number</td><td>The operating system is Android.</td></tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "Hardware-Application",
         "type": {
@@ -4673,7 +4615,7 @@
             }
         ],
         "examples": [
-            "<caption> Override left hand animation for three seconds. </caption>\rvar ANIM_URL = \"https://apidocs.vircadia.dev/models/ClapHands_Standing.fbx\";\rMyAvatar.overrideHandAnimation(isLeft, ANIM_URL, 30, true, 0, 53);\rScript.setTimeout(function () {\r    MyAvatar.restoreHandAnimation();\r}, 3000);"
+            "<caption> Override left hand animation for three seconds. </caption>\rvar ANIM_URL = \"https://apidocs.projectathena.dev/models/ClapHands_Standing.fbx\";\rMyAvatar.overrideHandAnimation(isLeft, ANIM_URL, 30, true, 0, 53);\rScript.setTimeout(function () {\r    MyAvatar.restoreHandAnimation();\r}, 3000);"
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.restoreHandAnimation",
@@ -4761,7 +4703,7 @@
             }
         ],
         "examples": [
-            "<caption>The default avatar-animation.json defines an \"idleStand\" animation role. This role specifies that when the avatar is not moving,\ran animation clip of the avatar idling with hands hanging at its side will be used. It also specifies that when the avatar moves, the animation\rwill smoothly blend to the walking animation used by the \"walkFwd\" animation role.\rIn this example, the \"idleStand\" role animation clip has been replaced with a clapping animation clip. Now instead of standing with its arms\rhanging at its sides when it is not moving, the avatar will stand and clap its hands. Note that just as it did before, as soon as the avatar\rstarts to move, the animation will smoothly blend into the walk animation used by the \"walkFwd\" animation role.</caption>\r// An animation of the avatar clapping its hands while standing. Restore default after 30s.\rvar ANIM_URL = \"https://apidocs.vircadia.dev/models/ClapHands_Standing.fbx\";\rMyAvatar.overrideRoleAnimation(\"idleStand\", ANIM_URL, 30, true, 0, 53);\rScript.setTimeout(function () {\r    MyAvatar.restoreRoleAnimation();\r}, 30000);"
+            "<caption>The default avatar-animation.json defines an \"idleStand\" animation role. This role specifies that when the avatar is not moving,\ran animation clip of the avatar idling with hands hanging at its side will be used. It also specifies that when the avatar moves, the animation\rwill smoothly blend to the walking animation used by the \"walkFwd\" animation role.\rIn this example, the \"idleStand\" role animation clip has been replaced with a clapping animation clip. Now instead of standing with its arms\rhanging at its sides when it is not moving, the avatar will stand and clap its hands. Note that just as it did before, as soon as the avatar\rstarts to move, the animation will smoothly blend into the walk animation used by the \"walkFwd\" animation role.</caption>\r// An animation of the avatar clapping its hands while standing. Restore default after 30s.\rvar ANIM_URL = \"https://apidocs.projectathena.dev/models/ClapHands_Standing.fbx\";\rMyAvatar.overrideRoleAnimation(\"idleStand\", ANIM_URL, 30, true, 0, 53);\rScript.setTimeout(function () {\r    MyAvatar.restoreRoleAnimation();\r}, 30000);"
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.overrideRoleAnimation",
@@ -14476,17 +14418,6 @@
                 },
                 "description": "The position to paste the clipboard contents at.",
                 "name": "position"
-            },
-            {
-                "type": {
-                    "names": [
-                        "Entities.EntityHostType"
-                    ]
-                },
-                "optional": true,
-                "defaultvalue": "\"domain\"",
-                "description": "The type of entities to create.",
-                "name": "entityHostType"
             }
         ],
         "returns": [
@@ -20300,24 +20231,6 @@
         "scope": "static"
     },
     {
-        "description": "Gets Interface's user agent.",
-        "kind": "function",
-        "name": "getUserAgent",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "Interface's user agent."
-            }
-        ],
-        "memberof": "Window",
-        "longname": "Window.getUserAgent",
-        "scope": "static"
-    },
-    {
         "description": "Gets the signature for Interface's protocol version.",
         "kind": "function",
         "name": "protocolSignature",
@@ -23439,24 +23352,6 @@
                         "string"
                     ]
                 },
-                "description": "The number of entity updates that happened last frame.\r    <em>Read-only.</em>",
-                "name": "numEntityUpdates"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The total number of entity updates scheduled for last frame.\r    <em>Read-only.</em>",
-                "name": "numNeededEntityUpdates"
-            },
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
                 "description": "Details of the average time (ms) spent in and number of calls made to different parts of \r    the code. Provided only if <code>timingExpanded</code> is <code>true</code>. Only the top 10 items are provided if \r    Developer &gt; Timing &gt; Performance Timer &gt; Only Display Top 10 is enabled.\r    <em>Read-only.</em>",
                 "name": "timingStats"
             },
@@ -25451,40 +25346,6 @@
         ],
         "memberof": "Stats",
         "longname": "Stats.lodStatusChanged",
-        "scope": "static"
-    },
-    {
-        "description": "Triggered when the value of the <code>numEntityUpdates</code> property changes.",
-        "kind": "signal",
-        "name": "numEntityUpdatesChanged",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "Stats",
-        "longname": "Stats.numEntityUpdatesChanged",
-        "scope": "static"
-    },
-    {
-        "description": "Triggered when the value of the <code>numNeededEntityUpdates</code> property changes.",
-        "kind": "signal",
-        "name": "numNeededEntityUpdatesChanged",
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Signal"
-                    ]
-                }
-            }
-        ],
-        "memberof": "Stats",
-        "longname": "Stats.numNeededEntityUpdatesChanged",
         "scope": "static"
     },
     {
@@ -40504,7 +40365,7 @@
         "scope": "static"
     },
     {
-        "description": "Different entity types have different properties: some common to all entities (listed in the table) and some specific to\reach {@link Entities.EntityType|EntityType} (linked to below).",
+        "description": "Different entity types have different properties: some common to all entities (listed in the table) and some specific to \reach {@link Entities.EntityType|EntityType} (linked to below).",
         "kind": "typedef",
         "name": "EntityProperties",
         "type": {
@@ -40538,7 +40399,7 @@
                         "Entities.EntityType"
                     ]
                 },
-                "description": "The entity's type. You cannot change the type of an entity after it's created.\r    However, its value may switch among <code>\"Box\"</code>, <code>\"Shape\"</code>, and <code>\"Sphere\"</code> depending on\r    changes to the <code>shape</code> property set for entities of these types. <em>Read-only.</em>",
+                "description": "The entity's type. You cannot change the type of an entity after it's created. \r    However, its value may switch among <code>\"Box\"</code>, <code>\"Shape\"</code>, and <code>\"Sphere\"</code> depending on \r    changes to the <code>shape</code> property set for entities of these types. <em>Read-only.</em>",
                 "name": "type"
             },
             {
@@ -40558,7 +40419,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the entity is an {@link Entities.EntityHostType|avatar entity},\r    <code>false</code> if it isn't. The value is per the <code>entityHostType</code> property value, set at entity creation\r    by one of the {@link Entities.addEntity} methods. <em>Read-only.</em>",
+                "description": "<code>true</code> if the entity is an {@link Entities.EntityHostType|avatar entity}, \r    <code>false</code> if it isn't. The value is per the <code>entityHostType</code> property value, set at entity creation \r    by one of the {@link Entities.addEntity} methods. <em>Read-only.</em>",
                 "name": "avatarEntity"
             },
             {
@@ -40578,7 +40439,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the entity is a {@link Entities.EntityHostType|local entity},\r    <code>false</code> if it isn't. The value is per the <code>entityHostType</code> property value, set at entity creation\r    by one of the {@link Entities.addEntity} methods. <em>Read-only.</em>",
+                "description": "<code>true</code> if the entity is a {@link Entities.EntityHostType|local entity}, \r    <code>false</code> if it isn't. The value is per the <code>entityHostType</code> property value, set at entity creation \r    by one of the {@link Entities.addEntity} methods. <em>Read-only.</em>",
                 "name": "localEntity"
             },
             {
@@ -40588,7 +40449,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The session ID of the owning avatar if <code>avatarEntity</code> is\r    <code>true</code>, otherwise {@link Uuid(0)|Uuid.NULL}. <em>Read-only.</em>",
+                "description": "The session ID of the owning avatar if <code>avatarEntity</code> is \r    <code>true</code>, otherwise {@link Uuid(0)|Uuid.NULL}. <em>Read-only.</em>",
                 "name": "owningAvatarID"
             },
             {
@@ -40615,7 +40476,7 @@
                         "string"
                     ]
                 },
-                "description": "The age of the entity since it was created, formatted as <code>h hours m minutes s\r    seconds</code>.",
+                "description": "The age of the entity since it was created, formatted as <code>h hours m minutes s \r    seconds</code>.",
                 "name": "ageAsText"
             },
             {
@@ -40653,7 +40514,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if properties other than <code>locked</code> cannot be changed and the\r    entity cannot be deleted, <code>false</code> if all properties can be changed and the entity can be deleted.",
+                "description": "<code>true</code> if properties other than <code>locked</code> cannot be changed and the \r    entity cannot be deleted, <code>false</code> if all properties can be changed and the entity can be deleted.",
                 "name": "locked"
             },
             {
@@ -40673,7 +40534,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if the entity can cast a shadow, <code>false</code> if it can't.\r    Currently applicable only to {@link Entities.EntityProperties-Model|Model} and\r    {@link Entities.EntityProperties-Shape|Shape} entities. Shadows are cast if inside a\r    {@link Entities.EntityProperties-Zone|Zone} entity with <code>castShadows</code> enabled in its <code>keyLight</code>\r    property.",
+                "description": "<code>true</code> if the entity can cast a shadow, <code>false</code> if it can't. \r    Currently applicable only to {@link Entities.EntityProperties-Model|Model} and \r    {@link Entities.EntityProperties-Shape|Shape} entities. Shadows are cast if inside a \r    {@link Entities.EntityProperties-Zone|Zone} entity with <code>castShadows</code> enabled in its <code>keyLight</code> \r    property.",
                 "name": "canCastShadow"
             },
             {
@@ -40683,7 +40544,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if the entity is rendered in the secondary camera,\r    <code>false</code> if it isn't.",
+                "description": "<code>true</code> if the entity is rendered in the secondary camera, \r    <code>false</code> if it isn't.",
                 "name": "isVisibleInSecondaryCamera"
             },
             {
@@ -40713,7 +40574,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if {@link Picks} and {@link RayPick} ignore the entity,\r    <code>false</code> if they don't.",
+                "description": "<code>true</code> if {@link Picks} and {@link RayPick} ignore the entity, \r    <code>false</code> if they don't.",
                 "name": "ignorePickIntersection"
             },
             {
@@ -40743,7 +40604,7 @@
                     ]
                 },
                 "defaultvalue": "0.5,0.5,0.5",
-                "description": "The point in the entity that is set to the entity's position and is rotated\r     about, range {@link Vec3(0)|Vec3.ZERO} &ndash; {@link Vec3(0)|Vec3.ONE}. A value of {@link Vec3(0)|Vec3.ZERO} is the\r     entity's minimum x, y, z corner; a value of {@link Vec3(0)|Vec3.ONE} is the entity's maximum x, y, z corner.",
+                "description": "The point in the entity that is set to the entity's position and is rotated \r     about, range {@link Vec3(0)|Vec3.ZERO} &ndash; {@link Vec3(0)|Vec3.ONE}. A value of {@link Vec3(0)|Vec3.ZERO} is the \r     entity's minimum x, y, z corner; a value of {@link Vec3(0)|Vec3.ONE} is the entity's maximum x, y, z corner.",
                 "name": "registrationPoint"
             },
             {
@@ -40762,7 +40623,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "The dimensions of the entity's unscaled mesh model if it has one, otherwise\r    {@link Vec3(0)|Vec3.ONE}. <em>Read-only.</em>",
+                "description": "The dimensions of the entity's unscaled mesh model if it has one, otherwise \r    {@link Vec3(0)|Vec3.ONE}. <em>Read-only.</em>",
                 "name": "naturalDimensions"
             },
             {
@@ -40782,7 +40643,7 @@
                     ]
                 },
                 "defaultvalue": 0.39347,
-                "description": "How much the linear velocity of an entity slows down over time, range\r    <code>0.0</code> &ndash; <code>1.0</code>. A higher damping value slows down the entity more quickly. The default value\r    is for an exponential decay timescale of 2.0s, where it takes 2.0s for the movement to slow to <code>1/e = 0.368</code>\r    of its initial value.",
+                "description": "How much the linear velocity of an entity slows down over time, range \r    <code>0.0</code> &ndash; <code>1.0</code>. A higher damping value slows down the entity more quickly. The default value \r    is for an exponential decay timescale of 2.0s, where it takes 2.0s for the movement to slow to <code>1/e = 0.368</code> \r    of its initial value.",
                 "name": "damping"
             },
             {
@@ -40802,7 +40663,7 @@
                     ]
                 },
                 "defaultvalue": 0.39347,
-                "description": "How much the angular velocity of an entity slows down over time, range\r    <code>0.0</code> &ndash; <code>1.0</code>. A higher damping value slows down the entity more quickly. The default value\r    is for an exponential decay timescale of 2.0s, where it takes 2.0s for the movement to slow to <code>1/e = 0.368</code>\r    of its initial value.",
+                "description": "How much the angular velocity of an entity slows down over time, range \r    <code>0.0</code> &ndash; <code>1.0</code>. A higher damping value slows down the entity more quickly. The default value \r    is for an exponential decay timescale of 2.0s, where it takes 2.0s for the movement to slow to <code>1/e = 0.368</code> \r    of its initial value.",
                 "name": "angularDamping"
             },
             {
@@ -40812,7 +40673,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0",
-                "description": "The acceleration due to gravity in m/s<sup>2</sup> that the entity should move with, in\r    world coordinates. Use a value of <code>{ x: 0, y: -9.8, z: 0 }</code> to simulate Earth's gravity. Gravity is applied\r    to an entity's motion only if its <code>dynamic</code> property is <code>true</code>.\r    <p>If changing an entity's <code>gravity</code> from {@link Vec3(0)|Vec3.ZERO}, you need to give it a small\r    <code>velocity</code> in order to kick off physics simulation.</p>",
+                "description": "The acceleration due to gravity in m/s<sup>2</sup> that the entity should move with, in \r    world coordinates. Use a value of <code>{ x: 0, y: -9.8, z: 0 }</code> to simulate Earth's gravity. Gravity is applied \r    to an entity's motion only if its <code>dynamic</code> property is <code>true</code>.\r    <p>If changing an entity's <code>gravity</code> from {@link Vec3(0)|Vec3.ZERO}, you need to give it a small \r    <code>velocity</code> in order to kick off physics simulation.</p>",
                 "name": "gravity"
             },
             {
@@ -40831,7 +40692,7 @@
                     ]
                 },
                 "defaultvalue": 0.5,
-                "description": "The \"bounciness\" of an entity when it collides, range <code>0.0</code> &ndash;\r    <code>0.99</code>. The higher the value, the more bouncy.",
+                "description": "The \"bounciness\" of an entity when it collides, range <code>0.0</code> &ndash; \r    <code>0.99</code>. The higher the value, the more bouncy.",
                 "name": "restitution"
             },
             {
@@ -40841,7 +40702,7 @@
                     ]
                 },
                 "defaultvalue": 0.5,
-                "description": "How much an entity slows down when it's moving against another, range <code>0.0</code>\r    &ndash; <code>10.0</code>. The higher the value, the more quickly it slows down. Examples: <code>0.1</code> for ice,\r    <code>0.9</code> for sandpaper.",
+                "description": "How much an entity slows down when it's moving against another, range <code>0.0</code> \r    &ndash; <code>10.0</code>. The higher the value, the more quickly it slows down. Examples: <code>0.1</code> for ice, \r    <code>0.9</code> for sandpaper.",
                 "name": "friction"
             },
             {
@@ -40851,7 +40712,7 @@
                     ]
                 },
                 "defaultvalue": 1000,
-                "description": "The density of the entity in kg/m<sup>3</sup>, range <code>100</code> &ndash;\r    <code>10000</code>. Examples: <code>100</code> for balsa wood, <code>10000</code> for silver. The density is used in\r    conjunction with the entity's bounding box volume to work out its mass in the application of physics.",
+                "description": "The density of the entity in kg/m<sup>3</sup>, range <code>100</code> &ndash; \r    <code>10000</code>. Examples: <code>100</code> for balsa wood, <code>10000</code> for silver. The density is used in \r    conjunction with the entity's bounding box volume to work out its mass in the application of physics.",
                 "name": "density"
             },
             {
@@ -40861,7 +40722,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the entity shouldn't collide, <code>false</code> if it\r    collides with items per its <code>collisionMask</code> property.",
+                "description": "<code>true</code> if the entity shouldn't collide, <code>false</code> if it \r    collides with items per its <code>collisionMask</code> property.",
                 "name": "collisionless"
             },
             {
@@ -40900,7 +40761,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The sound that's played when the entity experiences a collision. Valid file\r    formats are per {@link SoundObject}.",
+                "description": "The sound that's played when the entity experiences a collision. Valid file \r    formats are per {@link SoundObject}.",
                 "name": "collisionSoundURL"
             },
             {
@@ -40910,7 +40771,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the entity's movement is affected by collisions, <code>false</code>\r    if it isn't.",
+                "description": "<code>true</code> if the entity's movement is affected by collisions, <code>false</code> \r    if it isn't.",
                 "name": "dynamic"
             },
             {
@@ -40949,7 +40810,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "Used to store extra data about the entity in JSON format.\r    <p><strong>Warning:</strong> Other apps may also use this property, so make sure you handle data stored by other apps:\r    edit only your bit and leave the rest of the data intact. You can use <code>JSON.parse()</code> to parse the string into\r    a JavaScript object which you can manipulate the properties of, and use <code>JSON.stringify()</code> to convert the\r    object into a string to put back in the property.</p>",
+                "description": "Used to store extra data about the entity in JSON format. \r    <p><strong>Warning:</strong> Other apps may also use this property, so make sure you handle data stored by other apps: \r    edit only your bit and leave the rest of the data intact. You can use <code>JSON.parse()</code> to parse the string into \r    a JavaScript object which you can manipulate the properties of, and use <code>JSON.stringify()</code> to convert the \r    object into a string to put back in the property.</p>",
                 "name": "userData"
             },
             {
@@ -40959,7 +40820,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "Like <code>userData</code>, but only accessible by server entity scripts, assignment\r    client scripts, and users who have \"Can Get and Set Private User Data\" permissions in the domain.",
+                "description": "Like <code>userData</code>, but only accessible by server entity scripts, assignment \r    client scripts, and users who have \"Can Get and Set Private User Data\" permissions in the domain.",
                 "name": "privateUserData"
             },
             {
@@ -40979,7 +40840,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "Used to indicate when the client entity script was loaded. Should be\r    an integer number of milliseconds since midnight GMT on January 1, 1970 (e.g., as supplied by <code>Date.now()</code>.\r    If you update the property's value, the <code>script</code> is re-downloaded and reloaded. This is how the \"reload\"\r    button beside the \"script URL\" field in properties tab of the Create app works.",
+                "description": "Used to indicate when the client entity script was loaded. Should be \r    an integer number of milliseconds since midnight GMT on January 1, 1970 (e.g., as supplied by <code>Date.now()</code>. \r    If you update the property's value, the <code>script</code> is re-downloaded and reloaded. This is how the \"reload\" \r    button beside the \"script URL\" field in properties tab of the Create app works.",
                 "name": "scriptTimestamp"
             },
             {
@@ -40999,7 +40860,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the entity or avatar that the entity is parented to. A value of\r    {@link Uuid(0)|Uuid.NULL} is used if the entity is not parented.",
+                "description": "The ID of the entity or avatar that the entity is parented to. A value of \r    {@link Uuid(0)|Uuid.NULL} is used if the entity is not parented.",
                 "name": "parentID"
             },
             {
@@ -41009,7 +40870,7 @@
                     ]
                 },
                 "defaultvalue": 65535,
-                "description": "The joint of the entity or avatar that the entity is parented to. Use\r    <code>65535</code> or <code>-1</code> to parent to the entity or avatar's position and orientation rather than a joint.",
+                "description": "The joint of the entity or avatar that the entity is parented to. Use \r    <code>65535</code> or <code>-1</code> to parent to the entity or avatar's position and orientation rather than a joint.",
                 "name": "parentJointIndex"
             },
             {
@@ -41019,7 +40880,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0",
-                "description": "The position of the entity relative to its parent if the entity is parented,\r    otherwise the same value as <code>position</code>. If the entity is parented to an avatar and is an avatar entity\r    so that it scales with the avatar, this value remains the original local position value while the avatar scale changes.",
+                "description": "The position of the entity relative to its parent if the entity is parented, \r    otherwise the same value as <code>position</code>. If the entity is parented to an avatar and is an avatar entity \r    so that it scales with the avatar, this value remains the original local position value while the avatar scale changes.",
                 "name": "localPosition"
             },
             {
@@ -41029,7 +40890,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0,1",
-                "description": "The rotation of the entity relative to its parent if the entity is parented,\r    otherwise the same value as <code>rotation</code>.",
+                "description": "The rotation of the entity relative to its parent if the entity is parented, \r    otherwise the same value as <code>rotation</code>.",
                 "name": "localRotation"
             },
             {
@@ -41039,7 +40900,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0",
-                "description": "The velocity of the entity relative to its parent if the entity is parented,\r    otherwise the same value as <code>velocity</code>.",
+                "description": "The velocity of the entity relative to its parent if the entity is parented, \r    otherwise the same value as <code>velocity</code>.",
                 "name": "localVelocity"
             },
             {
@@ -41049,7 +40910,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0",
-                "description": "The angular velocity of the entity relative to its parent if the entity is\r    parented, otherwise the same value as <code>angularVelocity</code>.",
+                "description": "The angular velocity of the entity relative to its parent if the entity is \r    parented, otherwise the same value as <code>angularVelocity</code>.",
                 "name": "localAngularVelocity"
             },
             {
@@ -41058,7 +40919,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "The dimensions of the entity. If the entity is parented to an avatar and is an\r    avatar entity so that it scales with the avatar, this value remains the original dimensions value while the\r    avatar scale changes.",
+                "description": "The dimensions of the entity. If the entity is parented to an avatar and is an\r    avatar entity so that it scales with the avatar, this value remains the original dimensions value while the \r    avatar scale changes.",
                 "name": "localDimensions"
             },
             {
@@ -41067,7 +40928,7 @@
                         "Entities.BoundingBox"
                     ]
                 },
-                "description": "The axis-aligned bounding box that tightly encloses the entity.\r    <em>Read-only.</em>",
+                "description": "The axis-aligned bounding box that tightly encloses the entity. \r    <em>Read-only.</em>",
                 "name": "boundingBox"
             },
             {
@@ -41076,7 +40937,7 @@
                         "AACube"
                     ]
                 },
-                "description": "The axis-aligned cube that determines where the entity lives in the entity server's octree.\r    The cube may be considerably larger than the entity in some situations, e.g., when the entity is grabbed by an avatar:\r    the position of the entity is determined through avatar mixer updates and so the AA cube is expanded in order to reduce\r    unnecessary entity server updates. Scripts should not change this property's value.",
+                "description": "The axis-aligned cube that determines where the entity lives in the entity server's octree. \r    The cube may be considerably larger than the entity in some situations, e.g., when the entity is grabbed by an avatar: \r    the position of the entity is determined through avatar mixer updates and so the AA cube is expanded in order to reduce \r    unnecessary entity server updates. Scripts should not change this property's value.",
                 "name": "queryAACube"
             },
             {
@@ -41095,7 +40956,7 @@
                         "Entities.RenderInfo"
                     ]
                 },
-                "description": "Information on the cost of rendering the entity. Currently information is only\r    provided for <code>Model</code> entities. <em>Read-only.</em>",
+                "description": "Information on the cost of rendering the entity. Currently information is only \r    provided for <code>Model</code> entities. <em>Read-only.</em>",
                 "name": "renderInfo"
             },
             {
@@ -41105,7 +40966,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the domain or avatar entity can be cloned via\r    {@link Entities.cloneEntity}, <code>false</code> if it can't be.",
+                "description": "<code>true</code> if the domain or avatar entity can be cloned via \r    {@link Entities.cloneEntity}, <code>false</code> if it can't be.",
                 "name": "cloneable"
             },
             {
@@ -41135,7 +40996,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if clones created from this entity will have their\r    <code>dynamic</code> property set to <code>true</code>, <code>false</code> if they won't.",
+                "description": "<code>true</code> if clones created from this entity will have their \r    <code>dynamic</code> property set to <code>true</code>, <code>false</code> if they won't.",
                 "name": "cloneDynamic"
             },
             {
@@ -41145,7 +41006,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if clones created from this entity will be created as\r    avatar entities, <code>false</code> if they won't be.",
+                "description": "<code>true</code> if clones created from this entity will be created as \r    avatar entities, <code>false</code> if they won't be.",
                 "name": "cloneAvatarEntity"
             },
             {
@@ -41233,7 +41094,7 @@
                     ]
                 },
                 "defaultvalue": 4294967295,
-                "description": "Certifiable maximum integer number of editions (copies) of the Marketplace item\r    allowed to be sold.",
+                "description": "Certifiable maximum integer number of editions (copies) of the Marketplace item \r    allowed to be sold.",
                 "name": "limitedRun"
             },
             {
@@ -41243,7 +41104,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "Certifiable integer edition (copy) number or the Marketplace item. Each copy sold in\r    the Marketplace is numbered sequentially, starting at 1.",
+                "description": "Certifiable integer edition (copy) number or the Marketplace item. Each copy sold in \r    the Marketplace is numbered sequentially, starting at 1.",
                 "name": "editionNumber"
             },
             {
@@ -41253,7 +41114,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "Certifiable integer instance number for identical entities in a Marketplace\r    item. A Marketplace item may have multiple, identical parts. If so, then each is numbered sequentially with an instance\r    number.",
+                "description": "Certifiable integer instance number for identical entities in a Marketplace \r    item. A Marketplace item may have multiple, identical parts. If so, then each is numbered sequentially with an instance \r    number.",
                 "name": "entityInstanceNumber"
             },
             {
@@ -41318,7 +41179,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Box\"</code> {@link Entities.EntityType|EntityType} is the same as the <code>\"Shape\"</code>\r{@link Entities.EntityType|EntityType} except that its <code>shape</code> value is always set to <code>\"Cube\"</code>\rwhen the entity is created. If its <code>shape</code> property value is subsequently changed then the entity's\r<code>type</code> will be reported as <code>\"Sphere\"</code> if the <code>shape</code> is set to <code>\"Sphere\"</code>,\rotherwise it will be reported as <code>\"Shape\"</code>.",
+        "description": "The <code>\"Box\"</code> {@link Entities.EntityType|EntityType} is the same as the <code>\"Shape\"</code>\r{@link Entities.EntityType|EntityType} except that its <code>shape</code> value is always set to <code>\"Cube\"</code>\rwhen the entity is created. If its <code>shape</code> property value is subsequently changed then the entity's \r<code>type</code> will be reported as <code>\"Sphere\"</code> if the <code>shape</code> is set to <code>\"Sphere\"</code>, \rotherwise it will be reported as <code>\"Shape\"</code>.",
         "kind": "typedef",
         "name": "EntityProperties-Box",
         "type": {
@@ -41334,7 +41195,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Light\"</code> {@link Entities.EntityType|EntityType} adds local lighting effects. It has properties in addition\rto the common {@link Entities.EntityProperties|EntityProperties}.",
+        "description": "The <code>\"Light\"</code> {@link Entities.EntityType|EntityType} adds local lighting effects. It has properties in addition \rto the common {@link Entities.EntityProperties|EntityProperties}.",
         "kind": "typedef",
         "name": "EntityProperties-Light",
         "type": {
@@ -41350,7 +41211,7 @@
                     ]
                 },
                 "defaultvalue": "0.1,0.1,0.1",
-                "description": "The dimensions of the entity. Surfaces outside these dimensions are not lit\r    by the light.",
+                "description": "The dimensions of the entity. Surfaces outside these dimensions are not lit \r    by the light.",
                 "name": "dimensions"
             },
             {
@@ -41470,7 +41331,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Material\"</code> {@link Entities.EntityType|EntityType} modifies existing materials on entities and avatars. It\rhas properties in addition to the common {@link Entities.EntityProperties|EntityProperties}.\r<p>To apply a material to an entity, set the material entity's <code>parentID</code> property to the entity ID.\rTo apply a material to an avatar, set the material entity's <code>parentID</code> property to the avatar's session UUID.\rTo apply a material to your avatar such that it persists across domains and log-ins, create the material as an avatar entity\rby setting the <code>entityHostType</code> parameter in {@link Entities.addEntity} to <code>\"avatar\"</code> and set the\rentity's <code>parentID</code> property to <code>MyAvatar.SELF_ID</code>.\rMaterial entities render as non-scalable spheres if they don't have their parent set.</p>",
+        "description": "The <code>\"Material\"</code> {@link Entities.EntityType|EntityType} modifies existing materials on entities and avatars. It \rhas properties in addition to the common {@link Entities.EntityProperties|EntityProperties}.\r<p>To apply a material to an entity, set the material entity's <code>parentID</code> property to the entity ID.\rTo apply a material to an avatar, set the material entity's <code>parentID</code> property to the avatar's session UUID.\rTo apply a material to your avatar such that it persists across domains and log-ins, create the material as an avatar entity \rby setting the <code>entityHostType</code> parameter in {@link Entities.addEntity} to <code>\"avatar\"</code> and set the \rentity's <code>parentID</code> property to <code>MyAvatar.SELF_ID</code>. \rMaterial entities render as non-scalable spheres if they don't have their parent set.</p>",
         "kind": "typedef",
         "name": "EntityProperties-Material",
         "type": {
@@ -41496,7 +41357,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "URL to a {@link Entities.MaterialResource|MaterialResource}. If you append\r    <code>\"#name\"</code> to the URL, the  material with that name in the {@link Entities.MaterialResource|MaterialResource}\r    will be applied to the entity. Alternatively, set the property value to <code>\"materialData\"</code> to use the\r    <code>materialData</code> property for the {@link Entities.MaterialResource|MaterialResource} values.",
+                "description": "URL to a {@link Entities.MaterialResource|MaterialResource}. If you append \r    <code>\"#name\"</code> to the URL, the  material with that name in the {@link Entities.MaterialResource|MaterialResource} \r    will be applied to the entity. Alternatively, set the property value to <code>\"materialData\"</code> to use the \r    <code>materialData</code> property for the {@link Entities.MaterialResource|MaterialResource} values.",
                 "name": "materialURL"
             },
             {
@@ -41506,7 +41367,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "Used to store {@link Entities.MaterialResource|MaterialResource} data as a JSON string.\r    You can use <code>JSON.parse()</code> to parse the string into a JavaScript object which you can manipulate the\r    properties of, and use <code>JSON.stringify()</code> to convert the object into a string to put in the property.",
+                "description": "Used to store {@link Entities.MaterialResource|MaterialResource} data as a JSON string. \r    You can use <code>JSON.parse()</code> to parse the string into a JavaScript object which you can manipulate the \r    properties of, and use <code>JSON.stringify()</code> to convert the object into a string to put in the property.",
                 "name": "materialData"
             },
             {
@@ -41516,7 +41377,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The priority for applying the material to its parent. Only the highest priority material is\r    applied, with materials of the same priority randomly assigned. Materials that come with the model have a priority of\r    <code>0</code>.",
+                "description": "The priority for applying the material to its parent. Only the highest priority material is\r    applied, with materials of the same priority randomly assigned. Materials that come with the model have a priority of \r    <code>0</code>.",
                 "name": "priority"
             },
             {
@@ -41526,7 +41387,7 @@
                     ]
                 },
                 "defaultvalue": "\"0\"",
-                "description": "Selects the mesh part or parts within the parent to which to apply the material.\r    If in the format <code>\"mat::string\"</code>, all mesh parts with material name <code>\"string\"</code> are replaced.\r    If <code>\"all\"</code>, then all mesh parts are replaced.\r    Otherwise the property value is parsed as an unsigned integer, specifying the mesh part index to modify.\r    <p>If the string represents an array (starts with <code>\"[\"</code> and ends with <code>\"]\"</code>), the string is split\r    at each <code>\",\"</code> and each element parsed as either a number or a string if it starts with <code>\"mat::\"</code>.\r    For example, <code>\"[0,1,mat::string,mat::string2]\"</code> will replace mesh parts 0 and 1, and any mesh parts with\r    material <code>\"string\"</code> or <code>\"string2\"</code>. Do not put spaces around the commas. Invalid values are parsed\r    to <code>0</code>.</p>",
+                "description": "Selects the mesh part or parts within the parent to which to apply the material.\r    If in the format <code>\"mat::string\"</code>, all mesh parts with material name <code>\"string\"</code> are replaced.\r    If <code>\"all\"</code>, then all mesh parts are replaced. \r    Otherwise the property value is parsed as an unsigned integer, specifying the mesh part index to modify.  \r    <p>If the string represents an array (starts with <code>\"[\"</code> and ends with <code>\"]\"</code>), the string is split \r    at each <code>\",\"</code> and each element parsed as either a number or a string if it starts with <code>\"mat::\"</code>. \r    For example, <code>\"[0,1,mat::string,mat::string2]\"</code> will replace mesh parts 0 and 1, and any mesh parts with \r    material <code>\"string\"</code> or <code>\"string2\"</code>. Do not put spaces around the commas. Invalid values are parsed \r    to <code>0</code>.</p>",
                 "name": "parentMaterialName"
             },
             {
@@ -41536,7 +41397,7 @@
                     ]
                 },
                 "defaultvalue": "\"uv\"",
-                "description": "How the material is mapped to the entity. Either <code>\"uv\"</code> or\r    <code>\"projected\"</code>. In <code>\"uv\"</code> mode, the material is evaluated within the UV space of the mesh it is\r    applied to. In <code>\"projected\"</code> mode, the 3D transform (position, rotation, and dimensions) of the Material\r    entity is used to evaluate the texture coordinates for the material.",
+                "description": "How the material is mapped to the entity. Either <code>\"uv\"</code> or \r    <code>\"projected\"</code>. In <code>\"uv\"</code> mode, the material is evaluated within the UV space of the mesh it is \r    applied to. In <code>\"projected\"</code> mode, the 3D transform (position, rotation, and dimensions) of the Material \r    entity is used to evaluate the texture coordinates for the material.",
                 "name": "materialMappingMode"
             },
             {
@@ -41546,7 +41407,7 @@
                     ]
                 },
                 "defaultvalue": "0,0",
-                "description": "Offset position in UV-space of the top left of the material, range\r    <code>{ x: 0, y: 0 }</code> &ndash; <code>{ x: 1, y: 1 }</code>.",
+                "description": "Offset position in UV-space of the top left of the material, range \r    <code>{ x: 0, y: 0 }</code> &ndash; <code>{ x: 1, y: 1 }</code>.",
                 "name": "materialMappingPos"
             },
             {
@@ -41576,7 +41437,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if the material repeats, <code>false</code> if it doesn't. If\r    <code>false</code>, fragments outside of texCoord 0 &ndash; 1 will be discarded. Works in both <code>\"uv\"</code> and\r    <code>\"projected\"</code> modes.",
+                "description": "<code>true</code> if the material repeats, <code>false</code> if it doesn't. If \r    <code>false</code>, fragments outside of texCoord 0 &ndash; 1 will be discarded. Works in both <code>\"uv\"</code> and \r    <code>\"projected\"</code> modes.",
                 "name": "materialRepeat"
             }
         ],
@@ -41588,7 +41449,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Model\"</code> {@link Entities.EntityType|EntityType} displays a glTF, FBX, or OBJ model. When adding an entity,\rif no <code>dimensions</code> value is specified then the model is automatically sized to its\r<code>{@link Entities.EntityProperties|naturalDimensions}</code>. It has properties in addition to the common\r{@link Entities.EntityProperties|EntityProperties}.",
+        "description": "The <code>\"Model\"</code> {@link Entities.EntityType|EntityType} displays a glTF, FBX, or OBJ model. When adding an entity, \rif no <code>dimensions</code> value is specified then the model is automatically sized to its \r<code>{@link Entities.EntityProperties|naturalDimensions}</code>. It has properties in addition to the common \r{@link Entities.EntityProperties|EntityProperties}.",
         "kind": "typedef",
         "name": "EntityProperties-Model",
         "type": {
@@ -41604,7 +41465,7 @@
                     ]
                 },
                 "defaultvalue": "0.1,0.1,0.1",
-                "description": "The dimensions of the entity. When adding an entity, if no <code>dimensions</code>\r    value is specified then the model is automatically sized to its\r    <code>{@link Entities.EntityProperties|naturalDimensions}</code>.",
+                "description": "The dimensions of the entity. When adding an entity, if no <code>dimensions</code> \r    value is specified then the model is automatically sized to its \r    <code>{@link Entities.EntityProperties|naturalDimensions}</code>.",
                 "name": "dimensions"
             },
             {
@@ -41614,7 +41475,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The URL of the glTF, FBX, or OBJ model. glTF models may be in JSON or binary format\r    (\".gltf\" or \".glb\" URLs respectively). Baked models' URLs have \".baked\" before the file type. Model files may also be\r    compressed in GZ format, in which case the URL ends in \".gz\".",
+                "description": "The URL of the glTF, FBX, or OBJ model. glTF models may be in JSON or binary format \r    (\".gltf\" or \".glb\" URLs respectively). Baked models' URLs have \".baked\" before the file type. Model files may also be \r    compressed in GZ format, in which case the URL ends in \".gz\".",
                 "name": "modelURL"
             },
             {
@@ -41642,7 +41503,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "A JSON string of texture name, URL pairs used when rendering the model in place of the\r    model's original textures. Use a texture name from the <code>originalTextures</code> property to override that texture.\r    Only the texture names and URLs to be overridden need be specified; original textures are used where there are no\r    overrides. You can use <code>JSON.stringify()</code> to convert a JavaScript object of name, URL pairs into a JSON\r    string.",
+                "description": "A JSON string of texture name, URL pairs used when rendering the model in place of the\r    model's original textures. Use a texture name from the <code>originalTextures</code> property to override that texture. \r    Only the texture names and URLs to be overridden need be specified; original textures are used where there are no \r    overrides. You can use <code>JSON.stringify()</code> to convert a JavaScript object of name, URL pairs into a JSON \r    string.",
                 "name": "textures"
             },
             {
@@ -41652,7 +41513,7 @@
                     ]
                 },
                 "defaultvalue": "\"{}\"",
-                "description": "A JSON string of texture name, URL pairs used in the model. The property value is\r    filled in after the entity has finished rezzing (i.e., textures have loaded). You can use <code>JSON.parse()</code> to\r    parse the JSON string into a JavaScript object of name, URL pairs. <em>Read-only.</em>",
+                "description": "A JSON string of texture name, URL pairs used in the model. The property value is \r    filled in after the entity has finished rezzing (i.e., textures have loaded). You can use <code>JSON.parse()</code> to \r    parse the JSON string into a JavaScript object of name, URL pairs. <em>Read-only.</em>",
                 "name": "originalTextures"
             },
             {
@@ -41701,7 +41562,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "Joint rotations applied to the model; <code>[]</code> if none are applied or the\r    model hasn't loaded. The array indexes are per {@link Entities.getJointIndex|getJointIndex}. Rotations are relative to\r    each joint's parent.\r    <p>Joint rotations can be set by {@link Entities.setLocalJointRotation|setLocalJointRotation} and similar functions, or\r    by setting the value of this property. If you set a joint rotation using this property, you also need to set the\r    corresponding <code>jointRotationsSet</code> value to <code>true</code>.</p>",
+                "description": "Joint rotations applied to the model; <code>[]</code> if none are applied or the \r    model hasn't loaded. The array indexes are per {@link Entities.getJointIndex|getJointIndex}. Rotations are relative to \r    each joint's parent.\r    <p>Joint rotations can be set by {@link Entities.setLocalJointRotation|setLocalJointRotation} and similar functions, or \r    by setting the value of this property. If you set a joint rotation using this property, you also need to set the \r    corresponding <code>jointRotationsSet</code> value to <code>true</code>.</p>",
                 "name": "jointRotations"
             },
             {
@@ -41711,7 +41572,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "<code>true</code> values for joints that have had rotations applied,\r    <code>false</code> otherwise; <code>[]</code> if none are applied or the model hasn't loaded. The array indexes are per\r    {@link Entities.getJointIndex|getJointIndex}.",
+                "description": "<code>true</code> values for joints that have had rotations applied, \r    <code>false</code> otherwise; <code>[]</code> if none are applied or the model hasn't loaded. The array indexes are per \r    {@link Entities.getJointIndex|getJointIndex}.",
                 "name": "jointRotationsSet"
             },
             {
@@ -41721,7 +41582,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "Joint translations applied to the model; <code>[]</code> if none are applied or\r    the model hasn't loaded. The array indexes are per {@link Entities.getJointIndex|getJointIndex}. Translations are\r    relative to each joint's parent.\r    <p>Joint translations can be set by {@link Entities.setLocalJointTranslation|setLocalJointTranslation} and similar\r    functions, or by setting the value of this property. If you set a joint translation using this property you also need to\r    set the corresponding <code>jointTranslationsSet</code> value to <code>true</code>.</p>",
+                "description": "Joint translations applied to the model; <code>[]</code> if none are applied or \r    the model hasn't loaded. The array indexes are per {@link Entities.getJointIndex|getJointIndex}. Translations are \r    relative to each joint's parent.\r    <p>Joint translations can be set by {@link Entities.setLocalJointTranslation|setLocalJointTranslation} and similar \r    functions, or by setting the value of this property. If you set a joint translation using this property you also need to \r    set the corresponding <code>jointTranslationsSet</code> value to <code>true</code>.</p>",
                 "name": "jointTranslations"
             },
             {
@@ -41731,7 +41592,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "<code>true</code> values for joints that have had translations applied,\r    <code>false</code> otherwise; <code>[]</code> if none are applied or the model hasn't loaded. The array indexes are per\r    {@link Entities.getJointIndex|getJointIndex}.",
+                "description": "<code>true</code> values for joints that have had translations applied, \r    <code>false</code> otherwise; <code>[]</code> if none are applied or the model hasn't loaded. The array indexes are per \r    {@link Entities.getJointIndex|getJointIndex}.",
                 "name": "jointTranslationsSet"
             },
             {
@@ -41741,7 +41602,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if when the entity is parented to an avatar, the avatar's\r    joint rotations are applied to the entity's joints; <code>false</code> if a parent avatar's joint rotations are not\r    applied to the entity's joints.",
+                "description": "<code>true</code> if when the entity is parented to an avatar, the avatar's \r    joint rotations are applied to the entity's joints; <code>false</code> if a parent avatar's joint rotations are not \r    applied to the entity's joints.",
                 "name": "relayParentJoints"
             },
             {
@@ -41751,7 +41612,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the mesh parts of the model are LOD culled as a group,\r    <code>false</code> if separate mesh parts are LOD culled individually.",
+                "description": "<code>true</code> if the mesh parts of the model are LOD culled as a group, \r    <code>false</code> if separate mesh parts are LOD culled individually.",
                 "name": "groupCulled"
             }
         ],
@@ -41789,7 +41650,7 @@
                     ]
                 },
                 "defaultvalue": 1000,
-                "description": "The maximum number of particles to render at one time. Older particles are deleted if\r    necessary when new ones are created.",
+                "description": "The maximum number of particles to render at one time. Older particles are deleted if \r    necessary when new ones are created.",
                 "name": "maxParticles"
             },
             {
@@ -41829,7 +41690,7 @@
                     ]
                 },
                 "defaultvalue": 1,
-                "description": "The spread in speeds at which particles are emitted at. For example, if\r    <code>emitSpeed == 5</code> and <code>speedSpread == 1</code>, particles will be emitted with speeds in the range\r    <code>4</code> &ndash; <code>6</code>m/s.",
+                "description": "The spread in speeds at which particles are emitted at. For example, if \r    <code>emitSpeed == 5</code> and <code>speedSpread == 1</code>, particles will be emitted with speeds in the range \r    <code>4</code> &ndash; <code>6</code>m/s.",
                 "name": "speedSpread"
             },
             {
@@ -41839,7 +41700,7 @@
                     ]
                 },
                 "defaultvalue": "0,-9.8,0",
-                "description": "The acceleration that is applied to each particle during its lifetime. The\r    default is Earth's gravity value.",
+                "description": "The acceleration that is applied to each particle during its lifetime. The \r    default is Earth's gravity value.",
                 "name": "emitAcceleration"
             },
             {
@@ -41878,7 +41739,7 @@
                     ]
                 },
                 "defaultvalue": "-0.707,0,0,0.707",
-                "description": "The orientation of particle emission relative to the entity's axes. By\r    default, particles emit along the entity's local z-axis, and <code>azimuthStart</code> and <code>azimuthFinish</code>\r    are relative to the entity's local x-axis. The default value is a rotation of -90 degrees about the local x-axis, i.e.,\r    the particles emit vertically.",
+                "description": "The orientation of particle emission relative to the entity's axes. By\r    default, particles emit along the entity's local z-axis, and <code>azimuthStart</code> and <code>azimuthFinish</code> \r    are relative to the entity's local x-axis. The default value is a rotation of -90 degrees about the local x-axis, i.e., \r    the particles emit vertically.",
                 "name": "emitOrientation"
             },
             {
@@ -41898,7 +41759,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The model file to use for the compound shape if <code>shapeType ==\r    \"compound\"</code>.",
+                "description": "The model file to use for the compound shape if <code>shapeType == \r    \"compound\"</code>.",
                 "name": "compoundShapeURL"
             },
             {
@@ -41918,7 +41779,7 @@
                     ]
                 },
                 "defaultvalue": 1,
-                "description": "The starting radius within the shape at which particles start being emitted;\r    range <code>0.0</code> &ndash; <code>1.0</code> for the center to the surface, respectively.\r    Particles are emitted from the portion of the shape that lies between <code>emitRadiusStart</code> and the\r    shape's surface.",
+                "description": "The starting radius within the shape at which particles start being emitted;\r    range <code>0.0</code> &ndash; <code>1.0</code> for the center to the surface, respectively.\r    Particles are emitted from the portion of the shape that lies between <code>emitRadiusStart</code> and the \r    shape's surface.",
                 "name": "emitRadiusStart"
             },
             {
@@ -41928,7 +41789,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The angle in radians from the entity's local z-axis at which particles start being emitted\r    within the shape; range <code>0</code> &ndash; <code>Math.PI</code>. Particles are emitted from the portion of the\r    shape that lies between <code>polarStart</code> and <code>polarFinish</code>. Only used if <code>shapeType</code> is\r    <code>\"ellipsoid\"</code> or <code>\"sphere\"</code>.",
+                "description": "The angle in radians from the entity's local z-axis at which particles start being emitted \r    within the shape; range <code>0</code> &ndash; <code>Math.PI</code>. Particles are emitted from the portion of the \r    shape that lies between <code>polarStart</code> and <code>polarFinish</code>. Only used if <code>shapeType</code> is\r    <code>\"ellipsoid\"</code> or <code>\"sphere\"</code>.",
                 "name": "polarStart"
             },
             {
@@ -41938,7 +41799,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The angle in radians from the entity's local z-axis at which particles stop being emitted\r    within the shape; range <code>0</code> &ndash; <code>Math.PI</code>. Particles are emitted from the portion of the\r    shape that lies between <code>polarStart</code> and <code>polarFinish</code>. Only used if <code>shapeType</code> is\r    <code>\"ellipsoid\"</code> or <code>\"sphere\"</code>.",
+                "description": "The angle in radians from the entity's local z-axis at which particles stop being emitted \r    within the shape; range <code>0</code> &ndash; <code>Math.PI</code>. Particles are emitted from the portion of the \r    shape that lies between <code>polarStart</code> and <code>polarFinish</code>. Only used if <code>shapeType</code> is\r    <code>\"ellipsoid\"</code> or <code>\"sphere\"</code>.",
                 "name": "polarFinish"
             },
             {
@@ -41948,7 +41809,7 @@
                     ]
                 },
                 "defaultvalue": "-Math.PI",
-                "description": "The angle in radians from the entity's local x-axis about the entity's local\r    z-axis at which particles start being emitted; range <code>-Math.PI</code> &ndash; <code>Math.PI</code>. Particles are\r    emitted from the portion of the shape that lies between <code>azimuthStart</code> and <code>azimuthFinish</code>.\r    Only used if <code>shapeType</code> is <code>\"ellipsoid\"</code>, <code>\"sphere\"</code>, or <code>\"circle\"</code>.",
+                "description": "The angle in radians from the entity's local x-axis about the entity's local \r    z-axis at which particles start being emitted; range <code>-Math.PI</code> &ndash; <code>Math.PI</code>. Particles are \r    emitted from the portion of the shape that lies between <code>azimuthStart</code> and <code>azimuthFinish</code>. \r    Only used if <code>shapeType</code> is <code>\"ellipsoid\"</code>, <code>\"sphere\"</code>, or <code>\"circle\"</code>.",
                 "name": "azimuthStart"
             },
             {
@@ -41958,7 +41819,7 @@
                     ]
                 },
                 "defaultvalue": "Math.PI",
-                "description": "The angle in radians from the entity's local x-axis about the entity's local\r    z-axis at which particles stop being emitted; range <code>-Math.PI</code> &ndash; <code>Math.PI</code>. Particles are\r    emitted from the portion of the shape that lies between <code>azimuthStart</code> and <code>azimuthFinish</code>.\r    Only used if <code>shapeType</code> is <code>\"ellipsoid\"</code>, <code>\"sphere\"</code>, or <code>\"circle\"</code>.",
+                "description": "The angle in radians from the entity's local x-axis about the entity's local\r    z-axis at which particles stop being emitted; range <code>-Math.PI</code> &ndash; <code>Math.PI</code>. Particles are\r    emitted from the portion of the shape that lies between <code>azimuthStart</code> and <code>azimuthFinish</code>. \r    Only used if <code>shapeType</code> is <code>\"ellipsoid\"</code>, <code>\"sphere\"</code>, or <code>\"circle\"</code>.",
                 "name": "azimuthFinish"
             },
             {
@@ -42008,7 +41869,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The spread in radius that each particle is given. For example, if\r    <code>particleRadius == 0.5</code> and <code>radiusSpread == 0.25</code>, each particle will have a radius in the range\r    <code>0.25</code> &ndash; <code>0.75</code>.",
+                "description": "The spread in radius that each particle is given. For example, if \r    <code>particleRadius == 0.5</code> and <code>radiusSpread == 0.25</code>, each particle will have a radius in the range \r    <code>0.25</code> &ndash; <code>0.75</code>.",
                 "name": "radiusSpread"
             },
             {
@@ -42028,7 +41889,7 @@
                     ]
                 },
                 "defaultvalue": "null,null,null",
-                "description": "The color of each particle at the start of its life. If any of the\r    component values are undefined, the <code>color</code> value is used.",
+                "description": "The color of each particle at the start of its life. If any of the \r    component values are undefined, the <code>color</code> value is used.",
                 "name": "colorStart"
             },
             {
@@ -42038,7 +41899,7 @@
                     ]
                 },
                 "defaultvalue": "null,null,null",
-                "description": "The color of each particle at the end of its life. If any of the\r    component values are undefined, the <code>color</code> value is used.",
+                "description": "The color of each particle at the end of its life. If any of the \r    component values are undefined, the <code>color</code> value is used.",
                 "name": "colorFinish"
             },
             {
@@ -42048,7 +41909,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0",
-                "description": "The spread in color that each particle is given. For example, if\r    <code>color == {red: 100, green: 100, blue: 100}</code> and <code>colorSpread ==\r    {red: 10, green: 25, blue: 50}</code>, each particle will have a color in the range\r    <code>{red: 90, green: 75, blue: 50}</code> &ndash; <code>{red: 110, green: 125, blue: 150}</code>.",
+                "description": "The spread in color that each particle is given. For example, if\r    <code>color == {red: 100, green: 100, blue: 100}</code> and <code>colorSpread ==\r    {red: 10, green: 25, blue: 50}</code>, each particle will have a color in the range \r    <code>{red: 90, green: 75, blue: 50}</code> &ndash; <code>{red: 110, green: 125, blue: 150}</code>.",
                 "name": "colorSpread"
             },
             {
@@ -42088,7 +41949,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The spread in alpha that each particle is given. For example, if\r    <code>alpha == 0.5</code> and <code>alphaSpread == 0.25</code>, each particle will have an alpha in the range\r    <code>0.25</code> &ndash; <code>0.75</code>.",
+                "description": "The spread in alpha that each particle is given. For example, if \r    <code>alpha == 0.5</code> and <code>alphaSpread == 0.25</code>, each particle will have an alpha in the range \r    <code>0.25</code> &ndash; <code>0.75</code>.",
                 "name": "alphaSpread"
             },
             {
@@ -42107,7 +41968,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The rotation of each particle at the middle of its life, range <code>-2 * Math.PI</code>\r    &ndash; <code>2 * Math.PI</code> radians.",
+                "description": "The rotation of each particle at the middle of its life, range <code>-2 * Math.PI</code> \r    &ndash; <code>2 * Math.PI</code> radians.",
                 "name": "particleSpin"
             },
             {
@@ -42117,7 +41978,7 @@
                     ]
                 },
                 "defaultvalue": null,
-                "description": "The rotation of each particle at the start of its life, range <code>-2 * Math.PI</code>\r    &ndash; <code>2 * Math.PI</code> radians. If <code>null</code>, the <code>particleSpin</code> value is used.",
+                "description": "The rotation of each particle at the start of its life, range <code>-2 * Math.PI</code> \r    &ndash; <code>2 * Math.PI</code> radians. If <code>null</code>, the <code>particleSpin</code> value is used.",
                 "name": "spinStart"
             },
             {
@@ -42127,7 +41988,7 @@
                     ]
                 },
                 "defaultvalue": null,
-                "description": "The rotation of each particle at the end of its life, range <code>-2 * Math.PI</code>\r    &ndash; <code>2 * Math.PI</code> radians. If <code>null</code>, the <code>particleSpin</code> value is used.",
+                "description": "The rotation of each particle at the end of its life, range <code>-2 * Math.PI</code> \r    &ndash; <code>2 * Math.PI</code> radians. If <code>null</code>, the <code>particleSpin</code> value is used.",
                 "name": "spinFinish"
             },
             {
@@ -42137,7 +41998,7 @@
                     ]
                 },
                 "defaultvalue": 0,
-                "description": "The spread in spin that each particle is given, range <code>0</code> &ndash;\r    <code>2 * Math.PI</code> radians. For example, if <code>particleSpin == Math.PI</code> and\r    <code>spinSpread == Math.PI / 2</code>, each particle will have a rotation in the range <code>Math.PI / 2</code> &ndash;\r    <code>3 * Math.PI / 2</code>.",
+                "description": "The spread in spin that each particle is given, range <code>0</code> &ndash; \r    <code>2 * Math.PI</code> radians. For example, if <code>particleSpin == Math.PI</code> and \r    <code>spinSpread == Math.PI / 2</code>, each particle will have a rotation in the range <code>Math.PI / 2</code> &ndash; \r    <code>3 * Math.PI / 2</code>.",
                 "name": "spinSpread"
             },
             {
@@ -42147,7 +42008,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the particles' rotations are relative to the entity's\r    instantaneous rotation, <code>false</code> if they're relative to world coordinates. If <code>true</code> with\r    <code>particleSpin == 0</code>, the particles keep oriented per the entity's orientation.",
+                "description": "<code>true</code> if the particles' rotations are relative to the entity's \r    instantaneous rotation, <code>false</code> if they're relative to world coordinates. If <code>true</code> with \r    <code>particleSpin == 0</code>, the particles keep oriented per the entity's orientation.",
                 "name": "rotateWithEntity"
             }
         ],
@@ -42175,7 +42036,7 @@
                     ]
                 },
                 "defaultvalue": "0.1,0.1,0.1",
-                "description": "The dimensions of the entity, i.e., the size of the bounding box that contains the\r    lines drawn. <em>Read-only.</em>",
+                "description": "The dimensions of the entity, i.e., the size of the bounding box that contains the \r    lines drawn. <em>Read-only.</em>",
                 "name": "dimensions"
             },
             {
@@ -42195,7 +42056,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "The normal vectors for the line's surface at the <code>linePoints</code>. The values are\r    relative to the entity's orientation. Must be specified in order for the entity to render.",
+                "description": "The normal vectors for the line's surface at the <code>linePoints</code>. The values are \r    relative to the entity's orientation. Must be specified in order for the entity to render.",
                 "name": "normals"
             },
             {
@@ -42205,7 +42066,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "The widths, in m, of the line at the <code>linePoints</code>. Must be specified in\r    order for the entity to render.",
+                "description": "The widths, in m, of the line at the <code>linePoints</code>. Must be specified in \r    order for the entity to render.",
                 "name": "strokeWidths"
             },
             {
@@ -42215,7 +42076,7 @@
                     ]
                 },
                 "defaultvalue": "[]",
-                "description": "The base colors of each point, with values in the range <code>0.0,0.0,0.0</code>\r    &ndash; <code>1.0,1.0,1.0</code>. These colors are multiplied with the color of the texture. If there are more line\r    points than stroke colors, the <code>color</code> property value is used for the remaining points.\r    <p><strong>Warning:</strong> The ordinate values are in the range <code>0.0</code> &ndash; <code>1.0</code>.</p>",
+                "description": "The base colors of each point, with values in the range <code>0.0,0.0,0.0</code> \r    &ndash; <code>1.0,1.0,1.0</code>. These colors are multiplied with the color of the texture. If there are more line \r    points than stroke colors, the <code>color</code> property value is used for the remaining points.\r    <p><strong>Warning:</strong> The ordinate values are in the range <code>0.0</code> &ndash; <code>1.0</code>.</p>",
                 "name": "strokeColors"
             },
             {
@@ -42225,7 +42086,7 @@
                     ]
                 },
                 "defaultvalue": "255,255,255",
-                "description": "Used as the color for each point if <code>strokeColors</code> doesn't have a value for\r    the point.",
+                "description": "Used as the color for each point if <code>strokeColors</code> doesn't have a value for \r    the point.",
                 "name": "color"
             },
             {
@@ -42245,7 +42106,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if the texture is stretched to fill the whole line,\r    <code>false</code> if the texture repeats along the line.",
+                "description": "<code>true</code> if the texture is stretched to fill the whole line, \r    <code>false</code> if the texture repeats along the line.",
                 "name": "isUVModeStretch"
             },
             {
@@ -42255,7 +42116,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the opacity of the strokes drops off away from the line center,\r    <code>false</code> if it doesn't.",
+                "description": "<code>true</code> if the opacity of the strokes drops off away from the line center, \r    <code>false</code> if it doesn't.",
                 "name": "glow"
             },
             {
@@ -42265,7 +42126,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if each line segment rotates to face the camera, <code>false</code>\r    if they don't.",
+                "description": "<code>true</code> if each line segment rotates to face the camera, <code>false</code> \r    if they don't.",
                 "name": "faceCamera"
             }
         ],
@@ -42303,7 +42164,7 @@
                     ]
                 },
                 "defaultvalue": "32,32,32",
-                "description": "Integer number of voxels along each axis of the entity, in the range\r    <code>1,1,1</code> to <code>128,128,128</code>. The dimensions of each voxel is\r    <code>dimensions / voxelVolumesize</code>.",
+                "description": "Integer number of voxels along each axis of the entity, in the range \r    <code>1,1,1</code> to <code>128,128,128</code>. The dimensions of each voxel is \r    <code>dimensions / voxelVolumesize</code>.",
                 "name": "voxelVolumeSize"
             },
             {
@@ -42313,7 +42174,7 @@
                     ]
                 },
                 "defaultvalue": "\"ABAAEAAQAAAAHgAAEAB42u3BAQ0AAADCoPdPbQ8HFAAAAPBuEAAAAQ==\"",
-                "description": "Base-64 encoded compressed dump of\r    the PolyVox data. This property is typically not used in scripts directly; rather, functions that manipulate a PolyVox\r    entity update it.\r    <p>The size of this property increases with the size and complexity of the PolyVox entity, with the size depending on how \r    the particular entity's voxels compress. Because this property value has to fit within a Vircadia datagram packet, \r    there is a limit to the size and complexity of a PolyVox entity; edits which would result in an overflow are rejected.</p>",
+                "description": "Base-64 encoded compressed dump of \r    the PolyVox data. This property is typically not used in scripts directly; rather, functions that manipulate a PolyVox \r    entity update it.\r    <p>The size of this property increases with the size and complexity of the PolyVox entity, with the size depending on how \r    the particular entity's voxels compress. Because this property value has to fit within a Vircadia datagram packet, \r    there is a limit to the size and complexity of a PolyVox entity; edits which would result in an overflow are rejected.</p>",
                 "name": "voxelData"
             },
             {
@@ -42323,7 +42184,7 @@
                     ]
                 },
                 "defaultvalue": 2,
-                "description": "The style of rendering the voxels' surface and how\r    neighboring PolyVox entities are joined.",
+                "description": "The style of rendering the voxels' surface and how \r    neighboring PolyVox entities are joined.",
                 "name": "voxelSurfaceStyle"
             },
             {
@@ -42333,7 +42194,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The URL of the texture to map to surfaces perpendicular to the entity's local x-axis.\r    JPG or PNG format. If no texture is specified the surfaces display white.",
+                "description": "The URL of the texture to map to surfaces perpendicular to the entity's local x-axis. \r    JPG or PNG format. If no texture is specified the surfaces display white.",
                 "name": "xTextureURL"
             },
             {
@@ -42343,7 +42204,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The URL of the texture to map to surfaces perpendicular to the entity's local y-axis.\r    JPG or PNG format. If no texture is specified the surfaces display white.",
+                "description": "The URL of the texture to map to surfaces perpendicular to the entity's local y-axis. \r    JPG or PNG format. If no texture is specified the surfaces display white.",
                 "name": "yTextureURL"
             },
             {
@@ -42353,7 +42214,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The URL of the texture to map to surfaces perpendicular to the entity's local z-axis.\r    JPG or PNG format. If no texture is specified the surfaces display white.",
+                "description": "The URL of the texture to map to surfaces perpendicular to the entity's local z-axis. \r    JPG or PNG format. If no texture is specified the surfaces display white.",
                 "name": "zTextureURL"
             },
             {
@@ -42363,7 +42224,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the neighboring PolyVox entity in the entity's -ve local x-axis\r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
+                "description": "The ID of the neighboring PolyVox entity in the entity's -ve local x-axis \r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
                 "name": "xNNeighborID"
             },
             {
@@ -42373,7 +42234,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the neighboring PolyVox entity in the entity's -ve local y-axis\r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
+                "description": "The ID of the neighboring PolyVox entity in the entity's -ve local y-axis \r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
                 "name": "yNNeighborID"
             },
             {
@@ -42383,7 +42244,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the neighboring PolyVox entity in the entity's -ve local z-axis\r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
+                "description": "The ID of the neighboring PolyVox entity in the entity's -ve local z-axis \r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
                 "name": "zNNeighborID"
             },
             {
@@ -42393,7 +42254,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the neighboring PolyVox entity in the entity's +ve local x-axis\r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
+                "description": "The ID of the neighboring PolyVox entity in the entity's +ve local x-axis \r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
                 "name": "xPNeighborID"
             },
             {
@@ -42403,7 +42264,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the neighboring PolyVox entity in the entity's +ve local y-axis\r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
+                "description": "The ID of the neighboring PolyVox entity in the entity's +ve local y-axis \r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
                 "name": "yPNeighborID"
             },
             {
@@ -42413,7 +42274,7 @@
                     ]
                 },
                 "defaultvalue": "Uuid.NULL",
-                "description": "The ID of the neighboring PolyVox entity in the entity's +ve local z-axis\r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
+                "description": "The ID of the neighboring PolyVox entity in the entity's +ve local z-axis \r    direction, if you want them joined. Set to {@link Uuid(0)|Uuid.NULL} if there is none or you don't want to join them.",
                 "name": "zPNeighborID"
             }
         ],
@@ -42492,7 +42353,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Sphere\"</code> {@link Entities.EntityType|EntityType} is the same as the <code>\"Shape\"</code>\r{@link Entities.EntityType|EntityType} except that its <code>shape</code> value is always set to <code>\"Sphere\"</code>\rwhen the entity is created. If its <code>shape</code> property value is subsequently changed then the entity's\r<code>type</code> will be reported as <code>\"Box\"</code> if the <code>shape</code> is set to <code>\"Cube\"</code>,\rotherwise it will be reported as <code>\"Shape\"</code>.",
+        "description": "The <code>\"Sphere\"</code> {@link Entities.EntityType|EntityType} is the same as the <code>\"Shape\"</code>\r{@link Entities.EntityType|EntityType} except that its <code>shape</code> value is always set to <code>\"Sphere\"</code>\rwhen the entity is created. If its <code>shape</code> property value is subsequently changed then the entity's \r<code>type</code> will be reported as <code>\"Box\"</code> if the <code>shape</code> is set to <code>\"Cube\"</code>, \rotherwise it will be reported as <code>\"Shape\"</code>.",
         "kind": "typedef",
         "name": "EntityProperties-Sphere",
         "type": {
@@ -42643,7 +42504,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the entity is unaffected by lighting, <code>false</code> if it is lit\r    by the key light and local lights.",
+                "description": "<code>true</code> if the entity is unaffected by lighting, <code>false</code> if it is lit \r    by the key light and local lights.",
                 "name": "unlit"
             },
             {
@@ -42702,7 +42563,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"yaw\"</code>, <code>false</code>\r    if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"yaw\"</code>, <code>false</code> \r    if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "faceCamera"
             },
             {
@@ -42711,7 +42572,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"full\"</code>,\r    <code>false</code> if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to\r    <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"full\"</code>, \r    <code>false</code> if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to\r    <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "isFacingAvatar"
             }
         ],
@@ -42723,7 +42584,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Web\"</code> {@link Entities.EntityType|EntityType} displays a browsable web page. Each user views their own copy\rof the web page: if one user navigates to another page on the entity, other users do not see the change; if a video is being\rplayed, users don't see it in sync. It has properties in addition to the common\r{@link Entities.EntityProperties|EntityProperties}.",
+        "description": "The <code>\"Web\"</code> {@link Entities.EntityType|EntityType} displays a browsable web page. Each user views their own copy\rof the web page: if one user navigates to another page on the entity, other users do not see the change; if a video is being \rplayed, users don't see it in sync. It has properties in addition to the common \r{@link Entities.EntityProperties|EntityProperties}.",
         "kind": "typedef",
         "name": "EntityProperties-Web",
         "type": {
@@ -42759,7 +42620,7 @@
                     ]
                 },
                 "defaultvalue": "255,255,255",
-                "description": "The color of the web surface. This color tints the web page displayed: the pixel\r    colors on the web page are multiplied by the property color. For example, a value of\r    <code>{ red: 255, green: 0, blue: 0 }</code> lets only the red channel of pixels' colors through.",
+                "description": "The color of the web surface. This color tints the web page displayed: the pixel \r    colors on the web page are multiplied by the property color. For example, a value of \r    <code>{ red: 255, green: 0, blue: 0 }</code> lets only the red channel of pixels' colors through.",
                 "name": "color"
             },
             {
@@ -42797,7 +42658,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"yaw\"</code>, <code>false</code>\r    if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"yaw\"</code>, <code>false</code> \r    if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "faceCamera"
             },
             {
@@ -42806,7 +42667,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"full\"</code>,\r    <code>false</code> if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to\r    <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"full\"</code>, \r    <code>false</code> if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to\r    <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "isFacingAvatar"
             },
             {
@@ -42816,7 +42677,7 @@
                     ]
                 },
                 "defaultvalue": 30,
-                "description": "The resolution to display the page at, in dots per inch. If you convert this to dots per meter\r    (multiply by 1 / 0.0254 = 39.3701) then multiply <code>dimensions.x</code> and <code>dimensions.y</code> by that value\r    you get the resolution in pixels.",
+                "description": "The resolution to display the page at, in dots per inch. If you convert this to dots per meter \r    (multiply by 1 / 0.0254 = 39.3701) then multiply <code>dimensions.x</code> and <code>dimensions.y</code> by that value \r    you get the resolution in pixels.",
                 "name": "dpi"
             },
             {
@@ -42856,7 +42717,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if the entity is highlighted when it has keyboard\r    focus, <code>false</code> if it isn't.",
+                "description": "<code>true</code> if the entity is highlighted when it has keyboard \r    focus, <code>false</code> if it isn't.",
                 "name": "showKeyboardFocusHighlight"
             }
         ],
@@ -42868,7 +42729,7 @@
         "scope": "static"
     },
     {
-        "description": "The <code>\"Zone\"</code> {@link Entities.EntityType|EntityType} is a volume of lighting effects and avatar permissions.\rAvatar interaction events such as {@link Entities.enterEntity} are also often used with a Zone entity. It has properties in\raddition to the common {@link Entities.EntityProperties|EntityProperties}.",
+        "description": "The <code>\"Zone\"</code> {@link Entities.EntityType|EntityType} is a volume of lighting effects and avatar permissions.\rAvatar interaction events such as {@link Entities.enterEntity} are also often used with a Zone entity. It has properties in \raddition to the common {@link Entities.EntityProperties|EntityProperties}.",
         "kind": "typedef",
         "name": "EntityProperties-Zone",
         "type": {
@@ -42884,7 +42745,7 @@
                     ]
                 },
                 "defaultvalue": "0.1,0.1,0.1",
-                "description": "The dimensions of the volume in which the zone's lighting effects and avatar\r    permissions have effect.",
+                "description": "The dimensions of the volume in which the zone's lighting effects and avatar \r    permissions have effect.",
                 "name": "dimensions"
             },
             {
@@ -42894,7 +42755,7 @@
                     ]
                 },
                 "defaultvalue": "\"box\"",
-                "description": "The shape of the volume in which the zone's lighting effects and avatar\r    permissions have effect. Reverts to the default value if set to <code>\"none\"</code>, or set to <code>\"compound\"</code>\r    and <code>compoundShapeURL</code> is <code>\"\"</code>.",
+                "description": "The shape of the volume in which the zone's lighting effects and avatar\r    permissions have effect. Reverts to the default value if set to <code>\"none\"</code>, or set to <code>\"compound\"</code> \r    and <code>compoundShapeURL</code> is <code>\"\"</code>.",
                 "name": "shapeType"
             },
             {
@@ -42904,7 +42765,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The model file to use for the compound shape if <code>shapeType</code> is\r    <code>\"compound\"</code>.",
+                "description": "The model file to use for the compound shape if <code>shapeType</code> is \r    <code>\"compound\"</code>.",
                 "name": "compoundShapeURL"
             },
             {
@@ -43009,7 +42870,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if visitors can fly in the zone; <code>false</code> if they\r    cannot. Only works for domain entities.",
+                "description": "<code>true</code> if visitors can fly in the zone; <code>false</code> if they \r    cannot. Only works for domain entities.",
                 "name": "flyingAllowed"
             },
             {
@@ -43019,7 +42880,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if visitors with avatar collisions turned off will not\r    collide with content in the zone; <code>false</code> if visitors will always collide with content in the zone. Only\r    works for domain entities.",
+                "description": "<code>true</code> if visitors with avatar collisions turned off will not \r    collide with content in the zone; <code>false</code> if visitors will always collide with content in the zone. Only \r    works for domain entities.",
                 "name": "ghostingAllowed"
             },
             {
@@ -43029,7 +42890,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The URL of a JavaScript file that filters changes to properties of entities within the\r    zone. It is periodically executed for each entity in the zone. It can, for example, be used to not allow changes to\r    certain properties:\r<pre>\rfunction filter(properties) {\r    // Check and edit properties object values,\r    // e.g., properties.modelURL, as required.\r    return properties;\r}\r</pre>",
+                "description": "The URL of a JavaScript file that filters changes to properties of entities within the \r    zone. It is periodically executed for each entity in the zone. It can, for example, be used to not allow changes to \r    certain properties:\r<pre>\rfunction filter(properties) {\r    // Check and edit properties object values,\r    // e.g., properties.modelURL, as required.\r    return properties;\r}\r</pre>",
                 "name": "filterURL"
             },
             {
@@ -43039,7 +42900,7 @@
                     ]
                 },
                 "defaultvalue": "\"inherit\"",
-                "description": "Configures the priority of updates from avatars in the\r    zone to other clients.",
+                "description": "Configures the priority of updates from avatars in the \r    zone to other clients.",
                 "name": "avatarPriority"
             },
             {
@@ -43097,7 +42958,7 @@
                     ]
                 },
                 "defaultvalue": false,
-                "description": "<code>true</code> if the image should be emissive (unlit), <code>false</code> if it\r    shouldn't.",
+                "description": "<code>true</code> if the image should be emissive (unlit), <code>false</code> if it \r    shouldn't.",
                 "name": "emissive"
             },
             {
@@ -43107,7 +42968,7 @@
                     ]
                 },
                 "defaultvalue": true,
-                "description": "<code>true</code> if the image should maintain its aspect ratio,\r    <code>false</code> if it shouldn't.",
+                "description": "<code>true</code> if the image should maintain its aspect ratio, \r    <code>false</code> if it shouldn't.",
                 "name": "keepAspectRatio"
             },
             {
@@ -43117,7 +42978,7 @@
                     ]
                 },
                 "defaultvalue": "0,0,0,0",
-                "description": "The portion of the image to display. If width or height are <code>0</code>, it defaults\r    to the full image in that dimension.",
+                "description": "The portion of the image to display. If width or height are <code>0</code>, it defaults \r    to the full image in that dimension.",
                 "name": "subImage"
             },
             {
@@ -43165,7 +43026,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"yaw\"</code>, <code>false</code>\r    if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"yaw\"</code>, <code>false</code> \r    if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "faceCamera"
             },
             {
@@ -43174,7 +43035,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"full\"</code>,\r    <code>false</code> if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to\r    <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
+                "description": "<code>true</code> if <code>billboardMode</code> is <code>\"full\"</code>, \r    <code>false</code> if it isn't. Setting this property to <code>false</code> sets the <code>billboardMode</code> to\r    <code>\"none\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "isFacingAvatar"
             }
         ],
@@ -43367,7 +43228,7 @@
         "scope": "static"
     },
     {
-        "description": "Information on how an entity is rendered. Properties are only filled in for <code>Model</code> entities; other\rentity types have an empty object, <code>{}</code>.",
+        "description": "Information on how an entity is rendered. Properties are only filled in for <code>Model</code> entities; other \rentity types have an empty object, <code>{}</code>.",
         "kind": "typedef",
         "name": "RenderInfo",
         "type": {
@@ -43409,7 +43270,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if any of the textures has transparency, <code>false</code>\r    if none of them do.",
+                "description": "<code>true</code> if any of the textures has transparency, <code>false</code> \r    if none of them do.",
                 "name": "hasTransparent"
             },
             {
@@ -48347,7 +48208,7 @@
         "scope": "static"
     },
     {
-        "description": "Triggered when an avatar enters an entity.\rNote: At the initial loading of the script, if the avatar is already present inside the entity, it might be too late \rto catch this event when the script runs, so it won't trigger. The {@link Entities.preload|preload} signal can be used to handle those cases.\r<p>See also, {@link Entities|Entity Methods} and {@link Script.addEventHandler}.</p>",
+        "description": "Triggered when an avatar enters an entity, but only if the entity has an entity method exposed for this event.\r<p>See also, {@link Entities|Entity Methods} and {@link Script.addEventHandler}.</p>",
         "kind": "signal",
         "name": "enterEntity",
         "params": [
@@ -48375,7 +48236,7 @@
         "scope": "static"
     },
     {
-        "description": "Triggered when an avatar leaves an entity.\r<p>See also, {@link Entities|Entity Methods} and {@link Script.addEventHandler}.</p>",
+        "description": "Triggered when an avatar leaves an entity, but only if the entity has an entity method exposed for this event.\r<p>See also, {@link Entities|Entity Methods} and {@link Script.addEventHandler}.</p>",
         "kind": "signal",
         "name": "leaveEntity",
         "params": [
@@ -52992,7 +52853,7 @@
                         "string"
                     ]
                 },
-                "description": "The address to go to: a <code>\"hifi://\"</code> address, an IP address (e.g., \r    <code>\"127.0.0.1\"</code> or <code>\"localhost\"</code>), a <code>file:///</code> address, a domain name, a named path \r    on a domain (starts with <code>\"/\"</code>), a position or position and orientation, or a user (starts with \r    <code>\"@\"</code>).",
+                "description": "The address to go to: a <code>\"hifi://\"</code> address, an IP address (e.g., \r    <code>\"127.0.0.1\"</code> or <code>\"localhost\"</code>), a domain name, a named path on a domain (starts with \r    <code>\"/\"</code>), a position or position and orientation, or a user (starts with <code>\"@\"</code>).",
                 "name": "address"
             },
             {
@@ -54065,7 +53926,7 @@
         "scope": "static"
     },
     {
-        "description": "<p>The reasons that you may be refused connection to a domain are defined by numeric values:</p>\r<table>\r  <thead>\r    <tr>\r      <th>Reason</th>\r      <th>Value</th>\r      <th>Description</th>\r    </tr>\r  </thead>\r  <tbody>\r    <tr>\r      <td><strong>Unknown</strong></td>\r      <td><code>0</code></td>\r      <td>Some unknown reason.</td>\r    </tr>\r    <tr>\r      <td><strong>ProtocolMismatch</strong></td>\r      <td><code>1</code></td>\r      <td>The communications protocols of the domain and your Interface are not the same.</td>\r    </tr>\r    <tr>\r      <td><strong>LoginErrorMetaverse</strong></td>\r      <td><code>2</code></td>\r      <td>You could not be logged into the domain per your metaverse login.</td>\r    </tr>\r    <tr>\r      <td><strong>NotAuthorizedMetaverse</strong></td>\r      <td><code>3</code></td>\r      <td>You are not authorized to connect to the domain per your metaverse login.</td>\r    </tr>\r    <tr>\r      <td><strong>TooManyUsers</strong></td>\r      <td><code>4</code></td>\r      <td>The domain already has its maximum number of users.</td>\r    </tr>\r    <tr>\r      <td><strong>TimedOut</strong></td>\r      <td><code>5</code></td>\r      <td>Connecting to the domain timed out.</td>\r    </tr>\r    <tr>\r      <td><strong>LoginErrorDomain</strong></td>\r      <td><code>2</code></td>\r      <td>You could not be logged into the domain per your domain login.</td>\r    </tr>\r    <tr>\r      <td><strong>NotAuthorizedDomain</strong></td>\r      <td><code>6</code></td>\r      <td>You are not authorized to connect to the domain per your domain login.</td>\r    </tr>\r  </tbody>\r</table>",
+        "description": "<p>The reasons that you may be refused connection to a domain are defined by numeric values:</p>\r<table>\r  <thead>\r    <tr>\r      <th>Reason</th>\r      <th>Value</th>\r      <th>Description</th>\r    </tr>\r  </thead>\r  <tbody>\r    <tr>\r      <td><strong>Unknown</strong></td>\r      <td><code>0</code></td>\r      <td>Some unknown reason.</td>\r    </tr>\r    <tr>\r      <td><strong>ProtocolMismatch</strong></td>\r      <td><code>1</code></td>\r      <td>The communications protocols of the domain and your Interface are not the same.</td>\r    </tr>\r    <tr>\r      <td><strong>LoginError</strong></td>\r      <td><code>2</code></td>\r      <td>You could not be logged into the domain.</td>\r    </tr>\r    <tr>\r      <td><strong>NotAuthorized</strong></td>\r      <td><code>3</code></td>\r      <td>You are not authorized to connect to the domain.</td>\r    </tr>\r    <tr>\r      <td><strong>TooManyUsers</strong></td>\r      <td><code>4</code></td>\r      <td>The domain already has its maximum number of users.</td>\r    </tr>\r    <tr>\r      <td><strong>TimedOut</strong></td>\r      <td><code>5</code></td>\r      <td>Connecting to the domain timed out.</td>\r    </tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "ConnectionRefusedReason",
         "type": {
@@ -73906,7 +73767,7 @@
         "scope": "static"
     },
     {
-        "description": "<p>The <code>Controller.Hardware.Vive</code> object has properties representing the Vive. The property values are integer \rIDs, uniquely identifying each output. <em>Read-only.</em></p>\r<p>These outputs can be mapped to actions or functions or <code>Controller.Standard</code> items in a {@link RouteObject} \rmapping.</p>\r<table>\r  <thead>\r    <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td colspan=\"4\"><strong>Buttons</strong></td></tr>\r    <tr><td><code>LeftApplicationMenu</code></td><td>number</td><td>number</td><td>Left application menu button pressed.\r      </td></tr>\r    <tr><td><code>RightApplicationMenu</code></td><td>number</td><td>number</td><td>Right application menu button pressed.\r      </td></tr>\r    <tr><td colspan=\"4\"><strong>Touch Pad (Sticks)</strong></td></tr>\r    <tr><td><code>LX</code></td><td>number</td><td>number</td><td>Left touch pad x-axis scale.</td></tr>\r    <tr><td><code>LY</code></td><td>number</td><td>number</td><td>Left touch pad y-axis scale.</td></tr>\r    <tr><td><code>RX</code></td><td>number</td><td>number</td><td>Right stick x-axis scale.</td></tr>\r    <tr><td><code>RY</code></td><td>number</td><td>number</td><td>Right stick y-axis scale.</td></tr>\r    <tr><td><code>LS</code></td><td>number</td><td>number</td><td>Left touch pad pressed.</td></tr>\r    <tr><td><code>LSCenter</code></td><td>number</td><td>number</td><td>Left touch pad center pressed.</td></tr>\r    <tr><td><code>LSX</code></td><td>number</td><td>number</td><td>Left touch pad pressed x-coordinate.</td></tr>\r    <tr><td><code>LSY</code></td><td>number</td><td>number</td><td>Left touch pad pressed y-coordinate.</td></tr>\r    <tr><td><code>RS</code></td><td>number</td><td>number</td><td>Right touch pad pressed.</td></tr>\r    <tr><td><code>RSCenter</code></td><td>number</td><td>number</td><td>Right touch pad center pressed.</td></tr>\r    <tr><td><code>RSX</code></td><td>number</td><td>number</td><td>Right touch pad pressed x-coordinate.</td></tr>\r    <tr><td><code>RSY</code></td><td>number</td><td>number</td><td>Right touch pad pressed y-coordinate.</td></tr>\r    <tr><td><code>LSTouch</code></td><td>number</td><td>number</td><td>Left touch pad is touched.</td></tr>\r    <tr><td><code>RSTouch</code></td><td>number</td><td>number</td><td>Right touch pad is touched.</td></tr>\r    <tr><td colspan=\"4\"><strong>Triggers</strong></td></tr>\r    <tr><td><code>LT</code></td><td>number</td><td>number</td><td>Left trigger scale.</td></tr>\r    <tr><td><code>RT</code></td><td>number</td><td>number</td><td>Right trigger scale.</td></tr>\r    <tr><td><code>LTClick</code></td><td>number</td><td>number</td><td>Left trigger click.</td></tr>\r    <tr><td><code>RTClick</code></td><td>number</td><td>number</td><td>Right trigger click.</td></tr>\r    <tr><td><code>LeftGrip</code></td><td>number</td><td>number</td><td>Left grip scale.</td></tr>\r    <tr><td><code>RightGrip</code></td><td>number</td><td>number</td><td>Right grip scale.</td></tr>\r    <tr><td colspan=\"4\"><strong>Avatar Skeleton</strong></td></tr>\r    <tr><td><code>Hips</code></td><td>number</td><td>{@link Pose}</td><td>Hips pose.</td></tr>\r    <tr><td><code>Spine2</code></td><td>number</td><td>{@link Pose}</td><td>Spine2 pose.</td></tr>\r    <tr><td><code>Head</code></td><td>number</td><td>{@link Pose}</td><td>Head pose.</td></tr>\r    <tr><td><code>LeftEye</code></td><td>number</td><td>{@link Pose}</td><td>Left eye pose.</td></tr>\r    <tr><td><code>RightEye</code></td><td>number</td><td>{@link Pose}</td><td>Right eye pose.</td></tr>\r    <tr><td><code>EyeBlink_L</code></td><td>number</td><td>number</td><td>Left eyelid blink.</td></tr>\r    <tr><td><code>EyeBlink_R</code></td><td>number</td><td>number</td><td>Right eyelid blink.</td></tr>\r    <tr><td><code>LeftArm</code></td><td>number</td><td>{@link Pose}</td><td>Left arm pose.</td></tr>\r    <tr><td><code>RightArm</code></td><td>number</td><td>{@link Pose}</td><td>Right arm pose</td></tr>\r    <tr><td><code>LeftHand</code></td><td>number</td><td>{@link Pose}</td><td>Left hand pose.</td></tr>\r    <tr><td><code>LeftHandThumb1</code></td><td>number</td><td>{@link Pose}</td><td>Left thumb 1 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandThumb2</code></td><td>number</td><td>{@link Pose}</td><td>Left thumb 2 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandThumb3</code></td><td>number</td><td>{@link Pose}</td><td>Left thumb 3 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandThumb4</code></td><td>number</td><td>{@link Pose}</td><td>Left thumb 4 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandIndex1</code></td><td>number</td><td>{@link Pose}</td><td>Left index 1 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandIndex2</code></td><td>number</td><td>{@link Pose}</td><td>Left index 2 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandIndex3</code></td><td>number</td><td>{@link Pose}</td><td>Left index 3 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandIndex4</code></td><td>number</td><td>{@link Pose}</td><td>Left index 4 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandMiddle1</code></td><td>number</td><td>{@link Pose}</td><td>Left middle 1 finger joint pose.\r      </td></tr>\r    <tr><td><code>LeftHandMiddle2</code></td><td>number</td><td>{@link Pose}</td><td>Left middle 2 finger joint pose.\r      </td></tr>\r    <tr><td><code>LeftHandMiddle3</code></td><td>number</td><td>{@link Pose}</td><td>Left middle 3 finger joint pose.\r      </td></tr>\r    <tr><td><code>LeftHandMiddle4</code></td><td>number</td><td>{@link Pose}</td><td>Left middle 4 finger joint pose.\r      </td></tr>\r    <tr><td><code>LeftHandRing1</code></td><td>number</td><td>{@link Pose}</td><td>Left ring 1 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandRing2</code></td><td>number</td><td>{@link Pose}</td><td>Left ring 2 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandRing3</code></td><td>number</td><td>{@link Pose}</td><td>Left ring 3 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandRing4</code></td><td>number</td><td>{@link Pose}</td><td>Left ring 4 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandPinky1</code></td><td>number</td><td>{@link Pose}</td><td>Left pinky 1 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandPinky2</code></td><td>number</td><td>{@link Pose}</td><td>Left pinky 2 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandPinky3</code></td><td>number</td><td>{@link Pose}</td><td>Left pinky 3 finger joint pose.</td></tr>\r    <tr><td><code>LeftHandPinky4</code></td><td>number</td><td>{@link Pose}</td><td>Left pinky 4 finger joint pose.</td></tr>\r    <tr><td><code>RightHand</code></td><td>number</td><td>{@link Pose}</td><td>Right hand pose.</td></tr>\r    <tr><td><code>RightHandThumb1</code></td><td>number</td><td>{@link Pose}</td><td>Right thumb 1 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandThumb2</code></td><td>number</td><td>{@link Pose}</td><td>Right thumb 2 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandThumb3</code></td><td>number</td><td>{@link Pose}</td><td>Right thumb 3 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandThumb4</code></td><td>number</td><td>{@link Pose}</td><td>Right thumb 4 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandIndex1</code></td><td>number</td><td>{@link Pose}</td><td>Right index 1 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandIndex2</code></td><td>number</td><td>{@link Pose}</td><td>Right index 2 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandIndex3</code></td><td>number</td><td>{@link Pose}</td><td>Right index 3 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandIndex4</code></td><td>number</td><td>{@link Pose}</td><td>Right index 4 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandMiddle1</code></td><td>number</td><td>{@link Pose}</td><td>Right middle 1 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandMiddle2</code></td><td>number</td><td>{@link Pose}</td><td>Right middle 2 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandMiddle3</code></td><td>number</td><td>{@link Pose}</td><td>Right middle 3 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandMiddle4</code></td><td>number</td><td>{@link Pose}</td><td>Right middle 4 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandRing1</code></td><td>number</td><td>{@link Pose}</td><td>Right ring 1 finger joint pose.</td></tr>\r    <tr><td><code>RightHandRing2</code></td><td>number</td><td>{@link Pose}</td><td>Right ring 2 finger joint pose.</td></tr>\r    <tr><td><code>RightHandRing3</code></td><td>number</td><td>{@link Pose}</td><td>Right ring 3 finger joint pose.</td></tr>\r    <tr><td><code>RightHandRing4</code></td><td>number</td><td>{@link Pose}</td><td>Right ring 4 finger joint pose.</td></tr>\r    <tr><td><code>RightHandPinky1</code></td><td>number</td><td>{@link Pose}</td><td>Right pinky 1 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandPinky2</code></td><td>number</td><td>{@link Pose}</td><td>Right pinky 2 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandPinky3</code></td><td>number</td><td>{@link Pose}</td><td>Right pinky 3 finger joint pose.\r      </td></tr>\r    <tr><td><code>RightHandPinky4</code></td><td>number</td><td>{@link Pose}</td><td>Right pinky 4 finger joint pose.\r      </td></tr>\r    <tr><td colspan=\"4\"><strong>Trackers</strong></td></tr>\r    <tr><td><code>TrackedObject00</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 0 pose.</td></tr>\r    <tr><td><code>TrackedObject01</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 1 pose.</td></tr>\r    <tr><td><code>TrackedObject02</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 2 pose.</td></tr>\r    <tr><td><code>TrackedObject03</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 3 pose.</td></tr>\r    <tr><td><code>TrackedObject04</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 4 pose.</td></tr>\r    <tr><td><code>TrackedObject05</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 5 pose.</td></tr>\r    <tr><td><code>TrackedObject06</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 6 pose.</td></tr>\r    <tr><td><code>TrackedObject07</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 7 pose.</td></tr>\r    <tr><td><code>TrackedObject08</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 8 pose.</td></tr>\r    <tr><td><code>TrackedObject09</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 9 pose.</td></tr>\r    <tr><td><code>TrackedObject10</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 10 pose.</td></tr>\r    <tr><td><code>TrackedObject11</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 11 pose.</td></tr>\r    <tr><td><code>TrackedObject12</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 12 pose.</td></tr>\r    <tr><td><code>TrackedObject13</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 13 pose.</td></tr>\r    <tr><td><code>TrackedObject14</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 14 pose.</td></tr>\r    <tr><td><code>TrackedObject15</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 15 pose.</td></tr>\r  </tbody>\r</table>",
+        "description": "<p>The <code>Controller.Hardware.Vive</code> object has properties representing the Vive. The property values are integer \rIDs, uniquely identifying each output. <em>Read-only.</em></p>\r<p>These outputs can be mapped to actions or functions or <code>Controller.Standard</code> items in a {@link RouteObject} \rmapping.</p>\r<table>\r  <thead>\r    <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td colspan=\"4\"><strong>Buttons</strong></td></tr>\r    <tr><td><code>LeftApplicationMenu</code></td><td>number</td><td>number</td><td>Left application menu button pressed.\r      </td></tr>\r    <tr><td><code>RightApplicationMenu</code></td><td>number</td><td>number</td><td>Right application menu button pressed.\r      </td></tr>\r    <tr><td colspan=\"4\"><strong>Touch Pad (Sticks)</strong></td></tr>\r    <tr><td><code>LX</code></td><td>number</td><td>number</td><td>Left touch pad x-axis scale.</td></tr>\r    <tr><td><code>LY</code></td><td>number</td><td>number</td><td>Left touch pad y-axis scale.</td></tr>\r    <tr><td><code>RX</code></td><td>number</td><td>number</td><td>Right stick x-axis scale.</td></tr>\r    <tr><td><code>RY</code></td><td>number</td><td>number</td><td>Right stick y-axis scale.</td></tr>\r    <tr><td><code>LS</code></td><td>number</td><td>number</td><td>Left touch pad pressed.</td></tr>\r    <tr><td><code>LSCenter</code></td><td>number</td><td>number</td><td>Left touch pad center pressed.</td></tr>\r    <tr><td><code>LSX</code></td><td>number</td><td>number</td><td>Left touch pad pressed x-coordinate.</td></tr>\r    <tr><td><code>LSY</code></td><td>number</td><td>number</td><td>Left touch pad pressed y-coordinate.</td></tr>\r    <tr><td><code>RS</code></td><td>number</td><td>number</td><td>Right touch pad pressed.</td></tr>\r    <tr><td><code>RSCenter</code></td><td>number</td><td>number</td><td>Right touch pad center pressed.</td></tr>\r    <tr><td><code>RSX</code></td><td>number</td><td>number</td><td>Right touch pad pressed x-coordinate.</td></tr>\r    <tr><td><code>RSY</code></td><td>number</td><td>number</td><td>Right touch pad pressed y-coordinate.</td></tr>\r    <tr><td><code>LSTouch</code></td><td>number</td><td>number</td><td>Left touch pad is touched.</td></tr>\r    <tr><td><code>RSTouch</code></td><td>number</td><td>number</td><td>Right touch pad is touched.</td></tr>\r    <tr><td colspan=\"4\"><strong>Triggers</strong></td></tr>\r    <tr><td><code>LT</code></td><td>number</td><td>number</td><td>Left trigger scale.</td></tr>\r    <tr><td><code>RT</code></td><td>number</td><td>number</td><td>Right trigger scale.</td></tr>\r    <tr><td><code>LTClick</code></td><td>number</td><td>number</td><td>Left trigger click.</td></tr>\r    <tr><td><code>RTClick</code></td><td>number</td><td>number</td><td>Right trigger click.</td></tr>\r    <tr><td><code>LeftGrip</code></td><td>number</td><td>number</td><td>Left grip scale.</td></tr>\r    <tr><td><code>RightGrip</code></td><td>number</td><td>number</td><td>Right grip scale.</td></tr>\r    <tr><td colspan=\"4\"><strong>Avatar Skeleton</strong></td></tr>\r    <tr><td><code>Hips</code></td><td>number</td><td>{@link Pose}</td><td>Hips pose.</td></tr>\r    <tr><td><code>Spine2</code></td><td>number</td><td>{@link Pose}</td><td>Spine2 pose.</td></tr>\r    <tr><td><code>Head</code></td><td>number</td><td>{@link Pose}</td><td>Head pose.</td></tr>\r    <tr><td><code>LeftArm</code></td><td>number</td><td>{@link Pose}</td><td>Left arm pose.</td></tr>\r    <tr><td><code>RightArm</code></td><td>number</td><td>{@link Pose}</td><td>Right arm pose</td></tr>\r    <tr><td><code>LeftHand</code></td><td>number</td><td>{@link Pose}</td><td>Left hand pose.</td></tr>\r    <tr><td><code>RightHand</code></td><td>number</td><td>{@link Pose}</td><td>Right hand pose.</td></tr>\r    <tr><td colspan=\"4\"><strong>Trackers</strong></td></tr>\r    <tr><td><code>TrackedObject00</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 0 pose.</td></tr>\r    <tr><td><code>TrackedObject01</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 1 pose.</td></tr>\r    <tr><td><code>TrackedObject02</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 2 pose.</td></tr>\r    <tr><td><code>TrackedObject03</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 3 pose.</td></tr>\r    <tr><td><code>TrackedObject04</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 4 pose.</td></tr>\r    <tr><td><code>TrackedObject05</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 5 pose.</td></tr>\r    <tr><td><code>TrackedObject06</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 6 pose.</td></tr>\r    <tr><td><code>TrackedObject07</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 7 pose.</td></tr>\r    <tr><td><code>TrackedObject08</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 8 pose.</td></tr>\r    <tr><td><code>TrackedObject09</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 9 pose.</td></tr>\r    <tr><td><code>TrackedObject10</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 10 pose.</td></tr>\r    <tr><td><code>TrackedObject11</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 11 pose.</td></tr>\r    <tr><td><code>TrackedObject12</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 12 pose.</td></tr>\r    <tr><td><code>TrackedObject13</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 13 pose.</td></tr>\r    <tr><td><code>TrackedObject14</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 14 pose.</td></tr>\r    <tr><td><code>TrackedObject15</code></td><td>number</td><td>{@link Pose}</td><td>Tracker 15 pose.</td></tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "Hardware-Vive",
         "type": {
@@ -73922,27 +73783,8 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "E:\\Vircadia_TSTPKG\\tools\\jsdoc\\root.js"
+            "E:\\Development\\Vircadia\\k3\\project-athena\\tools\\jsdoc\\root.js"
         ]
-    },
-    {
-        "description": "Display a web page in an Interface browser window.",
-        "kind": "function",
-        "name": "openUrl",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "The URL of the web page you want to view in Interface.",
-                "name": "url"
-            }
-        ],
-        "memberof": "HifiAbout",
-        "longname": "HifiAbout.openUrl",
-        "scope": "static"
     },
     {
         "description": "Gets information about an avatar.",
@@ -76707,7 +76549,7 @@
                         "string"
                     ]
                 },
-                "description": "The address to go to: a <code>\"hifi://\"</code> address, an IP address (e.g., \r    <code>\"127.0.0.1\"</code> or <code>\"localhost\"</code>), a <code>file:///</code> address, a domain name, a named path \r    on a domain (starts with <code>\"/\"</code>), a position or position and orientation, or a user (starts with \r    <code>\"@\"</code>).",
+                "description": "The address to go to: a <code>\"hifi://\"</code> address, an IP address (e.g., \r    <code>\"127.0.0.1\"</code> or <code>\"localhost\"</code>), a domain name, a named path on a domain (starts with \r    <code>\"/\"</code>), a position or position and orientation, or a user (starts with <code>\"@\"</code>).",
                 "name": "address"
             },
             {
