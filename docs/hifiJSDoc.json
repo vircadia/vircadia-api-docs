@@ -994,7 +994,7 @@
         "scope": "global"
     },
     {
-        "description": "Display a web page in an Interface browser window.",
+        "description": "Display a web page in an Interface browser window or the tablet.",
         "kind": "function",
         "name": "openUrl",
         "params": [
@@ -1013,7 +1013,7 @@
         "scope": "static"
     },
     {
-        "description": "<p>The <code>Controller.Hardware.Application</code> object has properties representing Interface's state. The property\rvalues are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>\r<p>These states can be mapped to actions or functions or <code>Controller.Standard</code> items in a {@link RouteObject}\rmapping (e.g., using the {@link RouteObject#when} method). Each data value is either <code>1.0</code> for \"true\" or\r<code>0.0</code> for \"false\".</p>\r<table>\r  <thead>\r    <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>CameraFirstPerson</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Legacy first person camera mode.</em></td></tr>\r    <tr><td><code>CameraFirstPersonLookAt</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Default first person camera mode.</em></td></tr>\r    <tr><td><code>CameraThirdPerson</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Legacy third person camera mode.</em></td></tr>\r    <tr><td><code>CameraLookAt</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Default third person camera mode.</em></td></tr>\r    <tr><td><code>CameraFSM</code></td><td>number</td><td>number</td><td>The camera is in full screen mirror mode.\r      <em>Legacy \"look at myself\" behavior.</em></td></tr>\r    <tr><td><code>CameraSelfie</code></td><td>number</td><td>number</td><td>The camera is in selfie mode.\r      <em>Default \"look at myself\" camera mode.</em></td></tr>\r    <tr><td><code>CameraIndependent</code></td><td>number</td><td>number</td><td>The camera is in independent mode.</td></tr>\r    <tr><td><code>CameraEntity</code></td><td>number</td><td>number</td><td>The camera is in entity mode.</td></tr>\r    <tr><td><code>InHMD</code></td><td>number</td><td>number</td><td>The user is in HMD mode.</td></tr>\r    <tr><td><code>AdvancedMovement</code></td><td>number</td><td>number</td><td>Advanced movement (walking) controls are\r      enabled.</td></tr>\r    <tr><td><code>StrafeEnabled</code></td><td>number</td><td>number</td><td>Strafing is enabled</td></tr>\r    <tr><td><code>LeftHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to left.</td></tr>\r    <tr><td><code>RightHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to right.</td></tr>\r    <tr><td><code>SnapTurn</code></td><td>number</td><td>number</td><td>Snap turn is enabled.</td></tr>\r    <tr><td><code>Grounded</code></td><td>number</td><td>number</td><td>The user's avatar is on the ground.</td></tr>\r    <tr><td><code>NavigationFocused</code></td><td>number</td><td>number</td><td><em>Not used.</em></td></tr>\r    <tr><td><code>PlatformWindows</code></td><td>number</td><td>number</td><td>The operating system is Windows.</td></tr>\r    <tr><td><code>PlatformMac</code></td><td>number</td><td>number</td><td>The operating system is Mac.</td></tr>\r    <tr><td><code>PlatformAndroid</code></td><td>number</td><td>number</td><td>The operating system is Android.</td></tr>\r  </tbody>\r</table>",
+        "description": "<p>The <code>Controller.Hardware.Application</code> object has properties representing Interface's state. The property\rvalues are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>\r<p>These states can be mapped to actions or functions or <code>Controller.Standard</code> items in a {@link RouteObject}\rmapping (e.g., using the {@link RouteObject#when} method). Each data value is either <code>1.0</code> for \"true\" or\r<code>0.0</code> for \"false\".</p>\r<table>\r  <thead>\r    <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>CameraFirstPerson</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Legacy first person camera mode.</em></td></tr>\r    <tr><td><code>CameraFirstPersonLookAt</code></td><td>number</td><td>number</td><td>The camera is in first-person mode.\r      <em>Default first person camera mode.</em></td></tr>\r    <tr><td><code>CameraThirdPerson</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Legacy third person camera mode.</em></td></tr>\r    <tr><td><code>CameraLookAt</code></td><td>number</td><td>number</td><td>The camera is in third-person mode.\r      <em>Default third person camera mode.</em></td></tr>\r    <tr><td><code>CameraFSM</code></td><td>number</td><td>number</td><td>The camera is in full screen mirror mode.\r      <em>Legacy \"look at myself\" behavior.</em></td></tr>\r    <tr><td><code>CameraSelfie</code></td><td>number</td><td>number</td><td>The camera is in selfie mode.\r      <em>Default \"look at myself\" camera mode.</em></td></tr>\r    <tr><td><code>CameraIndependent</code></td><td>number</td><td>number</td><td>The camera is in independent mode.</td></tr>\r    <tr><td><code>CameraEntity</code></td><td>number</td><td>number</td><td>The camera is in entity mode.</td></tr>\r    <tr><td><code>InHMD</code></td><td>number</td><td>number</td><td>The user is in HMD mode.</td></tr>\r    <tr><td><code>CaptureMouse</code></td><td>number</td><td>number</td><td>The mouse is captured.  In this mode,\r      the mouse is invisible and cannot leave the bounds of Interface, as long as Interface is the active window and\r      no menu item is selected.</td></tr>\r    <tr><td><code>AdvancedMovement</code></td><td>number</td><td>number</td><td>Advanced movement (walking) controls are\r      enabled.</td></tr>\r    <tr><td><code>StrafeEnabled</code></td><td>number</td><td>number</td><td>Strafing is enabled</td></tr>\r    <tr><td><code>LeftHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to left.</td></tr>\r    <tr><td><code>RightHandDominant</code></td><td>number</td><td>number</td><td>Dominant hand set to right.</td></tr>\r    <tr><td><code>SnapTurn</code></td><td>number</td><td>number</td><td>Snap turn is enabled.</td></tr>\r    <tr><td><code>Grounded</code></td><td>number</td><td>number</td><td>The user's avatar is on the ground.</td></tr>\r    <tr><td><code>NavigationFocused</code></td><td>number</td><td>number</td><td><em>Not used.</em></td></tr>\r    <tr><td><code>PlatformWindows</code></td><td>number</td><td>number</td><td>The operating system is Windows.</td></tr>\r    <tr><td><code>PlatformMac</code></td><td>number</td><td>number</td><td>The operating system is Mac.</td></tr>\r    <tr><td><code>PlatformAndroid</code></td><td>number</td><td>number</td><td>The operating system is Android.</td></tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "Hardware-Application",
         "type": {
@@ -1403,6 +1403,24 @@
                 },
                 "description": "The ID of the entity that is used for the camera position and orientation when the \r    camera is in entity mode.",
                 "name": "cameraEntity"
+            },
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "The mouse capture state.  When <code>true</code>, the mouse is invisible and cannot leave the bounds of\rInterface, as long as Interface is the active window and no menu item is selected.  When <code>false</code>, the mouse\rbehaves normally.",
+                "name": "captureMouse"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The current camera sensitivity.  Must be positive.",
+                "name": "sensitivity"
             }
         ],
         "longname": "Camera",
@@ -21005,9 +21023,22 @@
         "scope": "static"
     },
     {
-        "description": "Opens a web browser in a pop-up window.",
+        "description": "Opens an Interface web browser window.",
         "kind": "function",
         "name": "openWebBrowser",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\"\"",
+                "description": "The URL of the web page to display.",
+                "name": "url"
+            }
+        ],
         "memberof": "Window",
         "longname": "Window.openWebBrowser",
         "scope": "static"
@@ -23538,7 +23569,7 @@
                         "number"
                     ]
                 },
-                "description": "The number of textures that have been reduced in size because they were over the \r    maximum allowed dimensions of 4096 pixels on desktop or 2048 pixels on mobile.\r    <em>Read-only.</em>",
+                "description": "The number of textures that have been reduced in size because they were over the \r    maximum allowed dimensions of 8192 pixels on desktop or 2048 pixels on mobile.\r    <em>Read-only.</em>",
                 "name": "decimatedTextureCount"
             },
             {
@@ -31121,7 +31152,7 @@
             }
         ],
         "examples": [
-            "<caption>Create an image overlay and report whether its image is loaded after 1s.</caption>\rvar overlay = Overlays.addOverlay(\"image\", {\r    bounds: { x: 100, y: 100, width: 200, height: 200 },\r    imageURL: \"https://content.highfidelity.com/DomainContent/production/Particles/wispy-smoke.png\"\r});\rScript.setTimeout(function () {\r    var isLoaded = Overlays.isLoaded(overlay);\r    print(\"Image loaded: \" + isLoaded);\r}, 1000);"
+            "<caption>Create an image overlay and report whether its image is loaded after 1s.</caption>\rvar overlay = Overlays.addOverlay(\"image\", {\r    bounds: { x: 100, y: 100, width: 200, height: 200 },\r    imageURL: \"https://content.vircadia.com/eu-c-1/vircadia-assets/interface/default/default_particle.png\"\r});\rScript.setTimeout(function () {\r    var isLoaded = Overlays.isLoaded(overlay);\r    print(\"Image loaded: \" + isLoaded);\r}, 1000);"
         ],
         "memberof": "Overlays",
         "longname": "Overlays.isLoaded",
@@ -41756,7 +41787,7 @@
             }
         ],
         "examples": [
-            "<caption>Rez a Vive tracker puck.</caption>\rvar entity = Entities.addEntity({\r    type: \"Model\",\r    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -2 })),\r    rotation: MyAvatar.orientation,\r    modelURL: \"https://apidocs.vircadia.dev/models/cowboy-hat.fbx\",\r    dimensions: { x: 0.8569, y: 0.3960, z: 1.0744 },\r    lifetime: 300  // Delete after 5 minutes.\r});"
+            "<caption>Rez a cowboy hat.</caption>\rvar entity = Entities.addEntity({\r    type: \"Model\",\r    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -2 })),\r    rotation: MyAvatar.orientation,\r    modelURL: \"https://apidocs.vircadia.dev/models/cowboy-hat.fbx\",\r    dimensions: { x: 0.8569, y: 0.3960, z: 1.0744 },\r    lifetime: 300  // Delete after 5 minutes.\r});"
         ],
         "memberof": "Entities",
         "longname": "Entities.EntityProperties-Model",
@@ -42152,7 +42183,7 @@
             }
         ],
         "examples": [
-            "<caption>Create a ball of green smoke.</caption>\rparticles = Entities.addEntity({\r    type: \"ParticleEffect\",\r    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.5, z: -4 })),\r    lifespan: 5,\r    emitRate: 10,\r    emitSpeed: 0.02,\r    speedSpread: 0.01,\r    emitAcceleration: { x: 0, y: 0.02, z: 0 },\r    polarFinish: Math.PI,\r    textures: \"https://content.highfidelity.com/DomainContent/production/Particles/wispy-smoke.png\",\r    particleRadius: 0.1,\r    color: { red: 0, green: 255, blue: 0 },\r    alphaFinish: 0,\r    lifetime: 300  // Delete after 5 minutes.\r});"
+            "<caption>Create a ball of green smoke.</caption>\rparticles = Entities.addEntity({\r    type: \"ParticleEffect\",\r    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.5, z: -4 })),\r    lifespan: 5,\r    emitRate: 10,\r    emitSpeed: 0.02,\r    speedSpread: 0.01,\r    emitAcceleration: { x: 0, y: 0.02, z: 0 },\r    polarFinish: Math.PI,\r    textures: \"https://content.vircadia.com/eu-c-1/vircadia-assets/interface/default/default_particle.png\",\r    particleRadius: 0.1,\r    color: { red: 0, green: 255, blue: 0 },\r    alphaFinish: 0,\r    lifetime: 300  // Delete after 5 minutes.\r});"
         ],
         "memberof": "Entities",
         "longname": "Entities.EntityProperties-ParticleEffect",
@@ -42270,7 +42301,7 @@
             }
         ],
         "examples": [
-            "<caption>Draw a textured \"V\".</caption>\rvar entity = Entities.addEntity({\r    type: \"PolyLine\",\r    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -5 })),\r    rotation: MyAvatar.orientation,\r    linePoints: [\r        { x: -1, y: 0.5, z: 0 },\r        { x: 0, y: 0, z: 0 },\r        { x: 1, y: 0.5, z: 0 }\r    ],\r    normals: [\r        { x: 0, y: 0, z: 1 },\r        { x: 0, y: 0, z: 1 },\r        { x: 0, y: 0, z: 1 }\r    ],\r    strokeWidths: [ 0.1, 0.1, 0.1 ],\r    color: { red: 255, green: 0, blue: 0 },  // Use just the red channel from the image.\r    textures: \"http://hifi-production.s3.amazonaws.com/DomainContent/Toybox/flowArts/trails.png\",\r    isUVModeStretch: true,\r    lifetime: 300  // Delete after 5 minutes.\r});"
+            "<caption>Draw a textured \"V\".</caption>\rvar entity = Entities.addEntity({\r    type: \"PolyLine\",\r    position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -5 })),\r    rotation: MyAvatar.orientation,\r    linePoints: [\r        { x: -1, y: 0.5, z: 0 },\r        { x: 0, y: 0, z: 0 },\r        { x: 1, y: 0.5, z: 0 }\r    ],\r    normals: [\r        { x: 0, y: 0, z: 1 },\r        { x: 0, y: 0, z: 1 },\r        { x: 0, y: 0, z: 1 }\r    ],\r    strokeWidths: [ 0.1, 0.1, 0.1 ],\r    color: { red: 255, green: 0, blue: 0 },  // Use just the red channel from the image.\r    textures: \"https://cdn-1.vircadia.com/us-e-1/DomainContent/Toybox/flowArts/trails.png\",\r    isUVModeStretch: true,\r    lifetime: 300  // Delete after 5 minutes.\r});"
         ],
         "memberof": "Entities",
         "longname": "Entities.EntityProperties-PolyLine",
@@ -42858,6 +42889,16 @@
                 "defaultvalue": true,
                 "description": "<code>true</code> if the entity is highlighted when it has keyboard\r    focus, <code>false</code> if it isn't.",
                 "name": "showKeyboardFocusHighlight"
+            },
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "defaultvalue": true,
+                "description": "<code>true</code> if the web entity should have a background,\r    <code>false</code> if the web entity's background should be transparent. The webpage must have CSS properties for transparency set\r    on the <code>background-color</code> for this property to have an effect.",
+                "name": "useBackground"
             }
         ],
         "examples": [
@@ -43556,7 +43597,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Entities</code> API provides facilities to create and interact with entities. Entities are 2D or 3D objects \rdisplayed in-world. Depending on their {@link Entities.EntityHostType|EntityHostType}, they may persist in the domain as \r\"domain\" entities, travel to different domains with a user as \"avatar\" entities, or be visible only to an individual user as \r\"local\" entities (a.k.a. \"overlays\").\r\r<p>Note: For Interface, avatar, and client entity scripts, the entities available to scripts are those that Interface has \rdisplayed and so knows about. For assignment client scripts, the entities available are those that are \"seen\" by the \r{@link EntityViewer}. For entity server scripts, all entities are available.</p>\r\r<h3>Entity Types</h3>\r\r<p>For a list of the entity types that you can use, see {@link Entities.EntityType|Entity Types}.</p>\r\r<h3>Entity Methods</h3>\r\r<p>Some of the API's signals correspond to entity methods that are called, if present, in the entity being interacted with. \rThe client or server entity script must expose them as a property. However, unlike {@link Entities.callEntityMethod}, server \rentity scripts do not need to list them in an <code>remotelyCallable</code> property. The entity methods are called with \rparameters per their corresponding signal.</p>\r<table>\r  <thead>\r    <tr><th>Method Name</th><th>Corresponding Signal</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>clickDownOnEntity</code></td><td>{@link Entities.clickDownOnEntity}</td></tr>\r    <tr><td><code>clickReleaseOnEntity</code></td><td>{@link Entities.clickReleaseOnEntity}</td></tr>\r    <tr><td><code>collisionWithEntity</code></td><td>{@link Entities.collisionWithEntity}</td></tr>\r    <tr><td><code>enterEntity</code></td><td>{@link Entities.enterEntity}</td></tr>\r    <tr><td><code>holdingClickOnEntity</code></td><td>{@link Entities.holdingClickOnEntity}</td></tr>\r    <tr><td><code>hoverEnterEntity</code></td><td>{@link Entities.hoverEnterEntity}</td></tr>\r    <tr><td><code>hoverLeaveEntity</code></td><td>{@link Entities.hoverLeaveEntity}</td></tr>\r    <tr><td><code>hoverOverEntity</code></td><td>{@link Entities.hoverOverEntity}</td></tr>\r    <tr><td><code>leaveEntity</code></td><td>{@link Entities.leaveEntity}</td></tr>\r    <tr><td><code>mouseDoublePressOnEntity</code></td><td>{@link Entities.mouseDoublePressOnEntity}</td></tr>\r    <tr><td><code>mouseMoveOnEntity</code></td><td>{@link Entities.mouseMoveOnEntity}</td></tr>\r    <tr><td><code>mouseMoveEvent</code></td><td><span class=\"important\">Deprecated: Use <code>mouseMoveOnEntity</code> \r      instead.</span></td></tr>\r    <tr><td><code>mousePressOnEntity</code></td><td>{@link Entities.mousePressOnEntity}</td></tr>\r    <tr><td><code>mouseReleaseOnEntity</code></td><td>{@link Entities.mouseReleaseOnEntity}</td></tr>\r  </tbody>\r</table>\r<p>See {@link Entities.clickDownOnEntity} for an example.</p>",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>The <code>Entities</code> API provides facilities to create and interact with entities. Entities are 2D or 3D objects \rdisplayed in-world. Depending on their {@link Entities.EntityHostType|EntityHostType}, they may persist in the domain as \r\"domain\" entities, travel to different domains with a user as \"avatar\" entities, or be visible only to an individual user as \r\"local\" entities (a.k.a. \"overlays\").\r\r<p>Note: For Interface, avatar, and client entity scripts, the entities available to scripts are those that Interface has \rdisplayed and so knows about. For assignment client scripts, the entities available are those that are \"seen\" by the \r{@link EntityViewer}. For entity server scripts, all entities are available.</p>\r\r<h3>Entity Types & Properties</h3>\r\r<p>For a list of the entity types that you can use, see {@link Entities.EntityType|Entity Types}.</p>\r\r<p>For the properties of the different entity types, see {@link Entities.EntityProperties|Entity Properties}. Some properties are universal to all entity types, and some are specific to particular entity types.</p>\r\r<h3>Entity Methods</h3>\r\r<p>Some of the API's signals correspond to entity methods that are called, if present, in the entity being interacted with. \rThe client or server entity script must expose them as a property. However, unlike {@link Entities.callEntityMethod}, server \rentity scripts do not need to list them in an <code>remotelyCallable</code> property. The entity methods are called with \rparameters per their corresponding signal.</p>\r<table>\r  <thead>\r    <tr><th>Method Name</th><th>Corresponding Signal</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>clickDownOnEntity</code></td><td>{@link Entities.clickDownOnEntity}</td></tr>\r    <tr><td><code>clickReleaseOnEntity</code></td><td>{@link Entities.clickReleaseOnEntity}</td></tr>\r    <tr><td><code>collisionWithEntity</code></td><td>{@link Entities.collisionWithEntity}</td></tr>\r    <tr><td><code>enterEntity</code></td><td>{@link Entities.enterEntity}</td></tr>\r    <tr><td><code>holdingClickOnEntity</code></td><td>{@link Entities.holdingClickOnEntity}</td></tr>\r    <tr><td><code>hoverEnterEntity</code></td><td>{@link Entities.hoverEnterEntity}</td></tr>\r    <tr><td><code>hoverLeaveEntity</code></td><td>{@link Entities.hoverLeaveEntity}</td></tr>\r    <tr><td><code>hoverOverEntity</code></td><td>{@link Entities.hoverOverEntity}</td></tr>\r    <tr><td><code>leaveEntity</code></td><td>{@link Entities.leaveEntity}</td></tr>\r    <tr><td><code>mouseDoublePressOnEntity</code></td><td>{@link Entities.mouseDoublePressOnEntity}</td></tr>\r    <tr><td><code>mouseMoveOnEntity</code></td><td>{@link Entities.mouseMoveOnEntity}</td></tr>\r    <tr><td><code>mouseMoveEvent</code></td><td><span class=\"important\">Deprecated: Use <code>mouseMoveOnEntity</code> \r      instead.</span></td></tr>\r    <tr><td><code>mousePressOnEntity</code></td><td>{@link Entities.mousePressOnEntity}</td></tr>\r    <tr><td><code>mouseReleaseOnEntity</code></td><td>{@link Entities.mouseReleaseOnEntity}</td></tr>\r  </tbody>\r</table>\r<p>See {@link Entities.clickDownOnEntity} for an example.</p>",
         "kind": "namespace",
         "name": "Entities",
         "hifiInterface": true,
@@ -44335,7 +44376,7 @@
         "scope": "static"
     },
     {
-        "description": "Finds all domain and avatar entities that intersect a sphere.",
+        "description": "Finds all domain and avatar entities that intersect a sphere.\r<p><strong>Note:</strong> Server entity scripts only find entities that have a server entity script\rrunning in them or a parent entity. You can apply a dummy script to entities that you want found in a search.</p>",
         "kind": "function",
         "name": "findEntities",
         "params": [
@@ -44376,7 +44417,7 @@
         "scope": "static"
     },
     {
-        "description": "Finds all domain and avatar entities whose axis-aligned boxes intersect a search axis-aligned box.",
+        "description": "Finds all domain and avatar entities whose axis-aligned boxes intersect a search axis-aligned box.\r<p><strong>Note:</strong> Server entity scripts only find entities that have a server entity script\rrunning in them or a parent entity. You can apply a dummy script to entities that you want found in a search.</p>",
         "kind": "function",
         "name": "findEntitiesInBox",
         "params": [
@@ -44414,7 +44455,7 @@
         "scope": "static"
     },
     {
-        "description": "Finds all domain and avatar entities whose axis-aligned boxes intersect a search frustum.",
+        "description": "Finds all domain and avatar entities whose axis-aligned boxes intersect a search frustum.\r<p><strong>Note:</strong> Server entity scripts only find entities that have a server entity script\rrunning in them or a parent entity. You can apply a dummy script to entities that you want found in a search.</p>",
         "kind": "function",
         "name": "findEntitiesInFrustum",
         "params": [
@@ -44446,7 +44487,7 @@
         "scope": "static"
     },
     {
-        "description": "Finds all domain and avatar entities of a particular type that intersect a sphere.",
+        "description": "Finds all domain and avatar entities of a particular type that intersect a sphere.\r<p><strong>Note:</strong> Server entity scripts only find entities that have a server entity script\rrunning in them or a parent entity. You can apply a dummy script to entities that you want found in a search.</p>",
         "kind": "function",
         "name": "findEntitiesByType",
         "params": [
@@ -44496,7 +44537,7 @@
         "scope": "static"
     },
     {
-        "description": "Finds all domain and avatar entities with a particular name that intersect a sphere.",
+        "description": "Finds all domain and avatar entities with a particular name that intersect a sphere.\r<p><strong>Note:</strong> Server entity scripts only find entities that have a server entity script\rrunning in them or a parent entity. You can apply a dummy script to entities that you want found in a search.</p>",
         "kind": "function",
         "name": "findEntitiesByName",
         "params": [
@@ -54078,6 +54119,70 @@
         "scope": "static"
     },
     {
+        "description": "<p>An external resource bucket.</p>\r<p>The original High Fidelity used \"Public\", \"Content\", and \"MPAssets\" Amazon S3 buckets. The intention is that the\rcommunity-run versions of these will keep the original data and structure, and any new additions will be made to \rVircadia's \"Assets\" bucket. This should ease the transition from High Fidelity and ensure a clean separation.</p>",
+        "kind": "typedef",
+        "name": "ResourceBuckets",
+        "type": {
+            "names": [
+                "object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Script.ResourceBucket"
+                    ]
+                },
+                "description": "Vircadia assets.",
+                "name": "Assets"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Script.ResourceBucket"
+                    ]
+                },
+                "description": "Assets that used to be in High Fidelity's <code>hifi-public</code> Amazon \r    S3 bucket.",
+                "name": "HF_Public"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Script.ResourceBucket"
+                    ]
+                },
+                "description": "Assets that used to be in High Fidelity's <code>hifi-content</code> Amazon\r    S3 bucket.",
+                "name": "HF_Content"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Script.ResourceBucket"
+                    ]
+                },
+                "description": "Assets that used to be in the High Fidelity's <code>mpassets</code>\r    Amazon S3 bucket. (High Fidelity marketplace.)",
+                "name": "HF_Marketplace"
+            }
+        ],
+        "memberof": "Script",
+        "longname": "Script.ResourceBuckets",
+        "scope": "static"
+    },
+    {
+        "description": "<p>An external resource bucket.</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Name</th><th>Description</th>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>HF_Public</td><td>Assets that used to be in High Fidelity's <code>hifi-public</code>\r      Amazon S3 bucket.</td></tr>\r    <tr><td><code>1</code></td><td>HF_Content</td><td>Assets that used to be in High Fidelity's <code>hifi-content</code>\r      Amazon S3 bucket.</td></tr>\r    <tr><td><code>2</code></td><td>HF_Marketplace</td><td>Assets that used to be in the High Fidelity's \r      <code>mpassets</code> Amazon S3 bucket. (High Fidelity marketplace.)</td></tr>\r    <tr><td><code>3</code></td><td>Assets</td><td>Vircadia assets.</td></tr>\r  </tbody>\r</table>",
+        "kind": "typedef",
+        "name": "ResourceBucket",
+        "type": {
+            "names": [
+                "number"
+            ]
+        },
+        "memberof": "Script",
+        "longname": "Script.ResourceBucket",
+        "scope": "static"
+    },
+    {
         "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p><p>The <code>Messages</code> API enables text and data to be sent between scripts over named \"channels\". A channel can have \ran arbitrary name to help separate messaging between different sets of scripts.</p>\r\r<p><strong>Note:</strong> To call a function in another script, you should use one of the following rather than sending a \rmessage:</p>\r<ul>\r  <li>{@link Entities.callEntityClientMethod}</li>\r  <li>{@link Entities.callEntityMethod}</li>\r  <li>{@link Entities.callEntityServerMethod}</li>\r  <li>{@link Script.callEntityScriptMethod}</li>\r</ul>",
         "kind": "namespace",
         "name": "Messages",
@@ -54581,7 +54686,7 @@
             }
         ],
         "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
+            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://cdn-1.vircadia.com/eu-c-1/vircadia-public/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
         ],
         "memberof": "ResourceCache",
         "longname": "ResourceCache.prefetch",
@@ -59110,7 +59215,7 @@
             }
         ],
         "examples": [
-            "<caption>Play a sound.</caption>\rvar sound = SoundCache.getSound(\"http://hifi-content.s3.amazonaws.com/ken/samples/forest_ambiX.wav\");\r\rfunction playSound() {\r    var injectorOptions = {\r        position: MyAvatar.position\r    };\r    var injector = Audio.playSound(sound, injectorOptions);\r}\r\rfunction onSoundReady() {\r    sound.ready.disconnect(onSoundReady);\r    playSound();\r}\r\rif (sound.downloaded) {\r    playSound();\r} else {\r    sound.ready.connect(onSoundReady);\r}"
+            "<caption>Play a sound.</caption>\rvar sound = SoundCache.getSound(\"https://cdn-1.vircadia.com/us-c-1/ken/samples/forest_ambiX.wav\");\r\rfunction playSound() {\r    var injectorOptions = {\r        position: MyAvatar.position\r    };\r    var injector = Audio.playSound(sound, injectorOptions);\r}\r\rfunction onSoundReady() {\r    sound.ready.disconnect(onSoundReady);\r    playSound();\r}\r\rif (sound.downloaded) {\r    playSound();\r} else {\r    sound.ready.connect(onSoundReady);\r}"
         ],
         "memberof": "Audio",
         "longname": "Audio.playSound",
@@ -63152,6 +63257,33 @@
                 },
                 "description": "The context that the script is running in:\r    <ul>\r      <li><code>\"client\"</code>: An Interface or avatar script.</li>\r      <li><code>\"entity_client\"</code>: A client entity script.</li>\r      <li><code>\"entity_server\"</code>: A server entity script.</li>\r      <li><code>\"agent\"</code>: An assignment client script.</li>\r    </ul>\r    <em>Read-only.</em>",
                 "name": "context"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The type of script that is running:\r    <ul>\r      <li><code>\"client\"</code>: An Interface script.</li>\r      <li><code>\"entity_client\"</code>: A client entity script.</li>\r      <li><code>\"avatar\"</code>: An avatar script.</li>\r      <li><code>\"entity_server\"</code>: A server entity script.</li>\r      <li><code>\"agent\"</code>: An assignment client script.</li>\r    </ul>\r    <em>Read-only.</em>",
+                "name": "type"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The filename of the script file.\r    <em>Read-only.</em>",
+                "name": "filename"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Script.ResourceBuckets"
+                    ]
+                },
+                "description": "External resource buckets.",
+                "name": "ExternalPaths"
             }
         ],
         "longname": "Script",
@@ -63342,6 +63474,34 @@
         "deprecated": "This function is deprecated and will be removed.",
         "memberof": "Script",
         "longname": "Script.registerFunction",
+        "scope": "static"
+    },
+    {
+        "kind": "function",
+        "name": "registerEnum",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "Name.",
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "object"
+                    ]
+                },
+                "description": "Enum.",
+                "name": "enum"
+            }
+        ],
+        "deprecated": "This function is deprecated and will be removed.",
+        "memberof": "Script",
+        "longname": "Script.registerEnum",
         "scope": "static"
     },
     {
@@ -64294,6 +64454,48 @@
         "deprecated": "This function is deprecated and will be removed. Use {@link Uuid(0).generate|Uuid.generate} instead.",
         "memberof": "Script",
         "longname": "Script.generateUUID",
+        "scope": "static"
+    },
+    {
+        "description": "Gets the URL for an asset in an external resource bucket. (The location where the bucket is hosted may change over time\rbut this method will return the asset's current URL.)",
+        "kind": "function",
+        "name": "getExternalPath",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Script.ResourceBucket"
+                    ]
+                },
+                "description": "The external resource bucket that the asset is in.",
+                "name": "bucket"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The path within the external resource bucket where the asset is located. \r    <p>Normally, this should start with a path or filename to be appended to the bucket URL.\r    Alternatively, it can be a relative path starting with <code>./</code> or <code>../</code>, to navigate within the \r    resource bucket's URL.</p>",
+                "name": "path"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The URL of an external asset."
+            }
+        ],
+        "examples": [
+            "<caption>Report the URL of a default particle.</caption>\rprint(Script.getExternalPath(Script.ExternalPaths.Assets, \"Bazaar/Assets/Textures/Defaults/Interface/default_particle.png\"));",
+            "<caption>Report the root directory where the Vircadia assets are located.</caption>\rprint(Script.getExternalPath(Script.ExternalPaths.Assets, \".\"));"
+        ],
+        "memberof": "Script",
+        "longname": "Script.getExternalPath",
         "scope": "static"
     },
     {
@@ -71008,6 +71210,80 @@
         "scope": "static"
     },
     {
+        "description": "Gets the current mouse capture state.",
+        "kind": "function",
+        "name": "getCaptureMouse",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if the mouse is captured (is invisible and cannot leave the bounds of Interface,\rif Interface is the active window and no menu item is selected), <code>false</code> if the mouse is behaving normally."
+            }
+        ],
+        "memberof": "Camera",
+        "longname": "Camera.getCaptureMouse",
+        "scope": "static"
+    },
+    {
+        "description": "Sets the mouse capture state.  When <code>true</code>, the mouse is invisible and cannot leave the bounds of\rInterface, as long as Interface is the active window and no menu item is selected.  When <code>false</code>, the mouse\rbehaves normally.",
+        "kind": "function",
+        "name": "setCaptureMouse",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> to capture the mouse, <code>false</code> to release the mouse.",
+                "name": "captureMouse"
+            }
+        ],
+        "memberof": "Camera",
+        "longname": "Camera.setCaptureMouse",
+        "scope": "static"
+    },
+    {
+        "description": "Gets the current camera sensitivity.",
+        "kind": "function",
+        "name": "getSensitivity",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The current camera sensitivity.  Must be positive."
+            }
+        ],
+        "memberof": "Camera",
+        "longname": "Camera.getSensitivity",
+        "scope": "static"
+    },
+    {
+        "description": "Sets the camera sensitivity.  Higher values mean that the camera will be more sensitive to mouse movements.",
+        "kind": "function",
+        "name": "setSensitivity",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The desired camera sensitivity.  Must be positive.",
+                "name": "sensitivity"
+            }
+        ],
+        "memberof": "Camera",
+        "longname": "Camera.setSensitivity",
+        "scope": "static"
+    },
+    {
         "description": "Computes a {@link PickRay} based on the current camera configuration and the specified <code>x, y</code> position on the \rscreen. The {@link PickRay} can be used in functions such as {@link Entities.findRayIntersection} and \r{@link Overlays.findRayIntersection}.",
         "kind": "function",
         "name": "computePickRay",
@@ -71122,10 +71398,41 @@
             }
         ],
         "examples": [
-            "<caption>Report camera mode changes.</caption>\rfunction onCameraModeUpdated(newMode) {\r    print(\"The camera mode has changed to \" + newMode);\r}\r\rCamera.modeUpdated.connect(onCameraModeUpdated);\r\n     "
+            "<caption>Report camera mode changes.</caption>\rfunction onCameraModeUpdated(newMode) {\r    print(\"The camera mode has changed to \" + newMode);\r}\r\rCamera.modeUpdated.connect(onCameraModeUpdated);"
         ],
         "memberof": "Camera",
         "longname": "Camera.modeUpdated",
+        "scope": "static"
+    },
+    {
+        "description": "Triggered when the camera mouse capture state changes.",
+        "kind": "signal",
+        "name": "captureMouseChanged",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "The new mouse capture state.",
+                "name": "newCaptureMouse"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Signal"
+                    ]
+                }
+            }
+        ],
+        "examples": [
+            "<caption>Report mouse capture state changes.</caption>\rfunction onCaptureMouseChanged(newCaptureMouse) {\r    print(\"The mouse capture has changed to \" + newCaptureMouse);\r}\r\rCamera.captureMouseChanged.connect(onCaptureMouseChanged);\r\n     "
+        ],
+        "memberof": "Camera",
+        "longname": "Camera.captureMouseChanged",
         "scope": "static"
     },
     {
@@ -73922,11 +74229,11 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "E:\\Development\\Vircadia\\vircadia-development-2\\tools\\jsdoc\\root.js"
+            "E:\\Development\\Vircadia\\vircadia-development-3\\tools\\jsdoc\\root.js"
         ]
     },
     {
-        "description": "Display a web page in an Interface browser window.",
+        "description": "Display a web page in an Interface browser window or the tablet.",
         "kind": "function",
         "name": "openUrl",
         "params": [
@@ -76290,7 +76597,7 @@
             }
         ],
         "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
+            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://cdn-1.vircadia.com/eu-c-1/vircadia-public/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
         ],
         "memberof": "AnimationCache",
         "longname": "AnimationCache.prefetch",
@@ -76379,7 +76686,7 @@
             }
         ],
         "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
+            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://cdn-1.vircadia.com/eu-c-1/vircadia-public/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
         ],
         "memberof": "SoundCache",
         "longname": "SoundCache.prefetch",
@@ -76584,7 +76891,7 @@
             }
         ],
         "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
+            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://cdn-1.vircadia.com/eu-c-1/vircadia-public/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
         ],
         "memberof": "TextureCache",
         "longname": "TextureCache.prefetch",
@@ -76673,7 +76980,7 @@
             }
         ],
         "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
+            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://cdn-1.vircadia.com/eu-c-1/vircadia-public/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
         ],
         "memberof": "ModelCache",
         "longname": "ModelCache.prefetch",
@@ -77305,7 +77612,7 @@
             }
         ],
         "examples": [
-            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://s3-us-west-1.amazonaws.com/hifi-content/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
+            "<caption>Prefetch a resource and wait until it has loaded.</caption>\r// Replace AnimationCache with MaterialCache, ModelCache, SoundCache, or TextureCache as appropriate.\r// TextureCache has its own version of this function.\r\rvar resourceURL = \"https://cdn-1.vircadia.com/eu-c-1/vircadia-public/clement/production/animations/sitting_idle.fbx\";\rvar resourceObject = AnimationCache.prefetch(resourceURL);\r\rfunction checkIfResourceLoaded(state) {\r    if (state === Resource.State.FINISHED) {\r        print(\"Resource loaded and ready.\");\r    } else if (state === Resource.State.FAILED) {\r        print(\"Resource not loaded.\");\r    }\r}\r\r// Resource may have already been loaded.\rprint(\"Resource state: \" + resourceObject.state);\rcheckIfResourceLoaded(resourceObject.state);\r\r// Resource may still be loading.\rresourceObject.stateChanged.connect(function (state) {\r    print(\"Resource state changed to: \" + state);\r    checkIfResourceLoaded(state);\r});"
         ],
         "memberof": "MaterialCache",
         "longname": "MaterialCache.prefetch",
