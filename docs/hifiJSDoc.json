@@ -934,12 +934,21 @@
                         "string"
                     ]
                 },
+                "description": "The release codename of the version that Interface is currently running. <em>Read-only.</em>",
+                "name": "releaseName"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
                 "description": "The Qt version used in Interface that is currently running. <em>Read-only.</em>",
                 "name": "qtVersion"
             }
         ],
         "examples": [
-            "<caption>Report information on the version of Interface currently running.</caption>\rprint(\"Interface platform: \" + About.platform);\rprint(\"Interface build date: \" + About.buildDate);\rprint(\"Interface version: \" + About.buildVersion);\rprint(\"Qt version: \" + About.qtVersion);"
+            "<caption>Report information on the version of Interface currently running.</caption>\rprint(\"Interface platform: \" + About.platform);\rprint(\"Interface build date: \" + About.buildDate);\rprint(\"Interface version: \" + About.buildVersion);\rprint(\"Interface release name: \" + About.releaseName);\rprint(\"Qt version: \" + About.qtVersion);"
         ],
         "longname": "About",
         "scope": "global"
@@ -4278,16 +4287,16 @@
                         "MyAvatar.SitStandModelType"
                     ]
                 },
-                "description": "Controls avatar leaning and recentering behavior.",
+                "description": "Controls avatar leaning and recentering behavior.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "userRecenterModel"
             },
             {
                 "type": {
                     "names": [
-                        "number"
+                        "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the user wearing the HMD is determined to be sitting\r    (avatar leaning is disabled, recentering is enabled), <code>false</code> if the user wearing the HMD is\r    determined to be standing (avatar leaning is enabled, and avatar recenters if it leans too far).\r    If <code>userRecenterModel == 2</code> (i.e., \"auto\") the property value automatically updates as the user sits\r    or stands, unless <code>isSitStandStateLocked == true</code>. Setting the property value overrides the current\r    sitting / standing state, which is updated when the user next sits or stands unless\r    <code>isSitStandStateLocked == true</code>.",
+                "description": "<code>true</code> if the user wearing the HMD is determined to be sitting;\r    <code>false</code> if the user wearing the HMD is determined to be standing.  This can affect whether the avatar\r    is allowed to stand, lean or recenter its footing, depending on user preferences.\r    The property value automatically updates as the user sits or stands. Setting the property value overrides the current\r    sitting / standing state, which is updated when the user next sits or stands.",
                 "name": "isInSittingState"
             },
             {
@@ -4296,7 +4305,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> to lock the avatar sitting/standing state, i.e., use this \r    to disable automatically changing state.",
+                "description": "<code>true</code> to lock the avatar sitting/standing state, i.e., use this \r    to disable automatically changing state.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.  \r    See also: <code>getUserRecenterModel</code> and <code>setUserRecenterModel</code>.</p>",
                 "name": "isSitStandStateLocked"
             },
             {
@@ -4445,7 +4454,7 @@
         "scope": "global"
     },
     {
-        "description": "<p>Specifies different avatar leaning and recentering behaviors.</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Name</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>ForceSit</td><td>Assumes the user is seated in the real world. Disables avatar \r      leaning regardless of what the avatar is doing in the virtual world (i.e., avatar always recenters).</td></tr>\r    <tr><td><code>1</code></td><td>ForceStand</td><td>Assumes the user is standing in the real world. Enables avatar \r      leaning regardless of what the avatar is doing in the virtual world (i.e., avatar leans, then if leans too far it \r      recenters).</td></tr>\r    <tr><td><code>2</code></td><td>Auto</td><td>Interface detects when the user is standing or seated in the real world. \r      Avatar leaning is disabled when the user is sitting (i.e., avatar always recenters), and avatar leaning is enabled \r      when the user is standing (i.e., avatar leans, then if leans too far it recenters).</td></tr>\r    <tr><td><code>3</code></td><td>DisableHMDLean</td><td><p>Both avatar leaning and recentering are disabled regardless of \r      what the user is doing in the real world and no matter what their avatar is doing in the virtual world. Enables \r      the avatar to sit on the floor when the user sits on the floor.</p>\r      <p><strong>Note:</strong> Experimental.</p></td></tr>\r  </tbody>\r</table>",
+        "description": "<p>Specifies different avatar leaning and recentering behaviors.</p>\r<p class=\"important\">Deprecated: This type is deprecated and will be removed.</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Name</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>0</code></td><td>ForceSit</td><td>Assumes the user is seated in the real world. Disables avatar \r      leaning regardless of what the avatar is doing in the virtual world (i.e., avatar always recenters).</td></tr>\r    <tr><td><code>1</code></td><td>ForceStand</td><td>Assumes the user is standing in the real world. Enables avatar \r      leaning regardless of what the avatar is doing in the virtual world (i.e., avatar leans, then if leans too far it \r      recenters).</td></tr>\r    <tr><td><code>2</code></td><td>Auto</td><td>Interface detects when the user is standing or seated in the real world. \r      Avatar leaning is disabled when the user is sitting (i.e., avatar always recenters), and avatar leaning is enabled \r      when the user is standing (i.e., avatar leans, then if leans too far it recenters).</td></tr>\r    <tr><td><code>3</code></td><td>DisableHMDLean</td><td><p>Both avatar leaning and recentering are disabled regardless of \r      what the user is doing in the real world and no matter what their avatar is doing in the virtual world. Enables \r      the avatar to sit on the floor when the user sits on the floor.</p>\r      <p><strong>Note:</strong> Experimental.</p></td></tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "SitStandModelType",
         "type": {
@@ -7511,14 +7520,6 @@
         ],
         "memberof": "MyAvatar",
         "longname": "MyAvatar.getEnableMeshVisible",
-        "scope": "static"
-    },
-    {
-        "kind": "function",
-        "name": "storeAvatarEntityDataPayload",
-        "deprecated": "This function is deprecated and will be removed.",
-        "memberof": "MyAvatar",
-        "longname": "MyAvatar.storeAvatarEntityDataPayload",
         "scope": "static"
     },
     {
@@ -13191,6 +13192,24 @@
             {
                 "type": {
                     "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if audio input noise reduction automatic mode is enabled, \r    <code>false</code> if in manual mode. Manual mode allows you to use <code>Audio.noiseReductionThreshold</code>\r    to set a manual sensitivity for the noise gate.",
+                "name": "noiseReductionAutomatic"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "Sets the noise gate threshold before your mic audio is transmitted. \r    (Applies only if <code>Audio.noiseReductionAutomatic</code> is <code>false</code>.)",
+                "name": "noiseReductionThreshold"
+            },
+            {
+                "type": {
+                    "names": [
                         "number"
                     ]
                 },
@@ -13611,6 +13630,43 @@
         "scope": "static"
     },
     {
+        "description": "Sets the noise gate threshold before your mic audio is transmitted. (Applies only if <code>Audio.noiseReductionAutomatic</code> is <code>false</code>.)",
+        "kind": "function",
+        "name": "setNoiseReductionThreshold",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The level that your input must surpass to be transmitted. <code>0.0</code> (open the gate completely) &ndash; <code>1.0</code>",
+                "name": "threshold"
+            }
+        ],
+        "memberof": "Audio",
+        "longname": "Audio.setNoiseReductionThreshold",
+        "scope": "static"
+    },
+    {
+        "description": "Gets the noise reduction threshold.",
+        "kind": "function",
+        "name": "getNoiseReductionThreshold",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The noise reduction threshold. <code>0.0</code> &ndash; <code>1.0</code>"
+            }
+        ],
+        "memberof": "Audio",
+        "longname": "Audio.getNoiseReductionThreshold",
+        "scope": "static"
+    },
+    {
         "description": "Starts making an audio recording of the audio being played in-world (i.e., not local-only audio) to a file in WAV format.",
         "kind": "function",
         "name": "startRecording",
@@ -13925,6 +13981,62 @@
         ],
         "memberof": "Audio",
         "longname": "Audio.noiseReductionChanged",
+        "scope": "static"
+    },
+    {
+        "description": "Triggered when the audio input noise reduction mode is changed.",
+        "kind": "signal",
+        "name": "noiseReductionAutomaticChanged",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if audio input noise reduction automatic mode is enabled, <code>false</code> if in manual mode.",
+                "name": "isEnabled"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Signal"
+                    ]
+                }
+            }
+        ],
+        "memberof": "Audio",
+        "longname": "Audio.noiseReductionAutomaticChanged",
+        "scope": "static"
+    },
+    {
+        "description": "Triggered when the audio input noise reduction threshold is changed.",
+        "kind": "signal",
+        "name": "noiseReductionThresholdChanged",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The threshold for the audio input noise reduction, range <code>0.0</code> (open the gate completely) &ndash; <code>1.0</code>\r    (close the gate completely).",
+                "name": "threshold"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Signal"
+                    ]
+                }
+            }
+        ],
+        "memberof": "Audio",
+        "longname": "Audio.noiseReductionThresholdChanged",
         "scope": "static"
     },
     {
@@ -23467,7 +23579,7 @@
             {
                 "type": {
                     "names": [
-                        "string"
+                        "number"
                     ]
                 },
                 "description": "The number of entity updates that happened last frame.\r    <em>Read-only.</em>",
@@ -23476,7 +23588,7 @@
             {
                 "type": {
                     "names": [
-                        "string"
+                        "number"
                     ]
                 },
                 "description": "The total number of entity updates scheduled for last frame.\r    <em>Read-only.</em>",
@@ -38221,13 +38333,13 @@
             {
                 "type": {
                     "names": [
-                        "Controller.Hand"
+                        "number"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": 2,
-                "description": "The hand or hands to trigger the haptic pulse on.",
-                "name": "hand"
+                "description": "The index on devices on which to trigger the haptic pulse.  The meaning of each index\r    will vary by device.  For example, for hand controllers, <code>index = 0</code> is the left hand,\r    <code>index = 1</code> is the right hand, and <code>index = 2</code> is both hands.  For other devices,\r    such as haptic vests, index will have a different meaning, defined by the input device.",
+                "name": "index"
             }
         ],
         "examples": [
@@ -38254,13 +38366,13 @@
             {
                 "type": {
                     "names": [
-                        "Controller.Hand"
+                        "number"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": 2,
-                "description": "The hand or hands to trigger the haptic pulse on.",
-                "name": "hand"
+                "description": "The index on devices on which to trigger the haptic pulse.  The meaning of each index\r    will vary by device.  For example, for hand controllers, <code>index = 0</code> is the left hand,\r    <code>index = 1</code> is the right hand, and <code>index = 2</code> is both hands.  For other devices,\r    such as haptic vests, index will have a different meaning, defined by the input device.",
+                "name": "index"
             }
         ],
         "memberof": "Controller",
@@ -38302,13 +38414,13 @@
             {
                 "type": {
                     "names": [
-                        "Controller.Hand"
+                        "number"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": 2,
-                "description": "The hand or hands to trigger the haptic pulse on.",
-                "name": "hand"
+                "description": "The index on this device on which to trigger the haptic pulse.  The meaning of each index\r    will vary by device.  For example, for hand controllers, <code>index = 0</code> is the left hand,\r    <code>index = 1</code> is the right hand, and <code>index = 2</code> is both hands.  For other devices,\r    such as haptic vests, index will have a different meaning, defined by the input device.",
+                "name": "index"
             }
         ],
         "examples": [
@@ -38344,13 +38456,13 @@
             {
                 "type": {
                     "names": [
-                        "Controller.Hand"
+                        "number"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": 2,
-                "description": "The hand or hands to trigger the haptic pulse on.",
-                "name": "hand"
+                "description": "The index on this device on which to trigger the haptic pulse.  The meaning of each index\r    will vary by device.  For example, for hand controllers, <code>index = 0</code> is the left hand,\r    <code>index = 1</code> is the right hand, and <code>index = 2</code> is both hands.  For other devices,\r    such as haptic vests, index will have a different meaning, defined by the input device.",
+                "name": "index"
             }
         ],
         "memberof": "Controller",
@@ -40793,7 +40905,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "The dimensions of the entity's unscaled mesh model if it has one, otherwise\r    {@link Vec3(0)|Vec3.ONE}. <em>Read-only.</em>",
+                "description": "The dimensions of the entity's unscaled mesh model or image if it has one, otherwise\r    {@link Vec3(0)|Vec3.ONE}. <em>Read-only.</em>",
                 "name": "naturalDimensions"
             },
             {
@@ -41197,6 +41309,16 @@
                 "defaultvalue": "[]",
                 "description": "A list of entity IDs representing with which zones this entity should render.\r    If it is empty, this entity will render normally.  Otherwise, this entity will only render if your avatar is within\r    one of the zones in this list.",
                 "name": "renderWithZones"
+            },
+            {
+                "type": {
+                    "names": [
+                        "BillboardMode"
+                    ]
+                },
+                "defaultvalue": "\"none\"",
+                "description": "Whether the entity is billboarded to face the camera.  Use the rotation\r    property to control which axis is facing you.",
+                "name": "billboardMode"
             },
             {
                 "type": {
@@ -41665,6 +41787,16 @@
                 },
                 "description": "A JSON string of a map of blendshape names to values.  Only stores set values.\r    When editing this property, only coefficients that you are editing will change; it will not explicitly reset other\r    coefficients.",
                 "name": "blendshapeCoefficients"
+            },
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "defaultvalue": false,
+                "description": "If <code>false</code>, the model will be centered based on its content,\r    ignoring any offset in the model itself. If <code>true</code>, the model will respect its original offset.  Currently,\r    only pivots relative to <code>{x: 0, y: 0, z: 0}</code> are supported.",
+                "name": "useOriginalPivot"
             },
             {
                 "type": {
@@ -42720,12 +42852,12 @@
             {
                 "type": {
                     "names": [
-                        "BillboardMode"
+                        "Entities.TextAlignment"
                     ]
                 },
-                "defaultvalue": "\"none\"",
-                "description": "Whether the entity is billboarded to face the camera.",
-                "name": "billboardMode"
+                "defaultvalue": "\"left\"",
+                "description": "How the text is aligned against its background.",
+                "name": "alignment"
             },
             {
                 "type": {
@@ -42815,16 +42947,6 @@
             {
                 "type": {
                     "names": [
-                        "BillboardMode"
-                    ]
-                },
-                "defaultvalue": "\"none\"",
-                "description": "Whether the entity is billboarded to face the camera.",
-                "name": "billboardMode"
-            },
-            {
-                "type": {
-                    "names": [
                         "boolean"
                     ]
                 },
@@ -42899,6 +43021,15 @@
                 "defaultvalue": true,
                 "description": "<code>true</code> if the web entity should have a background,\r    <code>false</code> if the web entity's background should be transparent. The webpage must have CSS properties for transparency set\r    on the <code>background-color</code> for this property to have an effect.",
                 "name": "useBackground"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The user agent for the web entity to use when visiting web pages.\r    Default value: <code>Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) \r    Chrome/69.0.3497.113 Mobile Safari/537.36</code>",
+                "name": "userAgent"
             }
         ],
         "examples": [
@@ -43189,16 +43320,6 @@
                 },
                 "description": "Color and alpha pulse.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "pulse"
-            },
-            {
-                "type": {
-                    "names": [
-                        "BillboardMode"
-                    ]
-                },
-                "defaultvalue": "\"none\"",
-                "description": "Whether the entity is billboarded to face the camera.",
-                "name": "billboardMode"
             },
             {
                 "type": {
@@ -43808,6 +43929,24 @@
         ],
         "memberof": "Entities",
         "longname": "Entities.canGetAndSetPrivateUserData",
+        "scope": "static"
+    },
+    {
+        "description": "Checks whether or not the script can rez avatar entities.",
+        "kind": "function",
+        "name": "canRezAvatarEntities",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if the domain server will allow the script to rez avatar entities,\r    otherwise <code>false</code>."
+            }
+        ],
+        "memberof": "Entities",
+        "longname": "Entities.canRezAvatarEntities",
         "scope": "static"
     },
     {
@@ -47938,7 +48077,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the script change the <code>privateUserData</code> \r    property of an entity, <code>false</code> if it can't.",
+                "description": "<code>true</code> if the script can change the <code>privateUserData</code> \r    property of an entity, <code>false</code> if it can't.",
                 "name": "canGetAndSetPrivateUserData"
             }
         ],
@@ -47953,6 +48092,34 @@
         ],
         "memberof": "Entities",
         "longname": "Entities.canGetAndSetPrivateUserDataChanged",
+        "scope": "static"
+    },
+    {
+        "description": "Triggered when your ability to use avatar entities is changed.",
+        "kind": "signal",
+        "name": "canRezAvatarEntitiesChanged",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "<code>true</code> if the script can change edit avatar entities,\r    <code>false</code> if it can't.",
+                "name": "canRezAvatarEntities"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Signal"
+                    ]
+                }
+            }
+        ],
+        "memberof": "Entities",
+        "longname": "Entities.canRezAvatarEntitiesChanged",
         "scope": "static"
     },
     {
@@ -61486,7 +61653,7 @@
             }
         ],
         "examples": [
-            "<caption>Create a rotation of 180 degrees about the y axis.</caption>\rvar rotation = Quat.fromPitchYawRollDgrees(0, 180, 0 );"
+            "<caption>Create a rotation of 180 degrees about the y axis.</caption>\rvar rotation = Quat.fromPitchYawRollDegrees(0, 180, 0 );"
         ],
         "memberof": "Quat(0)",
         "longname": "Quat(0).fromPitchYawRollDegrees",
@@ -66555,6 +66722,42 @@
                 },
                 "description": "<code>true</code> if the client requests extra data from the mixers (such as \r    positional data of an avatar they've ignored). <em>Read-only.</em>",
                 "name": "requestsDomainListData"
+            },
+            {
+                "type": {
+                    "names": [
+                        "BanFlags"
+                    ]
+                },
+                "description": "Do not ban user. <em>Read-only.</em>",
+                "name": "NO_BAN"
+            },
+            {
+                "type": {
+                    "names": [
+                        "BanFlags"
+                    ]
+                },
+                "description": "Ban user by username. <em>Read-only.</em>",
+                "name": "BAN_BY_USERNAME"
+            },
+            {
+                "type": {
+                    "names": [
+                        "BanFlags"
+                    ]
+                },
+                "description": "Ban user by fingerprint. <em>Read-only.</em>",
+                "name": "BAN_BY_FINGERPRINT"
+            },
+            {
+                "type": {
+                    "names": [
+                        "BanFlags"
+                    ]
+                },
+                "description": "Ban user by IP address. <em>Read-only.</em>",
+                "name": "BAN_BY_IP"
             }
         ],
         "longname": "Users",
@@ -66739,7 +66942,7 @@
         "scope": "static"
     },
     {
-        "description": "Kicks and bans a user. This removes them from the server and prevents them from returning. The ban is by user name if \ravailable, or machine fingerprint otherwise.\r<p>This function only works if you're an administrator of the domain you're in.</p>",
+        "description": "Kicks and bans a user. This removes them from the server and prevents them from returning. The ban is by user name (if \ravailable) and by machine fingerprint. The ban functionality can be controlled with flags.\r<p>This function only works if you're an administrator of the domain you're in.</p>",
         "kind": "function",
         "name": "kick",
         "params": [
@@ -66751,6 +66954,14 @@
                 },
                 "description": "The session ID of the user to kick and ban.",
                 "name": "sessionID"
+            },
+            {
+                "type": {
+                    "names": [
+                        "BanFlags"
+                    ]
+                },
+                "description": "Preferred ban flags. <i>Bans a user by username (if available) and machine fingerprint by default.</i>"
             }
         ],
         "memberof": "Users",
@@ -69559,6 +69770,18 @@
         "scope": "static"
     },
     {
+        "description": "<p>A set of flags for moderation ban actions. The value is constructed by using the <code>|</code> (bitwise OR) operator on the \rindividual flag values.</p>\r<table>\r  <thead>\r    <tr><th>Flag Name</th><th>Value</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td>NO_BAN</td><td><code>0</code></td><td>Don't ban user when kicking. <em>This does not currently have an effect.</em></td></tr>\r    <tr><td>BAN_BY_USERNAME</td><td><code>1</code></td><td>Ban the person by their username.</td></tr>\r    <tr><td>BAN_BY_FINGERPRINT</td><td><code>2</code></td><td>Ban the person by their machine fingerprint.</td></tr>\r    <tr><td>BAN_BY_IP</td><td><code>4</code></td><td>Ban the person by their IP address.</td></tr>\r  </tbody>\r</table>",
+        "kind": "typedef",
+        "name": "BanFlags",
+        "type": {
+            "names": [
+                "number"
+            ]
+        },
+        "longname": "BanFlags",
+        "scope": "global"
+    },
+    {
         "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts</p>The <code>Paths</code> API provides absolute paths to the scripts and resources directories.",
         "kind": "namespace",
         "name": "Paths",
@@ -70993,7 +71216,20 @@
         "scope": "static"
     },
     {
-        "description": "<p>A {@link Entities.EntityProperties-Text|Text} entity may use one of the following effects:</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>\"none\"</code></td><td>No effect.</td></tr>\r    <tr><td><code>\"outline\"</code></td><td>An outline effect.</td></tr>\r    <tr><td><code>\"outlineFill\"</code></td><td>An outline effect, with fill.</td></tr>\r    <tr><td><code>\"shadow\"</code></td><td>A shadow effect.</td></tr>\r  </tbody>\r</table>",
+        "description": "<p>A {@link Entities.EntityProperties-Text|Text} entity may use one of the following alignments:</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>\"left\"</code></td><td>Text is aligned to the left side.</td></tr>\r    <tr><td><code>\"center\"</code></td><td>Text is centered.</td></tr>\r    <tr><td><code>\"right\"</code></td><td>Text is aligned to the right side.</td></tr>\r  </tbody>\r</table>",
+        "kind": "typedef",
+        "name": "TextAlignment",
+        "type": {
+            "names": [
+                "string"
+            ]
+        },
+        "memberof": "Entities",
+        "longname": "Entities.TextAlignment",
+        "scope": "static"
+    },
+    {
+        "description": "<p>A {@link Entities.EntityProperties-Text|Text} entity may use one of the following effects:</p>\r<table>\r  <thead>\r    <tr><th>Value</th><th>Description</th></tr>\r  </thead>\r  <tbody>\r    <tr><td><code>\"none\"</code></td><td>No effect.</td></tr>\r    <tr><td><code>\"outline\"</code></td><td>An outline effect.</td></tr>\r    <tr><td><code>\"outline fill\"</code></td><td>An outline effect, with fill.</td></tr>\r    <tr><td><code>\"shadow\"</code></td><td>A shadow effect.</td></tr>\r  </tbody>\r</table>",
         "kind": "typedef",
         "name": "TextEffect",
         "type": {
@@ -74229,7 +74465,7 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "E:\\Development\\Vircadia\\vircadia-development-3\\tools\\jsdoc\\root.js"
+            "E:\\Vircadia_RELPKG\\tools\\jsdoc\\root.js"
         ]
     },
     {
