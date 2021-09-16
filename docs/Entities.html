@@ -23905,7 +23905,7 @@ string
                     
 
 
-    <p>URL to a <a href="Entities.html#.MaterialResource">MaterialResource</a>. If you append    <code>"#name"</code> to the URL, the  material with that name in the <a href="Entities.html#.MaterialResource">MaterialResource</a>    will be applied to the entity. Alternatively, set the property value to <code>"materialData"</code> to use the    <code>materialData</code> property for the <a href="Entities.html#.MaterialResource">MaterialResource</a> values.</p>
+    <p>URL to a <a href="Entities.html#.MaterialResource">MaterialResource</a>. Alternatively, set the    property value to <code>"materialData"</code> to use the <code>materialData</code> property for the    <a href="Entities.html#.MaterialResource">MaterialResource</a> values. If you append <code>"#name"</code> to the URL, the material    with that name will be applied to the entity. You can also use the ID of another Material entity as the URL, in which    case this material will act as a copy of that material, with its own unique material transform, priority, etc.</p>
 
 
                 
@@ -28610,7 +28610,7 @@ object
                     
 
 
-    <p>The <code>"Web"</code> <a href="Entities.html#.EntityType">EntityType</a> displays a browsable web page. Each user views their own copyof the web page: if one user navigates to another page on the entity, other users do not see the change; if a video is beingplayed, users don't see it in sync. It has properties in addition to the common<a href="Entities.html#.EntityProperties">EntityProperties</a>.</p>
+    <p>The <code>"Web"</code> <a href="Entities.html#.EntityType">EntityType</a> displays a browsable web page. Each user views their own copyof the web page: if one user navigates to another page on the entity, other users do not see the change; if a video is beingplayed, users don't see it in sync. Internally, a Web entity is rendered as a non-repeating, upside down texture, so additionaltransformations may be necessary if you reference a Web entity texture by UUID. It has properties in addition to the common<a href="Entities.html#.EntityProperties">EntityProperties</a>.</p>
 
 
                                     
@@ -32058,7 +32058,7 @@ string
                     
 
 
-    <p>The URL of the emissive texture image.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the emissive texture image, or an entity ID.  An entity ID may be that of an    Image or Web entity.  Set to <code>"fallthrough"</code> to fall through to the material below.    <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32091,7 +32091,7 @@ string
                     
 
 
-    <p>The URL of the albedo texture image.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the albedo texture image, or an entity ID.  An entity ID may be that of an Image    or Web entity.  Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code>    model only.</p>
 
 
                 
@@ -32124,7 +32124,7 @@ string
                     
 
 
-    <p>The URL of the opacity texture image. Set the value the same as the <code>albedoMap</code>     value for transparency.     <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the opacity texture image, or an entity ID.  An entity ID may be that of an Image    or Web entity.  Set the value the same as the <code>albedoMap</code> value for transparency.    <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32363,7 +32363,7 @@ string
                     
 
 
-    <p>The URL of the metallic texture image. You can use this or <code>specularMap</code>, but     not both.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the metallic texture image, or an entity ID.  An entity ID may be that of an    Image or Web entity.  You can use this or <code>specularMap</code>, but not both.    Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32396,7 +32396,7 @@ string
                     
 
 
-    <p>The URL of the specular texture image. You can use this or <code>metallicMap</code>, but     not both.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the specular texture image, or an entity ID.  An entity ID may be that of an    Image or Web entity.  You can use this or <code>metallicMap</code>, but not both.    Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32429,7 +32429,7 @@ string
                     
 
 
-    <p>The URL of the normal texture image. You can use this or <code>bumpMap</code>, but not both.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the normal texture image, or an entity ID.  An entity ID may be that of an Image    or Web entity.  You can use this or <code>bumpMap</code>, but not both. Set to <code>"fallthrough"</code> to fall    through to the material below. <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32462,7 +32462,7 @@ string
                     
 
 
-    <p>The URL of the bump texture image. You can use this or <code>normalMap</code>, but not both.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the bump texture image, or an entity ID.  An entity ID may be that of an Image    or Web entity.  You can use this or <code>normalMap</code>, but not both. Set to <code>"fallthrough"</code> to    fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32495,7 +32495,7 @@ string
                     
 
 
-    <p>The URL of the occlusion texture image.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the occlusion texture image, or an entity ID.  An entity ID may be that of    an Image or Web entity.  Set to <code>"fallthrough"</code> to fall through to the material below.    <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32528,7 +32528,7 @@ string
                     
 
 
-    <p>The URL of the scattering texture image. Only used if <code>normalMap</code> or     <code>bumpMap</code> is specified.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the scattering texture image, or an entity ID.  An entity ID may be that of an    Image or Web entity.  Only used if <code>normalMap</code> or <code>bumpMap</code> is specified.    Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
 
 
                 
@@ -32561,7 +32561,7 @@ string
                     
 
 
-    <p>The URL of the light map texture image.     Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p>
+    <p>The URL of the light map texture image, or an entity ID.  An entity ID may be that of an Image    or Web entity.  Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code>    model only.</p>
 
 
                 
@@ -32930,6 +32930,9 @@ number
 |
 
 Array.&lt;<a href="Entities.html#.Material">Entities.Material</a>>
+|
+
+string
 
 
             
@@ -32942,7 +32945,7 @@ Array.&lt;<a href="Entities.html#.Material">Entities.Material</a>>
                     
 
 
-    <p>The details of the material or materials.</p>
+    <p>The details of the material or materials, or the ID of another    Material entity.</p>
 
 
                 

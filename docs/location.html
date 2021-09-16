@@ -128,7 +128,7 @@
             
                 <h3>Description</h3>
                 
-                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>The <code>location</code> API provides facilities related to your current location in the metaverse.<h3>Getter/Setter</h3><p>You can get and set your current metaverse address by directly reading a string value from and writing a string value to the <code>location</code> object. This is an alternative to using the <code>location.href</code> property or other objectfunctions.</p></div>
+                    <div><p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Assignment Client Scripts</p>The <code>location</code> API provides facilities related to your current location in the metaverse.<h3>Getter/Setter</h3><p>You can get and set your current metaverse address by directly reading a string value from and writing a string value tothe <code>location</code> object. This is an alternative to using the <code>location.href</code> property or other objectfunctions.</p></div>
                 
 
                 
@@ -245,7 +245,7 @@ string
                     
 
 
-    <p>Your current metaverse address (e.g., <code>"hifi://domainname/15,-10,26/0,0,0,1"</code>)    regardless of whether or not you're connected to the domain. Starts with <code>"file:///"</code> if you're in a     serverless domain.    <em>Read-only.</em></p>
+    <p>Your current metaverse address (e.g., <code>"hifi://domainname/15,-10,26/0,0,0,1"</code>)    regardless of whether or not you're connected to the domain. Starts with <code>"file:///"</code> if you're in a    serverless domain.    <em>Read-only.</em></p>
 
 
                 
@@ -307,7 +307,7 @@ string
                     
 
 
-    <p>The location and orientation in your current <code>href</code> metaverse address     (e.g., <code>"/15,-10,26/0,0,0,1"</code>).    <em>Read-only.</em></p>
+    <p>The location and orientation in your current <code>href</code> metaverse address    (e.g., <code>"/15,-10,26/0,0,0,1"</code>).    <em>Read-only.</em></p>
 
 
                 
@@ -647,7 +647,7 @@ boolean
                     
 
 
-    <p>Copies your current metaverse location and orientation (i.e., <code>location.pathname</code> property value) to the OS clipboard.</p>
+    <p>Copies your current metaverse location and orientation (i.e., <code>location.pathname</code> property value) to the OSclipboard.</p>
 
 
                 
@@ -1256,7 +1256,7 @@ boolean
                     
 
 
-    <p>Takes you to a position and orientation resulting from a lookup for a named path in the domain (set in the domain server's settings).</p>
+    <p>Takes you to a position and orientation resulting from a lookup for a named path in the domain (set in the domainserver's settings).</p>
 
 
                 
@@ -2146,7 +2146,7 @@ boolean
                         
 
 
-    <p>Triggered when looking up the details of a metaverse user or location to go to has completed and the domain or user is offline.</p>
+    <p>Triggered when looking up the details of a metaverse user or location to go to has completed and the domain or user isoffline.</p>
 
 
                     
@@ -2399,7 +2399,7 @@ boolean
                         
 
 
-    <p>Triggered when a request is made to go to an IP address.</p>
+    <p>Triggered when a request is made to go to a URL or IP address.</p>
 
 
                     
@@ -2859,7 +2859,7 @@ number
                             
 
 
-    <p>Copies your current metaverse location and orientation (i.e., <code>location.pathname</code> property value) to the OS clipboard.</p>
+    <p>Copies your current metaverse location and orientation (i.e., <code>location.pathname</code> property value) to the OSclipboard.</p>
 
 
                         
@@ -3782,7 +3782,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then go to a location just in front of the user and turn     to face them, otherwise go to the user's exact location and orientation.</p>
+    <p>If <code>true</code> then go to a location just in front of the user and turn    to face them, otherwise go to the user's exact location and orientation.</p>
 
 
                 
@@ -3840,7 +3840,7 @@ boolean
                             
 
 
-    <p>Takes you to a position and orientation resulting from a lookup for a named path in the domain (set in the domain server's settings).</p>
+    <p>Takes you to a position and orientation resulting from a lookup for a named path in the domain (set in the domainserver's settings).</p>
 
 
                         
@@ -4139,7 +4139,7 @@ string
                     
 
 
-    <p>The address to go to: a <code>"hifi://"</code> address, an IP address (e.g.,     <code>"127.0.0.1"</code> or <code>"localhost"</code>), a <code>file:///</code> address, a domain name, a named path     on a domain (starts with <code>"/"</code>), a position or position and orientation, or a user (starts with     <code>"@"</code>).</p>
+    <p>The address to go to: a <code>"hifi://"</code> address, an IP address (e.g.,    <code>"127.0.0.1"</code> or <code>"localhost"</code>), a <code>file:///</code> address, a domain name, a named path    on a domain (starts with <code>"/"</code>), a position or position and orientation, or a user (starts with    <code>"@"</code>).</p>
 
 
                 
@@ -4188,7 +4188,7 @@ boolean
                     
 
 
-    <p>Set to <code>true</code> if the address is obtained from the "Goto" dialog.    Helps ensure that user's location history is correctly maintained.</p>
+    <p>Set to <code>true</code> if the address is obtained from the "Explore" app.    Helps ensure that the user's location history is correctly maintained.</p>
 
 
                 
@@ -4716,7 +4716,7 @@ boolean
                     
 
 
-    <p><code>true</code> if there's a previous location to navigate to, otherwise     <code>false</code>.</p>
+    <p><code>true</code> if there's a previous location to navigate to, otherwise    <code>false</code>.</p>
 
 
                 
@@ -5338,7 +5338,7 @@ boolean
                     
 
 
-    <p>The orientation to change to. Is <a href="Quat.html">Quat.IDENTITY</a> if     <code>hasOrientationChange</code> is <code>false</code>.</p>
+    <p>The orientation to change to. Is <a href="Quat.html">Quat.IDENTITY</a> if    <code>hasOrientationChange</code> is <code>false</code>.</p>
 
 
                 
@@ -5371,7 +5371,7 @@ boolean
                     
 
 
-    <p>If <code>true</code> then the request is to go to a position near that specified     and orient your avatar to face it. For example when you visit someone from the "People" dialog.</p>
+    <p>If <code>true</code> then the request is to go to a position near that specified    and orient your avatar to face it. For example when you visit someone from the "People" dialog.</p>
 
 
                 
@@ -5553,7 +5553,7 @@ Signal
                             
 
 
-    <p>Triggered when looking up the details of a metaverse user or location to go to has completed and the domain or user is offline.</p>
+    <p>Triggered when looking up the details of a metaverse user or location to go to has completed and the domain or user isoffline.</p>
 
 
                         
@@ -5959,7 +5959,7 @@ Signal
                             
 
 
-    <p>Triggered when a request is made to go to an IP address.</p>
+    <p>Triggered when a request is made to go to a URL or IP address.</p>
 
 
                         
@@ -6039,7 +6039,7 @@ Signal
             <td class="type">
             
                 
-Url
+string
 
 
             
@@ -6054,7 +6054,7 @@ Url
                     
 
 
-    <p>URL for domain</p>
+    <p>The URL of the domain.</p>
 
 
                 
@@ -6087,7 +6087,7 @@ Url
                     
 
 
-    <p>The UUID of the domain to go to.</p>
+    <p>The UUID of the domain to go to. May be <a href="global.html#Uuid">Uuid.NULL</a> if not yet known.</p>
 
 
                 
