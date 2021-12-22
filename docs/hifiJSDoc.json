@@ -2249,7 +2249,7 @@
             }
         ],
         "examples": [
-            "<caption>Turn your avatar upon voice command.</caption>\rvar TURN_LEFT = \"turn left\";\rvar TURN_RIGHT = \"turn right\";\rvar TURN_RATE = 0.5;\rvar TURN_DURATION = 1000; // ms\rvar turnRate = 0;\r\rfunction getTurnRate() {\r    return turnRate;\r}\r\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.speechRecognizer\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(getTurnRate).to(Controller.Actions.Yaw);\rController.enableMapping(MAPPING_NAME);\r\rfunction onCommandRecognized(command) {\r    print(\"Speech command: \" + command);\r    switch (command) {\r        case TURN_LEFT:\r            turnRate = -TURN_RATE;\r            break;\r        case TURN_RIGHT:\r            turnRate = TURN_RATE;\r            break;\r    }\r    Script.setTimeout(function () {\r        turnRate = 0;\r    }, TURN_DURATION);\r}\r\rSpeechRecognizer.addCommand(TURN_LEFT);\rSpeechRecognizer.addCommand(TURN_RIGHT);\rSpeechRecognizer.commandRecognized.connect(onCommandRecognized);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r    SpeechRecognizer.removeCommand(TURN_LEFT);\r    SpeechRecognizer.removeCommand(TURN_RIGHT);\r});"
+            "<caption>Turn your avatar upon voice command.</caption>\rvar TURN_LEFT = \"turn left\";\rvar TURN_RIGHT = \"turn right\";\rvar TURN_RATE = 0.5;\rvar TURN_DURATION = 1000; // ms\rvar turnRate = 0;\r\rfunction getTurnRate() {\r    return turnRate;\r}\r\rvar MAPPING_NAME = \"com.vircadia.controllers.example.speechRecognizer\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(getTurnRate).to(Controller.Actions.Yaw);\rController.enableMapping(MAPPING_NAME);\r\rfunction onCommandRecognized(command) {\r    print(\"Speech command: \" + command);\r    switch (command) {\r        case TURN_LEFT:\r            turnRate = -TURN_RATE;\r            break;\r        case TURN_RIGHT:\r            turnRate = TURN_RATE;\r            break;\r    }\r    Script.setTimeout(function () {\r        turnRate = 0;\r    }, TURN_DURATION);\r}\r\rSpeechRecognizer.addCommand(TURN_LEFT);\rSpeechRecognizer.addCommand(TURN_RIGHT);\rSpeechRecognizer.commandRecognized.connect(onCommandRecognized);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r    SpeechRecognizer.removeCommand(TURN_LEFT);\r    SpeechRecognizer.removeCommand(TURN_RIGHT);\r});"
         ],
         "memberof": "SpeechRecognizer",
         "longname": "SpeechRecognizer.commandRecognized",
@@ -3835,7 +3835,7 @@
                         "Vec3"
                     ]
                 },
-                "description": "A synonym for <code>position</code> for use by QML.",
+                "description": "A synonym for <code>position</code> for use by QML.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed.</p>",
                 "name": "qmlPosition"
             },
             {
@@ -18228,11 +18228,11 @@
             {
                 "type": {
                     "names": [
-                        "boolean"
+                        "integer"
                     ]
                 },
-                "description": "<code>true</code> if anti-aliasing is enabled, <code>false</code> if it's disabled.",
-                "name": "antialiasingEnabled"
+                "description": "The active anti-aliasing mode.",
+                "name": "antialiasingMode"
             },
             {
                 "type": {
@@ -18425,40 +18425,40 @@
         "scope": "static"
     },
     {
-        "description": "Gets whether or not anti-aliasing is enabled.",
+        "description": "Gets the active anti-aliasing mode.",
         "kind": "function",
-        "name": "getAntialiasingEnabled",
+        "name": "getAntialiasingMode",
         "returns": [
             {
                 "type": {
                     "names": [
-                        "boolean"
+                        "integer"
                     ]
                 },
-                "description": "<code>true</code> if anti-aliasing is enabled, <code>false</code> if it's disabled."
+                "description": "the active anti-aliasing mode."
             }
         ],
         "memberof": "Render",
-        "longname": "Render.getAntialiasingEnabled",
+        "longname": "Render.getAntialiasingMode",
         "scope": "static"
     },
     {
-        "description": "Sets whether or not anti-aliasing is enabled.",
+        "description": "Sets the active anti-aliasing mode.",
         "kind": "function",
-        "name": "setAntialiasingEnabled",
+        "name": "setAntialiasingMode",
         "params": [
             {
                 "type": {
                     "names": [
-                        "boolean"
+                        "integer"
                     ]
                 },
-                "description": "<code>true</code> to enable anti-aliasing, <code>false</code> to disable.",
-                "name": "enabled"
+                "description": "active anti-aliasing mode.",
+                "name": "the"
             }
         ],
         "memberof": "Render",
-        "longname": "Render.setAntialiasingEnabled",
+        "longname": "Render.setAntialiasingMode",
         "scope": "static"
     },
     {
@@ -38497,7 +38497,7 @@
             }
         ],
         "examples": [
-            "<caption>Create a simple mapping that makes the right trigger move your avatar up.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Create a simple mapping that makes the right trigger move your avatar up.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "Controller",
         "longname": "Controller.newMapping",
@@ -38578,7 +38578,7 @@
             }
         ],
         "examples": [
-            "<caption>Create a simple mapping that makes the right trigger move your avatar up.</caption>\rvar mappingJSON = {\r    \"name\": \"com.highfidelity.controllers.example.jsonMapping\",\r    \"channels\": [\r        { \"from\": \"Standard.RT\", \"to\": \"Actions.TranslateY\" }\r    ]\r};\r\rvar mapping = Controller.parseMapping(JSON.stringify(mappingJSON));\rmapping.enable();\r\rScript.scriptEnding.connect(function () {\r    mapping.disable();\r});"
+            "<caption>Create a simple mapping that makes the right trigger move your avatar up.</caption>\rvar mappingJSON = {\r    \"name\": \"com.vircadia.controllers.example.jsonMapping\",\r    \"channels\": [\r        { \"from\": \"Standard.RT\", \"to\": \"Actions.TranslateY\" }\r    ]\r};\r\rvar mapping = Controller.parseMapping(JSON.stringify(mappingJSON));\rmapping.enable();\r\rScript.scriptEnding.connect(function () {\r    mapping.disable();\r});"
         ],
         "memberof": "Controller",
         "longname": "Controller.parseMapping",
@@ -38776,7 +38776,7 @@
         "kind": "function",
         "name": "captureMouseEvents",
         "examples": [
-            "<caption>Disable Controller.Hardware.Keyboard mouse events for a short period.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Hardware.Keyboard.MouseX).to(function (x) {\r    print(\"Mouse x = \" + x);\r});\rmapping.from(Controller.Hardware.Keyboard.MouseY).to(function (y) {\r    print(\"Mouse y = \" + y);\r});\rController.enableMapping(MAPPING_NAME);\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});\r\rScript.setTimeout(function () {\r    Controller.captureMouseEvents();\r}, 5000);\r\rScript.setTimeout(function () {\r    Controller.releaseMouseEvents();\r}, 10000);"
+            "<caption>Disable Controller.Hardware.Keyboard mouse events for a short period.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Hardware.Keyboard.MouseX).to(function (x) {\r    print(\"Mouse x = \" + x);\r});\rmapping.from(Controller.Hardware.Keyboard.MouseY).to(function (y) {\r    print(\"Mouse y = \" + y);\r});\rController.enableMapping(MAPPING_NAME);\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});\r\rScript.setTimeout(function () {\r    Controller.captureMouseEvents();\r}, 5000);\r\rScript.setTimeout(function () {\r    Controller.releaseMouseEvents();\r}, 10000);"
         ],
         "memberof": "Controller",
         "longname": "Controller.captureMouseEvents",
@@ -39066,7 +39066,7 @@
             }
         ],
         "examples": [
-            "<caption>A simple mapping JSON that makes the right trigger move your avatar up after a dead zone.</caption>\r{\r    \"name\": \"com.highfidelity.controllers.example.jsonMapping\",\r    \"channels\": [\r        { \r            \"from\": \"Standard.RT\", \r            \"filters\": { \"type\": \"deadZone\", \"min\": 0.05 },\r            \"to\": \"Actions.TranslateY\"\r        }\r    ]\r}"
+            "<caption>A simple mapping JSON that makes the right trigger move your avatar up after a dead zone.</caption>\r{\r    \"name\": \"com.vircadia.controllers.example.jsonMapping\",\r    \"channels\": [\r        { \r            \"from\": \"Standard.RT\", \r            \"filters\": { \"type\": \"deadZone\", \"min\": 0.05 },\r            \"to\": \"Actions.TranslateY\"\r        }\r    ]\r}"
         ],
         "memberof": "Controller",
         "longname": "Controller.MappingJSON",
@@ -39361,7 +39361,7 @@
             }
         ],
         "examples": [
-            "<caption>Make the Oculus Touch triggers move your avatar up and down.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping\r    .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)\r    .to(Controller.Actions.Up);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Make the Oculus Touch triggers move your avatar up and down.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping\r    .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)\r    .to(Controller.Actions.Up);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "MappingObject",
         "longname": "MappingObject#makeAxis",
@@ -39495,8 +39495,8 @@
             }
         ],
         "examples": [
-            "<caption>Make the right trigger move your avatar up.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});",
-            "<caption>Make the right trigger call a function.</caption>\rfunction onRightTrigger(value) {\r    print(\"Trigger value: \" + value);\r}\r\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).to(onRightTrigger);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Make the right trigger move your avatar up.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});",
+            "<caption>Make the right trigger call a function.</caption>\rfunction onRightTrigger(value) {\r    print(\"Trigger value: \" + value);\r}\r\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).to(onRightTrigger);\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#to",
@@ -39530,7 +39530,7 @@
             }
         ],
         "examples": [
-            "<caption>Write debug information to the program log for a right trigger mapping.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).debug().to(function (value) {\r    print(\"Value: \" + value);\r});\r\r// Information similar to the following is written each frame:\r[DEBUG] [hifi.controllers] Beginning mapping frame\r[DEBUG] [hifi.controllers] Processing device routes\r[DEBUG] [hifi.controllers] Processing standard routes\r[DEBUG] [hifi.controllers] Applying route  \"\"\r[DEBUG] [hifi.controllers] Value was  5.96046e-07\r[DEBUG] [hifi.controllers] Filtered value was  5.96046e-07\r\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Write debug information to the program log for a right trigger mapping.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RT).debug().to(function (value) {\r    print(\"Value: \" + value);\r});\r\r// Information similar to the following is written each frame:\r[DEBUG] [hifi.controllers] Beginning mapping frame\r[DEBUG] [hifi.controllers] Processing device routes\r[DEBUG] [hifi.controllers] Processing standard routes\r[DEBUG] [hifi.controllers] Applying route  \"\"\r[DEBUG] [hifi.controllers] Value was  5.96046e-07\r[DEBUG] [hifi.controllers] Filtered value was  5.96046e-07\r\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#debug",
@@ -39594,7 +39594,7 @@
             }
         ],
         "examples": [
-            "<caption>Process the right trigger differently in HMD and desktop modes.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\r// Processed only if in HMD mode.\rmapping.from(Controller.Standard.RT)\r    .when(Controller.Hardware.Application.InHMD)\r    .to(function () { print(\"Trigger pressed in HMD mode.\"); });\r\r// Processed only if previous route not processed.\rmapping.from(Controller.Standard.RT)\r    .to(function () { print(\"Trigger pressed in desktop mode.\"); });\r\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Process the right trigger differently in HMD and desktop modes.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\r// Processed only if in HMD mode.\rmapping.from(Controller.Standard.RT)\r    .when(Controller.Hardware.Application.InHMD)\r    .to(function () { print(\"Trigger pressed in HMD mode.\"); });\r\r// Processed only if previous route not processed.\rmapping.from(Controller.Standard.RT)\r    .to(function () { print(\"Trigger pressed in desktop mode.\"); });\r\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#when",
@@ -39635,7 +39635,7 @@
             }
         ],
         "examples": [
-            "<caption>Clamp right trigger values to between 0.3 and 0.7.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {\r    print(\"Value: \" + value);\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Clamp right trigger values to between 0.3 and 0.7.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {\r    print(\"Value: \" + value);\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#clamp",
@@ -39676,7 +39676,7 @@
             }
         ],
         "examples": [
-            "<caption>Round the right joystick forward/back values to 0 or 1 with hysteresis.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).peek().to(function (value) {\r    print(\"Raw value: \" + value);  // 0.0 - 1.0.\r});\rmapping.from(Controller.Standard.RY).hysteresis(0.3, 0.7).to(function (value) {\r    print(\"Hysteresis value: \" + value);  // 0 or 1.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Round the right joystick forward/back values to 0 or 1 with hysteresis.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).peek().to(function (value) {\r    print(\"Raw value: \" + value);  // 0.0 - 1.0.\r});\rmapping.from(Controller.Standard.RY).hysteresis(0.3, 0.7).to(function (value) {\r    print(\"Hysteresis value: \" + value);  // 0 or 1.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#hysteresis",
@@ -39708,7 +39708,7 @@
             }
         ],
         "examples": [
-            "<caption>Send right trigger values every half second.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {\r    print(\"Value: \" + value);\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Send right trigger values every half second.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {\r    print(\"Value: \" + value);\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#pulse",
@@ -39740,7 +39740,7 @@
             }
         ],
         "examples": [
-            "<caption>Scale the value of the right joystick forward/back values by 10.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.LY).to(function (value) {\r    print(\"L value: \" + value);  // -1.0 to 1.0 values.\r});\rmapping.from(Controller.Standard.RY).scale(10.0).to(function (value) {\r    print(\"R value: \" + value);  // -10.0 to -10.0 values.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Scale the value of the right joystick forward/back values by 10.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.LY).to(function (value) {\r    print(\"L value: \" + value);  // -1.0 to 1.0 values.\r});\rmapping.from(Controller.Standard.RY).scale(10.0).to(function (value) {\r    print(\"R value: \" + value);  // -10.0 to -10.0 values.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#scale",
@@ -39761,7 +39761,7 @@
             }
         ],
         "examples": [
-            "<caption>Invert the value of the right joystick forward/back values.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.LY).to(function (value) {\r    print(\"L value: \" + value);  // -1.0 to 1.0 values, forward to back.\r});\rmapping.from(Controller.Standard.RY).invert().to(function (value) {\r    print(\"R value: \" + value);  // 1.0 to -1.0 values, forward to back.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Invert the value of the right joystick forward/back values.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.LY).to(function (value) {\r    print(\"L value: \" + value);  // -1.0 to 1.0 values, forward to back.\r});\rmapping.from(Controller.Standard.RY).invert().to(function (value) {\r    print(\"R value: \" + value);  // 1.0 to -1.0 values, forward to back.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#invert",
@@ -39793,7 +39793,7 @@
             }
         ],
         "examples": [
-            "<caption>Apply a dead-zone to the right joystick forward/back values.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {\r    print(\"Value: \" + value);  // 0.0 - 1.0 values once outside the dead-zone.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Apply a dead-zone to the right joystick forward/back values.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {\r    print(\"Value: \" + value);  // 0.0 - 1.0 values once outside the dead-zone.\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#deadZone",
@@ -39814,7 +39814,7 @@
             }
         ],
         "examples": [
-            "<caption>Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or \r    <code>1</code>.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {\r    print(\"Value: \" + value);  // -1, 0, or 1\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or \r    <code>1</code>.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {\r    print(\"Value: \" + value);  // -1, 0, or 1\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#constrainToInteger",
@@ -39835,7 +39835,7 @@
             }
         ],
         "examples": [
-            "<caption>Round the right joystick forward/back values to <code>0</code> or <code>1</code>.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {\r    print(\"Value: \" + value);  // 0, or 1\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
+            "<caption>Round the right joystick forward/back values to <code>0</code> or <code>1</code>.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\rmapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {\r    print(\"Value: \" + value);  // 0, or 1\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});"
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#constrainToPositiveInteger",
@@ -40048,7 +40048,7 @@
             }
         ],
         "examples": [
-            "<caption>Logical NOT of LSTouch value.</caption>\rvar MAPPING_NAME = \"com.highfidelity.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RSTouch).peek().to(function (value) {\r    print(\"RSTouch: \" + value);\r});\rmapping.from(Controller.Standard.RSTouch).logicalNot().to(function (value) {\r    print(\"localNot of RSTouch: \" + value);\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});\r\n         "
+            "<caption>Logical NOT of LSTouch value.</caption>\rvar MAPPING_NAME = \"com.vircadia.controllers.example.newMapping\";\rvar mapping = Controller.newMapping(MAPPING_NAME);\r\rmapping.from(Controller.Standard.RSTouch).peek().to(function (value) {\r    print(\"RSTouch: \" + value);\r});\rmapping.from(Controller.Standard.RSTouch).logicalNot().to(function (value) {\r    print(\"localNot of RSTouch: \" + value);\r});\rController.enableMapping(MAPPING_NAME);\r\rScript.scriptEnding.connect(function () {\r    Controller.disableMapping(MAPPING_NAME);\r});\r\n         "
         ],
         "memberof": "RouteObject",
         "longname": "RouteObject#logicalNot",
@@ -40737,10 +40737,10 @@
             {
                 "type": {
                     "names": [
-                        "string"
+                        "number"
                     ]
                 },
-                "description": "The UTC date and time that the entity was created, in ISO 8601 format as\r    <code>yyyy-MM-ddTHH:mm:ssZ</code>. <em>Read-only.</em>",
+                "description": "When the entity was created, expressed as the number of microseconds since\r    1970-01-01T00:00:00 UTC. <em>Read-only.</em>",
                 "name": "created"
             },
             {
@@ -54397,7 +54397,7 @@
             }
         ],
         "examples": [
-            "<caption>Send and receive a message.</caption>\r// Receiving script.\rvar channelName = \"com.highfidelity.example.messages-example\";\r\rfunction onMessageReceived(channel, message, sender, localOnly) {\r    print(\"Message received:\");\r    print(\"- channel: \" + channel);\r    print(\"- message: \" + message);\r    print(\"- sender: \" + sender);\r    print(\"- localOnly: \" + localOnly);\r}\r\rMessages.subscribe(channelName);\rMessages.messageReceived.connect(onMessageReceived);\r\rScript.scriptEnding.connect(function () {\r    Messages.messageReceived.disconnect(onMessageReceived);\r    Messages.unsubscribe(channelName);\r});\r\r\r// Sending script.\rvar channelName = \"com.highfidelity.example.messages-example\";\rvar message = \"Hello\";\rMessages.sendMessage(channelName, message);"
+            "<caption>Send and receive a message.</caption>\r// Receiving script.\rvar channelName = \"com.vircadia.example.messages-example\";\r\rfunction onMessageReceived(channel, message, sender, localOnly) {\r    print(\"Message received:\");\r    print(\"- channel: \" + channel);\r    print(\"- message: \" + message);\r    print(\"- sender: \" + sender);\r    print(\"- localOnly: \" + localOnly);\r}\r\rMessages.subscribe(channelName);\rMessages.messageReceived.connect(onMessageReceived);\r\rScript.scriptEnding.connect(function () {\r    Messages.messageReceived.disconnect(onMessageReceived);\r    Messages.unsubscribe(channelName);\r});\r\r\r// Sending script.\rvar channelName = \"com.vircadia.example.messages-example\";\rvar message = \"Hello\";\rMessages.sendMessage(channelName, message);"
         ],
         "memberof": "Messages",
         "longname": "Messages.sendMessage",
@@ -54467,7 +54467,7 @@
             }
         ],
         "examples": [
-            "<caption>Send and receive data.</caption>\r// Receiving script.\rvar channelName = \"com.highfidelity.example.messages-example\";\r\rfunction onDataReceived(channel, data, sender, localOnly) {\r    var int8data = new Int8Array(data);\r    var dataAsString = \"\";\r    for (var i = 0; i < int8data.length; i++) {\r        if (i > 0) {\r            dataAsString += \", \";\r        }\r        dataAsString += int8data[i];\r    }\r    print(\"Data received:\");\r    print(\"- channel: \" + channel);\r    print(\"- data: \" + dataAsString);\r    print(\"- sender: \" + sender);\r    print(\"- localOnly: \" + localOnly);\r}\r\rMessages.subscribe(channelName);\rMessages.dataReceived.connect(onDataReceived);\r\rScript.scriptEnding.connect(function () {\r    Messages.dataReceived.disconnect(onDataReceived);\r    Messages.unsubscribe(channelName);\r});\r\r\r// Sending script.\rvar channelName = \"com.highfidelity.example.messages-example\";\rvar int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);\rMessages.sendData(channelName, int8data.buffer);"
+            "<caption>Send and receive data.</caption>\r// Receiving script.\rvar channelName = \"com.vircadia.example.messages-example\";\r\rfunction onDataReceived(channel, data, sender, localOnly) {\r    var int8data = new Int8Array(data);\r    var dataAsString = \"\";\r    for (var i = 0; i < int8data.length; i++) {\r        if (i > 0) {\r            dataAsString += \", \";\r        }\r        dataAsString += int8data[i];\r    }\r    print(\"Data received:\");\r    print(\"- channel: \" + channel);\r    print(\"- data: \" + dataAsString);\r    print(\"- sender: \" + sender);\r    print(\"- localOnly: \" + localOnly);\r}\r\rMessages.subscribe(channelName);\rMessages.dataReceived.connect(onDataReceived);\r\rScript.scriptEnding.connect(function () {\r    Messages.dataReceived.disconnect(onDataReceived);\r    Messages.unsubscribe(channelName);\r});\r\r\r// Sending script.\rvar channelName = \"com.vircadia.example.messages-example\";\rvar int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);\rMessages.sendData(channelName, int8data.buffer);"
         ],
         "memberof": "Messages",
         "longname": "Messages.sendData",
@@ -54622,7 +54622,7 @@
         "scope": "static"
     },
     {
-        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>Information about a cached resource. Created by {@link AnimationCache.prefetch}, {@link MaterialCache.prefetch}, \r{@link ModelCache.prefetch}, {@link SoundCache.prefetch}, or {@link TextureCache.prefetch}.",
+        "description": "<p class='availableIn'><b>Supported Script Types:</b> Interface Scripts &bull; Client Entity Scripts &bull; Avatar Scripts &bull; Server Entity Scripts &bull; Assignment Client Scripts</p>Information about a cached resource. Created by {@link AnimationCache.prefetch}, {@link MaterialCache.prefetch},\r{@link ModelCache.prefetch}, {@link SoundCache.prefetch}, or {@link TextureCache.prefetch}.",
         "kind": "class",
         "name": "ResourceObject",
         "hideconstructor": true,
@@ -65392,7 +65392,7 @@
                         "string"
                     ]
                 },
-                "description": "<code>\"script\"</code> or <code>\"folder\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed. It currently always has the value, \r    <code>\"script\"</code>.</p>",
+                "description": "<code>\"script\"</code> or <code>\"folder\"</code>.\r    <p class=\"important\">Deprecated: This property is deprecated and will be removed. It currently always has the value,\r    <code>\"script\"</code>.</p>",
                 "name": "type"
             },
             {
@@ -65470,7 +65470,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the script is a local file (i.e., the scheme is \"file\"), <code>false</code> \r    if it isn't (e.g., the scheme is \"http\").",
+                "description": "<code>true</code> if the script is a local file (i.e., the scheme is \"file\"), <code>false</code>\r    if it isn't (e.g., the scheme is \"http\").",
                 "name": "local"
             },
             {
@@ -65520,7 +65520,7 @@
                     ]
                 },
                 "defaultvalue": "\"\"",
-                "description": "The path and name of a script to debug using the \"API Debugger\" developer tool \r    (currentAPI.js). If set, the API Debugger dialog displays the objects and values exposed by the script using \r    {@link Script.registerValue} and similar.",
+                "description": "The path and name of a script to debug using the \"API Debugger\" developer tool\r    (currentAPI.js). If set, the API Debugger dialog displays the objects and values exposed by the script using\r    {@link Script.registerValue} and similar.",
                 "name": "debugScriptUrl"
             },
             {
@@ -65529,7 +65529,7 @@
                         "string"
                     ]
                 },
-                "description": "The path where the default scripts are located in the Interface installation. \r    <em>Read-only.</em>",
+                "description": "The path where the default scripts are located in the Interface installation.\r    <em>Read-only.</em>",
                 "name": "defaultScriptsPath"
             },
             {
@@ -65538,7 +65538,7 @@
                         "ScriptsModel"
                     ]
                 },
-                "description": "Information on the scripts that are in the default scripts directory of the \r    Interface installation.\r    <em>Read-only.</em>",
+                "description": "Information on the scripts that are in the default scripts directory of the\r    Interface installation.\r    <em>Read-only.</em>",
                 "name": "scriptsModel"
             },
             {
@@ -65547,7 +65547,7 @@
                         "ScriptsModelFilter"
                     ]
                 },
-                "description": "Sorted and filtered information on the scripts that are in the default \r    scripts directory of the Interface installation.\r    <em>Read-only.</em>",
+                "description": "Sorted and filtered information on the scripts that are in the default\r    scripts directory of the Interface installation.\r    <em>Read-only.</em>",
                 "name": "scriptsModelFilter"
             }
         ],
@@ -65555,7 +65555,7 @@
         "scope": "global"
     },
     {
-        "description": "Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface \rstarts.\r<p>This is a synonym for calling {@link ScriptDiscoveryService.loadScript|loadScript} with just the script URL.</p>\r<p class=\"availableIn\"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>\r<p>See also, {@link Script.load}.</p>",
+        "description": "Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface\rstarts.\r<p>This is a synonym for calling {@link ScriptDiscoveryService.loadScript|loadScript} with just the script URL.</p>\r<p class=\"availableIn\"><strong>Supported Script Types:</strong> Interface Scripts &bull; Avatar Scripts</p>\r<p>See also, {@link Script.load}.</p>",
         "kind": "function",
         "name": "loadOneScript",
         "params": [
@@ -65565,7 +65565,7 @@
                         "string"
                     ]
                 },
-                "description": "The path and name of the script. If a local file, including the <code>\"file:///\"</code> scheme is \r    optional.",
+                "description": "The path and name of the script. If a local file, including the <code>\"file:///\"</code> scheme is\r    optional.",
                 "name": "url"
             }
         ],
@@ -65586,7 +65586,7 @@
                 },
                 "optional": true,
                 "defaultvalue": "\"\"",
-                "description": "The path and name of the script. If a local file, including the <code>\"file:///\"</code> \r    scheme is optional.",
+                "description": "The path and name of the script. If a local file, including the <code>\"file:///\"</code>\r    scheme is optional.",
                 "name": "url"
             },
             {
@@ -65597,7 +65597,7 @@
                 },
                 "optional": true,
                 "defaultvalue": true,
-                "description": "<code>true</code> if the user specifically loaded it, <code>false</code> if not \r    (e.g., a script loaded it). If <code>false</code>, the script is not automatically loaded next time Interface starts.",
+                "description": "<code>true</code> if the user specifically loaded it, <code>false</code> if not\r    (e.g., a script loaded it). If <code>false</code>, the script is not automatically loaded next time Interface starts.",
                 "name": "isUserLoaded"
             },
             {
@@ -65630,7 +65630,7 @@
                 },
                 "optional": true,
                 "defaultvalue": false,
-                "description": "<code>true</code> to redownload the script, <code>false</code> to use the copy from \r    the cache if available.",
+                "description": "<code>true</code> to redownload the script, <code>false</code> to use the copy from\r    the cache if available.",
                 "name": "reload"
             },
             {
@@ -65641,7 +65641,7 @@
                 },
                 "optional": true,
                 "defaultvalue": false,
-                "description": "<code>true</code> to close Interface when the script finishes, \r    <code>false</code> to not close Interface.",
+                "description": "<code>true</code> to close Interface when the script finishes,\r    <code>false</code> to not close Interface.",
                 "name": "quitWhenFinished"
             }
         ],
@@ -65670,7 +65670,7 @@
                         "string"
                     ]
                 },
-                "description": "The path and name of the script. If a local file, including the <code>\"file:///\"</code> scheme is \r    optional.",
+                "description": "The path and name of the script. If a local file, including the <code>\"file:///\"</code> scheme is\r    optional.",
                 "name": "url"
             },
             {
@@ -65681,7 +65681,7 @@
                 },
                 "optional": true,
                 "defaultvalue": false,
-                "description": "<code>true</code> to redownload and restart the script, <code>false</code> to stop \r    it.",
+                "description": "<code>true</code> to redownload and restart the script, <code>false</code> to stop\r    it.",
                 "name": "restart"
             }
         ],
@@ -65692,7 +65692,7 @@
                         "boolean"
                     ]
                 },
-                "description": "<code>true</code> if the script was successfully stopped or restarted, <code>false</code> if it \r    wasn't (e.g., the script couldn't be found)."
+                "description": "<code>true</code> if the script was successfully stopped or restarted, <code>false</code> if it\r    wasn't (e.g., the script couldn't be found)."
             }
         ],
         "memberof": "ScriptDiscoveryService",
@@ -65708,7 +65708,7 @@
         "scope": "static"
     },
     {
-        "description": "Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity \rscripts are also restarted.",
+        "description": "Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity\rscripts are also restarted.",
         "kind": "function",
         "name": "stopAllScripts",
         "params": [
@@ -65760,7 +65760,7 @@
                         "Array.<ScriptDiscoveryService.PublicScript>"
                     ]
                 },
-                "description": "All scripts in the \"scripts\" directory of the Interface \r    installation."
+                "description": "All scripts in the \"scripts\" directory of the Interface\r    installation."
             }
         ],
         "memberof": "ScriptDiscoveryService",
@@ -65806,7 +65806,7 @@
         "scope": "static"
     },
     {
-        "description": "Triggered when Interface, avatar, and client entity scripts are restarting as a result of\r{@link ScriptDiscoveryService.reloadAllScripts|reloadAllScripts} or \r{@link ScriptDiscoveryService.stopAllScripts|stopAllScripts}.",
+        "description": "Triggered when Interface, avatar, and client entity scripts are restarting as a result of\r{@link ScriptDiscoveryService.reloadAllScripts|reloadAllScripts} or\r{@link ScriptDiscoveryService.stopAllScripts|stopAllScripts}.",
         "kind": "signal",
         "name": "scriptsReloading",
         "returns": [
@@ -74466,7 +74466,7 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "E:\\Development\\Vircadia\\vircadia-development-1\\tools\\jsdoc\\root.js"
+            "E:\\Vircadia_RELPKG\\tools\\jsdoc\\root.js"
         ]
     },
     {
